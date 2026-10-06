@@ -3325,6 +3325,7 @@ function Cart({
   go,
   items,
   onRemoveItem,
+  onUpdatePeople,
   onViewPackage,
   currentUser,
   onLoginSuccess,
@@ -3332,6 +3333,7 @@ function Cart({
   go: (page: Page) => void
   items: CartItem[]
   onRemoveItem: (id: string) => void
+  onUpdatePeople?: (id: string, newPeople: number) => void
   onViewPackage?: (pkg: PackageItem) => void
   currentUser: { name: string; email: string } | null
   onLoginSuccess?: (user: { name: string; email: string }) => void
@@ -3418,7 +3420,46 @@ function Cart({
                       <div>
                         <dt>Personas</dt>
                         <dd>
-                          {item.people} {item.people === 1 ? "viajero" : "viajeros"}
+                          <div className="cart-people-control">
+                            <button
+                              type="button"
+                              className="cart-people-btn"
+                              onClick={() =>
+                                onUpdatePeople &&
+                                onUpdatePeople(item.id, item.people - 1)
+                              }
+                              disabled={item.people <= 1}
+                              aria-label={`Disminuir personas para ${item.pkg.name}`}
+                              title={
+                                item.people <= 1
+                                  ? "Mínimo 1 viajero"
+                                  : "Quitar una persona"
+                              }
+                            >
+                              −
+                            </button>
+                            <span
+                              className="cart-people-count"
+                              aria-live="polite"
+                            >
+                              {item.people}
+                            </span>
+                            <button
+                              type="button"
+                              className="cart-people-btn"
+                              onClick={() =>
+                                onUpdatePeople &&
+                                onUpdatePeople(item.id, item.people + 1)
+                              }
+                              aria-label={`Aumentar personas para ${item.pkg.name}`}
+                              title="Agregar una persona"
+                            >
+                              +
+                            </button>
+                            <span className="cart-people-unit">
+                              {item.people === 1 ? "viajero" : "viajeros"}
+                            </span>
+                          </div>
                         </dd>
                       </div>
                       <div>
@@ -6137,6 +6178,23 @@ export default function App() {
 
   const handleRemoveCartItem = (id: string) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id))
+    setTravelersList([])
+  }
+
+  const handleUpdateCartItemPeople = (id: string, newPeople: number) => {
+    if (newPeople < 1) return
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              people: newPeople,
+              total: newPeople * item.pkg.price,
+            }
+          : item
+      )
+    )
+    setTravelersList([])
   }
 
   const cartTotal = useMemo(() => {
@@ -6343,6 +6401,7 @@ export default function App() {
             go={go}
             items={cartItems}
             onRemoveItem={handleRemoveCartItem}
+            onUpdatePeople={handleUpdateCartItemPeople}
             onViewPackage={handleViewPackage}
             currentUser={currentUser}
             onLoginSuccess={handleLoginSuccess}
