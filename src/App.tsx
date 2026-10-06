@@ -48,6 +48,8 @@ export interface PackageItem {
     month: string
     year: number
   }
+  image: string
+  secondaryImages: [string, string]
 }
 
 export interface CartItem {
@@ -389,6 +391,12 @@ const packages: PackageItem[] = [
     datesText: `23 al 26 dic ${CURRENT_YEAR}`,
     availableDates: [`23 al 26 dic ${CURRENT_YEAR}`],
     dates: { startDay: 23, endDay: 26, month: "dic", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "galapagos-promo-flash",
@@ -401,6 +409,12 @@ const packages: PackageItem[] = [
     datesText: `16 al 19 oct ${CURRENT_YEAR}`,
     availableDates: [`16 al 19 oct ${CURRENT_YEAR}`],
     dates: { startDay: 16, endDay: 19, month: "oct", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "galapagos-feriado-octubre",
@@ -413,6 +427,12 @@ const packages: PackageItem[] = [
     datesText: `09 al 12 oct ${CURRENT_YEAR}`,
     availableDates: [`09 al 12 oct ${CURRENT_YEAR}`],
     dates: { startDay: 9, endDay: 12, month: "oct", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "cojimies-fin-de-ano",
@@ -425,6 +445,12 @@ const packages: PackageItem[] = [
     datesText: `30 dic al 02 ene ${CURRENT_YEAR + 1}`,
     availableDates: [`30 dic al 02 ene ${CURRENT_YEAR + 1}`],
     dates: { startDay: 30, endDay: 31, month: "dic", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "banos-aventura",
@@ -443,6 +469,12 @@ const packages: PackageItem[] = [
       `13 al 15 nov ${CURRENT_YEAR}`,
     ],
     dates: { startDay: 9, endDay: 11, month: "oct", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "ruta-spondylus",
@@ -460,6 +492,12 @@ const packages: PackageItem[] = [
       `20 al 23 nov ${CURRENT_YEAR}`,
     ],
     dates: { startDay: 16, endDay: 19, month: "oct", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "amazonia-esencial",
@@ -477,6 +515,12 @@ const packages: PackageItem[] = [
       `21 al 24 nov ${CURRENT_YEAR}`,
     ],
     dates: { startDay: 17, endDay: 20, month: "oct", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "cuenca-patrimonial",
@@ -489,6 +533,12 @@ const packages: PackageItem[] = [
     datesText: `01 al 03 nov ${CURRENT_YEAR}`,
     availableDates: [`01 al 03 nov ${CURRENT_YEAR}`],
     dates: { startDay: 1, endDay: 3, month: "nov", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1579273166152-d725a4e2b755?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
   {
     id: "cuyabeno-reserva",
@@ -505,6 +555,12 @@ const packages: PackageItem[] = [
       `27 al 30 nov ${CURRENT_YEAR}`,
     ],
     dates: { startDay: 23, endDay: 26, month: "oct", year: CURRENT_YEAR },
+    image:
+      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    secondaryImages: [
+      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    ],
   },
 ]
 
@@ -1815,7 +1871,18 @@ function PackageCard({
   }
   return (
     <article className="package-card">
-      <Placeholder label={`Imagen placeholder de ${item.name}`} />
+      <div className="package-card__image-container">
+        {item.image ? (
+          <img
+            src={item.image}
+            alt={`Fotografía de ${item.name}`}
+            className="package-card__img"
+            loading="lazy"
+          />
+        ) : (
+          <Placeholder label={`Imagen de ${item.name}`} />
+        )}
+      </div>
       <div className="package-card__body">
         <h3 style={{ fontWeight: 700, margin: "0 0 6px" }}>
           <strong>{item.name}</strong>
@@ -2489,6 +2556,16 @@ function Detail({
     )
   }, [pkg])
 
+  const allImages = useMemo(
+    () => [pkg.image, ...(pkg.secondaryImages || [])],
+    [pkg]
+  )
+  const [activeImage, setActiveImage] = useState(pkg.image)
+
+  useEffect(() => {
+    setActiveImage(pkg.image)
+  }, [pkg])
+
   const total = people * pkg.price
   const add = () => {
     addToCart({
@@ -2513,10 +2590,31 @@ function Detail({
       </div>
       <div className="section detail-layout">
         <section className="gallery" aria-label={`Galería de ${pkg.name}`}>
-          <Placeholder label={`Vista principal de ${pkg.name}`} />
+          <div className="gallery__main">
+            <img
+              src={activeImage || pkg.image}
+              alt={`Fotografía principal de ${pkg.name}`}
+              className="gallery__main-img"
+            />
+          </div>
           <div className="gallery__thumbs">
-            <Placeholder label={`Hospedaje incluido en ${pkg.city}`} />
-            <Placeholder label="Actividad guiada del paquete" />
+            {allImages.map((imgUrl, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`gallery__thumb-btn ${
+                  activeImage === imgUrl ? "active" : ""
+                }`}
+                onClick={() => setActiveImage(imgUrl)}
+                aria-label={`Ver imagen ${idx + 1} de ${pkg.name}`}
+              >
+                <img
+                  src={imgUrl}
+                  alt={`Fotografía ${idx + 1} de ${pkg.name}`}
+                  className="gallery__thumb-img"
+                />
+              </button>
+            ))}
           </div>
         </section>
         <section className="booking-panel">
@@ -3288,7 +3386,17 @@ function Cart({
             <div className="cart-items-list">
               {items.map((item) => (
                 <article className="cart-item" key={item.id}>
-                  <Placeholder label={`Imagen de ${item.pkg.name}`} />
+                  {item.pkg.image ? (
+                    <div className="cart-item__image-wrap">
+                      <img
+                        src={item.pkg.image}
+                        alt={`Fotografía de ${item.pkg.name}`}
+                        className="cart-item__img"
+                      />
+                    </div>
+                  ) : (
+                    <Placeholder label={`Imagen de ${item.pkg.name}`} />
+                  )}
                   <div>
                     <span className="eyebrow">{item.pkg.region}</span>
                     <h2>{item.pkg.name}</h2>
