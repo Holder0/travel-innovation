@@ -1,0 +1,10 @@
+{
+  "description": "Manage your finances effortlessly with a budget tracker that categorizes expenses and sends alerts to keep your spending in check.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
