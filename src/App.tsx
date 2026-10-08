@@ -2221,6 +2221,8 @@ function Header({
           </div>
         </nav>
       </header>
+      {/* Espacio reservado bajo la cabecera (filo blanco entre la barra y el contenido) */}
+      <div className="header-spacer" aria-hidden="true" />
 
       {/* Modal de Mi Perfil */}
       {isProfileModalOpen && currentUser && (
