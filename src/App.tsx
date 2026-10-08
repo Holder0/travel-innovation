@@ -2091,7 +2091,7 @@ export const DEFAULT_CATALOG_FILTERS: CatalogFilterState = {
   dateActive: false,
   minPrice: 100,
   maxPrice: 900,
-  sortBy: "Recomendados",
+  sortBy: "Alfabético: Z a A (Descendente)",
   currentPage: 1,
 }
 
@@ -2196,7 +2196,19 @@ function Catalog({
 
   const sortedPackages = useMemo(() => {
     const list = [...matchingPackages]
-    if (sortBy === "Precio: menor a mayor") {
+    if (
+      sortBy === "Alfabético: Z a A (Descendente)" ||
+      sortBy === "Nombre: Z a A" ||
+      sortBy === "Alfabético descendente"
+    ) {
+      list.sort((a, b) => b.name.localeCompare(a.name, "es"))
+    } else if (
+      sortBy === "Alfabético: A a Z (Ascendente)" ||
+      sortBy === "Nombre: A a Z" ||
+      sortBy === "Alfabético ascendente"
+    ) {
+      list.sort((a, b) => a.name.localeCompare(b.name, "es"))
+    } else if (sortBy === "Precio: menor a mayor") {
       list.sort((a, b) => a.price - b.price)
     } else if (sortBy === "Precio: mayor a menor") {
       list.sort((a, b) => b.price - a.price)
@@ -2206,6 +2218,8 @@ function Catalog({
         const daysB = parseInt(b.days) || 0
         return daysB - daysA
       })
+    } else {
+      list.sort((a, b) => b.name.localeCompare(a.name, "es"))
     }
     return list
   }, [matchingPackages, sortBy])
@@ -2437,6 +2451,8 @@ function Catalog({
                 "Precio: menor a mayor",
                 "Precio: mayor a menor",
                 "Duración",
+                "Alfabético: Z a A (Descendente)",
+                "Alfabético: A a Z (Ascendente)",
               ]
                 .sort((a, b) => b.localeCompare(a, "es"))
                 .map((opt) => (
@@ -5846,9 +5862,39 @@ function Policies({ go }: { go: (page: Page) => void }) {
   )
 }
 
-function Support({ go }: { go: (page: Page) => void }) {
-  const [reason, setReason] = useState("cancelación voluntaria")
+const SUPPORT_REASONS = [
+  "No-show",
+  "Incumplimiento operativo",
+  "Fuerza mayor restrictiva",
+  "Fuerza mayor parcial o clima",
+  "Falta de documentación",
+  "Emergencia médica grave",
+  "Downgrade no consensuado",
+  "Cancelaciones tardías",
+  "Cancelación voluntaria",
+  "Abandono voluntario",
+].sort((a, b) => b.localeCompare(a, "es"))
+
+function Support({
+  go,
+  purchases = [],
+}: {
+  go: (page: Page) => void
+  purchases?: PurchaseItem[]
+}) {
+  const [selectedBookingCode, setSelectedBookingCode] = useState(() => {
+    return purchases.length > 0 ? purchases[0].code : ""
+  })
+  const [manualBookingCode, setManualBookingCode] = useState("")
+  const [reason, setReason] = useState("Cancelación voluntaria")
+  const [evidenceUploaded, setEvidenceUploaded] = useState(false)
   const [sent, setSent] = useState(false)
+
+  const activeBookingCode =
+    purchases.length > 0 && selectedBookingCode !== "otro"
+      ? selectedBookingCode
+      : manualBookingCode || (purchases[0]?.code ?? "ST-10428")
+
   if (sent)
     return (
       <>
@@ -5856,17 +5902,18 @@ function Support({ go }: { go: (page: Page) => void }) {
           <span className="success-mark">✓</span>
           <h1>Ticket recibido</h1>
           <p>
-            Tu número de ticket es <strong>ST-10428</strong>.
+            Tu número de ticket es <strong>ST-10428</strong> para la reserva{" "}
+            <strong>{activeBookingCode}</strong>.
           </p>
           <div className="important-note">
             <strong>Siguiente paso</strong>
             <p>
-              Revisaremos tus documentos y responderemos por correo en hasta 2
+              Revisaremos tus documentos y evidencias y responderemos por correo en hasta 2
               días hábiles.
             </p>
           </div>
           <Button kind="primary" onClick={() => go("reservas")}>
-            Volver a mis reservas
+            Volver a mis compras
           </Button>
         </div>
       </>
@@ -5885,31 +5932,66 @@ function Support({ go }: { go: (page: Page) => void }) {
             setSent(true)
           }}
         >
-          <Field
-            label="Código de reserva"
-            placeholder="Ej. VJ-8K3Q2M"
-            help="Lo encuentras en el correo de confirmación."
-          />
+          {purchases.length > 0 ? (
+            <>
+              <SelectField
+                label="Código de reserva"
+                value={selectedBookingCode}
+                onChange={(val) => setSelectedBookingCode(val)}
+                help="Selecciona el código de tu compra realizada o ingresa otro manualmente."
+              >
+                {purchases
+                  .map((p) => p.code)
+                  .sort((a, b) => b.localeCompare(a, "es"))
+                  .map((code) => {
+                    const purchase = purchases.find((p) => p.code === code)
+                    const pkgNames =
+                      purchase?.packages.map((pkg) => pkg.name).join(", ") ||
+                      "Compra confirmada"
+                    return (
+                      <option key={code} value={code}>
+                        {code} — {pkgNames}
+                      </option>
+                    )
+                  })}
+                <option value="otro">Otro código (ingresar manualmente)</option>
+              </SelectField>
+
+              {selectedBookingCode === "otro" && (
+                <Field
+                  label="Código de reserva manual"
+                  placeholder="Ej. TI-2026-8K3Q2M"
+                  value={manualBookingCode}
+                  onChange={setManualBookingCode}
+                  help="Escribe el código tal como aparece en tu correo o comprobante."
+                  required
+                />
+              )}
+            </>
+          ) : (
+            <Field
+              label="Código de reserva"
+              placeholder="Ej. TI-2026-8K3Q2M"
+              value={manualBookingCode}
+              onChange={setManualBookingCode}
+              help="Lo encuentras en tu correo de confirmación o voucher de compra."
+              required
+            />
+          )}
+
           <SelectField
             label="Motivo"
             value={reason}
             onChange={setReason}
           >
-            {[
-              "incumplimiento operativo",
-              "fuerza mayor",
-              "emergencia médica",
-              "downgrade",
-              "cancelación voluntaria",
-            ]
-              .sort((a, b) => b.localeCompare(a, "es"))
-              .map((motivo) => (
-                <option key={motivo} value={motivo}>
-                  {motivo}
-                </option>
-              ))}
+            {SUPPORT_REASONS.map((motivo) => (
+              <option key={motivo} value={motivo}>
+                {motivo}
+              </option>
+            ))}
           </SelectField>
-          {reason === "cancelación voluntaria" && (
+          {(reason === "Cancelación voluntaria" ||
+            reason === "Cancelaciones tardías") && (
             <div className="inline-alert" role="alert">
               <strong>⚠️ Revisa el plazo antes de enviar</strong>
               <span>
@@ -5924,23 +6006,51 @@ function Support({ go }: { go: (page: Page) => void }) {
             <textarea
               rows={5}
               placeholder="Describe lo ocurrido y qué solución esperas."
+              required
             />
             <span className="field__help">
               Incluye fechas y detalles relevantes.
             </span>
           </label>
-          <label className="field">
-            <span className="field__label">Comprobante de pago</span>
-            <input type="file" accept=".jpg,.jpeg,.png,.pdf" />
-            <span className="field__help">JPG, PNG o PDF.</span>
-          </label>
-          <label className="field">
-            <span className="field__label">Evidencias</span>
-            <input type="file" multiple />
+          <div className="field">
+            <span className="field__label">Evidencias y respaldos</span>
+            <div
+              className="upload-zone"
+              style={{ minHeight: "170px", cursor: "pointer" }}
+            >
+              <span className="upload-icon" aria-hidden="true">
+                ↑
+              </span>
+              <strong>Arrastra tus archivos de evidencia aquí</strong>
+              <span style={{ fontSize: "13.5px", color: "#64748b" }}>
+                Formatos JPG, PNG o PDF (máx. 10 MB)
+              </span>
+              <Button
+                kind="secondary"
+                type="button"
+                onClick={() => setEvidenceUploaded(true)}
+              >
+                {evidenceUploaded ? "Cambiar archivos" : "Seleccionar archivos"}
+              </Button>
+            </div>
+            {evidenceUploaded && (
+              <div className="file-progress" role="status">
+                <div>
+                  <span>evidencias_y_comprobante_caso.pdf</span>
+                  <strong>100%</strong>
+                </div>
+                <div className="progress">
+                  <span />
+                </div>
+                <span className="status status--success">
+                  ✓ Documentos adjuntos listos
+                </span>
+              </div>
+            )}
             <span className="field__help">
-              Certificado médico, fotos u otros respaldos.
+              Puedes subir comprobante de pago, certificado médico, fotografías, denuncias u otros documentos de respaldo.
             </span>
-          </label>
+          </div>
           <Button kind="primary" type="submit">
             Enviar ticket
           </Button>
@@ -6577,7 +6687,7 @@ export default function App() {
       case "politicas":
         return <Policies go={go} />
       case "soporte":
-        return <Support go={go} />
+        return <Support go={go} purchases={purchases} />
       case "diagrama":
         return <StateDiagram />
     }
@@ -6615,7 +6725,7 @@ export default function App() {
       </main>
       <Footer go={go} />
       <button className="floating-help" onClick={() => go("soporte")}>
-        ? Ayuda
+        Ayuda
       </button>
       <AuthModal
         isOpen={isAuthModalOpen}
