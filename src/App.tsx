@@ -1379,22 +1379,6 @@ function DateRangePicker({
         className={`date-trigger ${hasRange ? "is-active" : ""}`}
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
-        style={{
-          width: "100%",
-          minHeight: "52px",
-          height: "52px",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          padding: "4px 10px",
-          background: hasRange ? "var(--sand)" : "var(--breeze)",
-          border: hasRange ? "2px solid var(--pacific)" : "1px solid var(--pacific)",
-          borderRadius: "var(--radius)",
-          cursor: "pointer",
-          textAlign: "left",
-          boxSizing: "border-box",
-          overflow: "hidden",
-        }}
       >
         <span aria-hidden="true" style={{ fontSize: "16px", flexShrink: 0 }}>📅</span>
         <span style={{ display: "flex", flexDirection: "column", flexGrow: 1, minWidth: 0, overflow: "hidden" }}>
@@ -2386,7 +2370,19 @@ function PackageCard({
     }
   }
   return (
-    <article className="package-card">
+    <article
+      className="package-card"
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault()
+          handleClick()
+        }
+      }}
+      aria-label={`Ver detalles del paquete ${item.name}`}
+    >
       <div className="package-card__image-container">
         {item.image ? (
           <img
@@ -2413,7 +2409,13 @@ function PackageCard({
         <p style={{ margin: "0 0 14px" }}>
           <strong>Desde ${item.price}</strong> por persona
         </p>
-        <Button kind="secondary" onClick={handleClick}>
+        <Button
+          kind="secondary"
+          onClick={(e) => {
+            e.stopPropagation()
+            handleClick()
+          }}
+        >
           Ver paquete
         </Button>
       </div>
@@ -3193,7 +3195,7 @@ function Detail({
               label="Intervalos de fechas disponibles"
               value={selectedDate}
               onChange={setSelectedDate}
-              help="Paquete con salidas confirmadas: elige el intervalo deseado."
+              help="Elige tus fechas."
             >
               {[...pkg.availableDates]
                 .sort((a, b) => a.localeCompare(b, "es"))
@@ -4408,7 +4410,7 @@ function Identification({
                     setErrors((prev) => ({ ...prev, email: undefined }))
                 }}
                 error={errors.email}
-                help="Donde recibirás los comprobantes."
+                help="Para comprobantes."
                 required
               />
             </div>
@@ -4427,7 +4429,7 @@ function Identification({
                   setErrors((prev) => ({ ...prev, phone: undefined }))
               }}
               error={errors.phone}
-              help="10 dígitos para coordinación y avisos del viaje."
+              help="10 dígitos."
               required
             />
 
@@ -4442,7 +4444,7 @@ function Identification({
                   setErrors((prev) => ({ ...prev, cedula: undefined }))
               }}
               error={errors.cedula}
-              help="10 dígitos para tu reserva y factura."
+              help="10 dígitos."
               required
             />
           </div>
@@ -4453,7 +4455,7 @@ function Identification({
               value={province}
               onChange={handleProvinceChange}
               error={errors.province}
-              help="Provincia de residencia."
+              help="Residencia."
               required
             >
               <option value="">Selecciona tu provincia</option>
@@ -4475,7 +4477,7 @@ function Identification({
                   setErrors((prev) => ({ ...prev, city: undefined }))
               }}
               error={errors.city}
-              help="Ciudad o cantón."
+              help="Cantón."
               disabled={!province}
               required
             >
@@ -4510,7 +4512,7 @@ function Identification({
                     setErrors((prev) => ({ ...prev, mainStreet: undefined }))
                 }}
                 error={errors.mainStreet}
-                help="Calle o avenida principal."
+                help="Vía principal."
                 required
               />
               <Field
@@ -4523,7 +4525,7 @@ function Identification({
                     setErrors((prev) => ({ ...prev, secondaryStreet: undefined }))
                 }}
                 error={errors.secondaryStreet}
-                help="Calle secundaria o transversal."
+                help="Intersección."
                 required
               />
             </div>
@@ -4538,7 +4540,7 @@ function Identification({
                     setErrors((prev) => ({ ...prev, reference: undefined }))
                 }}
                 error={errors.reference}
-                help="Número de inmueble y punto de referencia."
+                help="Número y referencia."
                 required
               />
             </div>
@@ -5015,7 +5017,7 @@ function Travelers({
                               label="Rol en la reserva"
                               value="titular"
                               disabled={true}
-                              help="Al ser el único pasajero en este paquete, debe ser obligatoriamente el titular de la reserva."
+                              help="Único pasajero (titular)."
                             >
                               <option value="titular">Titular de la reserva</option>
                             </SelectField>
@@ -5030,7 +5032,7 @@ function Travelers({
                                   val as "titular" | "acompanante"
                                 )
                               }
-                              help="Define si esta persona es el titular responsable de este paquete o un acompañante."
+                              help="Titular o acompañante."
                             >
                               <option value="titular">Titular de la reserva</option>
                               <option value="acompanante">Acompañante</option>
@@ -5053,8 +5055,8 @@ function Travelers({
                             error={travelerErrors.fullName}
                             help={
                               isFirstInGroup
-                                ? "Datos del titular de la cuenta (puedes editarlos si viaja otra persona)."
-                                : "Nombre y apellido completos del pasajero."
+                                ? "Datos editables del titular."
+                                : "Nombre completo."
                             }
                             required
                           />
@@ -5070,7 +5072,7 @@ function Travelers({
                               )
                             }
                             error={travelerErrors.cedula}
-                            help="Cédula de identidad o pasaporte vigente."
+                            help="Cédula o pasaporte."
                             required
                           />
                         </div>
@@ -5092,7 +5094,7 @@ function Travelers({
                                 )
                               }
                               error={travelerErrors.phone}
-                              help="10 dígitos para coordinación y avisos de logística."
+                              help="10 dígitos."
                             />
                             <Field
                               label="Correo electrónico"
@@ -5106,7 +5108,7 @@ function Travelers({
                                   val
                                 )
                               }
-                              help="Para recibir itinerario y vouchers."
+                              help="Para vouchers."
                             />
                           </div>
                         )}
@@ -5140,7 +5142,7 @@ function Travelers({
                                 )
                               }
                               error={travelerErrors.birthDate}
-                              help="Fecha de nacimiento del menor."
+                              help="Fecha de nacimiento."
                               required
                             />
                             <div
@@ -7036,7 +7038,7 @@ function Policies({ go }: { go: (page: Page) => void }) {
                         </td>
                         <td>
                           <span
-                            className="status status--success"
+                            className="status status--pacific"
                             style={{ fontWeight: 600 }}
                           >
                             3 a 5 días hábiles
