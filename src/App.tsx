@@ -1247,11 +1247,16 @@ function AuthModal({
 
         {errorMsg && (
           <div
-            className="field__error"
+            className="inline-alert"
             role="alert"
-            style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}
+            style={{ marginBottom: "16px", padding: "12px 14px" }}
           >
-            <span aria-hidden="true">⚠️</span> {errorMsg}
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span aria-hidden="true">⚠️</span>
+              <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--error)" }}>
+                {errorMsg}
+              </span>
+            </div>
           </div>
         )}
 
@@ -1317,6 +1322,17 @@ function AuthModal({
 
         {mode === "register" && (
           <>
+            <div
+              className="inline-alert"
+              style={{ marginBottom: "16px", padding: "12px 14px" }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span aria-hidden="true">⚠️</span>
+                <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--abyss)" }}>
+                  Ingresa tus datos personales para crear tu cuenta y gestionar tus viajes.
+                </span>
+              </div>
+            </div>
             <form className="auth-form" onSubmit={handleRegisterSubmit}>
               <div className="auth-form-row">
                 <Field
@@ -1909,14 +1925,14 @@ function Home({
 
   const availableProvinces = useMemo(() => {
     return Array.from(new Set(packages.map((p) => p.province))).sort((a, b) =>
-      b.localeCompare(a, "es")
+      a.localeCompare(b, "es")
     )
   }, [])
 
   const availableCities = useMemo(() => {
     if (!selectedProvince) {
       return Array.from(new Set(packages.map((p) => p.city))).sort((a, b) =>
-        b.localeCompare(a, "es")
+        a.localeCompare(b, "es")
       )
     }
     return Array.from(
@@ -1925,7 +1941,7 @@ function Home({
           .filter((p) => p.province === selectedProvince)
           .map((p) => p.city),
       ),
-    ).sort((a, b) => b.localeCompare(a, "es"))
+    ).sort((a, b) => a.localeCompare(b, "es"))
   }, [selectedProvince])
 
   const handleProvinceChange = (province: string) => {
@@ -2091,7 +2107,7 @@ export const DEFAULT_CATALOG_FILTERS: CatalogFilterState = {
   dateActive: false,
   minPrice: 100,
   maxPrice: 900,
-  sortBy: "Alfabético: Z a A (Descendente)",
+  sortBy: "Alfabético: A a Z (Ascendente)",
   currentPage: 1,
 }
 
@@ -2139,7 +2155,7 @@ function Catalog({
       list = list.filter((p) => p.region === selectedRegion)
     }
     return Array.from(new Set(list.map((p) => p.province))).sort((a, b) =>
-      b.localeCompare(a, "es")
+      a.localeCompare(b, "es")
     )
   }, [selectedRegion])
 
@@ -2152,7 +2168,7 @@ function Catalog({
       list = list.filter((p) => p.province === selectedProvince)
     }
     return Array.from(new Set(list.map((p) => p.city))).sort((a, b) =>
-      b.localeCompare(a, "es")
+      a.localeCompare(b, "es")
     )
   }, [selectedRegion, selectedProvince])
 
@@ -2197,17 +2213,17 @@ function Catalog({
   const sortedPackages = useMemo(() => {
     const list = [...matchingPackages]
     if (
-      sortBy === "Alfabético: Z a A (Descendente)" ||
-      sortBy === "Nombre: Z a A" ||
-      sortBy === "Alfabético descendente"
-    ) {
-      list.sort((a, b) => b.name.localeCompare(a.name, "es"))
-    } else if (
       sortBy === "Alfabético: A a Z (Ascendente)" ||
       sortBy === "Nombre: A a Z" ||
       sortBy === "Alfabético ascendente"
     ) {
       list.sort((a, b) => a.name.localeCompare(b.name, "es"))
+    } else if (
+      sortBy === "Alfabético: Z a A (Descendente)" ||
+      sortBy === "Nombre: Z a A" ||
+      sortBy === "Alfabético descendente"
+    ) {
+      list.sort((a, b) => b.name.localeCompare(a.name, "es"))
     } else if (sortBy === "Precio: menor a mayor") {
       list.sort((a, b) => a.price - b.price)
     } else if (sortBy === "Precio: mayor a menor") {
@@ -2219,7 +2235,7 @@ function Catalog({
         return daysB - daysA
       })
     } else {
-      list.sort((a, b) => b.name.localeCompare(a.name, "es"))
+      list.sort((a, b) => a.name.localeCompare(b.name, "es"))
     }
     return list
   }, [matchingPackages, sortBy])
@@ -2454,7 +2470,7 @@ function Catalog({
                 "Alfabético: Z a A (Descendente)",
                 "Alfabético: A a Z (Ascendente)",
               ]
-                .sort((a, b) => b.localeCompare(a, "es"))
+                .sort((a, b) => a.localeCompare(b, "es"))
                 .map((opt) => (
                   <option key={opt} value={opt}>
                     {opt}
@@ -2654,7 +2670,7 @@ function Detail({
               help="Paquete con salidas confirmadas: elige el intervalo deseado."
             >
               {[...pkg.availableDates]
-                .sort((a, b) => b.localeCompare(a, "es"))
+                .sort((a, b) => a.localeCompare(b, "es"))
                 .map((date) => (
                   <option key={date} value={date}>
                     {date}
@@ -2784,38 +2800,8 @@ function Detail({
 
 const steps = ["Carrito", "Información Personal", "Viajeros", "Pago", "Confirmación"]
 function Stepper({ current }: { current: number }) {
-  const progressPercent = Math.min(
-    100,
-    Math.max(0, (current / (steps.length - 1)) * 100)
-  )
-
   return (
     <div className="stepper-wrapper">
-      <div className="stepper-status-bar">
-        <span className="stepper-step-indicator">
-          <span className="stepper-indicator-dot" aria-hidden="true" />
-          Paso {current + 1} de {steps.length}:{" "}
-          <strong>{steps[current]}</strong>
-        </span>
-        <span className="stepper-percentage">
-          {Math.round(progressPercent)}% completado
-        </span>
-      </div>
-
-      <div
-        className="stepper-track-wrap"
-        role="progressbar"
-        aria-valuenow={Math.round(progressPercent)}
-        aria-valuemin={0}
-        aria-valuemax={100}
-      >
-        <div className="stepper-track-bg" />
-        <div
-          className="stepper-track-fill"
-          style={{ width: `${progressPercent}%` }}
-        />
-      </div>
-
       <nav className="stepper" aria-label="Progreso de la reserva">
         {steps.map((step, index) => {
           const isDone = index < current
@@ -3124,18 +3110,18 @@ function AuthCheckoutModal({
             <div
               className="inline-alert"
               style={{
-                background: "rgba(14, 116, 144, 0.08)",
-                borderLeftColor: "var(--pacific)",
                 margin: "0 0 16px 0",
-                padding: "12px 14px",
+                padding: "14px 16px",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span aria-hidden="true" style={{ color: "var(--pacific)", fontWeight: 700, fontSize: "16px" }}>
+                <span aria-hidden="true" style={{ fontSize: "16px" }}>
                   ⚠️
                 </span>
                 <span style={{ fontSize: "14px", color: "var(--abyss)", fontWeight: 600, lineHeight: 1.4 }}>
-                  Para continuar necesitas ingresar en una cuenta.
+                  {mode === "register"
+                    ? "Para continuar con tu compra, crea tu cuenta o ingresa si ya tienes una."
+                    : "Para continuar necesitas ingresar en una cuenta."}
                 </span>
               </div>
             </div>
@@ -3165,11 +3151,16 @@ function AuthCheckoutModal({
 
             {errorMsg && (
               <div
-                className="field__error"
+                className="inline-alert"
                 role="alert"
-                style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}
+                style={{ margin: "0 0 16px 0", padding: "12px 14px" }}
               >
-                <span aria-hidden="true">⚠️</span> {errorMsg}
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span aria-hidden="true">⚠️</span>
+                  <span style={{ fontSize: "14px", color: "var(--error)", fontWeight: 600 }}>
+                    {errorMsg}
+                  </span>
+                </div>
               </div>
             )}
 
@@ -3708,7 +3699,7 @@ function Identification({
   const availableCities = useMemo(() => {
     if (!province || !PROVINCES_DATA[province]) return []
     return [...PROVINCES_DATA[province].cities].sort((a, b) =>
-      b.localeCompare(a, "es")
+      a.localeCompare(b, "es")
     )
   }, [province])
 
@@ -3896,7 +3887,7 @@ function Identification({
             >
               <option value="">Selecciona tu provincia</option>
               {Object.keys(PROVINCES_DATA)
-                .sort((a, b) => b.localeCompare(a, "es"))
+                .sort((a, b) => a.localeCompare(b, "es"))
                 .map((prov) => (
                   <option key={prov} value={prov}>
                     {prov}
@@ -4463,16 +4454,16 @@ function Payment({
     }
 
     if (method === "transferencia") {
-      if (!voucherNumber.trim() && !file) {
+      if (!file) {
         setVoucherError(
-          "Ingresa el número de comprobante o adjunta tu archivo de transferencia."
+          "Debes adjuntar el comprobante de tu transferencia o depósito para continuar."
         )
         return
       }
       const finalPayment: PaymentDetails = {
         method: "transferencia",
-        bankVoucherNumber: voucherNumber.trim() || "76543210",
-        bankVoucherUploaded: file,
+        bankVoucherNumber: `TR-${Math.floor(10000000 + Math.random() * 90000000)}`,
+        bankVoucherUploaded: true,
       }
       onSavePaymentData(finalPayment)
       onConfirmReservation(bookingRefCode, finalPayment)
@@ -4710,20 +4701,6 @@ function Payment({
                 </div>
 
                 <div style={{ marginTop: "20px" }}>
-                  <Field
-                    label="Número de comprobante o referencia bancaria"
-                    placeholder="Ej. 76543210"
-                    value={voucherNumber}
-                    onChange={(val) => {
-                      setVoucherNumber(val)
-                      if (voucherError) setVoucherError("")
-                    }}
-                    error={voucherError}
-                    help="Ingresa el número de referencia de tu transferencia o depósito."
-                  />
-                </div>
-
-                <div style={{ marginTop: "16px" }}>
                   <span
                     className="field__label"
                     style={{
@@ -4732,7 +4709,7 @@ function Payment({
                       fontWeight: 700,
                     }}
                   >
-                    Adjuntar comprobante de pago (opcional si ingresas el número)
+                    Adjuntar comprobante de pago
                   </span>
                   <div className="upload-zone">
                     <span className="upload-icon" aria-hidden="true">
@@ -4743,11 +4720,23 @@ function Payment({
                     <Button
                       kind="secondary"
                       type="button"
-                      onClick={() => setFile(true)}
+                      onClick={() => {
+                        setFile(true)
+                        if (voucherError) setVoucherError("")
+                      }}
                     >
                       {file ? "Cambiar archivo" : "Seleccionar archivo"}
                     </Button>
                   </div>
+                  {voucherError && (
+                    <p
+                      className="field__error"
+                      role="alert"
+                      style={{ marginTop: "8px", display: "flex", alignItems: "center", gap: "6px" }}
+                    >
+                      <span aria-hidden="true">⚠️</span> {voucherError}
+                    </p>
+                  )}
                   {file && (
                     <div className="file-progress" role="status">
                       <div>
@@ -4925,7 +4914,7 @@ function Payment({
                           txt: `1 pago corriente ($${total})`,
                         },
                       ]
-                        .sort((a, b) => b.txt.localeCompare(a.txt, "es"))
+                        .sort((a, b) => a.txt.localeCompare(b.txt, "es"))
                         .map((opt) => (
                           <option key={opt.val} value={opt.val}>
                             {opt.txt}
@@ -4970,9 +4959,9 @@ function Payment({
               <p
                 className="field__error"
                 role="status"
-                style={{ marginTop: "-8px" }}
+                style={{ marginTop: "-8px", display: "flex", alignItems: "center", gap: "6px" }}
               >
-                ! Debes aceptar la política de cancelación y reembolsos para
+                <span aria-hidden="true">⚠️</span> Debes aceptar la política de cancelación y reembolsos para
                 continuar.
               </p>
             )}
@@ -5724,7 +5713,7 @@ const policyGroups = [
     icon: "×",
     items: [
       [
-        "No-show",
+        "No presentación",
         "No presentarse en el punto de encuentro a la hora del itinerario, con tolerancia exacta de 15 minutos.",
       ],
       [
@@ -5762,7 +5751,7 @@ const policyGroups = [
         "Certificado médico oficial del IESS o MSP ingresado hasta 24 horas antes de la salida.",
       ],
       [
-        "Downgrade no consensuado",
+        "Baja de categoría no consensuada",
         "Cambio grave a alojamiento de categoría inferior sin aviso ni compensación.",
       ],
     ],
@@ -5863,17 +5852,17 @@ function Policies({ go }: { go: (page: Page) => void }) {
 }
 
 const SUPPORT_REASONS = [
-  "No-show",
+  "No presentación",
   "Incumplimiento operativo",
   "Fuerza mayor restrictiva",
   "Fuerza mayor parcial o clima",
   "Falta de documentación",
   "Emergencia médica grave",
-  "Downgrade no consensuado",
+  "Baja de categoría no consensuada",
   "Cancelaciones tardías",
   "Cancelación voluntaria",
   "Abandono voluntario",
-].sort((a, b) => b.localeCompare(a, "es"))
+].sort((a, b) => a.localeCompare(b, "es"))
 
 function Support({
   go,
@@ -5886,7 +5875,7 @@ function Support({
     return purchases.length > 0 ? purchases[0].code : ""
   })
   const [manualBookingCode, setManualBookingCode] = useState("")
-  const [reason, setReason] = useState("Cancelación voluntaria")
+  const [reason, setReason] = useState(() => SUPPORT_REASONS[0])
   const [evidenceUploaded, setEvidenceUploaded] = useState(false)
   const [sent, setSent] = useState(false)
 
@@ -5942,7 +5931,7 @@ function Support({
               >
                 {purchases
                   .map((p) => p.code)
-                  .sort((a, b) => b.localeCompare(a, "es"))
+                  .sort((a, b) => a.localeCompare(b, "es"))
                   .map((code) => {
                     const purchase = purchases.find((p) => p.code === code)
                     const pkgNames =

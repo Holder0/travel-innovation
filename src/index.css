@@ -537,16 +537,16 @@ dd { margin: 0; }
   display: flex;
   flex-direction: column;
   gap: 6px;
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  border-left: 6px solid #f59e0b;
+  border: 1px solid var(--pacific);
+  border-left: 6px solid var(--coral);
   border-radius: var(--radius);
-  background: #fffbeb;
-  color: #78350f;
+  background: #ffffff;
+  color: var(--abyss);
   padding: 16px;
   margin-bottom: 18px;
 }
 .inline-alert strong, .important-note strong {
-  color: #92400e;
+  color: var(--abyss);
   font-weight: 700;
 }
 .inline-alert button { align-self: flex-start; border: 0; background: transparent; color: var(--pacific); text-decoration: underline; font-weight: 700; }
