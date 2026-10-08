@@ -407,6 +407,223 @@ export const PROVINCES_DATA: Record<
   },
 }
 
+// ==========================================
+// VALIDACIONES DE FORMULARIOS Y REGLAS DE NEGOCIO
+// ==========================================
+
+export function validateEcuadorianCedula(value: string): {
+  isValid: boolean
+  error?: string
+} {
+  const clean = value.replace(/\D/g, "")
+  if (!clean) {
+    return { isValid: false, error: "La cédula de identidad es requerida." }
+  }
+  if (clean.length < 10) {
+    return {
+      isValid: false,
+      error: `Faltan números: la cédula debe tener exactamente 10 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  if (clean.length > 10) {
+    return {
+      isValid: false,
+      error: `Están de más números: la cédula debe tener exactamente 10 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  if (/^(\d)\1{9}$/.test(clean)) {
+    return {
+      isValid: false,
+      error: "Cédula inválida: no se permiten números repetidos o ficticios.",
+    }
+  }
+  const prov = parseInt(clean.substring(0, 2), 10)
+  if ((prov < 1 || prov > 24) && prov !== 30) {
+    return {
+      isValid: false,
+      error: "Código de provincia no válido: los dos primeros dígitos deben estar entre 01 y 24.",
+    }
+  }
+  const third = parseInt(clean.charAt(2), 10)
+  if (third >= 6) {
+    return {
+      isValid: false,
+      error: "Tercer dígito no válido para cédula de persona natural.",
+    }
+  }
+  const coef = [2, 1, 2, 1, 2, 1, 2, 1, 2]
+  let sum = 0
+  for (let i = 0; i < 9; i++) {
+    let p = parseInt(clean.charAt(i), 10) * coef[i]
+    if (p >= 10) p -= 9
+    sum += p
+  }
+  const verifier = (10 - (sum % 10)) % 10
+  const lastDigit = parseInt(clean.charAt(9), 10)
+  if (verifier !== lastDigit) {
+    return {
+      isValid: false,
+      error: "Número de cédula inválido: el dígito verificador no coincide con una cédula ecuatoriana real.",
+    }
+  }
+  return { isValid: true }
+}
+
+export function validatePhoneNumber(value: string): {
+  isValid: boolean
+  error?: string
+} {
+  const clean = value.replace(/\D/g, "")
+  if (!clean) {
+    return { isValid: false, error: "El número de teléfono es requerido." }
+  }
+  if (clean.length < 10) {
+    return {
+      isValid: false,
+      error: `Faltan números: el número de teléfono debe tener exactamente 10 dígitos (ingresaste ${clean.length}, ej. 0991234567).`,
+    }
+  }
+  if (clean.length > 10) {
+    return {
+      isValid: false,
+      error: `Están de más números: el número de teléfono debe tener máximo 10 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  if (!clean.startsWith("0")) {
+    return {
+      isValid: false,
+      error: "Número de teléfono inválido: debe iniciar con 0 (ej. 09...).",
+    }
+  }
+  if (/^(\d)\1{9}$/.test(clean)) {
+    return {
+      isValid: false,
+      error: "Número de teléfono inválido: no se admiten números repetidos o ficticios.",
+    }
+  }
+  return { isValid: true }
+}
+
+export function validateCardNumber(value: string): {
+  isValid: boolean
+  error?: string
+} {
+  const clean = value.replace(/\D/g, "")
+  if (!clean) {
+    return { isValid: false, error: "Ingresa el número de tu tarjeta." }
+  }
+  if (clean.length < 16) {
+    return {
+      isValid: false,
+      error: `Faltan números: la tarjeta debe tener exactamente 16 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  if (clean.length > 16) {
+    return {
+      isValid: false,
+      error: `Están de más números: la tarjeta debe tener exactamente 16 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  if (/^(\d)\1{15}$/.test(clean)) {
+    return {
+      isValid: false,
+      error: "Tarjeta no válida: no se admiten números ficticios o repetidos (ej. 16 unos seguidos).",
+    }
+  }
+  let sum = 0
+  let shouldDouble = false
+  for (let i = clean.length - 1; i >= 0; i--) {
+    let digit = parseInt(clean.charAt(i), 10)
+    if (shouldDouble) {
+      digit *= 2
+      if (digit > 9) digit -= 9
+    }
+    sum += digit
+    shouldDouble = !shouldDouble
+  }
+  if (sum % 10 !== 0) {
+    return {
+      isValid: false,
+      error: "Número de tarjeta no válido: el algoritmo de verificación indica que no es una tarjeta real.",
+    }
+  }
+  return { isValid: true }
+}
+
+export function validateCardExpiry(value: string): {
+  isValid: boolean
+  error?: string
+} {
+  const trimmed = value.trim()
+  if (!trimmed) {
+    return { isValid: false, error: "Ingresa la fecha de vencimiento (MM/AA)." }
+  }
+  const parts = trimmed.split("/")
+  if (parts.length !== 2) {
+    return {
+      isValid: false,
+      error: "Formato inválido: la fecha debe ingresarse como MM/AA (ej. 12/28).",
+    }
+  }
+  const monthStr = parts[0].trim()
+  const yearStr = parts[1].trim()
+  if (monthStr.length < 2 || yearStr.length < 2) {
+    return {
+      isValid: false,
+      error: "Faltan números: debes ingresar 2 dígitos de mes y 2 de año (MM/AA).",
+    }
+  }
+  if (monthStr.length > 2 || yearStr.length > 2) {
+    return {
+      isValid: false,
+      error: "Están de más números: la fecha debe ser de 2 dígitos de mes y 2 de año (MM/AA).",
+    }
+  }
+  const month = parseInt(monthStr, 10)
+  const year = parseInt(yearStr, 10)
+  if (isNaN(month) || isNaN(year)) {
+    return { isValid: false, error: "La fecha debe contener únicamente números." }
+  }
+  if (month < 1 || month > 12) {
+    return {
+      isValid: false,
+      error: `Mes inválido (${monthStr}): no se pueden ingresar meses inventados (debe estar entre 01 y 12).`,
+    }
+  }
+  const curYearShort = 26
+  const curMonth = 10
+  if (year < curYearShort || (year === curYearShort && month < curMonth)) {
+    return { isValid: false, error: "Tarjeta vencida: la fecha de vencimiento ya expiró." }
+  }
+  if (year > curYearShort + 20) {
+    return { isValid: false, error: "Año de vencimiento demasiado lejano o incorrecto." }
+  }
+  return { isValid: true }
+}
+
+export function validateCardCvv(value: string): {
+  isValid: boolean
+  error?: string
+} {
+  const clean = value.replace(/\D/g, "")
+  if (!clean) {
+    return { isValid: false, error: "El código de seguridad (CVV) es requerido." }
+  }
+  if (clean.length < 3) {
+    return {
+      isValid: false,
+      error: `Faltan números: el código de seguridad (CVV) debe tener exactamente 3 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  if (clean.length > 3) {
+    return {
+      isValid: false,
+      error: `Están de más números: el código de seguridad debe tener exactamente 3 dígitos (ingresaste ${clean.length}).`,
+    }
+  }
+  return { isValid: true }
+}
+
 export interface PersonalInfo {
   fullName: string
   email: string
@@ -554,7 +771,7 @@ export function getStoredAccounts(): Record<string, UserAccountData> {
         fullName: "María Andrade",
         email: "maria@ejemplo.com",
         phone: "0991234567",
-        cedula: "1712345678",
+        cedula: "1712345675",
         province: "Pichincha",
         city: "Quito",
         mainStreet: "Av. Amazonas",
@@ -588,7 +805,7 @@ export function getStoredAccounts(): Record<string, UserAccountData> {
             name: "María Andrade",
             email: "maria@ejemplo.com",
             phone: "0991234567",
-            cedula: "1712345678",
+            cedula: "1712345675",
             address: "Av. Amazonas y Naciones Unidas, N34-120 · Quito, Pichincha",
           },
           travelers: [
@@ -598,7 +815,7 @@ export function getStoredAccounts(): Record<string, UserAccountData> {
               packageTitle: "Aventura en Baños",
               isTitular: true,
               fullName: "María Andrade",
-              cedula: "1712345678",
+              cedula: "1712345675",
               isMinor: false,
             },
             {
@@ -876,6 +1093,7 @@ function Field({
   id,
   required,
   autoFocus,
+  maxLength,
 }: {
   label: string
   type?: string
@@ -887,6 +1105,7 @@ function Field({
   id?: string
   required?: boolean
   autoFocus?: boolean
+  maxLength?: number
 }) {
   return (
     <label className="field" htmlFor={id}>
@@ -899,6 +1118,7 @@ function Field({
         value={value}
         required={required}
         autoFocus={autoFocus}
+        maxLength={maxLength}
         onChange={(event) => onChange?.(event.target.value)}
       />
       {help && <span className="field__help">{help}</span>}
@@ -1407,11 +1627,15 @@ function AuthModal({
       return
     }
     if (regPassword.length < 6) {
-      setErrorMsg("La contraseña debe tener al menos 6 caracteres.")
+      setErrorMsg(`Faltan caracteres: la contraseña debe tener al menos 6 caracteres (ingresaste ${regPassword.length}).`)
+      setRegPassword("")
+      setRegConfirmPassword("")
       return
     }
     if (regPassword !== regConfirmPassword) {
       setErrorMsg("Las contraseñas no concuerdan. Por favor verifica que sean iguales.")
+      setRegPassword("")
+      setRegConfirmPassword("")
       return
     }
 
@@ -4027,51 +4251,67 @@ function Identification({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    let hasError = false
     const nextErrors: typeof errors = {}
 
     if (!currentUser) {
-      if (!fullName.trim()) nextErrors.fullName = "El nombre es requerido."
+      if (!fullName.trim()) {
+        nextErrors.fullName = "El nombre es requerido."
+        hasError = true
+      }
       if (!email.trim()) {
         nextErrors.email = "El correo es requerido."
+        hasError = true
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
         nextErrors.email = "Ingresa un correo electrónico válido."
+        setEmail("")
+        hasError = true
       }
     }
 
-    if (!phone.trim()) {
-      nextErrors.phone = "El teléfono es requerido."
-    } else if (!/^[0-9+\s-]{9,15}$/.test(phone.trim())) {
-      nextErrors.phone = "Ingresa un número válido (mínimo 9 dígitos)."
+    // Phone validation
+    const phoneRes = validatePhoneNumber(phone)
+    if (!phoneRes.isValid) {
+      nextErrors.phone = phoneRes.error
+      setPhone("") // Se borra solo este campo errado
+      hasError = true
     }
 
-    if (!cedula.trim()) {
-      nextErrors.cedula = "La cédula es requerida."
-    } else if (!/^\d{10}$/.test(cedula.trim())) {
-      nextErrors.cedula = "La cédula debe tener exactamente 10 dígitos numéricos."
+    // Cédula validation
+    const cedulaRes = validateEcuadorianCedula(cedula)
+    if (!cedulaRes.isValid) {
+      nextErrors.cedula = cedulaRes.error
+      setCedula("") // Se borra solo este campo errado
+      hasError = true
     }
 
     if (!province.trim()) {
       nextErrors.province = "Selecciona una provincia."
+      hasError = true
     }
 
     if (!city.trim()) {
       nextErrors.city = "Selecciona una ciudad."
+      hasError = true
     }
 
     if (!mainStreet.trim()) {
       nextErrors.mainStreet = "Ingresa la calle principal."
+      hasError = true
     }
 
     if (!secondaryStreet.trim()) {
       nextErrors.secondaryStreet = "Ingresa la calle secundaria o intersección."
+      hasError = true
     }
 
     if (!reference.trim()) {
       nextErrors.reference = "Ingresa el número de inmueble o referencia."
+      hasError = true
     }
 
     setErrors(nextErrors)
-    if (Object.keys(nextErrors).length === 0) {
+    if (!hasError) {
       onSavePersonalInfo({
         fullName: fullName.trim() || currentUser?.name || "Titular",
         email: email.trim() || currentUser?.email || "",
@@ -4166,12 +4406,13 @@ function Identification({
               placeholder="Ej. 0991234567"
               value={phone}
               onChange={(val) => {
-                setPhone(val)
+                const clean = val.replace(/\D/g, "")
+                setPhone(clean)
                 if (errors.phone)
                   setErrors((prev) => ({ ...prev, phone: undefined }))
               }}
               error={errors.phone}
-              help="Para coordinación y avisos del viaje."
+              help="10 dígitos para coordinación y avisos del viaje."
               required
             />
 
@@ -4180,7 +4421,7 @@ function Identification({
               placeholder="10 dígitos numéricos"
               value={cedula}
               onChange={(val) => {
-                const clean = val.replace(/\D/g, "").slice(0, 10)
+                const clean = val.replace(/\D/g, "")
                 setCedula(clean)
                 if (errors.cedula)
                   setErrors((prev) => ({ ...prev, cedula: undefined }))
@@ -4547,27 +4788,57 @@ function Travelers({
 
   const handleContinue = (e: React.FormEvent) => {
     e.preventDefault()
+    let hasError = false
     const nextErrors: Record<
       string,
-      { fullName?: string; cedula?: string; birthDate?: string }
+      { fullName?: string; cedula?: string; birthDate?: string; phone?: string }
     > = {}
     const nextGroupErrors: Record<string, string> = {}
 
-    // Validar datos de cada viajero
-    travelers.forEach((t) => {
-      const errs: { fullName?: string; cedula?: string; birthDate?: string } = {}
+    // Validar datos de cada viajero y limpiar solo campos errados
+    const updatedTravelers = travelers.map((t) => {
+      const errs: {
+        fullName?: string
+        cedula?: string
+        birthDate?: string
+        phone?: string
+      } = {}
+      let modified = { ...t }
+
       if (!t.fullName.trim()) {
         errs.fullName = "El nombre completo es requerido."
+        hasError = true
       }
-      if (!t.cedula.trim()) {
-        errs.cedula = "El documento de identidad es requerido."
+
+      // Validar documento / cédula
+      const cedulaRes = validateEcuadorianCedula(t.cedula)
+      if (!cedulaRes.isValid) {
+        errs.cedula = cedulaRes.error
+        modified.cedula = "" // ¡Se borra solo este campo errado del viajero!
+        hasError = true
       }
+
+      // Validar teléfono del titular si fue ingresado
+      if (t.isTitular && t.phone) {
+        const phoneRes = validatePhoneNumber(t.phone)
+        if (!phoneRes.isValid) {
+          errs.phone = phoneRes.error
+          modified.phone = "" // ¡Se borra solo este campo errado!
+          hasError = true
+        }
+      }
+
       if (t.isMinor && !t.birthDate) {
-        errs.birthDate = "La fecha de nacimiento es requerida para menores de edad."
+        errs.birthDate =
+          "La fecha de nacimiento es requerida para menores de edad."
+        hasError = true
       }
+
       if (Object.keys(errs).length > 0) {
         nextErrors[t.id] = errs
       }
+
+      return modified
     })
 
     // Validar que cada paquete tenga un titular seleccionado
@@ -4582,19 +4853,20 @@ function Travelers({
       )
       if (!hasTitular) {
         nextGroupErrors[grp.id] = `Debes seleccionar a un titular para el paquete "${grp.name}".`
+        hasError = true
       }
     })
 
     setErrors(nextErrors)
     setGroupErrors(nextGroupErrors)
 
-    if (
-      Object.keys(nextErrors).length === 0 &&
-      Object.keys(nextGroupErrors).length === 0
-    ) {
-      onSaveTravelers(travelers)
-      go("pago")
+    if (hasError) {
+      setTravelers(updatedTravelers) // Limpia solo los campos con error
+      return
     }
+
+    onSaveTravelers(travelers)
+    go("pago")
   }
 
   const renderedGroups = useMemo(() => {
@@ -4793,7 +5065,8 @@ function Travelers({
                                   val
                                 )
                               }
-                              help="Para coordinación y avisos de logística."
+                              error={travelerErrors.phone}
+                              help="10 dígitos para coordinación y avisos de logística."
                             />
                             <Field
                               label="Correo electrónico"
@@ -4996,47 +5269,57 @@ function Payment({
       go("confirmacion")
     } else {
       // Card validation (Debito or Credito)
+      let hasError = false
       const nextErrs: typeof cardErrors = {}
-      const cleanNum = cardNumber.replace(/\s/g, "")
-      if (!cleanNum) {
-        nextErrs.cardNumber = "Ingresa el número de tu tarjeta."
-      } else if (cleanNum.length < 15) {
-        nextErrs.cardNumber = "El número de tarjeta debe tener 15 o 16 dígitos."
+
+      // Validar número de tarjeta (16 dígitos, Luhn y no repetidos)
+      const cardRes = validateCardNumber(cardNumber)
+      if (!cardRes.isValid) {
+        nextErrs.cardNumber = cardRes.error
+        setCardNumber("") // Borra solo este campo errado
+        hasError = true
       }
 
       if (!cardHolder.trim()) {
-        nextErrs.cardHolder = "Ingresa el nombre del titular de la tarjeta."
+        nextErrs.cardHolder = "Ingresa el nombre del titular tal como figura en la tarjeta."
+        hasError = true
       }
 
-      if (!cardExpiry.trim()) {
-        nextErrs.cardExpiry = "Ingresa la fecha (MM/AA)."
-      } else if (!/^\d{2}\/\d{2}$/.test(cardExpiry.trim())) {
-        nextErrs.cardExpiry = "Formato inválido (ej. 12/28)."
+      // Validar fecha de expiración (no meses inventados como 80/98)
+      const expiryRes = validateCardExpiry(cardExpiry)
+      if (!expiryRes.isValid) {
+        nextErrs.cardExpiry = expiryRes.error
+        setCardExpiry("") // Borra solo este campo errado
+        hasError = true
       }
 
-      if (!cardCvv.trim()) {
-        nextErrs.cardCvv = "Ingresa el CVV."
-      } else if (cardCvv.length < 3) {
-        nextErrs.cardCvv = "Mínimo 3 dígitos."
+      // Validar código de seguridad (CVV de solo 3 dígitos)
+      const cvvRes = validateCardCvv(cardCvv)
+      if (!cvvRes.isValid) {
+        nextErrs.cardCvv = cvvRes.error
+        setCardCvv("") // Borra solo este campo errado
+        hasError = true
       }
 
       setCardErrors(nextErrs)
-      if (Object.keys(nextErrs).length === 0) {
-        const finalPayment: PaymentDetails = {
-          method: method,
-          cardNumber,
-          cardHolder: cardHolder.trim(),
-          cardExpiry,
-          cardCvv,
-          installments:
-            method === "debito"
-              ? "1 pago directo (débito)"
-              : installments,
-        }
-        onSavePaymentData(finalPayment)
-        onConfirmReservation(bookingRefCode, finalPayment)
-        go("confirmacion")
+      if (hasError) {
+        return
       }
+
+      const finalPayment: PaymentDetails = {
+        method: method,
+        cardNumber,
+        cardHolder: cardHolder.trim(),
+        cardExpiry,
+        cardCvv,
+        installments:
+          method === "debito"
+            ? "1 pago directo (débito)"
+            : installments,
+      }
+      onSavePaymentData(finalPayment)
+      onConfirmReservation(bookingRefCode, finalPayment)
+      go("confirmacion")
     }
   }
 
@@ -5071,7 +5354,7 @@ function Payment({
               </div>
               <div>
                 <small>Cédula de identidad</small>
-                <strong>{personalInfo.cedula || "1712345678"}</strong>
+                <strong>{personalInfo.cedula || "1712345675"}</strong>
               </div>
               <div>
                 <small>Teléfono de contacto</small>
@@ -5343,9 +5626,8 @@ function Payment({
                     placeholder="1234 5678 9012 3456"
                     value={cardNumber}
                     onChange={(val) => {
-                      const formatted = val
-                        .replace(/\D/g, "")
-                        .slice(0, 16)
+                      const clean = val.replace(/\D/g, "")
+                      const formatted = clean
                         .replace(/(\d{4})/g, "$1 ")
                         .trim()
                       setCardNumber(formatted)
@@ -5384,31 +5666,32 @@ function Payment({
                     placeholder="MM/AA"
                     value={cardExpiry}
                     onChange={(val) => {
-                      let clean = val.replace(/\D/g, "").slice(0, 4)
-                      if (clean.length > 2)
+                      let clean = val.replace(/[^\d/]/g, "")
+                      if (!clean.includes("/") && clean.length > 2) {
                         clean = `${clean.slice(0, 2)}/${clean.slice(2)}`
+                      }
                       setCardExpiry(clean)
                       if (cardErrors.cardExpiry)
                         setCardErrors((p) => ({ ...p, cardExpiry: undefined }))
                     }}
                     error={cardErrors.cardExpiry}
-                    help="Mes y año (ej. 12/28)."
+                    help="Mes y año en formato MM/AA (mes de 01 a 12)."
                     required
                   />
 
                   <Field
                     label="Código de seguridad (CVV)"
-                    placeholder="3 o 4 dígitos"
+                    placeholder="3 dígitos"
                     type="password"
                     value={cardCvv}
                     onChange={(val) => {
-                      const clean = val.replace(/\D/g, "").slice(0, 4)
+                      const clean = val.replace(/\D/g, "")
                       setCardCvv(clean)
                       if (cardErrors.cardCvv)
                         setCardErrors((p) => ({ ...p, cardCvv: undefined }))
                     }}
                     error={cardErrors.cardCvv}
-                    help="3 dígitos al reverso (o 4 al frente si es Amex)."
+                    help="Exactamente 3 dígitos al reverso de tu tarjeta."
                     required
                   />
                 </div>
@@ -5704,7 +5987,7 @@ function Confirmation({
               </div>
               <div>
                 <small>Cédula de identidad</small>
-                <strong>{personalInfo.cedula || "1712345678"}</strong>
+                <strong>{personalInfo.cedula || "1712345675"}</strong>
               </div>
               <div>
                 <small>Teléfono de contacto</small>
@@ -6587,10 +6870,12 @@ const SUPPORT_REASONS = [
 function Support({
   go,
   purchases = [],
+  supportTickets = [],
   onTicketCreated,
 }: {
   go: (page: Page) => void
   purchases?: PurchaseItem[]
+  supportTickets?: SupportTicket[]
   onTicketCreated?: (ticket: SupportTicket) => void
 }) {
   const [selectedBookingCode, setSelectedBookingCode] = useState(() => {
@@ -6633,6 +6918,96 @@ function Support({
     setSent(true)
   }
 
+  // Si ya existe un ticket registrado y no se acaba de enviar en esta pantalla
+  if (supportTickets && supportTickets.length > 0 && !sent) {
+    const existingTicket = supportTickets[0]
+    return (
+      <>
+        <PageTitle
+          title="Soporte por ticket"
+          subtitle="Atención y seguimiento de solicitudes de servicio."
+        />
+        <div className="section" style={{ maxWidth: "780px", margin: "0 auto" }}>
+          <div className="inline-alert" style={{ marginBottom: "20px" }}>
+            ⚠️ <strong>Ya posees un ticket registrado en proceso</strong>: Actualmente tienes activo el ticket{" "}
+            <strong>{existingTicket.ticketNumber}</strong> correspondiente a la reserva{" "}
+            <strong>{existingTicket.bookingCode}</strong>. Por políticas de atención al cliente, únicamente se permite enviar y mantener un ticket activo a la vez para su revisión.
+          </div>
+
+          <article className="ticket-card">
+            <div className="ticket-header">
+              <div>
+                <span style={{ fontWeight: 800, fontSize: "1.15rem", color: "var(--pacific)" }}>
+                  {existingTicket.ticketNumber}
+                </span>
+                <span className="status status--pending" style={{ marginLeft: "10px" }}>
+                  ⏳ {existingTicket.status}
+                </span>
+                <span className="eyebrow" style={{ display: "block", marginTop: "4px" }}>
+                  Reserva: <strong>{existingTicket.bookingCode}</strong> · Enviado el {existingTicket.createdAt}
+                </span>
+              </div>
+              <div style={{ textAlign: "right" }}>
+                <span style={{ fontSize: "0.82rem", color: "#64748b", display: "block" }}>
+                  Respuesta estimada
+                </span>
+                <strong style={{ fontSize: "0.9rem", color: "var(--pacific)" }}>
+                  {existingTicket.responseEstimated || "24 a 48 horas hábiles"}
+                </strong>
+              </div>
+            </div>
+
+            <div
+              style={{
+                background: "var(--sand)",
+                padding: "14px 16px",
+                borderRadius: "8px",
+                border: "1px solid rgba(27,73,101,0.15)",
+                marginTop: "12px",
+              }}
+            >
+              <strong style={{ color: "var(--pacific)", display: "block", marginBottom: "4px" }}>
+                Motivo: {existingTicket.reason}
+              </strong>
+              <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--abyss)", lineHeight: 1.5 }}>
+                {existingTicket.description}
+              </p>
+            </div>
+
+            <div
+              style={{
+                paddingTop: "12px",
+                borderTop: "1px dashed rgba(27,73,101,0.2)",
+                marginTop: "14px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "10px",
+              }}
+            >
+              <span style={{ fontSize: "0.85rem", color: "#64748b" }}>
+                {existingTicket.evidenceUploaded ? "✓ Documentos de respaldo adjuntos" : "Sin archivos adjuntos"}
+              </span>
+              <span className="muted" style={{ fontSize: "0.82rem", fontStyle: "italic" }}>
+                🔒 Ticket en proceso de atención (no modificable)
+              </span>
+            </div>
+          </article>
+
+          <div style={{ display: "flex", gap: "12px", marginTop: "24px", justifyContent: "center", flexWrap: "wrap" }}>
+            <Button kind="primary" onClick={() => go("tickets")}>
+              Ver estado en Mis tickets
+            </Button>
+            <Button kind="secondary" onClick={() => go("reservas")}>
+              Volver a mis compras
+            </Button>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   if (sent)
     return (
       <>
@@ -6647,8 +7022,8 @@ function Support({
           <div className="important-note">
             <strong>Siguiente paso</strong>
             <p>
-              Revisaremos tus documentos y evidencias y responderemos por correo
-              en hasta 2 días hábiles. Puedes dar seguimiento al avance en la
+              Revisaremos tus documentos y responderemos por correo
+              en hasta 2 días hábiles. Recuerda que este ticket ya ha quedado registrado de manera definitiva y no admite modificaciones. Puedes dar seguimiento al avance en la
               sección <strong>Mis tickets</strong>.
             </p>
           </div>
@@ -6850,9 +7225,18 @@ function Tickets({
               Estado y respuestas actualizadas por el equipo de atención al viajero.
             </p>
           </div>
-          <Button kind="primary" onClick={() => go("soporte")}>
-            + Abrir nuevo ticket
-          </Button>
+          {tickets.length === 0 ? (
+            <Button kind="primary" onClick={() => go("soporte")}>
+              + Abrir ticket de soporte
+            </Button>
+          ) : (
+            <span
+              className="status status--pacific"
+              style={{ fontSize: "0.85rem", fontWeight: 700 }}
+            >
+              ✓ Límite de 1 ticket activo alcanzado
+            </span>
+          )}
         </div>
 
         {tickets.length === 0 ? (
@@ -7001,11 +7385,12 @@ function Tickets({
                         <>Sin archivos adjuntos</>
                       )}
                     </span>
-                    <div style={{ display: "flex", gap: "10px" }}>
-                      <Button kind="secondary" onClick={() => go("soporte")}>
-                        Agregar información
-                      </Button>
-                    </div>
+                    <span
+                      className="muted"
+                      style={{ fontSize: "0.82rem", fontStyle: "italic" }}
+                    >
+                      🔒 Ticket registrado (no modificable)
+                    </span>
                   </div>
                 </article>
               )
@@ -7131,20 +7516,7 @@ export default function App() {
     generateBookingCode()
   )
 
-  const [supportTickets, setSupportTickets] = useState<SupportTicket[]>([
-    {
-      id: "tk-seed-1",
-      ticketNumber: "TK-10428",
-      bookingCode: "TI-2026-8K3Q2M",
-      reason: "Reprogramación de fecha",
-      description:
-        "Solicitud de cambio de fecha para el paquete Galápagos Aventura por motivos laborales familiares.",
-      evidenceUploaded: true,
-      createdAt: "04 oct 2026",
-      status: "En revisión",
-      responseEstimated: "24 a 48 horas hábiles",
-    },
-  ])
+  const [supportTickets, setSupportTickets] = useState<SupportTicket[]>([])
 
   const handleCreateTicket = (ticket: SupportTicket) => {
     setSupportTickets((prev) => [ticket, ...prev])
@@ -7317,6 +7689,7 @@ export default function App() {
       reference: "",
     })
     setTravelersList([])
+    setSupportTickets([])
     setPaymentData({
       method: "credito",
       cardNumber: "",
@@ -7475,7 +7848,7 @@ export default function App() {
         name: personalInfo.fullName || currentUser?.name || "Titular de la reserva",
         email: personalInfo.email || currentUser?.email || "correo@ejemplo.com",
         phone: personalInfo.phone || "0991234567",
-        cedula: personalInfo.cedula || "1712345678",
+        cedula: personalInfo.cedula || "1712345675",
         address: personalInfo.mainStreet
           ? `${personalInfo.mainStreet} y ${personalInfo.secondaryStreet || ""}, ${personalInfo.city || ""} ${personalInfo.province || ""}`.trim()
           : "Quito, Pichincha",
@@ -7493,7 +7866,7 @@ export default function App() {
                   personalInfo.fullName ||
                   currentUser?.name ||
                   "Titular de la reserva",
-                cedula: personalInfo.cedula || "1712345678",
+                cedula: personalInfo.cedula || "1712345675",
                 isMinor: false,
               },
             ],
@@ -7661,6 +8034,7 @@ export default function App() {
           <Support
             go={go}
             purchases={purchases}
+            supportTickets={supportTickets}
             onTicketCreated={handleCreateTicket}
           />
         )

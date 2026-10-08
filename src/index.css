@@ -132,10 +132,8 @@ details[open] > summary .summary-caret {
 .field select:disabled { opacity: 0.6; cursor: not-allowed; background: #e0e7ec; }
 .field textarea { resize: vertical; min-height: 90px; height: auto; }
 .field input[aria-invalid="true"] { border: 2px solid var(--error); }
-.field__help { font-size: 14px; }
-.field__error { color: var(--error); font-weight: 600; font-size: 14px; }
-.field__error span { display: inline-grid; width: 20px; height: 20px; place-items: center; border-radius: 50%; color: var(--breeze); background: var(--error); }
-.search-panel .field { margin: 0; }
+.field__error { color: var(--error); font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+.field__error span { display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
 .search-panel .button { min-height: 52px; height: 52px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 24px; }
 .section-heading h2 { margin: 5px 0 0; }
@@ -573,7 +571,7 @@ dd { margin: 0; }
 .file-progress { margin-top: 16px; }
 .file-progress > div { display: flex; justify-content: space-between; }
 .progress { height: 12px; border: 1px solid var(--pacific); background: var(--breeze); border-radius: 999px; overflow: hidden; margin: 8px 0; }
-.progress span { width: 100%; background: var(--success); }
+.progress span { display: block; height: 100%; width: 100%; background: var(--pacific); }
 .package-travelers-group {
   margin-bottom: 24px;
   border: 1px solid var(--pacific);
