@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
+import logoBadge from "./assets/logo-badge.png"
 
 type Page =
   | "inicio"
@@ -2006,7 +2007,7 @@ function Header({
             aria-label="Ir a inicio - Travel Innovation"
           >
             <img
-              src="/logo-badge.png"
+              src={logoBadge}
               alt="Logo Travel Innovation"
               className="wordmark__logo"
               width="38"
@@ -2220,8 +2221,6 @@ function Header({
           </div>
         </nav>
       </header>
-      {/* Espacio reservado bajo la cabecera (conserva el espacio sin mostrar la sección Inicio) */}
-      <div className="header-spacer" aria-hidden="true" />
 
       {/* Modal de Mi Perfil */}
       {isProfileModalOpen && currentUser && (
@@ -2349,7 +2348,7 @@ function Footer({ go }: { go: (page: Page) => void }) {
       <div>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
           <img
-            src="/logo-badge.png"
+            src={logoBadge}
             alt="Logo Travel Innovation"
             width="32"
             height="32"
@@ -4504,7 +4503,7 @@ function Identification({
               <option value="">
                 {province
                   ? "Selecciona tu ciudad"
-                  : "Selecciona primero una provincia"}
+                  : "Elige provincia primero"}
               </option>
               {availableCities.map((c) => (
                 <option key={c} value={c}>
