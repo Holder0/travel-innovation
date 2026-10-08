@@ -734,10 +734,10 @@ dd { margin: 0; }
 .form-stack .form-panel { margin: 0; }
 .panel-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
 .data-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.status { display: inline-flex; align-items: center; gap: 5px; border: 1px solid currentColor; border-radius: 999px; padding: 4px 9px; font-size: 14px; font-weight: 700; white-space: nowrap; }
-.status--success { color: var(--success); }
-.status--error { color: var(--error); }
-.status--pending { color: var(--pacific); }
+.status { display: inline-flex; align-items: center; gap: 5px; border: 1px solid currentColor; border-radius: 999px; padding: 4px 10px; font-size: 13.5px; font-weight: 700; white-space: nowrap; }
+.status--success { color: var(--success); border-color: var(--success); background: #eafaf1; }
+.status--error { color: var(--error); border-color: var(--error); background: #fef2f2; }
+.status--pending { color: #b45309; border-color: #f59e0b; background: #fef3c7; }
 .status--pacific { color: var(--pacific); border-color: var(--pacific); background: rgba(27, 73, 101, 0.08); }
 .bank-data > div { min-height: 66px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--pacific); }
 .bank-data span { display: flex; flex-direction: column; }

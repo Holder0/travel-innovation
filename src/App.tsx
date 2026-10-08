@@ -668,7 +668,7 @@ export interface PurchaseItem {
   id: string
   code: string
   createdAt: string
-  status: "En verificación" | "Confirmada" | "Reprogramada" | "Cancelada"
+  status: "En verificación" | "Compra realizada" | "Confirmada" | "Reprogramada" | "Cancelada"
   packages: Array<{
     id: string
     name: string
@@ -685,6 +685,8 @@ export interface PurchaseItem {
   paymentMethodLabel: string
   installments?: string
   voucherNumber?: string
+  voucherUploaded?: boolean
+  voucherFileName?: string
   cardLast4?: string
   titular: {
     name: string
@@ -801,7 +803,8 @@ export function getStoredAccounts(): Record<string, UserAccountData> {
           total: 378,
           paymentMethod: "transferencia",
           paymentMethodLabel: "Transferencia bancaria",
-          voucherNumber: "76543210",
+          voucherNumber: "",
+          voucherUploaded: false,
           titular: {
             name: "María Andrade",
             email: "maria@ejemplo.com",
@@ -5359,6 +5362,7 @@ function Payment({
           method === "debito"
             ? "1 pago directo (débito)"
             : installments,
+        bankVoucherUploaded: true,
       }
       onSavePaymentData(finalPayment)
       onConfirmReservation(bookingRefCode, finalPayment)
@@ -5936,28 +5940,24 @@ function Confirmation({
         </span>
         <span
           className={`status ${
-            !isTransfer
+            !isTransfer || paymentData.bankVoucherUploaded
               ? "status--success"
-              : paymentData.bankVoucherUploaded
-              ? "status--pending"
-              : "status--pacific"
+              : "status--pending"
           }`}
         >
-          {!isTransfer
-            ? "✓ Pago confirmado · Reserva activa"
-            : paymentData.bankVoucherUploaded
-            ? "◷ Pago en verificación (Comprobante registrado)"
-            : "⏳ Cupos reservados · Pendiente de pago (Plazo: 24 horas)"}
+          {!isTransfer || paymentData.bankVoucherUploaded
+            ? "✓ Compra realizada · Reserva activa"
+            : "◷ En verificación · Comprobante pendiente (Plazo: 24 horas)"}
         </span>
         <h1>
-          {!isTransfer
-            ? "¡Tu reserva ha sido confirmada con éxito!"
-            : paymentData.bankVoucherUploaded
-            ? "¡Recibimos tu comprobante de reserva!"
-            : "¡Tus cupos han sido reservados con éxito!"}
+          {!isTransfer || paymentData.bankVoucherUploaded
+            ? "¡Compra realizada con éxito!"
+            : "¡Reserva en verificación! Plazo de 24 horas para comprobante"}
         </h1>
         <p>
-          Hemos registrado tu reserva y enviado el itinerario con la confirmación oficial a{" "}
+          {!isTransfer || paymentData.bankVoucherUploaded
+            ? "Hemos registrado tu compra y enviado el itinerario con la confirmación oficial a "
+            : "Tus cupos se encuentran reservados. Para que tu estado cambie a Compra realizada, por favor adjunta tu comprobante desde la sección Mis compras durante las próximas 24 horas. Hemos enviado las instrucciones a "}
           <strong>
             {personalInfo.email || currentUser?.email || "tu correo electrónico"}
           </strong>
@@ -6314,7 +6314,9 @@ function Confirmation({
             Descargar comprobante en PDF
           </Button>
           <Button kind="secondary" onClick={() => go("reservas")}>
-            Ver mi reserva
+            {!isTransfer || paymentData.bankVoucherUploaded
+              ? "Ver mi compra"
+              : "Ir a Mis compras (adjuntar comprobante)"}
           </Button>
           <Button kind="quiet" onClick={() => go("inicio")}>
             Volver al inicio
@@ -6325,7 +6327,9 @@ function Confirmation({
       {purchaseToast && (
         <div className="toast" role="status">
           <span>
-            🎉 ¡Compra realizada y confirmada con éxito! Bienvenido a tu viaje con Travel Innovation{currentUser?.name ? `, ${currentUser.name.split(" ")[0]}` : ""}.
+            {!isTransfer || paymentData.bankVoucherUploaded
+              ? `🎉 ¡Compra realizada con éxito! Bienvenido a tu viaje con Travel Innovation${currentUser?.name ? `, ${currentUser.name.split(" ")[0]}` : ""}.`
+              : `⏳ ¡Reserva en verificación! Tienes 24 horas para adjuntar tu comprobante de pago desde "Mis compras".`}
           </span>
           <button onClick={() => setPurchaseToast(false)}>Cerrar</button>
         </div>
@@ -6345,16 +6349,34 @@ function Reservations({
   purchases = [],
   currentUser = null,
   supportTickets = [],
+  onAttachVoucher,
 }: {
   go: (page: Page) => void
   purchases?: PurchaseItem[]
   currentUser?: { name: string; email: string } | null
   supportTickets?: SupportTicket[]
+  onAttachVoucher?: (
+    purchaseId: string,
+    voucherNumber?: string,
+    fileName?: string
+  ) => void
 }) {
   const [activePurchaseId, setActivePurchaseId] = useState<string>(
     purchases[0]?.id || ""
   )
   const [downloadToast, setDownloadToast] = useState(false)
+  const [voucherSuccessToast, setVoucherSuccessToast] = useState("")
+  const [voucherRefInput, setVoucherRefInput] = useState("")
+  const [voucherFileReady, setVoucherFileReady] = useState(false)
+  const [uploadedFileName, setUploadedFileName] = useState("")
+  const [isUploading, setIsUploading] = useState(false)
+
+  // Reset voucher form when switching purchase
+  useEffect(() => {
+    setVoucherRefInput("")
+    setVoucherFileReady(false)
+    setUploadedFileName("")
+  }, [activePurchaseId])
 
   // Keep activePurchaseId updated if purchases list changes
   useEffect(() => {
@@ -6368,6 +6390,26 @@ function Reservations({
 
   const activePurchase =
     purchases.find((p) => p.id === activePurchaseId) || purchases[0]
+
+  const handleConfirmVoucherUpload = () => {
+    if (!voucherFileReady || !activePurchase) return
+    setIsUploading(true)
+    setTimeout(() => {
+      setIsUploading(false)
+      const refNum =
+        voucherRefInput.trim() ||
+        `TR-${Math.floor(10000000 + Math.random() * 90000000)}`
+      const fName = uploadedFileName || "comprobante-transferencia.pdf"
+      onAttachVoucher?.(activePurchase.id, refNum, fName)
+      setVoucherSuccessToast(
+        `✓ ¡Comprobante adjuntado con éxito! Tu pedido #${activePurchase.code} ahora tiene el estado: Compra realizada.`
+      )
+      setVoucherFileReady(false)
+      setUploadedFileName("")
+      setVoucherRefInput("")
+      setTimeout(() => setVoucherSuccessToast(""), 5000)
+    }, 600)
+  }
 
   const hasTicketForThisPurchase = supportTickets.find(
     (t) =>
@@ -6425,7 +6467,8 @@ function Reservations({
             {purchases.map((item) => {
               const isSelected = item.id === (activePurchase?.id || "")
               const pkgTitle = item.packages.map((p) => p.name).join(", ")
-              const isSuccess = item.status === "Confirmada"
+              const isSuccess =
+                item.status === "Compra realizada" || item.status === "Confirmada"
               const isPending = item.status === "En verificación"
               return (
                 <button
@@ -6457,7 +6500,7 @@ function Reservations({
                     }`}
                   >
                     {isSuccess ? "✓ " : isPending ? "◷ " : ""}
-                    {item.status}
+                    {isSuccess ? "Compra realizada" : item.status}
                   </span>
                 </button>
               )
@@ -6475,6 +6518,7 @@ function Reservations({
                 </div>
                 <span
                   className={`status status--${
+                    activePurchase.status === "Compra realizada" ||
                     activePurchase.status === "Confirmada"
                       ? "success"
                       : activePurchase.status === "En verificación"
@@ -6482,10 +6526,268 @@ function Reservations({
                       : "error"
                   }`}
                 >
-                  {activePurchase.status === "Confirmada" ? "✓ " : "◷ "}
-                  {activePurchase.status}
+                  {activePurchase.status === "Compra realizada" ||
+                  activePurchase.status === "Confirmada"
+                    ? "✓ "
+                    : "◷ "}
+                  {activePurchase.status === "Confirmada"
+                    ? "Compra realizada"
+                    : activePurchase.status}
                 </span>
               </div>
+
+              {/* Banner de compra verificada con comprobante */}
+              {(activePurchase.status === "Compra realizada" ||
+                activePurchase.status === "Confirmada") &&
+                activePurchase.paymentMethod === "transferencia" &&
+                activePurchase.voucherNumber && (
+                  <div
+                    style={{
+                      margin: "18px 0 6px",
+                      padding: "14px 18px",
+                      borderRadius: "var(--radius)",
+                      background: "#eafaf1",
+                      border: "1px solid var(--success)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      fontSize: "14px",
+                      color: "var(--abyss)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "var(--success)",
+                        fontWeight: 700,
+                        fontSize: "18px",
+                      }}
+                    >
+                      ✓
+                    </span>
+                    <div>
+                      <strong>Comprobante verificado con éxito:</strong> #{activePurchase.voucherNumber}{" "}
+                      {activePurchase.voucherFileName
+                        ? `(${activePurchase.voucherFileName})`
+                        : ""} · Tu pedido está validado como <strong>Compra realizada</strong>.
+                    </div>
+                  </div>
+                )}
+
+              {/* Panel para adjuntar comprobante si la reserva está en verificación */}
+              {activePurchase.status === "En verificación" && (
+                <div
+                  className="pending-voucher-card"
+                  style={{
+                    margin: "20px 0",
+                    padding: "20px",
+                    borderRadius: "var(--radius)",
+                    background: "#fffaf0",
+                    border: "1.5px solid #f59e0b",
+                    boxShadow: "0 4px 16px rgba(245, 158, 11, 0.12)",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "14px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "44px",
+                        height: "44px",
+                        borderRadius: "50%",
+                        background: "#fef3c7",
+                        display: "grid",
+                        placeItems: "center",
+                        fontSize: "22px",
+                        flexShrink: 0,
+                      }}
+                      aria-hidden="true"
+                    >
+                      ⚠️
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          flexWrap: "wrap",
+                          gap: "8px",
+                        }}
+                      >
+                        <h3
+                          style={{
+                            margin: 0,
+                            fontSize: "17px",
+                            color: "var(--abyss)",
+                          }}
+                        >
+                          Comprobante de pago pendiente de adjuntar
+                        </h3>
+                        <span
+                          className="status status--pending"
+                          style={{ fontSize: "12px" }}
+                        >
+                          ⏳ Plazo restante: 24 horas
+                        </span>
+                      </div>
+                      <p
+                        style={{
+                          margin: "6px 0 0",
+                          fontSize: "14px",
+                          color: "#475569",
+                        }}
+                      >
+                        Esta compra fue reservada por <strong>Transferencia bancaria</strong> por un monto de <strong>${activePurchase.total},00</strong>. Adjunta el comprobante de transferencia bancaria de este pedido para validar tu pago y cambiar el estado a <strong>Compra realizada</strong>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    style={{
+                      background: "#ffffff",
+                      padding: "16px",
+                      borderRadius: "var(--radius)",
+                      border: "1px solid rgba(27, 73, 101, 0.18)",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "14px",
+                    }}
+                  >
+                    <div
+                      className="two-col"
+                      style={{ gap: "14px", alignItems: "start" }}
+                    >
+                      <Field
+                        label="Nº de comprobante o referencia bancaria"
+                        placeholder="Ej: TRF-849204 o 76543210"
+                        value={voucherRefInput}
+                        onChange={(val) => setVoucherRefInput(val)}
+                        help="Código de transacción bancaria emitido por tu banco."
+                      />
+                      <div>
+                        <label
+                          className="field__label"
+                          style={{
+                            display: "block",
+                            marginBottom: "6px",
+                            fontWeight: 700,
+                          }}
+                        >
+                          Archivo del comprobante
+                        </label>
+                        <input
+                          type="file"
+                          id={`voucher-upload-file-${activePurchase.id}`}
+                          style={{ display: "none" }}
+                          accept=".pdf,image/png,image/jpeg"
+                          onChange={(e) => {
+                            if (e.target.files && e.target.files[0]) {
+                              setUploadedFileName(e.target.files[0].name)
+                              setVoucherFileReady(true)
+                            }
+                          }}
+                        />
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "center",
+                            flexWrap: "wrap",
+                          }}
+                        >
+                          <Button
+                            kind="secondary"
+                            type="button"
+                            onClick={() => {
+                              const inputEl = document.getElementById(
+                                `voucher-upload-file-${activePurchase.id}`
+                              ) as HTMLInputElement
+                              if (inputEl) inputEl.click()
+                              else {
+                                setUploadedFileName("comprobante-transferencia.pdf")
+                                setVoucherFileReady(true)
+                              }
+                            }}
+                          >
+                            {voucherFileReady
+                              ? "Cambiar archivo"
+                              : "Seleccionar archivo (PDF / JPG / PNG)"}
+                          </Button>
+                          {!voucherFileReady && (
+                            <Button
+                              kind="quiet"
+                              type="button"
+                              onClick={() => {
+                                setUploadedFileName(
+                                  "comprobante_banco_pichincha.pdf"
+                                )
+                                setVoucherFileReady(true)
+                                if (!voucherRefInput) {
+                                  setVoucherRefInput(
+                                    `TR-${Math.floor(
+                                      10000000 + Math.random() * 90000000
+                                    )}`
+                                  )
+                                }
+                              }}
+                              style={{ fontSize: "13px" }}
+                            >
+                              Simular comprobante de prueba
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {voucherFileReady && (
+                      <div
+                        className="file-progress"
+                        role="status"
+                        style={{ margin: "4px 0" }}
+                      >
+                        <div>
+                          <span>
+                            📄 {uploadedFileName || "comprobante-transferencia.pdf"}
+                          </span>
+                          <strong>100%</strong>
+                        </div>
+                        <div className="progress">
+                          <span style={{ width: "100%" }} />
+                        </div>
+                        <span className="status status--pacific">
+                          ✓ Documento listo para registrar
+                        </span>
+                      </div>
+                    )}
+
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        alignItems: "center",
+                        gap: "12px",
+                        marginTop: "4px",
+                      }}
+                    >
+                      <Button
+                        kind="primary"
+                        type="button"
+                        disabled={!voucherFileReady || isUploading}
+                        onClick={handleConfirmVoucherUpload}
+                      >
+                        {isUploading
+                          ? "Registrando comprobante..."
+                          : "Adjuntar comprobante y validar compra"}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Paquetes incluidos y viajeros registrados agrupados por paquete */}
               <div style={{ margin: "20px 0" }}>
@@ -6723,10 +7025,19 @@ function Reservations({
                       <strong>Tarjeta:</strong> •••• {activePurchase.cardLast4}
                     </p>
                   )}
-                  {activePurchase.voucherNumber && (
+                  {activePurchase.paymentMethod === "transferencia" && (
                     <p>
-                      <strong>Comprobante:</strong> #
-                      {activePurchase.voucherNumber}
+                      <strong>Comprobante bancario:</strong>{" "}
+                      {activePurchase.status === "Compra realizada" ||
+                      activePurchase.status === "Confirmada" ? (
+                        <span style={{ color: "var(--success)", fontWeight: 700 }}>
+                          #{activePurchase.voucherNumber || "TR-76543210"} (✓ Adjuntado y validado)
+                        </span>
+                      ) : (
+                        <span style={{ color: "#b45309", fontWeight: 700 }}>
+                          Pendiente de adjuntar (Plazo de 24 horas)
+                        </span>
+                      )}
                     </p>
                   )}
                   <p>
@@ -6785,6 +7096,12 @@ function Reservations({
             exitosamente.
           </span>
           <button onClick={() => setDownloadToast(false)}>Cerrar</button>
+        </div>
+      )}
+      {voucherSuccessToast && (
+        <div className="toast" role="status">
+          <span>{voucherSuccessToast}</span>
+          <button onClick={() => setVoucherSuccessToast("")}>Cerrar</button>
         </div>
       )}
     </>
@@ -8214,9 +8531,9 @@ export default function App() {
       createdAt: formattedDate,
       status: isTransfer
         ? finalPayment.bankVoucherUploaded
-          ? "En verificación"
-          : "Pendiente de pago (plazo 24h)"
-        : "Confirmada",
+          ? "Compra realizada"
+          : "En verificación"
+        : "Compra realizada",
       packages: cartItems.map((item) => ({
         id: item.pkg.id,
         name: item.pkg.name,
@@ -8233,6 +8550,13 @@ export default function App() {
       paymentMethodLabel: methodLabel,
       installments: finalPayment.installments,
       voucherNumber: finalPayment.bankVoucherNumber,
+      voucherUploaded: isTransfer
+        ? Boolean(finalPayment.bankVoucherUploaded)
+        : true,
+      voucherFileName:
+        isTransfer && finalPayment.bankVoucherUploaded
+          ? "comprobante-transferencia.pdf"
+          : undefined,
       cardLast4: cardLast4,
       titular: {
         name: personalInfo.fullName || currentUser?.name || "Titular de la reserva",
@@ -8271,6 +8595,21 @@ export default function App() {
     setPurchases((prev) => [newPurchase, ...prev])
     setCartItems([])
 
+    if (currentUser) {
+      const emailKey = currentUser.email.toLowerCase().trim()
+      const currentAccounts = getStoredAccounts()
+      const userAcc = currentAccounts[emailKey] || { cart: [], purchases: [] }
+      const updatedAccounts = {
+        ...currentAccounts,
+        [emailKey]: {
+          ...userAcc,
+          cart: [],
+          purchases: [newPurchase, ...(userAcc.purchases || [])],
+        },
+      }
+      saveStoredAccounts(updatedAccounts)
+    }
+
     // Requirement 2: Reset travelers and payment data so subsequent purchases start blank
     setTravelersList([])
     setPaymentData({
@@ -8283,6 +8622,58 @@ export default function App() {
       bankVoucherNumber: "",
       bankVoucherUploaded: false,
     })
+  }
+
+  const handleAttachVoucher = (
+    purchaseId: string,
+    voucherNumber?: string,
+    fileName?: string
+  ) => {
+    const updated = purchases.map((p) => {
+      if (p.id === purchaseId) {
+        return {
+          ...p,
+          status: "Compra realizada" as const,
+          voucherNumber:
+            voucherNumber ||
+            p.voucherNumber ||
+            `TR-${Math.floor(10000000 + Math.random() * 90000000)}`,
+          voucherUploaded: true,
+          voucherFileName: fileName || "comprobante-transferencia.pdf",
+        }
+      }
+      return p
+    })
+    setPurchases(updated)
+
+    if (currentUser) {
+      const emailKey = currentUser.email.toLowerCase().trim()
+      const currentAccounts = getStoredAccounts()
+      const userAcc = currentAccounts[emailKey] || { cart: [], purchases: [] }
+      const updatedUserPurchases = (userAcc.purchases || []).map((p) => {
+        if (p.id === purchaseId) {
+          return {
+            ...p,
+            status: "Compra realizada" as const,
+            voucherNumber:
+              voucherNumber ||
+              p.voucherNumber ||
+              `TR-${Math.floor(10000000 + Math.random() * 90000000)}`,
+            voucherUploaded: true,
+            voucherFileName: fileName || "comprobante-transferencia.pdf",
+          }
+        }
+        return p
+      })
+      const updatedAccounts = {
+        ...currentAccounts,
+        [emailKey]: {
+          ...userAcc,
+          purchases: updatedUserPurchases,
+        },
+      }
+      saveStoredAccounts(updatedAccounts)
+    }
   }
 
   const content = useMemo(() => {
@@ -8416,6 +8807,7 @@ export default function App() {
             purchases={purchases}
             currentUser={currentUser}
             supportTickets={supportTickets}
+            onAttachVoucher={handleAttachVoucher}
           />
         )
       case "politicas":
