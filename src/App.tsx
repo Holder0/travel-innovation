@@ -1708,19 +1708,8 @@ function Header({
           </div>
         </nav>
       </header>
-      <nav className="breadcrumb" aria-label="Migas de pan">
-        <button onClick={() => go("inicio")}>Inicio</button>
-        {page !== "inicio" && (
-          <>
-            <span aria-hidden="true">/</span>
-            <span aria-current="page">
-              {page === "detalle"
-                ? (currentPackageName || pageNames[page])
-                : pageNames[page]}
-            </span>
-          </>
-        )}
-      </nav>
+      {/* Espacio reservado bajo la cabecera (conserva el espacio sin mostrar la sección Inicio) */}
+      <div className="header-spacer" aria-hidden="true" />
 
       {/* Modal de Mi Perfil */}
       {isProfileModalOpen && currentUser && (

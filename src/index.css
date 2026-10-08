@@ -104,6 +104,7 @@ details[open] > summary .summary-caret {
 .cart-link { display: inline-flex; min-height: 48px; min-width: 48px; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--breeze); border-radius: var(--radius); background: transparent; color: inherit; padding: 0 14px; font-weight: 700; cursor: pointer; transition: background .15s; }
 .cart-link:hover { background: rgba(244, 248, 250, 0.14); }
 .badge { display: inline-grid; min-width: 22px; height: 22px; padding: 0 5px; place-items: center; border-radius: 999px; background: var(--coral); color: #ffffff; font-size: 12px; font-weight: 700; }
+.header-spacer { height: 44px; width: 100%; }
 .breadcrumb { min-height: 44px; max-width: 1240px; margin: auto; padding: 8px 24px; display: flex; align-items: center; gap: 10px; font-size: 14px; }
 .breadcrumb button, .text-link { border: 0; padding: 0; background: transparent; color: var(--pacific); text-decoration: underline; font-weight: 700; }
 .button { min-height: 48px; border-radius: var(--radius); padding: 10px 18px; border: 2px solid transparent; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
