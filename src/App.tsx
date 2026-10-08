@@ -2493,7 +2493,7 @@ function Home({
             value={selectedProvince}
             onChange={handleProvinceChange}
           >
-            <option value="">Todas las provincias</option>
+            <option value="">Provincias ({availableProvinces.length})</option>
             {availableProvinces.map((prov) => (
               <option key={prov} value={prov}>
                 {prov}
@@ -2506,11 +2506,7 @@ function Home({
             value={selectedCity}
             onChange={handleCityChange}
           >
-            <option value="">
-              {selectedProvince
-                ? `Todas las ciudades de ${selectedProvince}`
-                : "Todas las ciudades"}
-            </option>
+            <option value="">Ciudades ({availableCities.length})</option>
             {availableCities.map((city) => (
               <option key={city} value={city}>
                 {city}
@@ -2621,6 +2617,13 @@ export const DEFAULT_CATALOG_FILTERS: CatalogFilterState = {
   sortBy: "Alfabético: A a Z (Ascendente)",
   currentPage: 1,
 }
+
+export const ECUADOR_REGIONS = [
+  "Sierra",
+  "Galápagos",
+  "Costa",
+  "Amazonía",
+] as const
 
 function Catalog({
   go,
@@ -2786,6 +2789,26 @@ function Catalog({
           <div className="filter-section">
             <span className="filter-section-title">Destino</span>
             <SelectField
+              label="Región"
+              value={selectedRegion}
+              onChange={(reg) => {
+                update({
+                  region: reg,
+                  province: "",
+                  city: "",
+                  currentPage: 1,
+                })
+              }}
+            >
+              <option value="">Regiones ({ECUADOR_REGIONS.length})</option>
+              {ECUADOR_REGIONS.map((reg) => (
+                <option key={reg} value={reg}>
+                  {reg}
+                </option>
+              ))}
+            </SelectField>
+
+            <SelectField
               label="Provincia"
               value={selectedProvince}
               onChange={(prov) => {
@@ -2803,11 +2826,7 @@ function Catalog({
                 })
               }}
             >
-              <option value="">
-                {selectedRegion
-                  ? `Todas las provincias de ${selectedRegion === "Sierra" ? "la Sierra" : selectedRegion === "Amazonía" ? "la Amazonía" : selectedRegion === "Costa" ? "la Costa" : selectedRegion}`
-                  : "Todas las provincias"}
-              </option>
+              <option value="">Provincias ({availableProvinces.length})</option>
               {availableProvinces.map((prov) => (
                 <option key={prov} value={prov}>
                   {prov}
@@ -2820,11 +2839,7 @@ function Catalog({
               value={selectedCity}
               onChange={(city) => update({ city, currentPage: 1 })}
             >
-              <option value="">
-                {selectedProvince
-                  ? `Todas las ciudades de ${selectedProvince}`
-                  : "Todas las ciudades"}
-              </option>
+              <option value="">Ciudades ({availableCities.length})</option>
               {availableCities.map((city) => (
                 <option key={city} value={city}>
                   {city}
@@ -4995,21 +5010,32 @@ function Travelers({
                           className="two-col"
                           style={{ marginBottom: "14px" }}
                         >
-                          <SelectField
-                            label="Rol en la reserva"
-                            value={traveler.isTitular ? "titular" : "acompanante"}
-                            onChange={(val) =>
-                              handleRoleChange(
-                                traveler.id,
-                                group.id,
-                                val as "titular" | "acompanante"
-                              )
-                            }
-                            help="Define si esta persona es el titular responsable de este paquete o un acompañante."
-                          >
-                            <option value="titular">Titular de la reserva</option>
-                            <option value="acompanante">Acompañante</option>
-                          </SelectField>
+                          {group.travelers.length === 1 ? (
+                            <SelectField
+                              label="Rol en la reserva"
+                              value="titular"
+                              disabled={true}
+                              help="Al ser el único pasajero en este paquete, debe ser obligatoriamente el titular de la reserva."
+                            >
+                              <option value="titular">Titular de la reserva</option>
+                            </SelectField>
+                          ) : (
+                            <SelectField
+                              label="Rol en la reserva"
+                              value={traveler.isTitular ? "titular" : "acompanante"}
+                              onChange={(val) =>
+                                handleRoleChange(
+                                  traveler.id,
+                                  group.id,
+                                  val as "titular" | "acompanante"
+                                )
+                              }
+                              help="Define si esta persona es el titular responsable de este paquete o un acompañante."
+                            >
+                              <option value="titular">Titular de la reserva</option>
+                              <option value="acompanante">Acompañante</option>
+                            </SelectField>
+                          )}
                         </div>
 
                         <div className="two-col">
@@ -5253,16 +5279,10 @@ function Payment({
     }
 
     if (method === "transferencia") {
-      if (!file) {
-        setVoucherError(
-          "Debes adjuntar el comprobante de tu transferencia o depósito para continuar."
-        )
-        return
-      }
       const finalPayment: PaymentDetails = {
         method: "transferencia",
-        bankVoucherNumber: `TR-${Math.floor(10000000 + Math.random() * 90000000)}`,
-        bankVoucherUploaded: true,
+        bankVoucherNumber: file ? `TR-${Math.floor(10000000 + Math.random() * 90000000)}` : "",
+        bankVoucherUploaded: Boolean(file),
       }
       onSavePaymentData(finalPayment)
       onConfirmReservation(bookingRefCode, finalPayment)
@@ -5510,16 +5530,15 @@ function Payment({
                 </div>
 
                 <div style={{ marginTop: "20px" }}>
-                  <span
-                    className="field__label"
-                    style={{
-                      display: "block",
-                      marginBottom: "6px",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Adjuntar comprobante de pago
-                  </span>
+                  <div className="panel-heading" style={{ marginBottom: "10px" }}>
+                    <h3 style={{ margin: 0, fontSize: "1.1rem" }}>Adjuntar comprobante de pago</h3>
+                    <span className="status status--pacific">
+                      {file ? "✓ Comprobante cargado" : "Opcional ahora · Plazo de 24 horas"}
+                    </span>
+                  </div>
+                  <p style={{ margin: "0 0 14px", fontSize: "14px", color: "var(--abyss)" }}>
+                    Si ya realizaste la transferencia o depósito bancario, puedes adjuntarlo de inmediato para su verificación. Si prefieres transferir después, puedes confirmar tu reserva ahora y enviar el comprobante durante las próximas 24 horas.
+                  </p>
                   <div className="upload-zone">
                     <span className="upload-icon" aria-hidden="true">
                       ↑
@@ -5529,23 +5548,11 @@ function Payment({
                     <Button
                       kind="secondary"
                       type="button"
-                      onClick={() => {
-                        setFile(true)
-                        if (voucherError) setVoucherError("")
-                      }}
+                      onClick={() => setFile(true)}
                     >
                       {file ? "Cambiar archivo" : "Seleccionar archivo"}
                     </Button>
                   </div>
-                  {voucherError && (
-                    <p
-                      className="field__error"
-                      role="alert"
-                      style={{ marginTop: "8px", display: "flex", alignItems: "center", gap: "6px" }}
-                    >
-                      <span aria-hidden="true">⚠️</span> {voucherError}
-                    </p>
-                  )}
                   {file && (
                     <div className="file-progress" role="status">
                       <div>
@@ -5555,7 +5562,7 @@ function Payment({
                       <div className="progress">
                         <span />
                       </div>
-                      <span className="status status--success">
+                      <span className="status status--pacific">
                         ✓ Comprobante listo
                       </span>
                     </div>
@@ -5565,8 +5572,7 @@ function Payment({
                 <div className="important-note" style={{ marginTop: "18px" }}>
                   <strong>⚠️ Plazo para enviar comprobante: 24 horas</strong>
                   <p>
-                    Después de este tiempo, los cupos reservados pueden ser
-                    reversados automáticamente.
+                    Tus cupos se mantendrán reservados durante 24 horas a partir de la confirmación. Podrás remitir tu comprobante a <strong>pagos@travelinnovation.ec</strong> o cargarlo directamente desde la sección <strong>Mis compras</strong>.
                   </p>
                 </div>
               </div>
@@ -5770,8 +5776,7 @@ function Payment({
                 role="status"
                 style={{ marginTop: "-8px", display: "flex", alignItems: "center", gap: "6px" }}
               >
-                <span aria-hidden="true">⚠️</span> Debes aceptar la política de cancelación y reembolsos para
-                continuar.
+                <span aria-hidden="true" style={{ background: "transparent", borderRadius: 0 }}>⚠️</span> Debes aceptar la política de cancelación y reembolsos para continuar.
               </p>
             )}
 
@@ -5781,7 +5786,9 @@ function Payment({
               </Button>
               <Button kind="primary" type="button" onClick={handleConfirm}>
                 {method === "transferencia"
-                  ? "Confirmar comprobante y finalizar"
+                  ? file
+                    ? "Confirmar comprobante y finalizar"
+                    : "Confirmar reserva (plazo de 24h para transferir)"
                   : method === "debito"
                   ? `Pagar $${total} con débito y finalizar`
                   : `Pagar $${total} con crédito y finalizar`}
@@ -5906,17 +5913,25 @@ function Confirmation({
         </span>
         <span
           className={`status ${
-            !isTransfer ? "status--success" : "status--pending"
+            !isTransfer
+              ? "status--success"
+              : paymentData.bankVoucherUploaded
+              ? "status--pending"
+              : "status--pacific"
           }`}
         >
           {!isTransfer
             ? "✓ Pago confirmado · Reserva activa"
-            : "◷ Pago en verificación (Comprobante registrado)"}
+            : paymentData.bankVoucherUploaded
+            ? "◷ Pago en verificación (Comprobante registrado)"
+            : "⏳ Cupos reservados · Pendiente de pago (Plazo: 24 horas)"}
         </span>
         <h1>
           {!isTransfer
             ? "¡Tu reserva ha sido confirmada con éxito!"
-            : "¡Recibimos tu comprobante de reserva!"}
+            : paymentData.bankVoucherUploaded
+            ? "¡Recibimos tu comprobante de reserva!"
+            : "¡Tus cupos han sido reservados con éxito!"}
         </h1>
         <p>
           Hemos registrado tu reserva y enviado el itinerario con la confirmación oficial a{" "}
@@ -7826,7 +7841,11 @@ export default function App() {
       id: `purchase-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
       code: finalCode,
       createdAt: formattedDate,
-      status: isTransfer ? "En verificación" : "Confirmada",
+      status: isTransfer
+        ? finalPayment.bankVoucherUploaded
+          ? "En verificación"
+          : "Pendiente de pago (plazo 24h)"
+        : "Confirmada",
       packages: cartItems.map((item) => ({
         id: item.pkg.id,
         name: item.pkg.name,
