@@ -564,6 +564,7 @@ dd { margin: 0; }
 .status--success { color: var(--success); }
 .status--error { color: var(--error); }
 .status--pending { color: var(--pacific); }
+.status--pacific { color: var(--pacific); border-color: var(--pacific); background: rgba(27, 73, 101, 0.08); }
 .bank-data > div { min-height: 66px; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--pacific); }
 .bank-data span { display: flex; flex-direction: column; }
 .bank-data small { font-size: 14px; }
@@ -573,6 +574,88 @@ dd { margin: 0; }
 .file-progress > div { display: flex; justify-content: space-between; }
 .progress { height: 12px; border: 1px solid var(--pacific); background: var(--breeze); border-radius: 999px; overflow: hidden; margin: 8px 0; }
 .progress span { width: 100%; background: var(--success); }
+.package-travelers-group {
+  margin-bottom: 24px;
+  border: 1px solid var(--pacific);
+  border-radius: var(--radius);
+  background: var(--sand);
+  padding: 20px;
+}
+.package-travelers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--pacific);
+}
+.ticket-card {
+  background: #ffffff;
+  border: 1px solid var(--pacific);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(15, 31, 44, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 22px 0 32px;
+}
+.timeline article {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid var(--pacific);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(15, 31, 44, 0.05);
+}
+.timeline article > span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--pacific);
+  color: var(--breeze);
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.timeline article h3 {
+  margin: 0 0 8px 0;
+  color: var(--pacific);
+  font-size: 19px;
+}
+.timeline article p {
+  margin: 0;
+  color: var(--abyss);
+  line-height: 1.55;
+}
+.timeline-table-wrap {
+  margin-top: 16px;
+  border: 1px solid var(--pacific);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--pacific); padding: 12px; text-align: left; }
+th { background: var(--pacific); color: var(--breeze); }
 .modal-backdrop { position: fixed; z-index: 90; inset: 0; display: grid; place-items: center; padding: 20px; background: color-mix(in srgb, var(--abyss) 70%, transparent); cursor: pointer; }
 .modal { width: min(560px, 100%); border: 3px solid var(--pacific); border-radius: var(--radius); background: var(--breeze); padding: 24px; cursor: default; }
 .auth-modal { width: min(520px, 100%); max-height: 90vh; overflow-y: auto; box-shadow: 0 16px 40px rgba(15, 31, 44, 0.3); position: relative; }
@@ -621,11 +704,6 @@ dd { margin: 0; }
 .policy-icon { display: grid; width: 28px; height: 28px; place-items: center; border: 2px solid currentColor; border-radius: 50%; }
 .policy-icon.success { color: var(--success); }
 .policy-icon.error { color: var(--error); }
-.timeline article { display: grid; grid-template-columns: 48px 1fr; gap: 18px; }
-.timeline article > span { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 50%; background: var(--pacific); color: var(--breeze); font-weight: 700; }
-table { width: 100%; border-collapse: collapse; }
-th, td { border: 1px solid var(--pacific); padding: 12px; text-align: left; }
-th { background: var(--pacific); color: var(--breeze); }
 .support-layout { display: grid; grid-template-columns: 1.4fr .6fr; gap: 28px; align-items: start; }
 .support-help { position: sticky; top: 96px; }
 .support-help hr { border: 0; border-top: 1px solid var(--pacific); margin: 24px 0; }

@@ -17,6 +17,19 @@ type Page =
   | "politicas"
   | "soporte"
   | "diagrama"
+  | "tickets"
+
+export interface SupportTicket {
+  id: string
+  ticketNumber: string
+  bookingCode: string
+  reason: string
+  description: string
+  evidenceUploaded: boolean
+  createdAt: string
+  status: "En revisión" | "En trámite" | "Resuelto"
+  responseEstimated: string
+}
 
 export interface DateRange {
   startDay: number
@@ -64,85 +77,289 @@ export const PROVINCES_DATA: Record<
   string,
   { region: "Costa" | "Sierra" | "Amazonía" | "Galápagos"; cities: string[] }
 > = {
-  Pichincha: {
-    region: "Sierra",
-    cities: ["Quito", "Cayambe", "Rumiñahui (Sangolquí)", "Mindo / Noroccidente"],
-  },
-  Guayas: {
-    region: "Costa",
-    cities: ["Guayaquil", "Samborondón", "Durán", "Milagro", "Playas (General Villamil)"],
-  },
   Azuay: {
     region: "Sierra",
-    cities: ["Cuenca", "Gualaceo", "Paute", "Chordeleg"],
+    cities: [
+      "Cuenca",
+      "Gualaceo",
+      "Paute",
+      "Chordeleg",
+      "Santa Isabel",
+      "Girón",
+      "Sígsig",
+      "Nabón",
+      "Pucará",
+      "San Fernando",
+      "Sevilla de Oro",
+      "Guachapala",
+      "El Pan",
+      "Oña",
+      "Camilo Ponce Enríquez",
+    ],
   },
   Bolívar: {
     region: "Sierra",
-    cities: ["Guaranda", "San Miguel", "Caluma"],
+    cities: [
+      "Guaranda",
+      "San Miguel",
+      "Chimbo",
+      "Caluma",
+      "Echeandía",
+      "Las Naves",
+      "Chillanes",
+    ],
   },
   Cañar: {
     region: "Sierra",
-    cities: ["Azogues", "Cañar", "La Troncal"],
+    cities: [
+      "Azogues",
+      "Cañar",
+      "La Troncal",
+      "Biblián",
+      "Déleg",
+      "El Tambo",
+      "Suscal",
+    ],
   },
   Carchi: {
     region: "Sierra",
-    cities: ["Tulcán", "San Gabriel", "El Ángel"],
+    cities: [
+      "Tulcán",
+      "San Gabriel (Montúfar)",
+      "Mira",
+      "Bolívar",
+      "El Ángel (Espejo)",
+      "Huaca",
+    ],
   },
   Chimborazo: {
     region: "Sierra",
-    cities: ["Riobamba", "Guano", "Alausí"],
+    cities: [
+      "Riobamba",
+      "Alausí",
+      "Guano",
+      "Colta",
+      "Chambo",
+      "Guamote",
+      "Pallatanga",
+      "Penipe",
+      "Cumandá",
+      "Chunchi",
+    ],
   },
   Cotopaxi: {
     region: "Sierra",
-    cities: ["Latacunga", "Pujilí / Quilotoa", "Salcedo"],
+    cities: [
+      "Latacunga",
+      "Salcedo",
+      "Pujilí",
+      "Saquisilí",
+      "La Maná",
+      "Pangua (El Corazón)",
+      "Sigchos",
+    ],
   },
   "El Oro": {
     region: "Costa",
-    cities: ["Machala", "Pasaje", "Santa Rosa", "Arenillas"],
+    cities: [
+      "Machala",
+      "Pasaje",
+      "Santa Rosa",
+      "Huaquillas",
+      "Arenillas",
+      "Zaruma",
+      "Piñas",
+      "Portovelo",
+      "El Guabo",
+      "Atahualpa (Paccha)",
+      "Balsas",
+      "Chilla",
+      "Las Lajas",
+      "Marcabelí",
+    ],
   },
   Esmeraldas: {
     region: "Costa",
-    cities: ["Esmeraldas", "Atacames", "Quinindé"],
+    cities: [
+      "Esmeraldas",
+      "Atacames",
+      "Quinindé",
+      "San Lorenzo",
+      "Muisne",
+      "Rioverde",
+      "Eloy Alfaro (Valdez)",
+    ],
   },
   Galápagos: {
     region: "Galápagos",
-    cities: ["Puerto Ayora (Santa Cruz)", "San Cristóbal", "Isabela"],
+    cities: [
+      "Puerto Ayora (Santa Cruz)",
+      "Puerto Baquerizo Moreno (San Cristóbal)",
+      "Puerto Villamil (Isabela)",
+    ],
+  },
+  Guayas: {
+    region: "Costa",
+    cities: [
+      "Guayaquil",
+      "Samborondón",
+      "Daule",
+      "Durán",
+      "Milagro",
+      "Playas (General Villamil)",
+      "Salitre",
+      "Naranjal",
+      "Balzar",
+      "El Empalme",
+      "Pedro Carbo",
+      "Yaguachi",
+      "Santa Lucía",
+      "Colimes",
+      "Palestina",
+      "Bucay (Gral. Antonio Elizalde)",
+      "Naranjito",
+      "Marcelino Maridueña",
+      "Lomas de Sargentillo",
+      "Nobol",
+      "Simón Bolívar",
+      "Isidro Ayora",
+      "Balao",
+      "Jujan (Alfredo Baquerizo Moreno)",
+    ],
   },
   Imbabura: {
     region: "Sierra",
-    cities: ["Otavalo", "Ibarra", "Cotacachi", "Atuntaqui"],
+    cities: [
+      "Ibarra",
+      "Otavalo",
+      "Cotacachi",
+      "Antonio Ante (Atuntaqui)",
+      "Pimampiro",
+      "Urcuquí",
+    ],
   },
   Loja: {
     region: "Sierra",
-    cities: ["Loja", "Catamayo", "Vilcabamba"],
+    cities: [
+      "Loja",
+      "Catamayo",
+      "Cariamanga (Calvas)",
+      "Macará",
+      "Saraguro",
+      "Celica",
+      "Paltas (Catacocha)",
+      "Puyango (Alamor)",
+      "Gonzanamá",
+      "Espíndola (Amaluza)",
+      "Chaguarpamba",
+      "Pindal",
+      "Zapotillo",
+      "Quilanga",
+      "Sozoranga",
+      "Olmedo",
+    ],
   },
   "Los Ríos": {
     region: "Costa",
-    cities: ["Babahoyo", "Quevedo", "Ventanas"],
+    cities: [
+      "Babahoyo",
+      "Quevedo",
+      "Buena Fe",
+      "Ventanas",
+      "Vinces",
+      "Valencia",
+      "Montalvo",
+      "Mocache",
+      "Puebloviejo",
+      "Palenque",
+      "Urdaneta (Catarama)",
+      "Baba",
+      "Quinsaloma",
+    ],
   },
   Manabí: {
     region: "Costa",
-    cities: ["Manta", "Portoviejo", "Puerto López", "Pedernales", "Montecristi"],
+    cities: [
+      "Portoviejo",
+      "Manta",
+      "Chone",
+      "Montecristi",
+      "Jipijapa",
+      "Bahía de Caráquez (Sucre)",
+      "El Carmen",
+      "Pedernales",
+      "Tosagua",
+      "Rocafuerte",
+      "Santa Ana",
+      "Calceta (Bolívar)",
+      "Jama",
+      "San Vicente",
+      "Jaramijó",
+      "Puerto López",
+      "Paján",
+      "Flavio Alfaro",
+      "Pichincha",
+      "Junín",
+      "24 de Mayo",
+      "Olmedo",
+    ],
   },
   "Morona Santiago": {
     region: "Amazonía",
-    cities: ["Macas", "Sucúa", "Gualaquiza"],
+    cities: [
+      "Macas (Morona)",
+      "Sucúa",
+      "Gualaquiza",
+      "Limón Indanza",
+      "Palora",
+      "Santiago de Méndez",
+      "Tiwintza",
+      "Taisha",
+      "Logroño",
+      "San Juan Bosco",
+      "Huamboya",
+      "Pablo Sexto",
+    ],
   },
   Napo: {
     region: "Amazonía",
-    cities: ["Tena", "Misahuallí", "Archidona"],
+    cities: [
+      "Tena",
+      "Archidona",
+      "El Chaco",
+      "Baeza (Quijos)",
+      "Carlos Julio Arosemena Tola",
+    ],
   },
   Orellana: {
     region: "Amazonía",
-    cities: ["El Coca (Francisco de Orellana)", "La Joya de los Sachas"],
+    cities: [
+      "Puerto Francisco de Orellana (El Coca)",
+      "La Joya de los Sachas",
+      "Loreto",
+      "Nuevo Rocafuerte (Aguarico)",
+    ],
   },
   Pastaza: {
     region: "Amazonía",
-    cities: ["Puyo", "Mera", "Santa Clara"],
+    cities: ["Puyo (Pastaza)", "Mera", "Santa Clara", "Arajuno"],
+  },
+  Pichincha: {
+    region: "Sierra",
+    cities: [
+      "Quito",
+      "Rumiñahui (Sangolquí)",
+      "Cayambe",
+      "Mejía (Machachi)",
+      "Pedro Moncayo (Tabacundo)",
+      "Puerto Quito",
+      "Pedro Vicente Maldonado",
+      "San Miguel de los Bancos",
+    ],
   },
   "Santa Elena": {
     region: "Costa",
-    cities: ["Salinas", "Montañita", "La Libertad", "Santa Elena"],
+    cities: ["Santa Elena", "Salinas", "La Libertad"],
   },
   "Santo Domingo de los Tsáchilas": {
     region: "Costa",
@@ -150,15 +367,43 @@ export const PROVINCES_DATA: Record<
   },
   Sucumbíos: {
     region: "Amazonía",
-    cities: ["Lago Agrio / Cuyabeno", "Shushufindi"],
+    cities: [
+      "Nueva Loja (Lago Agrio)",
+      "Shushufindi",
+      "Cáscales",
+      "Gonzalo Pizarro (Lumbaquí)",
+      "Putumayo",
+      "Cuyabeno",
+      "Sucumbíos",
+    ],
   },
   Tungurahua: {
     region: "Sierra",
-    cities: ["Baños de Agua Santa", "Ambato", "Pelileo"],
+    cities: [
+      "Ambato",
+      "Baños de Agua Santa",
+      "Pelileo",
+      "Píllaro",
+      "Cevallos",
+      "Tisaleo",
+      "Quero",
+      "Mocha",
+      "Patate",
+    ],
   },
   "Zamora Chinchipe": {
     region: "Amazonía",
-    cities: ["Zamora", "Yantzaza"],
+    cities: [
+      "Zamora",
+      "Yantzaza",
+      "El Pangui",
+      "Centinela del Cóndor (Zumbi)",
+      "Nangaritza (Guayzimi)",
+      "Palanda",
+      "Chinchipe (Zumba)",
+      "Paquisha",
+      "Yacuambi",
+    ],
   },
 }
 
@@ -176,11 +421,14 @@ export interface PersonalInfo {
 
 export interface TravelerData {
   id: string
+  packageId?: string
   slotNumber: number
   packageTitle: string
   isTitular: boolean
   fullName: string
   cedula: string
+  phone?: string
+  email?: string
   isMinor: boolean
   birthDate?: string
 }
@@ -581,6 +829,7 @@ const pageNames: Record<Page, string> = {
   politicas: "Políticas de reserva",
   soporte: "Soporte",
   diagrama: "Diagrama de estados",
+  tickets: "Mis tickets",
 }
 
 function Button({
@@ -1639,6 +1888,34 @@ function Header({
                       role="menuitem"
                       onClick={() => {
                         setUserMenuOpen(false)
+                        go("tickets")
+                      }}
+                    >
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                      </svg>
+                      <span>Mis tickets</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="dropdown-item"
+                      role="menuitem"
+                      onClick={() => {
+                        setUserMenuOpen(false)
                         setIsProfileModalOpen(true)
                       }}
                     >
@@ -1811,10 +2088,10 @@ function Header({
                 <span style={{ color: "var(--success)", fontWeight: 700 }}>✓ Activo</span>
               </div>
             </div>
-            <div style={{ display: "flex", gap: "12px" }}>
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
               <Button
                 kind="primary"
-                style={{ flex: 1 }}
+                style={{ flex: 1, minWidth: "110px" }}
                 onClick={() => {
                   setIsProfileModalOpen(false)
                   go("reservas")
@@ -1824,7 +2101,17 @@ function Header({
               </Button>
               <Button
                 kind="secondary"
-                style={{ flex: 1 }}
+                style={{ flex: 1, minWidth: "110px" }}
+                onClick={() => {
+                  setIsProfileModalOpen(false)
+                  go("tickets")
+                }}
+              >
+                Mis tickets
+              </Button>
+              <Button
+                kind="secondary"
+                style={{ minWidth: "80px" }}
                 onClick={() => setIsProfileModalOpen(false)}
               >
                 Cerrar
@@ -2702,11 +2989,23 @@ function Detail({
               <strong aria-live="polite">{people}</strong>
               <button
                 aria-label="Agregar una persona"
-                onClick={() => setPeople(people + 1)}
+                onClick={() => setPeople(Math.min(20, people + 1))}
+                disabled={people >= 20}
               >
                 +
               </button>
             </div>
+            {people >= 20 && (
+              <div
+                className="inline-alert"
+                style={{ marginTop: "12px", padding: "12px 14px" }}
+              >
+                <strong>⚠️ Límite de 20 personas por paquete</strong>
+                <span style={{ fontSize: "13.5px", lineHeight: 1.45 }}>
+                  Este paquete está limitado a un máximo de 20 personas por reserva web. Si necesitas un paquete para un grupo mayor o evento corporativo, por favor contáctanos al teléfono <strong>02 2456456</strong> o al correo <strong>travelinnovation.tamc@gmail.com</strong>.
+                </span>
+              </div>
+            )}
           </div>
           <div className="total-row">
             <span>Total estimado</span>
@@ -3505,10 +3804,15 @@ function Cart({
                               className="cart-people-btn"
                               onClick={() =>
                                 onUpdatePeople &&
-                                onUpdatePeople(item.id, item.people + 1)
+                                onUpdatePeople(item.id, Math.min(20, item.people + 1))
                               }
+                              disabled={item.people >= 20}
                               aria-label={`Aumentar personas para ${item.pkg.name}`}
-                              title="Agregar una persona"
+                              title={
+                                item.people >= 20
+                                  ? "Máximo 20 personas por paquete"
+                                  : "Agregar una persona"
+                              }
                             >
                               +
                             </button>
@@ -3516,6 +3820,17 @@ function Cart({
                               {item.people === 1 ? "viajero" : "viajeros"}
                             </span>
                           </div>
+                          {item.people >= 20 && (
+                            <div
+                              className="inline-alert"
+                              style={{ marginTop: "10px", padding: "10px 12px" }}
+                            >
+                              <strong>⚠️ Límite de 20 personas por paquete</strong>
+                              <span style={{ fontSize: "13px", lineHeight: 1.4 }}>
+                                Este paquete está limitado a un máximo de 20 personas por reserva web. Si requieres cupos para un grupo más numeroso o corporativo, por favor contáctanos al teléfono <strong>02 2456456</strong> o al correo <strong>travelinnovation.tamc@gmail.com</strong>.
+                              </span>
+                            </div>
+                          )}
                         </dd>
                       </div>
                       <div>
@@ -3798,7 +4113,7 @@ function Identification({
               </span>
             </div>
             {currentUser ? (
-              <span className="status status--success">✓ Sesión iniciada</span>
+              <span className="status status--pacific">✓ Sesión iniciada</span>
             ) : (
               <Button kind="quiet" type="button" onClick={() => go("carrito")}>
                 Iniciar sesión
@@ -4078,35 +4393,41 @@ function Travelers({
   // Generate traveler slots based directly on the cart items
   const generatedSlots = useMemo(() => {
     const list: TravelerData[] = []
-    let num = 1
     if (cartItems.length === 0) {
       list.push({
-        id: "traveler-1",
+        id: "traveler-default-1",
+        packageId: "default",
         slotNumber: 1,
         packageTitle: "Paquete turístico",
         isTitular: true,
         fullName: personalInfo.fullName || currentUser?.name || "",
         cedula: personalInfo.cedula || "",
+        phone: personalInfo.phone || "",
+        email: personalInfo.email || currentUser?.email || "",
         isMinor: false,
         birthDate: "",
       })
     } else {
       cartItems.forEach((item) => {
         for (let p = 1; p <= item.people; p++) {
-          const isTit = num === 1
+          const isFirstInPkg = p === 1
           list.push({
             id: `traveler-${item.id}-${p}`,
-            slotNumber: num,
+            packageId: item.id,
+            slotNumber: p,
             packageTitle: item.pkg.name,
-            isTitular: isTit,
-            fullName: isTit
+            isTitular: isFirstInPkg,
+            fullName: isFirstInPkg
               ? personalInfo.fullName || currentUser?.name || ""
               : "",
-            cedula: isTit ? personalInfo.cedula || "" : "",
+            cedula: isFirstInPkg ? personalInfo.cedula || "" : "",
+            phone: isFirstInPkg ? personalInfo.phone || "" : "",
+            email: isFirstInPkg
+              ? personalInfo.email || currentUser?.email || ""
+              : "",
             isMinor: false,
             birthDate: "",
           })
-          num++
         }
       })
     }
@@ -4117,230 +4438,435 @@ function Travelers({
     if (
       travelersList &&
       travelersList.length === generatedSlots.length &&
-      travelersList.length > 0 &&
-      travelersList.some((t) => t.fullName && !t.isTitular)
+      travelersList.length > 0
     ) {
-      return travelersList
+      return generatedSlots.map((gen, idx) => {
+        const existing = travelersList[idx]
+        if (existing) {
+          return {
+            ...gen,
+            fullName:
+              existing.fullName !== undefined ? existing.fullName : gen.fullName,
+            cedula:
+              existing.cedula !== undefined ? existing.cedula : gen.cedula,
+            phone: existing.phone !== undefined ? existing.phone : gen.phone,
+            email: existing.email !== undefined ? existing.email : gen.email,
+            isMinor: existing.isMinor,
+            birthDate: existing.birthDate || "",
+            isTitular:
+              existing.isTitular !== undefined
+                ? existing.isTitular
+                : gen.isTitular,
+          }
+        }
+        return gen
+      })
     }
     return generatedSlots
   })
 
-  // Synchronize slot 0 whenever personalInfo changes
+  // Synchronize slot counts if cartItems changes
   useEffect(() => {
     setTravelers((prev) => {
-      if (prev.length === 0) return generatedSlots
-      return prev.map((t, idx) => {
-        if (idx === 0) {
-          return {
-            ...t,
-            fullName: personalInfo.fullName || currentUser?.name || t.fullName,
-            cedula: personalInfo.cedula || t.cedula,
-          }
-        }
-        return t
-      })
+      if (prev.length !== generatedSlots.length) {
+        return generatedSlots
+      }
+      return prev
     })
-  }, [personalInfo, currentUser, generatedSlots])
+  }, [generatedSlots])
 
-  // Reset travelers to fresh blank companion slots when travelersList is empty
+  // Reset travelers to fresh blank slots when travelersList is emptied
   useEffect(() => {
     if (!travelersList || travelersList.length === 0) {
       setTravelers(generatedSlots)
-      setCompanionErrors({})
+      setErrors({})
+      setGroupErrors({})
     }
   }, [travelersList, generatedSlots])
 
-  const [companionErrors, setCompanionErrors] = useState<
-    Record<number, { fullName?: string; cedula?: string; birthDate?: string }>
+  const [errors, setErrors] = useState<
+    Record<string, { fullName?: string; cedula?: string; birthDate?: string }>
   >({})
+  const [groupErrors, setGroupErrors] = useState<Record<string, string>>({})
 
-  const handleCompanionChange = (
-    index: number,
+  const handleTravelerChange = (
+    travelerId: string,
     field: keyof TravelerData,
     value: any
   ) => {
-    setTravelers((prev) => {
-      const next = [...prev]
-      next[index] = { ...next[index], [field]: value }
-      return next
-    })
-    if (companionErrors[index]) {
-      setCompanionErrors((prev) => ({
+    setTravelers((prev) =>
+      prev.map((t) => {
+        if (t.id === travelerId) {
+          return { ...t, [field]: value }
+        }
+        return t
+      })
+    )
+    if (errors[travelerId]?.[field as "fullName" | "cedula" | "birthDate"]) {
+      setErrors((prev) => ({
         ...prev,
-        [index]: { ...prev[index], [field]: undefined },
+        [travelerId]: {
+          ...prev[travelerId],
+          [field]: undefined,
+        },
       }))
     }
+  }
+
+  const handleRoleChange = (
+    travelerId: string,
+    packageId: string,
+    role: "titular" | "acompanante"
+  ) => {
+    setTravelers((prev) => {
+      if (role === "titular") {
+        // En este paquete, travelerId es titular y los demás son acompañantes
+        return prev.map((t) => {
+          if (t.packageId === packageId) {
+            return {
+              ...t,
+              isTitular: t.id === travelerId,
+            }
+          }
+          return t
+        })
+      } else {
+        return prev.map((t) => {
+          if (t.id === travelerId) {
+            return {
+              ...t,
+              isTitular: false,
+            }
+          }
+          return t
+        })
+      }
+    })
+    setGroupErrors((prev) => ({ ...prev, [packageId]: undefined }))
   }
 
   const handleContinue = (e: React.FormEvent) => {
     e.preventDefault()
     const nextErrors: Record<
-      number,
+      string,
       { fullName?: string; cedula?: string; birthDate?: string }
     > = {}
+    const nextGroupErrors: Record<string, string> = {}
 
-    // Validate companions (slots index >= 1)
-    for (let i = 1; i < travelers.length; i++) {
-      const comp = travelers[i]
+    // Validar datos de cada viajero
+    travelers.forEach((t) => {
       const errs: { fullName?: string; cedula?: string; birthDate?: string } = {}
-      if (!comp.fullName.trim()) {
+      if (!t.fullName.trim()) {
         errs.fullName = "El nombre completo es requerido."
       }
-      if (!comp.cedula.trim()) {
+      if (!t.cedula.trim()) {
         errs.cedula = "El documento de identidad es requerido."
       }
-      if (comp.isMinor && !comp.birthDate) {
+      if (t.isMinor && !t.birthDate) {
         errs.birthDate = "La fecha de nacimiento es requerida para menores de edad."
       }
       if (Object.keys(errs).length > 0) {
-        nextErrors[i] = errs
+        nextErrors[t.id] = errs
       }
-    }
+    })
 
-    setCompanionErrors(nextErrors)
-    if (Object.keys(nextErrors).length === 0) {
+    // Validar que cada paquete tenga un titular seleccionado
+    const targetGroups =
+      cartItems.length > 0
+        ? cartItems.map((c) => ({ id: c.id, name: c.pkg.name }))
+        : [{ id: "default", name: "Paquete turístico" }]
+
+    targetGroups.forEach((grp) => {
+      const hasTitular = travelers.some(
+        (t) => (t.packageId === grp.id || !t.packageId) && t.isTitular
+      )
+      if (!hasTitular) {
+        nextGroupErrors[grp.id] = `Debes seleccionar a un titular para el paquete "${grp.name}".`
+      }
+    })
+
+    setErrors(nextErrors)
+    setGroupErrors(nextGroupErrors)
+
+    if (
+      Object.keys(nextErrors).length === 0 &&
+      Object.keys(nextGroupErrors).length === 0
+    ) {
       onSaveTravelers(travelers)
       go("pago")
     }
   }
 
+  const renderedGroups = useMemo(() => {
+    if (cartItems.length === 0) {
+      return [
+        {
+          id: "default",
+          pkg: {
+            id: "default",
+            name: "Paquete turístico",
+            destination: "Ecuador",
+            image: "",
+          },
+          people: 1,
+          travelers: travelers.filter(
+            (t) => !t.packageId || t.packageId === "default"
+          ),
+        },
+      ]
+    }
+    return cartItems.map((item) => ({
+      id: item.id,
+      pkg: item.pkg,
+      people: item.people,
+      travelers: travelers.filter((t) => t.packageId === item.id),
+    }))
+  }, [cartItems, travelers])
+
   return (
     <>
       <PageTitle
         title="Datos de viajeros"
-        subtitle="Completa los datos de los pasajeros correspondientes a los cupos en tu carrito."
+        subtitle="Completa los datos de los pasajeros agrupados por paquete turístico."
       />
       <div className="section">
         <Stepper current={2} />
       </div>
       <div className="section checkout-layout">
         <form className="form-stack" onSubmit={handleContinue} noValidate>
-          {/* Titular */}
-          <article className="form-panel">
-            <div className="panel-heading">
-              <div>
-                <span className="eyebrow">{travelers[0]?.packageTitle}</span>
-                <h2>Viajero 1 · Titular de la reserva</h2>
-              </div>
-              <span className="status status--success">✓ Datos precargados</span>
-            </div>
-            <dl className="data-list">
-              <div>
-                <dt>Nombre completo</dt>
-                <dd>
-                  {personalInfo.fullName || currentUser?.name || "María Andrade"}
-                </dd>
-              </div>
-              <div>
-                <dt>Cédula de identidad</dt>
-                <dd>{personalInfo.cedula || "1712345678"}</dd>
-              </div>
-              <div>
-                <dt>Teléfono</dt>
-                <dd>{personalInfo.phone || "0991234567"}</dd>
-              </div>
-              <div>
-                <dt>Correo electrónico</dt>
-                <dd>
-                  {personalInfo.email ||
-                    currentUser?.email ||
-                    "maria@ejemplo.com"}
-                </dd>
-              </div>
-            </dl>
-          </article>
+          {renderedGroups.map((group, gIdx) => {
+            const currentTitular = group.travelers.find((t) => t.isTitular)
+            const groupError = groupErrors[group.id]
 
-          {travelers.length === 1 ? (
-            <div
-              className="important-note"
-              style={{ background: "#e6f7ec", borderColor: "var(--success)" }}
-            >
-              <strong>✓ Viajero único confirmado</strong>
-              <p>
-                Tu reserva incluye 1 cupo. Todos los requerimientos del viaje
-                quedan registrados directamente con tus datos de titular.
-              </p>
-            </div>
-          ) : (
-            travelers.slice(1).map((comp, idx) => {
-              const realIndex = idx + 1
-              return (
-                <article className="form-panel" key={comp.id || realIndex}>
-                  <div className="panel-heading" style={{ marginBottom: "16px" }}>
-                    <div>
-                      <span className="eyebrow">{comp.packageTitle}</span>
-                      <h2 style={{ margin: "2px 0" }}>
-                        Viajero {comp.slotNumber} · Acompañante
-                      </h2>
-                    </div>
+            return (
+              <section
+                className="package-travelers-group"
+                key={group.id}
+                style={{ marginBottom: "28px" }}
+              >
+                <div className="package-travelers-header">
+                  <div>
+                    <span className="eyebrow">
+                      Paquete {gIdx + 1} de {renderedGroups.length}
+                    </span>
+                    <h2 style={{ margin: "2px 0 4px 0", color: "var(--pacific)" }}>
+                      {group.pkg.name}
+                    </h2>
+                    <p
+                      className="muted"
+                      style={{ margin: 0, fontSize: "0.88rem" }}
+                    >
+                      📍 {group.pkg.destination} · {group.people}{" "}
+                      {group.people === 1 ? "pasajero" : "pasajeros"}
+                    </p>
                   </div>
-                  <div className="two-col">
-                    <Field
-                      label="Nombre completo"
-                      placeholder="Como aparece en su documento"
-                      value={comp.fullName}
-                      onChange={(val) =>
-                        handleCompanionChange(realIndex, "fullName", val)
-                      }
-                      error={companionErrors[realIndex]?.fullName}
-                      help="Nombre y apellido del acompañante."
-                      required
-                    />
-                    <Field
-                      label="Documento de identidad"
-                      placeholder="Cédula de 10 dígitos o pasaporte"
-                      value={comp.cedula}
-                      onChange={(val) =>
-                        handleCompanionChange(realIndex, "cedula", val)
-                      }
-                      error={companionErrors[realIndex]?.cedula}
-                      help="Cédula o pasaporte."
-                      required
-                    />
+                  <div style={{ textAlign: "right" }}>
+                    <span className="status status--pacific">
+                      Titular:{" "}
+                      <strong>
+                        {currentTitular?.fullName || "Selecciona un titular"}
+                      </strong>
+                    </span>
                   </div>
-                  <label className="check" style={{ marginTop: "14px" }}>
-                    <input
-                      type="checkbox"
-                      checked={comp.isMinor}
-                      onChange={(e) =>
-                        handleCompanionChange(
-                          realIndex,
-                          "isMinor",
-                          e.target.checked
-                        )
-                      }
-                    />
-                    <span>Este viajero es menor de edad</span>
-                  </label>
-                  {comp.isMinor && (
-                    <div style={{ marginTop: "10px" }}>
-                      <Field
-                        label="Fecha de nacimiento"
-                        type="date"
-                        value={comp.birthDate}
-                        onChange={(val) =>
-                          handleCompanionChange(realIndex, "birthDate", val)
-                        }
-                        error={companionErrors[realIndex]?.birthDate}
-                        help="Fecha de nacimiento del menor."
-                        required
-                      />
-                      <div className="inline-alert" style={{ marginTop: "8px" }}>
-                        ⚠️ Lleva su documento de identidad y autorización escrita
-                        si viaja sin sus padres o representantes legales.
-                      </div>
-                    </div>
-                  )}
-                </article>
-              )
-            })
-          )}
+                </div>
+
+                {groupError && (
+                  <div
+                    className="inline-alert"
+                    role="alert"
+                    style={{ marginBottom: "16px" }}
+                  >
+                    ⚠️ {groupError}
+                  </div>
+                )}
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "18px",
+                  }}
+                >
+                  {group.travelers.map((traveler, pIdx) => {
+                    const isFirstInGroup = pIdx === 0
+                    const travelerErrors = errors[traveler.id] || {}
+
+                    return (
+                      <article
+                        className="form-panel"
+                        key={traveler.id}
+                        style={{ background: "#ffffff" }}
+                      >
+                        <div
+                          className="panel-heading"
+                          style={{ marginBottom: "16px" }}
+                        >
+                          <div>
+                            <span className="eyebrow">{group.pkg.name}</span>
+                            <h3
+                              style={{ margin: "2px 0", color: "var(--pacific)" }}
+                            >
+                              Viajero {traveler.slotNumber} ·{" "}
+                              {traveler.isTitular
+                                ? "Titular del paquete"
+                                : "Acompañante"}
+                            </h3>
+                          </div>
+                          {isFirstInGroup && (
+                            <span className="status status--pacific">
+                              ✓ Datos precargados
+                            </span>
+                          )}
+                        </div>
+
+                        <div
+                          className="two-col"
+                          style={{ marginBottom: "14px" }}
+                        >
+                          <SelectField
+                            label="Rol en la reserva"
+                            value={traveler.isTitular ? "titular" : "acompanante"}
+                            onChange={(val) =>
+                              handleRoleChange(
+                                traveler.id,
+                                group.id,
+                                val as "titular" | "acompanante"
+                              )
+                            }
+                            help="Define si esta persona es el titular responsable de este paquete o un acompañante."
+                          >
+                            <option value="titular">Titular de la reserva</option>
+                            <option value="acompanante">Acompañante</option>
+                          </SelectField>
+                        </div>
+
+                        <div className="two-col">
+                          <Field
+                            label="Nombre completo"
+                            placeholder="Como aparece en su documento"
+                            value={traveler.fullName}
+                            onChange={(val) =>
+                              handleTravelerChange(
+                                traveler.id,
+                                "fullName",
+                                val
+                              )
+                            }
+                            error={travelerErrors.fullName}
+                            help={
+                              isFirstInGroup
+                                ? "Datos del titular de la cuenta (puedes editarlos si viaja otra persona)."
+                                : "Nombre y apellido completos del pasajero."
+                            }
+                            required
+                          />
+                          <Field
+                            label="Documento de identidad"
+                            placeholder="Cédula de 10 dígitos o pasaporte"
+                            value={traveler.cedula}
+                            onChange={(val) =>
+                              handleTravelerChange(
+                                traveler.id,
+                                "cedula",
+                                val
+                              )
+                            }
+                            error={travelerErrors.cedula}
+                            help="Cédula de identidad o pasaporte vigente."
+                            required
+                          />
+                        </div>
+
+                        {traveler.isTitular && (
+                          <div
+                            className="two-col"
+                            style={{ marginTop: "14px" }}
+                          >
+                            <Field
+                              label="Teléfono de contacto"
+                              placeholder="Ej. 0991234567"
+                              value={traveler.phone || ""}
+                              onChange={(val) =>
+                                handleTravelerChange(
+                                  traveler.id,
+                                  "phone",
+                                  val
+                                )
+                              }
+                              help="Para coordinación y avisos de logística."
+                            />
+                            <Field
+                              label="Correo electrónico"
+                              placeholder="ejemplo@correo.com"
+                              type="email"
+                              value={traveler.email || ""}
+                              onChange={(val) =>
+                                handleTravelerChange(
+                                  traveler.id,
+                                  "email",
+                                  val
+                                )
+                              }
+                              help="Para recibir itinerario y vouchers."
+                            />
+                          </div>
+                        )}
+
+                        <label className="check" style={{ marginTop: "14px" }}>
+                          <input
+                            type="checkbox"
+                            checked={traveler.isMinor}
+                            onChange={(e) =>
+                              handleTravelerChange(
+                                traveler.id,
+                                "isMinor",
+                                e.target.checked
+                              )
+                            }
+                          />
+                          <span>Este viajero es menor de edad</span>
+                        </label>
+
+                        {traveler.isMinor && (
+                          <div style={{ marginTop: "10px" }}>
+                            <Field
+                              label="Fecha de nacimiento"
+                              type="date"
+                              value={traveler.birthDate || ""}
+                              onChange={(val) =>
+                                handleTravelerChange(
+                                  traveler.id,
+                                  "birthDate",
+                                  val
+                                )
+                              }
+                              error={travelerErrors.birthDate}
+                              help="Fecha de nacimiento del menor."
+                              required
+                            />
+                            <div
+                              className="inline-alert"
+                              style={{ marginTop: "8px" }}
+                            >
+                              ⚠️ Lleva su documento de identidad y autorización
+                              escrita si viaja sin sus padres o representantes
+                              legales.
+                            </div>
+                          </div>
+                        )}
+                      </article>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          })}
 
           <div className="important-note">
             <strong>⚠️ Lleva tu cédula física y original el día del viaje</strong>
             <p>
               Todos los pasajeros deben presentar su documento de identidad original
-              para el embarque y check-in.
+              para el embarque y check-in del paquete contratado.
             </p>
           </div>
 
@@ -5232,14 +5758,21 @@ function Confirmation({
                     >
                       Menor de edad
                     </span>
-                  ) : idx === 0 ? (
+                  ) : t.isTitular ? (
                     <span
-                      className="status status--success"
+                      className="status status--pacific"
                       style={{ fontSize: "12px", padding: "2px 8px" }}
                     >
                       Titular
                     </span>
-                  ) : null}
+                  ) : (
+                    <span
+                      className="status"
+                      style={{ fontSize: "12px", padding: "2px 8px" }}
+                    >
+                      Acompañante
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -5791,61 +6324,248 @@ function Policies({ go }: { go: (page: Page) => void }) {
             ))}
           </section>
         ))}
-        <section>
-          <h2>Cómo se tramita</h2>
+        <section style={{ marginTop: "40px" }}>
+          <div style={{ marginBottom: "20px" }}>
+            <span className="eyebrow">Procedimiento paso a paso</span>
+            <h2 style={{ margin: "4px 0 8px 0", color: "var(--pacific)" }}>
+              Cómo se tramita una solicitud o reembolso
+            </h2>
+            <p className="muted" style={{ margin: 0, fontSize: "0.95rem" }}>
+              Conoce las etapas, plazos reglamentarios y canales de acreditación para gestionar tu caso de forma clara y sin complicaciones.
+            </p>
+          </div>
+
           <div className="timeline">
             <article>
               <span>1</span>
               <div>
-                <h3>Notificación</h3>
-                <p>
-                  Abre un ticket hasta 72 horas antes para cancelaciones
-                  voluntarias, o máximo 48 horas hábiles tras el retorno para
-                  reclamos. Adjunta código de reserva, comprobante y evidencias.
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "8px",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <h3 style={{ margin: 0 }}>Paso 1: Notificación y Apertura del Caso</h3>
+                  <span className="status status--pacific">Canal oficial de soporte</span>
+                </div>
+                <p style={{ marginBottom: "12px" }}>
+                  Envía tu requerimiento a través del sistema de soporte indicando el código de reserva (ej. TI-2026-XXXX) y adjuntando la documentación de respaldo.
                 </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                    gap: "12px",
+                    background: "var(--sand)",
+                    padding: "14px 16px",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(27,73,101,0.15)",
+                  }}
+                >
+                  <div>
+                    <strong
+                      style={{
+                        display: "block",
+                        color: "var(--pacific)",
+                        fontSize: "0.88rem",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      ⏱️ Plazos de solicitud
+                    </strong>
+                    <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
+                      Hasta 72 horas de anticipación para cancelaciones voluntarias; máx. 48 horas hábiles tras el retorno para reclamos operativos.
+                    </span>
+                  </div>
+                  <div>
+                    <strong
+                      style={{
+                        display: "block",
+                        color: "var(--pacific)",
+                        fontSize: "0.88rem",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      📎 Documentos requeridos
+                    </strong>
+                    <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
+                      Cédula del titular, comprobante de pago bancario y certificados de respaldo (médico, fuerza mayor o fotos).
+                    </span>
+                  </div>
+                </div>
               </div>
             </article>
+
             <article>
               <span>2</span>
               <div>
-                <h3>Resolución</h3>
-                <p>
-                  Primero ofrecemos reprogramar sin penalidad dentro de 6 a 12
-                  meses. Si corresponde, devolvemos por el mismo método de pago.
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "8px",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <h3 style={{ margin: 0 }}>Paso 2: Evaluación y Resolución</h3>
+                  <span className="status status--pacific">Respuesta en 24-48h</span>
+                </div>
+                <p style={{ marginBottom: "12px" }}>
+                  Nuestro equipo de operaciones analiza las causas y los antecedentes con los operadores locales para darte una solución oportuna.
                 </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                    gap: "12px",
+                    background: "var(--sand)",
+                    padding: "14px 16px",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(27,73,101,0.15)",
+                  }}
+                >
+                  <div>
+                    <strong
+                      style={{
+                        display: "block",
+                        color: "var(--pacific)",
+                        fontSize: "0.88rem",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      🔄 Reprogramación prioritaria
+                    </strong>
+                    <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
+                      Te ofrecemos posponer la fecha del viaje sin penalidades dentro de una vigencia de 6 a 12 meses.
+                    </span>
+                  </div>
+                  <div>
+                    <strong
+                      style={{
+                        display: "block",
+                        color: "var(--pacific)",
+                        fontSize: "0.88rem",
+                        marginBottom: "3px",
+                      }}
+                    >
+                      ⚖️ Liquidación de reembolso
+                    </strong>
+                    <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
+                      Si corresponde devolución según los términos, se liquida el valor neto deducidos los costos no recuperables.
+                    </span>
+                  </div>
+                </div>
               </div>
             </article>
+
             <article>
               <span>3</span>
               <div>
-                <h3>Reembolso</h3>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Método</th>
-                      <th>Plazo</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Transferencia a cuenta del titular</td>
-                      <td>3 a 5 días hábiles</td>
-                    </tr>
-                    <tr>
-                      <td>Tarjeta por la pasarela</td>
-                      <td>
-                        7 a 15 días hábiles; depende del banco, no de la agencia
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "8px",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <h3 style={{ margin: 0 }}>Paso 3: Acreditación del Reembolso</h3>
+                  <span className="status status--success">✓ Directo a tu cuenta</span>
+                </div>
+                <p style={{ marginBottom: "12px" }}>
+                  Las devoluciones se realizan exclusivamente por el mismo método con el que se efectuó el pago original, a nombre del titular de la reserva.
+                </p>
+                <div className="timeline-table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th style={{ width: "45%" }}>Método de acreditación</th>
+                        <th style={{ width: "25%" }}>Plazo estimado</th>
+                        <th style={{ width: "30%" }}>Observaciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <strong>Transferencia bancaria</strong>
+                          <div
+                            style={{
+                              fontSize: "0.82rem",
+                              color: "var(--abyss)",
+                              opacity: 0.8,
+                            }}
+                          >
+                            A cuenta del titular registrado
+                          </div>
+                        </td>
+                        <td>
+                          <span
+                            className="status status--success"
+                            style={{ fontWeight: 600 }}
+                          >
+                            3 a 5 días hábiles
+                          </span>
+                        </td>
+                        <td style={{ fontSize: "0.85rem" }}>
+                          Sujeto a confirmación bancaria interbancaria SPI.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Reversión a tarjeta de crédito/débito</strong>
+                          <div
+                            style={{
+                              fontSize: "0.82rem",
+                              color: "var(--abyss)",
+                              opacity: 0.8,
+                            }}
+                          >
+                            A través de la pasarela de pagos
+                          </div>
+                        </td>
+                        <td>
+                          <span
+                            className="status status--pacific"
+                            style={{ fontWeight: 600 }}
+                          >
+                            7 a 15 días hábiles
+                          </span>
+                        </td>
+                        <td style={{ fontSize: "0.85rem" }}>
+                          El tiempo exacto depende del banco emisor de tu tarjeta.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </article>
           </div>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "14px",
+              flexWrap: "wrap",
+              marginTop: "20px",
+            }}
+          >
+            <Button kind="primary" onClick={() => go("soporte")}>
+              Abrir ticket de soporte
+            </Button>
+            <Button kind="secondary" onClick={() => go("tickets")}>
+              Ver mis tickets activos
+            </Button>
+          </div>
         </section>
-        <Button kind="primary" onClick={() => go("soporte")}>
-          Abrir ticket de soporte
-        </Button>
       </div>
     </>
   )
@@ -5867,22 +6587,51 @@ const SUPPORT_REASONS = [
 function Support({
   go,
   purchases = [],
+  onTicketCreated,
 }: {
   go: (page: Page) => void
   purchases?: PurchaseItem[]
+  onTicketCreated?: (ticket: SupportTicket) => void
 }) {
   const [selectedBookingCode, setSelectedBookingCode] = useState(() => {
     return purchases.length > 0 ? purchases[0].code : ""
   })
   const [manualBookingCode, setManualBookingCode] = useState("")
   const [reason, setReason] = useState(() => SUPPORT_REASONS[0])
+  const [description, setDescription] = useState("")
   const [evidenceUploaded, setEvidenceUploaded] = useState(false)
   const [sent, setSent] = useState(false)
+  const [newTicketNumber, setNewTicketNumber] = useState("")
 
   const activeBookingCode =
     purchases.length > 0 && selectedBookingCode !== "otro"
       ? selectedBookingCode
       : manualBookingCode || (purchases[0]?.code ?? "ST-10428")
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const ticketNum = `TK-${Math.floor(10000 + Math.random() * 90000)}`
+    setNewTicketNumber(ticketNum)
+    const ticketObj: SupportTicket = {
+      id: `tk-${Date.now()}`,
+      ticketNumber: ticketNum,
+      bookingCode: activeBookingCode,
+      reason: reason,
+      description:
+        description.trim() ||
+        "Solicitud de asistencia técnica, revisión o soporte operativo.",
+      evidenceUploaded: evidenceUploaded,
+      createdAt: new Date().toLocaleDateString("es-EC", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      }),
+      status: "En revisión",
+      responseEstimated: "24 a 48 horas hábiles",
+    }
+    onTicketCreated?.(ticketObj)
+    setSent(true)
+  }
 
   if (sent)
     return (
@@ -5891,22 +6640,38 @@ function Support({
           <span className="success-mark">✓</span>
           <h1>Ticket recibido</h1>
           <p>
-            Tu número de ticket es <strong>ST-10428</strong> para la reserva{" "}
+            Tu número de ticket es{" "}
+            <strong>{newTicketNumber || "TK-10428"}</strong> para la reserva{" "}
             <strong>{activeBookingCode}</strong>.
           </p>
           <div className="important-note">
             <strong>Siguiente paso</strong>
             <p>
-              Revisaremos tus documentos y evidencias y responderemos por correo en hasta 2
-              días hábiles.
+              Revisaremos tus documentos y evidencias y responderemos por correo
+              en hasta 2 días hábiles. Puedes dar seguimiento al avance en la
+              sección <strong>Mis tickets</strong>.
             </p>
           </div>
-          <Button kind="primary" onClick={() => go("reservas")}>
-            Volver a mis compras
-          </Button>
+          <div
+            style={{
+              display: "flex",
+              gap: "12px",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              marginTop: "20px",
+            }}
+          >
+            <Button kind="primary" onClick={() => go("tickets")}>
+              Ver mis tickets
+            </Button>
+            <Button kind="secondary" onClick={() => go("reservas")}>
+              Volver a mis compras
+            </Button>
+          </div>
         </div>
       </>
     )
+
   return (
     <>
       <PageTitle
@@ -5914,13 +6679,7 @@ function Support({
         subtitle="Cuéntanos qué necesitas y adjunta los documentos del caso."
       />
       <div className="section support-layout">
-        <form
-          className="form-panel"
-          onSubmit={(e) => {
-            e.preventDefault()
-            setSent(true)
-          }}
-        >
+        <form className="form-panel" onSubmit={handleSubmit}>
           {purchases.length > 0 ? (
             <>
               <SelectField
@@ -5968,11 +6727,7 @@ function Support({
             />
           )}
 
-          <SelectField
-            label="Motivo"
-            value={reason}
-            onChange={setReason}
-          >
+          <SelectField label="Motivo" value={reason} onChange={setReason}>
             {SUPPORT_REASONS.map((motivo) => (
               <option key={motivo} value={motivo}>
                 {motivo}
@@ -5995,6 +6750,8 @@ function Support({
             <textarea
               rows={5}
               placeholder="Describe lo ocurrido y qué solución esperas."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               required
             />
             <span className="field__help">
@@ -6056,6 +6813,211 @@ function Support({
           <p>02 2456456</p>
           <p>travelinnovation.tamc@gmail.com</p>
         </aside>
+      </div>
+    </>
+  )
+}
+
+function Tickets({
+  go,
+  tickets = [],
+}: {
+  go: (page: Page) => void
+  tickets?: SupportTicket[]
+}) {
+  return (
+    <>
+      <PageTitle
+        title="Mis tickets de soporte"
+        subtitle="Monitorea tus requerimientos, solicitudes de reprogramación y trámites en curso."
+      />
+      <div className="section" style={{ maxWidth: "860px", margin: "0 auto" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "12px",
+            marginBottom: "24px",
+          }}
+        >
+          <div>
+            <h2 style={{ margin: 0, color: "var(--pacific)" }}>
+              Tickets registrados ({tickets.length})
+            </h2>
+            <p className="muted" style={{ margin: "4px 0 0", fontSize: "0.9rem" }}>
+              Estado y respuestas actualizadas por el equipo de atención al viajero.
+            </p>
+          </div>
+          <Button kind="primary" onClick={() => go("soporte")}>
+            + Abrir nuevo ticket
+          </Button>
+        </div>
+
+        {tickets.length === 0 ? (
+          <div
+            className="empty-state"
+            style={{
+              padding: "48px 24px",
+              textAlign: "center",
+              background: "#ffffff",
+              borderRadius: "var(--radius)",
+              border: "1px solid var(--pacific)",
+            }}
+          >
+            <span
+              style={{ fontSize: "42px", display: "block", marginBottom: "12px" }}
+            >
+              📋
+            </span>
+            <h3 style={{ color: "var(--pacific)", marginBottom: "8px" }}>
+              No tienes tickets registrados
+            </h3>
+            <p className="muted" style={{ maxWidth: "440px", margin: "0 auto 20px" }}>
+              Si necesitas gestionar una cancelación, cambio de fecha o consultar sobre tu viaje, puedes generar un ticket de atención aquí.
+            </p>
+            <Button kind="primary" onClick={() => go("soporte")}>
+              Crear ticket de soporte
+            </Button>
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            {tickets.map((t) => {
+              const statusClass =
+                t.status === "Resuelto"
+                  ? "status--success"
+                  : t.status === "En trámite"
+                  ? "status--pacific"
+                  : "status--pending"
+
+              return (
+                <article className="ticket-card" key={t.id}>
+                  <div className="ticket-header">
+                    <div>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontWeight: 800,
+                            fontSize: "1.1rem",
+                            color: "var(--pacific)",
+                          }}
+                        >
+                          {t.ticketNumber}
+                        </span>
+                        <span className={`status ${statusClass}`}>
+                          {t.status === "Resuelto" && "✓ "}
+                          {t.status === "En revisión" && "⏳ "}
+                          {t.status === "En trámite" && "⚙️ "}
+                          {t.status}
+                        </span>
+                      </div>
+                      <span
+                        className="eyebrow"
+                        style={{ marginTop: "4px", display: "inline-block" }}
+                      >
+                        Reserva: <strong>{t.bookingCode}</strong> · Enviado el{" "}
+                        {t.createdAt}
+                      </span>
+                    </div>
+                    <div style={{ textAlign: "right" }}>
+                      <span
+                        style={{
+                          fontSize: "0.82rem",
+                          color: "#64748b",
+                          display: "block",
+                        }}
+                      >
+                        Tiempo estimado de respuesta
+                      </span>
+                      <strong
+                        style={{ fontSize: "0.9rem", color: "var(--pacific)" }}
+                      >
+                        {t.responseEstimated || "24 a 48 horas hábiles"}
+                      </strong>
+                    </div>
+                  </div>
+
+                  <div
+                    style={{
+                      background: "var(--sand)",
+                      padding: "14px 16px",
+                      borderRadius: "8px",
+                      border: "1px solid rgba(27,73,101,0.15)",
+                    }}
+                  >
+                    <div style={{ marginBottom: "6px" }}>
+                      <strong
+                        style={{ fontSize: "0.95rem", color: "var(--pacific)" }}
+                      >
+                        Motivo: {t.reason}
+                      </strong>
+                    </div>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "0.92rem",
+                        color: "var(--abyss)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {t.description}
+                    </p>
+                  </div>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                      gap: "10px",
+                      paddingTop: "6px",
+                      borderTop: "1px dashed rgba(27,73,101,0.2)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.85rem",
+                        color: "#64748b",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
+                      }}
+                    >
+                      {t.evidenceUploaded ? (
+                        <>
+                          <span style={{ color: "var(--success)" }}>✓</span>{" "}
+                          Documentos y evidencias adjuntos
+                        </>
+                      ) : (
+                        <>Sin archivos adjuntos</>
+                      )}
+                    </span>
+                    <div style={{ display: "flex", gap: "10px" }}>
+                      <Button kind="secondary" onClick={() => go("soporte")}>
+                        Agregar información
+                      </Button>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        )}
+
+        <div style={{ marginTop: "28px", textAlign: "center" }}>
+          <Button kind="secondary" onClick={() => go("reservas")}>
+            Volver a mis compras
+          </Button>
+        </div>
       </div>
     </>
   )
@@ -6168,6 +7130,25 @@ export default function App() {
   const [confirmedBookingCode, setConfirmedBookingCode] = useState(() =>
     generateBookingCode()
   )
+
+  const [supportTickets, setSupportTickets] = useState<SupportTicket[]>([
+    {
+      id: "tk-seed-1",
+      ticketNumber: "TK-10428",
+      bookingCode: "TI-2026-8K3Q2M",
+      reason: "Reprogramación de fecha",
+      description:
+        "Solicitud de cambio de fecha para el paquete Galápagos Aventura por motivos laborales familiares.",
+      evidenceUploaded: true,
+      createdAt: "04 oct 2026",
+      status: "En revisión",
+      responseEstimated: "24 a 48 horas hábiles",
+    },
+  ])
+
+  const handleCreateTicket = (ticket: SupportTicket) => {
+    setSupportTickets((prev) => [ticket, ...prev])
+  }
 
   // Sync personal info when user changes
   useEffect(() => {
@@ -6381,14 +7362,14 @@ export default function App() {
   }
 
   const handleUpdateCartItemPeople = (id: string, newPeople: number) => {
-    if (newPeople < 1) return
+    const validPeople = Math.min(20, Math.max(1, newPeople))
     setCartItems((prev) =>
       prev.map((item) =>
         item.id === id
           ? {
               ...item,
-              people: newPeople,
-              total: newPeople * item.pkg.price,
+              people: validPeople,
+              total: validPeople * item.pkg.price,
             }
           : item
       )
@@ -6676,7 +7657,15 @@ export default function App() {
       case "politicas":
         return <Policies go={go} />
       case "soporte":
-        return <Support go={go} purchases={purchases} />
+        return (
+          <Support
+            go={go}
+            purchases={purchases}
+            onTicketCreated={handleCreateTicket}
+          />
+        )
+      case "tickets":
+        return <Tickets go={go} tickets={supportTickets} />
       case "diagrama":
         return <StateDiagram />
     }
@@ -6696,6 +7685,7 @@ export default function App() {
     travelersList,
     paymentData,
     confirmedBookingCode,
+    supportTickets,
   ])
   return (
     <div className="app">
