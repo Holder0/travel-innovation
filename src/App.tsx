@@ -655,7 +655,7 @@ function Field({
       {help && <span className="field__help">{help}</span>}
       {error && (
         <span className="field__error" role="alert">
-          <span aria-hidden="true">!</span> {error}
+          <span aria-hidden="true">⚠️</span> {error}
         </span>
       )}
     </label>
@@ -710,7 +710,7 @@ function SelectField({
       {help && <span className="field__help">{help}</span>}
       {error && (
         <span className="field__error" role="alert">
-          <span aria-hidden="true">!</span> {error}
+          <span aria-hidden="true">⚠️</span> {error}
         </span>
       )}
     </label>
@@ -1251,7 +1251,7 @@ function AuthModal({
             role="alert"
             style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}
           >
-            <span aria-hidden="true">!</span> {errorMsg}
+            <span aria-hidden="true">⚠️</span> {errorMsg}
           </div>
         )}
 
@@ -1908,12 +1908,16 @@ function Home({
   const [dateRange, setDateRange] = useState<DateRange | null>(null)
 
   const availableProvinces = useMemo(() => {
-    return Array.from(new Set(packages.map((p) => p.province))).sort()
+    return Array.from(new Set(packages.map((p) => p.province))).sort((a, b) =>
+      b.localeCompare(a, "es")
+    )
   }, [])
 
   const availableCities = useMemo(() => {
     if (!selectedProvince) {
-      return Array.from(new Set(packages.map((p) => p.city))).sort()
+      return Array.from(new Set(packages.map((p) => p.city))).sort((a, b) =>
+        b.localeCompare(a, "es")
+      )
     }
     return Array.from(
       new Set(
@@ -1921,7 +1925,7 @@ function Home({
           .filter((p) => p.province === selectedProvince)
           .map((p) => p.city),
       ),
-    ).sort()
+    ).sort((a, b) => b.localeCompare(a, "es"))
   }, [selectedProvince])
 
   const handleProvinceChange = (province: string) => {
@@ -2134,7 +2138,9 @@ function Catalog({
     if (selectedRegion) {
       list = list.filter((p) => p.region === selectedRegion)
     }
-    return Array.from(new Set(list.map((p) => p.province))).sort()
+    return Array.from(new Set(list.map((p) => p.province))).sort((a, b) =>
+      b.localeCompare(a, "es")
+    )
   }, [selectedRegion])
 
   const availableCities = useMemo(() => {
@@ -2145,7 +2151,9 @@ function Catalog({
     if (selectedProvince) {
       list = list.filter((p) => p.province === selectedProvince)
     }
-    return Array.from(new Set(list.map((p) => p.city))).sort()
+    return Array.from(new Set(list.map((p) => p.city))).sort((a, b) =>
+      b.localeCompare(a, "es")
+    )
   }, [selectedRegion, selectedProvince])
 
   const matchingPackages = useMemo(() => {
@@ -2424,10 +2432,18 @@ function Catalog({
               value={sortBy}
               onChange={(sb) => update({ sortBy: sb, currentPage: 1 })}
             >
-              <option value="Recomendados">Recomendados</option>
-              <option value="Precio: menor a mayor">Precio: menor a mayor</option>
-              <option value="Precio: mayor a menor">Precio: mayor a menor</option>
-              <option value="Duración">Duración</option>
+              {[
+                "Recomendados",
+                "Precio: menor a mayor",
+                "Precio: mayor a menor",
+                "Duración",
+              ]
+                .sort((a, b) => b.localeCompare(a, "es"))
+                .map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
             </SelectField>
           </div>
 
@@ -2621,11 +2637,13 @@ function Detail({
               onChange={setSelectedDate}
               help="Paquete con salidas confirmadas: elige el intervalo deseado."
             >
-              {pkg.availableDates.map((date) => (
-                <option key={date} value={date}>
-                  {date}
-                </option>
-              ))}
+              {[...pkg.availableDates]
+                .sort((a, b) => b.localeCompare(a, "es"))
+                .map((date) => (
+                  <option key={date} value={date}>
+                    {date}
+                  </option>
+                ))}
             </SelectField>
           ) : (
             <div className="field">
@@ -2750,21 +2768,63 @@ function Detail({
 
 const steps = ["Carrito", "Información Personal", "Viajeros", "Pago", "Confirmación"]
 function Stepper({ current }: { current: number }) {
+  const progressPercent = Math.min(
+    100,
+    Math.max(0, (current / (steps.length - 1)) * 100)
+  )
+
   return (
-    <nav className="stepper" aria-label="Progreso de la reserva">
-      {steps.map((step, index) => (
+    <div className="stepper-wrapper">
+      <div className="stepper-status-bar">
+        <span className="stepper-step-indicator">
+          <span className="stepper-indicator-dot" aria-hidden="true" />
+          Paso {current + 1} de {steps.length}:{" "}
+          <strong>{steps[current]}</strong>
+        </span>
+        <span className="stepper-percentage">
+          {Math.round(progressPercent)}% completado
+        </span>
+      </div>
+
+      <div
+        className="stepper-track-wrap"
+        role="progressbar"
+        aria-valuenow={Math.round(progressPercent)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
+        <div className="stepper-track-bg" />
         <div
-          className={
-            index === current ? "is-current" : index < current ? "is-done" : ""
-          }
-          aria-current={index === current ? "step" : undefined}
-          key={step}
-        >
-          <span>{index < current ? "✓" : index + 1}</span>
-          <strong>{step}</strong>
-        </div>
-      ))}
-    </nav>
+          className="stepper-track-fill"
+          style={{ width: `${progressPercent}%` }}
+        />
+      </div>
+
+      <nav className="stepper" aria-label="Progreso de la reserva">
+        {steps.map((step, index) => {
+          const isDone = index < current
+          const isCurrent = index === current
+          return (
+            <div
+              className={`stepper-node ${isCurrent ? "is-current" : ""} ${
+                isDone ? "is-done" : ""
+              }`}
+              aria-current={isCurrent ? "step" : undefined}
+              key={step}
+            >
+              <span className="stepper-badge">
+                {isDone ? (
+                  <span className="stepper-check" aria-hidden="true">✓</span>
+                ) : (
+                  index + 1
+                )}
+              </span>
+              <strong className="stepper-label">{step}</strong>
+            </div>
+          )
+        })}
+      </nav>
+    </div>
   )
 }
 
@@ -3056,7 +3116,7 @@ function AuthCheckoutModal({
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span aria-hidden="true" style={{ color: "var(--pacific)", fontWeight: 700, fontSize: "16px" }}>
-                  ℹ
+                  ⚠️
                 </span>
                 <span style={{ fontSize: "14px", color: "var(--abyss)", fontWeight: 600, lineHeight: 1.4 }}>
                   Para continuar necesitas ingresar en una cuenta.
@@ -3093,7 +3153,7 @@ function AuthCheckoutModal({
                 role="alert"
                 style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}
               >
-                <span aria-hidden="true">!</span> {errorMsg}
+                <span aria-hidden="true">⚠️</span> {errorMsg}
               </div>
             )}
 
@@ -3370,7 +3430,7 @@ function Cart({
           <section>
             {removedAlert && (
               <div className="inline-alert" role="status">
-                <span>! {removedAlert}</span>
+                <span>⚠️ {removedAlert}</span>
                 <button onClick={() => setRemovedAlert(null)}>Cerrar</button>
               </div>
             )}
@@ -3631,7 +3691,9 @@ function Identification({
 
   const availableCities = useMemo(() => {
     if (!province || !PROVINCES_DATA[province]) return []
-    return PROVINCES_DATA[province].cities
+    return [...PROVINCES_DATA[province].cities].sort((a, b) =>
+      b.localeCompare(a, "es")
+    )
   }, [province])
 
   const handleProvinceChange = (newProv: string) => {
@@ -3817,11 +3879,13 @@ function Identification({
               required
             >
               <option value="">Selecciona tu provincia</option>
-              {Object.keys(PROVINCES_DATA).map((prov) => (
-                <option key={prov} value={prov}>
-                  {prov}
-                </option>
-              ))}
+              {Object.keys(PROVINCES_DATA)
+                .sort((a, b) => b.localeCompare(a, "es"))
+                .map((prov) => (
+                  <option key={prov} value={prov}>
+                    {prov}
+                  </option>
+                ))}
             </SelectField>
 
             <SelectField
@@ -4255,7 +4319,7 @@ function Travelers({
                         required
                       />
                       <div className="inline-alert" style={{ marginTop: "8px" }}>
-                        ! Lleva su documento de identidad y autorización escrita
+                        ⚠️ Lleva su documento de identidad y autorización escrita
                         si viaja sin sus padres o representantes legales.
                       </div>
                     </div>
@@ -4266,7 +4330,7 @@ function Travelers({
           )}
 
           <div className="important-note">
-            <strong>! Lleva tu cédula física y original el día del viaje</strong>
+            <strong>⚠️ Lleva tu cédula física y original el día del viaje</strong>
             <p>
               Todos los pasajeros deben presentar su documento de identidad original
               para el embarque y check-in.
@@ -4685,7 +4749,7 @@ function Payment({
                 </div>
 
                 <div className="important-note" style={{ marginTop: "18px" }}>
-                  <strong>Plazo para enviar comprobante: 24 horas</strong>
+                  <strong>⚠️ Plazo para enviar comprobante: 24 horas</strong>
                   <p>
                     Después de este tiempo, los cupos reservados pueden ser
                     reversados automáticamente.
@@ -4827,19 +4891,30 @@ function Payment({
                       onChange={(val) => setInstallments(val)}
                       help="Selecciona si deseas pago corriente o cuotas diferidas con tu tarjeta de crédito."
                     >
-                      <option value="1 pago corriente (sin recargo)">
-                        1 pago corriente (${total})
-                      </option>
-                      <option value="3 cuotas sin intereses">
-                        3 cuotas sin intereses (${(total / 3).toFixed(2)}/mes)
-                      </option>
-                      <option value="6 cuotas sin intereses">
-                        6 cuotas sin intereses (${(total / 6).toFixed(2)}/mes)
-                      </option>
-                      <option value="12 cuotas con intereses">
-                        12 cuotas con intereses ($
-                        {((total * 1.08) / 12).toFixed(2)}/mes)
-                      </option>
+                      {[
+                        {
+                          val: "6 cuotas sin intereses",
+                          txt: `6 cuotas sin intereses ($${(total / 6).toFixed(2)}/mes)`,
+                        },
+                        {
+                          val: "3 cuotas sin intereses",
+                          txt: `3 cuotas sin intereses ($${(total / 3).toFixed(2)}/mes)`,
+                        },
+                        {
+                          val: "12 cuotas con intereses",
+                          txt: `12 cuotas con intereses ($${((total * 1.08) / 12).toFixed(2)}/mes)`,
+                        },
+                        {
+                          val: "1 pago corriente (sin recargo)",
+                          txt: `1 pago corriente ($${total})`,
+                        },
+                      ]
+                        .sort((a, b) => b.txt.localeCompare(a.txt, "es"))
+                        .map((opt) => (
+                          <option key={opt.val} value={opt.val}>
+                            {opt.txt}
+                          </option>
+                        ))}
                     </SelectField>
                   </div>
                 )}
@@ -4990,6 +5065,12 @@ function Confirmation({
 }) {
   const [copied, setCopied] = useState(false)
   const [downloadToast, setDownloadToast] = useState(false)
+  const [purchaseToast, setPurchaseToast] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setPurchaseToast(false), 5000)
+    return () => clearTimeout(timer)
+  }, [])
 
   const isTransfer = paymentData.method === "transferencia"
   const isDebit = paymentData.method === "debito"
@@ -5002,6 +5083,9 @@ function Confirmation({
 
   return (
     <>
+      <div className="section" style={{ paddingBottom: 0 }}>
+        <Stepper current={4} />
+      </div>
       <div className="section confirmation">
         <span className="success-mark" aria-label="Éxito">
           ✓
@@ -5257,6 +5341,14 @@ function Confirmation({
         </div>
       </div>
 
+      {purchaseToast && (
+        <div className="toast" role="status">
+          <span>
+            🎉 ¡Compra realizada y confirmada con éxito! Bienvenido a tu viaje con Travel Innovation{currentUser?.name ? `, ${currentUser.name.split(" ")[0]}` : ""}.
+          </span>
+          <button onClick={() => setPurchaseToast(false)}>Cerrar</button>
+        </div>
+      )}
       {downloadToast && (
         <div className="toast" role="status">
           <span>✓ Comprobante de reserva #{bookingCode} descargado en PDF.</span>
@@ -5803,15 +5895,23 @@ function Support({ go }: { go: (page: Page) => void }) {
             value={reason}
             onChange={setReason}
           >
-            <option>cancelación voluntaria</option>
-            <option>incumplimiento operativo</option>
-            <option>fuerza mayor</option>
-            <option>emergencia médica</option>
-            <option>downgrade</option>
+            {[
+              "incumplimiento operativo",
+              "fuerza mayor",
+              "emergencia médica",
+              "downgrade",
+              "cancelación voluntaria",
+            ]
+              .sort((a, b) => b.localeCompare(a, "es"))
+              .map((motivo) => (
+                <option key={motivo} value={motivo}>
+                  {motivo}
+                </option>
+              ))}
           </SelectField>
           {reason === "cancelación voluntaria" && (
             <div className="inline-alert" role="alert">
-              <strong>! Revisa el plazo antes de enviar</strong>
+              <strong>⚠️ Revisa el plazo antes de enviar</strong>
               <span>
                 Si faltan menos de 72 horas hábiles, la cancelación voluntaria
                 no admite reembolso. Puedes solicitar una revisión o consultar
@@ -5932,6 +6032,14 @@ export default function App() {
     name: string
     email: string
   } | null>(null)
+  const [accountCreatedToast, setAccountCreatedToast] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (accountCreatedToast) {
+      const timer = setTimeout(() => setAccountCreatedToast(null), 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [accountCreatedToast])
 
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo>({
     fullName: "",
@@ -6085,6 +6193,9 @@ export default function App() {
         secondaryStreet: "",
         reference: "",
       })
+      setAccountCreatedToast(
+        `🎉 ¡Cuenta creada con éxito! Bienvenido a Travel Innovation, ${regFullName.split(" ")[0] || "viajero"}.`
+      )
     }
 
     setCurrentUser({ name: regFullName, email: user.email })
@@ -6511,6 +6622,12 @@ export default function App() {
         onClose={() => setIsAuthModalOpen(false)}
         onLoginSuccess={handleLoginSuccess}
       />
+      {accountCreatedToast && (
+        <div className="toast" role="status" style={{ zIndex: 120 }}>
+          <span>{accountCreatedToast}</span>
+          <button onClick={() => setAccountCreatedToast(null)}>Cerrar</button>
+        </div>
+      )}
     </div>
   )
 }
