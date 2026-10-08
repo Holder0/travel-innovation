@@ -5957,34 +5957,203 @@ function Confirmation({
 
         {/* Resumen conciso de todo */}
         <div className="confirmation-summary-card">
-          {/* Paquetes reservados */}
+          {/* Paquetes Turísticos y Viajeros Registrados (Agrupados por Paquete) */}
           <div className="confirmation-section">
             <h3>
-              <span>📦</span> Paquetes Turísticos Reservados
+              <span>📦</span> Paquetes Turísticos y Viajeros Registrados (
+              {cartItems.length} {cartItems.length === 1 ? "paquete" : "paquetes"})
             </h3>
-            <div className="confirmation-packages-list">
-              {cartItems.map((item) => (
-                <div key={item.id} className="cart-summary-item-row">
-                  <div>
-                    <strong>{item.pkg.name}</strong>
-                    <small>
-                      📍 {item.pkg.city} ({item.pkg.province}) · 📅 {item.date}
-                    </small>
-                    <small>
-                      👥 {item.people}{" "}
-                      {item.people === 1 ? "viajero" : "viajeros"} (${item.pkg.price}{" "}
-                      c/u)
-                    </small>
-                  </div>
-                  <div>
-                    <strong
-                      style={{ fontSize: "16px", color: "var(--pacific)" }}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+              }}
+            >
+              {cartItems.map((item, pIdx) => {
+                let pkgTravelers = travelersList.filter(
+                  (t) =>
+                    t.packageId === item.id ||
+                    (t.packageTitle &&
+                      item.pkg.name &&
+                      t.packageTitle.toLowerCase() ===
+                        item.pkg.name.toLowerCase())
+                )
+
+                if (pkgTravelers.length === 0) {
+                  let startIndex = 0
+                  for (let i = 0; i < pIdx; i++) {
+                    startIndex += cartItems[i].people || 1
+                  }
+                  pkgTravelers = travelersList.slice(
+                    startIndex,
+                    startIndex + (item.people || 1)
+                  )
+                }
+
+                if (pkgTravelers.length === 0) {
+                  const fallbackList: TravelerData[] = []
+                  for (let p = 1; p <= item.people; p++) {
+                    fallbackList.push({
+                      id: `cf-${item.id}-${p}`,
+                      slotNumber: p,
+                      packageId: item.id,
+                      packageTitle: item.pkg.name,
+                      fullName:
+                        pIdx === 0 && p === 1
+                          ? personalInfo.fullName ||
+                            currentUser?.name ||
+                            "Titular de la reserva"
+                          : `Viajero ${p}`,
+                      cedula:
+                        pIdx === 0 && p === 1
+                          ? personalInfo.cedula || "1712345675"
+                          : "Registrada",
+                      isTitular: p === 1,
+                      isMinor: false,
+                    })
+                  }
+                  pkgTravelers = fallbackList
+                }
+
+                return (
+                  <div
+                    key={item.id}
+                    style={{
+                      border: "1px solid var(--pacific)",
+                      borderRadius: "8px",
+                      padding: "16px",
+                      background: "var(--sand)",
+                    }}
+                  >
+                    <div
+                      className="cart-summary-item-row"
+                      style={{
+                        paddingBottom: "12px",
+                        marginBottom: "12px",
+                        borderBottom: "1px dashed rgba(27, 73, 101, 0.25)",
+                      }}
                     >
-                      ${item.total}
-                    </strong>
+                      <div>
+                        <strong style={{ fontSize: "16px" }}>
+                          {item.pkg.name}
+                        </strong>
+                        <small>
+                          📍 {item.pkg.city} ({item.pkg.province}) · 📅{" "}
+                          {item.date}
+                        </small>
+                        <small>
+                          👥 {item.people}{" "}
+                          {item.people === 1 ? "viajero" : "viajeros"} ($
+                          {item.pkg.price} c/u)
+                        </small>
+                      </div>
+                      <div>
+                        <strong
+                          style={{
+                            fontSize: "16px",
+                            color: "var(--pacific)",
+                          }}
+                        >
+                          ${item.total}
+                        </strong>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div
+                        style={{
+                          fontSize: "13.5px",
+                          fontWeight: 700,
+                          color: "var(--pacific)",
+                          marginBottom: "8px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "6px",
+                        }}
+                      >
+                        <span>👥</span> Viajeros registrados en este paquete (
+                        {pkgTravelers.length}):
+                      </div>
+                      <div
+                        className="confirmation-travelers-list"
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "8px",
+                        }}
+                      >
+                        {pkgTravelers.map((t, idx) => (
+                          <div
+                            key={t.id || idx}
+                            className="confirmation-traveler-item"
+                            style={{
+                              background: "#ffffff",
+                              border: "1px solid rgba(27, 73, 101, 0.18)",
+                              borderRadius: "6px",
+                              padding: "10px 14px",
+                            }}
+                          >
+                            <span>
+                              <strong>
+                                Viajero {idx + 1}:{" "}
+                                {t.fullName ||
+                                  (idx === 0 && pIdx === 0
+                                    ? personalInfo.fullName ||
+                                      currentUser?.name
+                                    : "Acompañante")}
+                              </strong>
+                              <small
+                                style={{
+                                  marginLeft: "10px",
+                                  color: "#5a6e7f",
+                                }}
+                              >
+                                · Doc:{" "}
+                                {t.cedula ||
+                                  (idx === 0 && pIdx === 0
+                                    ? personalInfo.cedula
+                                    : "Registrada")}
+                              </small>
+                            </span>
+                            {t.isMinor ? (
+                              <span
+                                className="status status--pending"
+                                style={{
+                                  fontSize: "12px",
+                                  padding: "2px 8px",
+                                }}
+                              >
+                                Menor de edad
+                              </span>
+                            ) : t.isTitular ? (
+                              <span
+                                className="status status--pacific"
+                                style={{
+                                  fontSize: "12px",
+                                  padding: "2px 8px",
+                                }}
+                              >
+                                Titular
+                              </span>
+                            ) : (
+                              <span
+                                className="status"
+                                style={{
+                                  fontSize: "12px",
+                                  padding: "2px 8px",
+                                }}
+                              >
+                                Acompañante
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
@@ -5997,7 +6166,9 @@ function Confirmation({
               <div>
                 <small>Titular</small>
                 <strong>
-                  {personalInfo.fullName || currentUser?.name || "María Andrade"}
+                  {personalInfo.fullName ||
+                    currentUser?.name ||
+                    "María Andrade"}
                 </strong>
               </div>
               <div>
@@ -6024,55 +6195,6 @@ function Confirmation({
                     : "Av. Amazonas y Naciones Unidas, N34-120 · Quito, Pichincha"}
                 </strong>
               </div>
-            </div>
-          </div>
-
-          {/* Viajeros Registrados */}
-          <div className="confirmation-section">
-            <h3>
-              <span>👥</span> Viajeros Registrados ({travelersList.length || 1})
-            </h3>
-            <div className="confirmation-travelers-list">
-              {travelersList.map((t, idx) => (
-                <div key={t.id || idx} className="confirmation-traveler-item">
-                  <span>
-                    <strong>
-                      Viajero {idx + 1}:{" "}
-                      {t.fullName ||
-                        (idx === 0
-                          ? personalInfo.fullName || currentUser?.name
-                          : "Acompañante")}
-                    </strong>
-                    <small style={{ marginLeft: "10px", color: "#5a6e7f" }}>
-                      · Doc:{" "}
-                      {t.cedula ||
-                        (idx === 0 ? personalInfo.cedula : "Registrada")}
-                    </small>
-                  </span>
-                  {t.isMinor ? (
-                    <span
-                      className="status status--pending"
-                      style={{ fontSize: "12px", padding: "2px 8px" }}
-                    >
-                      Menor de edad
-                    </span>
-                  ) : t.isTitular ? (
-                    <span
-                      className="status status--pacific"
-                      style={{ fontSize: "12px", padding: "2px 8px" }}
-                    >
-                      Titular
-                    </span>
-                  ) : (
-                    <span
-                      className="status"
-                      style={{ fontSize: "12px", padding: "2px 8px" }}
-                    >
-                      Acompañante
-                    </span>
-                  )}
-                </div>
-              ))}
             </div>
           </div>
 
@@ -6199,10 +6321,12 @@ function Reservations({
   go,
   purchases = [],
   currentUser = null,
+  supportTickets = [],
 }: {
   go: (page: Page) => void
   purchases?: PurchaseItem[]
   currentUser?: { name: string; email: string } | null
+  supportTickets?: SupportTicket[]
 }) {
   const [activePurchaseId, setActivePurchaseId] = useState<string>(
     purchases[0]?.id || ""
@@ -6221,6 +6345,14 @@ function Reservations({
 
   const activePurchase =
     purchases.find((p) => p.id === activePurchaseId) || purchases[0]
+
+  const hasTicketForThisPurchase = supportTickets.find(
+    (t) =>
+      t.bookingCode &&
+      activePurchase?.code &&
+      t.bookingCode.trim().toUpperCase() ===
+        activePurchase.code.trim().toUpperCase()
+  )
 
   return (
     <>
@@ -6332,7 +6464,7 @@ function Reservations({
                 </span>
               </div>
 
-              {/* Lista de paquetes adquiridos en esta compra */}
+              {/* Paquetes incluidos y viajeros registrados agrupados por paquete */}
               <div style={{ margin: "20px 0" }}>
                 <h3
                   style={{
@@ -6341,55 +6473,198 @@ function Reservations({
                     marginBottom: "12px",
                   }}
                 >
-                  Paquetes incluidos ({activePurchase.packages.length})
+                  Paquetes incluidos y viajeros registrados (
+                  {activePurchase.packages.length}{" "}
+                  {activePurchase.packages.length === 1
+                    ? "paquete"
+                    : "paquetes"}
+                  )
                 </h3>
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "10px",
+                    gap: "14px",
                   }}
                 >
-                  {activePurchase.packages.map((pkgItem) => (
-                    <div
-                      key={pkgItem.id}
-                      style={{
-                        padding: "14px 16px",
-                        border: "1px solid var(--pacific)",
-                        borderRadius: "var(--radius)",
-                        background: "var(--sand)",
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        gap: "12px",
-                      }}
-                    >
-                      <div>
-                        <strong style={{ fontSize: "15px", display: "block" }}>
-                          {pkgItem.name}
-                        </strong>
-                        <small style={{ color: "#5a6e7f", display: "block" }}>
-                          📍 {pkgItem.city} ({pkgItem.province}) · 📅{" "}
-                          {pkgItem.date}
-                        </small>
-                        <small style={{ color: "var(--abyss)" }}>
-                          👥 {pkgItem.people}{" "}
-                          {pkgItem.people === 1 ? "viajero" : "viajeros"} ($
-                          {pkgItem.price} c/u)
-                        </small>
-                      </div>
-                      <div style={{ textAlign: "right" }}>
-                        <strong
+                  {activePurchase.packages.map((pkgItem, pIdx) => {
+                    const allTravs = activePurchase.travelers || []
+                    let pkgTravelers = allTravs.filter(
+                      (t) =>
+                        t.packageId === pkgItem.id ||
+                        (t.packageTitle &&
+                          pkgItem.name &&
+                          t.packageTitle.toLowerCase() ===
+                            pkgItem.name.toLowerCase())
+                    )
+
+                    if (pkgTravelers.length === 0) {
+                      let startIndex = 0
+                      for (let i = 0; i < pIdx; i++) {
+                        startIndex += activePurchase.packages[i].people || 1
+                      }
+                      pkgTravelers = allTravs.slice(
+                        startIndex,
+                        startIndex + (pkgItem.people || 1)
+                      )
+                    }
+
+                    if (pkgTravelers.length === 0) {
+                      for (let p = 1; p <= pkgItem.people; p++) {
+                        pkgTravelers.push({
+                          id: `p-${pkgItem.id}-${p}`,
+                          slotNumber: p,
+                          packageId: pkgItem.id,
+                          packageTitle: pkgItem.name,
+                          fullName:
+                            pIdx === 0 && p === 1
+                              ? activePurchase.titular?.name ||
+                                "Titular de la reserva"
+                              : `Viajero ${p}`,
+                          cedula:
+                            pIdx === 0 && p === 1
+                              ? activePurchase.titular?.cedula ||
+                                "1712345675"
+                              : "Registrada",
+                          isTitular: pIdx === 0 && p === 1,
+                          isMinor: false,
+                        })
+                      }
+                    }
+
+                    return (
+                      <div
+                        key={pkgItem.id || pIdx}
+                        style={{
+                          padding: "16px",
+                          border: "1px solid var(--pacific)",
+                          borderRadius: "var(--radius)",
+                          background: "var(--sand)",
+                        }}
+                      >
+                        <div
                           style={{
-                            fontSize: "17px",
-                            color: "var(--pacific)",
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            gap: "12px",
+                            paddingBottom: "12px",
+                            borderBottom:
+                              "1px dashed rgba(27, 73, 101, 0.25)",
                           }}
                         >
-                          ${pkgItem.total}
-                        </strong>
+                          <div>
+                            <strong
+                              style={{ fontSize: "15px", display: "block" }}
+                            >
+                              {pkgItem.name}
+                            </strong>
+                            <small
+                              style={{ color: "#5a6e7f", display: "block" }}
+                            >
+                              📍 {pkgItem.city} ({pkgItem.province}) · 📅{" "}
+                              {pkgItem.date}
+                            </small>
+                            <small style={{ color: "var(--abyss)" }}>
+                              👥 {pkgItem.people}{" "}
+                              {pkgItem.people === 1
+                                ? "viajero"
+                                : "viajeros"}{" "}
+                              (${pkgItem.price} c/u)
+                            </small>
+                          </div>
+                          <div style={{ textAlign: "right" }}>
+                            <strong
+                              style={{
+                                fontSize: "17px",
+                                color: "var(--pacific)",
+                              }}
+                            >
+                              ${pkgItem.total}
+                            </strong>
+                          </div>
+                        </div>
+
+                        <div style={{ marginTop: "12px" }}>
+                          <span
+                            style={{
+                              fontSize: "13px",
+                              fontWeight: 700,
+                              color: "var(--pacific)",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "6px",
+                              marginBottom: "8px",
+                            }}
+                          >
+                            <span>👥</span> Viajeros registrados en este
+                            paquete ({pkgTravelers.length}):
+                          </span>
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: "6px",
+                            }}
+                          >
+                            {pkgTravelers.map((t, idx) => (
+                              <div
+                                key={t.id || idx}
+                                style={{
+                                  padding: "8px 12px",
+                                  background: "var(--breeze)",
+                                  border: "1px solid var(--pacific)",
+                                  borderRadius: "6px",
+                                  fontSize: "13px",
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <span>
+                                  <strong>Viajero {idx + 1}:</strong>{" "}
+                                  {t.fullName ||
+                                    "Sin nombre registrado"}{" "}
+                                  · Doc: {t.cedula || "N/A"}
+                                </span>
+                                {t.isMinor ? (
+                                  <span
+                                    className="status status--pending"
+                                    style={{
+                                      fontSize: "11px",
+                                      padding: "1px 6px",
+                                    }}
+                                  >
+                                    Menor de edad
+                                  </span>
+                                ) : t.isTitular ? (
+                                  <span
+                                    className="status status--pacific"
+                                    style={{
+                                      fontSize: "11px",
+                                      padding: "1px 6px",
+                                    }}
+                                  >
+                                    Titular
+                                  </span>
+                                ) : (
+                                  <span
+                                    className="status"
+                                    style={{
+                                      fontSize: "11px",
+                                      padding: "1px 6px",
+                                    }}
+                                  >
+                                    Acompañante
+                                  </span>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
 
@@ -6446,65 +6721,6 @@ function Reservations({
                 </div>
               </div>
 
-              {activePurchase.travelers &&
-                activePurchase.travelers.length > 0 && (
-                  <div style={{ margin: "20px 0" }}>
-                    <h3
-                      style={{
-                        fontSize: "16px",
-                        color: "var(--pacific)",
-                        marginBottom: "10px",
-                      }}
-                    >
-                      Viajeros registrados ({activePurchase.travelers.length})
-                    </h3>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "8px",
-                      }}
-                    >
-                      {activePurchase.travelers.map((t, idx) => (
-                        <div
-                          key={t.id || idx}
-                          style={{
-                            padding: "8px 12px",
-                            background: "var(--breeze)",
-                            border: "1px solid var(--pacific)",
-                            borderRadius: "6px",
-                            fontSize: "13.5px",
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                          }}
-                        >
-                          <span>
-                            <strong>Viajero {idx + 1}:</strong>{" "}
-                            {t.fullName || "Sin nombre registrado"} · Doc:{" "}
-                            {t.cedula || "N/A"}
-                          </span>
-                          {t.isMinor ? (
-                            <span
-                              className="status status--pending"
-                              style={{ fontSize: "11px", padding: "1px 6px" }}
-                            >
-                              Menor de edad
-                            </span>
-                          ) : idx === 0 ? (
-                            <span
-                              className="status status--success"
-                              style={{ fontSize: "11px", padding: "1px 6px" }}
-                            >
-                              Titular
-                            </span>
-                          ) : null}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
               <div className="split-actions" style={{ marginTop: "24px" }}>
                 <Button
                   kind="secondary"
@@ -6516,9 +6732,23 @@ function Reservations({
                 >
                   Descargar voucher PDF
                 </Button>
-                <Button kind="primary" type="button" onClick={() => go("soporte")}>
-                  Abrir ticket de soporte
-                </Button>
+                {hasTicketForThisPurchase ? (
+                  <Button
+                    kind="secondary"
+                    type="button"
+                    onClick={() => go("tickets")}
+                  >
+                    Ver ticket de soporte ({hasTicketForThisPurchase.ticketNumber})
+                  </Button>
+                ) : (
+                  <Button
+                    kind="primary"
+                    type="button"
+                    onClick={() => go("soporte")}
+                  >
+                    Abrir ticket de soporte
+                  </Button>
+                )}
               </div>
             </section>
           )}
@@ -6776,7 +7006,7 @@ function Policies({ go }: { go: (page: Page) => void }) {
                   }}
                 >
                   <h3 style={{ margin: 0 }}>Paso 3: Acreditación del Reembolso</h3>
-                  <span className="status status--success">✓ Directo a tu cuenta</span>
+                  <span className="status status--pacific">✓ Directo a tu cuenta</span>
                 </div>
                 <p style={{ marginBottom: "12px" }}>
                   Las devoluciones se realizan exclusivamente por el mismo método con el que se efectuó el pago original, a nombre del titular de la reserva.
@@ -6894,7 +7124,16 @@ function Support({
   onTicketCreated?: (ticket: SupportTicket) => void
 }) {
   const [selectedBookingCode, setSelectedBookingCode] = useState(() => {
-    return purchases.length > 0 ? purchases[0].code : ""
+    const unsubmitted = purchases.find(
+      (p) =>
+        !supportTickets.some(
+          (t) =>
+            t.bookingCode &&
+            p.code &&
+            t.bookingCode.trim().toUpperCase() === p.code.trim().toUpperCase()
+        )
+    )
+    return unsubmitted ? unsubmitted.code : (purchases[0]?.code ?? "")
   })
   const [manualBookingCode, setManualBookingCode] = useState("")
   const [reason, setReason] = useState(() => SUPPORT_REASONS[0])
@@ -6906,10 +7145,22 @@ function Support({
   const activeBookingCode =
     purchases.length > 0 && selectedBookingCode !== "otro"
       ? selectedBookingCode
-      : manualBookingCode || (purchases[0]?.code ?? "ST-10428")
+      : manualBookingCode.trim() || (purchases[0]?.code ?? "ST-10428")
+
+  // Comprobar si ya existe un ticket registrado para ESTA compra específica (1 ticket por compra)
+  const existingTicketForActiveCode = supportTickets.find(
+    (t) =>
+      t.bookingCode &&
+      activeBookingCode &&
+      t.bookingCode.trim().toUpperCase() ===
+        activeBookingCode.trim().toUpperCase()
+  )
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (existingTicketForActiveCode) {
+      return
+    }
     const ticketNum = `TK-${Math.floor(10000 + Math.random() * 90000)}`
     setNewTicketNumber(ticketNum)
     const ticketObj: SupportTicket = {
@@ -6933,96 +7184,6 @@ function Support({
     setSent(true)
   }
 
-  // Si ya existe un ticket registrado y no se acaba de enviar en esta pantalla
-  if (supportTickets && supportTickets.length > 0 && !sent) {
-    const existingTicket = supportTickets[0]
-    return (
-      <>
-        <PageTitle
-          title="Soporte por ticket"
-          subtitle="Atención y seguimiento de solicitudes de servicio."
-        />
-        <div className="section" style={{ maxWidth: "780px", margin: "0 auto" }}>
-          <div className="inline-alert" style={{ marginBottom: "20px" }}>
-            ⚠️ <strong>Ya posees un ticket registrado en proceso</strong>: Actualmente tienes activo el ticket{" "}
-            <strong>{existingTicket.ticketNumber}</strong> correspondiente a la reserva{" "}
-            <strong>{existingTicket.bookingCode}</strong>. Por políticas de atención al cliente, únicamente se permite enviar y mantener un ticket activo a la vez para su revisión.
-          </div>
-
-          <article className="ticket-card">
-            <div className="ticket-header">
-              <div>
-                <span style={{ fontWeight: 800, fontSize: "1.15rem", color: "var(--pacific)" }}>
-                  {existingTicket.ticketNumber}
-                </span>
-                <span className="status status--pending" style={{ marginLeft: "10px" }}>
-                  ⏳ {existingTicket.status}
-                </span>
-                <span className="eyebrow" style={{ display: "block", marginTop: "4px" }}>
-                  Reserva: <strong>{existingTicket.bookingCode}</strong> · Enviado el {existingTicket.createdAt}
-                </span>
-              </div>
-              <div style={{ textAlign: "right" }}>
-                <span style={{ fontSize: "0.82rem", color: "#64748b", display: "block" }}>
-                  Respuesta estimada
-                </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--pacific)" }}>
-                  {existingTicket.responseEstimated || "24 a 48 horas hábiles"}
-                </strong>
-              </div>
-            </div>
-
-            <div
-              style={{
-                background: "var(--sand)",
-                padding: "14px 16px",
-                borderRadius: "8px",
-                border: "1px solid rgba(27,73,101,0.15)",
-                marginTop: "12px",
-              }}
-            >
-              <strong style={{ color: "var(--pacific)", display: "block", marginBottom: "4px" }}>
-                Motivo: {existingTicket.reason}
-              </strong>
-              <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--abyss)", lineHeight: 1.5 }}>
-                {existingTicket.description}
-              </p>
-            </div>
-
-            <div
-              style={{
-                paddingTop: "12px",
-                borderTop: "1px dashed rgba(27,73,101,0.2)",
-                marginTop: "14px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexWrap: "wrap",
-                gap: "10px",
-              }}
-            >
-              <span style={{ fontSize: "0.85rem", color: "#64748b" }}>
-                {existingTicket.evidenceUploaded ? "✓ Documentos de respaldo adjuntos" : "Sin archivos adjuntos"}
-              </span>
-              <span className="muted" style={{ fontSize: "0.82rem", fontStyle: "italic" }}>
-                🔒 Ticket en proceso de atención (no modificable)
-              </span>
-            </div>
-          </article>
-
-          <div style={{ display: "flex", gap: "12px", marginTop: "24px", justifyContent: "center", flexWrap: "wrap" }}>
-            <Button kind="primary" onClick={() => go("tickets")}>
-              Ver estado en Mis tickets
-            </Button>
-            <Button kind="secondary" onClick={() => go("reservas")}>
-              Volver a mis compras
-            </Button>
-          </div>
-        </div>
-      </>
-    )
-  }
-
   if (sent)
     return (
       <>
@@ -7038,7 +7199,7 @@ function Support({
             <strong>Siguiente paso</strong>
             <p>
               Revisaremos tus documentos y responderemos por correo
-              en hasta 2 días hábiles. Recuerda que este ticket ya ha quedado registrado de manera definitiva y no admite modificaciones. Puedes dar seguimiento al avance en la
+              en hasta 2 días hábiles. Recuerda que solo se puede registrar 1 ticket por compra y este ya ha quedado guardado de manera definitiva (no modificable). Puedes dar seguimiento al avance en la
               sección <strong>Mis tickets</strong>.
             </p>
           </div>
@@ -7069,26 +7230,32 @@ function Support({
         subtitle="Cuéntanos qué necesitas y adjunta los documentos del caso."
       />
       <div className="section support-layout">
-        <form className="form-panel" onSubmit={handleSubmit}>
+        <div className="form-panel">
           {purchases.length > 0 ? (
             <>
               <SelectField
                 label="Código de reserva"
                 value={selectedBookingCode}
                 onChange={(val) => setSelectedBookingCode(val)}
-                help="Selecciona el código de tu compra realizada o ingresa otro manualmente."
+                help="Selecciona la compra para la cual solicitas soporte (solo se permite 1 ticket por compra)."
               >
                 {purchases
                   .map((p) => p.code)
                   .sort((a, b) => a.localeCompare(b, "es"))
                   .map((code) => {
                     const purchase = purchases.find((p) => p.code === code)
+                    const hasTicket = supportTickets.some(
+                      (t) =>
+                        t.bookingCode &&
+                        t.bookingCode.trim().toUpperCase() ===
+                          code.trim().toUpperCase()
+                    )
                     const pkgNames =
                       purchase?.packages.map((pkg) => pkg.name).join(", ") ||
                       "Compra confirmada"
                     return (
                       <option key={code} value={code}>
-                        {code} — {pkgNames}
+                        {code} — {pkgNames} {hasTicket ? "(✓ 1 ticket ya registrado)" : ""}
                       </option>
                     )
                   })}
@@ -7112,88 +7279,255 @@ function Support({
               placeholder="Ej. TI-2026-8K3Q2M"
               value={manualBookingCode}
               onChange={setManualBookingCode}
-              help="Lo encuentras en tu correo de confirmación o voucher de compra."
+              help="Lo encuentras en tu correo de confirmación o voucher de compra (máx. 1 ticket por compra)."
               required
             />
           )}
 
-          <SelectField label="Motivo" value={reason} onChange={setReason}>
-            {SUPPORT_REASONS.map((motivo) => (
-              <option key={motivo} value={motivo}>
-                {motivo}
-              </option>
-            ))}
-          </SelectField>
-          {(reason === "Cancelación voluntaria" ||
-            reason === "Cancelaciones tardías") && (
-            <div className="inline-alert" role="alert">
-              <strong>⚠️ Revisa el plazo antes de enviar</strong>
-              <span>
-                Si faltan menos de 72 horas hábiles, la cancelación voluntaria
-                no admite reembolso. Puedes solicitar una revisión o consultar
-                opciones de reprogramación.
-              </span>
-            </div>
-          )}
-          <label className="field">
-            <span className="field__label">Descripción</span>
-            <textarea
-              rows={5}
-              placeholder="Describe lo ocurrido y qué solución esperas."
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            />
-            <span className="field__help">
-              Incluye fechas y detalles relevantes.
-            </span>
-          </label>
-          <div className="field">
-            <span className="field__label">Evidencias y respaldos</span>
-            <div
-              className="upload-zone"
-              style={{ minHeight: "170px", cursor: "pointer" }}
-            >
-              <span className="upload-icon" aria-hidden="true">
-                ↑
-              </span>
-              <strong>Arrastra tus archivos de evidencia aquí</strong>
-              <span style={{ fontSize: "13.5px", color: "#64748b" }}>
-                Formatos JPG, PNG o PDF (máx. 10 MB)
-              </span>
-              <Button
-                kind="secondary"
-                type="button"
-                onClick={() => setEvidenceUploaded(true)}
+          {existingTicketForActiveCode ? (
+            <div style={{ marginTop: "16px" }}>
+              <div className="inline-alert" style={{ marginBottom: "16px" }}>
+                ⚠️ <strong>Esta compra ya tiene un ticket registrado</strong>: La reserva{" "}
+                <strong>{activeBookingCode}</strong> ya cuenta con el ticket{" "}
+                <strong>{existingTicketForActiveCode.ticketNumber}</strong> en estado{" "}
+                <strong>{existingTicketForActiveCode.status}</strong>. Por políticas del servicio, solo se puede hacer <strong>1 ticket por compra</strong>.
+              </div>
+
+              <article className="ticket-card" style={{ marginBottom: "16px" }}>
+                <div className="ticket-header">
+                  <div>
+                    <span
+                      style={{
+                        fontWeight: 800,
+                        fontSize: "1.15rem",
+                        color: "var(--pacific)",
+                      }}
+                    >
+                      {existingTicketForActiveCode.ticketNumber}
+                    </span>
+                    <span
+                      className="status status--pending"
+                      style={{ marginLeft: "10px" }}
+                    >
+                      ⏳ {existingTicketForActiveCode.status}
+                    </span>
+                    <span
+                      className="eyebrow"
+                      style={{ display: "block", marginTop: "4px" }}
+                    >
+                      Reserva: <strong>{existingTicketForActiveCode.bookingCode}</strong> · Enviado el{" "}
+                      {existingTicketForActiveCode.createdAt}
+                    </span>
+                  </div>
+                  <div style={{ textAlign: "right" }}>
+                    <span
+                      style={{
+                        fontSize: "0.82rem",
+                        color: "#64748b",
+                        display: "block",
+                      }}
+                    >
+                      Respuesta estimada
+                    </span>
+                    <strong
+                      style={{ fontSize: "0.9rem", color: "var(--pacific)" }}
+                    >
+                      {existingTicketForActiveCode.responseEstimated ||
+                        "24 a 48 horas hábiles"}
+                    </strong>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    background: "var(--sand)",
+                    padding: "14px 16px",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(27,73,101,0.15)",
+                    marginTop: "12px",
+                  }}
+                >
+                  <strong
+                    style={{
+                      color: "var(--pacific)",
+                      display: "block",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    Motivo: {existingTicketForActiveCode.reason}
+                  </strong>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: "0.92rem",
+                      color: "var(--abyss)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {existingTicketForActiveCode.description}
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    paddingTop: "12px",
+                    borderTop: "1px dashed rgba(27,73,101,0.2)",
+                    marginTop: "14px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "10px",
+                  }}
+                >
+                  <span style={{ fontSize: "0.85rem", color: "#64748b" }}>
+                    {existingTicketForActiveCode.evidenceUploaded
+                      ? "✓ Documentos de respaldo adjuntos"
+                      : "Sin archivos adjuntos"}
+                  </span>
+                  <span
+                    className="muted"
+                    style={{ fontSize: "0.82rem", fontStyle: "italic" }}
+                  >
+                    🔒 Ticket registrado (no modificable · 1 ticket por compra)
+                  </span>
+                </div>
+              </article>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  marginTop: "16px",
+                  flexWrap: "wrap",
+                }}
               >
-                {evidenceUploaded ? "Cambiar archivos" : "Seleccionar archivos"}
-              </Button>
+                <Button kind="primary" onClick={() => go("tickets")}>
+                  Ver en Mis tickets
+                </Button>
+                {purchases.some(
+                  (p) =>
+                    !supportTickets.some(
+                      (t) =>
+                        t.bookingCode &&
+                        t.bookingCode.trim().toUpperCase() ===
+                          p.code.trim().toUpperCase()
+                    )
+                ) && (
+                  <Button
+                    kind="secondary"
+                    onClick={() => {
+                      const avail = purchases.find(
+                        (p) =>
+                          !supportTickets.some(
+                            (t) =>
+                              t.bookingCode &&
+                              t.bookingCode.trim().toUpperCase() ===
+                                p.code.trim().toUpperCase()
+                          )
+                      )
+                      if (avail) setSelectedBookingCode(avail.code)
+                    }}
+                  >
+                    Crear ticket para otra compra
+                  </Button>
+                )}
+              </div>
             </div>
-            {evidenceUploaded && (
-              <div className="file-progress" role="status">
-                <div>
-                  <span>evidencias_y_comprobante_caso.pdf</span>
-                  <strong>100%</strong>
+          ) : (
+            <form onSubmit={handleSubmit} style={{ marginTop: "16px" }}>
+              <SelectField label="Motivo" value={reason} onChange={setReason}>
+                {SUPPORT_REASONS.map((motivo) => (
+                  <option key={motivo} value={motivo}>
+                    {motivo}
+                  </option>
+                ))}
+              </SelectField>
+              {(reason === "Cancelación voluntaria" ||
+                reason === "Cancelaciones tardías") && (
+                <div className="inline-alert" role="alert">
+                  <strong>⚠️ Revisa el plazo antes de enviar</strong>
+                  <span>
+                    Si faltan menos de 72 horas hábiles, la cancelación voluntaria
+                    no admite reembolso. Puedes solicitar una revisión o consultar
+                    opciones de reprogramación.
+                  </span>
                 </div>
-                <div className="progress">
-                  <span />
+              )}
+              <label className="field">
+                <span className="field__label">Descripción</span>
+                <textarea
+                  rows={5}
+                  placeholder="Describe lo ocurrido y qué solución esperas."
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                />
+                <span className="field__help">
+                  Incluye fechas y detalles relevantes.
+                </span>
+              </label>
+              <div className="field">
+                <span className="field__label">Evidencias y respaldos</span>
+                <div
+                  className="upload-zone"
+                  style={{ minHeight: "170px", cursor: "pointer" }}
+                >
+                  <span className="upload-icon" aria-hidden="true">
+                    ↑
+                  </span>
+                  <strong>Arrastra tus archivos de evidencia aquí</strong>
+                  <span style={{ fontSize: "13.5px", color: "#64748b" }}>
+                    Formatos JPG, PNG o PDF (máx. 10 MB)
+                  </span>
+                  <Button
+                    kind="secondary"
+                    type="button"
+                    onClick={() => setEvidenceUploaded(true)}
+                  >
+                    {evidenceUploaded ? "Cambiar archivos" : "Seleccionar archivos"}
+                  </Button>
                 </div>
-                <span className="status status--success">
-                  ✓ Documentos adjuntos listos
+                {evidenceUploaded && (
+                  <div className="file-progress" role="status">
+                    <div style={{ color: "var(--pacific)" }}>
+                      <span
+                        style={{
+                          fontWeight: 600,
+                          color: "var(--pacific)",
+                        }}
+                      >
+                        evidencias_y_comprobante_caso.pdf
+                      </span>
+                      <strong style={{ color: "var(--pacific)" }}>100%</strong>
+                    </div>
+                    <div
+                      className="progress"
+                      style={{
+                        borderColor: "var(--pacific)",
+                        background: "rgba(27, 73, 101, 0.12)",
+                      }}
+                    >
+                      <span style={{ background: "var(--pacific)" }} />
+                    </div>
+                    <span className="status status--pacific">
+                      ✓ Documentos adjuntos listos
+                    </span>
+                  </div>
+                )}
+                <span className="field__help">
+                  Puedes subir comprobante de pago, certificado médico, fotografías, denuncias u otros documentos de respaldo.
                 </span>
               </div>
-            )}
-            <span className="field__help">
-              Puedes subir comprobante de pago, certificado médico, fotografías, denuncias u otros documentos de respaldo.
-            </span>
-          </div>
-          <Button kind="primary" type="submit">
-            Enviar ticket
-          </Button>
-        </form>
+              <Button kind="primary" type="submit">
+                Enviar ticket
+              </Button>
+            </form>
+          )}
+        </div>
         <aside className="support-help">
           <h2>Antes de enviar</h2>
-          <p>Ten a mano tu código de reserva y los respaldos de tu caso.</p>
+          <p>Ten a mano tu código de reserva y los respaldos de tu caso (recuerda que solo se permite 1 ticket por compra).</p>
           <button className="text-link" onClick={() => go("politicas")}>
             Consultar políticas de reserva
           </button>
@@ -7211,10 +7545,24 @@ function Support({
 function Tickets({
   go,
   tickets = [],
+  purchases = [],
 }: {
   go: (page: Page) => void
   tickets?: SupportTicket[]
+  purchases?: PurchaseItem[]
 }) {
+  const purchasesWithoutTicket = purchases.filter(
+    (p) =>
+      !tickets.some(
+        (t) =>
+          t.bookingCode &&
+          p.code &&
+          t.bookingCode.trim().toUpperCase() === p.code.trim().toUpperCase()
+      )
+  )
+  const canOpenNewTicket =
+    purchases.length === 0 || purchasesWithoutTicket.length > 0
+
   return (
     <>
       <PageTitle
@@ -7237,10 +7585,10 @@ function Tickets({
               Tickets registrados ({tickets.length})
             </h2>
             <p className="muted" style={{ margin: "4px 0 0", fontSize: "0.9rem" }}>
-              Estado y respuestas actualizadas por el equipo de atención al viajero.
+              Estado y respuestas actualizadas por el equipo de atención al viajero (1 ticket por compra).
             </p>
           </div>
-          {tickets.length === 0 ? (
+          {canOpenNewTicket ? (
             <Button kind="primary" onClick={() => go("soporte")}>
               + Abrir ticket de soporte
             </Button>
@@ -7249,7 +7597,7 @@ function Tickets({
               className="status status--pacific"
               style={{ fontSize: "0.85rem", fontWeight: 700 }}
             >
-              ✓ Límite de 1 ticket activo alcanzado
+              ✓ Límite de 1 ticket por compra alcanzado
             </span>
           )}
         </div>
@@ -7404,7 +7752,7 @@ function Tickets({
                       className="muted"
                       style={{ fontSize: "0.82rem", fontStyle: "italic" }}
                     >
-                      🔒 Ticket registrado (no modificable)
+                      🔒 Ticket registrado (no modificable · 1 ticket por compra)
                     </span>
                   </div>
                 </article>
@@ -7893,7 +8241,7 @@ export default function App() {
 
     // Save snapshot of current purchase for confirmation screen
     setLastPurchasedItems([...cartItems])
-    setLastPurchasedTravelers([...travelersList])
+    setLastPurchasedTravelers([...newPurchase.travelers])
     setLastPurchasedPayment({ ...finalPayment })
 
     // Add to purchases and empty cart
@@ -8044,6 +8392,7 @@ export default function App() {
             go={go}
             purchases={purchases}
             currentUser={currentUser}
+            supportTickets={supportTickets}
           />
         )
       case "politicas":
@@ -8058,7 +8407,13 @@ export default function App() {
           />
         )
       case "tickets":
-        return <Tickets go={go} tickets={supportTickets} />
+        return (
+          <Tickets
+            go={go}
+            tickets={supportTickets}
+            purchases={purchases}
+          />
+        )
       case "diagrama":
         return <StateDiagram />
     }
