@@ -2000,8 +2000,19 @@ function Header({
       </a>
       <header className="site-header">
         <nav className="header-inner" aria-label="Navegación principal">
-          <button className="wordmark" onClick={() => go("inicio")}>
-            Travel Innovation
+          <button
+            className="wordmark"
+            onClick={() => go("inicio")}
+            aria-label="Ir a inicio - Travel Innovation"
+          >
+            <img
+              src="/logo-badge.png"
+              alt="Logo Travel Innovation"
+              className="wordmark__logo"
+              width="38"
+              height="38"
+            />
+            <span>Travel Innovation</span>
           </button>
           <div className="main-links">
             <button
@@ -2336,7 +2347,16 @@ function Footer({ go }: { go: (page: Page) => void }) {
   return (
     <footer className="footer">
       <div>
-        <strong>Travel Innovation</strong>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+          <img
+            src="/logo-badge.png"
+            alt="Logo Travel Innovation"
+            width="32"
+            height="32"
+            style={{ borderRadius: "50%", flexShrink: 0 }}
+          />
+          <strong style={{ fontSize: "18px" }}>Travel Innovation</strong>
+        </div>
         <p>Viajes nacionales pensados para descubrir Ecuador.</p>
       </div>
       <div>
