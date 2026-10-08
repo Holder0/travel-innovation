@@ -225,10 +225,26 @@ label.check,
 .page-title { background: var(--pacific); color: var(--breeze); padding: 42px max(24px, calc((100vw - 1192px) / 2)); }
 .page-title h1 { color: inherit; margin-bottom: 8px; }
 .page-title p { margin: 0; max-width: 740px; }
-.hero { background: var(--pacific); color: var(--breeze); padding: 64px max(24px, calc((100vw - 1192px) / 2)) 72px; }
-.hero__copy { max-width: 700px; }
-.hero__copy h1 { font-size: 52px; max-width: 650px; margin: 8px 0 16px; }
-.hero__copy p { font-size: 20px; }
+.hero {
+  position: relative;
+  background-color: var(--pacific);
+  background-image:
+    linear-gradient(
+      115deg,
+      rgba(27, 73, 101, 0.84) 0%,
+      rgba(27, 73, 101, 0.62) 55%,
+      rgba(27, 73, 101, 0.78) 100%
+    ),
+    url("./assets/hero-ecuador.jpg");
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  color: var(--breeze);
+  padding: 64px max(24px, calc((100vw - 1192px) / 2)) 72px;
+}
+.hero__copy { max-width: 700px; position: relative; z-index: 1; }
+.hero__copy h1 { font-size: 52px; max-width: 650px; margin: 8px 0 16px; text-shadow: 0 2px 12px rgba(15, 31, 44, 0.35); }
+.hero__copy p { font-size: 20px; text-shadow: 0 1px 6px rgba(15, 31, 44, 0.3); }
 .eyebrow { display: inline-block; color: var(--pacific); text-transform: uppercase; font-weight: 700; font-size: 14px; letter-spacing: .08em; }
 .eyebrow.light { color: var(--breeze); }
 .search-panel { background: var(--sand); color: var(--abyss); border-radius: var(--radius); padding: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr auto; align-items: end; gap: 14px; margin-top: 34px; position: relative; }
