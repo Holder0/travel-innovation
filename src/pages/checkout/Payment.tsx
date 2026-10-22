@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData, PaymentDetails, PaymentMethodType } from "../../types"
 import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
 import { validateCardNumber, validateCardExpiry, validateCardCvv } from "../../utils/validation"
+import { generateBookingCode } from "../../services/storage"
 
 export function Payment({
   go,

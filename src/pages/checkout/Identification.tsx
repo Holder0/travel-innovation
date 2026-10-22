@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import type { Page, PersonalInfo } from "../../types"
 import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
 import { PROVINCES_DATA } from "../../data/provincesData"

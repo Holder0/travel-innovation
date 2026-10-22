@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData } from "../../types"
 import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
 import { validateEcuadorianCedula, validatePhoneNumber } from "../../utils/validation"
@@ -115,7 +115,7 @@ export function Travelers({
   }, [travelersList, generatedSlots])
 
   const [errors, setErrors] = useState<
-    Record<string, { fullName?: string; cedula?: string; birthDate?: string }>
+    Record<string, { fullName?: string; cedula?: string; birthDate?: string; phone?: string; email?: string }>
   >({})
   const [groupErrors, setGroupErrors] = useState<Record<string, string | undefined>>({})
 

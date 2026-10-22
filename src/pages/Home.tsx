@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import type { Page, PackageItem, DateRange, SearchFilters } from "../types"
 import { Button, SelectField, DateRangePicker } from "../components/common"
 import { PackageCard } from "../components/cards/PackageCard"

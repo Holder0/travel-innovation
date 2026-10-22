@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect, useMemo } from "react"
 import type { Page, PackageItem } from "../types"
 import { Button, SelectField } from "../components/common"
+import { packages } from "../data/packagesData"
 
 export function Detail({
   pkg = packages[4],

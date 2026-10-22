@@ -61,7 +61,7 @@ export function PackageCard({
         <Button
           kind="secondary"
           onClick={(e) => {
-            e.stopPropagation()
+            e?.stopPropagation()
             handleClick()
           }}
         >

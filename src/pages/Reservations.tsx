@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import type { Page, PurchaseItem, SupportTicket } from "../types"
 import { Button, Field, PageTitle } from "../components/common"
 

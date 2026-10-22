@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData, PaymentDetails } from "../../types"
 import { Button, Stepper } from "../../components/common"
 
