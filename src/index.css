@@ -462,6 +462,7 @@ input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--pacific)
   align-items: stretch;
 }
 
+.detail-sections .detail-card,
 .detail-sections details {
   border: 1px solid var(--pacific);
   border-radius: var(--radius);
@@ -473,42 +474,30 @@ input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--pacific)
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.detail-sections .detail-card:hover,
 .detail-sections details:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(27, 73, 101, 0.12);
 }
 
+.detail-sections .detail-card-header,
 .detail-sections summary {
   min-height: 48px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  padding: 10px 10px;
+  padding: 10px 12px;
   color: var(--pacific);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.25;
-  cursor: pointer;
   user-select: none;
-  background: rgba(27, 73, 101, 0.06);
+  background: rgba(27, 73, 101, 0.07);
   border-bottom: 1px solid var(--pacific);
-  transition: background 0.15s ease;
+  cursor: default;
 }
 
 .detail-sections summary:hover {
-  background: rgba(27, 73, 101, 0.12);
-}
-
-.detail-sections .summary-caret {
-  display: inline-block;
-  font-size: 10px;
-  opacity: 0.7;
-  transition: transform 0.2s ease;
-}
-
-.detail-sections details[open] summary .summary-caret {
-  transform: rotate(180deg);
+  background: rgba(27, 73, 101, 0.1);
 }
 
 .detail-sections .accordion-body {
@@ -561,6 +550,7 @@ input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--pacific)
     gap: 12px;
     padding-bottom: 8px;
   }
+  .detail-sections .detail-card,
   .detail-sections details {
     min-width: 220px;
     flex-shrink: 0;
@@ -720,6 +710,26 @@ summary:hover {
   color: #b78103;
   border-color: #f59e0b;
   font-size: 30px;
+}
+
+.center-popup-icon--warning {
+  background: #fef3f2;
+  color: #b42318;
+  border-color: #f04438;
+  font-size: 28px;
+}
+
+.max-added-warning {
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--error, #b42318);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  animation: fadeInPopup 0.2s ease-out;
 }
 
 .center-popup-title {

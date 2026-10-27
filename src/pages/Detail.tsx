@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react"
-import type { Page, PackageItem } from "../types"
+import type { Page, PackageItem, CartItem } from "../types"
 import { Button, SelectField } from "../components/common"
 import { packages } from "../data/packagesData"
 
@@ -8,6 +8,7 @@ export function Detail({
   go,
   onBack,
   addToCart,
+  cartItems = [],
 }: {
   pkg?: PackageItem
   go: (page: Page) => void
@@ -18,9 +19,10 @@ export function Detail({
     people: number
     total: number
   }) => void
+  cartItems?: CartItem[]
 }) {
   const [people, setPeople] = useState(1)
-  const [toast, setToast] = useState(false)
+  const [modalType, setModalType] = useState<"success" | "duplicate" | null>(null)
   const [selectedDate, setSelectedDate] = useState(
     pkg.availableDates && pkg.availableDates.length > 0
       ? pkg.availableDates[0]
@@ -46,15 +48,23 @@ export function Detail({
     setActiveImage(pkg.image)
   }, [pkg])
 
+  const isAlreadyInCart = cartItems
+    ? cartItems.some((item) => item.pkg.id === pkg.id)
+    : false
+
   const total = people * pkg.price
   const add = () => {
+    if (isAlreadyInCart) {
+      setModalType("duplicate")
+      return
+    }
     addToCart({
       pkg,
       date: selectedDate,
       people,
       total,
     })
-    setToast(true)
+    setModalType("success")
   }
   return (
     <>
@@ -170,14 +180,18 @@ export function Detail({
           <Button kind="primary" onClick={add}>
             Agregar al carrito
           </Button>
+          {isAlreadyInCart && (
+            <p className="max-added-warning">
+              <span aria-hidden="true">⚠️</span> Número máximo añadido
+            </p>
+          )}
         </section>
       </div>
       <div className="section detail-sections">
-        <details open>
-          <summary>
+        <div className="detail-card">
+          <div className="detail-card-header">
             <span>Itinerario por día</span>
-            <span className="summary-caret" aria-hidden="true">▾</span>
-          </summary>
+          </div>
           <div className="accordion-body">
             <h3>Día 1 · Llegada y bienvenida</h3>
             <p>
@@ -188,12 +202,12 @@ export function Detail({
             <h3>Día 3 · Retorno</h3>
             <p>Desayuno y retorno al punto de origen.</p>
           </div>
-        </details>
-        <details open>
-          <summary>
+        </div>
+
+        <div className="detail-card">
+          <div className="detail-card-header">
             <span>Incluye / No incluye</span>
-            <span className="summary-caret" aria-hidden="true">▾</span>
-          </summary>
+          </div>
           <div className="accordion-body two-col">
             <div>
               <h3>Incluye</h3>
@@ -204,51 +218,97 @@ export function Detail({
               <p>✕ Almuerzos, cenas y gastos personales.</p>
             </div>
           </div>
-        </details>
-        <details open>
-          <summary>
+        </div>
+
+        <div className="detail-card">
+          <div className="detail-card-header">
             <span>Punto de encuentro y hora</span>
-            <span className="summary-caret" aria-hidden="true">▾</span>
-          </summary>
+          </div>
           <div className="accordion-body">
             <p>
               <strong>Terminal turística, Quito · 06:00.</strong> Hay una
               tolerancia exacta de 15 minutos.
             </p>
           </div>
-        </details>
-        <details open>
-          <summary>
+        </div>
+
+        <div className="detail-card">
+          <div className="detail-card-header">
             <span>Documentos requeridos</span>
-            <span className="summary-caret" aria-hidden="true">▾</span>
-          </summary>
+          </div>
           <div className="accordion-body">
             <p>
               Cédula física y original del titular. Para menores, documento de
               identidad y autorización cuando corresponda.
             </p>
           </div>
-        </details>
-        <details open>
-          <summary>
+        </div>
+
+        <div className="detail-card">
+          <div className="detail-card-header">
             <span>Condiciones resumidas</span>
-            <span className="summary-caret" aria-hidden="true">▾</span>
-          </summary>
+          </div>
           <div className="accordion-body">
             <p>La salida requiere un mínimo de 15 personas.</p>
             <button className="text-link" onClick={() => go("politicas")}>
               Ver política completa de cancelación
             </button>
           </div>
-        </details>
+        </div>
       </div>
-      {toast && (
+      {modalType === "duplicate" && (
+        <div
+          className="center-popup-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="duplicate-popup-title"
+          onClick={() => setModalType(null)}
+        >
+          <div
+            className="center-popup-card"
+            onClick={(e) => e.stopPropagation()}
+            role="alertdialog"
+          >
+            <button
+              type="button"
+              className="center-popup-close"
+              onClick={() => setModalType(null)}
+              aria-label="Cerrar advertencia"
+            >
+              ✕
+            </button>
+            <div
+              className="center-popup-icon center-popup-icon--warning"
+              aria-hidden="true"
+            >
+              ⚠️
+            </div>
+            <h2 id="duplicate-popup-title" className="center-popup-title">
+              No se puede agregar este paquete
+            </h2>
+            <p className="center-popup-subtitle">
+              Este paquete ya se encuentra en tu carrito de compras. Solo se
+              permite agregar un paquete de este mismo tipo por compra.
+            </p>
+            <div className="center-popup-actions">
+              <Button kind="primary" onClick={() => go("carrito")}>
+                Ir al carrito de compras
+              </Button>
+              <Button kind="secondary" onClick={() => setModalType(null)}>
+                Entendido
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {modalType === "success" && (
         <div
           className="center-popup-backdrop"
           role="dialog"
           aria-modal="true"
           aria-labelledby="cart-popup-title"
-          onClick={() => setToast(false)}
+          onClick={() => setModalType(null)}
         >
           <div
             className="center-popup-card"
@@ -258,7 +318,7 @@ export function Detail({
             <button
               type="button"
               className="center-popup-close"
-              onClick={() => setToast(false)}
+              onClick={() => setModalType(null)}
               aria-label="Cerrar notificación"
             >
               ✕
@@ -290,7 +350,7 @@ export function Detail({
               <Button kind="primary" onClick={() => go("carrito")}>
                 Ir al carrito de compras
               </Button>
-              <Button kind="secondary" onClick={() => setToast(false)}>
+              <Button kind="secondary" onClick={() => setModalType(null)}>
                 Seguir explorando
               </Button>
             </div>

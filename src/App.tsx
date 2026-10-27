@@ -303,7 +303,13 @@ export default function App() {
       id: `${item.pkg.id}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
       ...item,
     }
-    setCartItems((prev) => [...prev, newItem])
+    // Regla: solo se puede agregar un paquete del mismo tipo al mismo tiempo; permite agregar otros distintos
+    setCartItems((prev) => {
+      if (prev.some((c) => c.pkg.id === item.pkg.id)) {
+        return prev
+      }
+      return [...prev, newItem]
+    })
 
     // Requirement 2: Ensure any subsequent purchase has fresh blank travelers and payment data
     setTravelersList([])
@@ -614,6 +620,7 @@ export default function App() {
             go={go}
             onBack={() => go(previousPage || "catalogo")}
             addToCart={handleAddToCart}
+            cartItems={cartItems}
           />
         )
       case "carrito":
