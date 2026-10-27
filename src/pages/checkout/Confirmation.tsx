@@ -25,11 +25,6 @@ export function Confirmation({
   const [downloadToast, setDownloadToast] = useState(false)
   const [purchaseToast, setPurchaseToast] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => setPurchaseToast(false), 5000)
-    return () => clearTimeout(timer)
-  }, [])
-
   const isTransfer = paymentData.method === "transferencia"
   const isDebit = paymentData.method === "debito"
   const isCredit = paymentData.method === "credito"
@@ -435,13 +430,71 @@ export function Confirmation({
       </div>
 
       {purchaseToast && (
-        <div className="toast" role="status">
-          <span>
-            {!isTransfer || paymentData.bankVoucherUploaded
-              ? `🎉 ¡Compra realizada con éxito! Bienvenido a tu viaje con Travel Innovation${currentUser?.name ? `, ${currentUser.name.split(" ")[0]}` : ""}.`
-              : `⏳ ¡Reserva en verificación! Tienes 24 horas para adjuntar tu comprobante de pago desde "Mis compras".`}
-          </span>
-          <button onClick={() => setPurchaseToast(false)}>Cerrar</button>
+        <div
+          className="center-popup-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="purchase-popup-title"
+          onClick={() => setPurchaseToast(false)}
+        >
+          <div
+            className="center-popup-card"
+            onClick={(e) => e.stopPropagation()}
+            role="status"
+          >
+            <button
+              type="button"
+              className="center-popup-close"
+              onClick={() => setPurchaseToast(false)}
+              aria-label="Cerrar notificación"
+            >
+              ✕
+            </button>
+            <div
+              className={`center-popup-icon ${
+                !isTransfer || paymentData.bankVoucherUploaded
+                  ? "center-popup-icon--celebrate"
+                  : ""
+              }`}
+              aria-hidden="true"
+            >
+              {!isTransfer || paymentData.bankVoucherUploaded ? "🎉" : "⏳"}
+            </div>
+            <h2 id="purchase-popup-title" className="center-popup-title">
+              {!isTransfer || paymentData.bankVoucherUploaded
+                ? "¡Compra realizada con éxito!"
+                : "¡Reserva en verificación!"}
+            </h2>
+            <p className="center-popup-subtitle">
+              {!isTransfer || paymentData.bankVoucherUploaded
+                ? `Bienvenido a tu viaje con Travel Innovation${
+                    currentUser?.name
+                      ? `, ${currentUser.name.split(" ")[0]}`
+                      : ""
+                  }. Hemos enviado los comprobantes y detalles a tu correo electrónico.`
+                : `Tienes 24 horas para adjuntar tu comprobante de pago bancario desde "Mis compras" para validar tu reserva.`}
+            </p>
+            <div className="center-popup-details">
+              <div className="center-popup-row">
+                <span>Código de reserva:</span>
+                <strong>#{bookingCode}</strong>
+              </div>
+              <div className="center-popup-row">
+                <span>Total pagado:</span>
+                <strong className="center-popup-price">${total}</strong>
+              </div>
+            </div>
+            <div className="center-popup-actions">
+              <Button kind="primary" onClick={() => setPurchaseToast(false)}>
+                Entendido
+              </Button>
+              <Button kind="secondary" onClick={() => go("reservas")}>
+                {!isTransfer || paymentData.bankVoucherUploaded
+                  ? "Ver mis compras"
+                  : "Adjuntar comprobante"}
+              </Button>
+            </div>
+          </div>
         </div>
       )}
       {downloadToast && (

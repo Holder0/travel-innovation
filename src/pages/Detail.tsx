@@ -189,7 +189,7 @@ export function Detail({
             <p>Desayuno y retorno al punto de origen.</p>
           </div>
         </details>
-        <details>
+        <details open>
           <summary>
             <span>Incluye / No incluye</span>
             <span className="summary-caret" aria-hidden="true">▾</span>
@@ -205,7 +205,7 @@ export function Detail({
             </div>
           </div>
         </details>
-        <details>
+        <details open>
           <summary>
             <span>Punto de encuentro y hora</span>
             <span className="summary-caret" aria-hidden="true">▾</span>
@@ -217,7 +217,7 @@ export function Detail({
             </p>
           </div>
         </details>
-        <details>
+        <details open>
           <summary>
             <span>Documentos requeridos</span>
             <span className="summary-caret" aria-hidden="true">▾</span>
@@ -229,7 +229,7 @@ export function Detail({
             </p>
           </div>
         </details>
-        <details>
+        <details open>
           <summary>
             <span>Condiciones resumidas</span>
             <span className="summary-caret" aria-hidden="true">▾</span>
@@ -243,10 +243,58 @@ export function Detail({
         </details>
       </div>
       {toast && (
-        <div className="toast" role="status">
-          <span>✓ {pkg.name} agregado al carrito</span>
-          <button onClick={() => go("carrito")}>Ver carrito</button>
-          <button onClick={() => setToast(false)}>Cerrar</button>
+        <div
+          className="center-popup-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="cart-popup-title"
+          onClick={() => setToast(false)}
+        >
+          <div
+            className="center-popup-card"
+            onClick={(e) => e.stopPropagation()}
+            role="status"
+          >
+            <button
+              type="button"
+              className="center-popup-close"
+              onClick={() => setToast(false)}
+              aria-label="Cerrar notificación"
+            >
+              ✕
+            </button>
+            <div className="center-popup-icon" aria-hidden="true">
+              ✓
+            </div>
+            <h2 id="cart-popup-title" className="center-popup-title">
+              ¡Producto agregado con éxito!
+            </h2>
+            <p className="center-popup-subtitle">
+              Has agregado <strong>{pkg.name}</strong> para{" "}
+              <strong>
+                {people} {people === 1 ? "persona" : "personas"}
+              </strong>{" "}
+              a tu carrito de compras.
+            </p>
+            <div className="center-popup-details">
+              <div className="center-popup-row">
+                <span>Fecha seleccionada:</span>
+                <strong>{selectedDate}</strong>
+              </div>
+              <div className="center-popup-row">
+                <span>Total estimado:</span>
+                <strong className="center-popup-price">${total}</strong>
+              </div>
+            </div>
+            <div className="center-popup-actions">
+              <Button kind="primary" onClick={() => go("carrito")}>
+                Ir al carrito de compras
+              </Button>
+              <Button kind="secondary" onClick={() => setToast(false)}>
+                Seguir explorando
+              </Button>
+            </div>
+          </div>
         </div>
       )}
     </>

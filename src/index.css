@@ -451,7 +451,124 @@ input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--pacific)
 }
 .total-row { display: flex; justify-content: space-between; border-block: 1px solid var(--pacific); padding: 18px 0; margin: 20px 0; }
 .booking-panel > .button { width: 100%; }
-.detail-sections { padding-top: 0; max-width: 900px; }
+.detail-sections {
+  padding-top: 0;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto 36px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.detail-sections details {
+  border: 1px solid var(--pacific);
+  border-radius: var(--radius);
+  background: var(--sand);
+  margin-bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detail-sections details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 73, 101, 0.12);
+}
+
+.detail-sections summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 10px 10px;
+  color: var(--pacific);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.25;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(27, 73, 101, 0.06);
+  border-bottom: 1px solid var(--pacific);
+  transition: background 0.15s ease;
+}
+
+.detail-sections summary:hover {
+  background: rgba(27, 73, 101, 0.12);
+}
+
+.detail-sections .summary-caret {
+  display: inline-block;
+  font-size: 10px;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.detail-sections details[open] summary .summary-caret {
+  transform: rotate(180deg);
+}
+
+.detail-sections .accordion-body {
+  border-top: 0;
+  padding: 12px 10px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--abyss);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-sections .accordion-body h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pacific);
+  margin: 0 0 4px;
+}
+
+.detail-sections .accordion-body h3:not(:first-child) {
+  margin-top: 8px;
+}
+
+.detail-sections .accordion-body p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0 0 6px;
+  color: var(--abyss);
+}
+
+.detail-sections .two-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-sections .text-link {
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: left;
+  padding: 0;
+}
+
+@media (max-width: 720px) {
+  .detail-sections {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+  .detail-sections details {
+    min-width: 220px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+
+/* Default details styling outside of .detail-sections */
 details { border: 1px solid var(--pacific); border-radius: var(--radius); background: var(--sand); margin-bottom: 12px; overflow: hidden; }
 .package-specific-date {
   display: flex;
@@ -527,6 +644,154 @@ summary:hover {
 }
 .toast span { margin-right: auto; font-weight: 500; font-size: 14.5px; }
 .toast button { border: 0; background: transparent; color: var(--breeze); text-decoration: underline; font-weight: 700; cursor: pointer; }
+
+/* Notificación emergente de compra / carrito centrada en pantalla */
+.center-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 31, 44, 0.6);
+  backdrop-filter: blur(5px);
+  animation: fadeInPopup 0.2s ease-out;
+}
+
+.center-popup-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  color: var(--abyss);
+  padding: 32px 28px 26px;
+  border-radius: 16px;
+  border: 2px solid var(--pacific);
+  box-shadow: 0 20px 50px rgba(15, 31, 44, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  animation: scaleInCenter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.center-popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--pacific);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.center-popup-close:hover {
+  background: var(--sand);
+}
+
+.center-popup-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #e6f7ec;
+  color: var(--success);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--success);
+  box-shadow: 0 4px 12px rgba(30, 122, 70, 0.16);
+  margin-bottom: 2px;
+}
+
+.center-popup-icon--celebrate {
+  background: #fff8e6;
+  color: #b78103;
+  border-color: #f59e0b;
+  font-size: 30px;
+}
+
+.center-popup-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pacific);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.center-popup-subtitle {
+  font-size: 14.5px;
+  color: var(--abyss);
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.center-popup-details {
+  width: 100%;
+  background: var(--breeze);
+  border: 1px solid var(--pacific);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.center-popup-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  color: var(--abyss);
+}
+
+.center-popup-price {
+  color: var(--pacific);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.center-popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.center-popup-actions .button {
+  width: 100%;
+  justify-content: center;
+}
+
+@keyframes fadeInPopup {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleInCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
 /* Stepper Animado en la parte superior del flujo de compra */
 .stepper-wrapper {
