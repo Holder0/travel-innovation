@@ -183,6 +183,40 @@ export function Cart({
 
                 return (
                   <article className="cart-item" key={group.key}>
+                    <button
+                      type="button"
+                      className="cart-btn-remove-group"
+                      onClick={() => requestRemoveGroup(group)}
+                      aria-label={
+                        group.items.length > 1
+                          ? `Quitar todos los paquetes de ${group.pkg.name}`
+                          : `Quitar paquete de ${group.pkg.name}`
+                      }
+                      title={
+                        group.items.length > 1
+                          ? "Quitar todos los paquetes"
+                          : "Quitar paquete"
+                      }
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M3 6h18" />
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                      </svg>
+                    </button>
+
                     {group.pkg.image ? (
                       <div className="cart-item__image-wrap">
                         <img
@@ -195,7 +229,7 @@ export function Cart({
                       <Placeholder label={`Imagen de ${group.pkg.name}`} />
                     )}
 
-                    <div>
+                    <div className="cart-item__content">
                       <span className="eyebrow">{group.pkg.region}</span>
                       <h2>{group.pkg.name}</h2>
                       <p
@@ -260,40 +294,6 @@ export function Cart({
                             Detalles
                           </Button>
                         )}
-
-                        <button
-                          type="button"
-                          className="cart-btn-remove-group"
-                          onClick={() => requestRemoveGroup(group)}
-                          aria-label={
-                            group.items.length > 1
-                              ? `Quitar todos los paquetes de ${group.pkg.name}`
-                              : `Quitar paquete de ${group.pkg.name}`
-                          }
-                          title={
-                            group.items.length > 1
-                              ? "Quitar todos los paquetes"
-                              : "Quitar paquete"
-                          }
-                        >
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            aria-hidden="true"
-                          >
-                            <path d="M3 6h18" />
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
-                            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                            <line x1="10" y1="11" x2="10" y2="17" />
-                            <line x1="14" y1="11" x2="14" y2="17" />
-                          </svg>
-                        </button>
                       </div>
                     </div>
 
@@ -323,8 +323,8 @@ export function Cart({
                                   title={`Quitar Paquete ${idx + 1}`}
                                 >
                                   <svg
-                                    width="14"
-                                    height="14"
+                                    width="16"
+                                    height="16"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
@@ -339,7 +339,6 @@ export function Cart({
                                     <line x1="10" y1="11" x2="10" y2="17" />
                                     <line x1="14" y1="11" x2="14" y2="17" />
                                   </svg>
-                                  <span>Quitar</span>
                                 </button>
                               </div>
 

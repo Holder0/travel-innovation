@@ -972,7 +972,11 @@ summary:hover {
 
 .checkout-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: start; padding-top: 10px; }
 .checkout-layout--wide { grid-template-columns: minmax(0, 1fr) 300px; }
-.cart-item { display: grid; grid-template-columns: 230px 1fr; gap: 24px; padding: 20px; border: 1px solid var(--pacific); border-radius: var(--radius); background: var(--sand); margin-bottom: 16px; }
+.cart-item { position: relative; display: grid; grid-template-columns: 230px 1fr; gap: 24px; padding: 20px; border: 1px solid var(--pacific); border-radius: var(--radius); background: var(--sand); margin-bottom: 16px; }
+.cart-item__content { padding-right: 48px; }
+@media (max-width: 768px) {
+  .cart-item__content { padding-right: 0; }
+}
 .cart-item .placeholder { min-height: 220px; border: 1px solid var(--pacific); border-radius: var(--radius); }
 dl { margin: 0; }
 .cart-item dl { display: flex; flex-wrap: wrap; gap: 20px 32px; }
@@ -1952,15 +1956,17 @@ th { background: var(--pacific); color: var(--breeze); }
   background: #fde8e8;
   border: 1.5px solid #f87171;
   color: #c53030;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 5px 12px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
   border-radius: var(--radius);
+  cursor: pointer;
   transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
 }
 
 .cart-nested-remove-btn:hover {
@@ -1968,7 +1974,7 @@ th { background: var(--pacific); color: var(--breeze); }
   border-color: #b91c1c;
   color: #991b1b;
   transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.12);
+  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.15);
 }
 
 .cart-nested-remove-btn:active {
@@ -1999,6 +2005,9 @@ th { background: var(--pacific); color: var(--breeze); }
 }
 
 .cart-btn-remove-group {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2013,6 +2022,7 @@ th { background: var(--pacific); color: var(--breeze); }
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0;
+  z-index: 2;
 }
 
 .cart-btn-remove-group:hover {
@@ -2026,6 +2036,13 @@ th { background: var(--pacific); color: var(--breeze); }
 .cart-btn-remove-group:active {
   transform: translateY(0);
   background: #f8bebe;
+}
+
+@media (max-width: 768px) {
+  .cart-btn-remove-group {
+    top: 14px;
+    right: 14px;
+  }
 }
 
 /* Modal de confirmación para eliminar paquete(s) */
