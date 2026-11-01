@@ -158,6 +158,7 @@ export const DEFAULT_PERSONAL_INFO: PersonalInfo = {
   email: "",
   phone: "",
   cedula: "",
+  birthDate: "",
   province: "",
   city: "",
   mainStreet: "",

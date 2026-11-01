@@ -1,6 +1,14 @@
 import React, { useState, useEffect, useMemo } from "react"
 import type { Page, PersonalInfo } from "../../types"
-import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
+import {
+  Button,
+  Field,
+  SelectField,
+  PageTitle,
+  Stepper,
+  Summary,
+  DatePickerField,
+} from "../../components/common"
 import { PROVINCES_DATA } from "../../data/provincesData"
 import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
 
@@ -25,6 +33,7 @@ export function Identification({
   )
   const [phone, setPhone] = useState(personalInfo.phone || "")
   const [cedula, setCedula] = useState(personalInfo.cedula || "")
+  const [birthDate, setBirthDate] = useState(personalInfo.birthDate || "")
   const [province, setProvince] = useState(personalInfo.province || "")
   const [city, setCity] = useState(personalInfo.city || "")
   const [mainStreet, setMainStreet] = useState(personalInfo.mainStreet || "")
@@ -39,6 +48,7 @@ export function Identification({
     email?: string
     phone?: string
     cedula?: string
+    birthDate?: string
     province?: string
     city?: string
     mainStreet?: string
@@ -51,6 +61,7 @@ export function Identification({
     return Boolean(
       personalInfo.phone?.trim() &&
       personalInfo.cedula?.trim() &&
+      personalInfo.birthDate?.trim() &&
       personalInfo.province?.trim() &&
       personalInfo.city?.trim() &&
       personalInfo.mainStreet?.trim()
@@ -63,6 +74,7 @@ export function Identification({
       email: overrides.email !== undefined ? overrides.email : email,
       phone: overrides.phone !== undefined ? overrides.phone : phone,
       cedula: overrides.cedula !== undefined ? overrides.cedula : cedula,
+      birthDate: overrides.birthDate !== undefined ? overrides.birthDate : birthDate,
       province: overrides.province !== undefined ? overrides.province : province,
       city: overrides.city !== undefined ? overrides.city : city,
       mainStreet: overrides.mainStreet !== undefined ? overrides.mainStreet : mainStreet,
@@ -127,6 +139,11 @@ export function Identification({
       hasError = true
     }
 
+    if (!birthDate.trim()) {
+      nextErrors.birthDate = "La fecha de nacimiento es requerida."
+      hasError = true
+    }
+
     if (!province.trim()) {
       nextErrors.province = "Selecciona una provincia."
       hasError = true
@@ -159,6 +176,7 @@ export function Identification({
         email: email.trim() || currentUser?.email || "",
         phone: phone.trim(),
         cedula: cedula.trim(),
+        birthDate: birthDate.trim(),
         province,
         city,
         mainStreet: mainStreet.trim(),
@@ -274,6 +292,23 @@ export function Identification({
               }}
               error={errors.cedula}
               help="Cédula (10 dígitos) o pasaporte (6 a 12 caracteres)."
+              required
+            />
+          </div>
+
+          <div className="two-col" style={{ marginTop: "14px" }}>
+            <DatePickerField
+              id="titular-birth-date"
+              label="Fecha de nacimiento del titular"
+              value={birthDate}
+              onChange={(val) => {
+                setBirthDate(val)
+                syncPersonalInfo({ birthDate: val })
+                if (errors.birthDate)
+                  setErrors((prev) => ({ ...prev, birthDate: undefined }))
+              }}
+              error={errors.birthDate}
+              help="Selecciona tu fecha en el calendario (haz clic en 📅)."
               required
             />
           </div>

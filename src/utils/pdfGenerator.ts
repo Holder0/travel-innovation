@@ -9,6 +9,7 @@ export interface BookingPdfData {
     email: string
     phone: string
     cedula: string
+    birthDate?: string
     address?: string
   }
   packages: Array<{
@@ -24,6 +25,7 @@ export interface BookingPdfData {
     slotNumber?: number
     fullName: string
     cedula?: string
+    birthDate?: string
     isTitular?: boolean
   }>
   total: number
@@ -145,6 +147,14 @@ export function generateBookingPdf(data: BookingPdfData) {
     y += 5
   }
 
+  if (data.titular.birthDate) {
+    doc.setFont("helvetica", "bold")
+    doc.text("F. Nacimiento:", 14, y)
+    doc.setFont("helvetica", "normal")
+    doc.text(data.titular.birthDate, 45, y)
+    y += 5
+  }
+
   y += 4
 
   // Section: Paquetes Turísticos
@@ -212,18 +222,20 @@ export function generateBookingPdf(data: BookingPdfData) {
   doc.setTextColor(71, 85, 105)
   doc.setFont("helvetica", "bold")
   doc.text("#", 16, y + 4.2)
-  doc.text("NOMBRE COMPLETO", 25, y + 4.2)
-  doc.text("DOCUMENTO (CÉDULA / PASAPORTE)", 105, y + 4.2)
-  doc.text("ROL", 165, y + 4.2)
+  doc.text("NOMBRE COMPLETO", 23, y + 4.2)
+  doc.text("DOCUMENTO", 90, y + 4.2)
+  doc.text("F. NACIMIENTO", 132, y + 4.2)
+  doc.text("ROL", 168, y + 4.2)
   y += 8
 
   data.travelers.forEach((t, idx) => {
     doc.setFontSize(8)
     doc.setTextColor(15, 23, 42)
     doc.text(String(t.slotNumber || idx + 1), 16, y)
-    doc.text(t.fullName || "Acompañante", 25, y)
-    doc.text(t.cedula || "Registrado", 105, y)
-    doc.text(t.isTitular ? "Titular" : "Acompañante", 165, y)
+    doc.text((t.fullName || "Acompañante").substring(0, 32), 23, y)
+    doc.text(t.cedula || "Registrado", 90, y)
+    doc.text(t.birthDate || "Registrada", 132, y)
+    doc.text(t.isTitular ? "Titular" : "Acompañante", 168, y)
 
     y += 4
     doc.setDrawColor(226, 232, 240)

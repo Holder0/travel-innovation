@@ -18,6 +18,7 @@ export interface SendEmailPayload {
   travelers: Array<{
     fullName: string
     cedula?: string
+    birthDate?: string
     isTitular?: boolean
   }>
 }
@@ -36,7 +37,7 @@ export async function sendRealBookingEmail(
     const travelersSummary = data.travelers
       .map(
         (t, idx) =>
-          `Viajero ${idx + 1}: ${t.fullName} (${t.isTitular ? "Titular" : "Acompañante"} | Doc: ${t.cedula || "N/A"})`
+          `Viajero ${idx + 1}: ${t.fullName} (${t.isTitular ? "Titular" : "Acompañante"} | Doc: ${t.cedula || "N/A"}${t.birthDate ? ` | F. Nac: ${t.birthDate}` : ""})`
       )
       .join("\n")
 

@@ -72,6 +72,7 @@ export function Confirmation({
       travelers: travelersList.map((t) => ({
         fullName: t.fullName,
         cedula: t.cedula,
+        birthDate: t.birthDate,
         isTitular: t.isTitular,
       })),
     })
@@ -124,6 +125,7 @@ export function Confirmation({
         email: destinationEmail,
         phone: personalInfo.phone || "0991234567",
         cedula: personalInfo.cedula || "1712345675",
+        birthDate: personalInfo.birthDate,
         address: personalInfo.mainStreet
           ? `${personalInfo.mainStreet} y ${personalInfo.secondaryStreet || ""}, ${personalInfo.city || ""} ${personalInfo.province || ""}`.trim()
           : "Quito, Pichincha",
@@ -141,6 +143,7 @@ export function Confirmation({
         slotNumber: t.slotNumber || idx + 1,
         fullName: t.fullName || "Acompañante",
         cedula: t.cedula || "Registrado",
+        birthDate: t.birthDate,
         isTitular: t.isTitular,
       })),
       total,
@@ -422,6 +425,9 @@ export function Confirmation({
                                   (idx === 0 && pIdx === 0
                                     ? personalInfo.cedula
                                     : "Registrado")}
+                                {(t.birthDate || (idx === 0 && pIdx === 0 && personalInfo.birthDate))
+                                  ? ` · F. Nac: ${t.birthDate || personalInfo.birthDate}`
+                                  : ""}
                               </small>
                             </span>
                             <span

@@ -1,7 +1,28 @@
 import React, { useState, useEffect, useMemo } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData } from "../../types"
-import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
+import {
+  Button,
+  Field,
+  SelectField,
+  PageTitle,
+  Stepper,
+  Summary,
+  DatePickerField,
+} from "../../components/common"
 import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
+
+export function isTravelerMinor(birthDateStr?: string): boolean {
+  if (!birthDateStr) return false
+  const parts = birthDateStr.split("-").map(Number)
+  if (parts.length !== 3 || isNaN(parts[0]) || isNaN(parts[1]) || isNaN(parts[2])) return false
+  const today = new Date()
+  let age = today.getFullYear() - parts[0]
+  const m = today.getMonth() + 1 - parts[1]
+  if (m < 0 || (m === 0 && today.getDate() < parts[2])) {
+    age--
+  }
+  return age < 18
+}
 
 export function Travelers({
   go,
@@ -24,6 +45,7 @@ export function Travelers({
   const generatedSlots = useMemo(() => {
     const list: TravelerData[] = []
     if (cartItems.length === 0) {
+      const titularBirth = personalInfo.birthDate || ""
       list.push({
         id: "traveler-default-1",
         packageId: "default",
@@ -34,13 +56,14 @@ export function Travelers({
         cedula: personalInfo.cedula || "",
         phone: personalInfo.phone || "",
         email: personalInfo.email || currentUser?.email || "",
-        isMinor: false,
-        birthDate: "",
+        isMinor: isTravelerMinor(titularBirth),
+        birthDate: titularBirth,
       })
     } else {
       cartItems.forEach((item) => {
         for (let p = 1; p <= item.people; p++) {
           const isFirstInPkg = p === 1
+          const bDate = isFirstInPkg ? personalInfo.birthDate || "" : ""
           list.push({
             id: `traveler-${item.id}-${p}`,
             packageId: item.id,
@@ -55,8 +78,8 @@ export function Travelers({
             email: isFirstInPkg
               ? personalInfo.email || currentUser?.email || ""
               : "",
-            isMinor: false,
-            birthDate: "",
+            isMinor: isTravelerMinor(bDate),
+            birthDate: bDate,
           })
         }
       })
@@ -137,14 +160,18 @@ export function Travelers({
   ) => {
     const updated = travelers.map((t) => {
       if (t.id === travelerId) {
-        return { ...t, [field]: value }
+        const next = { ...t, [field]: value }
+        if (field === "birthDate") {
+          next.isMinor = isTravelerMinor(value)
+        }
+        return next
       }
       return t
     })
     setTravelers(updated)
     onSaveTravelers(updated)
 
-    if (errors[travelerId]?.[field as "fullName" | "cedula" | "birthDate"]) {
+    if (errors[travelerId]?.[field as "fullName" | "cedula" | "birthDate" | "phone" | "email"]) {
       setErrors((prev) => ({
         ...prev,
         [travelerId]: {
@@ -228,9 +255,8 @@ export function Travelers({
         }
       }
 
-      if (t.isMinor && !t.birthDate) {
-        errs.birthDate =
-          "La fecha de nacimiento es requerida para menores de edad."
+      if (!t.birthDate?.trim()) {
+        errs.birthDate = "La fecha de nacimiento es requerida."
         hasError = true
       }
 
@@ -460,11 +486,27 @@ export function Travelers({
                           />
                         </div>
 
-                        {traveler.isTitular && (
-                          <div
-                            className="two-col"
-                            style={{ marginTop: "14px" }}
-                          >
+                        <div
+                          className="two-col"
+                          style={{ marginTop: "14px" }}
+                        >
+                          <DatePickerField
+                            id={`traveler-birthdate-${traveler.id}`}
+                            label="Fecha de nacimiento"
+                            value={traveler.birthDate || ""}
+                            onChange={(val) =>
+                              handleTravelerChange(
+                                traveler.id,
+                                "birthDate",
+                                val
+                              )
+                            }
+                            error={travelerErrors.birthDate}
+                            help="Selecciona en el calendario (haz clic en 📅)."
+                            required
+                          />
+
+                          {traveler.isTitular ? (
                             <Field
                               label="Teléfono de contacto"
                               placeholder="Ej. 0991234567"
@@ -479,6 +521,14 @@ export function Travelers({
                               error={travelerErrors.phone}
                               help="10 dígitos (inicia con 09)."
                             />
+                          ) : null}
+                        </div>
+
+                        {traveler.isTitular && (
+                          <div
+                            className="two-col"
+                            style={{ marginTop: "14px" }}
+                          >
                             <Field
                               label="Correo electrónico"
                               placeholder="ejemplo@correo.com"
@@ -491,51 +541,17 @@ export function Travelers({
                                   val
                                 )
                               }
-                              help="Para vouchers."
+                              help="Para vouchers y notificaciones."
                             />
                           </div>
                         )}
 
-                        <label className="check" style={{ marginTop: "14px" }}>
-                          <input
-                            type="checkbox"
-                            checked={traveler.isMinor}
-                            onChange={(e) =>
-                              handleTravelerChange(
-                                traveler.id,
-                                "isMinor",
-                                e.target.checked
-                              )
-                            }
-                          />
-                          <span>Este viajero es menor de edad</span>
-                        </label>
-
-                        {traveler.isMinor && (
-                          <div style={{ marginTop: "10px" }}>
-                            <Field
-                              label="Fecha de nacimiento"
-                              type="date"
-                              value={traveler.birthDate || ""}
-                              onChange={(val) =>
-                                handleTravelerChange(
-                                  traveler.id,
-                                  "birthDate",
-                                  val
-                                )
-                              }
-                              error={travelerErrors.birthDate}
-                              help="Fecha de nacimiento."
-                              required
-                            />
-                            <div
-                              className="inline-alert"
-                              style={{ marginTop: "8px" }}
-                            >
-                              ⚠️ Lleva su documento de identidad y autorización
-                              escrita si viaja sin sus padres o representantes
-                              legales.
-                            </div>
+                        {traveler.birthDate && isTravelerMinor(traveler.birthDate) && (
+                          <div
+                            className="inline-alert"
+                            style={{ marginTop: "12px" }}
+                          >
+                            ⚠️ <strong>Menor de edad:</strong> Lleva su documento de identidad y autorización escrita si viaja sin sus padres o representantes legales.
                           </div>
                         )}
                       </article>

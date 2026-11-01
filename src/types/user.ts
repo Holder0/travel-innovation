@@ -6,6 +6,7 @@ export interface PersonalInfo {
   email: string
   phone: string
   cedula: string
+  birthDate?: string
   province: string
   city: string
   mainStreet: string
