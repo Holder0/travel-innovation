@@ -56,6 +56,7 @@ export function Detail({
       people,
       total,
     })
+    setPeople(1)
     setToast(true)
   }
   return (

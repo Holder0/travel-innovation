@@ -253,7 +253,7 @@ export function Header({
               </div>
             ) : (
               <Button kind="secondary" onClick={onOpenLogin}>
-                Ingresar
+                Inicia sesión
               </Button>
             )}
 

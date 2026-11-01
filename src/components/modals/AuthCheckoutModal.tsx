@@ -26,9 +26,7 @@ export function AuthCheckoutModal({
 
   // Registration fields
   const [firstName, setFirstName] = useState("")
-  const [secondName, setSecondName] = useState("")
   const [firstLastName, setFirstLastName] = useState("")
-  const [secondLastName, setSecondLastName] = useState("")
   const [regEmail, setRegEmail] = useState("")
   const [regPassword, setRegPassword] = useState("")
   const [regConfirmPassword, setRegConfirmPassword] = useState("")
@@ -147,12 +145,7 @@ export function AuthCheckoutModal({
       return
     }
 
-    const displayName = [
-      firstName.trim(),
-      secondName.trim(),
-      firstLastName.trim(),
-      secondLastName.trim(),
-    ]
+    const displayName = [firstName.trim(), firstLastName.trim()]
       .filter(Boolean)
       .join(" ")
 
@@ -160,9 +153,7 @@ export function AuthCheckoutModal({
       email: regEmail.trim(),
       password: regPassword,
       firstName: firstName.trim(),
-      secondName: secondName.trim(),
       firstLastName: firstLastName.trim(),
-      secondLastName: secondLastName.trim(),
       fullName: displayName,
     }
 
@@ -431,7 +422,7 @@ export function AuthCheckoutModal({
                   <div className="auth-form-row">
                     <Field
                       id="checkout-reg-firstname"
-                      label="Primer nombre"
+                      label="Nombre"
                       placeholder="Ej. Juan"
                       value={firstName}
                       onChange={setFirstName}
@@ -439,29 +430,12 @@ export function AuthCheckoutModal({
                       autoFocus
                     />
                     <Field
-                      id="checkout-reg-secondname"
-                      label="Segundo nombre (opcional)"
-                      placeholder="Ej. Carlos"
-                      value={secondName}
-                      onChange={setSecondName}
-                    />
-                  </div>
-
-                  <div className="auth-form-row">
-                    <Field
                       id="checkout-reg-firstlastname"
-                      label="Primer apellido"
+                      label="Apellido"
                       placeholder="Ej. Pérez"
                       value={firstLastName}
                       onChange={setFirstLastName}
                       required
-                    />
-                    <Field
-                      id="checkout-reg-secondlastname"
-                      label="Segundo apellido (opcional)"
-                      placeholder="Ej. Gómez"
-                      value={secondLastName}
-                      onChange={setSecondLastName}
                     />
                   </div>
 

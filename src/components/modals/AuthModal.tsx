@@ -22,9 +22,7 @@ export function AuthModal({
 
   // Registration fields
   const [firstName, setFirstName] = useState("")
-  const [secondName, setSecondName] = useState("")
   const [firstLastName, setFirstLastName] = useState("")
-  const [secondLastName, setSecondLastName] = useState("")
   const [regEmail, setRegEmail] = useState("")
   const [regPassword, setRegPassword] = useState("")
   const [regConfirmPassword, setRegConfirmPassword] = useState("")
@@ -148,12 +146,7 @@ export function AuthModal({
       return
     }
 
-    const displayName = [
-      firstName.trim(),
-      secondName.trim(),
-      firstLastName.trim(),
-      secondLastName.trim(),
-    ]
+    const displayName = [firstName.trim(), firstLastName.trim()]
       .filter(Boolean)
       .join(" ")
 
@@ -161,9 +154,7 @@ export function AuthModal({
       email: regEmail.trim(),
       password: regPassword,
       firstName: firstName.trim(),
-      secondName: secondName.trim(),
       firstLastName: firstLastName.trim(),
-      secondLastName: secondLastName.trim(),
       fullName: displayName,
     }
 
@@ -321,7 +312,7 @@ export function AuthModal({
               <div className="auth-form-row">
                 <Field
                   id="reg-first-name"
-                  label="Primer nombre"
+                  label="Nombre"
                   type="text"
                   placeholder="Ej. Carlos"
                   value={firstName}
@@ -330,32 +321,13 @@ export function AuthModal({
                   autoFocus
                 />
                 <Field
-                  id="reg-second-name"
-                  label="Segundo nombre (opcional)"
-                  type="text"
-                  placeholder="Ej. Andrés"
-                  value={secondName}
-                  onChange={setSecondName}
-                />
-              </div>
-
-              <div className="auth-form-row">
-                <Field
                   id="reg-first-lastname"
-                  label="Primer apellido"
+                  label="Apellido"
                   type="text"
                   placeholder="Ej. Mendoza"
                   value={firstLastName}
                   onChange={setFirstLastName}
                   required
-                />
-                <Field
-                  id="reg-second-lastname"
-                  label="Segundo apellido (opcional)"
-                  type="text"
-                  placeholder="Ej. Salazar"
-                  value={secondLastName}
-                  onChange={setSecondLastName}
                 />
               </div>
 
