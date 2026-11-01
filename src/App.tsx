@@ -27,6 +27,7 @@ import {
   DEFAULT_PERSONAL_INFO,
   DEFAULT_PAYMENT_DATA,
 } from "./services/storage"
+import { saveReservationToSupabase } from "./services/supabaseService"
 
 import { Header } from "./components/layout/Header"
 import { Footer } from "./components/layout/Footer"
@@ -642,6 +643,18 @@ export default function App() {
     setCartItems([])
     clearStoredCheckoutSession()
     setActiveCheckoutStep("carrito")
+
+    // Sincronizar automáticamente con Supabase (si está configurado en .env)
+    saveReservationToSupabase({
+      bookingCode: finalCode,
+      total: cartTotal || 378,
+      paymentData: finalPayment,
+      cartItems,
+      travelersList: newPurchase.travelers,
+      personalInfo,
+    }).catch((err) => {
+      console.warn("Aviso: reserva guardada localmente; no se sincronizó con Supabase:", err)
+    })
 
     if (currentUser) {
       const emailKey = currentUser.email.toLowerCase().trim()

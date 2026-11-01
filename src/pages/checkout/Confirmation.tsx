@@ -3,6 +3,7 @@ import type { Page, CartItem, PersonalInfo, TravelerData, PaymentDetails } from 
 import { Button, Stepper } from "../../components/common"
 import { generateBookingPdf } from "../../utils/pdfGenerator"
 import { sendRealBookingEmail } from "../../services/emailService"
+import { uploadVoucherToSupabaseStorage } from "../../services/supabaseService"
 
 export function Confirmation({
   go,
@@ -195,6 +196,12 @@ export function Confirmation({
       setTimeout(() => setVoucherSuccessToast(false), 5000)
       if (onAttachVoucher) {
         onAttachVoucher(genNumber, fileName)
+      }
+
+      if (selectedVoucherFile) {
+        uploadVoucherToSupabaseStorage(selectedVoucherFile, bookingCode).catch((err) => {
+          console.warn("Aviso: comprobante registrado localmente; no se sincronizó con Supabase Storage:", err)
+        })
       }
     }, 600)
   }
