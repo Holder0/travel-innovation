@@ -16,6 +16,7 @@ export function Header({
   currentUser,
   onLogout,
   favoritesCount = 0,
+  onOpenProfile,
 }: {
   page: Page
   cartCount: number
@@ -27,9 +28,9 @@ export function Header({
   onOpenLogin: () => void
   currentUser: { name: string; email: string } | null
   onLogout: () => void
+  onOpenProfile?: () => void
 }) {
   const [userMenuOpen, setUserMenuOpen] = useState(false)
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const userMenuRef = useRef<HTMLDivElement>(null)
 
   // Extract only the first name and capitalize nicely
@@ -152,6 +153,31 @@ export function Header({
                       role="menuitem"
                       onClick={() => {
                         setUserMenuOpen(false)
+                        if (onOpenProfile) onOpenProfile()
+                      }}
+                    >
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
+                      <span>Perfil</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="dropdown-item"
+                      role="menuitem"
+                      onClick={() => {
+                        setUserMenuOpen(false)
                         go("reservas")
                       }}
                     >
@@ -241,31 +267,6 @@ export function Header({
                         )}
                       </span>
                     </button>
-                    <button
-                      type="button"
-                      className="dropdown-item"
-                      role="menuitem"
-                      onClick={() => {
-                        setUserMenuOpen(false)
-                        setIsProfileModalOpen(true)
-                      }}
-                    >
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
-                      >
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                        <circle cx="12" cy="7" r="4" />
-                      </svg>
-                      <span>Perfil</span>
-                    </button>
                     <hr className="dropdown-divider" />
                     <button
                       type="button"
@@ -334,147 +335,6 @@ export function Header({
       </header>
       {/* Espacio reservado bajo la cabecera (filo blanco entre la barra y el contenido) */}
       <div className="header-spacer" aria-hidden="true" />
-
-      {/* Modal de Mi Perfil */}
-      {isProfileModalOpen && currentUser && (
-        <div
-          className="modal-backdrop"
-          role="presentation"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setIsProfileModalOpen(false)
-          }}
-        >
-          <section
-            className="modal auth-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="profile-modal-title"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="panel-heading">
-              <h2 id="profile-modal-title">Mi perfil</h2>
-              <button
-                className="icon-button"
-                aria-label="Cerrar modal de perfil"
-                onClick={() => setIsProfileModalOpen(false)}
-                type="button"
-              >
-                ×
-              </button>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                margin: "18px 0 14px",
-              }}
-            >
-              <div
-                className="user-dropdown-avatar"
-                style={{ width: "52px", height: "52px", fontSize: "22px" }}
-              >
-                {avatarInitial}
-              </div>
-              <div>
-                <strong style={{ fontSize: "18px", display: "block", color: "var(--abyss)" }}>
-                  {currentUser.name}
-                </strong>
-                <span style={{ fontSize: "14px", color: "#5a6e7f" }}>
-                  {currentUser.email}
-                </span>
-              </div>
-            </div>
-            <hr className="modal-divider-line" />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "12px",
-                margin: "14px 0 20px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  fontSize: "14px",
-                  borderBottom: "1px solid var(--sand)",
-                  paddingBottom: "8px",
-                }}
-              >
-                <span style={{ color: "var(--pacific)", fontWeight: 600 }}>Tipo de cuenta</span>
-                <strong>Viajero / Turista</strong>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  fontSize: "14px",
-                  borderBottom: "1px solid var(--sand)",
-                  paddingBottom: "8px",
-                }}
-              >
-                <span style={{ color: "var(--pacific)", fontWeight: 600 }}>Estado</span>
-                <span style={{ color: "var(--success)", fontWeight: 700 }}>✓ Activo</span>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  fontSize: "14px",
-                  borderBottom: "1px solid var(--sand)",
-                  paddingBottom: "8px",
-                }}
-              >
-                <span style={{ color: "var(--pacific)", fontWeight: 600 }}>Favoritos</span>
-                <span style={{ fontWeight: 700, color: "var(--crimson)" }}>
-                  ❤️ {favoritesCount} {favoritesCount === 1 ? "guardado" : "guardados"}
-                </span>
-              </div>
-            </div>
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-              <Button
-                kind="primary"
-                style={{ flex: 1, minWidth: "110px" }}
-                onClick={() => {
-                  setIsProfileModalOpen(false)
-                  go("reservas")
-                }}
-              >
-                Mis compras
-              </Button>
-              <Button
-                kind="secondary"
-                style={{ flex: 1, minWidth: "110px" }}
-                onClick={() => {
-                  setIsProfileModalOpen(false)
-                  go("favoritos")
-                }}
-              >
-                Mis favoritos
-              </Button>
-              <Button
-                kind="secondary"
-                style={{ flex: 1, minWidth: "110px" }}
-                onClick={() => {
-                  setIsProfileModalOpen(false)
-                  go("tickets")
-                }}
-              >
-                Mis tickets
-              </Button>
-              <Button
-                kind="secondary"
-                style={{ minWidth: "80px" }}
-                onClick={() => setIsProfileModalOpen(false)}
-              >
-                Cerrar
-              </Button>
-            </div>
-          </section>
-        </div>
-      )}
     </>
   )
 }

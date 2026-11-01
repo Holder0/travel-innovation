@@ -18,6 +18,7 @@ import { packages } from "./data/packagesData"
 import {
   generateBookingCode,
   getRegisteredUsers,
+  saveRegisteredUsers,
   getStoredAccounts,
   saveStoredAccounts,
   getStoredCheckoutSession,
@@ -30,6 +31,7 @@ import {
 import { Header } from "./components/layout/Header"
 import { Footer } from "./components/layout/Footer"
 import { AuthModal } from "./components/modals/AuthModal"
+import { ProfileModal } from "./components/modals/ProfileModal"
 import { StateDiagram } from "./components/diagram/StateDiagram"
 
 import { Home } from "./pages/Home"
@@ -80,6 +82,7 @@ export default function App() {
     packages[4],
   )
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<{
     name: string
     email: string
@@ -397,6 +400,60 @@ export default function App() {
       )
     )
     setTravelersList([])
+  }
+
+  const handleUpdateUserEmail = (oldEmail: string, newEmail: string) => {
+    const oldKey = oldEmail.trim().toLowerCase()
+    const newKey = newEmail.trim().toLowerCase()
+    if (oldKey === newKey) return
+
+    // 1. Update Registered Users registry
+    const regUsers = getRegisteredUsers()
+    if (regUsers[oldKey]) {
+      const existingRecord = regUsers[oldKey]
+      delete regUsers[oldKey]
+      regUsers[newKey] = {
+        ...existingRecord,
+        email: newEmail.trim(),
+      }
+      saveRegisteredUsers(regUsers)
+    }
+
+    // 2. Update Accounts storage (cart, purchases, savedPersonalInfo, favorites)
+    const currentAccounts = getStoredAccounts()
+    if (currentAccounts[oldKey]) {
+      const existingAccount = currentAccounts[oldKey]
+      delete currentAccounts[oldKey]
+      currentAccounts[newKey] = {
+        ...existingAccount,
+        savedPersonalInfo: existingAccount.savedPersonalInfo
+          ? { ...existingAccount.savedPersonalInfo, email: newEmail.trim() }
+          : undefined,
+      }
+      saveStoredAccounts(currentAccounts)
+    }
+
+    // 3. Update active session states
+    if (currentUser) {
+      setCurrentUser({ name: currentUser.name, email: newEmail.trim() })
+    }
+    setPersonalInfo((prev) => ({ ...prev, email: newEmail.trim() }))
+  }
+
+  const handleUpdateUserName = (newName: string) => {
+    if (!currentUser) return
+    const emailKey = currentUser.email.trim().toLowerCase()
+
+    // 1. Update Registered Users registry
+    const regUsers = getRegisteredUsers()
+    if (regUsers[emailKey]) {
+      regUsers[emailKey].fullName = newName.trim()
+      saveRegisteredUsers(regUsers)
+    }
+
+    // 2. Update active session states
+    setCurrentUser((prev) => (prev ? { ...prev, name: newName.trim() } : null))
+    setPersonalInfo((prev) => ({ ...prev, fullName: newName.trim() }))
   }
 
   const cartTotal = useMemo(() => {
@@ -859,6 +916,7 @@ export default function App() {
         onOpenLogin={() => setIsAuthModalOpen(true)}
         currentUser={currentUser}
         onLogout={handleLogout}
+        onOpenProfile={() => setIsProfileModalOpen(true)}
       />
       <main id="contenido" tabIndex={-1}>
         {content}
@@ -871,6 +929,19 @@ export default function App() {
         isOpen={isAuthModalOpen}
         onClose={() => setIsAuthModalOpen(false)}
         onLoginSuccess={handleLoginSuccess}
+      />
+      <ProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        currentUser={currentUser}
+        personalInfo={personalInfo}
+        onSavePersonalInfo={handleSavePersonalInfo}
+        onUpdateEmail={handleUpdateUserEmail}
+        onUpdateName={handleUpdateUserName}
+        purchasesCount={purchases.length}
+        favoritesCount={favorites.length}
+        ticketsCount={supportTickets.length}
+        go={go}
       />
       {accountCreatedToast && (
         <div className="toast" role="status" style={{ zIndex: 120 }}>

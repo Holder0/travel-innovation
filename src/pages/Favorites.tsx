@@ -248,40 +248,19 @@ export function Favorites({
                     boxShadow: "0 4px 14px rgba(15, 31, 44, 0.05)",
                   }}
                 >
-                  {/* Botón de quitar de favoritos con confirmación */}
+                  {/* Botón de quitar de favoritos con diseño idéntico al carrito */}
                   <button
                     type="button"
+                    className="cart-btn-remove-group"
                     onClick={() =>
                       setDeleteTarget({ pkgId: pkg.id, pkgName: pkg.name })
                     }
-                    aria-label={`Quitar ${pkg.name} de favoritos`}
+                    aria-label={`Quitar paquete de ${pkg.name}`}
                     title="Quitar de favoritos"
-                    style={{
-                      position: "absolute",
-                      top: "16px",
-                      right: "16px",
-                      background: "#fff5f5",
-                      border: "1px solid rgba(230, 57, 70, 0.35)",
-                      color: "var(--crimson)",
-                      borderRadius: "6px",
-                      padding: "6px 12px",
-                      cursor: "pointer",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      transition: "all 0.15s ease",
-                      zIndex: 2,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = "#ffe5e5"
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = "#fff5f5"
-                    }}
                   >
                     <svg
-                      width="16"
-                      height="16"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -296,7 +275,6 @@ export function Favorites({
                       <line x1="10" y1="11" x2="10" y2="17" />
                       <line x1="14" y1="11" x2="14" y2="17" />
                     </svg>
-                    <span style={{ fontSize: "13px", fontWeight: 600 }}>Quitar</span>
                   </button>
 
                   {/* Imagen del paquete */}
@@ -505,16 +483,31 @@ export function Favorites({
                 style={{
                   width: "44px",
                   height: "44px",
-                  borderRadius: "50%",
-                  background: "#fff5f5",
-                  border: "1.5px solid rgba(230, 57, 70, 0.3)",
+                  borderRadius: "var(--radius)",
+                  background: "#fde8e8",
+                  border: "1.5px solid #e05252",
+                  color: "#c53030",
                   display: "grid",
                   placeItems: "center",
-                  fontSize: "22px",
                   flexShrink: 0,
                 }}
               >
-                💔
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 6h18" />
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                  <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  <line x1="10" y1="11" x2="10" y2="17" />
+                  <line x1="14" y1="11" x2="14" y2="17" />
+                </svg>
               </div>
               <h3
                 id="confirm-delete-fav-title"
