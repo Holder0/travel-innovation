@@ -167,14 +167,7 @@ export default function App() {
 
     if (existing) {
       // Account exists: restore that account's cart, purchases, and personal info
-      let mergedCart = [...(existing.cart || [])]
-      if (cartItems.length > 0) {
-        const existingPkgIds = new Set(mergedCart.map((c) => c.pkg.id))
-        const newGuestItems = cartItems.filter(
-          (c) => !existingPkgIds.has(c.pkg.id)
-        )
-        mergedCart = [...mergedCart, ...newGuestItems]
-      }
+      let mergedCart = [...(existing.cart || []), ...cartItems]
       setCartItems(mergedCart)
       setPurchases(existing.purchases || [])
 
@@ -303,13 +296,8 @@ export default function App() {
       id: `${item.pkg.id}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
       ...item,
     }
-    // Regla: solo se puede agregar un paquete del mismo tipo al mismo tiempo; permite agregar otros distintos
-    setCartItems((prev) => {
-      if (prev.some((c) => c.pkg.id === item.pkg.id)) {
-        return prev
-      }
-      return [...prev, newItem]
-    })
+    // Cada paquete agregado se almacena como una reserva individual, permitiendo múltiples del mismo tipo
+    setCartItems((prev) => [...prev, newItem])
 
     // Requirement 2: Ensure any subsequent purchase has fresh blank travelers and payment data
     setTravelersList([])

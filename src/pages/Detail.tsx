@@ -22,7 +22,7 @@ export function Detail({
   cartItems?: CartItem[]
 }) {
   const [people, setPeople] = useState(1)
-  const [modalType, setModalType] = useState<"success" | "duplicate" | null>(null)
+  const [toast, setToast] = useState(false)
   const [selectedDate, setSelectedDate] = useState(
     pkg.availableDates && pkg.availableDates.length > 0
       ? pkg.availableDates[0]
@@ -48,23 +48,15 @@ export function Detail({
     setActiveImage(pkg.image)
   }, [pkg])
 
-  const isAlreadyInCart = cartItems
-    ? cartItems.some((item) => item.pkg.id === pkg.id)
-    : false
-
   const total = people * pkg.price
   const add = () => {
-    if (isAlreadyInCart) {
-      setModalType("duplicate")
-      return
-    }
     addToCart({
       pkg,
       date: selectedDate,
       people,
       total,
     })
-    setModalType("success")
+    setToast(true)
   }
   return (
     <>
@@ -180,11 +172,6 @@ export function Detail({
           <Button kind="primary" onClick={add}>
             Agregar al carrito
           </Button>
-          {isAlreadyInCart && (
-            <p className="max-added-warning">
-              <span aria-hidden="true">⚠️</span> Número máximo añadido
-            </p>
-          )}
         </section>
       </div>
       <div className="section detail-sections">
@@ -256,59 +243,13 @@ export function Detail({
           </div>
         </div>
       </div>
-      {modalType === "duplicate" && (
-        <div
-          className="center-popup-backdrop"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="duplicate-popup-title"
-          onClick={() => setModalType(null)}
-        >
-          <div
-            className="center-popup-card"
-            onClick={(e) => e.stopPropagation()}
-            role="alertdialog"
-          >
-            <button
-              type="button"
-              className="center-popup-close"
-              onClick={() => setModalType(null)}
-              aria-label="Cerrar advertencia"
-            >
-              ✕
-            </button>
-            <div
-              className="center-popup-icon center-popup-icon--warning"
-              aria-hidden="true"
-            >
-              ⚠️
-            </div>
-            <h2 id="duplicate-popup-title" className="center-popup-title">
-              No se puede agregar este paquete
-            </h2>
-            <p className="center-popup-subtitle">
-              Este paquete ya se encuentra en tu carrito de compras. Solo se
-              permite agregar un paquete de este mismo tipo por compra.
-            </p>
-            <div className="center-popup-actions">
-              <Button kind="primary" onClick={() => go("carrito")}>
-                Ir al carrito de compras
-              </Button>
-              <Button kind="secondary" onClick={() => setModalType(null)}>
-                Entendido
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {modalType === "success" && (
+      {toast && (
         <div
           className="center-popup-backdrop"
           role="dialog"
           aria-modal="true"
           aria-labelledby="cart-popup-title"
-          onClick={() => setModalType(null)}
+          onClick={() => setToast(false)}
         >
           <div
             className="center-popup-card"
@@ -318,7 +259,7 @@ export function Detail({
             <button
               type="button"
               className="center-popup-close"
-              onClick={() => setModalType(null)}
+              onClick={() => setToast(false)}
               aria-label="Cerrar notificación"
             >
               ✕
@@ -350,7 +291,7 @@ export function Detail({
               <Button kind="primary" onClick={() => go("carrito")}>
                 Ir al carrito de compras
               </Button>
-              <Button kind="secondary" onClick={() => setModalType(null)}>
+              <Button kind="secondary" onClick={() => setToast(false)}>
                 Seguir explorando
               </Button>
             </div>

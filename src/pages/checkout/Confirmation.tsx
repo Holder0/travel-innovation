@@ -100,13 +100,18 @@ export function Confirmation({
             >
               {cartItems.map((item, pIdx) => {
                 let pkgTravelers = travelersList.filter(
-                  (t) =>
-                    t.packageId === item.id ||
-                    (t.packageTitle &&
+                  (t) => t.packageId === item.id
+                )
+
+                if (pkgTravelers.length === 0) {
+                  pkgTravelers = travelersList.filter(
+                    (t) =>
+                      t.packageTitle &&
                       item.pkg.name &&
                       t.packageTitle.toLowerCase() ===
-                        item.pkg.name.toLowerCase())
-                )
+                        item.pkg.name.toLowerCase()
+                  )
+                }
 
                 if (pkgTravelers.length === 0) {
                   let startIndex = 0
