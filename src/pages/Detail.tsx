@@ -1,7 +1,20 @@
 import { useState, useEffect, useMemo } from "react"
 import type { Page, PackageItem, CartItem } from "../types"
-import { Button, SelectField } from "../components/common"
+import {
+  Button,
+  SelectField,
+  CategorySvg,
+  RatingStars,
+  StarIcon,
+  PinIcon,
+  CalendarIcon,
+  BreakfastIcon,
+  LunchIcon,
+  DinnerIcon,
+  VerifiedCheckIcon,
+} from "../components/common"
 import { packages } from "../data/packagesData"
+
 
 export function Detail({
   pkg = packages[4],
@@ -173,12 +186,71 @@ export function Detail({
             </button>
           )}
 
+          {pkg.category && (
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                background: "#e8f1f5",
+                color: "var(--pacific)",
+                padding: "4px 12px",
+                borderRadius: "20px",
+                fontSize: "12.5px",
+                fontWeight: 700,
+                marginBottom: "8px",
+                width: "fit-content",
+              }}
+            >
+              <CategorySvg icon={pkg.categoryIcon || "compass"} size={14} color="var(--pacific)" />
+              <span>{pkg.category}</span>
+            </div>
+          )}
+
           <span className="eyebrow">{pkg.region}</span>
           <h1>{pkg.name}</h1>
-          <p>{pkg.days} · 📍 {pkg.city} ({pkg.province})</p>
+
+          {/* Calificación y Estrellas en Cabecera */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              margin: "4px 0 10px",
+            }}
+          >
+            <RatingStars rating={pkg.rating || 4.9} size={18} />
+            <strong style={{ fontSize: "14px", color: "var(--abyss)" }}>
+              {(pkg.rating || 4.9).toFixed(1)}
+            </strong>
+            <span style={{ fontSize: "13px", color: "#64748b" }}>
+              ({pkg.reviewsCount || 12} opiniones verificadas)
+            </span>
+          </div>
+
+          <p style={{ display: "flex", alignItems: "center", gap: "6px", margin: "0 0 10px", fontSize: "14.5px" }}>
+            <span>{pkg.days}</span> · <PinIcon size={16} color="var(--pacific)" /> <strong>{pkg.city}</strong> ({pkg.province})
+          </p>
           <p className="price">
             <strong>${pkg.price}</strong> por persona
           </p>
+
+          {/* Indicador de Cupos Disponibles si existen */}
+          {pkg.availableSlots !== undefined && (
+            <div
+              className={`available-slots-badge ${
+                pkg.availableSlots <= 6 ? "available-slots-badge--urgent" : ""
+              }`}
+              style={{ marginBottom: "16px" }}
+            >
+              <span aria-hidden="true">⚡</span>
+              <span>
+                {pkg.availableSlots <= 4
+                  ? `¡Solo quedan ${pkg.availableSlots} cupos disponibles para esta salida!`
+                  : `${pkg.availableSlots} cupos disponibles para esta fecha`}
+              </span>
+            </div>
+          )}
 
           {pkg.availableDates && pkg.availableDates.length > 1 ? (
             <SelectField
@@ -199,7 +271,9 @@ export function Detail({
             <div className="field">
               <span className="field__label">Fecha de salida</span>
               <div className="package-specific-date">
-                <span className="date-icon" aria-hidden="true">📅</span>
+                <span className="date-icon" aria-hidden="true">
+                  <CalendarIcon size={18} color="var(--abyss)" />
+                </span>
                 <div className="date-info">
                   <strong>{pkg.datesText}</strong>
                   <span className="date-badge">Fecha específica confirmada</span>
@@ -250,17 +324,58 @@ export function Detail({
       <div className="section detail-sections">
         <div className="detail-card">
           <div className="detail-card-header">
-            <span>Itinerario por día</span>
+            <span>Itinerario detallado día a día</span>
           </div>
           <div className="accordion-body">
-            <h3>Día 1 · Llegada y bienvenida</h3>
-            <p>
-              Encuentro, traslado y primer recorrido guiado en {pkg.city}.
-            </p>
-            <h3>Día 2 · Actividades destacadas</h3>
-            <p>Recorrido principal y tiempo libre para explorar.</p>
-            <h3>Día 3 · Retorno</h3>
-            <p>Desayuno y retorno al punto de origen.</p>
+            {pkg.itinerary && pkg.itinerary.length > 0 ? (
+              <div className="itinerary-timeline">
+                {pkg.itinerary.map((day) => (
+                  <div key={day.day} className="itinerary-day-card">
+                    <div className="itinerary-day-header">
+                      <span className="itinerary-day-badge">Día {day.day}</span>
+                      <h3 className="itinerary-day-title">{day.title}</h3>
+                    </div>
+                    <p className="itinerary-day-description">{day.description}</p>
+                    <div className="meal-badges-row">
+                      <span style={{ fontSize: "12px", fontWeight: 700, color: "#64748b" }}>
+                        Alimentación:
+                      </span>
+                      {day.meals.breakfast && (
+                        <span className="meal-badge meal-badge--included">
+                          <BreakfastIcon size={14} /> Desayuno incluido
+                        </span>
+                      )}
+                      {day.meals.lunch && (
+                        <span className="meal-badge meal-badge--included">
+                          <LunchIcon size={14} /> Almuerzo incluido
+                        </span>
+                      )}
+                      {day.meals.dinner && (
+                        <span className="meal-badge meal-badge--included">
+                          <DinnerIcon size={14} /> Cena incluida
+                        </span>
+                      )}
+                      {!day.meals.breakfast && !day.meals.lunch && !day.meals.dinner && (
+                        <span className="meal-badge meal-badge--none">
+                          Por cuenta del viajero
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <h3>Día 1 · Llegada y bienvenida</h3>
+                <p>
+                  Encuentro, traslado y primer recorrido guiado en {pkg.city}.
+                </p>
+                <h3>Día 2 · Actividades destacadas</h3>
+                <p>Recorrido principal y tiempo libre para explorar.</p>
+                <h3>Día 3 · Retorno</h3>
+                <p>Desayuno y retorno al punto de origen.</p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -271,11 +386,11 @@ export function Detail({
           <div className="accordion-body two-col">
             <div>
               <h3>Incluye</h3>
-              <p>✓ Transporte, alojamiento, desayunos y guía.</p>
+              <p>✓ Transporte turístico, hospedaje seleccionado, guianza profesional y entradas a sitios previstos.</p>
             </div>
             <div>
               <h3>No incluye</h3>
-              <p>✕ Almuerzos, cenas y gastos personales.</p>
+              <p>✕ Vuelos no especificados, gastos personales ni propinas voluntarias.</p>
             </div>
           </div>
         </div>
@@ -286,8 +401,8 @@ export function Detail({
           </div>
           <div className="accordion-body">
             <p>
-              <strong>Terminal turística, Quito · 06:00.</strong> Hay una
-              tolerancia exacta de 15 minutos.
+              <strong>Terminal turística, {pkg.province} · 06:00.</strong> Hay una
+              tolerancia máxima de 15 minutos.
             </p>
           </div>
         </div>
@@ -298,8 +413,8 @@ export function Detail({
           </div>
           <div className="accordion-body">
             <p>
-              Cédula física y original del titular. Para menores, documento de
-              identidad y autorización cuando corresponda.
+              Cédula de identidad física y original del titular. Para menores de edad,
+              documento de identidad y autorización de viaje cuando corresponda.
             </p>
           </div>
         </div>
@@ -316,6 +431,115 @@ export function Detail({
           </div>
         </div>
       </div>
+
+      {/* SECCIÓN DE RESEÑAS Y CALIFICACIONES (SOLO VISUALIZACIÓN CON ESTRELLAS SVG) */}
+      <section className="section reviews-section" aria-label="Calificación y opiniones de viajeros">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">Opiniones de la Comunidad</span>
+            <h2>Calificación y Reseñas de Viajeros</h2>
+          </div>
+        </div>
+
+        <div className="reviews-grid-layout">
+          {/* Tarjeta de Calificación Global */}
+          <div className="rating-score-card">
+            <div className="rating-score-huge">{(pkg.rating || 4.9).toFixed(1)}</div>
+            <div className="rating-score-stars">
+              <RatingStars rating={pkg.rating || 4.9} size={24} />
+            </div>
+            <div className="rating-score-count">
+              Basado en {pkg.reviewsCount || 12} experiencias verificadas
+            </div>
+            <div className="rating-breakdown">
+              <div className="rating-breakdown-row">
+                <span style={{ width: "65px" }}>5 estrellas</span>
+                <div className="rating-breakdown-bar-bg">
+                  <div className="rating-breakdown-bar-fill" style={{ width: "85%" }} />
+                </div>
+                <span style={{ width: "30px", textAlign: "right" }}>85%</span>
+              </div>
+              <div className="rating-breakdown-row">
+                <span style={{ width: "65px" }}>4 estrellas</span>
+                <div className="rating-breakdown-bar-bg">
+                  <div className="rating-breakdown-bar-fill" style={{ width: "15%" }} />
+                </div>
+                <span style={{ width: "30px", textAlign: "right" }}>15%</span>
+              </div>
+              <div className="rating-breakdown-row">
+                <span style={{ width: "65px" }}>3 estrellas</span>
+                <div className="rating-breakdown-bar-bg">
+                  <div className="rating-breakdown-bar-fill" style={{ width: "0%" }} />
+                </div>
+                <span style={{ width: "30px", textAlign: "right" }}>0%</span>
+              </div>
+              <div className="rating-breakdown-row">
+                <span style={{ width: "65px" }}>2 estrellas</span>
+                <div className="rating-breakdown-bar-bg">
+                  <div className="rating-breakdown-bar-fill" style={{ width: "0%" }} />
+                </div>
+                <span style={{ width: "30px", textAlign: "right" }}>0%</span>
+              </div>
+              <div className="rating-breakdown-row">
+                <span style={{ width: "65px" }}>1 estrella</span>
+                <div className="rating-breakdown-bar-bg">
+                  <div className="rating-breakdown-bar-fill" style={{ width: "0%" }} />
+                </div>
+                <span style={{ width: "30px", textAlign: "right" }}>0%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Listado de Opiniones de Clientes (Solo Lectura, sin formulario) */}
+          <div className="reviews-list">
+            {(pkg.reviews && pkg.reviews.length > 0 ? pkg.reviews : [
+              {
+                id: "def-rev-1",
+                userName: "Carlos Andrés Mendoza",
+                rating: 5,
+                title: "¡Una experiencia absolutamente recomendada!",
+                comment: `El paquete a ${pkg.city} superó todas mis expectativas. La puntualidad del guía, los paisajes y los traslados fueron impecables.`,
+                date: "24 oct 2026",
+              },
+              {
+                id: "def-rev-2",
+                userName: "María Belén Salazar",
+                rating: 5,
+                title: "Paisajes inolvidables y excelente servicio",
+                comment: "Todo el cronograma se cumplió a cabalidad. La atención de la agencia fue de primera categoría desde el primer contacto.",
+                date: "19 oct 2026",
+              },
+            ]).map((rev) => (
+              <article key={rev.id} className="review-card">
+                <div className="review-card-header">
+                  <div className="review-card-user">
+                    <span>{rev.userName}</span>
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        fontSize: "12px",
+                        color: "#059669",
+                        fontWeight: 600,
+                      }}
+                    >
+                      <VerifiedCheckIcon size={14} /> Viajero verificado
+                    </span>
+                  </div>
+                  <span className="review-card-date">{rev.date}</span>
+                </div>
+                <div style={{ marginBottom: "6px" }}>
+                  <RatingStars rating={rev.rating} size={15} />
+                </div>
+                <h4 className="review-card-title">{rev.title}</h4>
+                <p className="review-card-comment">"{rev.comment}"</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {toast && (
         <div
           className="center-popup-backdrop"

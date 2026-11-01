@@ -27,7 +27,7 @@ import {
   DEFAULT_PERSONAL_INFO,
   DEFAULT_PAYMENT_DATA,
 } from "./services/storage"
-import { saveReservationToSupabase } from "./services/supabaseService"
+import { saveReservationToSupabase, fetchPackagesFromSupabase } from "./services/supabaseService"
 
 import { Header } from "./components/layout/Header"
 import { Footer } from "./components/layout/Footer"
@@ -79,9 +79,36 @@ export default function App() {
       typeof updater === "function" ? updater(prev) : { ...prev, ...updater }
     )
   }
+  const [packagesList, setPackagesList] = useState<PackageItem[]>(packages)
   const [selectedPackage, setSelectedPackage] = useState<PackageItem>(
     packages[4],
   )
+
+  // Carga de paquetes e itinerarios desde Supabase con respaldo local
+  useEffect(() => {
+    let isMounted = true
+    async function loadCloudPackages() {
+      try {
+        const cloudData = await fetchPackagesFromSupabase()
+        if (isMounted && cloudData && cloudData.length > 0) {
+          setPackagesList(cloudData)
+          setSelectedPackage((prev) => {
+            const match = cloudData.find(
+              (p) => p.id === prev.id || p.name === prev.name,
+            )
+            return match || prev
+          })
+        }
+      } catch (err) {
+        console.warn("Fallback local activo para paquetes:", err)
+      }
+    }
+    loadCloudPackages()
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState<{
@@ -515,6 +542,7 @@ export default function App() {
   const handleSearch = (filters: SearchFilters) => {
     setCatalogFilters({
       region: filters.region || "",
+      category: filters.category || "",
       province: filters.province || "",
       city: filters.city || "",
       dateRange: filters.dateRange || null,
@@ -753,6 +781,7 @@ export default function App() {
             go={go}
             onSearch={handleSearch}
             onViewPackage={handleViewPackage}
+            packagesList={packagesList}
           />
         )
       case "catalogo":
@@ -763,6 +792,7 @@ export default function App() {
             onUpdateFilters={handleUpdateFilters}
             onResetFilters={() => setCatalogFilters(DEFAULT_CATALOG_FILTERS)}
             onViewPackage={handleViewPackage}
+            packagesList={packagesList}
           />
         )
       case "catalogo-costa":
@@ -786,6 +816,7 @@ export default function App() {
             onUpdateFilters={handleUpdateFilters}
             onResetFilters={() => setCatalogFilters(DEFAULT_CATALOG_FILTERS)}
             onViewPackage={handleViewPackage}
+            packagesList={packagesList}
           />
         )
       }

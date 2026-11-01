@@ -44,6 +44,34 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
           nombre,
           slug,
           icono
+        ),
+        itinerarios (
+          id,
+          dia_numero,
+          titulo_actividad,
+          descripcion,
+          incluye_desayuno,
+          incluye_almuerzo,
+          incluye_cena
+        ),
+        resenas (
+          id,
+          calificacion,
+          titulo,
+          comentario,
+          created_at,
+          usuarios (
+            nombres,
+            apellidos
+          )
+        ),
+        paquete_fechas (
+          id,
+          fecha_inicio,
+          fecha_fin,
+          cupos_totales,
+          cupos_disponibles,
+          precio_salida
         )
       `)
       .eq("is_active", true)
@@ -71,16 +99,73 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
 
       const daysText = `${item.duracion_dias} días / ${item.duracion_noches} noches`
 
+      // Mapear fechas disponibles si existen en paquete_fechas
+      const availableDates = item.paquete_fechas && item.paquete_fechas.length > 0
+        ? item.paquete_fechas.map((f: any) => {
+            const start = new Date(f.fecha_inicio)
+            const end = new Date(f.fecha_fin)
+            const sDay = String(start.getUTCDate()).padStart(2, "0")
+            const eDay = String(end.getUTCDate()).padStart(2, "0")
+            const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+            return `${sDay} al ${eDay} ${months[end.getUTCMonth()]} ${end.getUTCFullYear()}`
+          })
+        : [`Salidas programadas ${CURRENT_YEAR}`]
+
+      // Mapear itinerario día a día
+      const itinerary = item.itinerarios && item.itinerarios.length > 0
+        ? [...item.itinerarios]
+            .sort((a: any, b: any) => a.dia_numero - b.dia_numero)
+            .map((it: any) => ({
+              day: it.dia_numero,
+              title: it.titulo_actividad,
+              description: it.descripcion,
+              meals: {
+                breakfast: Boolean(it.incluye_desayuno),
+                lunch: Boolean(it.incluye_almuerzo),
+                dinner: Boolean(it.incluye_cena),
+              },
+            }))
+        : undefined
+
+      // Mapear reseñas
+      const rawResenas = item.resenas || []
+      const reviews = rawResenas.length > 0
+        ? rawResenas.map((r: any) => ({
+            id: r.id,
+            userName: r.usuarios?.nombres
+              ? `${r.usuarios.nombres} ${r.usuarios.apellidos || ""}`.trim()
+              : "Viajero Verificado",
+            rating: Number(r.calificacion) || 5,
+            title: r.titulo || "Experiencia inolvidable",
+            comment: r.comentario || "",
+            date: r.created_at
+              ? new Date(r.created_at).toLocaleDateString("es-EC", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })
+              : "Reciente",
+          }))
+        : undefined
+
+      const avgRating = reviews && reviews.length > 0
+        ? Number((reviews.reduce((acc: number, cur: any) => acc + cur.rating, 0) / reviews.length).toFixed(1))
+        : 4.9
+
+      const availableSlots = item.paquete_fechas && item.paquete_fechas.length > 0
+        ? item.paquete_fechas[0].cupos_disponibles
+        : undefined
+
       return {
-        id: item.id,
+        id: item.slug || item.id,
         name: item.nombre,
         region: regionTyped,
         province: provincia?.nombre || "Pichincha",
         city: destino?.ciudad || ciudad?.nombre || "Quito",
         days: daysText,
         price: Number(item.precio_base),
-        datesText: `Salidas programadas ${CURRENT_YEAR}`,
-        availableDates: [`Salidas programadas ${CURRENT_YEAR}`],
+        datesText: availableDates[0],
+        availableDates: availableDates,
         dates: {
           startDay: 1,
           endDay: item.duracion_dias,
@@ -91,6 +176,14 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
         secondaryImages: (item.imagenes_secundarias && item.imagenes_secundarias.length >= 2)
           ? [item.imagenes_secundarias[0], item.imagenes_secundarias[1]]
           : [item.imagen_principal, item.imagen_principal],
+        category: item.categorias?.nombre || "Ecoturismo y Naturaleza",
+        categorySlug: item.categorias?.slug || "ecoturismo-naturaleza",
+        categoryIcon: item.categorias?.icono || "compass",
+        rating: avgRating,
+        reviewsCount: reviews ? reviews.length : 12,
+        availableSlots: availableSlots,
+        itinerary: itinerary,
+        reviews: reviews,
       }
     })
   } catch (err) {

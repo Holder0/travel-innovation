@@ -2183,3 +2183,355 @@ th { background: var(--pacific); color: var(--breeze); }
     gap: 12px;
   }
 }
+
+/* ==========================================================================
+   ALINEACIÓN CON BASE DE DATOS: CATEGORÍAS, ITINERARIOS Y RESEÑAS
+   ========================================================================== */
+
+/* Barra de Chips de Categorías Temáticas */
+.category-chips-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 14px 24px 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pacific) transparent;
+}
+
+.category-chips-bar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.category-chips-bar::-webkit-scrollbar-thumb {
+  background: rgba(27, 73, 101, 0.35);
+  border-radius: 4px;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #ffffff;
+  color: var(--abyss);
+  border: 1px solid rgba(27, 73, 101, 0.2);
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.category-chip:hover {
+  background: var(--sand);
+  border-color: var(--pacific);
+  transform: translateY(-1px);
+}
+
+.category-chip--active {
+  background: var(--pacific) !important;
+  color: #ffffff !important;
+  border-color: var(--pacific) !important;
+  box-shadow: 0 3px 8px rgba(27, 73, 101, 0.28);
+}
+
+.category-chip--active svg {
+  stroke: #ffffff;
+}
+
+/* Grid de Estilos de Viaje en Home */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid rgba(27, 73, 101, 0.16);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(15, 31, 44, 0.04);
+}
+
+.category-card:hover {
+  border-color: var(--pacific);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(27, 73, 101, 0.12);
+}
+
+.category-card__icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #e8f1f5;
+  color: var(--pacific);
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+
+.category-card strong {
+  font-size: 16px;
+  color: var(--abyss);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.category-card p {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 14px;
+  line-height: 1.45;
+  flex-grow: 1;
+}
+
+.category-card__link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pacific);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Indicador de Cupos Disponibles */
+.available-slots-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  color: #92400e;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.available-slots-badge--urgent {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+/* Itinerario Dinámico Día a Día con Alimentación */
+.itinerary-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.itinerary-day-card {
+  background: #ffffff;
+  border: 1px solid rgba(27, 73, 101, 0.14);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(15, 31, 44, 0.04);
+}
+
+.itinerary-day-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.itinerary-day-badge {
+  background: var(--pacific);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.itinerary-day-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--abyss);
+  margin: 0;
+}
+
+.itinerary-day-description {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.meal-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(27, 73, 101, 0.15);
+}
+
+.meal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.meal-badge--included {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.meal-badge--included svg {
+  stroke: #059669;
+}
+
+.meal-badge--none {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Módulo de Calificación y Reseñas de Viajeros (Solo Visualización con SVG) */
+.reviews-section {
+  margin-top: 36px;
+}
+
+.reviews-grid-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .reviews-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rating-score-card {
+  background: #ffffff;
+  border: 1px solid rgba(27, 73, 101, 0.16);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(15, 31, 44, 0.05);
+}
+
+.rating-score-huge {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--abyss);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.rating-score-stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.rating-score-count {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.rating-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.rating-breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #475569;
+}
+
+.rating-breakdown-bar-bg {
+  flex-grow: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.rating-breakdown-bar-fill {
+  height: 100%;
+  background: #f59e0b;
+  border-radius: 9999px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid rgba(27, 73, 101, 0.14);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(15, 31, 44, 0.04);
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.review-card-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--abyss);
+}
+
+.review-card-date {
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.review-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--pacific);
+  margin: 6px 0 4px;
+}
+
+.review-card-comment {
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+

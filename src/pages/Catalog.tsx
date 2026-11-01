@@ -1,10 +1,11 @@
 import { useState, useMemo } from "react"
 import type { Page, PackageItem, CatalogFilterState } from "../types"
 import { ECUADOR_REGIONS } from "../types"
-import { Button, SelectField, DateRangePicker, PageTitle } from "../components/common"
+import { Button, SelectField, DateRangePicker, PageTitle, CategorySvg } from "../components/common"
 import { PackageCard } from "../components/cards/PackageCard"
 import { PROVINCES_DATA } from "../data/provincesData"
-import { packages } from "../data/packagesData"
+import { packages as defaultPackages } from "../data/packagesData"
+import { TRAVEL_CATEGORIES } from "../data/categoriesData"
 
 export function Catalog({
   go,
@@ -12,6 +13,7 @@ export function Catalog({
   onUpdateFilters,
   onResetFilters,
   onViewPackage,
+  packagesList = defaultPackages,
 }: {
   go: (page: Page) => void
   filters: CatalogFilterState
@@ -22,9 +24,11 @@ export function Catalog({
   ) => void
   onResetFilters: () => void
   onViewPackage?: (item: PackageItem) => void
+  packagesList?: PackageItem[]
 }) {
   const {
     region: selectedRegion,
+    category: selectedCategory,
     province: selectedProvince,
     city: selectedCity,
     dateRange,
@@ -45,17 +49,17 @@ export function Catalog({
   const ITEMS_PER_PAGE = 6
 
   const availableProvinces = useMemo(() => {
-    let list = packages
+    let list = packagesList
     if (selectedRegion) {
       list = list.filter((p) => p.region === selectedRegion)
     }
     return Array.from(new Set(list.map((p) => p.province))).sort((a, b) =>
       a.localeCompare(b, "es")
     )
-  }, [selectedRegion])
+  }, [selectedRegion, packagesList])
 
   const availableCities = useMemo(() => {
-    let list = packages
+    let list = packagesList
     if (selectedRegion) {
       list = list.filter((p) => p.region === selectedRegion)
     }
@@ -65,11 +69,18 @@ export function Catalog({
     return Array.from(new Set(list.map((p) => p.city))).sort((a, b) =>
       a.localeCompare(b, "es")
     )
-  }, [selectedRegion, selectedProvince])
+  }, [selectedRegion, selectedProvince, packagesList])
 
   const matchingPackages = useMemo(() => {
-    return packages.filter((item) => {
+    return packagesList.filter((item) => {
       if (selectedRegion && item.region !== selectedRegion) {
+        return false
+      }
+      if (
+        selectedCategory &&
+        item.category !== selectedCategory &&
+        item.categorySlug !== selectedCategory
+      ) {
         return false
       }
       if (selectedProvince && item.province !== selectedProvince) {
@@ -99,7 +110,9 @@ export function Catalog({
       return true
     })
   }, [
+    packagesList,
     selectedRegion,
+    selectedCategory,
     selectedProvince,
     selectedCity,
     minPrice,
@@ -107,6 +120,7 @@ export function Catalog({
     dateActive,
     dateRange,
   ])
+
 
   const sortedPackages = useMemo(() => {
     const list = [...matchingPackages]
@@ -164,10 +178,55 @@ export function Catalog({
         title={catalogTitle}
         subtitle="Encuentra una salida que se ajuste a tu tiempo y presupuesto."
       />
+
+      {/* Barra de Filtros Rápidos por Categoría Temática (Chips / Pills) */}
+      <div className="category-chips-bar" role="region" aria-label="Filtro por categorías de viaje">
+        <button
+          type="button"
+          className={`category-chip ${!selectedCategory ? "category-chip--active" : ""}`}
+          onClick={() => update({ category: "", currentPage: 1 })}
+        >
+          <CategorySvg icon="compass" size={16} />
+          <span>Todos los estilos</span>
+        </button>
+        {TRAVEL_CATEGORIES.map((cat) => (
+          <button
+            key={cat.id}
+            type="button"
+            className={`category-chip ${selectedCategory === cat.name ? "category-chip--active" : ""}`}
+            onClick={() =>
+              update({
+                category: selectedCategory === cat.name ? "" : cat.name,
+                currentPage: 1,
+              })
+            }
+          >
+            <CategorySvg icon={cat.icon} size={16} />
+            <span>{cat.name}</span>
+          </button>
+        ))}
+      </div>
+
       <div className="catalog-layout section">
         <aside className="filters">
           <div className="filter-heading">
             <h2>Filtros</h2>
+          </div>
+
+          <div className="filter-section">
+            <span className="filter-section-title">Estilo de viaje</span>
+            <SelectField
+              label="Categoría temática"
+              value={selectedCategory}
+              onChange={(cat) => update({ category: cat, currentPage: 1 })}
+            >
+              <option value="">Todos los estilos ({TRAVEL_CATEGORIES.length})</option>
+              {TRAVEL_CATEGORIES.map((cat) => (
+                <option key={cat.id} value={cat.name}>
+                  {cat.name}
+                </option>
+              ))}
+            </SelectField>
           </div>
 
           <div className="filter-section">
@@ -197,7 +256,7 @@ export function Catalog({
               value={selectedProvince}
               onChange={(prov) => {
                 const citiesInProv = prov
-                  ? packages.filter((p) => p.province === prov).map((p) => p.city)
+                  ? packagesList.filter((p) => p.province === prov).map((p) => p.city)
                   : []
                 const newCity =
                   selectedCity && !citiesInProv.includes(selectedCity)
@@ -312,6 +371,17 @@ export function Catalog({
                   marginLeft: "10px",
                 }}
               >
+                {selectedCategory && (
+                  <span className="active-filter">
+                    Estilo: {selectedCategory}
+                    <button
+                      aria-label="Quitar filtro de estilo de viaje"
+                      onClick={() => update({ category: "", currentPage: 1 })}
+                    >
+                      ×
+                    </button>
+                  </span>
+                )}
                 {selectedRegion && (
                   <span className="active-filter">
                     Región: {selectedRegion}
