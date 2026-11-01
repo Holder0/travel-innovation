@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react"
 import type { Page, PurchaseItem, SupportTicket } from "../types"
 import { SUPPORT_REASONS } from "../types"
 import { Button, Field, SelectField, PageTitle } from "../components/common"
+import { CheckIcon, AlertTriangleIcon, LockIcon } from "../components/common/SvgIcons"
 
 export function Support({
   go,
@@ -79,7 +80,9 @@ export function Support({
     return (
       <>
         <div className="section confirmation">
-          <span className="success-mark">✓</span>
+          <span className="success-mark" style={{ display: "grid", placeItems: "center" }}>
+            <CheckIcon size={28} color="#ffffff" />
+          </span>
           <h1>Ticket recibido</h1>
           <p>
             Tu número de ticket es{" "}
@@ -146,7 +149,7 @@ export function Support({
                       "Compra confirmada"
                     return (
                       <option key={code} value={code}>
-                        {code} — {pkgNames} {hasTicket ? "(✓ 1 ticket ya registrado)" : ""}
+                        {code} — {pkgNames} {hasTicket ? "(1 ticket ya registrado)" : ""}
                       </option>
                     )
                   })}
@@ -177,11 +180,14 @@ export function Support({
 
           {existingTicketForActiveCode ? (
             <div style={{ marginTop: "16px" }}>
-              <div className="inline-alert" style={{ marginBottom: "16px" }}>
-                ⚠️ <strong>Esta compra ya tiene un ticket registrado</strong>: La reserva{" "}
-                <strong>{activeBookingCode}</strong> ya cuenta con el ticket{" "}
-                <strong>{existingTicketForActiveCode.ticketNumber}</strong> en estado{" "}
-                <strong>{existingTicketForActiveCode.status}</strong>. Por políticas del servicio, solo se puede hacer <strong>1 ticket por compra</strong>.
+              <div className="inline-alert" style={{ marginBottom: "16px", display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                <AlertTriangleIcon size={18} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <div>
+                  <strong>Esta compra ya tiene un ticket registrado:</strong> La reserva{" "}
+                  <strong>{activeBookingCode}</strong> ya cuenta con el ticket{" "}
+                  <strong>{existingTicketForActiveCode.ticketNumber}</strong> en estado{" "}
+                  <strong>{existingTicketForActiveCode.status}</strong>. Por políticas del servicio, solo se puede hacer <strong>1 ticket por compra</strong>.
+                </div>
               </div>
 
               <article className="ticket-card" style={{ marginBottom: "16px" }}>
@@ -271,16 +277,20 @@ export function Support({
                     gap: "10px",
                   }}
                 >
-                  <span style={{ fontSize: "0.85rem", color: "#64748b" }}>
-                    {existingTicketForActiveCode.evidenceUploaded
-                      ? "✓ Documentos de respaldo adjuntos"
-                      : "Sin archivos adjuntos"}
+                  <span style={{ fontSize: "0.85rem", color: "#64748b", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                    {existingTicketForActiveCode.evidenceUploaded ? (
+                      <>
+                        <CheckIcon size={13} color="var(--success)" /> Documentos de respaldo adjuntos
+                      </>
+                    ) : (
+                      "Sin archivos adjuntos"
+                    )}
                   </span>
                   <span
                     className="muted"
-                    style={{ fontSize: "0.82rem", fontStyle: "italic" }}
+                    style={{ fontSize: "0.82rem", fontStyle: "italic", display: "inline-flex", alignItems: "center", gap: "4px" }}
                   >
-                    🔒 Ticket registrado (no modificable · 1 ticket por compra)
+                    <LockIcon size={12} /> Ticket registrado (no modificable · 1 ticket por compra)
                   </span>
                 </div>
               </article>
@@ -336,13 +346,16 @@ export function Support({
               </SelectField>
               {(reason === "Cancelación voluntaria" ||
                 reason === "Cancelaciones tardías") && (
-                <div className="inline-alert" role="alert">
-                  <strong>⚠️ Revisa el plazo antes de enviar</strong>
-                  <span>
-                    Si faltan menos de 72 horas hábiles, la cancelación voluntaria
-                    no admite reembolso. Puedes solicitar una revisión o consultar
-                    opciones de reprogramación.
-                  </span>
+                <div className="inline-alert" role="alert" style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                  <AlertTriangleIcon size={18} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <div>
+                    <strong>Revisa el plazo antes de enviar</strong>
+                    <span style={{ display: "block" }}>
+                      Si faltan menos de 72 horas hábiles, la cancelación voluntaria
+                      no admite reembolso. Puedes solicitar una revisión o consultar
+                      opciones de reprogramación.
+                    </span>
+                  </div>
                 </div>
               )}
               <label className="field">
@@ -401,8 +414,8 @@ export function Support({
                     >
                       <span style={{ background: "var(--pacific)" }} />
                     </div>
-                    <span className="status status--pacific">
-                      ✓ Documentos adjuntos listos
+                    <span className="status status--pacific" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                      <CheckIcon size={12} color="currentColor" /> Documentos adjuntos listos
                     </span>
                   </div>
                 )}

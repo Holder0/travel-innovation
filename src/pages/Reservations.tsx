@@ -1,6 +1,18 @@
 import { useState, useRef, useEffect } from "react"
 import type { Page, PurchaseItem, SupportTicket } from "../types"
 import { Button, Field, PageTitle } from "../components/common"
+import {
+  CheckIcon,
+  CloseXIcon,
+  ShoppingBagIcon,
+  ClockIcon,
+  AlertTriangleIcon,
+  FileTextIcon,
+  PinIcon,
+  CalendarIcon,
+  UsersGroupIcon,
+  DownloadIcon,
+} from "../components/common/SvgIcons"
 import { generateBookingPdf } from "../utils/pdfGenerator"
 
 export function Reservations({
@@ -61,7 +73,7 @@ export function Reservations({
       const fName = uploadedFileName || "comprobante-transferencia.pdf"
       onAttachVoucher?.(activePurchase.id, refNum, fName)
       setVoucherSuccessToast(
-        `✓ ¡Comprobante adjuntado con éxito! Tu pedido #${activePurchase.code} ahora tiene el estado: Compra realizada.`
+        `¡Comprobante adjuntado con éxito! Tu pedido #${activePurchase.code} ahora tiene el estado: Compra realizada.`
       )
       setVoucherFileReady(false)
       setUploadedFileName("")
@@ -92,8 +104,8 @@ export function Reservations({
       {purchases.length === 0 ? (
         <div className="section">
           <div className="empty-purchases-card">
-            <span className="empty-purchases-icon" aria-hidden="true">
-              🛍️
+            <span className="empty-purchases-icon" aria-hidden="true" style={{ display: "grid", placeItems: "center" }}>
+              <ShoppingBagIcon size={44} color="var(--pacific)" />
             </span>
             <h2>No tienes compras registradas</h2>
             <p style={{ maxWidth: "480px", color: "#5a6e7f" }}>
@@ -157,9 +169,14 @@ export function Reservations({
                     className={`status status--${
                       isSuccess ? "success" : isPending ? "pending" : "error"
                     }`}
+                    style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
                   >
-                    {isSuccess ? "✓ " : isPending ? "◷ " : ""}
-                    {isSuccess ? "Compra realizada" : item.status}
+                    {isSuccess ? (
+                      <CheckIcon size={12} color="currentColor" />
+                    ) : isPending ? (
+                      <ClockIcon size={12} color="currentColor" />
+                    ) : null}
+                    <span>{isSuccess ? "Compra realizada" : item.status}</span>
                   </span>
                 </button>
               )
@@ -184,14 +201,19 @@ export function Reservations({
                       ? "pending"
                       : "error"
                   }`}
+                  style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
                 >
                   {activePurchase.status === "Compra realizada" ||
-                  activePurchase.status === "Confirmada"
-                    ? "✓ "
-                    : "◷ "}
-                  {activePurchase.status === "Confirmada"
-                    ? "Compra realizada"
-                    : activePurchase.status}
+                  activePurchase.status === "Confirmada" ? (
+                    <CheckIcon size={12} color="currentColor" />
+                  ) : (
+                    <ClockIcon size={12} color="currentColor" />
+                  )}
+                  <span>
+                    {activePurchase.status === "Confirmada"
+                      ? "Compra realizada"
+                      : activePurchase.status}
+                  </span>
                 </span>
               </div>
 
@@ -216,12 +238,11 @@ export function Reservations({
                   >
                     <span
                       style={{
-                        color: "var(--success)",
-                        fontWeight: 700,
-                        fontSize: "18px",
+                        display: "grid",
+                        placeItems: "center",
                       }}
                     >
-                      ✓
+                      <CheckIcon size={18} color="var(--success)" />
                     </span>
                     <div>
                       <strong>Comprobante verificado con éxito:</strong> #{activePurchase.voucherNumber}{" "}
@@ -261,12 +282,11 @@ export function Reservations({
                         background: "#fef3c7",
                         display: "grid",
                         placeItems: "center",
-                        fontSize: "22px",
                         flexShrink: 0,
                       }}
                       aria-hidden="true"
                     >
-                      ⚠️
+                      <AlertTriangleIcon size={22} color="#b45309" />
                     </div>
                     <div style={{ flex: 1 }}>
                       <div
@@ -410,16 +430,16 @@ export function Reservations({
                         style={{ margin: "4px 0" }}
                       >
                         <div>
-                          <span>
-                            📄 {uploadedFileName || "comprobante-transferencia.pdf"}
+                          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                            <FileTextIcon size={16} color="var(--pacific)" /> {uploadedFileName || "comprobante-transferencia.pdf"}
                           </span>
                           <strong>100%</strong>
                         </div>
                         <div className="progress">
                           <span style={{ width: "100%" }} />
                         </div>
-                        <span className="status status--pacific">
-                          ✓ Documento listo para registrar
+                        <span className="status status--pacific" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          <CheckIcon size={12} color="currentColor" /> Documento listo para registrar
                         </span>
                       </div>
                     )}
@@ -544,13 +564,13 @@ export function Reservations({
                               {pkgItem.name}
                             </strong>
                             <small
-                              style={{ color: "#5a6e7f", display: "block" }}
+                              style={{ color: "#5a6e7f", display: "flex", alignItems: "center", gap: "4px" }}
                             >
-                              📍 {pkgItem.city} ({pkgItem.province}) · 📅{" "}
+                              <PinIcon size={12} color="var(--pacific)" /> {pkgItem.city} ({pkgItem.province}) · <CalendarIcon size={12} color="var(--pacific)" />{" "}
                               {pkgItem.date}
                             </small>
-                            <small style={{ color: "var(--abyss)" }}>
-                              👥 {pkgItem.people}{" "}
+                            <small style={{ color: "var(--abyss)", display: "flex", alignItems: "center", gap: "4px" }}>
+                              <UsersGroupIcon size={12} color="var(--pacific)" /> {pkgItem.people}{" "}
                               {pkgItem.people === 1
                                 ? "viajero"
                                 : "viajeros"}{" "}
@@ -581,7 +601,7 @@ export function Reservations({
                               marginBottom: "8px",
                             }}
                           >
-                            <span>👥</span> Viajeros registrados en este
+                            <UsersGroupIcon size={14} color="var(--pacific)" /> Viajeros registrados en este
                             paquete ({pkgTravelers.length}):
                           </span>
                           <div
@@ -689,8 +709,8 @@ export function Reservations({
                       <strong>Comprobante bancario:</strong>{" "}
                       {activePurchase.status === "Compra realizada" ||
                       activePurchase.status === "Confirmada" ? (
-                        <span style={{ color: "var(--success)", fontWeight: 700 }}>
-                          #{activePurchase.voucherNumber || "TR-76543210"} (✓ Adjuntado y validado)
+                        <span style={{ color: "var(--success)", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          #{activePurchase.voucherNumber || "TR-76543210"} (<CheckIcon size={12} color="var(--success)" /> Adjuntado y validado)
                         </span>
                       ) : (
                         <span style={{ color: "#b45309", fontWeight: 700 }}>
@@ -777,8 +797,8 @@ export function Reservations({
 
       {downloadToast && (
         <div className="toast" role="status">
-          <span>
-            ✓ Voucher de reserva #{activePurchase?.code} descargado
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <CheckIcon size={14} color="currentColor" /> Voucher de reserva #{activePurchase?.code} descargado
             exitosamente.
           </span>
           <button onClick={() => setDownloadToast(false)}>Cerrar</button>
@@ -786,7 +806,9 @@ export function Reservations({
       )}
       {voucherSuccessToast && (
         <div className="toast" role="status">
-          <span>{voucherSuccessToast}</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <CheckIcon size={14} color="var(--success)" /> {voucherSuccessToast}
+          </span>
           <button onClick={() => setVoucherSuccessToast("")}>Cerrar</button>
         </div>
       )}

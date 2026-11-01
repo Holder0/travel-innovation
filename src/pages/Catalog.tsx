@@ -2,6 +2,7 @@ import { useState, useMemo } from "react"
 import type { Page, PackageItem, CatalogFilterState } from "../types"
 import { ECUADOR_REGIONS } from "../types"
 import { Button, SelectField, DateRangePicker, PageTitle, CategorySvg } from "../components/common"
+import { CheckIcon, CloseXIcon } from "../components/common/SvgIcons"
 import { PackageCard } from "../components/cards/PackageCard"
 import { PROVINCES_DATA } from "../data/provincesData"
 import { packages as defaultPackages } from "../data/packagesData"
@@ -418,8 +419,8 @@ export function Catalog({
                   </span>
                 )}
                 {dateActive && dateRange && (
-                  <span className="active-filter">
-                    ✓ {dateRange.startDay}–{dateRange.endDay} {dateRange.month}{" "}
+                  <span className="active-filter" style={{ display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                    <CheckIcon size={12} color="currentColor" /> {dateRange.startDay}–{dateRange.endDay} {dateRange.month}{" "}
                     {dateRange.year}
                     <button
                       aria-label="Quitar filtro de fechas"
@@ -430,8 +431,9 @@ export function Catalog({
                           currentPage: 1,
                         })
                       }
+                      style={{ display: "inline-grid", placeItems: "center" }}
                     >
-                      ×
+                      <CloseXIcon size={11} />
                     </button>
                   </span>
                 )}

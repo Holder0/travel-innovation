@@ -12,7 +12,12 @@ import {
   LunchIcon,
   DinnerIcon,
   VerifiedCheckIcon,
+  LightningIcon,
+  AlertTriangleIcon,
+  CheckIcon,
+  CloseXIcon,
 } from "../components/common"
+
 import { packages } from "../data/packagesData"
 
 
@@ -243,7 +248,7 @@ export function Detail({
               }`}
               style={{ marginBottom: "16px" }}
             >
-              <span aria-hidden="true">⚡</span>
+              <LightningIcon size={16} color={pkg.availableSlots <= 6 ? "#b91c1c" : "#92400e"} />
               <span>
                 {pkg.availableSlots <= 4
                   ? `¡Solo quedan ${pkg.availableSlots} cupos disponibles para esta salida!`
@@ -251,6 +256,7 @@ export function Detail({
               </span>
             </div>
           )}
+
 
           {pkg.availableDates && pkg.availableDates.length > 1 ? (
             <SelectField
@@ -305,12 +311,16 @@ export function Detail({
                 className="inline-alert"
                 style={{ marginTop: "12px", padding: "12px 14px" }}
               >
-                <strong>⚠️ Límite de 20 personas por paquete</strong>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                  <AlertTriangleIcon size={18} color="#b42318" />
+                  <strong>Límite de 20 personas por paquete</strong>
+                </div>
                 <span style={{ fontSize: "13.5px", lineHeight: 1.45 }}>
                   Este paquete está limitado a un máximo de 20 personas por reserva web. Si necesitas un paquete para un grupo mayor o evento corporativo, por favor contáctanos al teléfono <strong>02 2456456</strong> o al correo <strong>travelinnovation.tamc@gmail.com</strong>.
                 </span>
               </div>
             )}
+
           </div>
           <div className="total-row">
             <span>Total estimado</span>
@@ -386,14 +396,21 @@ export function Detail({
           <div className="accordion-body two-col">
             <div>
               <h3>Incluye</h3>
-              <p>✓ Transporte turístico, hospedaje seleccionado, guianza profesional y entradas a sitios previstos.</p>
+              <p style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                <CheckIcon size={16} color="#059669" style={{ flexShrink: 0, marginTop: "4px" }} />
+                <span>Transporte turístico, hospedaje seleccionado, guianza profesional y entradas a sitios previstos.</span>
+              </p>
             </div>
             <div>
               <h3>No incluye</h3>
-              <p>✕ Vuelos no especificados, gastos personales ni propinas voluntarias.</p>
+              <p style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                <CloseXIcon size={16} color="#dc2626" style={{ flexShrink: 0, marginTop: "4px" }} />
+                <span>Vuelos no especificados, gastos personales ni propinas voluntarias.</span>
+              </p>
             </div>
           </div>
         </div>
+
 
         <div className="detail-card">
           <div className="detail-card-header">
@@ -559,11 +576,12 @@ export function Detail({
               onClick={() => setToast(false)}
               aria-label="Cerrar notificación"
             >
-              ✕
+              <CloseXIcon size={18} />
             </button>
             <div className="center-popup-icon" aria-hidden="true">
-              ✓
+              <CheckIcon size={32} color="var(--pacific)" />
             </div>
+
             <h2 id="cart-popup-title" className="center-popup-title">
               ¡Producto agregado con éxito!
             </h2>

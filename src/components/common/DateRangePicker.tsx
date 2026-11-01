@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from "react"
 import type { DateRange } from "../../types"
+import { CalendarIcon } from "./SvgIcons"
 import {
   CALENDAR_MONTHS,
   isPastDay,
@@ -150,7 +151,7 @@ export function DateRangePicker({
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span aria-hidden="true" style={{ fontSize: "16px", flexShrink: 0 }}>📅</span>
+        <CalendarIcon size={18} style={{ flexShrink: 0, color: "var(--pacific, #008080)" }} />
         <span style={{ display: "flex", flexDirection: "column", flexGrow: 1, minWidth: 0, overflow: "hidden" }}>
           <strong style={{ fontSize: "13px", lineHeight: "1.25", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", color: "var(--abyss)" }}>
             {hasRange ? `${value.startDay}–${value.endDay} ${monthName}` : "Elegir intervalo de días"}

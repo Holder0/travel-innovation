@@ -1,6 +1,18 @@
 import React, { useState, useRef, useEffect } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData, PaymentDetails, PaymentMethodType } from "../../types"
 import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
+import {
+  EditPencilIcon,
+  PinIcon,
+  CalendarIcon,
+  UsersGroupIcon,
+  CreditCardIcon,
+  BankIcon,
+  CheckIcon,
+  ShieldIcon,
+  LockIcon,
+  AlertTriangleIcon,
+} from "../../components/common/SvgIcons"
 import { validateCardNumber, validateCardExpiry, validateCardCvv } from "../../utils/validation"
 import { generateBookingCode } from "../../services/storage"
 
@@ -227,8 +239,9 @@ export function Payment({
                 <span className="eyebrow">Paso 1 · Titular</span>
                 <h2>Información Personal</h2>
               </div>
-              <Button kind="quiet" type="button" onClick={() => { syncPaymentData(); go("identificacion"); }}>
-                Editar datos ✎
+              <Button kind="quiet" type="button" onClick={() => { syncPaymentData(); go("identificacion"); }} style={{ display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                <span>Editar datos</span>
+                <EditPencilIcon size={13} />
               </Button>
             </div>
             <div className="checkout-recap-grid">
@@ -275,8 +288,9 @@ export function Payment({
                   {cartItems.length === 1 ? "paquete" : "paquetes"})
                 </h2>
               </div>
-              <Button kind="quiet" type="button" onClick={() => { syncPaymentData(); go("carrito"); }}>
-                Editar carrito ✎
+              <Button kind="quiet" type="button" onClick={() => { syncPaymentData(); go("carrito"); }} style={{ display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                <span>Editar carrito</span>
+                <EditPencilIcon size={13} />
               </Button>
             </div>
             <div className="cart-checkout-summary-list">
@@ -284,11 +298,11 @@ export function Payment({
                 <div key={item.id} className="cart-summary-item-row">
                   <div>
                     <strong style={{ fontSize: "16px" }}>{item.pkg.name}</strong>
-                    <small>
-                      📍 {item.pkg.city} ({item.pkg.province}) · 📅 {item.date}
+                    <small style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                      <PinIcon size={13} color="var(--pacific)" /> {item.pkg.city} ({item.pkg.province}) · <CalendarIcon size={13} color="var(--pacific)" /> {item.date}
                     </small>
-                    <small>
-                      👥 {item.people}{" "}
+                    <small style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                      <UsersGroupIcon size={13} color="var(--pacific)" /> {item.people}{" "}
                       {item.people === 1 ? "viajero" : "viajeros"} (${item.pkg.price}{" "}
                       c/u)
                     </small>
@@ -321,12 +335,12 @@ export function Payment({
                   syncPaymentData({ method: cardType })
                 }}
               >
-                <span className="tab-icon">💳</span>
+                <span className="tab-icon"><CreditCardIcon size={20} /></span>
                 <div className="tab-text">
                   <strong>Tarjeta de crédito o débito</strong>
                   <small>Visa, Mastercard, Amex, Diners · Directo o cuotas</small>
                 </div>
-                {mainTab === "tarjeta" && <span className="tab-check">✓</span>}
+                {mainTab === "tarjeta" && <span className="tab-check"><CheckIcon size={14} color="#ffffff" /></span>}
               </button>
 
               <button
@@ -341,13 +355,13 @@ export function Payment({
                   syncPaymentData({ method: "transferencia" })
                 }}
               >
-                <span className="tab-icon">🏦</span>
+                <span className="tab-icon"><BankIcon size={20} /></span>
                 <div className="tab-text">
                   <strong>Transferencia bancaria</strong>
                   <small>Depósito o transferencia · Plazo de 24 horas</small>
                 </div>
                 {mainTab === "transferencia" && (
-                  <span className="tab-check">✓</span>
+                  <span className="tab-check"><CheckIcon size={14} color="#ffffff" /></span>
                 )}
               </button>
             </div>
@@ -384,7 +398,14 @@ export function Payment({
                               setTimeout(() => setCopied(""), 2000)
                             }}
                           >
-                            {copied === label ? "Copiado ✓" : "Copiar"}
+                            {copied === label ? (
+                              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                                <span>Copiado</span>
+                                <CheckIcon size={12} color="currentColor" />
+                              </span>
+                            ) : (
+                              "Copiar"
+                            )}
                           </Button>
                         )}
                       </div>
@@ -420,10 +441,9 @@ export function Payment({
                         color: "#ffffff",
                         display: "grid",
                         placeItems: "center",
-                        fontSize: "20px",
                       }}
                     >
-                      🛡️
+                      <ShieldIcon size={22} color="#ffffff" />
                     </div>
                     <div>
                       <strong
@@ -748,7 +768,7 @@ export function Payment({
                       }`}
                     >
                       {detectedBrand === b.id && (
-                        <span style={{ marginRight: "4px" }}>✓</span>
+                        <span style={{ marginRight: "4px", display: "inline-flex", alignItems: "center" }}><CheckIcon size={12} color="currentColor" /></span>
                       )}
                       {b.label}
                     </span>
@@ -905,8 +925,8 @@ export function Payment({
                   </div>
                 )}
 
-                <div className="security-badge">
-                  <span aria-hidden="true">🔒</span>
+                <div className="security-badge" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <LockIcon size={16} color="var(--pacific)" />
                   <span>
                     <strong>Pago seguro:</strong> Transacción encriptada con
                     cifrado SSL de 256 bits y certificación PCI-DSS.
@@ -966,7 +986,7 @@ export function Payment({
                 role="status"
                 style={{ marginTop: "-8px", display: "flex", alignItems: "center", gap: "6px" }}
               >
-                <span aria-hidden="true" style={{ background: "transparent", borderRadius: 0 }}>⚠️</span> Debes aceptar la política de cancelación y reembolsos para continuar.
+                <AlertTriangleIcon size={16} color="var(--error, #dc2626)" /> Debes aceptar la política de cancelación y reembolsos para continuar.
               </p>
             )}
 

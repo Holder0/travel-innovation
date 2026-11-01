@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from "react"
 import type { Page, CartItem, PackageItem } from "../../types"
 import { Button, PageTitle, Stepper, Summary, Placeholder } from "../../components/common"
+import { AlertTriangleIcon, PinIcon } from "../../components/common/SvgIcons"
 import { AuthCheckoutModal } from "../../components/modals/AuthCheckoutModal"
 
 interface PackageGroup {
@@ -172,8 +173,11 @@ export function Cart({
         <div className="section checkout-layout">
           <section>
             {removedAlert && (
-              <div className="inline-alert" role="status">
-                <span>⚠️ {removedAlert}</span>
+              <div className="inline-alert" role="status" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                  <AlertTriangleIcon size={16} color="#d97706" />
+                  <span>{removedAlert}</span>
+                </span>
                 <button onClick={() => setRemovedAlert(null)}>Cerrar</button>
               </div>
             )}
@@ -238,9 +242,12 @@ export function Cart({
                           color: "var(--abyss)",
                           opacity: 0.85,
                           fontSize: "14px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "4px",
                         }}
                       >
-                        📍 {group.pkg.city} ({group.pkg.province}) · {group.pkg.days}
+                        <PinIcon size={14} color="var(--pacific)" /> {group.pkg.city} ({group.pkg.province}) · {group.pkg.days}
                       </p>
 
                       <dl>
@@ -432,7 +439,10 @@ export function Cart({
                                     fontSize: "13px",
                                   }}
                                 >
-                                  <strong>⚠️ Límite de 20 personas por paquete</strong>
+                                  <strong style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                                    <AlertTriangleIcon size={16} color="#d97706" />
+                                    <span>Límite de 20 personas por paquete</span>
+                                  </strong>
                                   <span>
                                     Para grupos corporativos o de mayor tamaño, contáctanos a{" "}
                                     <strong>travelinnovation.tamc@gmail.com</strong> o al teléfono{" "}

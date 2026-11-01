@@ -1,5 +1,6 @@
 import type { Page, PurchaseItem, SupportTicket } from "../types"
 import { Button, PageTitle } from "../components/common"
+import { CheckIcon, ClipboardIcon, ClockIcon, GearIcon, LockIcon } from "../components/common/SvgIcons"
 
 export function Tickets({
   go,
@@ -54,9 +55,9 @@ export function Tickets({
           ) : (
             <span
               className="status status--pacific"
-              style={{ fontSize: "0.85rem", fontWeight: 700 }}
+              style={{ fontSize: "0.85rem", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "4px" }}
             >
-              ✓ Límite de 1 ticket por compra alcanzado
+              <CheckIcon size={12} color="currentColor" /> Límite de 1 ticket por compra alcanzado
             </span>
           )}
         </div>
@@ -73,9 +74,9 @@ export function Tickets({
             }}
           >
             <span
-              style={{ fontSize: "42px", display: "block", marginBottom: "12px" }}
+              style={{ display: "grid", placeItems: "center", marginBottom: "12px" }}
             >
-              📋
+              <ClipboardIcon size={44} color="var(--pacific)" />
             </span>
             <h3 style={{ color: "var(--pacific)", marginBottom: "8px" }}>
               No tienes tickets registrados
@@ -118,11 +119,11 @@ export function Tickets({
                         >
                           {t.ticketNumber}
                         </span>
-                        <span className={`status ${statusClass}`}>
-                          {t.status === "Resuelto" && "✓ "}
-                          {t.status === "En revisión" && "⏳ "}
-                          {t.status === "En trámite" && "⚙️ "}
-                          {t.status}
+                        <span className={`status ${statusClass}`} style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          {t.status === "Resuelto" && <CheckIcon size={12} color="currentColor" />}
+                          {t.status === "En revisión" && <ClockIcon size={12} color="currentColor" />}
+                          {t.status === "En trámite" && <GearIcon size={12} color="currentColor" />}
+                          <span>{t.status}</span>
                         </span>
                       </div>
                       <span
@@ -200,7 +201,7 @@ export function Tickets({
                     >
                       {t.evidenceUploaded ? (
                         <>
-                          <span style={{ color: "var(--success)" }}>✓</span>{" "}
+                          <CheckIcon size={14} color="var(--success)" />{" "}
                           Documentos y evidencias adjuntos
                         </>
                       ) : (
@@ -209,9 +210,9 @@ export function Tickets({
                     </span>
                     <span
                       className="muted"
-                      style={{ fontSize: "0.82rem", fontStyle: "italic" }}
+                      style={{ fontSize: "0.82rem", fontStyle: "italic", display: "inline-flex", alignItems: "center", gap: "4px" }}
                     >
-                      🔒 Ticket registrado (no modificable · 1 ticket por compra)
+                      <LockIcon size={12} /> Ticket registrado (no modificable · 1 ticket por compra)
                     </span>
                   </div>
                 </article>

@@ -1,7 +1,7 @@
 export const policyGroups = [
   {
     title: "Cuándo NO se aceptan cancelaciones ni reembolsos",
-    icon: "×",
+    icon: "cross",
     items: [
       [
         "No presentación",
@@ -27,7 +27,7 @@ export const policyGroups = [
   },
   {
     title: "Cuándo SÍ se aceptan cancelaciones, reprogramaciones o reembolsos",
-    icon: "✓",
+    icon: "check",
     items: [
       [
         "Incumplimiento operativo",

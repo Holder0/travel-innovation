@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { Button } from "../common/Button"
 import { Field } from "../common/Field"
+import { AlertTriangleIcon, CheckIcon } from "../common/SvgIcons"
 import { getRegisteredUsers, saveRegisteredUsers } from "../../services/storage"
 import { signInWithSupabase, signUpWithSupabase } from "../../services/supabaseService"
 import type { RegisteredUserRecord, AppCurrentUser } from "../../types"
@@ -288,7 +289,7 @@ export function AuthModal({
             style={{ marginBottom: "16px", padding: "12px 14px" }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span aria-hidden="true">⚠️</span>
+              <AlertTriangleIcon size={18} color="var(--error, #dc2626)" />
               <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--error)" }}>
                 {errorMsg}
               </span>
@@ -345,92 +346,6 @@ export function AuthModal({
               </Button>
             </form>
 
-            {/* Accesos Rápidos de Prueba Académica (RBAC) */}
-            <div
-              style={{
-                marginTop: "16px",
-                padding: "12px 14px",
-                background: "#f1f5f9",
-                borderRadius: "8px",
-                border: "1px dashed rgba(27, 73, 101, 0.3)",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginBottom: "8px",
-                }}
-              >
-                <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--pacific)" }}>
-                  ⚡ Cuentas de prueba (Clave: Temporal2026!):
-                </span>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                <button
-                  type="button"
-                  style={{
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    padding: "5px 9px",
-                    borderRadius: "4px",
-                    background: "#ffffff",
-                    border: "1px solid #cbd5e1",
-                    color: "var(--abyss)",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    setEmail("carlos.mendoza@travelinnovation.ec")
-                    setPassword("Temporal2026!")
-                    setErrorMsg("")
-                  }}
-                >
-                  👤 Carlos (Cliente)
-                </button>
-                <button
-                  type="button"
-                  style={{
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    padding: "5px 9px",
-                    borderRadius: "4px",
-                    background: "#ffffff",
-                    border: "1px solid #cbd5e1",
-                    color: "var(--abyss)",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    setEmail("maria.salazar@travelinnovation.ec")
-                    setPassword("Temporal2026!")
-                    setErrorMsg("")
-                  }}
-                >
-                  💼 María (Agente)
-                </button>
-                <button
-                  type="button"
-                  style={{
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    padding: "5px 9px",
-                    borderRadius: "4px",
-                    background: "#ffffff",
-                    border: "1px solid #cbd5e1",
-                    color: "var(--abyss)",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    setEmail("admin@travelinnovation.ec")
-                    setPassword("Temporal2026!")
-                    setErrorMsg("")
-                  }}
-                >
-                  🛡️ Admin (Superadmin)
-                </button>
-              </div>
-            </div>
-
             <hr className="modal-divider-line" />
 
             <div className="auth-switch-section">
@@ -458,7 +373,7 @@ export function AuthModal({
               style={{ marginBottom: "16px", padding: "12px 14px" }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span aria-hidden="true">⚠️</span>
+                <AlertTriangleIcon size={18} color="var(--abyss, #0f172a)" />
                 <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--abyss)" }}>
                   Ingresa tus datos personales para crear tu cuenta y gestionar tus viajes.
                 </span>
@@ -556,7 +471,9 @@ export function AuthModal({
             {recoverySubmitted ? (
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div className="auth-alert-success" role="status">
-                  <span className="auth-alert-icon" aria-hidden="true">✓</span>
+                  <span className="auth-alert-icon" aria-hidden="true">
+                    <CheckIcon size={16} color="var(--success, #16a34a)" />
+                  </span>
                   <div className="auth-alert-content">
                     Te hemos enviado un enlace de recuperación a <strong>{email}</strong>. Revisa tu bandeja de entrada o spam.
                   </div>

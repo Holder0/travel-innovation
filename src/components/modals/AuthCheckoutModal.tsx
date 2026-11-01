@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { Button } from "../common/Button"
 import { Field } from "../common/Field"
+import { CalendarIcon, UsersGroupIcon, AlertTriangleIcon, CheckIcon } from "../common/SvgIcons"
 import { getRegisteredUsers, saveRegisteredUsers } from "../../services/storage"
 import type { CartItem, RegisteredUserRecord } from "../../types"
 
@@ -234,8 +235,12 @@ export function AuthCheckoutModal({
                       marginTop: "2px",
                     }}
                   >
-                    <span>📅 {item.date}</span>
-                    <span>👥 {item.people} {item.people === 1 ? "viajero" : "viajeros"}</span>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                      <CalendarIcon size={14} color="var(--pacific)" /> {item.date}
+                    </span>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                      <UsersGroupIcon size={14} color="var(--pacific)" /> {item.people} {item.people === 1 ? "viajero" : "viajeros"}
+                    </span>
                   </div>
                   <div
                     style={{
@@ -297,9 +302,7 @@ export function AuthCheckoutModal({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span aria-hidden="true" style={{ fontSize: "16px" }}>
-                  ⚠️
-                </span>
+                <AlertTriangleIcon size={18} color="var(--abyss, #0f172a)" />
                 <span style={{ fontSize: "14px", color: "var(--abyss)", fontWeight: 600, lineHeight: 1.4 }}>
                   {mode === "register"
                     ? "Para continuar con tu compra, crea tu cuenta o ingresa si ya tienes una."
@@ -338,7 +341,7 @@ export function AuthCheckoutModal({
                 style={{ margin: "0 0 16px 0", padding: "12px 14px" }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span aria-hidden="true">⚠️</span>
+                  <AlertTriangleIcon size={18} color="var(--error, #dc2626)" />
                   <span style={{ fontSize: "14px", color: "var(--error)", fontWeight: 600 }}>
                     {errorMsg}
                   </span>
@@ -509,7 +512,9 @@ export function AuthCheckoutModal({
                 {recoverySubmitted ? (
                   <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                     <div className="auth-alert-success" role="status">
-                      <span className="auth-alert-icon" aria-hidden="true">✓</span>
+                      <span className="auth-alert-icon" aria-hidden="true">
+                        <CheckIcon size={16} color="var(--success, #16a34a)" />
+                      </span>
                       <p className="auth-alert-content">
                         Hemos enviado un correo a <strong>{email}</strong> con las instrucciones para restablecer tu contraseña.
                       </p>

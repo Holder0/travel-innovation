@@ -9,6 +9,7 @@ import {
   Summary,
   DatePickerField,
 } from "../../components/common"
+import { CheckIcon, ClipboardIcon, EditPencilIcon } from "../../components/common/SvgIcons"
 import { PROVINCES_DATA } from "../../data/provincesData"
 import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
 import { getStoredAccounts } from "../../services/storage"
@@ -289,7 +290,9 @@ export function Identification({
               </span>
             </div>
             {currentUser ? (
-              <span className="status status--pacific">✓ Sesión iniciada</span>
+              <span className="status status--pacific" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                <CheckIcon size={14} color="currentColor" /> Sesión iniciada
+              </span>
             ) : (
               <Button kind="quiet" type="button" onClick={() => go("carrito")}>
                 Iniciar sesión
@@ -387,7 +390,7 @@ export function Identification({
                   setErrors((prev) => ({ ...prev, birthDate: undefined }))
               }}
               error={errors.birthDate}
-              help="Selecciona tu fecha en el calendario (haz clic en 📅)."
+              help="Selecciona tu fecha en el calendario desplegable."
               required
             />
           </div>
@@ -503,7 +506,7 @@ export function Identification({
               <div className="update-data-box">
                 <div className="update-data-header">
                   <span className="update-icon" aria-hidden="true">
-                    📋
+                    <ClipboardIcon size={20} color="var(--pacific)" />
                   </span>
                   <div>
                     <strong className="update-title">
@@ -553,7 +556,7 @@ export function Identification({
 
                 {wantsToUpdate && (
                   <div className="update-active-notice">
-                    <span aria-hidden="true">✏️</span>
+                    <EditPencilIcon size={16} color="var(--pacific)" />
                     <span>
                       Puedes editar cualquiera de los campos de arriba (teléfono, cédula o dirección). Los nuevos datos se guardarán para tu reserva y en tu cuenta.
                     </span>

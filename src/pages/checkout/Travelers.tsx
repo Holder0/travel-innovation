@@ -9,6 +9,7 @@ import {
   Summary,
   DatePickerField,
 } from "../../components/common"
+import { PinIcon, AlertTriangleIcon, CheckIcon } from "../../components/common/SvgIcons"
 import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
 
 export function isTravelerMinor(birthDateStr?: string): boolean {
@@ -352,9 +353,9 @@ export function Travelers({
                     </h2>
                     <p
                       className="muted"
-                      style={{ margin: 0, fontSize: "0.88rem" }}
+                      style={{ margin: 0, fontSize: "0.88rem", display: "flex", alignItems: "center", gap: "4px" }}
                     >
-                      📍 {("destination" in group.pkg ? (group.pkg as any).destination : `${group.pkg.city} (${group.pkg.province})`)} · {group.people}{" "}
+                      <PinIcon size={14} color="var(--pacific)" /> {("destination" in group.pkg ? (group.pkg as any).destination : `${group.pkg.city} (${group.pkg.province})`)} · {group.people}{" "}
                       {group.people === 1 ? "pasajero" : "pasajeros"}
                     </p>
                   </div>
@@ -372,9 +373,10 @@ export function Travelers({
                   <div
                     className="inline-alert"
                     role="alert"
-                    style={{ marginBottom: "16px" }}
+                    style={{ marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}
                   >
-                    ⚠️ {groupError}
+                    <AlertTriangleIcon size={16} color="var(--error, #dc2626)" />
+                    <span>{groupError}</span>
                   </div>
                 )}
 
@@ -411,8 +413,8 @@ export function Travelers({
                             </h3>
                           </div>
                           {isFirstInGroup && (
-                            <span className="status status--pacific">
-                              ✓ Datos precargados
+                            <span className="status status--pacific" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                              <CheckIcon size={14} color="currentColor" /> Datos precargados
                             </span>
                           )}
                         </div>
@@ -502,7 +504,7 @@ export function Travelers({
                               )
                             }
                             error={travelerErrors.birthDate}
-                            help="Selecciona en el calendario (haz clic en 📅)."
+                            help="Selecciona en el calendario desplegable."
                             required
                           />
 
@@ -549,9 +551,10 @@ export function Travelers({
                         {traveler.birthDate && isTravelerMinor(traveler.birthDate) && (
                           <div
                             className="inline-alert"
-                            style={{ marginTop: "12px" }}
+                            style={{ marginTop: "12px", display: "flex", alignItems: "center", gap: "8px" }}
                           >
-                            ⚠️ <strong>Menor de edad:</strong> Lleva su documento de identidad y autorización escrita si viaja sin sus padres o representantes legales.
+                            <AlertTriangleIcon size={16} color="#d97706" />
+                            <span><strong>Menor de edad:</strong> Lleva su documento de identidad y autorización escrita si viaja sin sus padres o representantes legales.</span>
                           </div>
                         )}
                       </article>
@@ -563,7 +566,9 @@ export function Travelers({
           })}
 
           <div className="important-note">
-            <strong>⚠️ Lleva tu cédula física y original el día del viaje</strong>
+            <strong style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+              <AlertTriangleIcon size={16} color="#d97706" /> Lleva tu cédula física y original el día del viaje
+            </strong>
             <p>
               Todos los pasajeros deben presentar su documento de identidad original
               para el embarque y check-in del paquete contratado.

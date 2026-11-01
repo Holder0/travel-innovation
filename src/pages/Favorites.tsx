@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react"
 import type { Page, PackageItem, FavoriteItem } from "../types"
 import { Button, PageTitle } from "../components/common"
+import { HeartIcon, PartyIcon, PinIcon, ShoppingCartIcon } from "../components/common/SvgIcons"
 import { packages } from "../data/packagesData"
 
 export function Favorites({
@@ -97,7 +98,7 @@ export function Favorites({
                 border: "2px solid rgba(230, 57, 70, 0.25)",
               }}
             >
-              ❤️
+              <HeartIcon size={32} filled={true} fillColor="var(--crimson, #e63946)" />
             </div>
             <h2 style={{ margin: "4px 0", color: "var(--pacific)" }}>
               Inicia sesión para ver tus favoritos
@@ -141,7 +142,10 @@ export function Favorites({
             alignItems: "center",
           }}
         >
-          <span>🎉 {addedToast}</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <PartyIcon size={18} color="var(--success)" />
+            <span>{addedToast}</span>
+          </span>
           <Button
             kind="quiet"
             style={{ fontSize: "13px", padding: "4px 8px", textDecoration: "underline" }}
@@ -201,7 +205,7 @@ export function Favorites({
                 fontSize: "30px",
               }}
             >
-              🤍
+              <HeartIcon size={32} filled={false} color="#94a3b8" />
             </div>
             <h3 style={{ margin: "0 0 8px", color: "var(--pacific)" }}>
               No tienes paquetes en tus favoritos aún
@@ -338,9 +342,12 @@ export function Favorites({
                         margin: "0 0 10px",
                         color: "#5a6e7f",
                         fontSize: "14px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
                       }}
                     >
-                      📍 {pkg.city} ({pkg.province}) · {pkg.days}
+                      <PinIcon size={14} color="var(--pacific)" /> {pkg.city} ({pkg.province}) · {pkg.days}
                     </p>
 
                     <dl
@@ -434,8 +441,9 @@ export function Favorites({
                       <Button
                         kind="primary"
                         onClick={() => handleAddToCartWithToast(pkg)}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
                       >
-                        🛒 Agregar al carrito
+                        <ShoppingCartIcon size={16} /> Agregar al carrito
                       </Button>
                       <button
                         type="button"

@@ -6,6 +6,7 @@ import {
   SelectField,
   DatePickerField,
 } from "../common"
+import { CheckIcon, AlertTriangleIcon, CloseXIcon } from "../common/SvgIcons"
 import { PROVINCES_DATA } from "../../data/provincesData"
 import {
   validateCedulaOrPassport,
@@ -191,7 +192,7 @@ export function ProfileModal({
     }
 
     setIsEditingInfo(false)
-    setInfoSuccessMsg("✓ Datos personales actualizados correctamente.")
+    setInfoSuccessMsg("Datos personales actualizados correctamente.")
     setTimeout(() => setInfoSuccessMsg(null), 4000)
   }
 
@@ -235,7 +236,7 @@ export function ProfileModal({
     })
 
     setIsEditingAddress(false)
-    setAddrSuccessMsg("✓ Dirección domiciliaria guardada con éxito.")
+    setAddrSuccessMsg("Dirección domiciliaria guardada con éxito.")
     setTimeout(() => setAddrSuccessMsg(null), 4000)
   }
 
@@ -297,7 +298,7 @@ export function ProfileModal({
     setNewEmail("")
     setConfirmNewEmail("")
     setEmailCurrentPassword("")
-    setEmailSuccessMsg(`✓ Tu correo se ha actualizado exitosamente a ${cleanNew}.`)
+    setEmailSuccessMsg(`Tu correo se ha actualizado exitosamente a ${cleanNew}.`)
     setTimeout(() => setEmailSuccessMsg(null), 5000)
   }
 
@@ -351,7 +352,7 @@ export function ProfileModal({
     setCurrentPassword("")
     setNewPassword("")
     setConfirmNewPassword("")
-    setPasswordSuccessMsg("✓ Tu contraseña ha sido cambiada exitosamente.")
+    setPasswordSuccessMsg("Tu contraseña ha sido cambiada exitosamente.")
     setTimeout(() => setPasswordSuccessMsg(null), 5000)
   }
 
@@ -425,8 +426,8 @@ export function ProfileModal({
               >
                 {currentUser.name}
               </h2>
-              <span style={{ fontSize: "14px", color: "#5a6e7f" }}>
-                {currentUser.email} · <span style={{ color: "var(--success)", fontWeight: 600 }}>✓ Cuenta Activa</span>
+              <span style={{ fontSize: "14px", color: "#5a6e7f", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                <span>{currentUser.email}</span> · <span style={{ color: "var(--success)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}><CheckIcon size={14} color="var(--success)" /> Cuenta Activa</span>
               </span>
             </div>
           </div>
@@ -438,13 +439,14 @@ export function ProfileModal({
             style={{
               background: "transparent",
               border: "none",
-              fontSize: "22px",
+              display: "grid",
+              placeItems: "center",
               cursor: "pointer",
               color: "#5a6e7f",
-              padding: "4px 8px",
+              padding: "6px",
             }}
           >
-            ✕
+            <CloseXIcon size={20} />
           </button>
         </div>
 
@@ -558,9 +560,13 @@ export function ProfileModal({
                   borderColor: "var(--success)",
                   color: "#0f5132",
                   marginBottom: "16px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
                 }}
               >
-                {infoSuccessMsg}
+                <CheckIcon size={16} color="var(--success)" />
+                <span>{infoSuccessMsg}</span>
               </div>
             )}
 
@@ -703,7 +709,7 @@ export function ProfileModal({
                         if (infoErrors.birthDate) setInfoErrors((p) => ({ ...p, birthDate: undefined }))
                       }}
                       error={infoErrors.birthDate}
-                      help="Selecciona en el calendario (haz clic en 📅)."
+                      help="Selecciona en el calendario desplegable."
                     />
                   </div>
 
@@ -734,9 +740,13 @@ export function ProfileModal({
                   borderColor: "var(--success)",
                   color: "#0f5132",
                   marginBottom: "16px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
                 }}
               >
-                {addrSuccessMsg}
+                <CheckIcon size={16} color="var(--success)" />
+                <span>{addrSuccessMsg}</span>
               </div>
             )}
 
@@ -960,9 +970,13 @@ export function ProfileModal({
                     borderColor: "var(--success)",
                     color: "#0f5132",
                     marginTop: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
                   }}
                 >
-                  {emailSuccessMsg}
+                  <CheckIcon size={16} color="var(--success)" />
+                  <span>{emailSuccessMsg}</span>
                 </div>
               )}
 
@@ -986,9 +1000,13 @@ export function ProfileModal({
                         borderColor: "var(--crimson)",
                         color: "var(--crimson)",
                         marginBottom: "14px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
                       }}
                     >
-                      ⚠️ {emailErrorMsg}
+                      <AlertTriangleIcon size={16} color="var(--crimson)" />
+                      <span>{emailErrorMsg}</span>
                     </div>
                   )}
 
@@ -1110,9 +1128,13 @@ export function ProfileModal({
                     borderColor: "var(--success)",
                     color: "#0f5132",
                     marginTop: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
                   }}
                 >
-                  {passwordSuccessMsg}
+                  <CheckIcon size={16} color="var(--success)" />
+                  <span>{passwordSuccessMsg}</span>
                 </div>
               )}
 
@@ -1136,9 +1158,13 @@ export function ProfileModal({
                         borderColor: "var(--crimson)",
                         color: "var(--crimson)",
                         marginBottom: "14px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
                       }}
                     >
-                      ⚠️ {passwordErrorMsg}
+                      <AlertTriangleIcon size={16} color="var(--crimson)" />
+                      <span>{passwordErrorMsg}</span>
                     </div>
                   )}
 

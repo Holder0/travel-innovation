@@ -1,3 +1,5 @@
+import { CheckIcon } from "./SvgIcons"
+
 export const steps = ["Carrito", "Información Personal", "Viajeros", "Pago", "Confirmación"]
 export function Stepper({ current }: { current: number }) {
   return (
@@ -16,7 +18,7 @@ export function Stepper({ current }: { current: number }) {
             >
               <span className="stepper-badge">
                 {isDone ? (
-                  <span className="stepper-check" aria-hidden="true">✓</span>
+                  <CheckIcon size={14} color="#ffffff" />
                 ) : (
                   index + 1
                 )}
@@ -29,5 +31,6 @@ export function Stepper({ current }: { current: number }) {
     </div>
   )
 }
+
 
 

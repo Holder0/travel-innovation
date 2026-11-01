@@ -1,4 +1,5 @@
 import React from "react"
+import { AlertTriangleIcon } from "./SvgIcons"
 
 export interface FieldProps {
   label: string
@@ -61,10 +62,11 @@ export function Field({
       />
       {help && <span className="field__help">{help}</span>}
       {error && (
-        <span className="field__error" role="alert">
-          <span aria-hidden="true">⚠️</span> {error}
+        <span className="field__error" role="alert" style={{ display: "inline-flex", alignItems: "center", gap: "5px" }}>
+          <AlertTriangleIcon size={14} color="var(--error)" /> {error}
         </span>
       )}
+
     </label>
   )
 }

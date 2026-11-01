@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from "react"
+import { CalendarIcon, AlertTriangleIcon } from "./SvgIcons"
 
 export interface DatePickerFieldProps {
   label: string
@@ -237,14 +238,14 @@ export function DatePickerField({
             transition: "all 0.15s ease",
           }}
         >
-          📅
+          <CalendarIcon size={18} color="var(--pacific, #008080)" />
         </button>
       </div>
 
       {help && <span className="field__help">{help}</span>}
       {error && (
-        <span className="field__error" role="alert">
-          <span aria-hidden="true">⚠️</span> {error}
+        <span className="field__error" role="alert" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+          <AlertTriangleIcon size={14} color="#dc2626" /> {error}
         </span>
       )}
 

@@ -1,6 +1,24 @@
 import { useState, useEffect } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData, PaymentDetails } from "../../types"
 import { Button, Stepper } from "../../components/common"
+import {
+  CheckIcon,
+  CloseXIcon,
+  PackageBoxIcon,
+  UsersGroupIcon,
+  PinIcon,
+  CalendarIcon,
+  CreditCardIcon,
+  BankIcon,
+  DownloadIcon,
+  RefreshIcon,
+  MailIcon,
+  FileTextIcon,
+  ClockIcon,
+  AlertTriangleIcon,
+  PartyIcon,
+  StarIcon,
+} from "../../components/common/SvgIcons"
 import { generateBookingPdf } from "../../utils/pdfGenerator"
 import { sendRealBookingEmail } from "../../services/emailService"
 import { uploadVoucherToSupabaseStorage } from "../../services/supabaseService"
@@ -212,8 +230,8 @@ export function Confirmation({
         <Stepper current={4} />
       </div>
       <div className="section confirmation">
-        <span className="success-mark" aria-label="Éxito">
-          ✓
+        <span className="success-mark" aria-label="Éxito" style={{ display: "grid", placeItems: "center" }}>
+          <CheckIcon size={28} color="#ffffff" />
         </span>
         <span
           className={`status ${
@@ -221,10 +239,17 @@ export function Confirmation({
               ? "status--success"
               : "status--pending"
           }`}
+          style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
         >
-          {!isTransfer || currentVoucherUploaded
-            ? "✓ Compra realizada · Reserva activa"
-            : "◷ En verificación · Comprobante pendiente (Plazo: 24 horas)"}
+          {!isTransfer || currentVoucherUploaded ? (
+            <>
+              <CheckIcon size={14} color="currentColor" /> Compra realizada · Reserva activa
+            </>
+          ) : (
+            <>
+              <ClockIcon size={14} color="currentColor" /> En verificación · Comprobante pendiente (Plazo: 24 horas)
+            </>
+          )}
         </span>
         <h1>
           {!isTransfer || paymentData.bankVoucherUploaded
@@ -248,7 +273,14 @@ export function Confirmation({
               setTimeout(() => setCopied(false), 2000)
             }}
           >
-            {copied ? "Copiado ✓" : "Copiar"}
+            {copied ? (
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                <span>Copiado</span>
+                <CheckIcon size={12} color="currentColor" />
+              </span>
+            ) : (
+              "Copiar"
+            )}
           </Button>
         </div>
 
@@ -269,8 +301,14 @@ export function Confirmation({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <span style={{ fontSize: "28px" }} aria-hidden="true">
-              {emailStatus === "sending" ? "⏳" : emailStatus === "error" ? "⚠️" : "📨"}
+            <span style={{ display: "grid", placeItems: "center" }} aria-hidden="true">
+              {emailStatus === "sending" ? (
+                <ClockIcon size={26} color="#d97706" />
+              ) : emailStatus === "error" ? (
+                <AlertTriangleIcon size={26} color="#dc2626" />
+              ) : (
+                <MailIcon size={26} color="var(--success, #16a34a)" />
+              )}
             </span>
             <div>
               <strong
@@ -302,11 +340,18 @@ export function Confirmation({
               type="button"
               disabled={emailStatus === "sending"}
               onClick={handleSendRealEmail}
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
             >
-              {emailStatus === "sending" ? "Enviando..." : "🔄 Reenviar al correo"}
+              {emailStatus === "sending" ? (
+                "Enviando..."
+              ) : (
+                <>
+                  <RefreshIcon size={14} /> Reenviar al correo
+                </>
+              )}
             </Button>
-            <Button kind="primary" type="button" onClick={handleDownload}>
-              📥 Descargar comprobante PDF
+            <Button kind="primary" type="button" onClick={handleDownload} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+              <DownloadIcon size={16} /> Descargar comprobante PDF
             </Button>
           </div>
         </div>
@@ -315,8 +360,8 @@ export function Confirmation({
         <div className="confirmation-summary-card">
           {/* Paquetes Turísticos y Viajeros Registrados (Agrupados por Paquete) */}
           <div className="confirmation-section">
-            <h3>
-              <span>📦</span> Paquetes Turísticos y Viajeros Registrados (
+            <h3 style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <PackageBoxIcon size={20} color="var(--pacific)" /> Paquetes Turísticos y Viajeros Registrados (
               {cartItems.length} {cartItems.length === 1 ? "paquete" : "paquetes"})
             </h3>
             <div
@@ -397,12 +442,12 @@ export function Confirmation({
                         <strong style={{ fontSize: "16px" }}>
                           {item.pkg.name}
                         </strong>
-                        <small>
-                          📍 {item.pkg.city} ({item.pkg.province}) · 📅{" "}
+                        <small style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                          <PinIcon size={13} color="var(--pacific)" /> {item.pkg.city} ({item.pkg.province}) · <CalendarIcon size={13} color="var(--pacific)" />{" "}
                           {item.date}
                         </small>
-                        <small>
-                          👥 {item.people}{" "}
+                        <small style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                          <UsersGroupIcon size={13} color="var(--pacific)" /> {item.people}{" "}
                           {item.people === 1 ? "viajero" : "viajeros"} ($
                           {item.pkg.price} c/u)
                         </small>
@@ -431,7 +476,7 @@ export function Confirmation({
                           gap: "6px",
                         }}
                       >
-                        <span>👥</span> Viajeros registrados en este paquete (
+                        <UsersGroupIcon size={16} color="var(--pacific)" /> Viajeros registrados en este paquete (
                         {pkgTravelers.length}):
                       </div>
                       <div
@@ -483,11 +528,15 @@ export function Confirmation({
                                   ? "status--pacific"
                                   : "status--pending"
                               }`}
-                              style={{ fontSize: "12px", padding: "2px 8px" }}
+                              style={{ fontSize: "12px", padding: "2px 8px", display: "inline-flex", alignItems: "center", gap: "4px" }}
                             >
-                              {t.isTitular
-                                ? "★ Titular del paquete"
-                                : "Acompañante"}
+                              {t.isTitular ? (
+                                <>
+                                  <StarIcon size={12} filled={true} fillColor="#f59e0b" /> Titular del paquete
+                                </>
+                              ) : (
+                                "Acompañante"
+                              )}
                             </span>
                           </div>
                         ))}
@@ -501,8 +550,8 @@ export function Confirmation({
 
           {/* Desglose de Pago */}
           <div className="confirmation-section">
-            <h3>
-              <span>💳</span> Desglose de Pago y Facturación
+            <h3 style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <CreditCardIcon size={20} color="var(--pacific)" /> Desglose de Pago y Facturación
             </h3>
             <div className="confirmation-grid">
               <div>
@@ -539,11 +588,18 @@ export function Confirmation({
                       color: currentVoucherUploaded
                         ? "var(--success)"
                         : "#b45309",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "4px",
                     }}
                   >
-                    {currentVoucherUploaded
-                      ? `✓ ${currentVoucherNumber || "TR-76543210"} (Cargado)`
-                      : "Pendiente (plazo 24 horas)"}
+                    {currentVoucherUploaded ? (
+                      <>
+                        <CheckIcon size={14} color="var(--success)" /> {currentVoucherNumber || "TR-76543210"} (Cargado)
+                      </>
+                    ) : (
+                      "Pendiente (plazo 24 horas)"
+                    )}
                   </strong>
                 </div>
               )}
@@ -592,11 +648,9 @@ export function Confirmation({
                     color: "var(--success)",
                     display: "grid",
                     placeItems: "center",
-                    fontSize: "24px",
-                    fontWeight: 700,
                   }}
                 >
-                  ✓
+                  <CheckIcon size={24} color="var(--success)" />
                 </div>
                 <div>
                   <h3 style={{ margin: "0 0 4px", color: "var(--abyss)", fontSize: "17px" }}>
@@ -620,10 +674,9 @@ export function Confirmation({
                       color: "#b45309",
                       display: "grid",
                       placeItems: "center",
-                      fontSize: "22px",
                     }}
                   >
-                    🏦
+                    <BankIcon size={24} color="#b45309" />
                   </div>
                   <div>
                     <h3 style={{ margin: "0 0 4px", color: "var(--abyss)", fontSize: "18px" }}>
@@ -691,7 +744,9 @@ export function Confirmation({
                     onChange={handleFileChange}
                   />
 
-                  <div style={{ fontSize: "28px", marginBottom: "6px" }}>📄</div>
+                  <div style={{ display: "grid", placeItems: "center", marginBottom: "8px" }}>
+                    <FileTextIcon size={32} color="var(--pacific)" />
+                  </div>
                   <strong style={{ display: "block", color: "var(--pacific)", fontSize: "15px", marginBottom: "4px" }}>
                     {selectedVoucherFile ? selectedVoucherFile.name : "Adjunta tu comprobante de pago"}
                   </strong>
@@ -716,8 +771,13 @@ export function Confirmation({
                         type="button"
                         disabled={isUploadingVoucher}
                         onClick={handleConfirmVoucherUpload}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
                       >
-                        {isUploadingVoucher ? "Registrando..." : "✓ Subir y registrar comprobante"}
+                        {isUploadingVoucher ? "Registrando..." : (
+                          <>
+                            <CheckIcon size={14} color="#ffffff" /> Subir y registrar comprobante
+                          </>
+                        )}
                       </Button>
                     )}
                   </div>
@@ -766,8 +826,8 @@ export function Confirmation({
         </section>
 
         <div className="confirmation-actions">
-          <Button kind="primary" onClick={handleDownload}>
-            📥 Descargar comprobante en PDF
+          <Button kind="primary" onClick={handleDownload} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <DownloadIcon size={16} /> Descargar comprobante en PDF
           </Button>
           <Button kind="secondary" onClick={() => go("reservas")}>
             {!isTransfer || currentVoucherUploaded
@@ -799,8 +859,9 @@ export function Confirmation({
               className="center-popup-close"
               onClick={() => setPurchaseToast(false)}
               aria-label="Cerrar notificación"
+              style={{ display: "grid", placeItems: "center" }}
             >
-              ✕
+              <CloseXIcon size={16} />
             </button>
             <div
               className={`center-popup-icon ${
@@ -809,8 +870,13 @@ export function Confirmation({
                   : ""
               }`}
               aria-hidden="true"
+              style={{ display: "grid", placeItems: "center" }}
             >
-              {!isTransfer || paymentData.bankVoucherUploaded ? "🎉" : "⏳"}
+              {!isTransfer || paymentData.bankVoucherUploaded ? (
+                <PartyIcon size={36} color="var(--success)" />
+              ) : (
+                <ClockIcon size={36} color="#d97706" />
+              )}
             </div>
             <h2 id="purchase-popup-title" className="center-popup-title">
               {!isTransfer || paymentData.bankVoucherUploaded
@@ -841,8 +907,8 @@ export function Confirmation({
                 gap: "12px",
               }}
             >
-              <span style={{ fontSize: "24px" }} aria-hidden="true">
-                ✉️
+              <span style={{ display: "grid", placeItems: "center" }} aria-hidden="true">
+                <MailIcon size={24} color="var(--pacific)" />
               </span>
               <div style={{ flex: 1 }}>
                 <strong
@@ -871,8 +937,8 @@ export function Confirmation({
               </div>
             </div>
             <div className="center-popup-actions">
-              <Button kind="primary" onClick={handleDownload}>
-                📥 Descargar comprobante PDF
+              <Button kind="primary" onClick={handleDownload} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                <DownloadIcon size={16} /> Descargar comprobante PDF
               </Button>
               <Button kind="secondary" onClick={() => setPurchaseToast(false)}>
                 Entendido
@@ -898,18 +964,28 @@ export function Confirmation({
             right: "auto",
           }}
         >
-          <span>
-            {emailStatus === "sending"
-              ? `⏳ Enviando comprobante a ${destinationEmail}...`
-              : `✉️ Comprobante enviado a ${destinationEmail}`}
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            {emailStatus === "sending" ? (
+              <>
+                <ClockIcon size={14} color="currentColor" /> Enviando comprobante a {destinationEmail}...
+              </>
+            ) : (
+              <>
+                <MailIcon size={14} color="currentColor" /> Comprobante enviado a {destinationEmail}
+              </>
+            )}
           </span>
-          <button onClick={() => setEmailToast(false)}>✕</button>
+          <button onClick={() => setEmailToast(false)} style={{ display: "grid", placeItems: "center" }}>
+            <CloseXIcon size={14} />
+          </button>
         </div>
       )}
 
       {downloadToast && (
         <div className="toast" role="status">
-          <span>✓ Comprobante de reserva #{bookingCode} descargado en PDF en tu equipo.</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <CheckIcon size={14} color="currentColor" /> Comprobante de reserva #{bookingCode} descargado en PDF en tu equipo.
+          </span>
           <button onClick={() => setDownloadToast(false)}>Cerrar</button>
         </div>
       )}
@@ -927,8 +1003,12 @@ export function Confirmation({
             color: "#ffffff",
           }}
         >
-          <span>✓ Comprobante registrado con éxito (#{currentVoucherNumber}). Tu reserva está en proceso de validación.</span>
-          <button onClick={() => setVoucherSuccessToast(false)}>✕</button>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <CheckIcon size={14} color="var(--success)" /> Comprobante registrado con éxito (#{currentVoucherNumber}). Tu reserva está en proceso de validación.
+          </span>
+          <button onClick={() => setVoucherSuccessToast(false)} style={{ display: "grid", placeItems: "center" }}>
+            <CloseXIcon size={14} />
+          </button>
         </div>
       )}
     </>

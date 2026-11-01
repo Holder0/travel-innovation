@@ -1,5 +1,6 @@
 import type { Page } from "../types"
 import { Button, PageTitle } from "../components/common"
+import { CheckIcon, CloseXIcon, PaperclipIcon, RefreshIcon, ScaleIcon } from "../components/common/SvgIcons"
 import { policyGroups } from "../data/policiesData"
 
 export function Policies({ go }: { go: (page: Page) => void }) {
@@ -19,10 +20,15 @@ export function Policies({ go }: { go: (page: Page) => void }) {
                   <span style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                     <span
                       className={`policy-icon ${
-                        group.icon === "✓" ? "success" : "error"
+                        group.icon === "check" ? "success" : "error"
                       }`}
+                      style={{ display: "grid", placeItems: "center" }}
                     >
-                      {group.icon}
+                      {group.icon === "check" ? (
+                        <CheckIcon size={14} color="#ffffff" />
+                      ) : (
+                        <CloseXIcon size={14} color="#ffffff" />
+                      )}
                     </span>
                     {title}
                   </span>
@@ -95,13 +101,15 @@ export function Policies({ go }: { go: (page: Page) => void }) {
                   <div>
                     <strong
                       style={{
-                        display: "block",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
                         color: "var(--pacific)",
                         fontSize: "0.88rem",
                         marginBottom: "3px",
                       }}
                     >
-                      📎 Documentos requeridos
+                      <PaperclipIcon size={15} color="var(--pacific)" /> Documentos requeridos
                     </strong>
                     <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
                       Cédula del titular, comprobante de pago bancario y certificados de respaldo (médico, fuerza mayor o fotos).
@@ -144,13 +152,15 @@ export function Policies({ go }: { go: (page: Page) => void }) {
                   <div>
                     <strong
                       style={{
-                        display: "block",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
                         color: "var(--pacific)",
                         fontSize: "0.88rem",
                         marginBottom: "3px",
                       }}
                     >
-                      🔄 Reprogramación prioritaria
+                      <RefreshIcon size={15} color="var(--pacific)" /> Reprogramación prioritaria
                     </strong>
                     <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
                       Te ofrecemos posponer la fecha del viaje sin penalidades dentro de una vigencia de 6 a 12 meses.
@@ -159,13 +169,15 @@ export function Policies({ go }: { go: (page: Page) => void }) {
                   <div>
                     <strong
                       style={{
-                        display: "block",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
                         color: "var(--pacific)",
                         fontSize: "0.88rem",
                         marginBottom: "3px",
                       }}
                     >
-                      ⚖️ Liquidación de reembolso
+                      <ScaleIcon size={15} color="var(--pacific)" /> Liquidación de reembolso
                     </strong>
                     <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
                       Si corresponde devolución según los términos, se liquida el valor neto deducidos los costos no recuperables.
@@ -189,7 +201,9 @@ export function Policies({ go }: { go: (page: Page) => void }) {
                   }}
                 >
                   <h3 style={{ margin: 0 }}>Paso 3: Acreditación del Reembolso</h3>
-                  <span className="status status--pacific">✓ Directo a tu cuenta</span>
+                  <span className="status status--pacific" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                    <CheckIcon size={12} color="currentColor" /> Directo a tu cuenta
+                  </span>
                 </div>
                 <p style={{ marginBottom: "12px" }}>
                   Las devoluciones se realizan exclusivamente por el mismo método con el que se efectuó el pago original, a nombre del titular de la reserva.

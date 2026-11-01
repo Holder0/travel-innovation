@@ -38,6 +38,7 @@ import {
 
 import { Header } from "./components/layout/Header"
 import { Footer } from "./components/layout/Footer"
+import { PartyIcon, HeartIcon } from "./components/common/SvgIcons"
 import { AuthModal } from "./components/modals/AuthModal"
 import { ProfileModal } from "./components/modals/ProfileModal"
 import { StateDiagram } from "./components/diagram/StateDiagram"
@@ -167,7 +168,7 @@ export default function App() {
 
   const [supportTickets, setSupportTickets] = useState<SupportTicket[]>([])
   const [favorites, setFavorites] = useState<FavoriteItem[]>([])
-  const [favoriteToast, setFavoriteToast] = useState<string | null>(null)
+  const [favoriteToast, setFavoriteToast] = useState<{ isAdd: boolean; text: string } | null>(null)
 
   const handleCreateTicket = (ticket: SupportTicket) => {
     setSupportTickets((prev) => [ticket, ...prev])
@@ -313,7 +314,7 @@ export default function App() {
         reference: "",
       })
       setAccountCreatedToast(
-        `🎉 ¡Cuenta creada con éxito! Bienvenido a Travel Innovation, ${regFullName.split(" ")[0] || "viajero"}.`
+        `¡Cuenta creada con éxito! Bienvenido a Travel Innovation, ${regFullName.split(" ")[0] || "viajero"}.`
       )
     }
 
@@ -437,10 +438,10 @@ export default function App() {
 
     if (isFav) {
       setFavorites((prev) => prev.filter((f) => f.packageId !== packageId))
-      setFavoriteToast(`💔 "${pkgName}" se quitó de tus favoritos.`)
+      setFavoriteToast({ isAdd: false, text: `"${pkgName}" se quitó de tus favoritos.` })
     } else {
       setFavorites((prev) => [{ packageId, addedAt: Date.now() }, ...prev])
-      setFavoriteToast(`❤️ "${pkgName}" se guardó en tus favoritos.`)
+      setFavoriteToast({ isAdd: true, text: `"${pkgName}" se guardó en tus favoritos.` })
     }
     setTimeout(() => setFavoriteToast(null), 3500)
   }
@@ -449,7 +450,7 @@ export default function App() {
     const pkg = packages.find((p) => p.id === packageId)
     const pkgName = pkg?.name || "Paquete turístico"
     setFavorites((prev) => prev.filter((f) => f.packageId !== packageId))
-    setFavoriteToast(`💔 "${pkgName}" se quitó de tus favoritos.`)
+    setFavoriteToast({ isAdd: false, text: `"${pkgName}" se quitó de tus favoritos.` })
     setTimeout(() => setFavoriteToast(null), 3500)
   }
 
@@ -1052,13 +1053,24 @@ export default function App() {
       />
       {accountCreatedToast && (
         <div className="toast" role="status" style={{ zIndex: 120 }}>
-          <span>{accountCreatedToast}</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <PartyIcon size={16} color="var(--success)" />
+            <span>{accountCreatedToast}</span>
+          </span>
           <button onClick={() => setAccountCreatedToast(null)}>Cerrar</button>
         </div>
       )}
       {favoriteToast && (
         <div className="toast" role="status" style={{ zIndex: 120 }}>
-          <span>{favoriteToast}</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <HeartIcon
+              size={16}
+              filled={favoriteToast.isAdd}
+              fillColor="var(--crimson)"
+              color={favoriteToast.isAdd ? "var(--crimson)" : "#94a3b8"}
+            />
+            <span>{favoriteToast.text}</span>
+          </span>
           <button onClick={() => setFavoriteToast(null)}>Cerrar</button>
         </div>
       )}

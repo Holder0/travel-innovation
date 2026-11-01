@@ -7,7 +7,6 @@
 -- 1. Asegurar que los 10 usuarios en auth.users tengan correo confirmado y proveedor email
 UPDATE auth.users
 SET email_confirmed_at = COALESCE(email_confirmed_at, NOW()),
-    confirmed_at = COALESCE(confirmed_at, NOW()),
     last_sign_in_at = NOW(),
     raw_app_meta_data = '{"provider":"email","providers":["email"]}'::jsonb,
     is_sso_user = false
