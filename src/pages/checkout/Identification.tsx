@@ -11,6 +11,7 @@ import {
 } from "../../components/common"
 import { PROVINCES_DATA } from "../../data/provincesData"
 import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
+import { getStoredAccounts } from "../../services/storage"
 
 export function Identification({
   go,
@@ -23,25 +24,61 @@ export function Identification({
   total?: number
   currentUser: { name: string; email: string } | null
   personalInfo: PersonalInfo
-  onSavePersonalInfo: (info: PersonalInfo) => void
+  onSavePersonalInfo: (info: PersonalInfo, saveToAccount?: boolean) => void
 }) {
+  // Verificar si el usuario ya tiene una dirección registrada previamente en su cuenta
+  const registeredAccountData = useMemo(() => {
+    if (!currentUser) return null
+    const accounts = getStoredAccounts()
+    const acc = accounts[currentUser.email.trim().toLowerCase()]
+    const saved = acc?.savedPersonalInfo
+    if (
+      saved &&
+      saved.mainStreet?.trim() &&
+      saved.province?.trim() &&
+      saved.city?.trim()
+    ) {
+      return saved
+    }
+    return null
+  }, [currentUser])
+
+  const hasRegisteredAddress = Boolean(registeredAccountData)
+
   const [fullName, setFullName] = useState(
-    personalInfo.fullName || currentUser?.name || ""
+    personalInfo.fullName || currentUser?.name || registeredAccountData?.fullName || ""
   )
   const [email, setEmail] = useState(
-    personalInfo.email || currentUser?.email || ""
+    personalInfo.email || currentUser?.email || registeredAccountData?.email || ""
   )
-  const [phone, setPhone] = useState(personalInfo.phone || "")
-  const [cedula, setCedula] = useState(personalInfo.cedula || "")
-  const [birthDate, setBirthDate] = useState(personalInfo.birthDate || "")
-  const [province, setProvince] = useState(personalInfo.province || "")
-  const [city, setCity] = useState(personalInfo.city || "")
-  const [mainStreet, setMainStreet] = useState(personalInfo.mainStreet || "")
+  const [phone, setPhone] = useState(
+    personalInfo.phone || registeredAccountData?.phone || ""
+  )
+  const [cedula, setCedula] = useState(
+    personalInfo.cedula || registeredAccountData?.cedula || ""
+  )
+  const [birthDate, setBirthDate] = useState(
+    personalInfo.birthDate || registeredAccountData?.birthDate || ""
+  )
+  const [province, setProvince] = useState(
+    personalInfo.province || registeredAccountData?.province || ""
+  )
+  const [city, setCity] = useState(
+    personalInfo.city || registeredAccountData?.city || ""
+  )
+  const [mainStreet, setMainStreet] = useState(
+    personalInfo.mainStreet || registeredAccountData?.mainStreet || ""
+  )
   const [secondaryStreet, setSecondaryStreet] = useState(
-    personalInfo.secondaryStreet || ""
+    personalInfo.secondaryStreet || registeredAccountData?.secondaryStreet || ""
   )
-  const [reference, setReference] = useState(personalInfo.reference || "")
+  const [reference, setReference] = useState(
+    personalInfo.reference || registeredAccountData?.reference || ""
+  )
   const [wantsToUpdate, setWantsToUpdate] = useState(false)
+
+  // Solo se bloquean los campos si el usuario ya tiene dirección registrada y seleccionó mantenerla
+  const isLocked = hasRegisteredAddress && !wantsToUpdate
 
   const [errors, setErrors] = useState<{
     fullName?: string
@@ -56,31 +93,65 @@ export function Identification({
     reference?: string
   }>({})
 
-  // Check if user has previously entered their required identification data
-  const hasPreviouslyEnteredData = useMemo(() => {
-    return Boolean(
-      personalInfo.phone?.trim() &&
-      personalInfo.cedula?.trim() &&
-      personalInfo.birthDate?.trim() &&
-      personalInfo.province?.trim() &&
-      personalInfo.city?.trim() &&
-      personalInfo.mainStreet?.trim()
-    )
-  }, [personalInfo])
+  // Auto-llenar campos si el usuario ya tiene una dirección registrada en su cuenta
+  useEffect(() => {
+    if (registeredAccountData) {
+      if (!province && registeredAccountData.province) setProvince(registeredAccountData.province)
+      if (!city && registeredAccountData.city) setCity(registeredAccountData.city)
+      if (!mainStreet && registeredAccountData.mainStreet) setMainStreet(registeredAccountData.mainStreet)
+      if (!secondaryStreet && registeredAccountData.secondaryStreet)
+        setSecondaryStreet(registeredAccountData.secondaryStreet)
+      if (!reference && registeredAccountData.reference)
+        setReference(registeredAccountData.reference)
+      if (!phone && registeredAccountData.phone)
+        setPhone(registeredAccountData.phone)
+      if (!cedula && registeredAccountData.cedula)
+        setCedula(registeredAccountData.cedula)
+      if (!birthDate && registeredAccountData.birthDate)
+        setBirthDate(registeredAccountData.birthDate)
+    }
+  }, [registeredAccountData])
 
   const syncPersonalInfo = (overrides: Partial<PersonalInfo> = {}) => {
-    onSavePersonalInfo({
-      fullName: overrides.fullName !== undefined ? overrides.fullName : fullName,
-      email: overrides.email !== undefined ? overrides.email : email,
-      phone: overrides.phone !== undefined ? overrides.phone : phone,
-      cedula: overrides.cedula !== undefined ? overrides.cedula : cedula,
-      birthDate: overrides.birthDate !== undefined ? overrides.birthDate : birthDate,
-      province: overrides.province !== undefined ? overrides.province : province,
-      city: overrides.city !== undefined ? overrides.city : city,
-      mainStreet: overrides.mainStreet !== undefined ? overrides.mainStreet : mainStreet,
-      secondaryStreet: overrides.secondaryStreet !== undefined ? overrides.secondaryStreet : secondaryStreet,
-      reference: overrides.reference !== undefined ? overrides.reference : reference,
-    })
+    onSavePersonalInfo(
+      {
+        fullName: overrides.fullName !== undefined ? overrides.fullName : fullName,
+        email: overrides.email !== undefined ? overrides.email : email,
+        phone: overrides.phone !== undefined ? overrides.phone : phone,
+        cedula: overrides.cedula !== undefined ? overrides.cedula : cedula,
+        birthDate: overrides.birthDate !== undefined ? overrides.birthDate : birthDate,
+        province: overrides.province !== undefined ? overrides.province : province,
+        city: overrides.city !== undefined ? overrides.city : city,
+        mainStreet: overrides.mainStreet !== undefined ? overrides.mainStreet : mainStreet,
+        secondaryStreet: overrides.secondaryStreet !== undefined ? overrides.secondaryStreet : secondaryStreet,
+        reference: overrides.reference !== undefined ? overrides.reference : reference,
+      },
+      false
+    )
+  }
+
+  const handleSelectKeepCurrent = () => {
+    setWantsToUpdate(false)
+    if (registeredAccountData) {
+      setProvince(registeredAccountData.province || "")
+      setCity(registeredAccountData.city || "")
+      setMainStreet(registeredAccountData.mainStreet || "")
+      setSecondaryStreet(registeredAccountData.secondaryStreet || "")
+      setReference(registeredAccountData.reference || "")
+      if (registeredAccountData.phone) setPhone(registeredAccountData.phone)
+      if (registeredAccountData.cedula) setCedula(registeredAccountData.cedula)
+      if (registeredAccountData.birthDate) setBirthDate(registeredAccountData.birthDate)
+      syncPersonalInfo({
+        province: registeredAccountData.province || "",
+        city: registeredAccountData.city || "",
+        mainStreet: registeredAccountData.mainStreet || "",
+        secondaryStreet: registeredAccountData.secondaryStreet || "",
+        reference: registeredAccountData.reference || "",
+        phone: registeredAccountData.phone || phone,
+        cedula: registeredAccountData.cedula || cedula,
+        birthDate: registeredAccountData.birthDate || birthDate,
+      })
+    }
   }
 
   useEffect(() => {
@@ -171,7 +242,7 @@ export function Identification({
 
     setErrors(nextErrors)
     if (!hasError) {
-      onSavePersonalInfo({
+      const finalInfo: PersonalInfo = {
         fullName: fullName.trim() || currentUser?.name || "Titular",
         email: email.trim() || currentUser?.email || "",
         phone: phone.trim(),
@@ -182,7 +253,12 @@ export function Identification({
         mainStreet: mainStreet.trim(),
         secondaryStreet: secondaryStreet.trim(),
         reference: reference.trim(),
-      })
+      }
+
+      // Si no tenía dirección registrada previa, o si seleccionó actualizarla:
+      // se guarda y actualiza en la cuenta del usuario y en su perfil
+      const shouldUpdateAccount = !hasRegisteredAddress || wantsToUpdate
+      onSavePersonalInfo(finalInfo, shouldUpdateAccount)
       go("viajeros")
     }
   }
@@ -192,7 +268,7 @@ export function Identification({
       <PageTitle
         title="Información Personal"
         subtitle={
-          hasPreviouslyEnteredData
+          hasRegisteredAddress
             ? "Revisa tus datos guardados o actualízalos para continuar con la reserva."
             : "Completa tus datos personales y de facturación para la reserva."
         }
@@ -222,7 +298,7 @@ export function Identification({
           </div>
 
           <p style={{ margin: "0 0 20px", fontSize: "14px", color: "var(--abyss)" }}>
-            {hasPreviouslyEnteredData
+            {hasRegisteredAddress
               ? "Tus datos se encuentran precargados de tu registro previo. Revisa la información a continuación:"
               : "Ingresa tus datos requeridos para el registro oficial de la reserva y emisión del comprobante:"}
           </p>
@@ -267,6 +343,7 @@ export function Identification({
               type="tel"
               placeholder="Ej. 0991234567"
               value={phone}
+              disabled={isLocked}
               onChange={(val) => {
                 const clean = val.replace(/\D/g, "")
                 setPhone(clean)
@@ -283,6 +360,7 @@ export function Identification({
               label="Cédula de identidad o pasaporte"
               placeholder="10 dígitos de cédula o pasaporte"
               value={cedula}
+              disabled={isLocked}
               onChange={(val) => {
                 const clean = val.replace(/[^a-zA-Z0-9]/g, "").toUpperCase()
                 setCedula(clean)
@@ -301,6 +379,7 @@ export function Identification({
               id="titular-birth-date"
               label="Fecha de nacimiento del titular"
               value={birthDate}
+              disabled={isLocked}
               onChange={(val) => {
                 setBirthDate(val)
                 syncPersonalInfo({ birthDate: val })
@@ -317,6 +396,7 @@ export function Identification({
             <SelectField
               label="Provincia"
               value={province}
+              disabled={isLocked}
               onChange={handleProvinceChange}
               error={errors.province}
               help="Residencia."
@@ -343,7 +423,7 @@ export function Identification({
               }}
               error={errors.city}
               help="Cantón."
-              disabled={!province}
+              disabled={isLocked || !province}
               required
             >
               <option value="">
@@ -371,6 +451,7 @@ export function Identification({
                 label="Calle principal"
                 placeholder="Ej. Av. Amazonas"
                 value={mainStreet}
+                disabled={isLocked}
                 onChange={(val) => {
                   setMainStreet(val)
                   syncPersonalInfo({ mainStreet: val })
@@ -385,6 +466,7 @@ export function Identification({
                 label="Calle secundaria / Intersección"
                 placeholder="Ej. Naciones Unidas"
                 value={secondaryStreet}
+                disabled={isLocked}
                 onChange={(val) => {
                   setSecondaryStreet(val)
                   syncPersonalInfo({ secondaryStreet: val })
@@ -401,6 +483,7 @@ export function Identification({
                 label="N° de casa / Edificio y referencia"
                 placeholder="Ej. N34-120, diagonal al parque La Carolina"
                 value={reference}
+                disabled={isLocked}
                 onChange={(val) => {
                   setReference(val)
                   syncPersonalInfo({ reference: val })
@@ -414,8 +497,8 @@ export function Identification({
             </div>
           </div>
 
-          {/* Si ya ha ingresado datos antes: preguntar si desea actualizar algún dato */}
-          {hasPreviouslyEnteredData && (
+          {/* Si ya tiene una dirección registrada: preguntar si desea actualizarla o mantenerla */}
+          {hasRegisteredAddress && (
             <div className="update-data-section">
               <div className="update-data-box">
                 <div className="update-data-header">
@@ -442,7 +525,7 @@ export function Identification({
                       type="radio"
                       name="updateDataOption"
                       checked={!wantsToUpdate}
-                      onChange={() => setWantsToUpdate(false)}
+                      onChange={handleSelectKeepCurrent}
                     />
                     <div className="choice-text">
                       <strong>Mantener mis datos actuales</strong>
@@ -472,7 +555,7 @@ export function Identification({
                   <div className="update-active-notice">
                     <span aria-hidden="true">✏️</span>
                     <span>
-                      Puedes editar cualquiera de los campos de arriba (teléfono, cédula o dirección). Los nuevos datos se guardarán para tu reserva.
+                      Puedes editar cualquiera de los campos de arriba (teléfono, cédula o dirección). Los nuevos datos se guardarán para tu reserva y en tu cuenta.
                     </span>
                   </div>
                 )}
@@ -492,11 +575,9 @@ export function Identification({
               Volver al carrito
             </Button>
             <Button kind="primary" type="submit">
-              {hasPreviouslyEnteredData
-                ? wantsToUpdate
-                  ? "Guardar cambios y continuar a viajeros"
-                  : "Confirmar datos y continuar a viajeros"
-                : "Continuar a datos de viajeros"}
+              {hasRegisteredAddress && wantsToUpdate
+                ? "Guardar cambios y continuar a viajeros"
+                : "Confirmar datos y continuar a viajeros"}
             </Button>
           </div>
         </form>

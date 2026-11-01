@@ -123,35 +123,47 @@ export default function App() {
   // Sync personal info when user changes
   useEffect(() => {
     if (currentUser) {
+      const emailKey = currentUser.email.trim().toLowerCase()
+      const accounts = getStoredAccounts()
+      const savedInfo = accounts[emailKey]?.savedPersonalInfo
       setPersonalInfo((prev) => ({
         ...prev,
         fullName: prev.fullName || currentUser.name,
         email: prev.email || currentUser.email,
+        phone: prev.phone || savedInfo?.phone || "",
+        cedula: prev.cedula || savedInfo?.cedula || "",
+        birthDate: prev.birthDate || savedInfo?.birthDate || "",
+        province: prev.province || savedInfo?.province || "",
+        city: prev.city || savedInfo?.city || "",
+        mainStreet: prev.mainStreet || savedInfo?.mainStreet || "",
+        secondaryStreet: prev.secondaryStreet || savedInfo?.secondaryStreet || "",
+        reference: prev.reference || savedInfo?.reference || "",
       }))
     }
   }, [currentUser])
 
-  // Sync active user cart, purchases, personal info, and favorites to localStorage whenever they change
+  // Sync active user cart, purchases, and favorites to localStorage whenever they change
   useEffect(() => {
     if (currentUser) {
       const emailKey = currentUser.email.trim().toLowerCase()
       const currentAccounts = getStoredAccounts()
+      const existingAcc = currentAccounts[emailKey]
       const updatedAccounts = {
         ...currentAccounts,
         [emailKey]: {
+          ...(existingAcc || { cart: [], purchases: [] }),
           cart: cartItems,
           purchases: purchases,
-          savedPersonalInfo: personalInfo,
           favorites: favorites,
         },
       }
       saveStoredAccounts(updatedAccounts)
     }
-  }, [cartItems, purchases, currentUser, personalInfo, favorites])
+  }, [cartItems, purchases, currentUser, favorites])
 
-  const handleSavePersonalInfo = (info: PersonalInfo) => {
+  const handleSavePersonalInfo = (info: PersonalInfo, saveToAccount = true) => {
     setPersonalInfo(info)
-    if (currentUser) {
+    if (currentUser && saveToAccount) {
       const emailKey = currentUser.email.trim().toLowerCase()
       const currentAccounts = getStoredAccounts()
       const updatedAccounts = {

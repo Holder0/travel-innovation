@@ -11,6 +11,7 @@ export interface DatePickerFieldProps {
   maxDate?: string // Por defecto: hoy
   minDate?: string // Por defecto: 1920-01-01
   placeholder?: string
+  disabled?: boolean
 }
 
 const MONTHS_ES = [
@@ -41,6 +42,7 @@ export function DatePickerField({
   maxDate,
   minDate = "1920-01-01",
   placeholder = "Selecciona fecha en el calendario",
+  disabled = false,
 }: DatePickerFieldProps) {
   const [isOpen, setIsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -193,16 +195,18 @@ export function DatePickerField({
           id={id}
           type="text"
           readOnly
+          disabled={disabled}
           value={displayValue}
           placeholder={placeholder}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() => !disabled && setIsOpen((prev) => !prev)}
           className={`field__input ${error ? "field__input--error" : ""}`}
           style={{
-            cursor: "pointer",
+            cursor: disabled ? "not-allowed" : "pointer",
             paddingRight: "46px",
-            background: "#ffffff",
+            background: disabled ? "#eef2f5" : "#ffffff",
             fontWeight: displayValue ? 600 : 400,
             color: displayValue ? "var(--abyss)" : "#8a9ea8",
+            opacity: disabled ? 0.75 : 1,
           }}
           aria-invalid={Boolean(error)}
           aria-expanded={isOpen}
@@ -211,9 +215,10 @@ export function DatePickerField({
         {/* Botón icono de calendario junto al espacio */}
         <button
           type="button"
-          onClick={() => setIsOpen((prev) => !prev)}
+          disabled={disabled}
+          onClick={() => !disabled && setIsOpen((prev) => !prev)}
           aria-label={`Abrir calendario para ${label}`}
-          title="Desplegar calendario"
+          title={disabled ? undefined : "Desplegar calendario"}
           style={{
             position: "absolute",
             right: "6px",
@@ -223,11 +228,12 @@ export function DatePickerField({
             height: "36px",
             border: "1px solid rgba(27, 73, 101, 0.2)",
             borderRadius: "6px",
-            background: isOpen ? "var(--sand)" : "#f8fafc",
+            background: disabled ? "#eef2f5" : isOpen ? "var(--sand)" : "#f8fafc",
             display: "grid",
             placeItems: "center",
             fontSize: "18px",
-            cursor: "pointer",
+            cursor: disabled ? "not-allowed" : "pointer",
+            opacity: disabled ? 0.5 : 1,
             transition: "all 0.15s ease",
           }}
         >

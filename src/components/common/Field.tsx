@@ -14,6 +14,8 @@ export interface FieldProps {
   maxLength?: number
   hasWarning?: boolean
   inputClassName?: string
+  disabled?: boolean
+  readOnly?: boolean
 }
 
 export function Field({
@@ -30,6 +32,8 @@ export function Field({
   maxLength,
   hasWarning = false,
   inputClassName = "",
+  disabled,
+  readOnly,
 }: FieldProps) {
   const computedInputClass = [
     hasWarning ? "field__input--warning" : "",
@@ -51,6 +55,8 @@ export function Field({
         required={required}
         autoFocus={autoFocus}
         maxLength={maxLength}
+        disabled={disabled}
+        readOnly={readOnly}
         onChange={(event) => onChange?.(event.target.value)}
       />
       {help && <span className="field__help">{help}</span>}
