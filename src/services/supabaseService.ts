@@ -585,4 +585,298 @@ export async function getCurrentSupabaseUser(): Promise<AuthUserResult | null> {
   }
 }
 
+/**
+ * Consulta el historial de reservas de un usuario en Supabase con su desglose relacional completo.
+ */
+export async function fetchUserReservationsFromSupabase(
+  userId?: string,
+  userEmail?: string
+): Promise<PurchaseItem[] | null> {
+  if (!isSupabaseConfigured()) return null
+
+  try {
+    let query = supabase
+      .from("reservas")
+      .select(`
+        id,
+        codigo_reserva,
+        monto_subtotal,
+        monto_total,
+        estado,
+        metodo_pago,
+        cuotas_info,
+        comprobante_numero,
+        comprobante_url,
+        comprobante_subido_at,
+        created_at,
+        usuarios (
+          id,
+          nombres,
+          apellidos,
+          email,
+          telefono,
+          numero_identificacion,
+          provincia,
+          ciudad,
+          direccion
+        ),
+        reserva_detalles (
+          id,
+          cantidad_personas,
+          precio_unitario_congelado,
+          paquetes (
+            id,
+            nombre,
+            duracion_dias,
+            duracion_noches,
+            destinos (
+              ciudades (
+                nombre,
+                provincias (
+                  nombre,
+                  regiones (nombre)
+                )
+              )
+            )
+          ),
+          viajeros (
+            id,
+            numero_slot,
+            nombres_completos,
+            numero_documento,
+            fecha_nacimiento,
+            telefono,
+            email,
+            es_titular,
+            es_menor
+          )
+        )
+      `)
+      .order("created_at", { ascending: false })
+
+    if (userId) {
+      query = query.eq("usuario_id", userId)
+    }
+
+    const { data, error } = await query
+
+    if (error) {
+      console.warn("Aviso al consultar reservas en Supabase:", error.message)
+      return null
+    }
+
+    if (!data || data.length === 0) {
+      return null
+    }
+
+    // Mapear cada fila relacional a la interfaz PurchaseItem
+    return data.map((r: any) => {
+      const u = r.usuarios
+      const titularName = u ? `${u.nombres || ""} ${u.apellidos || ""}`.trim() : "Titular de la reserva"
+      const statusMap: Record<string, PurchaseItem["status"]> = {
+        EN_VERIFICACION: "En verificación",
+        PENDIENTE: "En verificación",
+        COMPRA_REALIZADA: "Compra realizada",
+        CONFIRMADA: "Confirmada",
+        REPROGRAMADA: "Reprogramada",
+        CANCELADA: "Cancelada",
+      }
+
+      const method = (r.metodo_pago || "transferencia") as PurchaseItem["paymentMethod"]
+      const methodLabelMap: Record<string, string> = {
+        transferencia: "Transferencia bancaria",
+        debito: "Tarjeta de débito",
+        credito: "Tarjeta de crédito",
+      }
+
+      // Desglosar paquetes y viajeros
+      const packagesList: PurchaseItem["packages"] = []
+      const allTravelers: TravelerData[] = []
+
+      for (const d of (r.reserva_detalles || [])) {
+        const pkg = d.paquetes
+        const ciudad = pkg?.destinos?.ciudades
+        const prov = ciudad?.provincias
+        const reg = prov?.regiones?.nombre || "Ecuador"
+
+        const cityName = ciudad?.nombre || "Destino Ecuador"
+        const provName = prov?.nombre || "Ecuador"
+        const price = Number(d.precio_unitario_congelado || 150)
+        const people = Number(d.cantidad_personas || 1)
+
+        packagesList.push({
+          id: pkg?.id || d.id,
+          name: pkg?.nombre || "Paquete Turístico",
+          region: reg,
+          city: cityName,
+          province: provName,
+          date: r.created_at ? new Date(r.created_at).toLocaleDateString("es-EC") : "Salida programada",
+          people,
+          price,
+          total: price * people,
+        })
+
+        for (const v of (d.viajeros || [])) {
+          allTravelers.push({
+            id: v.id,
+            slotNumber: v.numero_slot,
+            fullName: v.nombres_completos || "Pasajero",
+            cedula: v.numero_documento || "",
+            birthDate: v.fecha_nacimiento || "",
+            phone: v.telefono || "",
+            email: v.email || "",
+            isTitular: Boolean(v.es_titular),
+            isMinor: Boolean(v.es_menor),
+            packageId: pkg?.id || d.id,
+            packageTitle: pkg?.nombre || "Paquete Turístico",
+          })
+        }
+      }
+
+      return {
+        id: r.id,
+        code: r.codigo_reserva,
+        createdAt: r.created_at ? new Date(r.created_at).toLocaleDateString("es-EC") : "Reciente",
+        status: statusMap[r.estado] || "Compra realizada",
+        packages: packagesList.length > 0 ? packagesList : [{
+          id: "pkg-1",
+          name: "Paquete Turístico Ecuador",
+          region: "Sierra",
+          city: "Quito",
+          province: "Pichincha",
+          date: "Salida programada",
+          people: 1,
+          price: Number(r.monto_total || 250),
+          total: Number(r.monto_total || 250),
+        }],
+        total: Number(r.monto_total || 0),
+        paymentMethod: method,
+        paymentMethodLabel: methodLabelMap[method] || "Pago registrado",
+        installments: r.cuotas_info || undefined,
+        voucherNumber: r.comprobante_numero || undefined,
+        voucherUploaded: Boolean(r.comprobante_url || r.comprobante_numero),
+        voucherFileName: r.comprobante_url ? r.comprobante_url.split("/").pop() : undefined,
+        titular: {
+          name: titularName,
+          email: u?.email || "",
+          phone: u?.telefono || "",
+          cedula: u?.numero_identificacion || "",
+          address: u?.direccion || `${u?.ciudad || ""}, ${u?.provincia || ""}`,
+        },
+        travelers: allTravelers,
+      }
+    })
+  } catch (err) {
+    console.warn("Excepción al consultar reservas en Supabase:", err)
+    return null
+  }
+}
+
+/**
+ * Actualiza los datos personales y de dirección de un usuario en Supabase (public.usuarios y auth.users).
+ */
+export async function updateSupabaseProfile(
+  userId: string,
+  data: {
+    firstName?: string
+    lastName?: string
+    fullName?: string
+    phone?: string
+    province?: string
+    city?: string
+    address?: string
+    idNumber?: string
+  }
+): Promise<{ success: boolean; error?: string }> {
+  if (!isSupabaseConfigured()) {
+    return { success: false, error: "Supabase no está configurado." }
+  }
+
+  try {
+    const payload: any = { updated_at: new Date().toISOString() }
+
+    if (data.fullName) {
+      const parts = data.fullName.trim().split(" ")
+      payload.nombres = parts[0] || ""
+      payload.apellidos = parts.slice(1).join(" ") || ""
+    } else {
+      if (data.firstName !== undefined) payload.nombres = data.firstName.trim()
+      if (data.lastName !== undefined) payload.apellidos = data.lastName.trim()
+    }
+
+    if (data.phone !== undefined) payload.telefono = data.phone.trim()
+    if (data.province !== undefined) payload.provincia = data.province.trim()
+    if (data.city !== undefined) payload.ciudad = data.city.trim()
+    if (data.address !== undefined) payload.direccion = data.address.trim()
+    if (data.idNumber !== undefined) payload.numero_identificacion = data.idNumber.trim()
+
+    // 1. Actualizar tabla public.usuarios
+    const { error: errProfile } = await supabase
+      .from("usuarios")
+      .update(payload)
+      .eq("id", userId)
+
+    if (errProfile) {
+      console.warn("Aviso al actualizar perfil en public.usuarios:", errProfile.message)
+    }
+
+    // 2. Actualizar metadata de auth.users en GoTrue
+    try {
+      await supabase.auth.updateUser({
+        data: {
+          first_name: payload.nombres,
+          last_name: payload.apellidos,
+          phone: payload.telefono,
+          province: payload.provincia,
+          city: payload.ciudad,
+          numero_identificacion: payload.numero_identificacion,
+        },
+      })
+    } catch {
+      // Ignorar si auth.users no tiene sesión activa en GoTrue
+    }
+
+    return { success: true }
+  } catch (err: any) {
+    return { success: false, error: err?.message || "Error al actualizar perfil." }
+  }
+}
+
+/**
+ * Actualiza la contraseña del usuario autenticado en Supabase Auth.
+ */
+export async function updateSupabasePassword(
+  newPassword: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!isSupabaseConfigured()) {
+    return { success: false, error: "Supabase no está configurado." }
+  }
+  try {
+    const { error } = await supabase.auth.updateUser({ password: newPassword })
+    if (error) return { success: false, error: error.message }
+    return { success: true }
+  } catch (err: any) {
+    return { success: false, error: err?.message || "Error al cambiar contraseña." }
+  }
+}
+
+/**
+ * Actualiza el correo electrónico del usuario autenticado en Supabase Auth.
+ */
+export async function updateSupabaseEmail(
+  newEmail: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!isSupabaseConfigured()) {
+    return { success: false, error: "Supabase no está configurado." }
+  }
+  try {
+    const clean = newEmail.trim().toLowerCase()
+    const { error } = await supabase.auth.updateUser({ email: clean })
+    if (error) return { success: false, error: error.message }
+    return { success: true }
+  } catch (err: any) {
+    return { success: false, error: err?.message || "Error al actualizar correo." }
+  }
+}
+
 

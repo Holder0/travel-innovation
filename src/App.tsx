@@ -33,7 +33,10 @@ import {
   fetchPackagesFromSupabase,
   signOutWithSupabase,
   getCurrentSupabaseUser,
+  fetchUserReservationsFromSupabase,
+  updateSupabaseProfile,
 } from "./services/supabaseService"
+import { supabase } from "./services/supabaseClient"
 
 
 import { Header } from "./components/layout/Header"
@@ -129,6 +132,11 @@ export default function App() {
         const user = await getCurrentSupabaseUser()
         if (isMounted && user) {
           setCurrentUser(user)
+          // Sincronizar compras y reservas activas desde Supabase
+          const cloudPurchases = await fetchUserReservationsFromSupabase(user.id, user.email)
+          if (isMounted && cloudPurchases && cloudPurchases.length > 0) {
+            setPurchases(cloudPurchases)
+          }
         }
       } catch (e) {
         console.warn("Aviso al restaurar sesión activa:", e)
@@ -228,6 +236,20 @@ export default function App() {
         },
       }
       saveStoredAccounts(updatedAccounts)
+
+      // Sincronizar perfil con Supabase si el usuario tiene ID de base de datos
+      if (currentUser.id) {
+        updateSupabaseProfile(currentUser.id, {
+          fullName: info.fullName,
+          phone: info.phone,
+          idNumber: info.cedula,
+          province: info.province,
+          city: info.city,
+          address: info.mainStreet
+            ? `${info.mainStreet} y ${info.secondaryStreet || ""} (${info.reference || ""})`.trim()
+            : undefined,
+        }).catch((err) => console.warn("Aviso al sincronizar perfil con la nube:", err))
+      }
     }
   }
 
@@ -328,6 +350,16 @@ export default function App() {
       city: user.city,
       idNumber: user.idNumber,
     })
+
+    // Sincronizar reservas del usuario desde la base de datos Supabase
+    fetchUserReservationsFromSupabase(user.id, user.email)
+      .then((cloudPurchases) => {
+        if (cloudPurchases && cloudPurchases.length > 0) {
+          setPurchases(cloudPurchases)
+        }
+      })
+      .catch((err) => console.warn("Aviso al consultar reservas de la nube:", err))
+
     setIsAuthModalOpen(false)
   }
 
@@ -811,6 +843,23 @@ export default function App() {
         },
       }
       saveStoredAccounts(updatedAccounts)
+    }
+
+    // Sincronizar comprobante en la base de datos Supabase si la reserva existe en la nube
+    const match = purchases.find((p) => p.id === purchaseId || p.code === purchaseId)
+    if (match) {
+      supabase
+        .from("reservas")
+        .update({
+          comprobante_numero: genNumber,
+          comprobante_subido_at: new Date().toISOString(),
+          estado: "COMPRA_REALIZADA",
+        })
+        .or(`id.eq.${match.id},codigo_reserva.eq.${match.code}`)
+        .then(
+          () => {},
+          (err: unknown) => console.warn("Aviso al actualizar comprobante en Supabase:", err)
+        )
     }
   }
 

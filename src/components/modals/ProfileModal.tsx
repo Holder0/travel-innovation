@@ -16,6 +16,11 @@ import {
   getRegisteredUsers,
   saveRegisteredUsers,
 } from "../../services/storage"
+import {
+  updateSupabaseProfile,
+  updateSupabasePassword,
+  updateSupabaseEmail,
+} from "../../services/supabaseService"
 
 export interface ProfileModalProps {
   isOpen: boolean
@@ -191,6 +196,16 @@ export function ProfileModal({
       onUpdateName(infoName.trim())
     }
 
+    // Sincronizar en Supabase si el usuario tiene ID de base de datos
+    const uid = (currentUser as any)?.id
+    if (uid) {
+      updateSupabaseProfile(uid, {
+        fullName: infoName.trim(),
+        phone: infoPhone.trim(),
+        idNumber: infoCedula.trim(),
+      }).catch(() => {})
+    }
+
     setIsEditingInfo(false)
     setInfoSuccessMsg("Datos personales actualizados correctamente.")
     setTimeout(() => setInfoSuccessMsg(null), 4000)
@@ -234,6 +249,16 @@ export function ProfileModal({
       secondaryStreet: addrSecondaryStreet.trim(),
       reference: addrReference.trim(),
     })
+
+    // Sincronizar dirección en Supabase
+    const uid = (currentUser as any)?.id
+    if (uid) {
+      updateSupabaseProfile(uid, {
+        province: addrProvince.trim(),
+        city: addrCity.trim(),
+        address: `${addrMainStreet.trim()} y ${addrSecondaryStreet.trim()} (${addrReference.trim()})`,
+      }).catch(() => {})
+    }
 
     setIsEditingAddress(false)
     setAddrSuccessMsg("Dirección domiciliaria guardada con éxito.")
@@ -294,6 +319,7 @@ export function ProfileModal({
 
     // Proceder al cambio
     onUpdateEmail(currentUser.email, cleanNew)
+    updateSupabaseEmail(cleanNew).catch(() => {})
     setIsEditingEmail(false)
     setNewEmail("")
     setConfirmNewEmail("")
@@ -341,12 +367,13 @@ export function ProfileModal({
       return
     }
 
-    // Actualizar contraseña en el registro
+    // Actualizar contraseña en el registro y en Supabase
     if (record) {
       record.password = newPassword
       regUsers[userKey] = record
       saveRegisteredUsers(regUsers)
     }
+    updateSupabasePassword(newPassword).catch(() => {})
 
     setIsEditingPassword(false)
     setCurrentPassword("")

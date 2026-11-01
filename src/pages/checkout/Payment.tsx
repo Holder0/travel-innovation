@@ -12,6 +12,7 @@ import {
   ShieldIcon,
   LockIcon,
   AlertTriangleIcon,
+  InfoIcon,
 } from "../../components/common/SvgIcons"
 import { validateCardNumber, validateCardExpiry, validateCardCvv } from "../../utils/validation"
 import { generateBookingCode } from "../../services/storage"
@@ -632,7 +633,9 @@ export function Payment({
                 </div>
 
                 <div className="important-note" style={{ marginTop: "16px" }}>
-                  <strong>ℹ️ Plazo para remitir comprobante: 24 horas</strong>
+                  <strong style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <InfoIcon size={16} color="#0284c7" /> Plazo para remitir comprobante: 24 horas
+                  </strong>
                   <p>
                     Tus cupos se mantendrán asegurados durante 24 horas a partir de la confirmación. Podrás adjuntar tu comprobante de inmediato en la siguiente pantalla, o cuando lo tengas listo desde la sección <strong>Mis compras</strong>.
                   </p>
@@ -727,8 +730,8 @@ export function Payment({
                 {/* Banner específico cuando es Débito */}
                 {cardType === "debito" && (
                   <div className="debit-info-banner">
-                    <span aria-hidden="true" style={{ fontSize: "22px" }}>
-                      ℹ️
+                    <span aria-hidden="true" style={{ display: "grid", placeItems: "center" }}>
+                      <InfoIcon size={24} color="#0284c7" />
                     </span>
                     <div>
                       <strong>Pago inmediato con tarjeta de débito</strong>

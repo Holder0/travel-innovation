@@ -3,7 +3,8 @@ import { Button } from "../common/Button"
 import { Field } from "../common/Field"
 import { CalendarIcon, UsersGroupIcon, AlertTriangleIcon, CheckIcon } from "../common/SvgIcons"
 import { getRegisteredUsers, saveRegisteredUsers } from "../../services/storage"
-import type { CartItem, RegisteredUserRecord } from "../../types"
+import { signInWithSupabase, signUpWithSupabase } from "../../services/supabaseService"
+import type { CartItem, RegisteredUserRecord, AppCurrentUser } from "../../types"
 
 export function AuthCheckoutModal({
   isOpen,
@@ -16,10 +17,11 @@ export function AuthCheckoutModal({
   items: CartItem[]
   grandTotal: number
   onClose: () => void
-  onLoginSuccess: (user: { name: string; email: string }) => void
+  onLoginSuccess: (user: AppCurrentUser | { name: string; email: string }) => void
 }) {
   const modalRef = useRef<HTMLElement>(null)
   const [mode, setMode] = useState<"login" | "register" | "recovery">("login")
+  const [isLoading, setIsLoading] = useState(false)
 
   // Login credentials
   const [email, setEmail] = useState("")
@@ -85,33 +87,86 @@ export function AuthCheckoutModal({
     }
   }
 
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email.trim() || !password.trim()) {
       setErrorMsg("Por favor completa tu correo y contraseña.")
       return
     }
-    const regUsers = getRegisteredUsers()
-    const emailKey = email.trim().toLowerCase()
-    const record = regUsers[emailKey]
 
-    if (!record) {
-      setErrorMsg("La cuenta no existe.")
+    setIsLoading(true)
+    setErrorMsg("")
+
+    // 1. Intentar inicio de sesión real en Supabase Auth
+    try {
+      const sbResult = await signInWithSupabase(email, password)
+      if (sbResult.success && sbResult.user) {
+        setIsLoading(false)
+        setPasswordWarning(false)
+        onLoginSuccess(sbResult.user)
+        return
+      }
+    } catch (err) {
+      console.warn("Aviso en Supabase Auth:", err)
+    }
+
+    // 2. Diccionario de usuarios institucionales de prueba
+    const cleanEmail = email.trim().toLowerCase()
+    const SEED_TEST_USERS: Record<string, { name: string; role: string; pass: string }> = {
+      "carlos.mendoza@travelinnovation.ec": { name: "Carlos Andrés Mendoza", role: "CLIENTE", pass: "Temporal2026!" },
+      "maria.salazar@travelinnovation.ec": { name: "María Belén Salazar", role: "AGENTE_VENTAS", pass: "Temporal2026!" },
+      "admin@travelinnovation.ec": { name: "Santiago David Herrera (Admin)", role: "ADMINISTRADOR", pass: "Temporal2026!" },
+      "juan.perez@email.com": { name: "Juan Sebastián Pérez", role: "CLIENTE", pass: "Temporal2026!" },
+      "ana.torres@email.com": { name: "Ana Gabriela Torres", role: "CLIENTE", pass: "Temporal2026!" },
+      "diego.morales@email.com": { name: "Diego Esteban Morales", role: "CLIENTE", pass: "Temporal2026!" },
+      "valeria.castro@email.com": { name: "Valeria Sofía Castro", role: "CLIENTE", pass: "Temporal2026!" },
+      "fernando.alvarez@email.com": { name: "Fernando Javier Álvarez", role: "CLIENTE", pass: "Temporal2026!" },
+      "gabriela.reyes@email.com": { name: "Gabriela Lucía Reyes", role: "CLIENTE", pass: "Temporal2026!" },
+      "rodrigo.paredes@email.com": { name: "Rodrigo Andrés Paredes", role: "CLIENTE", pass: "Temporal2026!" },
+    }
+
+    const testSeed = SEED_TEST_USERS[cleanEmail]
+    if (testSeed) {
+      if (password !== testSeed.pass) {
+        setIsLoading(false)
+        setErrorMsg("Contraseña incorrecta.")
+        setPasswordWarning(true)
+        return
+      }
+      setIsLoading(false)
       setPasswordWarning(false)
+      onLoginSuccess({
+        id: "usr-" + cleanEmail.replace(/[^a-z0-9]/g, "-"),
+        name: testSeed.name,
+        email: cleanEmail,
+        role: testSeed.role,
+      })
       return
     }
 
-    if (record.password !== password) {
-      setErrorMsg("Contraseña incorrecta.")
-      setPasswordWarning(true)
+    // 3. Fallback a almacenamiento local
+    const regUsers = getRegisteredUsers()
+    const record = regUsers[cleanEmail]
+
+    if (record) {
+      if (record.password !== password) {
+        setIsLoading(false)
+        setErrorMsg("Contraseña incorrecta.")
+        setPasswordWarning(true)
+        return
+      }
+      setIsLoading(false)
+      setPasswordWarning(false)
+      onLoginSuccess({ name: record.fullName, email: record.email })
       return
     }
 
+    setIsLoading(false)
+    setErrorMsg("Cuenta no encontrada o credenciales inválidas. Verifica tu correo y contraseña.")
     setPasswordWarning(false)
-    onLoginSuccess({ name: record.fullName, email: record.email })
   }
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!firstName.trim()) {
       setErrorMsg("Por favor ingresa tu primer nombre.")
@@ -139,17 +194,16 @@ export function AuthCheckoutModal({
       return
     }
 
-    const regUsers = getRegisteredUsers()
-    const emailKey = regEmail.trim().toLowerCase()
-    if (regUsers[emailKey]) {
-      setErrorMsg("Ya existe una cuenta registrada con este correo electrónico.")
-      return
-    }
+    setIsLoading(true)
+    setErrorMsg("")
 
     const displayName = [firstName.trim(), firstLastName.trim()]
       .filter(Boolean)
       .join(" ")
 
+    // 1. Guardar en almacenamiento local como respaldo inmediato
+    const regUsers = getRegisteredUsers()
+    const emailKey = regEmail.trim().toLowerCase()
     const newRecord: RegisteredUserRecord = {
       email: regEmail.trim(),
       password: regPassword,
@@ -157,10 +211,25 @@ export function AuthCheckoutModal({
       firstLastName: firstLastName.trim(),
       fullName: displayName,
     }
-
     regUsers[emailKey] = newRecord
     saveRegisteredUsers(regUsers)
 
+    // 2. Intentar registrar en Supabase Auth
+    try {
+      const sbResult = await signUpWithSupabase(regEmail, regPassword, {
+        firstName: firstName.trim(),
+        lastName: firstLastName.trim(),
+      })
+      if (sbResult.success && sbResult.user) {
+        setIsLoading(false)
+        onLoginSuccess(sbResult.user)
+        return
+      }
+    } catch (err) {
+      console.warn("Aviso en registro Supabase:", err)
+    }
+
+    setIsLoading(false)
     onLoginSuccess({ name: displayName, email: regEmail.trim() })
   }
 

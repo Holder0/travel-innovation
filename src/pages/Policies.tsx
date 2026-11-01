@@ -1,6 +1,6 @@
 import type { Page } from "../types"
 import { Button, PageTitle } from "../components/common"
-import { CheckIcon, CloseXIcon, PaperclipIcon, RefreshIcon, ScaleIcon } from "../components/common/SvgIcons"
+import { CheckIcon, CloseXIcon, PaperclipIcon, RefreshIcon, ScaleIcon, ClockIcon } from "../components/common/SvgIcons"
 import { policyGroups } from "../data/policiesData"
 
 export function Policies({ go }: { go: (page: Page) => void }) {
@@ -86,13 +86,15 @@ export function Policies({ go }: { go: (page: Page) => void }) {
                   <div>
                     <strong
                       style={{
-                        display: "block",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
                         color: "var(--pacific)",
                         fontSize: "0.88rem",
                         marginBottom: "3px",
                       }}
                     >
-                      ⏱️ Plazos de solicitud
+                      <ClockIcon size={15} color="var(--pacific)" /> Plazos de solicitud
                     </strong>
                     <span style={{ fontSize: "0.85rem", color: "var(--abyss)" }}>
                       Hasta 72 horas de anticipación para cancelaciones voluntarias; máx. 48 horas hábiles tras el retorno para reclamos operativos.
