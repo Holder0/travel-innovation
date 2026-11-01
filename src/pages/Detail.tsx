@@ -9,6 +9,9 @@ export function Detail({
   onBack,
   addToCart,
   cartItems = [],
+  currentUser,
+  isFavorite = false,
+  onToggleFavorite,
 }: {
   pkg?: PackageItem
   go: (page: Page) => void
@@ -20,6 +23,9 @@ export function Detail({
     total: number
   }) => void
   cartItems?: CartItem[]
+  currentUser?: { name: string; email: string } | null
+  isFavorite?: boolean
+  onToggleFavorite?: (pkgId: string) => void
 }) {
   const [people, setPeople] = useState(1)
   const [toast, setToast] = useState(false)
@@ -100,7 +106,73 @@ export function Detail({
             ))}
           </div>
         </section>
-        <section className="booking-panel">
+        <section className="booking-panel" style={{ position: "relative" }}>
+          {currentUser && (
+            <button
+              type="button"
+              className={`favorite-heart-btn ${isFavorite ? "favorite-heart-btn--active" : ""}`}
+              onClick={() => onToggleFavorite && onToggleFavorite(pkg.id)}
+              aria-label={
+                isFavorite
+                  ? "Quitar de mis favoritos"
+                  : "Guardar en mis favoritos"
+              }
+              title={
+                isFavorite
+                  ? "Quitar de favoritos"
+                  : "Guardar en favoritos"
+              }
+              style={{
+                position: "absolute",
+                top: "18px",
+                right: "18px",
+                width: "42px",
+                height: "42px",
+                borderRadius: "50%",
+                border: isFavorite
+                  ? "1.5px solid var(--crimson)"
+                  : "1px solid rgba(27, 73, 101, 0.22)",
+                background: isFavorite ? "#fff5f5" : "#ffffff",
+                display: "grid",
+                placeItems: "center",
+                cursor: "pointer",
+                boxShadow: "0 2px 8px rgba(15, 31, 44, 0.08)",
+                transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+                zIndex: 2,
+              }}
+            >
+              {isFavorite ? (
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="var(--crimson)"
+                  stroke="var(--crimson)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              ) : (
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#5a6e7f"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              )}
+            </button>
+          )}
+
           <span className="eyebrow">{pkg.region}</span>
           <h1>{pkg.name}</h1>
           <p>{pkg.days} · 📍 {pkg.city} ({pkg.province})</p>

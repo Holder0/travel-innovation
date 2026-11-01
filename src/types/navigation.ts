@@ -16,8 +16,7 @@ export type Page =
   | "soporte"
   | "diagrama"
   | "tickets"
-
-
+  | "favoritos"
 
 export const pageNames: Record<Page, string> = {
   inicio: "Inicio",
@@ -37,5 +36,6 @@ export const pageNames: Record<Page, string> = {
   soporte: "Soporte",
   diagrama: "Diagrama de estados",
   tickets: "Mis tickets",
+  favoritos: "Mis favoritos",
 }
 

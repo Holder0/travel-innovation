@@ -64,6 +64,7 @@ export function getStoredAccounts(): Record<string, UserAccountData> {
   return {
     "maria@ejemplo.com": {
       cart: [],
+      favorites: [],
       savedPersonalInfo: {
         fullName: "María Andrade",
         email: "maria@ejemplo.com",

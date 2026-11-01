@@ -30,10 +30,16 @@ export interface TravelerData {
 
 
 
+export interface FavoriteItem {
+  packageId: string
+  addedAt: number
+}
+
 export interface UserAccountData {
   cart: CartItem[]
   purchases: PurchaseItem[]
   savedPersonalInfo?: PersonalInfo
+  favorites?: FavoriteItem[]
 }
 
 export interface RegisteredUserRecord {

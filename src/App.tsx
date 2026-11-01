@@ -11,6 +11,7 @@ import type {
   SupportTicket,
   SearchFilters,
   UserAccountData,
+  FavoriteItem,
 } from "./types"
 import { DEFAULT_CATALOG_FILTERS } from "./types"
 import { packages } from "./data/packagesData"
@@ -43,6 +44,7 @@ import { Reservations } from "./pages/Reservations"
 import { Policies } from "./pages/Policies"
 import { Support } from "./pages/Support"
 import { Tickets } from "./pages/Tickets"
+import { Favorites } from "./pages/Favorites"
 
 const CHECKOUT_STEPS: Page[] = ["carrito", "identificacion", "viajeros", "pago"]
 
@@ -108,6 +110,8 @@ export default function App() {
   )
 
   const [supportTickets, setSupportTickets] = useState<SupportTicket[]>([])
+  const [favorites, setFavorites] = useState<FavoriteItem[]>([])
+  const [favoriteToast, setFavoriteToast] = useState<string | null>(null)
 
   const handleCreateTicket = (ticket: SupportTicket) => {
     setSupportTickets((prev) => [ticket, ...prev])
@@ -124,7 +128,7 @@ export default function App() {
     }
   }, [currentUser])
 
-  // Sync active user cart, purchases, and personal info to localStorage whenever they change
+  // Sync active user cart, purchases, personal info, and favorites to localStorage whenever they change
   useEffect(() => {
     if (currentUser) {
       const emailKey = currentUser.email.trim().toLowerCase()
@@ -135,11 +139,12 @@ export default function App() {
           cart: cartItems,
           purchases: purchases,
           savedPersonalInfo: personalInfo,
+          favorites: favorites,
         },
       }
       saveStoredAccounts(updatedAccounts)
     }
-  }, [cartItems, purchases, currentUser, personalInfo])
+  }, [cartItems, purchases, currentUser, personalInfo, favorites])
 
   const handleSavePersonalInfo = (info: PersonalInfo) => {
     setPersonalInfo(info)
@@ -167,10 +172,11 @@ export default function App() {
     const regFullName = regRecord ? regRecord.fullName : user.name
 
     if (existing) {
-      // Account exists: restore that account's cart, purchases, and personal info
+      // Account exists: restore that account's cart, purchases, personal info, and favorites
       let mergedCart = [...(existing.cart || []), ...cartItems]
       setCartItems(mergedCart)
       setPurchases(existing.purchases || [])
+      setFavorites(existing.favorites || [])
 
       if (existing.savedPersonalInfo) {
         setPersonalInfo({
@@ -201,16 +207,18 @@ export default function App() {
           savedPersonalInfo: existing.savedPersonalInfo
             ? { ...existing.savedPersonalInfo, fullName: regFullName, email: user.email }
             : undefined,
+          favorites: existing.favorites || [],
         },
       }
       saveStoredAccounts(updatedAccounts)
     } else {
-      // Brand new account created: assign own isolated cart, empty purchases, empty personal info
+      // Brand new account created: assign own isolated cart, empty purchases, empty personal info, empty favorites
       const initialCart = [...cartItems]
       const newAccountData: UserAccountData = {
         cart: initialCart,
         purchases: [],
         savedPersonalInfo: undefined,
+        favorites: [],
       }
       const updatedAccounts = {
         ...currentAccounts,
@@ -219,6 +227,7 @@ export default function App() {
       saveStoredAccounts(updatedAccounts)
       setCartItems(initialCart)
       setPurchases([])
+      setFavorites([])
       setPersonalInfo({
         fullName: regFullName,
         email: user.email,
@@ -241,7 +250,7 @@ export default function App() {
   }
 
   const handleLogout = () => {
-    // When logging out: persist current account cart, purchases, and personal info
+    // When logging out: persist current account cart, purchases, personal info, and favorites
     if (currentUser) {
       const emailKey = currentUser.email.trim().toLowerCase()
       const currentAccounts = getStoredAccounts()
@@ -251,6 +260,7 @@ export default function App() {
           cart: cartItems,
           purchases: purchases,
           savedPersonalInfo: personalInfo,
+          favorites: favorites,
         },
       }
       saveStoredAccounts(updatedAccounts)
@@ -258,6 +268,7 @@ export default function App() {
 
     // Reset session states for fresh guest or next user
     setCurrentUser(null)
+    setFavorites([])
     setCartItems([])
     setPurchases([])
     setLastPurchasedItems([])
@@ -330,6 +341,46 @@ export default function App() {
       return next
     })
     setTravelersList([])
+  }
+
+  const handleToggleFavorite = (packageId: string) => {
+    if (!currentUser) {
+      setIsAuthModalOpen(true)
+      return
+    }
+    const isFav = favorites.some((f) => f.packageId === packageId)
+    const pkg = packages.find((p) => p.id === packageId)
+    const pkgName = pkg?.name || "Paquete turístico"
+
+    if (isFav) {
+      setFavorites((prev) => prev.filter((f) => f.packageId !== packageId))
+      setFavoriteToast(`💔 "${pkgName}" se quitó de tus favoritos.`)
+    } else {
+      setFavorites((prev) => [{ packageId, addedAt: Date.now() }, ...prev])
+      setFavoriteToast(`❤️ "${pkgName}" se guardó en tus favoritos.`)
+    }
+    setTimeout(() => setFavoriteToast(null), 3500)
+  }
+
+  const handleRemoveFavorite = (packageId: string) => {
+    const pkg = packages.find((p) => p.id === packageId)
+    const pkgName = pkg?.name || "Paquete turístico"
+    setFavorites((prev) => prev.filter((f) => f.packageId !== packageId))
+    setFavoriteToast(`💔 "${pkgName}" se quitó de tus favoritos.`)
+    setTimeout(() => setFavoriteToast(null), 3500)
+  }
+
+  const handleAddToCartFromFavorites = (pkg: PackageItem) => {
+    const defaultDate =
+      pkg.availableDates && pkg.availableDates.length > 0
+        ? pkg.availableDates[0]
+        : pkg.datesText
+    handleAddToCart({
+      pkg,
+      date: defaultDate,
+      people: 1,
+      total: pkg.price,
+    })
   }
 
   const handleUpdateCartItemPeople = (id: string, newPeople: number) => {
@@ -656,6 +707,9 @@ export default function App() {
             onBack={() => go(previousPage || "catalogo")}
             addToCart={handleAddToCart}
             cartItems={cartItems}
+            currentUser={currentUser}
+            isFavorite={favorites.some((f) => f.packageId === selectedPackage.id)}
+            onToggleFavorite={handleToggleFavorite}
           />
         )
       case "carrito":
@@ -758,6 +812,18 @@ export default function App() {
             purchases={purchases}
           />
         )
+      case "favoritos":
+        return (
+          <Favorites
+            go={go}
+            favorites={favorites}
+            onRemoveFavorite={handleRemoveFavorite}
+            onViewPackage={handleViewPackage}
+            onAddToCart={handleAddToCartFromFavorites}
+            currentUser={currentUser}
+            onOpenLogin={() => setIsAuthModalOpen(true)}
+          />
+        )
       case "diagrama":
         return <StateDiagram />
     }
@@ -778,12 +844,14 @@ export default function App() {
     paymentData,
     confirmedBookingCode,
     supportTickets,
+    favorites,
   ])
   return (
     <div className="app">
       <Header
         page={page}
         cartCount={cartItems.length}
+        favoritesCount={currentUser ? favorites.length : 0}
         currentPackageName={selectedPackage?.name}
         go={go}
         onGoToCart={handleGoToCart}
@@ -808,6 +876,12 @@ export default function App() {
         <div className="toast" role="status" style={{ zIndex: 120 }}>
           <span>{accountCreatedToast}</span>
           <button onClick={() => setAccountCreatedToast(null)}>Cerrar</button>
+        </div>
+      )}
+      {favoriteToast && (
+        <div className="toast" role="status" style={{ zIndex: 120 }}>
+          <span>{favoriteToast}</span>
+          <button onClick={() => setFavoriteToast(null)}>Cerrar</button>
         </div>
       )}
     </div>
