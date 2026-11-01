@@ -32,11 +32,15 @@ export function AuthModal({
   // Error & recovery feedback
   const [errorMsg, setErrorMsg] = useState("")
   const [recoverySubmitted, setRecoverySubmitted] = useState(false)
+  const [passwordWarning, setPasswordWarning] = useState(false)
+  const [confirmPasswordWarning, setConfirmPasswordWarning] = useState(false)
 
   const handleClose = () => {
     setMode("login")
     setErrorMsg("")
     setRecoverySubmitted(false)
+    setPasswordWarning(false)
+    setConfirmPasswordWarning(false)
     onClose()
   }
 
@@ -46,6 +50,8 @@ export function AuthModal({
       setMode("login")
       setErrorMsg("")
       setRecoverySubmitted(false)
+      setPasswordWarning(false)
+      setConfirmPasswordWarning(false)
     }
   }, [isOpen])
 
@@ -53,6 +59,8 @@ export function AuthModal({
   useEffect(() => {
     if (isOpen) {
       setErrorMsg("")
+      setPasswordWarning(false)
+      setConfirmPasswordWarning(false)
     }
   }, [mode, isOpen])
 
@@ -88,11 +96,19 @@ export function AuthModal({
     const emailKey = email.trim().toLowerCase()
     const record = regUsers[emailKey]
 
-    if (!record || record.password !== password) {
-      setErrorMsg("Correo o contraseña incorrectos.")
+    if (!record) {
+      setErrorMsg("La cuenta no existe.")
+      setPasswordWarning(false)
       return
     }
 
+    if (record.password !== password) {
+      setErrorMsg("Contraseña incorrecta.")
+      setPasswordWarning(true)
+      return
+    }
+
+    setPasswordWarning(false)
     onLoginSuccess({ name: record.fullName, email: record.email })
     handleClose()
   }
@@ -117,14 +133,11 @@ export function AuthModal({
     }
     if (regPassword.length < 6) {
       setErrorMsg(`Faltan caracteres: la contraseña debe tener al menos 6 caracteres (ingresaste ${regPassword.length}).`)
-      setRegPassword("")
-      setRegConfirmPassword("")
       return
     }
     if (regPassword !== regConfirmPassword) {
       setErrorMsg("Las contraseñas no concuerdan. Por favor verifica que sean iguales.")
-      setRegPassword("")
-      setRegConfirmPassword("")
+      setConfirmPasswordWarning(true)
       return
     }
 
@@ -231,7 +244,11 @@ export function AuthModal({
                 type="email"
                 placeholder="ejemplo@correo.com"
                 value={email}
-                onChange={setEmail}
+                onChange={(val) => {
+                  setEmail(val)
+                  if (passwordWarning) setPasswordWarning(false)
+                  if (errorMsg) setErrorMsg("")
+                }}
                 required
                 autoFocus
               />
@@ -242,7 +259,12 @@ export function AuthModal({
                 type="password"
                 placeholder="••••••••"
                 value={password}
-                onChange={setPassword}
+                hasWarning={passwordWarning}
+                onChange={(val) => {
+                  setPassword(val)
+                  if (passwordWarning) setPasswordWarning(false)
+                  if (errorMsg) setErrorMsg("")
+                }}
                 required
               />
 
@@ -353,7 +375,11 @@ export function AuthModal({
                 type="password"
                 placeholder="Mínimo 6 caracteres"
                 value={regPassword}
-                onChange={setRegPassword}
+                onChange={(val) => {
+                  setRegPassword(val)
+                  if (confirmPasswordWarning) setConfirmPasswordWarning(false)
+                  if (errorMsg) setErrorMsg("")
+                }}
                 required
               />
 
@@ -363,7 +389,12 @@ export function AuthModal({
                 type="password"
                 placeholder="Repite tu contraseña"
                 value={regConfirmPassword}
-                onChange={setRegConfirmPassword}
+                hasWarning={confirmPasswordWarning}
+                onChange={(val) => {
+                  setRegConfirmPassword(val)
+                  if (confirmPasswordWarning) setConfirmPasswordWarning(false)
+                  if (errorMsg) setErrorMsg("")
+                }}
                 required
               />
 

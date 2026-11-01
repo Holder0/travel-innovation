@@ -12,6 +12,8 @@ export interface FieldProps {
   required?: boolean
   autoFocus?: boolean
   maxLength?: number
+  hasWarning?: boolean
+  inputClassName?: string
 }
 
 export function Field({
@@ -26,12 +28,22 @@ export function Field({
   required,
   autoFocus,
   maxLength,
+  hasWarning = false,
+  inputClassName = "",
 }: FieldProps) {
+  const computedInputClass = [
+    hasWarning ? "field__input--warning" : "",
+    inputClassName,
+  ]
+    .filter(Boolean)
+    .join(" ")
+
   return (
     <label className="field" htmlFor={id}>
       <span className="field__label">{label}</span>
       <input
         id={id}
+        className={computedInputClass || undefined}
         aria-invalid={Boolean(error)}
         placeholder={placeholder}
         type={type}
