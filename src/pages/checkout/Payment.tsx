@@ -105,8 +105,8 @@ export function Payment({
     if (method === "transferencia") {
       const finalPayment: PaymentDetails = {
         method: "transferencia",
-        bankVoucherNumber: file ? `TR-${Math.floor(10000000 + Math.random() * 90000000)}` : "",
-        bankVoucherUploaded: Boolean(file),
+        bankVoucherNumber: "",
+        bankVoucherUploaded: false,
       }
       onSavePaymentData(finalPayment)
       onConfirmReservation(bookingRefCode, finalPayment)
@@ -368,53 +368,229 @@ export function Payment({
                   })}
                 </div>
 
-                <div style={{ marginTop: "20px" }}>
-                  <div className="panel-heading" style={{ marginBottom: "10px" }}>
-                    <h3 style={{ margin: 0, fontSize: "1.1rem" }}>Adjuntar comprobante de pago</h3>
-                    <span className="status status--pacific">
-                      {file ? "✓ Comprobante cargado" : "Opcional ahora · Plazo de 24 horas"}
-                    </span>
-                  </div>
-                  <p style={{ margin: "0 0 14px", fontSize: "14px", color: "var(--abyss)" }}>
-                    Si ya realizaste la transferencia o depósito bancario, puedes adjuntarlo de inmediato para su verificación. Si prefieres transferir después, puedes confirmar tu reserva ahora y enviar el comprobante durante las próximas 24 horas.
-                  </p>
-                  <div className="upload-zone">
-                    <span className="upload-icon" aria-hidden="true">
-                      ↑
-                    </span>
-                    <strong>Arrastra tu archivo aquí</strong>
-                    <span>Formatos JPG, PNG o PDF (máx. 5 MB)</span>
-                    <Button
-                      kind="secondary"
-                      type="button"
-                      onClick={() => {
-                        setFile(true)
-                        syncPaymentData({ bankVoucherUploaded: true })
+                <div
+                  className="transfer-guarantee-card"
+                  style={{
+                    marginTop: "20px",
+                    padding: "20px",
+                    borderRadius: "var(--radius)",
+                    background: "#eef6f9",
+                    border: "1.5px solid var(--pacific)",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "14px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "42px",
+                        height: "42px",
+                        minWidth: "42px",
+                        borderRadius: "50%",
+                        background: "var(--pacific)",
+                        color: "#ffffff",
+                        display: "grid",
+                        placeItems: "center",
+                        fontSize: "20px",
                       }}
                     >
-                      {file ? "Cambiar archivo" : "Seleccionar archivo"}
-                    </Button>
-                  </div>
-                  {file && (
-                    <div className="file-progress" role="status">
-                      <div>
-                        <span>comprobante-transferencia.pdf</span>
-                        <strong>100%</strong>
-                      </div>
-                      <div className="progress">
-                        <span />
-                      </div>
-                      <span className="status status--pacific">
-                        ✓ Comprobante listo
-                      </span>
+                      🛡️
                     </div>
-                  )}
+                    <div>
+                      <strong
+                        style={{
+                          display: "block",
+                          fontSize: "16px",
+                          color: "var(--pacific)",
+                          marginBottom: "4px",
+                        }}
+                      >
+                        Reserva garantizada por 24 horas sin pago inmediato
+                      </strong>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "14px",
+                          color: "#334155",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        Al confirmar este paso, bloquearemos y garantizaremos tus cupos
+                        durante <strong>24 horas</strong>. No necesitas transferir en este
+                        instante. Emitiremos tu código oficial de reserva y podrás
+                        adjuntar tu comprobante de pago al finalizar o desde Mis compras.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    className="transfer-steps-flow"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                      gap: "12px",
+                      paddingTop: "14px",
+                      borderTop: "1px solid rgba(27, 73, 101, 0.2)",
+                    }}
+                  >
+                    <div
+                      style={{
+                        background: "#ffffff",
+                        padding: "12px",
+                        borderRadius: "8px",
+                        border: "1px solid rgba(27, 73, 101, 0.15)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          marginBottom: "4px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: "22px",
+                            height: "22px",
+                            borderRadius: "50%",
+                            background: "var(--pacific)",
+                            color: "#ffffff",
+                            fontSize: "12px",
+                            fontWeight: 700,
+                            display: "grid",
+                            placeItems: "center",
+                          }}
+                        >
+                          1
+                        </span>
+                        <strong
+                          style={{ fontSize: "13px", color: "var(--pacific)" }}
+                        >
+                          Confirma tu reserva
+                        </strong>
+                      </div>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "12px",
+                          color: "#5a6e7f",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        Haz clic abajo para emitir tu código oficial y asegurar tus cupos de inmediato.
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        background: "#ffffff",
+                        padding: "12px",
+                        borderRadius: "8px",
+                        border: "1px solid rgba(27, 73, 101, 0.15)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          marginBottom: "4px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: "22px",
+                            height: "22px",
+                            borderRadius: "50%",
+                            background: "var(--pacific)",
+                            color: "#ffffff",
+                            fontSize: "12px",
+                            fontWeight: 700,
+                            display: "grid",
+                            placeItems: "center",
+                          }}
+                        >
+                          2
+                        </span>
+                        <strong
+                          style={{ fontSize: "13px", color: "var(--pacific)" }}
+                        >
+                          Transfiere a tu ritmo
+                        </strong>
+                      </div>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "12px",
+                          color: "#5a6e7f",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        Tienes 24 horas para transferir desde tu banca móvil usando tu código como referencia.
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        background: "#ffffff",
+                        padding: "12px",
+                        borderRadius: "8px",
+                        border: "1px solid rgba(27, 73, 101, 0.15)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          marginBottom: "4px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: "22px",
+                            height: "22px",
+                            borderRadius: "50%",
+                            background: "var(--pacific)",
+                            color: "#ffffff",
+                            fontSize: "12px",
+                            fontWeight: 700,
+                            display: "grid",
+                            placeItems: "center",
+                          }}
+                        >
+                          3
+                        </span>
+                        <strong
+                          style={{ fontSize: "13px", color: "var(--pacific)" }}
+                        >
+                          Adjunta comprobante
+                        </strong>
+                      </div>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "12px",
+                          color: "#5a6e7f",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        Sube tu comprobante en la pantalla final de confirmación, desde tu correo o en Mis compras.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="important-note" style={{ marginTop: "18px" }}>
-                  <strong>⚠️ Plazo para enviar comprobante: 24 horas</strong>
+                <div className="important-note" style={{ marginTop: "16px" }}>
+                  <strong>ℹ️ Plazo para remitir comprobante: 24 horas</strong>
                   <p>
-                    Tus cupos se mantendrán reservados durante 24 horas a partir de la confirmación. Podrás remitir tu comprobante a <strong>pagos@travelinnovation.ec</strong> o cargarlo directamente desde la sección <strong>Mis compras</strong>.
+                    Tus cupos se mantendrán asegurados durante 24 horas a partir de la confirmación. Podrás adjuntar tu comprobante de inmediato en la siguiente pantalla, o cuando lo tengas listo desde la sección <strong>Mis compras</strong>.
                   </p>
                 </div>
               </div>
@@ -667,9 +843,7 @@ export function Payment({
               </Button>
               <Button kind="primary" type="button" onClick={handleConfirm}>
                 {method === "transferencia"
-                  ? file
-                    ? "Confirmar comprobante y finalizar"
-                    : "Confirmar reserva (plazo de 24h para transferir)"
+                  ? "Confirmar reserva y obtener datos de pago"
                   : method === "debito"
                   ? `Pagar $${total} con débito y finalizar`
                   : `Pagar $${total} con crédito y finalizar`}

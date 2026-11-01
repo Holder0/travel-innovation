@@ -677,38 +677,46 @@ export default function App() {
     voucherNumber?: string,
     fileName?: string
   ) => {
+    const genNumber =
+      voucherNumber || `TR-${Math.floor(10000000 + Math.random() * 90000000)}`
+    const genFile = fileName || "comprobante-transferencia.pdf"
+
     const updated = purchases.map((p) => {
-      if (p.id === purchaseId) {
+      if (p.id === purchaseId || p.code === purchaseId) {
         return {
           ...p,
           status: "Compra realizada" as const,
-          voucherNumber:
-            voucherNumber ||
-            p.voucherNumber ||
-            `TR-${Math.floor(10000000 + Math.random() * 90000000)}`,
+          voucherNumber: genNumber,
           voucherUploaded: true,
-          voucherFileName: fileName || "comprobante-transferencia.pdf",
+          voucherFileName: genFile,
         }
       }
       return p
     })
     setPurchases(updated)
 
+    setLastPurchasedPayment((prev) =>
+      prev
+        ? {
+            ...prev,
+            bankVoucherUploaded: true,
+            bankVoucherNumber: genNumber,
+          }
+        : null
+    )
+
     if (currentUser) {
       const emailKey = currentUser.email.toLowerCase().trim()
       const currentAccounts = getStoredAccounts()
       const userAcc = currentAccounts[emailKey] || { cart: [], purchases: [] }
       const updatedUserPurchases = (userAcc.purchases || []).map((p) => {
-        if (p.id === purchaseId) {
+        if (p.id === purchaseId || p.code === purchaseId) {
           return {
             ...p,
             status: "Compra realizada" as const,
-            voucherNumber:
-              voucherNumber ||
-              p.voucherNumber ||
-              `TR-${Math.floor(10000000 + Math.random() * 90000000)}`,
+            voucherNumber: genNumber,
             voucherUploaded: true,
-            voucherFileName: fileName || "comprobante-transferencia.pdf",
+            voucherFileName: genFile,
           }
         }
         return p
@@ -850,6 +858,9 @@ export default function App() {
             }
             paymentData={lastPurchasedPayment || paymentData}
             bookingCode={confirmedBookingCode}
+            onAttachVoucher={(voucherNum, fileName) =>
+              handleAttachVoucher(confirmedBookingCode, voucherNum, fileName)
+            }
           />
         )
       case "reservas":

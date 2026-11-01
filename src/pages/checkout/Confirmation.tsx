@@ -13,6 +13,7 @@ export function Confirmation({
   travelersList,
   paymentData,
   bookingCode = "TI-2026-8K3Q2M",
+  onAttachVoucher,
 }: {
   go: (page: Page) => void
   total?: number
@@ -22,10 +23,24 @@ export function Confirmation({
   travelersList: TravelerData[]
   paymentData: PaymentDetails
   bookingCode?: string
+  onAttachVoucher?: (voucherNumber?: string, fileName?: string) => void
 }) {
   const [copied, setCopied] = useState(false)
   const [downloadToast, setDownloadToast] = useState(false)
   const [purchaseToast, setPurchaseToast] = useState(true)
+
+  const [currentVoucherUploaded, setCurrentVoucherUploaded] = useState(
+    Boolean(paymentData.bankVoucherUploaded)
+  )
+  const [currentVoucherNumber, setCurrentVoucherNumber] = useState(
+    paymentData.bankVoucherNumber || ""
+  )
+  const [currentVoucherFileName, setCurrentVoucherFileName] = useState(
+    "comprobante-transferencia.pdf"
+  )
+  const [selectedVoucherFile, setSelectedVoucherFile] = useState<File | null>(null)
+  const [voucherSuccessToast, setVoucherSuccessToast] = useState(false)
+  const [isUploadingVoucher, setIsUploadingVoucher] = useState(false)
 
   const destinationEmail =
     personalInfo.email || currentUser?.email || "correo@ejemplo.com"
@@ -159,6 +174,31 @@ export function Confirmation({
     setTimeout(() => setDownloadToast(false), 3500)
   }
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedVoucherFile(e.target.files[0])
+    }
+  }
+
+  const handleConfirmVoucherUpload = () => {
+    const fileName = selectedVoucherFile
+      ? selectedVoucherFile.name
+      : "comprobante-transferencia.pdf"
+    const genNumber = `TR-${Math.floor(10000000 + Math.random() * 90000000)}`
+    setIsUploadingVoucher(true)
+    setTimeout(() => {
+      setIsUploadingVoucher(false)
+      setCurrentVoucherUploaded(true)
+      setCurrentVoucherNumber(genNumber)
+      setCurrentVoucherFileName(fileName)
+      setVoucherSuccessToast(true)
+      setTimeout(() => setVoucherSuccessToast(false), 5000)
+      if (onAttachVoucher) {
+        onAttachVoucher(genNumber, fileName)
+      }
+    }, 600)
+  }
+
   return (
     <>
       <div className="section" style={{ paddingBottom: 0 }}>
@@ -170,12 +210,12 @@ export function Confirmation({
         </span>
         <span
           className={`status ${
-            !isTransfer || paymentData.bankVoucherUploaded
+            !isTransfer || currentVoucherUploaded
               ? "status--success"
               : "status--pending"
           }`}
         >
-          {!isTransfer || paymentData.bankVoucherUploaded
+          {!isTransfer || currentVoucherUploaded
             ? "✓ Compra realizada · Reserva activa"
             : "◷ En verificación · Comprobante pendiente (Plazo: 24 horas)"}
         </span>
@@ -489,14 +529,14 @@ export function Confirmation({
                   <small>Estado comprobante bancario</small>
                   <strong
                     style={{
-                      color: paymentData.bankVoucherUploaded
+                      color: currentVoucherUploaded
                         ? "var(--success)"
                         : "#b45309",
                     }}
                   >
-                    {paymentData.bankVoucherUploaded
-                      ? `✓ ${paymentData.bankVoucherNumber || "TR-76543210"} (Cargado)`
-                      : "Pendiente (24 horas)"}
+                    {currentVoucherUploaded
+                      ? `✓ ${currentVoucherNumber || "TR-76543210"} (Cargado)`
+                      : "Pendiente (plazo 24 horas)"}
                   </strong>
                 </div>
               )}
@@ -514,6 +554,171 @@ export function Confirmation({
             </div>
           </div>
         </div>
+
+        {/* Módulo destacado para pago por transferencia: ¿Ya transferiste? Sube tu comprobante */}
+        {isTransfer && (
+          <div
+            className="confirmation-transfer-voucher-box"
+            style={{
+              width: "100%",
+              maxWidth: "800px",
+              marginTop: "24px",
+              padding: "24px",
+              borderRadius: "var(--radius)",
+              background: currentVoucherUploaded ? "#eafaf1" : "#fffaf0",
+              border: currentVoucherUploaded
+                ? "1.5px solid var(--success)"
+                : "1.5px solid #f59e0b",
+              boxShadow: "0 4px 18px rgba(15, 31, 44, 0.08)",
+              textAlign: "left",
+            }}
+          >
+            {currentVoucherUploaded ? (
+              <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                <div
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    minWidth: "48px",
+                    borderRadius: "50%",
+                    background: "#d1fae5",
+                    color: "var(--success)",
+                    display: "grid",
+                    placeItems: "center",
+                    fontSize: "24px",
+                    fontWeight: 700,
+                  }}
+                >
+                  ✓
+                </div>
+                <div>
+                  <h3 style={{ margin: "0 0 4px", color: "var(--abyss)", fontSize: "17px" }}>
+                    Comprobante registrado con éxito ({currentVoucherNumber || "TR-Registrado"})
+                  </h3>
+                  <p style={{ margin: 0, fontSize: "14px", color: "#334155" }}>
+                    Hemos recibido el archivo <strong>{currentVoucherFileName}</strong> para tu reserva <strong>{bookingCode}</strong>. Nuestro equipo de operaciones está validando tu depósito (tiempo estimado: máx. 2 horas).
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "14px", marginBottom: "16px" }}>
+                  <div
+                    style={{
+                      width: "44px",
+                      height: "44px",
+                      minWidth: "44px",
+                      borderRadius: "50%",
+                      background: "#fef3c7",
+                      color: "#b45309",
+                      display: "grid",
+                      placeItems: "center",
+                      fontSize: "22px",
+                    }}
+                  >
+                    🏦
+                  </div>
+                  <div>
+                    <h3 style={{ margin: "0 0 4px", color: "var(--abyss)", fontSize: "18px" }}>
+                      ¿Ya realizaste tu transferencia bancaria?
+                    </h3>
+                    <p style={{ margin: 0, fontSize: "14px", color: "#475569" }}>
+                      Adjunta tu comprobante a continuación con tu código de reserva <strong>{bookingCode}</strong> para validar tu compra de inmediato. Si aún no transfieres, tus cupos están garantizados durante 24 horas.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Resumen de datos bancarios para conveniencia */}
+                <div
+                  style={{
+                    background: "#ffffff",
+                    padding: "12px 16px",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(27, 73, 101, 0.15)",
+                    marginBottom: "16px",
+                    fontSize: "13.5px",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "10px 20px",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    <span style={{ color: "#64748b", display: "block", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" }}>
+                      Banco y Cuenta
+                    </span>
+                    <strong>Banco Pichincha · Cta. Cte. 2100849302</strong>
+                  </div>
+                  <div>
+                    <span style={{ color: "#64748b", display: "block", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" }}>
+                      Titular y RUC
+                    </span>
+                    <strong>Travel Innovation S.A. · 1792345678001</strong>
+                  </div>
+                  <div>
+                    <span style={{ color: "#64748b", display: "block", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" }}>
+                      Monto y Referencia
+                    </span>
+                    <strong style={{ color: "var(--pacific)" }}>${total},00 · Ref: {bookingCode}</strong>
+                  </div>
+                </div>
+
+                {/* Zona de subida */}
+                <div
+                  className="confirmation-upload-zone"
+                  style={{
+                    border: "2px dashed #cbd5e1",
+                    borderRadius: "8px",
+                    padding: "20px",
+                    textAlign: "center",
+                    background: "#ffffff",
+                    transition: "all 0.15s ease",
+                  }}
+                >
+                  <input
+                    id="confirmation-voucher-file"
+                    type="file"
+                    accept="image/png,image/jpeg,application/pdf"
+                    style={{ display: "none" }}
+                    onChange={handleFileChange}
+                  />
+
+                  <div style={{ fontSize: "28px", marginBottom: "6px" }}>📄</div>
+                  <strong style={{ display: "block", color: "var(--pacific)", fontSize: "15px", marginBottom: "4px" }}>
+                    {selectedVoucherFile ? selectedVoucherFile.name : "Adjunta tu comprobante de pago"}
+                  </strong>
+                  <span style={{ fontSize: "13px", color: "#64748b", display: "block", marginBottom: "12px" }}>
+                    {selectedVoucherFile
+                      ? `Tamaño: ${(selectedVoucherFile.size / 1024).toFixed(1)} KB`
+                      : "Formatos admitidos: JPG, PNG o PDF (máx. 5 MB)"}
+                  </span>
+
+                  <div style={{ display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap" }}>
+                    <Button
+                      kind="secondary"
+                      type="button"
+                      onClick={() => document.getElementById("confirmation-voucher-file")?.click()}
+                    >
+                      {selectedVoucherFile ? "Cambiar archivo" : "Seleccionar archivo"}
+                    </Button>
+
+                    {selectedVoucherFile && (
+                      <Button
+                        kind="primary"
+                        type="button"
+                        disabled={isUploadingVoucher}
+                        onClick={handleConfirmVoucherUpload}
+                      >
+                        {isUploadingVoucher ? "Registrando..." : "✓ Subir y registrar comprobante"}
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
         <section
           aria-labelledby="next-steps-title"
@@ -558,7 +763,7 @@ export function Confirmation({
             📥 Descargar comprobante en PDF
           </Button>
           <Button kind="secondary" onClick={() => go("reservas")}>
-            {!isTransfer || paymentData.bankVoucherUploaded
+            {!isTransfer || currentVoucherUploaded
               ? "Ver mi compra"
               : "Ir a Mis compras (adjuntar comprobante)"}
           </Button>
@@ -699,6 +904,24 @@ export function Confirmation({
         <div className="toast" role="status">
           <span>✓ Comprobante de reserva #{bookingCode} descargado en PDF en tu equipo.</span>
           <button onClick={() => setDownloadToast(false)}>Cerrar</button>
+        </div>
+      )}
+
+      {voucherSuccessToast && (
+        <div
+          className="toast"
+          role="status"
+          style={{
+            zIndex: 160,
+            bottom: "80px",
+            left: "24px",
+            right: "auto",
+            background: "var(--abyss)",
+            color: "#ffffff",
+          }}
+        >
+          <span>✓ Comprobante registrado con éxito (#{currentVoucherNumber}). Tu reserva está en proceso de validación.</span>
+          <button onClick={() => setVoucherSuccessToast(false)}>✕</button>
         </div>
       )}
     </>
