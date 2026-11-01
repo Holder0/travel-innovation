@@ -10,6 +10,7 @@ export function Header({
   cartCount,
   currentPackageName,
   go,
+  onGoToCart,
   onResetSearch,
   onOpenLogin,
   currentUser,
@@ -19,6 +20,7 @@ export function Header({
   cartCount: number
   currentPackageName?: string
   go: (page: Page) => void
+  onGoToCart?: () => void
   onResetSearch?: () => void
   onOpenLogin: () => void
   currentUser: { name: string; email: string } | null
@@ -259,7 +261,7 @@ export function Header({
 
             <button
               className="cart-link"
-              onClick={() => go("carrito")}
+              onClick={onGoToCart ? onGoToCart : () => go("carrito")}
               aria-label={`Carrito de compras${cartCount > 0 ? ` (${cartCount} productos)` : ""}`}
               title="Carrito de compras"
             >

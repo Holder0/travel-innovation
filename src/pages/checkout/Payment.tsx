@@ -49,22 +49,30 @@ export function Payment({
     cardCvv?: string
   }>({})
 
-  useEffect(() => {
-    setMethod(paymentData.method || "credito")
-    setCardNumber(paymentData.cardNumber || "")
-    setCardHolder(paymentData.cardHolder || "")
-    setCardExpiry(paymentData.cardExpiry || "")
-    setCardCvv(paymentData.cardCvv || "")
-    setInstallments(
-      paymentData.installments || "1 pago corriente (sin recargo)"
-    )
-    setVoucherNumber(paymentData.bankVoucherNumber || "")
-    setFile(paymentData.bankVoucherUploaded || false)
-    setAccepted(false)
-    setTermsError(false)
-    setCardErrors({})
-    setVoucherError("")
-  }, [paymentData])
+  const syncPaymentData = (overrides: Partial<PaymentDetails> = {}) => {
+    onSavePaymentData({
+      method: overrides.method !== undefined ? overrides.method : method,
+      bankVoucherNumber:
+        overrides.bankVoucherNumber !== undefined
+          ? overrides.bankVoucherNumber
+          : voucherNumber,
+      bankVoucherUploaded:
+        overrides.bankVoucherUploaded !== undefined
+          ? overrides.bankVoucherUploaded
+          : file,
+      cardNumber:
+        overrides.cardNumber !== undefined ? overrides.cardNumber : cardNumber,
+      cardHolder:
+        overrides.cardHolder !== undefined ? overrides.cardHolder : cardHolder,
+      cardExpiry:
+        overrides.cardExpiry !== undefined ? overrides.cardExpiry : cardExpiry,
+      cardCvv: overrides.cardCvv !== undefined ? overrides.cardCvv : cardCvv,
+      installments:
+        overrides.installments !== undefined
+          ? overrides.installments
+          : installments,
+    })
+  }
 
   const [accepted, setAccepted] = useState(false)
   const [modal, setModal] = useState(false)
@@ -178,7 +186,7 @@ export function Payment({
                 <span className="eyebrow">Paso 1 · Titular</span>
                 <h2>Información Personal</h2>
               </div>
-              <Button kind="quiet" type="button" onClick={() => go("identificacion")}>
+              <Button kind="quiet" type="button" onClick={() => { syncPaymentData(); go("identificacion"); }}>
                 Editar datos ✎
               </Button>
             </div>
@@ -226,7 +234,7 @@ export function Payment({
                   {cartItems.length === 1 ? "paquete" : "paquetes"})
                 </h2>
               </div>
-              <Button kind="quiet" type="button" onClick={() => go("carrito")}>
+              <Button kind="quiet" type="button" onClick={() => { syncPaymentData(); go("carrito"); }}>
                 Editar carrito ✎
               </Button>
             </div>
@@ -267,7 +275,10 @@ export function Payment({
                 className={`payment-tab-btn ${
                   method === "transferencia" ? "is-active" : ""
                 }`}
-                onClick={() => setMethod("transferencia")}
+                onClick={() => {
+                  setMethod("transferencia")
+                  syncPaymentData({ method: "transferencia" })
+                }}
               >
                 <span className="tab-icon">🏦</span>
                 <div className="tab-text">
@@ -286,7 +297,10 @@ export function Payment({
                 className={`payment-tab-btn ${
                   method === "debito" ? "is-active" : ""
                 }`}
-                onClick={() => setMethod("debito")}
+                onClick={() => {
+                  setMethod("debito")
+                  syncPaymentData({ method: "debito" })
+                }}
               >
                 <span className="tab-icon">💳</span>
                 <div className="tab-text">
@@ -303,7 +317,10 @@ export function Payment({
                 className={`payment-tab-btn ${
                   method === "credito" ? "is-active" : ""
                 }`}
-                onClick={() => setMethod("credito")}
+                onClick={() => {
+                  setMethod("credito")
+                  syncPaymentData({ method: "credito" })
+                }}
               >
                 <span className="tab-icon">💳</span>
                 <div className="tab-text">
@@ -365,7 +382,10 @@ export function Payment({
                     <Button
                       kind="secondary"
                       type="button"
-                      onClick={() => setFile(true)}
+                      onClick={() => {
+                        setFile(true)
+                        syncPaymentData({ bankVoucherUploaded: true })
+                      }}
                     >
                       {file ? "Cambiar archivo" : "Seleccionar archivo"}
                     </Button>
@@ -454,6 +474,7 @@ export function Payment({
                         .replace(/(\d{4})/g, "$1 ")
                         .trim()
                       setCardNumber(formatted)
+                      syncPaymentData({ cardNumber: formatted })
                       if (cardErrors.cardNumber)
                         setCardErrors((p) => ({ ...p, cardNumber: undefined }))
                     }}
@@ -473,7 +494,9 @@ export function Payment({
                     placeholder="Como figura en el plástico"
                     value={cardHolder}
                     onChange={(val) => {
-                      setCardHolder(val.toUpperCase())
+                      const formatted = val.toUpperCase()
+                      setCardHolder(formatted)
+                      syncPaymentData({ cardHolder: formatted })
                       if (cardErrors.cardHolder)
                         setCardErrors((p) => ({ ...p, cardHolder: undefined }))
                     }}
@@ -494,6 +517,7 @@ export function Payment({
                         clean = `${clean.slice(0, 2)}/${clean.slice(2)}`
                       }
                       setCardExpiry(clean)
+                      syncPaymentData({ cardExpiry: clean })
                       if (cardErrors.cardExpiry)
                         setCardErrors((p) => ({ ...p, cardExpiry: undefined }))
                     }}
@@ -510,6 +534,7 @@ export function Payment({
                     onChange={(val) => {
                       const clean = val.replace(/\D/g, "")
                       setCardCvv(clean)
+                      syncPaymentData({ cardCvv: clean })
                       if (cardErrors.cardCvv)
                         setCardErrors((p) => ({ ...p, cardCvv: undefined }))
                     }}
@@ -525,7 +550,10 @@ export function Payment({
                     <SelectField
                       label="Modalidad de pago / Diferido a plazos"
                       value={installments}
-                      onChange={(val) => setInstallments(val)}
+                      onChange={(val) => {
+                        setInstallments(val)
+                        syncPaymentData({ installments: val })
+                      }}
                       help="Selecciona si deseas pago corriente o cuotas diferidas con tu tarjeta de crédito."
                     >
                       {[
@@ -598,7 +626,14 @@ export function Payment({
             )}
 
             <div className="split-actions" style={{ marginTop: "24px" }}>
-              <Button kind="secondary" type="button" onClick={() => go("viajeros")}>
+              <Button
+                kind="secondary"
+                type="button"
+                onClick={() => {
+                  syncPaymentData()
+                  go("viajeros")
+                }}
+              >
                 Volver a datos de viajeros
               </Button>
               <Button kind="primary" type="button" onClick={handleConfirm}>

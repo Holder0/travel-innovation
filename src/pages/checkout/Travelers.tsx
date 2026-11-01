@@ -65,13 +65,9 @@ export function Travelers({
   }, [cartItems, personalInfo, currentUser])
 
   const [travelers, setTravelers] = useState<TravelerData[]>(() => {
-    if (
-      travelersList &&
-      travelersList.length === generatedSlots.length &&
-      travelersList.length > 0
-    ) {
+    if (travelersList && travelersList.length > 0) {
       return generatedSlots.map((gen, idx) => {
-        const existing = travelersList[idx]
+        const existing = travelersList.find((t) => t.id === gen.id) || travelersList[idx]
         if (existing) {
           return {
             ...gen,
@@ -81,7 +77,7 @@ export function Travelers({
               existing.cedula !== undefined ? existing.cedula : gen.cedula,
             phone: existing.phone !== undefined ? existing.phone : gen.phone,
             email: existing.email !== undefined ? existing.email : gen.email,
-            isMinor: existing.isMinor,
+            isMinor: existing.isMinor !== undefined ? existing.isMinor : gen.isMinor,
             birthDate: existing.birthDate || "",
             isTitular:
               existing.isTitular !== undefined
@@ -99,7 +95,22 @@ export function Travelers({
   useEffect(() => {
     setTravelers((prev) => {
       if (prev.length !== generatedSlots.length) {
-        return generatedSlots
+        return generatedSlots.map((gen, idx) => {
+          const existing = prev.find((t) => t.id === gen.id) || prev[idx]
+          if (existing) {
+            return {
+              ...gen,
+              fullName: existing.fullName !== undefined ? existing.fullName : gen.fullName,
+              cedula: existing.cedula !== undefined ? existing.cedula : gen.cedula,
+              phone: existing.phone !== undefined ? existing.phone : gen.phone,
+              email: existing.email !== undefined ? existing.email : gen.email,
+              isMinor: existing.isMinor !== undefined ? existing.isMinor : gen.isMinor,
+              birthDate: existing.birthDate || "",
+              isTitular: existing.isTitular !== undefined ? existing.isTitular : gen.isTitular,
+            }
+          }
+          return gen
+        })
       }
       return prev
     })
@@ -124,14 +135,15 @@ export function Travelers({
     field: keyof TravelerData,
     value: any
   ) => {
-    setTravelers((prev) =>
-      prev.map((t) => {
-        if (t.id === travelerId) {
-          return { ...t, [field]: value }
-        }
-        return t
-      })
-    )
+    const updated = travelers.map((t) => {
+      if (t.id === travelerId) {
+        return { ...t, [field]: value }
+      }
+      return t
+    })
+    setTravelers(updated)
+    onSaveTravelers(updated)
+
     if (errors[travelerId]?.[field as "fullName" | "cedula" | "birthDate"]) {
       setErrors((prev) => ({
         ...prev,
@@ -148,30 +160,31 @@ export function Travelers({
     packageId: string,
     role: "titular" | "acompanante"
   ) => {
-    setTravelers((prev) => {
-      if (role === "titular") {
-        // En este paquete, travelerId es titular y los demás son acompañantes
-        return prev.map((t) => {
-          if (t.packageId === packageId) {
-            return {
-              ...t,
-              isTitular: t.id === travelerId,
-            }
+    let updated: TravelerData[]
+    if (role === "titular") {
+      // En este paquete, travelerId es titular y los demás son acompañantes
+      updated = travelers.map((t) => {
+        if (t.packageId === packageId) {
+          return {
+            ...t,
+            isTitular: t.id === travelerId,
           }
-          return t
-        })
-      } else {
-        return prev.map((t) => {
-          if (t.id === travelerId) {
-            return {
-              ...t,
-              isTitular: false,
-            }
+        }
+        return t
+      })
+    } else {
+      updated = travelers.map((t) => {
+        if (t.id === travelerId) {
+          return {
+            ...t,
+            isTitular: false,
           }
-          return t
-        })
-      }
-    })
+        }
+        return t
+      })
+    }
+    setTravelers(updated)
+    onSaveTravelers(updated)
     setGroupErrors((prev) => ({ ...prev, [packageId]: undefined }))
   }
 
@@ -547,7 +560,10 @@ export function Travelers({
             <Button
               kind="secondary"
               type="button"
-              onClick={() => go("identificacion")}
+              onClick={() => {
+                onSaveTravelers(travelers)
+                go("identificacion")
+              }}
             >
               Volver a información personal
             </Button>

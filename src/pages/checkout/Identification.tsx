@@ -57,18 +57,26 @@ export function Identification({
     )
   }, [personalInfo])
 
+  const syncPersonalInfo = (overrides: Partial<PersonalInfo> = {}) => {
+    onSavePersonalInfo({
+      fullName: overrides.fullName !== undefined ? overrides.fullName : fullName,
+      email: overrides.email !== undefined ? overrides.email : email,
+      phone: overrides.phone !== undefined ? overrides.phone : phone,
+      cedula: overrides.cedula !== undefined ? overrides.cedula : cedula,
+      province: overrides.province !== undefined ? overrides.province : province,
+      city: overrides.city !== undefined ? overrides.city : city,
+      mainStreet: overrides.mainStreet !== undefined ? overrides.mainStreet : mainStreet,
+      secondaryStreet: overrides.secondaryStreet !== undefined ? overrides.secondaryStreet : secondaryStreet,
+      reference: overrides.reference !== undefined ? overrides.reference : reference,
+    })
+  }
+
   useEffect(() => {
-    setFullName(personalInfo.fullName || currentUser?.name || "")
-    setEmail(personalInfo.email || currentUser?.email || "")
-    setPhone(personalInfo.phone || "")
-    setCedula(personalInfo.cedula || "")
-    setProvince(personalInfo.province || "")
-    setCity(personalInfo.city || "")
-    setMainStreet(personalInfo.mainStreet || "")
-    setSecondaryStreet(personalInfo.secondaryStreet || "")
-    setReference(personalInfo.reference || "")
-    setWantsToUpdate(false)
-  }, [personalInfo, currentUser])
+    if (currentUser) {
+      if (!fullName) setFullName(currentUser.name)
+      if (!email) setEmail(currentUser.email)
+    }
+  }, [currentUser])
 
   const availableCities = useMemo(() => {
     if (!province || !PROVINCES_DATA[province]) return []
@@ -82,6 +90,7 @@ export function Identification({
     setCity("")
     if (errors.province) setErrors((prev) => ({ ...prev, province: undefined }))
     if (errors.city) setErrors((prev) => ({ ...prev, city: undefined }))
+    syncPersonalInfo({ province: newProv, city: "" })
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -210,6 +219,7 @@ export function Identification({
                 value={fullName}
                 onChange={(val) => {
                   setFullName(val)
+                  syncPersonalInfo({ fullName: val })
                   if (errors.fullName)
                     setErrors((prev) => ({ ...prev, fullName: undefined }))
                 }}
@@ -224,6 +234,7 @@ export function Identification({
                 value={email}
                 onChange={(val) => {
                   setEmail(val)
+                  syncPersonalInfo({ email: val })
                   if (errors.email)
                     setErrors((prev) => ({ ...prev, email: undefined }))
                 }}
@@ -243,6 +254,7 @@ export function Identification({
               onChange={(val) => {
                 const clean = val.replace(/\D/g, "")
                 setPhone(clean)
+                syncPersonalInfo({ phone: clean })
                 if (errors.phone)
                   setErrors((prev) => ({ ...prev, phone: undefined }))
               }}
@@ -258,6 +270,7 @@ export function Identification({
               onChange={(val) => {
                 const clean = val.replace(/\D/g, "")
                 setCedula(clean)
+                syncPersonalInfo({ cedula: clean })
                 if (errors.cedula)
                   setErrors((prev) => ({ ...prev, cedula: undefined }))
               }}
@@ -291,6 +304,7 @@ export function Identification({
               value={city}
               onChange={(val) => {
                 setCity(val)
+                syncPersonalInfo({ city: val })
                 if (errors.city)
                   setErrors((prev) => ({ ...prev, city: undefined }))
               }}
@@ -326,6 +340,7 @@ export function Identification({
                 value={mainStreet}
                 onChange={(val) => {
                   setMainStreet(val)
+                  syncPersonalInfo({ mainStreet: val })
                   if (errors.mainStreet)
                     setErrors((prev) => ({ ...prev, mainStreet: undefined }))
                 }}
@@ -339,6 +354,7 @@ export function Identification({
                 value={secondaryStreet}
                 onChange={(val) => {
                   setSecondaryStreet(val)
+                  syncPersonalInfo({ secondaryStreet: val })
                   if (errors.secondaryStreet)
                     setErrors((prev) => ({ ...prev, secondaryStreet: undefined }))
                 }}
@@ -354,6 +370,7 @@ export function Identification({
                 value={reference}
                 onChange={(val) => {
                   setReference(val)
+                  syncPersonalInfo({ reference: val })
                   if (errors.reference)
                     setErrors((prev) => ({ ...prev, reference: undefined }))
                 }}
@@ -431,7 +448,14 @@ export function Identification({
           )}
 
           <div className="split-actions" style={{ marginTop: "28px" }}>
-            <Button kind="secondary" type="button" onClick={() => go("carrito")}>
+            <Button
+              kind="secondary"
+              type="button"
+              onClick={() => {
+                syncPersonalInfo()
+                go("carrito")
+              }}
+            >
               Volver al carrito
             </Button>
             <Button kind="primary" type="submit">

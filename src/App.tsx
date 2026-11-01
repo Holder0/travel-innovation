@@ -19,6 +19,11 @@ import {
   getRegisteredUsers,
   getStoredAccounts,
   saveStoredAccounts,
+  getStoredCheckoutSession,
+  saveStoredCheckoutSession,
+  clearStoredCheckoutSession,
+  DEFAULT_PERSONAL_INFO,
+  DEFAULT_PAYMENT_DATA,
 } from "./services/storage"
 
 import { Header } from "./components/layout/Header"
@@ -39,10 +44,19 @@ import { Policies } from "./pages/Policies"
 import { Support } from "./pages/Support"
 import { Tickets } from "./pages/Tickets"
 
+const CHECKOUT_STEPS: Page[] = ["carrito", "identificacion", "viajeros", "pago"]
+
 export default function App() {
+  const initialCheckoutSession = useMemo(() => getStoredCheckoutSession(), [])
+
+  const [activeCheckoutStep, setActiveCheckoutStep] = useState<Page>(
+    () => initialCheckoutSession?.activeStep || "carrito"
+  )
   const [page, setPage] = useState<Page>("inicio")
   const [previousPage, setPreviousPage] = useState<Page>("catalogo")
-  const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [cartItems, setCartItems] = useState<CartItem[]>(
+    () => initialCheckoutSession?.cartItems || []
+  )
   const [purchases, setPurchases] = useState<PurchaseItem[]>([])
   const [lastPurchasedItems, setLastPurchasedItems] = useState<CartItem[]>([])
   const [lastPurchasedTravelers, setLastPurchasedTravelers] = useState<TravelerData[]>([])
@@ -77,30 +91,17 @@ export default function App() {
     }
   }, [accountCreatedToast])
 
-  const [personalInfo, setPersonalInfo] = useState<PersonalInfo>({
-    fullName: "",
-    email: "",
-    phone: "",
-    cedula: "",
-    province: "",
-    city: "",
-    mainStreet: "",
-    secondaryStreet: "",
-    reference: "",
-  })
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfo>(
+    () => initialCheckoutSession?.personalInfo || DEFAULT_PERSONAL_INFO
+  )
 
-  const [travelersList, setTravelersList] = useState<TravelerData[]>([])
+  const [travelersList, setTravelersList] = useState<TravelerData[]>(
+    () => initialCheckoutSession?.travelersList || []
+  )
 
-  const [paymentData, setPaymentData] = useState<PaymentDetails>({
-    method: "credito",
-    cardNumber: "",
-    cardHolder: "",
-    cardExpiry: "",
-    cardCvv: "",
-    installments: "1 pago corriente (sin recargo)",
-    bankVoucherNumber: "",
-    bankVoucherUploaded: false,
-  })
+  const [paymentData, setPaymentData] = useState<PaymentDetails>(
+    () => initialCheckoutSession?.paymentData || DEFAULT_PAYMENT_DATA
+  )
 
   const [confirmedBookingCode, setConfirmedBookingCode] = useState(() =>
     generateBookingCode()
@@ -283,6 +284,8 @@ export default function App() {
       bankVoucherNumber: "",
       bankVoucherUploaded: false,
     })
+    clearStoredCheckoutSession()
+    setActiveCheckoutStep("carrito")
     go("inicio")
   }
 
@@ -298,6 +301,7 @@ export default function App() {
     }
     // Cada paquete agregado se almacena como una reserva individual, permitiendo múltiples del mismo tipo
     setCartItems((prev) => [...prev, newItem])
+    setActiveCheckoutStep("carrito")
 
     // Requirement 2: Ensure any subsequent purchase has fresh blank travelers and payment data
     setTravelersList([])
@@ -314,7 +318,14 @@ export default function App() {
   }
 
   const handleRemoveCartItem = (id: string) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id))
+    setCartItems((prev) => {
+      const next = prev.filter((item) => item.id !== id)
+      if (next.length === 0) {
+        setActiveCheckoutStep("carrito")
+        clearStoredCheckoutSession()
+      }
+      return next
+    })
     setTravelersList([])
   }
 
@@ -342,9 +353,40 @@ export default function App() {
     if (next === "detalle") {
       setPreviousPage(page)
     }
+    if (CHECKOUT_STEPS.includes(next)) {
+      setActiveCheckoutStep(next)
+    }
     setPage(next)
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
+
+  const handleGoToCart = () => {
+    if (cartItems.length > 0 && CHECKOUT_STEPS.includes(activeCheckoutStep)) {
+      go(activeCheckoutStep)
+    } else {
+      go("carrito")
+    }
+  }
+
+  // Persist checkout session continuously to localStorage
+  useEffect(() => {
+    if (page === "confirmacion") {
+      clearStoredCheckoutSession()
+      return
+    }
+
+    if (cartItems.length > 0) {
+      saveStoredCheckoutSession({
+        activeStep: activeCheckoutStep,
+        cartItems,
+        personalInfo,
+        travelersList,
+        paymentData,
+      })
+    } else {
+      clearStoredCheckoutSession()
+    }
+  }, [activeCheckoutStep, cartItems, personalInfo, travelersList, paymentData, page])
 
   const handleSearch = (filters: SearchFilters) => {
     setCatalogFilters({
@@ -475,6 +517,8 @@ export default function App() {
     // Add to purchases and empty cart
     setPurchases((prev) => [newPurchase, ...prev])
     setCartItems([])
+    clearStoredCheckoutSession()
+    setActiveCheckoutStep("carrito")
 
     if (currentUser) {
       const emailKey = currentUser.email.toLowerCase().trim()
@@ -739,6 +783,7 @@ export default function App() {
         cartCount={cartItems.length}
         currentPackageName={selectedPackage?.name}
         go={go}
+        onGoToCart={handleGoToCart}
         onResetSearch={() => setCatalogFilters(DEFAULT_CATALOG_FILTERS)}
         onOpenLogin={() => setIsAuthModalOpen(true)}
         currentUser={currentUser}

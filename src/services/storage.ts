@@ -1,4 +1,12 @@
-import type { RegisteredUserRecord, UserAccountData } from "../types"
+import type {
+  RegisteredUserRecord,
+  UserAccountData,
+  PersonalInfo,
+  CartItem,
+  TravelerData,
+  PaymentDetails,
+  Page,
+} from "../types"
 
 const STORAGE_USERS_REGISTRY_KEY = "travel_innovation_users_registry_v1"
 
@@ -129,6 +137,68 @@ export function saveStoredAccounts(data: Record<string, UserAccountData>) {
     localStorage.setItem(STORAGE_ACCOUNTS_KEY, JSON.stringify(data))
   } catch (err) {
     console.error("Error saving accounts to localStorage", err)
+  }
+}
+
+/* ==========================================================================
+   Checkout In-Progress Session Storage
+   ========================================================================== */
+export interface CheckoutSessionData {
+  activeStep: Page
+  cartItems: CartItem[]
+  personalInfo: PersonalInfo
+  travelersList: TravelerData[]
+  paymentData: PaymentDetails
+}
+
+const STORAGE_CHECKOUT_SESSION_KEY = "travel_innovation_checkout_session_v1"
+
+export const DEFAULT_PERSONAL_INFO: PersonalInfo = {
+  fullName: "",
+  email: "",
+  phone: "",
+  cedula: "",
+  province: "",
+  city: "",
+  mainStreet: "",
+  secondaryStreet: "",
+  reference: "",
+}
+
+export const DEFAULT_PAYMENT_DATA: PaymentDetails = {
+  method: "credito",
+  cardNumber: "",
+  cardHolder: "",
+  cardExpiry: "",
+  cardCvv: "",
+  installments: "1 pago corriente (sin recargo)",
+  bankVoucherNumber: "",
+  bankVoucherUploaded: false,
+}
+
+export function getStoredCheckoutSession(): CheckoutSessionData | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_CHECKOUT_SESSION_KEY)
+    if (raw) return JSON.parse(raw)
+  } catch (err) {
+    console.error("Error reading checkout session from localStorage", err)
+  }
+  return null
+}
+
+export function saveStoredCheckoutSession(data: CheckoutSessionData) {
+  try {
+    localStorage.setItem(STORAGE_CHECKOUT_SESSION_KEY, JSON.stringify(data))
+  } catch (err) {
+    console.error("Error saving checkout session to localStorage", err)
+  }
+}
+
+export function clearStoredCheckoutSession() {
+  try {
+    localStorage.removeItem(STORAGE_CHECKOUT_SESSION_KEY)
+  } catch (err) {
+    console.error("Error clearing checkout session from localStorage", err)
   }
 }
 
