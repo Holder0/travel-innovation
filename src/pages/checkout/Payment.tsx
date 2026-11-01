@@ -340,24 +340,32 @@ export function Payment({
                   </span>
                 </div>
                 <div className="bank-data">
-                  {bankData.map(([label, value]) => (
-                    <div key={label}>
-                      <span>
-                        <small>{label}</small>
-                        <strong>{value}</strong>
-                      </span>
-                      <Button
-                        kind="quiet"
-                        type="button"
-                        onClick={() => {
-                          setCopied(label)
-                          setTimeout(() => setCopied(""), 2000)
-                        }}
-                      >
-                        {copied === label ? "Copiado ✓" : "Copiar"}
-                      </Button>
-                    </div>
-                  ))}
+                  {bankData.map(([label, value]) => {
+                    const isAccountNumber = label === "Número de cuenta"
+                    return (
+                      <div key={label}>
+                        <span>
+                          <small>{label}</small>
+                          <strong>{value}</strong>
+                        </span>
+                        {isAccountNumber && (
+                          <Button
+                            kind="quiet"
+                            type="button"
+                            onClick={() => {
+                              if (navigator?.clipboard?.writeText) {
+                                navigator.clipboard.writeText(value).catch(() => {})
+                              }
+                              setCopied(label)
+                              setTimeout(() => setCopied(""), 2000)
+                            }}
+                          >
+                            {copied === label ? "Copiado ✓" : "Copiar"}
+                          </Button>
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
 
                 <div style={{ marginTop: "20px" }}>
@@ -591,10 +599,34 @@ export function Payment({
               </div>
             )}
 
-            <label className="check" style={{ marginTop: "20px" }}>
+            <label
+              className="check"
+              style={{
+                marginTop: "20px",
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "10px",
+                cursor: "pointer",
+              }}
+            >
               <input
                 type="checkbox"
                 checked={accepted}
+                aria-invalid={termsError}
+                className={`terms-checkbox ${termsError ? "terms-checkbox--error" : ""}`}
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  minWidth: "20px",
+                  cursor: "pointer",
+                  accentColor: "var(--pacific)",
+                  border: termsError ? "2px solid #e05252" : undefined,
+                  outline: termsError ? "2px solid #e05252" : undefined,
+                  outlineOffset: "1.5px",
+                  boxShadow: termsError ? "0 0 0 2px rgba(224, 82, 82, 0.35)" : undefined,
+                  borderRadius: "3px",
+                  transition: "all 0.15s ease",
+                }}
                 onChange={(e) => {
                   setAccepted(e.target.checked)
                   if (termsError) setTermsError(false)
