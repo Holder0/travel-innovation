@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import type { Page, CartItem, PackageItem } from "../../types"
 import { Button, PageTitle, Stepper, Summary, Placeholder } from "../../components/common"
 import { AuthCheckoutModal } from "../../components/modals/AuthCheckoutModal"
@@ -10,6 +10,16 @@ interface PackageGroup {
   items: CartItem[]
   totalPrice: number
   totalPeople: number
+}
+
+interface DeleteTarget {
+  type: "single" | "group"
+  pkgName: string
+  date?: string
+  itemId?: string
+  groupKey?: string
+  itemCount?: number
+  people?: number
 }
 
 export function Cart({
@@ -32,6 +42,7 @@ export function Cart({
   const [removedAlert, setRemovedAlert] = useState<string | null>(null)
   const [isAuthCheckoutModalOpen, setIsAuthCheckoutModalOpen] = useState(false)
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({})
+  const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null)
 
   const empty = items.length === 0
   const grandTotal = items.reduce((acc, curr) => acc + curr.total, 0)
@@ -71,21 +82,63 @@ export function Cart({
     }))
   }
 
-  const handleRemoveSingle = (subItem: CartItem) => {
-    setRemovedAlert(`Un paquete de ${subItem.pkg.name} fue quitado del carrito.`)
-    onRemoveItem(subItem.id)
-  }
-
-  const handleRemoveGroup = (group: PackageGroup) => {
-    setRemovedAlert(
-      group.items.length > 1
-        ? `Se quitaron todos los paquetes de ${group.pkg.name} (${group.date}) del carrito.`
-        : `${group.pkg.name} fue quitado del carrito.`
-    )
-    group.items.forEach((item) => {
-      onRemoveItem(item.id)
+  // Request deletion with confirmation
+  const requestRemoveSingle = (subItem: CartItem, index: number) => {
+    setDeleteTarget({
+      type: "single",
+      pkgName: subItem.pkg.name,
+      itemId: subItem.id,
+      people: subItem.people,
+      itemCount: index + 1,
     })
   }
+
+  const requestRemoveGroup = (group: PackageGroup) => {
+    setDeleteTarget({
+      type: "group",
+      pkgName: group.pkg.name,
+      date: group.date,
+      groupKey: group.key,
+      itemCount: group.items.length,
+    })
+  }
+
+  const cancelDelete = () => {
+    setDeleteTarget(null)
+  }
+
+  const confirmDelete = () => {
+    if (!deleteTarget) return
+
+    if (deleteTarget.type === "group" && deleteTarget.groupKey) {
+      const group = groupedPackages.find((g) => g.key === deleteTarget.groupKey)
+      if (group) {
+        group.items.forEach((item) => {
+          onRemoveItem(item.id)
+        })
+        setRemovedAlert(
+          group.items.length > 1
+            ? `Se quitaron todos los paquetes de ${group.pkg.name} (${group.date}) del carrito.`
+            : `${group.pkg.name} fue quitado del carrito.`
+        )
+      }
+    } else if (deleteTarget.type === "single" && deleteTarget.itemId) {
+      onRemoveItem(deleteTarget.itemId)
+      setRemovedAlert(`Un paquete de ${deleteTarget.pkgName} fue quitado del carrito.`)
+    }
+
+    setDeleteTarget(null)
+  }
+
+  // Close confirmation modal on Escape key
+  useEffect(() => {
+    if (!deleteTarget) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") cancelDelete()
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [deleteTarget])
 
   const handleContinueReservation = () => {
     if (!currentUser) {
@@ -200,20 +253,47 @@ export function Cart({
                         {onViewPackage && (
                           <Button
                             kind="quiet"
+                            className="cart-btn-details"
                             type="button"
                             onClick={() => onViewPackage(group.pkg)}
                           >
-                            Ver paquete
+                            Detalles
                           </Button>
                         )}
 
-                        <Button
-                          kind="danger"
+                        <button
                           type="button"
-                          onClick={() => handleRemoveGroup(group)}
+                          className="cart-btn-remove-group"
+                          onClick={() => requestRemoveGroup(group)}
+                          aria-label={
+                            group.items.length > 1
+                              ? `Quitar todos los paquetes de ${group.pkg.name}`
+                              : `Quitar paquete de ${group.pkg.name}`
+                          }
+                          title={
+                            group.items.length > 1
+                              ? "Quitar todos los paquetes"
+                              : "Quitar paquete"
+                          }
                         >
-                          {group.items.length > 1 ? "Quitar todos" : "Quitar"}
-                        </Button>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M3 6h18" />
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                            <line x1="10" y1="11" x2="10" y2="17" />
+                            <line x1="14" y1="11" x2="14" y2="17" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
 
@@ -238,11 +318,28 @@ export function Cart({
                                 <button
                                   type="button"
                                   className="cart-nested-remove-btn"
-                                  onClick={() => handleRemoveSingle(subItem)}
+                                  onClick={() => requestRemoveSingle(subItem, idx)}
                                   aria-label={`Quitar Paquete ${idx + 1}`}
                                   title={`Quitar Paquete ${idx + 1}`}
                                 >
-                                  ✕ Quitar
+                                  <svg
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2.2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M3 6h18" />
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                    <line x1="10" y1="11" x2="10" y2="17" />
+                                    <line x1="14" y1="11" x2="14" y2="17" />
+                                  </svg>
+                                  <span>Quitar</span>
                                 </button>
                               </div>
 
@@ -385,6 +482,137 @@ export function Cart({
               </div>
             }
           />
+        </div>
+      )}
+
+      {/* Confirmation Modal for Removing Package(s) */}
+      {deleteTarget && (
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onClick={cancelDelete}
+        >
+          <section
+            className="modal cart-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cart-confirm-modal-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="panel-heading" style={{ marginBottom: "14px" }}>
+              <h2
+                id="cart-confirm-modal-title"
+                style={{ fontSize: "19px", color: "var(--pacific)", margin: 0 }}
+              >
+                {deleteTarget.type === "group" && (deleteTarget.itemCount || 1) > 1
+                  ? "¿Quitar todos los paquetes?"
+                  : "¿Quitar paquete del carrito?"}
+              </h2>
+              <button
+                className="icon-button"
+                aria-label="Cerrar confirmación"
+                onClick={cancelDelete}
+                type="button"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="cart-confirm-modal-body">
+              <div className="cart-confirm-icon-wrap" aria-hidden="true">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#c53030"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 6h18" />
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                  <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                  <line x1="10" y1="11" x2="10" y2="17" />
+                  <line x1="14" y1="11" x2="14" y2="17" />
+                </svg>
+              </div>
+              <div>
+                {deleteTarget.type === "group" ? (
+                  (deleteTarget.itemCount || 1) > 1 ? (
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "15px",
+                        color: "var(--abyss)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      ¿Estás seguro de que deseas quitar los{" "}
+                      <strong>{deleteTarget.itemCount} paquetes</strong> seleccionados de{" "}
+                      <strong>{deleteTarget.pkgName}</strong> ({deleteTarget.date}) del carrito?
+                    </p>
+                  ) : (
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "15px",
+                        color: "var(--abyss)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      ¿Estás seguro de que deseas quitar el paquete{" "}
+                      <strong>{deleteTarget.pkgName}</strong> ({deleteTarget.date}) del carrito?
+                    </p>
+                  )
+                ) : (
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: "15px",
+                      color: "var(--abyss)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    ¿Estás seguro de que deseas quitar este{" "}
+                    <strong>Paquete {deleteTarget.itemCount}</strong> ({deleteTarget.people}{" "}
+                    {deleteTarget.people === 1 ? "viajero" : "viajeros"}) de{" "}
+                    <strong>{deleteTarget.pkgName}</strong> del carrito?
+                  </p>
+                )}
+                <p style={{ margin: "8px 0 0", fontSize: "13px", color: "#5a6e7f" }}>
+                  Esta acción liberará la selección en tu carrito actual.
+                </p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                gap: "12px",
+                marginTop: "24px",
+                paddingTop: "16px",
+                borderTop: "1px solid #d4e3e8",
+              }}
+            >
+              <Button
+                kind="secondary"
+                type="button"
+                onClick={cancelDelete}
+              >
+                Cancelar
+              </Button>
+              <Button
+                kind="danger"
+                type="button"
+                className="cart-confirm-delete-btn"
+                onClick={confirmDelete}
+              >
+                Sí, quitar
+              </Button>
+            </div>
+          </section>
         </div>
       )}
 

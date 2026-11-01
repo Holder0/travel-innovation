@@ -1949,24 +1949,122 @@ th { background: var(--pacific); color: var(--breeze); }
 }
 
 .cart-nested-remove-btn {
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--coral, #d9534f);
+  background: #fde8e8;
+  border: 1.5px solid #f87171;
+  color: #c53030;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 5px 12px;
+  border-radius: var(--radius);
   transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .cart-nested-remove-btn:hover {
-  background: #fee2e2;
-  border-color: #fca5a5;
-  color: #b91c1c;
+  background: #fcd5d5;
+  border-color: #b91c1c;
+  color: #991b1b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.12);
+}
+
+.cart-nested-remove-btn:active {
+  transform: translateY(0);
+  background: #f8bebe;
+}
+
+.cart-btn-details {
+  border: 1.5px solid var(--pacific) !important;
+  border-radius: var(--radius) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  padding: 8px 16px !important;
+  color: var(--pacific) !important;
+  background: transparent !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.cart-btn-details:hover {
+  background: rgba(27, 73, 101, 0.1) !important;
+  border-color: var(--abyss) !important;
+  color: var(--abyss) !important;
+  transform: translateY(-1px);
+}
+
+.cart-btn-remove-group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: var(--radius);
+  border: 1.5px solid #e05252;
+  background: #fde8e8;
+  color: #c53030;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.cart-btn-remove-group:hover {
+  background: #fcd5d5;
+  border-color: #b91c1c;
+  color: #991b1b;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(185, 28, 28, 0.15);
+}
+
+.cart-btn-remove-group:active {
+  transform: translateY(0);
+  background: #f8bebe;
+}
+
+/* Modal de confirmación para eliminar paquete(s) */
+.cart-confirm-modal {
+  width: min(490px, 92vw);
+  box-shadow: 0 20px 48px rgba(15, 31, 44, 0.3);
+  animation: fadeIn 0.2s ease-out;
+  position: relative;
+}
+
+.cart-confirm-modal-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.cart-confirm-icon-wrap {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: #fde8e8;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fca5a5;
+  flex-shrink: 0;
+}
+
+.cart-confirm-delete-btn {
+  background: #c53030 !important;
+  color: #ffffff !important;
+  border-color: #b91c1c !important;
+  font-weight: 700 !important;
+}
+
+.cart-confirm-delete-btn:hover {
+  background: #991b1b !important;
+  border-color: #7f1d1d !important;
 }
 
 .cart-nested-fields {
