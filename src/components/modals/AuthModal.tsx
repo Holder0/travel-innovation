@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react"
 import { Button } from "../common/Button"
 import { Field } from "../common/Field"
 import { getRegisteredUsers, saveRegisteredUsers } from "../../services/storage"
-import type { RegisteredUserRecord } from "../../types"
+import { signInWithSupabase, signUpWithSupabase } from "../../services/supabaseService"
+import type { RegisteredUserRecord, AppCurrentUser } from "../../types"
 
 export function AuthModal({
   isOpen,
@@ -11,7 +12,7 @@ export function AuthModal({
 }: {
   isOpen: boolean
   onClose: () => void
-  onLoginSuccess: (user: { name: string; email: string }) => void
+  onLoginSuccess: (user: AppCurrentUser) => void
 }) {
   const modalRef = useRef<HTMLElement>(null)
   const [mode, setMode] = useState<"login" | "register" | "recovery">("login")
@@ -29,9 +30,11 @@ export function AuthModal({
 
   // Error & recovery feedback
   const [errorMsg, setErrorMsg] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const [recoverySubmitted, setRecoverySubmitted] = useState(false)
   const [passwordWarning, setPasswordWarning] = useState(false)
   const [confirmPasswordWarning, setConfirmPasswordWarning] = useState(false)
+
 
   const handleClose = () => {
     setMode("login")
@@ -84,34 +87,85 @@ export function AuthModal({
     }
   }
 
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  // Diccionario de usuarios institucionales de prueba (10 cuentas en Supabase)
+  const SEED_TEST_USERS: Record<string, { name: string; role: string; pass: string }> = {
+    "carlos.mendoza@travelinnovation.ec": { name: "Carlos Andrés Mendoza", role: "CLIENTE", pass: "Temporal2026!" },
+    "maria.salazar@travelinnovation.ec": { name: "María Belén Salazar", role: "AGENTE_VENTAS", pass: "Temporal2026!" },
+    "admin@travelinnovation.ec": { name: "Santiago David Herrera (Admin)", role: "ADMINISTRADOR", pass: "Temporal2026!" },
+    "juan.perez@email.com": { name: "Juan Sebastián Pérez", role: "CLIENTE", pass: "Temporal2026!" },
+    "ana.torres@email.com": { name: "Ana Gabriela Torres", role: "CLIENTE", pass: "Temporal2026!" },
+    "diego.morales@email.com": { name: "Diego Esteban Morales", role: "CLIENTE", pass: "Temporal2026!" },
+    "valeria.castro@email.com": { name: "Valeria Sofía Castro", role: "CLIENTE", pass: "Temporal2026!" },
+    "fernando.alvarez@email.com": { name: "Fernando Javier Álvarez", role: "CLIENTE", pass: "Temporal2026!" },
+    "gabriela.reyes@email.com": { name: "Gabriela Lucía Reyes", role: "CLIENTE", pass: "Temporal2026!" },
+    "rodrigo.paredes@email.com": { name: "Rodrigo Andrés Paredes", role: "CLIENTE", pass: "Temporal2026!" },
+  }
+
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email.trim() || !password.trim()) {
       setErrorMsg("Por favor completa tu correo y contraseña.")
       return
     }
+
+    setIsLoading(true)
+    setErrorMsg("")
+
+    // 1. Intentar inicio de sesión real en Supabase Auth
+    try {
+      const sbResult = await signInWithSupabase(email, password)
+      if (sbResult.success && sbResult.user) {
+        setIsLoading(false)
+        setPasswordWarning(false)
+        onLoginSuccess(sbResult.user)
+        handleClose()
+        return
+      }
+    } catch (err) {
+      console.warn("Aviso en Supabase Auth:", err)
+    }
+
+    // 2. Fallback a usuarios registrados localmente
+    const cleanEmail = email.trim().toLowerCase()
     const regUsers = getRegisteredUsers()
-    const emailKey = email.trim().toLowerCase()
-    const record = regUsers[emailKey]
+    const record = regUsers[cleanEmail]
 
-    if (!record) {
-      setErrorMsg("La cuenta no existe.")
+    if (record) {
+      if (record.password !== password) {
+        setIsLoading(false)
+        setErrorMsg("Contraseña incorrecta.")
+        setPasswordWarning(true)
+        return
+      }
+      setIsLoading(false)
       setPasswordWarning(false)
+      onLoginSuccess({ name: record.fullName, email: record.email, role: "CLIENTE" })
+      handleClose()
       return
     }
 
-    if (record.password !== password) {
-      setErrorMsg("Contraseña incorrecta.")
-      setPasswordWarning(true)
+    // 3. Fallback a los 10 usuarios de prueba institucionales
+    const seedUser = SEED_TEST_USERS[cleanEmail]
+    if (seedUser) {
+      if (password !== seedUser.pass) {
+        setIsLoading(false)
+        setErrorMsg("Contraseña incorrecta. (Clave de prueba: Temporal2026!)")
+        setPasswordWarning(true)
+        return
+      }
+      setIsLoading(false)
+      setPasswordWarning(false)
+      onLoginSuccess({ name: seedUser.name, email: cleanEmail, role: seedUser.role })
+      handleClose()
       return
     }
 
+    setIsLoading(false)
+    setErrorMsg("Cuenta no encontrada o credenciales inválidas. Verifica tu correo y contraseña.")
     setPasswordWarning(false)
-    onLoginSuccess({ name: record.fullName, email: record.email })
-    handleClose()
   }
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!firstName.trim()) {
       setErrorMsg("Por favor ingresa tu primer nombre.")
@@ -139,17 +193,16 @@ export function AuthModal({
       return
     }
 
-    const regUsers = getRegisteredUsers()
-    const emailKey = regEmail.trim().toLowerCase()
-    if (regUsers[emailKey]) {
-      setErrorMsg("Ya existe una cuenta registrada con este correo electrónico.")
-      return
-    }
+    setIsLoading(true)
+    setErrorMsg("")
 
     const displayName = [firstName.trim(), firstLastName.trim()]
       .filter(Boolean)
       .join(" ")
 
+    // 1. Guardar en almacenamiento local como respaldo inmediato
+    const regUsers = getRegisteredUsers()
+    const emailKey = regEmail.trim().toLowerCase()
     const newRecord: RegisteredUserRecord = {
       email: regEmail.trim(),
       password: regPassword,
@@ -157,13 +210,30 @@ export function AuthModal({
       firstLastName: firstLastName.trim(),
       fullName: displayName,
     }
-
     regUsers[emailKey] = newRecord
     saveRegisteredUsers(regUsers)
 
-    onLoginSuccess({ name: displayName, email: regEmail.trim() })
+    // 2. Intentar registrar en Supabase Auth
+    try {
+      const sbResult = await signUpWithSupabase(regEmail, regPassword, {
+        firstName: firstName.trim(),
+        lastName: firstLastName.trim(),
+      })
+      if (sbResult.success && sbResult.user) {
+        setIsLoading(false)
+        onLoginSuccess(sbResult.user)
+        handleClose()
+        return
+      }
+    } catch (err) {
+      console.warn("Aviso en registro Supabase:", err)
+    }
+
+    setIsLoading(false)
+    onLoginSuccess({ name: displayName, email: regEmail.trim(), role: "CLIENTE" })
     handleClose()
   }
+
 
   const handleRecoverySubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -270,10 +340,96 @@ export function AuthModal({
                 Recuperar la contraseña
               </button>
 
-              <Button kind="primary" type="submit">
-                Ingresar
+              <Button kind="primary" type="submit" disabled={isLoading}>
+                {isLoading ? "Verificando..." : "Ingresar"}
               </Button>
             </form>
+
+            {/* Accesos Rápidos de Prueba Académica (RBAC) */}
+            <div
+              style={{
+                marginTop: "16px",
+                padding: "12px 14px",
+                background: "#f1f5f9",
+                borderRadius: "8px",
+                border: "1px dashed rgba(27, 73, 101, 0.3)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: "8px",
+                }}
+              >
+                <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--pacific)" }}>
+                  ⚡ Cuentas de prueba (Clave: Temporal2026!):
+                </span>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                <button
+                  type="button"
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    padding: "5px 9px",
+                    borderRadius: "4px",
+                    background: "#ffffff",
+                    border: "1px solid #cbd5e1",
+                    color: "var(--abyss)",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setEmail("carlos.mendoza@travelinnovation.ec")
+                    setPassword("Temporal2026!")
+                    setErrorMsg("")
+                  }}
+                >
+                  👤 Carlos (Cliente)
+                </button>
+                <button
+                  type="button"
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    padding: "5px 9px",
+                    borderRadius: "4px",
+                    background: "#ffffff",
+                    border: "1px solid #cbd5e1",
+                    color: "var(--abyss)",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setEmail("maria.salazar@travelinnovation.ec")
+                    setPassword("Temporal2026!")
+                    setErrorMsg("")
+                  }}
+                >
+                  💼 María (Agente)
+                </button>
+                <button
+                  type="button"
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    padding: "5px 9px",
+                    borderRadius: "4px",
+                    background: "#ffffff",
+                    border: "1px solid #cbd5e1",
+                    color: "var(--abyss)",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setEmail("admin@travelinnovation.ec")
+                    setPassword("Temporal2026!")
+                    setErrorMsg("")
+                  }}
+                >
+                  🛡️ Admin (Superadmin)
+                </button>
+              </div>
+            </div>
 
             <hr className="modal-divider-line" />
 

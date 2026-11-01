@@ -12,6 +12,7 @@ import type {
   SearchFilters,
   UserAccountData,
   FavoriteItem,
+  AppCurrentUser,
 } from "./types"
 import { DEFAULT_CATALOG_FILTERS } from "./types"
 import { packages } from "./data/packagesData"
@@ -27,7 +28,13 @@ import {
   DEFAULT_PERSONAL_INFO,
   DEFAULT_PAYMENT_DATA,
 } from "./services/storage"
-import { saveReservationToSupabase, fetchPackagesFromSupabase } from "./services/supabaseService"
+import {
+  saveReservationToSupabase,
+  fetchPackagesFromSupabase,
+  signOutWithSupabase,
+  getCurrentSupabaseUser,
+} from "./services/supabaseService"
+
 
 import { Header } from "./components/layout/Header"
 import { Footer } from "./components/layout/Footer"
@@ -111,11 +118,29 @@ export default function App() {
 
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
-  const [currentUser, setCurrentUser] = useState<{
-    name: string
-    email: string
-  } | null>(null)
+  const [currentUser, setCurrentUser] = useState<AppCurrentUser | null>(null)
+
+  // Restaurar sesión de Supabase Auth si existe al cargar
+  useEffect(() => {
+    let isMounted = true
+    async function restoreSession() {
+      try {
+        const user = await getCurrentSupabaseUser()
+        if (isMounted && user) {
+          setCurrentUser(user)
+        }
+      } catch (e) {
+        console.warn("Aviso al restaurar sesión activa:", e)
+      }
+    }
+    restoreSession()
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   const [accountCreatedToast, setAccountCreatedToast] = useState<string | null>(null)
+
 
   useEffect(() => {
     if (accountCreatedToast) {
@@ -205,7 +230,7 @@ export default function App() {
     }
   }
 
-  const handleLoginSuccess = (user: { name: string; email: string }) => {
+  const handleLoginSuccess = (user: AppCurrentUser) => {
     const currentAccounts = getStoredAccounts()
     const emailKey = user.email.trim().toLowerCase()
     const existing = currentAccounts[emailKey]
@@ -226,16 +251,20 @@ export default function App() {
           ...existing.savedPersonalInfo,
           fullName: regFullName,
           email: user.email,
+          phone: user.phone || existing.savedPersonalInfo.phone,
+          province: user.province || existing.savedPersonalInfo.province,
+          city: user.city || existing.savedPersonalInfo.city,
+          cedula: user.idNumber || existing.savedPersonalInfo.cedula,
         })
       } else {
         setPersonalInfo({
           fullName: regFullName,
           email: user.email,
-          phone: "",
-          cedula: "",
+          phone: user.phone || "",
+          cedula: user.idNumber || "",
           birthDate: "",
-          province: "",
-          city: "",
+          province: user.province || "",
+          city: user.city || "",
           mainStreet: "",
           secondaryStreet: "",
           reference: "",
@@ -274,11 +303,11 @@ export default function App() {
       setPersonalInfo({
         fullName: regFullName,
         email: user.email,
-        phone: "",
-        cedula: "",
+        phone: user.phone || "",
+        cedula: user.idNumber || "",
         birthDate: "",
-        province: "",
-        city: "",
+        province: user.province || "",
+        city: user.city || "",
         mainStreet: "",
         secondaryStreet: "",
         reference: "",
@@ -288,12 +317,23 @@ export default function App() {
       )
     }
 
-    setCurrentUser({ name: regFullName, email: user.email })
+    setCurrentUser({
+      id: user.id,
+      name: regFullName,
+      email: user.email,
+      role: user.role || "CLIENTE",
+      phone: user.phone,
+      province: user.province,
+      city: user.city,
+      idNumber: user.idNumber,
+    })
     setIsAuthModalOpen(false)
   }
 
   const handleLogout = () => {
+    signOutWithSupabase()
     // When logging out: persist current account cart, purchases, personal info, and favorites
+
     if (currentUser) {
       const emailKey = currentUser.email.trim().toLowerCase()
       const currentAccounts = getStoredAccounts()

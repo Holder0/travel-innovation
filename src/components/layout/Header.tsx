@@ -26,7 +26,7 @@ export function Header({
   onGoToCart?: () => void
   onResetSearch?: () => void
   onOpenLogin: () => void
-  currentUser: { name: string; email: string } | null
+  currentUser: { name: string; email: string; role?: string } | null
   onLogout: () => void
   onOpenProfile?: () => void
 }) {
@@ -142,7 +142,30 @@ export function Header({
                         {avatarInitial}
                       </div>
                       <div className="user-dropdown-info">
-                        <strong>Hola {firstName}</strong>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                          <strong>Hola {firstName}</strong>
+                          {currentUser.role && (
+                            <span
+                              style={{
+                                fontSize: "10px",
+                                fontWeight: 800,
+                                background:
+                                  currentUser.role === "ADMINISTRADOR"
+                                    ? "#dc2626"
+                                    : currentUser.role === "AGENTE_VENTAS"
+                                    ? "#0284c7"
+                                    : "#059669",
+                                color: "#ffffff",
+                                padding: "1px 6px",
+                                borderRadius: "4px",
+                                textTransform: "uppercase",
+                                letterSpacing: "0.4px",
+                              }}
+                            >
+                              {currentUser.role}
+                            </span>
+                          )}
+                        </div>
                         <small title={currentUser.email}>{currentUser.email}</small>
                       </div>
                     </div>

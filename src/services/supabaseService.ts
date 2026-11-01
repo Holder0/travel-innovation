@@ -378,3 +378,211 @@ export async function uploadVoucherToSupabaseStorage(
   }
 }
 
+// =============================================================================
+// SERVICIOS DE AUTENTICACIÓN Y ROLES (SUPABASE AUTH / GOTRUE)
+// =============================================================================
+
+export interface AuthUserResult {
+  id: string
+  name: string
+  email: string
+  role?: string
+  phone?: string
+  province?: string
+  city?: string
+  idNumber?: string
+}
+
+/**
+ * Inicia sesión mediante Supabase Auth y consulta el rol en la tabla `usuarios`.
+ */
+export async function signInWithSupabase(
+  email: string,
+  password: string
+): Promise<{
+  success: boolean
+  user: AuthUserResult | null
+  error?: string
+}> {
+  if (!isSupabaseConfigured()) {
+    return { success: false, user: null, error: "Supabase no está configurado." }
+  }
+
+  try {
+    const cleanEmail = email.trim().toLowerCase()
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: cleanEmail,
+      password: password,
+    })
+
+    if (error) {
+      return { success: false, user: null, error: error.message }
+    }
+
+    if (!data.user) {
+      return { success: false, user: null, error: "No se obtuvo la sesión del usuario." }
+    }
+
+    // Consultar perfil completo del usuario en public.usuarios con JOIN a roles
+    let fullName = data.user.user_metadata?.first_name
+      ? `${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name || ""}`.trim()
+      : cleanEmail.split("@")[0]
+    let role = "CLIENTE"
+    let phone = ""
+    let province = ""
+    let city = ""
+    let idNumber = ""
+
+    const { data: profile } = await supabase
+      .from("usuarios")
+      .select("id, nombres, apellidos, telefono, provincia, ciudad, numero_identificacion, roles(nombre)")
+      .eq("id", data.user.id)
+      .maybeSingle()
+
+    if (profile) {
+      fullName = `${profile.nombres} ${profile.apellidos}`.trim()
+      role = (profile.roles as any)?.nombre || "CLIENTE"
+      phone = profile.telefono || ""
+      province = profile.provincia || ""
+      city = profile.ciudad || ""
+      idNumber = profile.numero_identificacion || ""
+    }
+
+    return {
+      success: true,
+      user: {
+        id: data.user.id,
+        name: fullName,
+        email: data.user.email || cleanEmail,
+        role: role,
+        phone: phone,
+        province: province,
+        city: city,
+        idNumber: idNumber,
+      },
+    }
+  } catch (err: any) {
+    return { success: false, user: null, error: err?.message || "Excepción al iniciar sesión." }
+  }
+}
+
+/**
+ * Registra un nuevo viajero en Supabase Auth y sincroniza sus datos.
+ */
+export async function signUpWithSupabase(
+  email: string,
+  password: string,
+  metadata: {
+    firstName: string
+    lastName: string
+    phone?: string
+    province?: string
+    city?: string
+    idNumber?: string
+  }
+): Promise<{
+  success: boolean
+  user: AuthUserResult | null
+  needsConfirmation?: boolean
+  error?: string
+}> {
+  if (!isSupabaseConfigured()) {
+    return { success: false, user: null, error: "Supabase no está configurado." }
+  }
+
+  try {
+    const cleanEmail = email.trim().toLowerCase()
+    const { data, error } = await supabase.auth.signUp({
+      email: cleanEmail,
+      password: password,
+      options: {
+        data: {
+          first_name: metadata.firstName.trim(),
+          last_name: metadata.lastName.trim(),
+          phone: metadata.phone || "",
+          province: metadata.province || "",
+          city: metadata.city || "",
+          numero_identificacion: metadata.idNumber || "",
+        },
+      },
+    })
+
+    if (error) {
+      return { success: false, user: null, error: error.message }
+    }
+
+    const fullName = `${metadata.firstName} ${metadata.lastName}`.trim()
+    const needsConfirm = !data.session
+
+    return {
+      success: true,
+      user: data.user
+        ? {
+            id: data.user.id,
+            name: fullName,
+            email: cleanEmail,
+            role: "CLIENTE",
+            phone: metadata.phone || "",
+            province: metadata.province || "",
+            city: metadata.city || "",
+            idNumber: metadata.idNumber || "",
+          }
+        : null,
+      needsConfirmation: needsConfirm,
+    }
+  } catch (err: any) {
+    return { success: false, user: null, error: err?.message || "Excepción al registrar usuario." }
+  }
+}
+
+/**
+ * Cierra la sesión activa en Supabase Auth.
+ */
+export async function signOutWithSupabase(): Promise<void> {
+  if (isSupabaseConfigured()) {
+    try {
+      await supabase.auth.signOut()
+    } catch (e) {
+      console.warn("Aviso al cerrar sesión en Supabase:", e)
+    }
+  }
+}
+
+/**
+ * Obtiene el usuario autenticado actualmente en Supabase.
+ */
+export async function getCurrentSupabaseUser(): Promise<AuthUserResult | null> {
+  if (!isSupabaseConfigured()) return null
+
+  try {
+    const { data } = await supabase.auth.getUser()
+    if (!data?.user) return null
+
+    const { data: profile } = await supabase
+      .from("usuarios")
+      .select("id, nombres, apellidos, telefono, provincia, ciudad, numero_identificacion, roles(nombre)")
+      .eq("id", data.user.id)
+      .maybeSingle()
+
+    const name = profile
+      ? `${profile.nombres} ${profile.apellidos}`.trim()
+      : (data.user.user_metadata?.first_name
+          ? `${data.user.user_metadata.first_name} ${data.user.user_metadata.last_name || ""}`.trim()
+          : data.user.email?.split("@")[0] || "Usuario")
+
+    return {
+      id: data.user.id,
+      name,
+      email: data.user.email || "",
+      role: (profile?.roles as any)?.nombre || "CLIENTE",
+      phone: profile?.telefono || "",
+      province: profile?.provincia || "",
+      city: profile?.ciudad || "",
+      idNumber: profile?.numero_identificacion || "",
+    }
+  } catch {
+    return null
+  }
+}
+
+

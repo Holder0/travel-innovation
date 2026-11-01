@@ -51,3 +51,14 @@ export interface RegisteredUserRecord {
   secondLastName?: string
   fullName: string
 }
+
+export interface AppCurrentUser {
+  id?: string
+  name: string
+  email: string
+  role?: string
+  phone?: string
+  province?: string
+  city?: string
+  idNumber?: string
+}
