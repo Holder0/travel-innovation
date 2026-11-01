@@ -1256,7 +1256,7 @@ th { background: var(--pacific); color: var(--breeze); }
    ========================================================================== */
 .payment-method-tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   margin-bottom: 24px;
 }
@@ -1440,6 +1440,51 @@ th { background: var(--pacific); color: var(--breeze); }
   background: var(--sand);
   color: var(--pacific);
   letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+.card-brand-badge.is-detected {
+  background: var(--pacific);
+  color: #ffffff;
+  border-color: var(--pacific);
+  box-shadow: 0 2px 6px rgba(27, 73, 101, 0.25);
+  transform: scale(1.05);
+}
+
+.card-type-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+@media (max-width: 600px) {
+  .card-type-selector {
+    grid-template-columns: 1fr;
+  }
+}
+.card-type-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(27, 73, 101, 0.3);
+  border-radius: var(--radius);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.card-type-option:hover {
+  border-color: var(--pacific);
+  background: #f8fafc;
+}
+.card-type-option.is-selected {
+  border-color: var(--pacific);
+  background: #eef6f9;
+  box-shadow: 0 0 0 1px var(--pacific);
+}
+.card-type-option input[type="radio"] {
+  margin-top: 3px;
+  accent-color: var(--pacific);
+  cursor: pointer;
 }
 
 .security-badge {

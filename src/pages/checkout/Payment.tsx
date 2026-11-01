@@ -4,6 +4,33 @@ import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../c
 import { validateCardNumber, validateCardExpiry, validateCardCvv } from "../../utils/validation"
 import { generateBookingCode } from "../../services/storage"
 
+type CardBrand = "visa" | "mastercard" | "amex" | "diners" | "discover" | null
+
+function detectCardBrand(num: string): CardBrand {
+  const clean = num.replace(/\D/g, "")
+  if (!clean) return null
+  if (/^4/.test(clean)) return "visa"
+  if (/^(5[1-5]|2[2-7])/.test(clean)) return "mastercard"
+  if (/^3[47]/.test(clean)) return "amex"
+  if (/^(36|38|30[0-5])/.test(clean)) return "diners"
+  if (/^(6011|65|64[4-9])/.test(clean)) return "discover"
+  return null
+}
+
+function formatCardNumber(value: string): string {
+  const clean = value.replace(/\D/g, "")
+  if (/^3[47]/.test(clean)) {
+    // Amex: 4 - 6 - 5
+    const p1 = clean.slice(0, 4)
+    const p2 = clean.slice(4, 10)
+    const p3 = clean.slice(10, 15)
+    return [p1, p2, p3].filter(Boolean).join(" ")
+  }
+  // Demás marcas: 4 - 4 - 4 - 4
+  const parts = clean.slice(0, 16).match(/.{1,4}/g)
+  return parts ? parts.join(" ") : clean
+}
+
 export function Payment({
   go,
   total = 378,
@@ -25,8 +52,13 @@ export function Payment({
   onSavePaymentData: (data: PaymentDetails) => void
   onConfirmReservation: (code: string, paymentDetails: PaymentDetails) => void
 }) {
-  const [method, setMethod] = useState<PaymentMethodType>(
-    paymentData.method || "credito"
+  // Pestaña principal de método de pago: "tarjeta" o "transferencia"
+  const [mainTab, setMainTab] = useState<"tarjeta" | "transferencia">(
+    paymentData.method === "transferencia" ? "transferencia" : "tarjeta"
+  )
+  // Tipo de tarjeta dentro de la pestaña de tarjeta: "debito" o "credito"
+  const [cardType, setCardType] = useState<"debito" | "credito">(
+    paymentData.method === "debito" ? "debito" : "credito"
   )
   const [file, setFile] = useState(paymentData.bankVoucherUploaded || false)
   const [voucherNumber, setVoucherNumber] = useState(
@@ -34,7 +66,7 @@ export function Payment({
   )
   const [voucherError, setVoucherError] = useState("")
 
-  // Card fields
+  // Campos de tarjeta
   const [cardNumber, setCardNumber] = useState(paymentData.cardNumber || "")
   const [cardHolder, setCardHolder] = useState(paymentData.cardHolder || "")
   const [cardExpiry, setCardExpiry] = useState(paymentData.cardExpiry || "")
@@ -49,9 +81,18 @@ export function Payment({
     cardCvv?: string
   }>({})
 
+  const detectedBrand = detectCardBrand(cardNumber)
+
   const syncPaymentData = (overrides: Partial<PaymentDetails> = {}) => {
+    const effectiveMethod: PaymentMethodType =
+      overrides.method !== undefined
+        ? overrides.method
+        : mainTab === "transferencia"
+        ? "transferencia"
+        : cardType
+
     onSavePaymentData({
-      method: overrides.method !== undefined ? overrides.method : method,
+      method: effectiveMethod,
       bankVoucherNumber:
         overrides.bankVoucherNumber !== undefined
           ? overrides.bankVoucherNumber
@@ -70,6 +111,8 @@ export function Payment({
       installments:
         overrides.installments !== undefined
           ? overrides.installments
+          : effectiveMethod === "debito"
+          ? "1 pago directo (débito)"
           : installments,
     })
   }
@@ -102,7 +145,7 @@ export function Payment({
       return
     }
 
-    if (method === "transferencia") {
+    if (mainTab === "transferencia") {
       const finalPayment: PaymentDetails = {
         method: "transferencia",
         bankVoucherNumber: "",
@@ -112,7 +155,7 @@ export function Payment({
       onConfirmReservation(bookingRefCode, finalPayment)
       go("confirmacion")
     } else {
-      // Card validation (Debito or Credito)
+      // Validación de tarjeta (débito o crédito)
       let hasError = false
       const nextErrs: typeof cardErrors = {}
 
@@ -135,8 +178,9 @@ export function Payment({
         hasError = true
       }
 
-      // Validar código de seguridad (CVV de solo 3 dígitos)
-      const cvvRes = validateCardCvv(cardCvv)
+      // Validar código de seguridad (CVV de 4 dígitos para Amex, 3 dígitos para demás)
+      const expectedCvvLen = detectedBrand === "amex" ? 4 : 3
+      const cvvRes = validateCardCvv(cardCvv, expectedCvvLen)
       if (!cvvRes.isValid) {
         nextErrs.cardCvv = cvvRes.error
         hasError = true
@@ -148,13 +192,13 @@ export function Payment({
       }
 
       const finalPayment: PaymentDetails = {
-        method: method,
+        method: cardType,
         cardNumber,
         cardHolder: cardHolder.trim(),
         cardExpiry,
         cardCvv,
         installments:
-          method === "debito"
+          cardType === "debito"
             ? "1 pago directo (débito)"
             : installments,
         bankVoucherUploaded: true,
@@ -261,74 +305,54 @@ export function Payment({
             </div>
           </article>
 
-          {/* 3. Selección de método de pago (3 opciones: transferencia, debito, credito) */}
+          {/* 3. Selección de método de pago (2 opciones principales: Tarjeta de crédito o débito, y Transferencia) */}
           <article className="form-panel">
             <h2>Método de pago</h2>
             <div className="payment-method-tabs" role="tablist">
               <button
                 type="button"
                 role="tab"
-                aria-selected={method === "transferencia"}
+                aria-selected={mainTab === "tarjeta"}
                 className={`payment-tab-btn ${
-                  method === "transferencia" ? "is-active" : ""
+                  mainTab === "tarjeta" ? "is-active" : ""
                 }`}
                 onClick={() => {
-                  setMethod("transferencia")
+                  setMainTab("tarjeta")
+                  syncPaymentData({ method: cardType })
+                }}
+              >
+                <span className="tab-icon">💳</span>
+                <div className="tab-text">
+                  <strong>Tarjeta de crédito o débito</strong>
+                  <small>Visa, Mastercard, Amex, Diners · Directo o cuotas</small>
+                </div>
+                {mainTab === "tarjeta" && <span className="tab-check">✓</span>}
+              </button>
+
+              <button
+                type="button"
+                role="tab"
+                aria-selected={mainTab === "transferencia"}
+                className={`payment-tab-btn ${
+                  mainTab === "transferencia" ? "is-active" : ""
+                }`}
+                onClick={() => {
+                  setMainTab("transferencia")
                   syncPaymentData({ method: "transferencia" })
                 }}
               >
                 <span className="tab-icon">🏦</span>
                 <div className="tab-text">
                   <strong>Transferencia bancaria</strong>
-                  <small>Depósito o transferencia directa</small>
+                  <small>Depósito o transferencia · Plazo de 24 horas</small>
                 </div>
-                {method === "transferencia" && (
+                {mainTab === "transferencia" && (
                   <span className="tab-check">✓</span>
                 )}
               </button>
-
-              <button
-                type="button"
-                role="tab"
-                aria-selected={method === "debito"}
-                className={`payment-tab-btn ${
-                  method === "debito" ? "is-active" : ""
-                }`}
-                onClick={() => {
-                  setMethod("debito")
-                  syncPaymentData({ method: "debito" })
-                }}
-              >
-                <span className="tab-icon">💳</span>
-                <div className="tab-text">
-                  <strong>Tarjeta de débito</strong>
-                  <small>Pago directo · Sin pago a plazos</small>
-                </div>
-                {method === "debito" && <span className="tab-check">✓</span>}
-              </button>
-
-              <button
-                type="button"
-                role="tab"
-                aria-selected={method === "credito"}
-                className={`payment-tab-btn ${
-                  method === "credito" ? "is-active" : ""
-                }`}
-                onClick={() => {
-                  setMethod("credito")
-                  syncPaymentData({ method: "credito" })
-                }}
-              >
-                <span className="tab-icon">💳</span>
-                <div className="tab-text">
-                  <strong>Tarjeta de crédito</strong>
-                  <small>Pago corriente o diferido a plazos</small>
-                </div>
-                {method === "credito" && <span className="tab-check">✓</span>}
-              </button>
             </div>
 
-            {method === "transferencia" ? (
+            {mainTab === "transferencia" ? (
               <div className="transfer-payment-body">
                 <div
                   className="panel-heading"
@@ -596,8 +620,92 @@ export function Payment({
               </div>
             ) : (
               <div className="card-payment-body">
+                {/* Selector de tipo de tarjeta: Débito vs Crédito */}
+                <div style={{ marginBottom: "16px" }}>
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "var(--abyss)",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    Modalidad de tu tarjeta:
+                  </span>
+                  <div className="card-type-selector">
+                    <label
+                      className={`card-type-option ${
+                        cardType === "debito" ? "is-selected" : ""
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="cardTypeSelection"
+                        value="debito"
+                        checked={cardType === "debito"}
+                        onChange={() => {
+                          setCardType("debito")
+                          syncPaymentData({
+                            method: "debito",
+                            installments: "1 pago directo (débito)",
+                          })
+                        }}
+                      />
+                      <div>
+                        <strong
+                          style={{
+                            display: "block",
+                            fontSize: "14px",
+                            color: "var(--abyss)",
+                          }}
+                        >
+                          Tarjeta de débito
+                        </strong>
+                        <small style={{ fontSize: "12px", color: "#5a6e7f" }}>
+                          Pago directo de contado · Sin diferidos
+                        </small>
+                      </div>
+                    </label>
+
+                    <label
+                      className={`card-type-option ${
+                        cardType === "credito" ? "is-selected" : ""
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="cardTypeSelection"
+                        value="credito"
+                        checked={cardType === "credito"}
+                        onChange={() => {
+                          setCardType("credito")
+                          syncPaymentData({
+                            method: "credito",
+                            installments: installments,
+                          })
+                        }}
+                      />
+                      <div>
+                        <strong
+                          style={{
+                            display: "block",
+                            fontSize: "14px",
+                            color: "var(--abyss)",
+                          }}
+                        >
+                          Tarjeta de crédito
+                        </strong>
+                        <small style={{ fontSize: "12px", color: "#5a6e7f" }}>
+                          Pago corriente o diferido a cuotas
+                        </small>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
                 {/* Banner específico cuando es Débito */}
-                {method === "debito" && (
+                {cardType === "debito" && (
                   <div className="debit-info-banner">
                     <span aria-hidden="true" style={{ fontSize: "22px" }}>
                       ℹ️
@@ -615,6 +723,7 @@ export function Payment({
                   </div>
                 )}
 
+                {/* Marcas aceptadas con iluminación dinámica por auto-detección */}
                 <div className="card-brands-row">
                   <span
                     style={{
@@ -623,37 +732,53 @@ export function Payment({
                       color: "var(--abyss)",
                     }}
                   >
-                    {method === "debito"
-                      ? "Redes de débito aceptadas:"
-                      : "Tarjetas de crédito aceptadas:"}
+                    Marcas aceptadas:
                   </span>
-                  {method === "debito" ? (
-                    <>
-                      <span className="card-brand-badge">VISA Débito</span>
-                      <span className="card-brand-badge">Mastercard Débito</span>
-                      <span className="card-brand-badge">Maestro</span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="card-brand-badge">VISA</span>
-                      <span className="card-brand-badge">Mastercard</span>
-                      <span className="card-brand-badge">American Express</span>
-                      <span className="card-brand-badge">Diners Club</span>
-                      <span className="card-brand-badge">Discover</span>
-                    </>
-                  )}
+                  {[
+                    { id: "visa", label: "VISA" },
+                    { id: "mastercard", label: "Mastercard" },
+                    { id: "amex", label: "American Express" },
+                    { id: "diners", label: "Diners Club" },
+                    { id: "discover", label: "Discover" },
+                  ].map((b) => (
+                    <span
+                      key={b.id}
+                      className={`card-brand-badge ${
+                        detectedBrand === b.id ? "is-detected" : ""
+                      }`}
+                    >
+                      {detectedBrand === b.id && (
+                        <span style={{ marginRight: "4px" }}>✓</span>
+                      )}
+                      {b.label}
+                    </span>
+                  ))}
                 </div>
 
                 <div style={{ marginTop: "12px" }}>
                   <Field
-                    label="Número de tarjeta"
-                    placeholder="1234 5678 9012 3456"
+                    label={
+                      detectedBrand === "visa"
+                        ? "Número de tarjeta (Detectada: VISA)"
+                        : detectedBrand === "mastercard"
+                        ? "Número de tarjeta (Detectada: Mastercard)"
+                        : detectedBrand === "amex"
+                        ? "Número de tarjeta (Detectada: American Express)"
+                        : detectedBrand === "diners"
+                        ? "Número de tarjeta (Detectada: Diners Club)"
+                        : detectedBrand === "discover"
+                        ? "Número de tarjeta (Detectada: Discover)"
+                        : "Número de tarjeta"
+                    }
+                    placeholder={
+                      detectedBrand === "amex"
+                        ? "3782 822468 95001"
+                        : "1234 5678 9012 3456"
+                    }
                     value={cardNumber}
+                    maxLength={detectedBrand === "amex" ? 17 : 19}
                     onChange={(val) => {
-                      const clean = val.replace(/\D/g, "")
-                      const formatted = clean
-                        .replace(/(\d{4})/g, "$1 ")
-                        .trim()
+                      const formatted = formatCardNumber(val)
                       setCardNumber(formatted)
                       syncPaymentData({ cardNumber: formatted })
                       if (cardErrors.cardNumber)
@@ -661,7 +786,9 @@ export function Payment({
                     }}
                     error={cardErrors.cardNumber}
                     help={
-                      method === "debito"
+                      detectedBrand === "amex"
+                        ? "15 dígitos de tu tarjeta American Express (formato 4-6-5)."
+                        : cardType === "debito"
                         ? "16 dígitos de tu tarjeta de débito bancaria."
                         : "16 dígitos de tu tarjeta de crédito."
                     }
@@ -692,10 +819,14 @@ export function Payment({
                     label="Fecha de expiración"
                     placeholder="MM/AA"
                     value={cardExpiry}
+                    maxLength={5}
                     onChange={(val) => {
                       let clean = val.replace(/[^\d/]/g, "")
                       if (!clean.includes("/") && clean.length > 2) {
                         clean = `${clean.slice(0, 2)}/${clean.slice(2)}`
+                      }
+                      if (clean.length > 5) {
+                        clean = clean.slice(0, 5)
                       }
                       setCardExpiry(clean)
                       syncPaymentData({ cardExpiry: clean })
@@ -708,25 +839,36 @@ export function Payment({
                   />
 
                   <Field
-                    label="Código de seguridad (CVV)"
-                    placeholder="3 dígitos"
+                    label={
+                      detectedBrand === "amex"
+                        ? "Código de seguridad (4 dígitos Amex)"
+                        : "Código de seguridad (CVV)"
+                    }
+                    placeholder={detectedBrand === "amex" ? "1234" : "123"}
                     type="password"
+                    maxLength={detectedBrand === "amex" ? 4 : 3}
                     value={cardCvv}
                     onChange={(val) => {
                       const clean = val.replace(/\D/g, "")
-                      setCardCvv(clean)
-                      syncPaymentData({ cardCvv: clean })
+                      const maxLen = detectedBrand === "amex" ? 4 : 3
+                      const truncated = clean.slice(0, maxLen)
+                      setCardCvv(truncated)
+                      syncPaymentData({ cardCvv: truncated })
                       if (cardErrors.cardCvv)
                         setCardErrors((p) => ({ ...p, cardCvv: undefined }))
                     }}
                     error={cardErrors.cardCvv}
-                    help="Exactamente 3 dígitos al reverso de tu tarjeta."
+                    help={
+                      detectedBrand === "amex"
+                        ? "Exactamente 4 dígitos impresos al frente de tu tarjeta American Express."
+                        : "Exactamente 3 dígitos al reverso de tu tarjeta."
+                    }
                     required
                   />
                 </div>
 
                 {/* En Débito NO hay pago a plazos. Solo en Crédito se muestra el selector de cuotas */}
-                {method === "credito" && (
+                {cardType === "credito" && (
                   <div style={{ marginTop: "14px" }}>
                     <SelectField
                       label="Modalidad de pago / Diferido a plazos"
@@ -739,28 +881,26 @@ export function Payment({
                     >
                       {[
                         {
-                          val: "6 cuotas sin intereses",
-                          txt: `6 cuotas sin intereses ($${(total / 6).toFixed(2)}/mes)`,
+                          val: "1 pago corriente (sin recargo)",
+                          txt: `1 pago corriente ($${total},00)`,
                         },
                         {
                           val: "3 cuotas sin intereses",
-                          txt: `3 cuotas sin intereses ($${(total / 3).toFixed(2)}/mes)`,
+                          txt: `3 cuotas sin intereses ($${(total / 3).toFixed(2)}/mes) · Sin intereses`,
+                        },
+                        {
+                          val: "6 cuotas sin intereses",
+                          txt: `6 cuotas sin intereses ($${(total / 6).toFixed(2)}/mes) · Sin intereses`,
                         },
                         {
                           val: "12 cuotas con intereses",
                           txt: `12 cuotas con intereses ($${((total * 1.08) / 12).toFixed(2)}/mes)`,
                         },
-                        {
-                          val: "1 pago corriente (sin recargo)",
-                          txt: `1 pago corriente ($${total})`,
-                        },
-                      ]
-                        .sort((a, b) => a.txt.localeCompare(b.txt, "es"))
-                        .map((opt) => (
-                          <option key={opt.val} value={opt.val}>
-                            {opt.txt}
-                          </option>
-                        ))}
+                      ].map((opt) => (
+                        <option key={opt.val} value={opt.val}>
+                          {opt.txt}
+                        </option>
+                      ))}
                     </SelectField>
                   </div>
                 )}
@@ -842,10 +982,12 @@ export function Payment({
                 Volver a datos de viajeros
               </Button>
               <Button kind="primary" type="button" onClick={handleConfirm}>
-                {method === "transferencia"
+                {mainTab === "transferencia"
                   ? "Confirmar reserva y obtener datos de pago"
-                  : method === "debito"
+                  : cardType === "debito"
                   ? `Pagar $${total} con débito y finalizar`
+                  : installments.includes("cuotas")
+                  ? `Pagar $${total} con crédito (${installments.split(" ")[0]} cuotas) y finalizar`
                   : `Pagar $${total} con crédito y finalizar`}
               </Button>
             </div>

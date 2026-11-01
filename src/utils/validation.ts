@@ -319,7 +319,7 @@ export function validateCardExpiry(value: string): {
   return { isValid: true }
 }
 
-export function validateCardCvv(value: string): {
+export function validateCardCvv(value: string, expectedLength: number = 3): {
   isValid: boolean
   error?: string
 } {
@@ -327,16 +327,16 @@ export function validateCardCvv(value: string): {
   if (!clean) {
     return { isValid: false, error: "El código de seguridad (CVV) es requerido." }
   }
-  if (clean.length < 3) {
+  if (clean.length < expectedLength) {
     return {
       isValid: false,
-      error: `Faltan números: el código de seguridad (CVV) debe tener exactamente 3 dígitos (ingresaste ${clean.length}).`,
+      error: `Faltan números: el código de seguridad (CVV) debe tener exactamente ${expectedLength} dígitos (ingresaste ${clean.length}).`,
     }
   }
-  if (clean.length > 3) {
+  if (clean.length > expectedLength) {
     return {
       isValid: false,
-      error: `Están de más números: el código de seguridad debe tener exactamente 3 dígitos (ingresaste ${clean.length}).`,
+      error: `Están de más números: el código de seguridad debe tener exactamente ${expectedLength} dígitos (ingresaste ${clean.length}).`,
     }
   }
   return { isValid: true }
