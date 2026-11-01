@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import type { Page, PurchaseItem, SupportTicket } from "../types"
 import { Button, Field, PageTitle } from "../components/common"
+import { generateBookingPdf } from "../utils/pdfGenerator"
 
 export function Reservations({
   go,
@@ -718,6 +719,33 @@ export function Reservations({
                   kind="secondary"
                   type="button"
                   onClick={() => {
+                    generateBookingPdf({
+                      bookingCode: activePurchase.code,
+                      createdAt: activePurchase.createdAt,
+                      titular: {
+                        name:
+                          activePurchase.titular?.name ||
+                          currentUser?.name ||
+                          "Titular de la reserva",
+                        email:
+                          activePurchase.titular?.email ||
+                          currentUser?.email ||
+                          "correo@ejemplo.com",
+                        phone:
+                          activePurchase.titular?.phone || "0991234567",
+                        cedula:
+                          activePurchase.titular?.cedula || "1712345675",
+                        address: activePurchase.titular?.address || "",
+                      },
+                      packages: activePurchase.packages || [],
+                      travelers: activePurchase.travelers || [],
+                      total: activePurchase.total || 0,
+                      paymentMethodLabel:
+                        activePurchase.paymentMethodLabel ||
+                        "Tarjeta de crédito",
+                      installments: activePurchase.installments,
+                      status: activePurchase.status,
+                    })
                     setDownloadToast(true)
                     setTimeout(() => setDownloadToast(false), 3000)
                   }}

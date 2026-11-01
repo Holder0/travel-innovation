@@ -116,11 +116,10 @@ export function Payment({
       let hasError = false
       const nextErrs: typeof cardErrors = {}
 
-      // Validar número de tarjeta (16 dígitos, Luhn y no repetidos)
+      // Validar número de tarjeta (15 a 16 dígitos, Luhn y no repetidos)
       const cardRes = validateCardNumber(cardNumber)
       if (!cardRes.isValid) {
         nextErrs.cardNumber = cardRes.error
-        setCardNumber("") // Borra solo este campo errado
         hasError = true
       }
 
@@ -133,7 +132,6 @@ export function Payment({
       const expiryRes = validateCardExpiry(cardExpiry)
       if (!expiryRes.isValid) {
         nextErrs.cardExpiry = expiryRes.error
-        setCardExpiry("") // Borra solo este campo errado
         hasError = true
       }
 
@@ -141,7 +139,6 @@ export function Payment({
       const cvvRes = validateCardCvv(cardCvv)
       if (!cvvRes.isValid) {
         nextErrs.cardCvv = cvvRes.error
-        setCardCvv("") // Borra solo este campo errado
         hasError = true
       }
 

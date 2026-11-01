@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData } from "../../types"
 import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
-import { validateEcuadorianCedula, validatePhoneNumber } from "../../utils/validation"
+import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
 
 export function Travelers({
   go,
@@ -212,11 +212,10 @@ export function Travelers({
         hasError = true
       }
 
-      // Validar documento / cédula
-      const cedulaRes = validateEcuadorianCedula(t.cedula)
+      // Validar documento / cédula o pasaporte
+      const cedulaRes = validateCedulaOrPassport(t.cedula)
       if (!cedulaRes.isValid) {
         errs.cedula = cedulaRes.error
-        modified.cedula = "" // ¡Se borra solo este campo errado del viajero!
         hasError = true
       }
 
@@ -225,7 +224,6 @@ export function Travelers({
         const phoneRes = validatePhoneNumber(t.phone)
         if (!phoneRes.isValid) {
           errs.phone = phoneRes.error
-          modified.phone = "" // ¡Se borra solo este campo errado!
           hasError = true
         }
       }
@@ -453,11 +451,11 @@ export function Travelers({
                               handleTravelerChange(
                                 traveler.id,
                                 "cedula",
-                                val
+                                val.replace(/[^a-zA-Z0-9]/g, "").toUpperCase()
                               )
                             }
                             error={travelerErrors.cedula}
-                            help="Cédula o pasaporte."
+                            help="Cédula ecuatoriana o pasaporte."
                             required
                           />
                         </div>
@@ -475,11 +473,11 @@ export function Travelers({
                                 handleTravelerChange(
                                   traveler.id,
                                   "phone",
-                                  val
+                                  val.replace(/\D/g, "")
                                 )
                               }
                               error={travelerErrors.phone}
-                              help="10 dígitos."
+                              help="10 dígitos (inicia con 09)."
                             />
                             <Field
                               label="Correo electrónico"

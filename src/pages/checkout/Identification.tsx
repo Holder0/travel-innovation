@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react"
 import type { Page, PersonalInfo } from "../../types"
 import { Button, Field, SelectField, PageTitle, Stepper, Summary } from "../../components/common"
 import { PROVINCES_DATA } from "../../data/provincesData"
-import { validateEcuadorianCedula, validatePhoneNumber } from "../../utils/validation"
+import { validateCedulaOrPassport, validatePhoneNumber } from "../../utils/validation"
 
 export function Identification({
   go,
@@ -117,15 +117,13 @@ export function Identification({
     const phoneRes = validatePhoneNumber(phone)
     if (!phoneRes.isValid) {
       nextErrors.phone = phoneRes.error
-      setPhone("") // Se borra solo este campo errado
       hasError = true
     }
 
-    // Cédula validation
-    const cedulaRes = validateEcuadorianCedula(cedula)
+    // Cédula o pasaporte validation
+    const cedulaRes = validateCedulaOrPassport(cedula)
     if (!cedulaRes.isValid) {
       nextErrors.cedula = cedulaRes.error
-      setCedula("") // Se borra solo este campo errado
       hasError = true
     }
 
@@ -259,23 +257,23 @@ export function Identification({
                   setErrors((prev) => ({ ...prev, phone: undefined }))
               }}
               error={errors.phone}
-              help="10 dígitos."
+              help="10 dígitos numéricos (inicia con 09)."
               required
             />
 
             <Field
-              label="Cédula de identidad"
-              placeholder="10 dígitos numéricos"
+              label="Cédula de identidad o pasaporte"
+              placeholder="10 dígitos de cédula o pasaporte"
               value={cedula}
               onChange={(val) => {
-                const clean = val.replace(/\D/g, "")
+                const clean = val.replace(/[^a-zA-Z0-9]/g, "").toUpperCase()
                 setCedula(clean)
                 syncPersonalInfo({ cedula: clean })
                 if (errors.cedula)
                   setErrors((prev) => ({ ...prev, cedula: undefined }))
               }}
               error={errors.cedula}
-              help="10 dígitos."
+              help="Cédula (10 dígitos) o pasaporte (6 a 12 caracteres)."
               required
             />
           </div>

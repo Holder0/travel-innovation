@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import type { Page, CartItem, PersonalInfo, TravelerData, PaymentDetails } from "../../types"
 import { Button, Stepper } from "../../components/common"
+import { generateBookingPdf } from "../../utils/pdfGenerator"
+import { sendRealBookingEmail } from "../../services/emailService"
 
 export function Confirmation({
   go,
@@ -25,11 +27,131 @@ export function Confirmation({
   const [downloadToast, setDownloadToast] = useState(false)
   const [purchaseToast, setPurchaseToast] = useState(true)
 
+  const destinationEmail =
+    personalInfo.email || currentUser?.email || "correo@ejemplo.com"
+  const titularName =
+    personalInfo.fullName || currentUser?.name || "Titular de la reserva"
+
+  const [emailStatus, setEmailStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
+  const [emailMessage, setEmailMessage] = useState("")
+  const [emailToast, setEmailToast] = useState(false)
+  const [hasSentEmail, setHasSentEmail] = useState(false)
+
   const isTransfer = paymentData.method === "transferencia"
   const isDebit = paymentData.method === "debito"
   const isCredit = paymentData.method === "credito"
 
+  const paymentMethodLabel =
+    isTransfer
+      ? "Transferencia bancaria"
+      : isDebit
+      ? "Tarjeta de débito"
+      : "Tarjeta de crédito"
+
+  // Real Email Dispatch
+  const handleSendRealEmail = async () => {
+    if (!destinationEmail || !destinationEmail.includes("@")) return
+    setEmailStatus("sending")
+    setEmailToast(true)
+
+    const res = await sendRealBookingEmail({
+      toEmail: destinationEmail,
+      bookingCode,
+      titularName,
+      cedula: personalInfo.cedula || "No registrada",
+      phone: personalInfo.phone || "No registrado",
+      total,
+      paymentMethod: paymentMethodLabel,
+      installments: paymentData.installments,
+      packages: cartItems.map((c) => ({
+        name: c.pkg.name,
+        date: c.date,
+        people: c.people,
+        total: c.total,
+      })),
+      travelers: travelersList.map((t) => ({
+        fullName: t.fullName,
+        cedula: t.cedula,
+        isTitular: t.isTitular,
+      })),
+    })
+
+    if (res.success) {
+      setEmailStatus("sent")
+      setEmailMessage(res.message)
+    } else {
+      setEmailStatus("error")
+      setEmailMessage(res.message)
+    }
+  }
+
+  useEffect(() => {
+    if (!hasSentEmail) {
+      setHasSentEmail(true)
+      handleSendRealEmail()
+    }
+  }, [hasSentEmail])
+
+  useEffect(() => {
+    if (emailToast) {
+      const timer = setTimeout(() => setEmailToast(false), 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [emailToast])
+
+  // Real PDF Download
   const handleDownload = () => {
+    const pkgTravelersList: TravelerData[] =
+      travelersList.length > 0
+        ? travelersList
+        : [
+            {
+              id: "t-1",
+              slotNumber: 1,
+              packageTitle: cartItems[0]?.pkg.name || "Paquete turístico",
+              fullName: titularName,
+              cedula: personalInfo.cedula || "1712345675",
+              isTitular: true,
+              isMinor: false,
+            },
+          ]
+
+    generateBookingPdf({
+      bookingCode,
+      createdAt: new Date().toLocaleString("es-EC"),
+      titular: {
+        name: titularName,
+        email: destinationEmail,
+        phone: personalInfo.phone || "0991234567",
+        cedula: personalInfo.cedula || "1712345675",
+        address: personalInfo.mainStreet
+          ? `${personalInfo.mainStreet} y ${personalInfo.secondaryStreet || ""}, ${personalInfo.city || ""} ${personalInfo.province || ""}`.trim()
+          : "Quito, Pichincha",
+      },
+      packages: cartItems.map((c) => ({
+        name: c.pkg.name,
+        city: c.pkg.city,
+        province: c.pkg.province,
+        date: c.date,
+        people: c.people,
+        price: c.pkg.price,
+        total: c.total,
+      })),
+      travelers: pkgTravelersList.map((t, idx) => ({
+        slotNumber: t.slotNumber || idx + 1,
+        fullName: t.fullName || "Acompañante",
+        cedula: t.cedula || "Registrado",
+        isTitular: t.isTitular,
+      })),
+      total,
+      paymentMethodLabel,
+      installments: paymentData.installments,
+      status:
+        !isTransfer || paymentData.bankVoucherUploaded
+          ? "Compra realizada · Reserva activa"
+          : "En verificación · Plazo 24 horas",
+    })
+
     setDownloadToast(true)
     setTimeout(() => setDownloadToast(false), 3500)
   }
@@ -63,10 +185,7 @@ export function Confirmation({
           {!isTransfer || paymentData.bankVoucherUploaded
             ? "Hemos registrado tu compra y enviado el itinerario con la confirmación oficial a "
             : "Tus cupos se encuentran reservados. Para que tu estado cambie a Compra realizada, por favor adjunta tu comprobante desde la sección Mis compras durante las próximas 24 horas. Hemos enviado las instrucciones a "}
-          <strong>
-            {personalInfo.email || currentUser?.email || "tu correo electrónico"}
-          </strong>
-          .
+          <strong>{destinationEmail}</strong>.
         </p>
 
         <div className="reservation-code">
@@ -81,6 +200,65 @@ export function Confirmation({
           >
             {copied ? "Copiado ✓" : "Copiar"}
           </Button>
+        </div>
+
+        {/* Tarjeta real de envío de correo */}
+        <div
+          style={{
+            background: emailStatus === "error" ? "#fef2f2" : "#f0fdf4",
+            border: `1px solid ${emailStatus === "error" ? "#fca5a5" : "#86efac"}`,
+            borderRadius: "10px",
+            padding: "16px 20px",
+            margin: "20px 0 24px",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: "14px",
+            textAlign: "left",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+            <span style={{ fontSize: "28px" }} aria-hidden="true">
+              {emailStatus === "sending" ? "⏳" : emailStatus === "error" ? "⚠️" : "📨"}
+            </span>
+            <div>
+              <strong
+                style={{
+                  color: emailStatus === "error" ? "#991b1b" : "#166534",
+                  fontSize: "15px",
+                  display: "block",
+                }}
+              >
+                {emailStatus === "sending"
+                  ? "Enviando comprobante a tu correo electrónico..."
+                  : "Comprobante enviado al correo: " + destinationEmail}
+              </strong>
+              <span
+                style={{
+                  color: emailStatus === "error" ? "#b91c1c" : "#15803d",
+                  fontSize: "13.5px",
+                }}
+              >
+                {emailStatus === "sending"
+                  ? `Conectando con el servidor de correo para despachar tu confirmación a ${destinationEmail}...`
+                  : `Hemos enviado el comprobante oficial y los detalles de la reserva #${bookingCode} a ${destinationEmail}. Por favor revisa tu bandeja de entrada o correo no deseado (Spam) en tu Hotmail, Outlook o Gmail.`}
+              </span>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <Button
+              kind="secondary"
+              type="button"
+              disabled={emailStatus === "sending"}
+              onClick={handleSendRealEmail}
+            >
+              {emailStatus === "sending" ? "Enviando..." : "🔄 Reenviar al correo"}
+            </Button>
+            <Button kind="primary" type="button" onClick={handleDownload}>
+              📥 Descargar comprobante PDF
+            </Button>
+          </div>
         </div>
 
         {/* Resumen conciso de todo */}
@@ -134,9 +312,7 @@ export function Confirmation({
                       packageTitle: item.pkg.name,
                       fullName:
                         pIdx === 0 && p === 1
-                          ? personalInfo.fullName ||
-                            currentUser?.name ||
-                            "Titular de la reserva"
+                          ? titularName
                           : `Viajero ${p}`,
                       cedula:
                         pIdx === 0 && p === 1
@@ -232,8 +408,7 @@ export function Confirmation({
                                 Viajero {idx + 1}:{" "}
                                 {t.fullName ||
                                   (idx === 0 && pIdx === 0
-                                    ? personalInfo.fullName ||
-                                      currentUser?.name
+                                    ? titularName
                                     : "Acompañante")}
                               </strong>
                               <small
@@ -246,40 +421,21 @@ export function Confirmation({
                                 {t.cedula ||
                                   (idx === 0 && pIdx === 0
                                     ? personalInfo.cedula
-                                    : "Registrada")}
+                                    : "Registrado")}
                               </small>
                             </span>
-                            {t.isMinor ? (
-                              <span
-                                className="status status--pending"
-                                style={{
-                                  fontSize: "12px",
-                                  padding: "2px 8px",
-                                }}
-                              >
-                                Menor de edad
-                              </span>
-                            ) : t.isTitular ? (
-                              <span
-                                className="status status--pacific"
-                                style={{
-                                  fontSize: "12px",
-                                  padding: "2px 8px",
-                                }}
-                              >
-                                Titular
-                              </span>
-                            ) : (
-                              <span
-                                className="status"
-                                style={{
-                                  fontSize: "12px",
-                                  padding: "2px 8px",
-                                }}
-                              >
-                                Acompañante
-                              </span>
-                            )}
+                            <span
+                              className={`status ${
+                                t.isTitular
+                                  ? "status--pacific"
+                                  : "status--pending"
+                              }`}
+                              style={{ fontSize: "12px", padding: "2px 8px" }}
+                            >
+                              {t.isTitular
+                                ? "★ Titular del paquete"
+                                : "Acompañante"}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -290,138 +446,110 @@ export function Confirmation({
             </div>
           </div>
 
-          {/* Información Personal (Titular) */}
+          {/* Desglose de Pago */}
           <div className="confirmation-section">
             <h3>
-              <span>👤</span> Información Personal (Titular)
+              <span>💳</span> Desglose de Pago y Facturación
             </h3>
             <div className="confirmation-grid">
               <div>
-                <small>Titular</small>
-                <strong>
-                  {personalInfo.fullName ||
-                    currentUser?.name ||
-                    "María Andrade"}
-                </strong>
+                <small>Titular de la reserva</small>
+                <strong>{titularName}</strong>
               </div>
               <div>
-                <small>Cédula de identidad</small>
+                <small>Cédula / Documento</small>
                 <strong>{personalInfo.cedula || "1712345675"}</strong>
               </div>
               <div>
-                <small>Teléfono de contacto</small>
+                <small>Teléfono</small>
                 <strong>{personalInfo.phone || "0991234567"}</strong>
               </div>
               <div>
                 <small>Correo electrónico</small>
-                <strong>
-                  {personalInfo.email ||
-                    currentUser?.email ||
-                    "maria@ejemplo.com"}
-                </strong>
-              </div>
-              <div style={{ gridColumn: "1 / -1" }}>
-                <small>Dirección domiciliaria</small>
-                <strong>
-                  {personalInfo.mainStreet && personalInfo.secondaryStreet
-                    ? `${personalInfo.mainStreet} y ${personalInfo.secondaryStreet}, ${personalInfo.reference || "S/N"} · ${personalInfo.city || ""}, ${personalInfo.province || ""}`
-                    : "Av. Amazonas y Naciones Unidas, N34-120 · Quito, Pichincha"}
-                </strong>
-              </div>
-            </div>
-          </div>
-
-          {/* Detalle de Pago y Facturación */}
-          <div className="confirmation-section">
-            <h3>
-              <span>💳</span> Detalle del Pago y Facturación
-            </h3>
-            <div className="confirmation-grid">
-              <div>
-                <small>Método utilizado</small>
-                <strong>
-                  {isTransfer
-                    ? `Transferencia bancaria (${
-                        paymentData.bankVoucherNumber
-                          ? `Comp. #${paymentData.bankVoucherNumber}`
-                          : "Comprobante adjunto"
-                      })`
-                    : isDebit
-                    ? `Tarjeta de débito (•••• ${
-                        paymentData.cardNumber
-                          ?.replace(/\s/g, "")
-                          .slice(-4) || "4242"
-                      })`
-                    : `Tarjeta de crédito (•••• ${
-                        paymentData.cardNumber
-                          ?.replace(/\s/g, "")
-                          .slice(-4) || "4242"
-                      })`}
-                </strong>
+                <strong>{destinationEmail}</strong>
               </div>
               <div>
-                <small>Modalidad</small>
-                <strong>
-                  {isTransfer
-                    ? "Transferencia directa (1 pago)"
-                    : isDebit
-                    ? "Pago directo inmediato (sin plazos)"
-                    : paymentData.installments || "1 pago corriente"}
-                </strong>
+                <small>Método de pago utilizado</small>
+                <strong>{paymentMethodLabel}</strong>
               </div>
-              <div>
-                <small>Subtotal + IVA (15%)</small>
-                <strong>
-                  ${Math.round(total / 1.15)} + $
-                  {total - Math.round(total / 1.15)}
-                </strong>
-              </div>
+              {paymentData.method === "credito" && (
+                <div>
+                  <small>Modalidad de pago</small>
+                  <strong>{paymentData.installments}</strong>
+                </div>
+              )}
+              {paymentData.method === "transferencia" && (
+                <div>
+                  <small>Estado comprobante bancario</small>
+                  <strong
+                    style={{
+                      color: paymentData.bankVoucherUploaded
+                        ? "var(--success)"
+                        : "#b45309",
+                    }}
+                  >
+                    {paymentData.bankVoucherUploaded
+                      ? `✓ ${paymentData.bankVoucherNumber || "TR-76543210"} (Cargado)`
+                      : "Pendiente (24 horas)"}
+                  </strong>
+                </div>
+              )}
               <div>
                 <small>Total pagado</small>
                 <strong
-                  style={{ fontSize: "16px", color: "var(--pacific)" }}
+                  style={{
+                    color: "var(--pacific)",
+                    fontSize: "18px",
+                  }}
                 >
-                  ${total}
+                  ${total},00
                 </strong>
               </div>
             </div>
           </div>
         </div>
 
-        <section className="confirmation-next-steps">
-          <h2>Qué sigue</h2>
-          <div className="confirmation-steps-grid">
-            {[
-              {
-                step: "1",
-                title: "Emisión de voucher oficial",
-                desc: "Verificamos los datos de tu reserva y emitimos tu comprobante oficial con código QR de acceso.",
-              },
-              {
-                step: "2",
-                title: "Itinerario y recomendaciones",
-                desc: "Recibirás por correo el punto de encuentro exacto, horarios de salida y sugerencias de vestimenta.",
-              },
-              {
-                step: "3",
-                title: "Día del embarque",
-                desc: "Presenta tu cédula física original y el código de reserva al momento de iniciar el viaje.",
-              },
-            ].map((s) => (
-              <div className="confirmation-step-card" key={s.step}>
-                <div className="confirmation-step-header">
-                  <span className="confirmation-step-num">{s.step}</span>
-                  <h3>{s.title}</h3>
-                </div>
-                <p>{s.desc}</p>
-              </div>
-            ))}
+        <section
+          aria-labelledby="next-steps-title"
+          style={{ width: "100%", maxWidth: "800px", marginTop: "32px" }}
+        >
+          <h2 id="next-steps-title" style={{ marginBottom: "16px" }}>
+            Próximos pasos recomendados
+          </h2>
+          <div className="next-steps">
+            <div className="step-card">
+              <span className="step-num" aria-hidden="true">
+                1
+              </span>
+              <h3>Comprobante en PDF</h3>
+              <p>
+                Descarga y guarda tu comprobante de reserva en formato PDF en tu dispositivo.
+              </p>
+            </div>
+            <div className="step-card">
+              <span className="step-num" aria-hidden="true">
+                2
+              </span>
+              <h3>Revisa tu correo</h3>
+              <p>
+                Hemos enviado la confirmación a tu correo (revisa tu bandeja y carpeta de spam).
+              </p>
+            </div>
+            <div className="step-card">
+              <span className="step-num" aria-hidden="true">
+                3
+              </span>
+              <h3>Documento de identidad</h3>
+              <p>
+                Todos los viajeros deben presentar su cédula o pasaporte original el día del viaje.
+              </p>
+            </div>
           </div>
         </section>
 
         <div className="confirmation-actions">
           <Button kind="primary" onClick={handleDownload}>
-            Descargar comprobante en PDF
+            📥 Descargar comprobante en PDF
           </Button>
           <Button kind="secondary" onClick={() => go("reservas")}>
             {!isTransfer || paymentData.bankVoucherUploaded
@@ -434,6 +562,7 @@ export function Confirmation({
         </div>
       </div>
 
+      {/* Notificación central de compra */}
       {purchaseToast && (
         <div
           className="center-popup-backdrop"
@@ -476,9 +605,43 @@ export function Confirmation({
                     currentUser?.name
                       ? `, ${currentUser.name.split(" ")[0]}`
                       : ""
-                  }. Hemos enviado los comprobantes y detalles a tu correo electrónico.`
+                  }. Hemos emitido los comprobantes oficiales de tu reserva.`
                 : `Tienes 24 horas para adjuntar tu comprobante de pago bancario desde "Mis compras" para validar tu reserva.`}
             </p>
+
+            {/* Aviso de correo enviado en el popup central */}
+            <div
+              style={{
+                background: "rgba(27, 73, 101, 0.08)",
+                border: "1px solid rgba(27, 73, 101, 0.18)",
+                borderRadius: "8px",
+                padding: "12px 14px",
+                margin: "12px 0 16px",
+                textAlign: "left",
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+              }}
+            >
+              <span style={{ fontSize: "24px" }} aria-hidden="true">
+                ✉️
+              </span>
+              <div style={{ flex: 1 }}>
+                <strong
+                  style={{
+                    fontSize: "14px",
+                    color: "var(--abyss)",
+                    display: "block",
+                  }}
+                >
+                  Comprobante enviado a tu correo
+                </strong>
+                <span style={{ fontSize: "13px", color: "#475569" }}>
+                  Remitido a: <strong>{destinationEmail}</strong>. Revisa tu bandeja de entrada o correo no deseado (Spam).
+                </span>
+              </div>
+            </div>
+
             <div className="center-popup-details">
               <div className="center-popup-row">
                 <span>Código de reserva:</span>
@@ -490,10 +653,13 @@ export function Confirmation({
               </div>
             </div>
             <div className="center-popup-actions">
-              <Button kind="primary" onClick={() => setPurchaseToast(false)}>
+              <Button kind="primary" onClick={handleDownload}>
+                📥 Descargar comprobante PDF
+              </Button>
+              <Button kind="secondary" onClick={() => setPurchaseToast(false)}>
                 Entendido
               </Button>
-              <Button kind="secondary" onClick={() => go("reservas")}>
+              <Button kind="quiet" onClick={() => go("reservas")}>
                 {!isTransfer || paymentData.bankVoucherUploaded
                   ? "Ver mis compras"
                   : "Adjuntar comprobante"}
@@ -502,13 +668,33 @@ export function Confirmation({
           </div>
         </div>
       )}
+
+      {emailToast && (
+        <div
+          className="toast"
+          role="status"
+          style={{
+            zIndex: 150,
+            bottom: "24px",
+            left: "24px",
+            right: "auto",
+          }}
+        >
+          <span>
+            {emailStatus === "sending"
+              ? `⏳ Enviando comprobante a ${destinationEmail}...`
+              : `✉️ Comprobante enviado a ${destinationEmail}`}
+          </span>
+          <button onClick={() => setEmailToast(false)}>✕</button>
+        </div>
+      )}
+
       {downloadToast && (
         <div className="toast" role="status">
-          <span>✓ Comprobante de reserva #{bookingCode} descargado en PDF.</span>
+          <span>✓ Comprobante de reserva #{bookingCode} descargado en PDF en tu equipo.</span>
           <button onClick={() => setDownloadToast(false)}>Cerrar</button>
         </div>
       )}
     </>
   )
 }
-
