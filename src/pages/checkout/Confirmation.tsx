@@ -377,22 +377,26 @@ export function Confirmation({
 
         {/* Tarjeta real de envío de correo */}
         <div
+          className={`confirmation-email-card ${emailStatus === "error" ? "confirmation-email-card--error" : "confirmation-email-card--success"}`}
           style={{
             background: emailStatus === "error" ? "#fef2f2" : "#f0fdf4",
             border: `1px solid ${emailStatus === "error" ? "#fca5a5" : "#86efac"}`,
-            borderRadius: "10px",
-            padding: "16px 20px",
-            margin: "20px 0 24px",
+            borderRadius: "12px",
+            padding: "18px 22px",
+            margin: "24px 0",
             display: "flex",
+            flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "space-between",
             alignItems: "center",
-            gap: "14px",
+            gap: "16px",
             textAlign: "left",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <span style={{ display: "grid", placeItems: "center" }} aria-hidden="true">
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "14px", flex: "1 1 340px" }}>
+            <span style={{ display: "grid", placeItems: "center", marginTop: "2px", flexShrink: 0 }} aria-hidden="true">
               {emailStatus === "sending" ? (
                 <ClockIcon size={26} color="#d97706" />
               ) : emailStatus === "error" ? (
@@ -401,24 +405,27 @@ export function Confirmation({
                 <MailIcon size={26} color="var(--success, #16a34a)" />
               )}
             </span>
-            <div>
+            <div style={{ flex: 1 }}>
               <strong
                 style={{
                   color: emailStatus === "error" ? "#991b1b" : "#166534",
                   fontSize: "15px",
                   display: "block",
+                  marginBottom: "4px",
                 }}
               >
                 {emailStatus === "sending"
-                  ? "Enviando comprobante a tu correo electrónico..."
+                  ? "Enviando comprobante a tu correo..."
                   : emailStatus === "error"
                   ? "Información sobre el envío a: " + destinationEmail
-                  : "Comprobante enviado al correo: " + destinationEmail}
+                  : "Comprobante oficial despachado a: " + destinationEmail}
               </strong>
               <span
                 style={{
                   color: emailStatus === "error" ? "#b91c1c" : "#15803d",
                   fontSize: "13.5px",
+                  lineHeight: "1.5",
+                  display: "block",
                 }}
               >
                 {emailStatus === "sending"
@@ -428,7 +435,7 @@ export function Confirmation({
               </span>
             </div>
           </div>
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", alignItems: "center" }}>
             <Button
               kind="secondary"
               type="button"
@@ -1053,9 +1060,6 @@ export function Confirmation({
           role="status"
           style={{
             zIndex: 150,
-            bottom: "24px",
-            left: "24px",
-            right: "auto",
           }}
         >
           <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
@@ -1063,20 +1067,24 @@ export function Confirmation({
               <>
                 <ClockIcon size={14} color="currentColor" /> Enviando comprobante a {destinationEmail}...
               </>
+            ) : emailStatus === "error" ? (
+              <>
+                <AlertTriangleIcon size={14} color="currentColor" /> Estado del envío a {destinationEmail}
+              </>
             ) : (
               <>
                 <MailIcon size={14} color="currentColor" /> Comprobante enviado a {destinationEmail}
               </>
             )}
           </span>
-          <button onClick={() => setEmailToast(false)} style={{ display: "grid", placeItems: "center" }}>
+          <button onClick={() => setEmailToast(false)} style={{ display: "grid", placeItems: "center" }} aria-label="Cerrar notificación">
             <CloseXIcon size={14} />
           </button>
         </div>
       )}
 
       {downloadToast && (
-        <div className="toast" role="status">
+        <div className="toast" role="status" style={{ zIndex: 150 }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
             <CheckIcon size={14} color="currentColor" /> Comprobante de reserva #{bookingCode} descargado en PDF en tu equipo.
           </span>
@@ -1090,9 +1098,7 @@ export function Confirmation({
           role="status"
           style={{
             zIndex: 160,
-            bottom: "80px",
-            left: "24px",
-            right: "auto",
+            bottom: "84px",
             background: "var(--abyss)",
             color: "#ffffff",
           }}
@@ -1100,7 +1106,7 @@ export function Confirmation({
           <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
             <CheckIcon size={14} color="var(--success)" /> Comprobante registrado con éxito (#{currentVoucherNumber}). Tu reserva está en proceso de validación.
           </span>
-          <button onClick={() => setVoucherSuccessToast(false)} style={{ display: "grid", placeItems: "center" }}>
+          <button onClick={() => setVoucherSuccessToast(false)} style={{ display: "grid", placeItems: "center" }} aria-label="Cerrar notificación">
             <CloseXIcon size={14} />
           </button>
         </div>
