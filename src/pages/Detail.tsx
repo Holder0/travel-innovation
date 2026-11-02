@@ -96,6 +96,45 @@ export function Detail({
     setPeople(1)
     setToast(true)
   }
+
+  const activeReviewsList = useMemo(() => {
+    if (pkg.reviews && pkg.reviews.length > 0) return pkg.reviews
+    return [
+      {
+        id: "def-rev-1",
+        userName: "Carlos Andrés Mendoza",
+        rating: 5,
+        title: "¡Una experiencia absolutamente recomendada!",
+        comment: `El paquete a ${pkg.city} superó todas mis expectativas. La puntualidad del guía, los paisajes y los traslados fueron impecables.`,
+        date: "24 oct 2026",
+      },
+      {
+        id: "def-rev-2",
+        userName: "María Belén Salazar",
+        rating: 5,
+        title: "Paisajes inolvidables y excelente servicio",
+        comment: "Todo el cronograma se cumplió a cabalidad. La atención de la agencia fue de primera categoría desde el primer contacto.",
+        date: "19 oct 2026",
+      },
+    ]
+  }, [pkg.reviews, pkg.city])
+
+  const starBreakdown = useMemo(() => {
+    const total = activeReviewsList.length || 1
+    const counts: Record<number, number> = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 }
+    activeReviewsList.forEach((r) => {
+      const s = Math.max(1, Math.min(5, Math.round(r.rating)))
+      counts[s] = (counts[s] || 0) + 1
+    })
+    return {
+      5: Math.round((counts[5] / total) * 100),
+      4: Math.round((counts[4] / total) * 100),
+      3: Math.round((counts[3] / total) * 100),
+      2: Math.round((counts[2] / total) * 100),
+      1: Math.round((counts[1] / total) * 100),
+      average: Number((activeReviewsList.reduce((acc, r) => acc + r.rating, 0) / total).toFixed(1)),
+    }
+  }, [activeReviewsList])
   const resolvedItinerary = useMemo(() => {
     if (pkg.itinerary && pkg.itinerary.length > 0) {
       return pkg.itinerary
@@ -528,74 +567,57 @@ export function Detail({
         </div>
 
         <div className="reviews-grid-layout">
-          {/* Tarjeta de Calificación Global */}
+          {/* Tarjeta de Calificación Global Dinámica */}
           <div className="rating-score-card">
-            <div className="rating-score-huge">{(pkg.rating || 4.9).toFixed(1)}</div>
+            <div className="rating-score-huge">{starBreakdown.average}</div>
             <div className="rating-score-stars">
-              <RatingStars rating={pkg.rating || 4.9} size={24} />
+              <RatingStars rating={starBreakdown.average} size={24} />
             </div>
             <div className="rating-score-count">
-              Basado en {pkg.reviewsCount || 12} experiencias verificadas
+              Basado en {activeReviewsList.length} {activeReviewsList.length === 1 ? "experiencia verificada" : "experiencias verificadas"}
             </div>
             <div className="rating-breakdown">
               <div className="rating-breakdown-row">
                 <span style={{ width: "65px" }}>5 estrellas</span>
                 <div className="rating-breakdown-bar-bg">
-                  <div className="rating-breakdown-bar-fill" style={{ width: "85%" }} />
+                  <div className="rating-breakdown-bar-fill" style={{ width: `${starBreakdown[5]}%` }} />
                 </div>
-                <span style={{ width: "30px", textAlign: "right" }}>85%</span>
+                <span style={{ width: "35px", textAlign: "right" }}>{starBreakdown[5]}%</span>
               </div>
               <div className="rating-breakdown-row">
                 <span style={{ width: "65px" }}>4 estrellas</span>
                 <div className="rating-breakdown-bar-bg">
-                  <div className="rating-breakdown-bar-fill" style={{ width: "15%" }} />
+                  <div className="rating-breakdown-bar-fill" style={{ width: `${starBreakdown[4]}%` }} />
                 </div>
-                <span style={{ width: "30px", textAlign: "right" }}>15%</span>
+                <span style={{ width: "35px", textAlign: "right" }}>{starBreakdown[4]}%</span>
               </div>
               <div className="rating-breakdown-row">
                 <span style={{ width: "65px" }}>3 estrellas</span>
                 <div className="rating-breakdown-bar-bg">
-                  <div className="rating-breakdown-bar-fill" style={{ width: "0%" }} />
+                  <div className="rating-breakdown-bar-fill" style={{ width: `${starBreakdown[3]}%` }} />
                 </div>
-                <span style={{ width: "30px", textAlign: "right" }}>0%</span>
+                <span style={{ width: "35px", textAlign: "right" }}>{starBreakdown[3]}%</span>
               </div>
               <div className="rating-breakdown-row">
                 <span style={{ width: "65px" }}>2 estrellas</span>
                 <div className="rating-breakdown-bar-bg">
-                  <div className="rating-breakdown-bar-fill" style={{ width: "0%" }} />
+                  <div className="rating-breakdown-bar-fill" style={{ width: `${starBreakdown[2]}%` }} />
                 </div>
-                <span style={{ width: "30px", textAlign: "right" }}>0%</span>
+                <span style={{ width: "35px", textAlign: "right" }}>{starBreakdown[2]}%</span>
               </div>
               <div className="rating-breakdown-row">
                 <span style={{ width: "65px" }}>1 estrella</span>
                 <div className="rating-breakdown-bar-bg">
-                  <div className="rating-breakdown-bar-fill" style={{ width: "0%" }} />
+                  <div className="rating-breakdown-bar-fill" style={{ width: `${starBreakdown[1]}%` }} />
                 </div>
-                <span style={{ width: "30px", textAlign: "right" }}>0%</span>
+                <span style={{ width: "35px", textAlign: "right" }}>{starBreakdown[1]}%</span>
               </div>
             </div>
           </div>
 
-          {/* Listado de Opiniones de Clientes (Solo Lectura, sin formulario) */}
+          {/* Listado de Opiniones de Clientes */}
           <div className="reviews-list">
-            {(pkg.reviews && pkg.reviews.length > 0 ? pkg.reviews : [
-              {
-                id: "def-rev-1",
-                userName: "Carlos Andrés Mendoza",
-                rating: 5,
-                title: "¡Una experiencia absolutamente recomendada!",
-                comment: `El paquete a ${pkg.city} superó todas mis expectativas. La puntualidad del guía, los paisajes y los traslados fueron impecables.`,
-                date: "24 oct 2026",
-              },
-              {
-                id: "def-rev-2",
-                userName: "María Belén Salazar",
-                rating: 5,
-                title: "Paisajes inolvidables y excelente servicio",
-                comment: "Todo el cronograma se cumplió a cabalidad. La atención de la agencia fue de primera categoría desde el primer contacto.",
-                date: "19 oct 2026",
-              },
-            ]).map((rev) => (
+            {activeReviewsList.map((rev) => (
               <article key={rev.id} className="review-card">
                 <div className="review-card-header">
                   <div className="review-card-user">

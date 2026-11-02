@@ -1022,4 +1022,84 @@ export async function updateSupabaseEmail(
   }
 }
 
+/**
+ * Registra o actualiza una reseña comunitaria de un paquete turístico en Supabase.
+ */
+export async function submitReviewToSupabase(review: {
+  packageId: string
+  packageName: string
+  rating: number
+  title: string
+  comment: string
+  userName: string
+  userEmail?: string
+}): Promise<{ success: boolean; reviewId?: string; error?: string }> {
+  if (!isSupabaseConfigured()) {
+    return { success: true, reviewId: `local-${Date.now()}` }
+  }
+
+  try {
+    // 1. Obtener ID de usuario
+    const { data: authData } = await supabase.auth.getUser()
+    let userId = authData?.user?.id
+
+    if (!userId && review.userEmail) {
+      const { data: userProfile } = await supabase
+        .from("usuarios")
+        .select("id")
+        .eq("email", review.userEmail)
+        .maybeSingle()
+      if (userProfile?.id) userId = userProfile.id
+    }
+
+    if (!userId) {
+      const { data: firstUser } = await supabase.from("usuarios").select("id").limit(1).single()
+      userId = firstUser?.id
+    }
+
+    if (!userId) {
+      return { success: false, error: "No se encontró un usuario para registrar la reseña." }
+    }
+
+    // 2. Resolver UUID del paquete
+    let paqueteDbId = review.packageId
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(paqueteDbId)
+
+    if (!isUuid) {
+      const { data: pkgFound } = await supabase
+        .from("paquetes")
+        .select("id")
+        .ilike("nombre", `%${review.packageName.split(" ")[0]}%`)
+        .limit(1)
+        .maybeSingle()
+      if (pkgFound?.id) paqueteDbId = pkgFound.id
+    }
+
+    const { data: newReview, error: errInsert } = await supabase
+      .from("resenas")
+      .upsert(
+        {
+          paquete_id: paqueteDbId,
+          usuario_id: userId,
+          calificacion: Math.max(1, Math.min(5, review.rating)),
+          titulo: review.title.trim() || "Experiencia de viaje",
+          comentario: review.comment.trim(),
+        },
+        { onConflict: "paquete_id,usuario_id" }
+      )
+      .select()
+      .single()
+
+    if (errInsert) {
+      console.warn("Aviso al guardar reseña en Supabase:", errInsert.message)
+      return { success: false, error: errInsert.message }
+    }
+
+    return { success: true, reviewId: newReview?.id }
+  } catch (err: any) {
+    console.error("Error al registrar reseña:", err)
+    return { success: false, error: err?.message || "Error al registrar reseña" }
+  }
+}
+
 

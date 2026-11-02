@@ -895,6 +895,77 @@ export default function App() {
     }
   }
 
+  const handleAddReview = (reviewData: {
+    packageId: string
+    packageName: string
+    rating: number
+    title: string
+    comment: string
+    userName: string
+  }) => {
+    const formattedDate = new Date().toLocaleDateString("es-EC", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+
+    const newRev = {
+      id: `rev-${Date.now()}`,
+      userName: reviewData.userName,
+      rating: reviewData.rating,
+      title: reviewData.title,
+      comment: reviewData.comment,
+      date: formattedDate,
+    }
+
+    setPackagesList((prev) =>
+      prev.map((p) => {
+        const isMatch =
+          p.id === reviewData.packageId ||
+          p.name.toLowerCase().trim() === reviewData.packageName.toLowerCase().trim()
+
+        if (isMatch) {
+          const currentReviews = p.reviews || []
+          const updatedReviews = [newRev, ...currentReviews]
+          const newAvg = Number(
+            (updatedReviews.reduce((sum, r) => sum + r.rating, 0) / updatedReviews.length).toFixed(1)
+          )
+          const updatedPkg = {
+            ...p,
+            reviews: updatedReviews,
+            reviewsCount: (p.reviewsCount || currentReviews.length) + 1,
+            rating: newAvg,
+          }
+          if (selectedPackage && (selectedPackage.id === p.id || selectedPackage.name === p.name)) {
+            setSelectedPackage(updatedPkg)
+          }
+          return updatedPkg
+        }
+        return p
+      })
+    )
+
+    setSelectedPackage((prev) => {
+      const isMatch =
+        prev.id === reviewData.packageId ||
+        prev.name.toLowerCase().trim() === reviewData.packageName.toLowerCase().trim()
+      if (isMatch) {
+        const currentReviews = prev.reviews || []
+        const updatedReviews = [newRev, ...currentReviews]
+        const newAvg = Number(
+          (updatedReviews.reduce((sum, r) => sum + r.rating, 0) / updatedReviews.length).toFixed(1)
+        )
+        return {
+          ...prev,
+          reviews: updatedReviews,
+          reviewsCount: (prev.reviewsCount || currentReviews.length) + 1,
+          rating: newAvg,
+        }
+      }
+      return prev
+    })
+  }
+
   const content = useMemo(() => {
     switch (page) {
       case "inicio":
@@ -1037,6 +1108,7 @@ export default function App() {
             currentUser={currentUser}
             supportTickets={supportTickets}
             onAttachVoucher={handleAttachVoucher}
+            onAddReview={handleAddReview}
           />
         )
       case "politicas":

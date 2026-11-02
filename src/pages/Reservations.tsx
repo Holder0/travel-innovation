@@ -12,8 +12,11 @@ import {
   CalendarIcon,
   UsersGroupIcon,
   DownloadIcon,
+  StarIcon,
 } from "../components/common/SvgIcons"
 import { generateBookingPdf } from "../utils/pdfGenerator"
+import { ReviewModal } from "../components/modals/ReviewModal"
+import { submitReviewToSupabase } from "../services/supabaseService"
 
 export function Reservations({
   go,
@@ -21,6 +24,7 @@ export function Reservations({
   currentUser = null,
   supportTickets = [],
   onAttachVoucher,
+  onAddReview,
 }: {
   go: (page: Page) => void
   purchases?: PurchaseItem[]
@@ -31,6 +35,14 @@ export function Reservations({
     voucherNumber?: string,
     fileName?: string
   ) => void
+  onAddReview?: (reviewData: {
+    packageId: string
+    packageName: string
+    rating: number
+    title: string
+    comment: string
+    userName: string
+  }) => void
 }) {
   const [activePurchaseId, setActivePurchaseId] = useState<string>(
     purchases[0]?.id || ""
@@ -41,6 +53,66 @@ export function Reservations({
   const [voucherFileReady, setVoucherFileReady] = useState(false)
   const [uploadedFileName, setUploadedFileName] = useState("")
   const [isUploading, setIsUploading] = useState(false)
+
+  // Review modal state
+  const [reviewModalOpen, setReviewModalOpen] = useState(false)
+  const [reviewTargetPkg, setReviewTargetPkg] = useState<{
+    id: string
+    name: string
+    city?: string
+    province?: string
+  } | null>(null)
+  const [reviewedMap, setReviewedMap] = useState<Record<string, boolean>>(() => {
+    try {
+      const saved = localStorage.getItem("ti_reviewed_packages")
+      return saved ? JSON.parse(saved) : {}
+    } catch {
+      return {}
+    }
+  })
+  const [reviewToast, setReviewToast] = useState("")
+
+  const handleOpenReview = (pkgItem: { id: string; name: string; city: string; province: string }) => {
+    setReviewTargetPkg(pkgItem)
+    setReviewModalOpen(true)
+  }
+
+  const handleReviewSubmit = async (reviewData: {
+    packageId: string
+    packageName: string
+    rating: number
+    title: string
+    comment: string
+    userName: string
+  }): Promise<boolean> => {
+    try {
+      await submitReviewToSupabase({
+        ...reviewData,
+        userEmail: currentUser?.email,
+      })
+
+      onAddReview?.(reviewData)
+
+      const nextMap = {
+        ...reviewedMap,
+        [reviewData.packageId]: true,
+        [reviewData.packageName]: true,
+      }
+      setReviewedMap(nextMap)
+      try {
+        localStorage.setItem("ti_reviewed_packages", JSON.stringify(nextMap))
+      } catch {}
+
+      setReviewToast(
+        `¡Gracias por tu reseña! Tu opinión de ${reviewData.rating} estrellas ya es visible en la página del paquete.`
+      )
+      setTimeout(() => setReviewToast(""), 5000)
+      return true
+    } catch (err) {
+      console.error("Error al enviar reseña:", err)
+      return false
+    }
+  }
 
   // Reset voucher form when switching purchase
   useEffect(() => {
@@ -577,7 +649,7 @@ export function Reservations({
                               (${pkgItem.price} c/u)
                             </small>
                           </div>
-                          <div style={{ textAlign: "right" }}>
+                          <div style={{ textAlign: "right", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6px" }}>
                             <strong
                               style={{
                                 fontSize: "17px",
@@ -586,6 +658,55 @@ export function Reservations({
                             >
                               ${pkgItem.total}
                             </strong>
+                            {reviewedMap[pkgItem.id] || reviewedMap[pkgItem.name] ? (
+                              <span
+                                style={{
+                                  display: "inline-flex",
+                                  alignItems: "center",
+                                  gap: "4px",
+                                  fontSize: "12px",
+                                  color: "#059669",
+                                  fontWeight: 600,
+                                  background: "#ecfdf5",
+                                  padding: "3px 8px",
+                                  borderRadius: "4px",
+                                  border: "1px solid #a7f3d0",
+                                }}
+                              >
+                                <CheckIcon size={12} color="#059669" /> Reseña enviada
+                              </span>
+                            ) : (
+                              <button
+                                type="button"
+                                onClick={() => handleOpenReview(pkgItem)}
+                                style={{
+                                  display: "inline-flex",
+                                  alignItems: "center",
+                                  gap: "5px",
+                                  background: "var(--pacific)",
+                                  color: "#ffffff",
+                                  border: "none",
+                                  borderRadius: "4px",
+                                  padding: "5px 11px",
+                                  fontSize: "12px",
+                                  fontWeight: 700,
+                                  cursor: "pointer",
+                                  boxShadow: "0 1px 3px rgba(15, 31, 44, 0.15)",
+                                  transition: "all 0.2s ease",
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.opacity = "0.9"
+                                  e.currentTarget.style.transform = "scale(1.03)"
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.opacity = "1"
+                                  e.currentTarget.style.transform = "scale(1)"
+                                }}
+                                aria-label={`Dejar reseña para ${pkgItem.name}`}
+                              >
+                                <StarIcon filled={true} size={13} fillColor="#fcd34d" /> Dejar reseña
+                              </button>
+                            )}
                           </div>
                         </div>
 
@@ -812,6 +933,23 @@ export function Reservations({
           <button onClick={() => setVoucherSuccessToast("")}>Cerrar</button>
         </div>
       )}
+      {reviewToast && (
+        <div className="toast" role="status" style={{ background: "var(--pacific)", color: "#ffffff" }}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+            <CheckIcon size={14} color="#34d399" /> {reviewToast}
+          </span>
+          <button onClick={() => setReviewToast("")}>Cerrar</button>
+        </div>
+      )}
+
+      {/* Modal flotante para escribir y publicar reseña */}
+      <ReviewModal
+        isOpen={reviewModalOpen}
+        onClose={() => setReviewModalOpen(false)}
+        packageInfo={reviewTargetPkg}
+        currentUser={currentUser}
+        onSubmitReview={handleReviewSubmit}
+      />
     </>
   )
 }
