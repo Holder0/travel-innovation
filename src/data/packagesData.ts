@@ -10,10 +10,10 @@ export const packages: PackageItem[] = [
     "city": "Girón",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "12 al 13 dic CURRENT_YEAR",
+    "datesText": "12 al 13 dic 2026",
     "availableDates": [
-      "12 al 13 dic CURRENT_YEAR",
-      "19 al 20 dic CURRENT_YEAR"
+      "12 al 13 dic 2026",
+      "19 al 20 dic 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -61,7 +61,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Canyoning y Rappel!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-1-2",
@@ -69,7 +69,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -81,10 +81,10 @@ export const packages: PackageItem[] = [
     "city": "Cuenca",
     "days": "2 días / 1 noche",
     "price": 140,
-    "datesText": "14 al 15 ene CURRENT_YEAR",
+    "datesText": "14 al 15 ene 2027",
     "availableDates": [
-      "14 al 15 ene CURRENT_YEAR",
-      "21 al 22 ene CURRENT_YEAR"
+      "14 al 15 ene 2027",
+      "21 al 22 ene 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -132,7 +132,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Biodiversidad Andina!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-2-2",
@@ -140,7 +140,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -152,10 +152,10 @@ export const packages: PackageItem[] = [
     "city": "San Fernando",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "16 al 17 feb CURRENT_YEAR",
+    "datesText": "16 al 17 feb 2027",
     "availableDates": [
-      "16 al 17 feb CURRENT_YEAR",
-      "23 al 24 feb CURRENT_YEAR"
+      "16 al 17 feb 2027",
+      "23 al 24 feb 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -203,7 +203,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descanso y Paseo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-3-2",
@@ -211,7 +211,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -223,10 +223,10 @@ export const packages: PackageItem[] = [
     "city": "Cuenca",
     "days": "3 días / 2 noches",
     "price": 195,
-    "datesText": "18 al 20 nov CURRENT_YEAR",
+    "datesText": "18 al 20 nov 2026",
     "availableDates": [
-      "18 al 20 nov CURRENT_YEAR",
-      "25 al 27 nov CURRENT_YEAR"
+      "18 al 20 nov 2026",
+      "25 al 27 nov 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -284,7 +284,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cuenca Colonial, Museos y Catedral de la Inmaculada!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-4-2",
@@ -292,7 +292,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -304,10 +304,10 @@ export const packages: PackageItem[] = [
     "city": "Santa Isabel",
     "days": "3 días / 2 noches",
     "price": 240,
-    "datesText": "20 al 22 dic CURRENT_YEAR",
+    "datesText": "20 al 22 dic 2026",
     "availableDates": [
-      "20 al 22 dic CURRENT_YEAR",
-      "27 al 29 dic CURRENT_YEAR"
+      "20 al 22 dic 2026",
+      "27 al 29 dic 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -365,7 +365,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Escapada Romántica!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-5-2",
@@ -373,7 +373,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -385,10 +385,10 @@ export const packages: PackageItem[] = [
     "city": "Paute",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "22 al 23 ene CURRENT_YEAR",
+    "datesText": "22 al 23 ene 2027",
     "availableDates": [
-      "22 al 23 ene CURRENT_YEAR",
-      "29 al 30 ene CURRENT_YEAR"
+      "22 al 23 ene 2027",
+      "29 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -436,7 +436,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de los Ríos, Zoológico Yurak Allpa y Paute!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-6-2",
@@ -444,7 +444,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -456,10 +456,10 @@ export const packages: PackageItem[] = [
     "city": "Gualaceo",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "24 al 25 feb CURRENT_YEAR",
+    "datesText": "24 al 25 feb 2027",
     "availableDates": [
-      "24 al 25 feb CURRENT_YEAR",
-      "31 al 32 feb CURRENT_YEAR"
+      "24 al 25 feb 2027",
+      "31 al 32 feb 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -507,7 +507,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Mote Pillo, Chancho Hornado y Cuy Asado Cuencano!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-7-2",
@@ -515,7 +515,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -527,10 +527,10 @@ export const packages: PackageItem[] = [
     "city": "Cuenca",
     "days": "3 días / 2 noches",
     "price": 170,
-    "datesText": "11 al 13 nov CURRENT_YEAR",
+    "datesText": "11 al 13 nov 2026",
     "availableDates": [
-      "11 al 13 nov CURRENT_YEAR",
-      "18 al 20 nov CURRENT_YEAR"
+      "11 al 13 nov 2026",
+      "18 al 20 nov 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -588,7 +588,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking de Altura por Lagunas Toreadora y Llaviucu!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-8-2",
@@ -596,7 +596,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -608,10 +608,10 @@ export const packages: PackageItem[] = [
     "city": "Cuenca",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "13 al 14 dic CURRENT_YEAR",
+    "datesText": "13 al 14 dic 2026",
     "availableDates": [
-      "13 al 14 dic CURRENT_YEAR",
-      "20 al 21 dic CURRENT_YEAR"
+      "13 al 14 dic 2026",
+      "20 al 21 dic 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -659,7 +659,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Circuito Termal y Baños de Lodo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-9-2",
@@ -667,7 +667,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -679,10 +679,10 @@ export const packages: PackageItem[] = [
     "city": "Chordeleg",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "15 al 16 ene CURRENT_YEAR",
+    "datesText": "15 al 16 ene 2027",
     "availableDates": [
-      "15 al 16 ene CURRENT_YEAR",
-      "22 al 23 ene CURRENT_YEAR"
+      "15 al 16 ene 2027",
+      "22 al 23 ene 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -730,7 +730,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Talleres de Filigrana!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-10-2",
@@ -738,7 +738,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -750,10 +750,10 @@ export const packages: PackageItem[] = [
     "city": "Guaranda",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "17 al 18 feb CURRENT_YEAR",
+    "datesText": "17 al 18 feb 2027",
     "availableDates": [
-      "17 al 18 feb CURRENT_YEAR",
-      "24 al 25 feb CURRENT_YEAR"
+      "17 al 18 feb 2027",
+      "24 al 25 feb 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -801,7 +801,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descenso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-11-2",
@@ -809,7 +809,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -821,10 +821,10 @@ export const packages: PackageItem[] = [
     "city": "Guaranda",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "19 al 20 nov CURRENT_YEAR",
+    "datesText": "19 al 20 nov 2026",
     "availableDates": [
-      "19 al 20 nov CURRENT_YEAR",
-      "26 al 27 nov CURRENT_YEAR"
+      "19 al 20 nov 2026",
+      "26 al 27 nov 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -872,7 +872,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva de Producción Faunística y Bosque de Polylepis!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-12-2",
@@ -880,7 +880,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -892,10 +892,10 @@ export const packages: PackageItem[] = [
     "city": "Caluma",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "21 al 22 dic CURRENT_YEAR",
+    "datesText": "21 al 22 dic 2026",
     "availableDates": [
-      "21 al 22 dic CURRENT_YEAR",
-      "28 al 29 dic CURRENT_YEAR"
+      "21 al 22 dic 2026",
+      "28 al 29 dic 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -943,7 +943,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Relax Subtropical y Huertos Frutales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-13-2",
@@ -951,7 +951,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -963,10 +963,10 @@ export const packages: PackageItem[] = [
     "city": "San Miguel",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "23 al 24 ene CURRENT_YEAR",
+    "datesText": "23 al 24 ene 2027",
     "availableDates": [
-      "23 al 24 ene CURRENT_YEAR",
-      "30 al 31 ene CURRENT_YEAR"
+      "23 al 24 ene 2027",
+      "30 al 31 ene 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -1014,7 +1014,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Santuario de la Virgen del Huayco y Centro de Guaranda!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-14-2",
@@ -1022,7 +1022,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1034,10 +1034,10 @@ export const packages: PackageItem[] = [
     "city": "Chillanes",
     "days": "2 días / 1 noche",
     "price": 145,
-    "datesText": "10 al 11 feb CURRENT_YEAR",
+    "datesText": "10 al 11 feb 2027",
     "availableDates": [
-      "10 al 11 feb CURRENT_YEAR",
-      "17 al 18 feb CURRENT_YEAR"
+      "10 al 11 feb 2027",
+      "17 al 18 feb 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -1085,7 +1085,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Glamping!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-15-2",
@@ -1093,7 +1093,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1105,10 +1105,10 @@ export const packages: PackageItem[] = [
     "city": "Echeandía",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "12 al 13 nov CURRENT_YEAR",
+    "datesText": "12 al 13 nov 2026",
     "availableDates": [
-      "12 al 13 nov CURRENT_YEAR",
-      "19 al 20 nov CURRENT_YEAR"
+      "12 al 13 nov 2026",
+      "19 al 20 nov 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -1156,7 +1156,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Complejo Turístico Las Tres Cruces y Cascadas de Echeandía!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-16-2",
@@ -1164,7 +1164,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1176,10 +1176,10 @@ export const packages: PackageItem[] = [
     "city": "Guaranda",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "14 al 15 dic CURRENT_YEAR",
+    "datesText": "14 al 15 dic 2026",
     "availableDates": [
-      "14 al 15 dic CURRENT_YEAR",
-      "21 al 22 dic CURRENT_YEAR"
+      "14 al 15 dic 2026",
+      "21 al 22 dic 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -1227,7 +1227,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cata de Quesos de Salinas de Guaranda y Chocolates Finos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-17-2",
@@ -1235,7 +1235,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1247,10 +1247,10 @@ export const packages: PackageItem[] = [
     "city": "Guaranda",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "16 al 17 ene CURRENT_YEAR",
+    "datesText": "16 al 17 ene 2027",
     "availableDates": [
-      "16 al 17 ene CURRENT_YEAR",
-      "23 al 24 ene CURRENT_YEAR"
+      "16 al 17 ene 2027",
+      "23 al 24 ene 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -1298,7 +1298,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking al Refugio Hermanos Carrel por la Ruta Bolívar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-18-2",
@@ -1306,7 +1306,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1318,10 +1318,10 @@ export const packages: PackageItem[] = [
     "city": "San Miguel",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "18 al 19 feb CURRENT_YEAR",
+    "datesText": "18 al 19 feb 2027",
     "availableDates": [
-      "18 al 19 feb CURRENT_YEAR",
-      "25 al 26 feb CURRENT_YEAR"
+      "18 al 19 feb 2027",
+      "25 al 26 feb 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -1369,7 +1369,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Spa Andino con Vistas a la Cordillera Occidental!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-19-2",
@@ -1377,7 +1377,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1389,10 +1389,10 @@ export const packages: PackageItem[] = [
     "city": "Guaranda",
     "days": "3 días / 2 noches",
     "price": 155,
-    "datesText": "20 al 22 nov CURRENT_YEAR",
+    "datesText": "20 al 22 nov 2026",
     "availableDates": [
-      "20 al 22 nov CURRENT_YEAR",
-      "27 al 29 nov CURRENT_YEAR"
+      "20 al 22 nov 2026",
+      "27 al 29 nov 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -1450,7 +1450,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Experiencia Comunitaria Solidaria!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-20-2",
@@ -1458,7 +1458,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1470,10 +1470,10 @@ export const packages: PackageItem[] = [
     "city": "Azogues",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "22 al 23 dic CURRENT_YEAR",
+    "datesText": "22 al 23 dic 2026",
     "availableDates": [
-      "22 al 23 dic CURRENT_YEAR",
-      "29 al 30 dic CURRENT_YEAR"
+      "22 al 23 dic 2026",
+      "29 al 30 dic 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -1521,7 +1521,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Escalada!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-21-2",
@@ -1529,7 +1529,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1541,10 +1541,10 @@ export const packages: PackageItem[] = [
     "city": "Cañar",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "24 al 25 ene CURRENT_YEAR",
+    "datesText": "24 al 25 ene 2027",
     "availableDates": [
-      "24 al 25 ene CURRENT_YEAR",
-      "31 al 32 ene CURRENT_YEAR"
+      "24 al 25 ene 2027",
+      "31 al 32 ene 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -1592,7 +1592,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Sendero Natural!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-22-2",
@@ -1600,7 +1600,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1612,10 +1612,10 @@ export const packages: PackageItem[] = [
     "city": "La Troncal",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "11 al 12 feb CURRENT_YEAR",
+    "datesText": "11 al 12 feb 2027",
     "availableDates": [
-      "11 al 12 feb CURRENT_YEAR",
-      "18 al 19 feb CURRENT_YEAR"
+      "11 al 12 feb 2027",
+      "18 al 19 feb 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -1663,7 +1663,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Acuático y Balnearios Tropicales de La Troncal!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-23-2",
@@ -1671,7 +1671,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1683,10 +1683,10 @@ export const packages: PackageItem[] = [
     "city": "Cañar",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "13 al 14 nov CURRENT_YEAR",
+    "datesText": "13 al 14 nov 2026",
     "availableDates": [
-      "13 al 14 nov CURRENT_YEAR",
-      "20 al 21 nov CURRENT_YEAR"
+      "13 al 14 nov 2026",
+      "20 al 21 nov 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -1734,7 +1734,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Complejo Arqueológico y Templo del Sol de Ingapirca!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-24-2",
@@ -1742,7 +1742,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1754,10 +1754,10 @@ export const packages: PackageItem[] = [
     "city": "Biblián",
     "days": "2 días / 1 noche",
     "price": 140,
-    "datesText": "15 al 16 dic CURRENT_YEAR",
+    "datesText": "15 al 16 dic 2026",
     "availableDates": [
-      "15 al 16 dic CURRENT_YEAR",
-      "22 al 23 dic CURRENT_YEAR"
+      "15 al 16 dic 2026",
+      "22 al 23 dic 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -1805,7 +1805,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Romance con Vista al Santuario de la Virgen del Rocío!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-25-2",
@@ -1813,7 +1813,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1825,10 +1825,10 @@ export const packages: PackageItem[] = [
     "city": "El Tambo",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "17 al 18 ene CURRENT_YEAR",
+    "datesText": "17 al 18 ene 2027",
     "availableDates": [
-      "17 al 18 ene CURRENT_YEAR",
-      "24 al 25 ene CURRENT_YEAR"
+      "17 al 18 ene 2027",
+      "24 al 25 ene 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -1876,7 +1876,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-26-2",
@@ -1884,7 +1884,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1896,10 +1896,10 @@ export const packages: PackageItem[] = [
     "city": "Azogues",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "19 al 20 feb CURRENT_YEAR",
+    "datesText": "19 al 20 feb 2027",
     "availableDates": [
-      "19 al 20 feb CURRENT_YEAR",
-      "26 al 27 feb CURRENT_YEAR"
+      "19 al 20 feb 2027",
+      "26 al 27 feb 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -1947,7 +1947,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Tour Gastronómico de Cascaritas de Azogues y Chicha de Jora!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-27-2",
@@ -1955,7 +1955,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -1967,10 +1967,10 @@ export const packages: PackageItem[] = [
     "city": "El Tambo",
     "days": "3 días / 2 noches",
     "price": 165,
-    "datesText": "21 al 23 nov CURRENT_YEAR",
+    "datesText": "21 al 23 nov 2026",
     "availableDates": [
-      "21 al 23 nov CURRENT_YEAR",
-      "28 al 30 nov CURRENT_YEAR"
+      "21 al 23 nov 2026",
+      "28 al 30 nov 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -2028,7 +2028,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking por el Gran Qhapaq Ñan (Camino del Inca)!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-28-2",
@@ -2036,7 +2036,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2048,10 +2048,10 @@ export const packages: PackageItem[] = [
     "city": "La Troncal",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "23 al 24 dic CURRENT_YEAR",
+    "datesText": "23 al 24 dic 2026",
     "availableDates": [
-      "23 al 24 dic CURRENT_YEAR",
-      "30 al 31 dic CURRENT_YEAR"
+      "23 al 24 dic 2026",
+      "30 al 31 dic 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -2099,7 +2099,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Aguas Termales Minerales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-29-2",
@@ -2107,7 +2107,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2119,10 +2119,10 @@ export const packages: PackageItem[] = [
     "city": "Cañar",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "10 al 11 ene CURRENT_YEAR",
+    "datesText": "10 al 11 ene 2027",
     "availableDates": [
-      "10 al 11 ene CURRENT_YEAR",
-      "17 al 18 ene CURRENT_YEAR"
+      "10 al 11 ene 2027",
+      "17 al 18 ene 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -2170,7 +2170,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Tradiciones Cañaris y Tejido de Ponchos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-30-2",
@@ -2178,7 +2178,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2190,10 +2190,10 @@ export const packages: PackageItem[] = [
     "city": "Mira",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "12 al 13 feb CURRENT_YEAR",
+    "datesText": "12 al 13 feb 2027",
     "availableDates": [
-      "12 al 13 feb CURRENT_YEAR",
-      "19 al 20 feb CURRENT_YEAR"
+      "12 al 13 feb 2027",
+      "19 al 20 feb 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -2241,7 +2241,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cicloturismo y Cañonismo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-31-2",
@@ -2249,7 +2249,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2261,10 +2261,10 @@ export const packages: PackageItem[] = [
     "city": "El Ángel (Espejo)",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "14 al 15 nov CURRENT_YEAR",
+    "datesText": "14 al 15 nov 2026",
     "availableDates": [
-      "14 al 15 nov CURRENT_YEAR",
-      "21 al 22 nov CURRENT_YEAR"
+      "14 al 15 nov 2026",
+      "21 al 22 nov 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -2312,7 +2312,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva Ecológica El Ángel y Bosque de Frailejones Gigantes!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-32-2",
@@ -2320,7 +2320,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2332,10 +2332,10 @@ export const packages: PackageItem[] = [
     "city": "Mira",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "16 al 17 dic CURRENT_YEAR",
+    "datesText": "16 al 17 dic 2026",
     "availableDates": [
-      "16 al 17 dic CURRENT_YEAR",
-      "23 al 24 dic CURRENT_YEAR"
+      "16 al 17 dic 2026",
+      "23 al 24 dic 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -2383,7 +2383,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Tranquilidad y Clima Cálido!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-33-2",
@@ -2391,7 +2391,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2403,10 +2403,10 @@ export const packages: PackageItem[] = [
     "city": "Tulcán",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "18 al 19 ene CURRENT_YEAR",
+    "datesText": "18 al 19 ene 2027",
     "availableDates": [
-      "18 al 19 ene CURRENT_YEAR",
-      "25 al 26 ene CURRENT_YEAR"
+      "18 al 19 ene 2027",
+      "25 al 26 ene 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -2454,7 +2454,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Esculturas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-34-2",
@@ -2462,7 +2462,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2474,10 +2474,10 @@ export const packages: PackageItem[] = [
     "city": "San Gabriel (Montúfar)",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "20 al 21 feb CURRENT_YEAR",
+    "datesText": "20 al 21 feb 2027",
     "availableDates": [
-      "20 al 21 feb CURRENT_YEAR",
-      "27 al 28 feb CURRENT_YEAR"
+      "20 al 21 feb 2027",
+      "27 al 28 feb 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -2525,7 +2525,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabaña Romántica y Laguna Volcánica de El Salado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-35-2",
@@ -2533,7 +2533,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2545,10 +2545,10 @@ export const packages: PackageItem[] = [
     "city": "San Gabriel (Montúfar)",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "22 al 23 nov CURRENT_YEAR",
+    "datesText": "22 al 23 nov 2026",
     "availableDates": [
-      "22 al 23 nov CURRENT_YEAR",
-      "29 al 30 nov CURRENT_YEAR"
+      "22 al 23 nov 2026",
+      "29 al 30 nov 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -2596,7 +2596,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Bosque de los Arrayanes de San Gabriel y Paseo Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-36-2",
@@ -2604,7 +2604,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2616,10 +2616,10 @@ export const packages: PackageItem[] = [
     "city": "Tulcán",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "24 al 25 dic CURRENT_YEAR",
+    "datesText": "24 al 25 dic 2026",
     "availableDates": [
-      "24 al 25 dic CURRENT_YEAR",
-      "31 al 32 dic CURRENT_YEAR"
+      "24 al 25 dic 2026",
+      "31 al 32 dic 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -2667,7 +2667,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Queso Pastuzo, Tardón Mireño y Hornado Pastuso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-37-2",
@@ -2675,7 +2675,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2687,10 +2687,10 @@ export const packages: PackageItem[] = [
     "city": "Tulcán",
     "days": "2 días / 1 noche",
     "price": 140,
-    "datesText": "11 al 12 ene CURRENT_YEAR",
+    "datesText": "11 al 12 ene 2027",
     "availableDates": [
-      "11 al 12 ene CURRENT_YEAR",
-      "18 al 19 ene CURRENT_YEAR"
+      "11 al 12 ene 2027",
+      "18 al 19 ene 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -2738,7 +2738,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking al Volcán Chiles y Lagunas Verdes Azufradas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-38-2",
@@ -2746,7 +2746,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2758,10 +2758,10 @@ export const packages: PackageItem[] = [
     "city": "Bolívar",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "13 al 14 feb CURRENT_YEAR",
+    "datesText": "13 al 14 feb 2027",
     "availableDates": [
-      "13 al 14 feb CURRENT_YEAR",
-      "20 al 21 feb CURRENT_YEAR"
+      "13 al 14 feb 2027",
+      "20 al 21 feb 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -2809,7 +2809,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Santuario y Baños Termales de la Gruta de la Paz!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-39-2",
@@ -2817,7 +2817,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2829,10 +2829,10 @@ export const packages: PackageItem[] = [
     "city": "Huaca",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "15 al 16 nov CURRENT_YEAR",
+    "datesText": "15 al 16 nov 2026",
     "availableDates": [
-      "15 al 16 nov CURRENT_YEAR",
-      "22 al 23 nov CURRENT_YEAR"
+      "15 al 16 nov 2026",
+      "22 al 23 nov 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -2880,7 +2880,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Convivencia Pasto y Mitos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-40-2",
@@ -2888,7 +2888,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2900,10 +2900,10 @@ export const packages: PackageItem[] = [
     "city": "Riobamba",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "17 al 18 dic CURRENT_YEAR",
+    "datesText": "17 al 18 dic 2026",
     "availableDates": [
-      "17 al 18 dic CURRENT_YEAR",
-      "24 al 25 dic CURRENT_YEAR"
+      "17 al 18 dic 2026",
+      "24 al 25 dic 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -2951,7 +2951,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de Ciclismo Extremo Downhill desde el Taita Chimborazo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-41-2",
@@ -2959,7 +2959,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -2971,10 +2971,10 @@ export const packages: PackageItem[] = [
     "city": "Riobamba",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "19 al 20 ene CURRENT_YEAR",
+    "datesText": "19 al 20 ene 2027",
     "availableDates": [
-      "19 al 20 ene CURRENT_YEAR",
-      "26 al 27 ene CURRENT_YEAR"
+      "19 al 20 ene 2027",
+      "26 al 27 ene 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -3022,7 +3022,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Avistamiento de Vicuñas Silvestres y Cóndor Andino!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-42-2",
@@ -3030,7 +3030,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3042,10 +3042,10 @@ export const packages: PackageItem[] = [
     "city": "Pallatanga",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "21 al 22 feb CURRENT_YEAR",
+    "datesText": "21 al 22 feb 2027",
     "availableDates": [
-      "21 al 22 feb CURRENT_YEAR",
-      "28 al 29 feb CURRENT_YEAR"
+      "21 al 22 feb 2027",
+      "28 al 29 feb 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -3093,7 +3093,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Fin de Semana de Campo y Sol!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-43-2",
@@ -3101,7 +3101,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3113,10 +3113,10 @@ export const packages: PackageItem[] = [
     "city": "Alausí",
     "days": "2 días / 1 noche",
     "price": 150,
-    "datesText": "23 al 24 nov CURRENT_YEAR",
+    "datesText": "23 al 24 nov 2026",
     "availableDates": [
-      "23 al 24 nov CURRENT_YEAR",
-      "30 al 31 nov CURRENT_YEAR"
+      "23 al 24 nov 2026",
+      "30 al 31 nov 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -3164,7 +3164,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de la Nariz del Diablo y Centro Histórico de Alausí!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-44-2",
@@ -3172,7 +3172,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3184,10 +3184,10 @@ export const packages: PackageItem[] = [
     "city": "Riobamba",
     "days": "2 días / 1 noche",
     "price": 180,
-    "datesText": "10 al 11 dic CURRENT_YEAR",
+    "datesText": "10 al 11 dic 2026",
     "availableDates": [
-      "10 al 11 dic CURRENT_YEAR",
-      "17 al 18 dic CURRENT_YEAR"
+      "10 al 11 dic 2026",
+      "17 al 18 dic 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -3235,7 +3235,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Glamping Domo Frente al Nevado Chimborazo con Fogata!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-45-2",
@@ -3243,7 +3243,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3255,10 +3255,10 @@ export const packages: PackageItem[] = [
     "city": "Colta",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "12 al 13 ene CURRENT_YEAR",
+    "datesText": "12 al 13 ene 2027",
     "availableDates": [
-      "12 al 13 ene CURRENT_YEAR",
-      "19 al 20 ene CURRENT_YEAR"
+      "12 al 13 ene 2027",
+      "19 al 20 ene 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -3306,7 +3306,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-46-2",
@@ -3314,7 +3314,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3326,10 +3326,10 @@ export const packages: PackageItem[] = [
     "city": "Guano",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "14 al 15 feb CURRENT_YEAR",
+    "datesText": "14 al 15 feb 2027",
     "availableDates": [
-      "14 al 15 feb CURRENT_YEAR",
-      "21 al 22 feb CURRENT_YEAR"
+      "14 al 15 feb 2027",
+      "21 al 22 feb 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -3377,7 +3377,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Hornado Riobambeño, Chicha Huevona y Fritada de Guano!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-47-2",
@@ -3385,7 +3385,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3397,10 +3397,10 @@ export const packages: PackageItem[] = [
     "city": "Riobamba",
     "days": "3 días / 2 noches",
     "price": 210,
-    "datesText": "16 al 18 nov CURRENT_YEAR",
+    "datesText": "16 al 18 nov 2026",
     "availableDates": [
-      "16 al 18 nov CURRENT_YEAR",
-      "23 al 25 nov CURRENT_YEAR"
+      "16 al 18 nov 2026",
+      "23 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -3458,7 +3458,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ascenso de Alta Montaña al Refugio Whymper (5.000 m)!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-48-2",
@@ -3466,7 +3466,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3478,10 +3478,10 @@ export const packages: PackageItem[] = [
     "city": "Penipe",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "18 al 19 dic CURRENT_YEAR",
+    "datesText": "18 al 19 dic 2026",
     "availableDates": [
-      "18 al 19 dic CURRENT_YEAR",
-      "25 al 26 dic CURRENT_YEAR"
+      "18 al 19 dic 2026",
+      "25 al 26 dic 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -3529,7 +3529,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Spa de Aguas Termales Volcánicas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-49-2",
@@ -3537,7 +3537,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3549,10 +3549,10 @@ export const packages: PackageItem[] = [
     "city": "Guamote",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "20 al 21 ene CURRENT_YEAR",
+    "datesText": "20 al 21 ene 2027",
     "availableDates": [
-      "20 al 21 ene CURRENT_YEAR",
-      "27 al 28 ene CURRENT_YEAR"
+      "20 al 21 ene 2027",
+      "27 al 28 ene 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -3600,7 +3600,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Feria Indígena Auténtica de Guamote y Tejedores de Alfombras!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-50-2",
@@ -3608,7 +3608,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3620,10 +3620,10 @@ export const packages: PackageItem[] = [
     "city": "Latacunga",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "22 al 23 feb CURRENT_YEAR",
+    "datesText": "22 al 23 feb 2027",
     "availableDates": [
-      "22 al 23 feb CURRENT_YEAR",
-      "29 al 30 feb CURRENT_YEAR"
+      "22 al 23 feb 2027",
+      "29 al 30 feb 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -3671,7 +3671,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabalgata y Ciclismo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-51-2",
@@ -3679,7 +3679,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3691,10 +3691,10 @@ export const packages: PackageItem[] = [
     "city": "Latacunga",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "24 al 25 nov CURRENT_YEAR",
+    "datesText": "24 al 25 nov 2026",
     "availableDates": [
-      "24 al 25 nov CURRENT_YEAR",
-      "31 al 32 nov CURRENT_YEAR"
+      "24 al 25 nov 2026",
+      "31 al 32 nov 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -3742,7 +3742,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Laguna de Limpiopungo y Flora del Páramo Andino!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-52-2",
@@ -3750,7 +3750,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3762,10 +3762,10 @@ export const packages: PackageItem[] = [
     "city": "La Maná",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "11 al 12 dic CURRENT_YEAR",
+    "datesText": "11 al 12 dic 2026",
     "availableDates": [
-      "11 al 12 dic CURRENT_YEAR",
-      "18 al 19 dic CURRENT_YEAR"
+      "11 al 12 dic 2026",
+      "18 al 19 dic 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -3813,7 +3813,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Balneario Natural y Cascadas Subtropicales de La Maná!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-53-2",
@@ -3821,7 +3821,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3833,10 +3833,10 @@ export const packages: PackageItem[] = [
     "city": "Latacunga",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "13 al 14 ene CURRENT_YEAR",
+    "datesText": "13 al 14 ene 2027",
     "availableDates": [
-      "13 al 14 ene CURRENT_YEAR",
-      "20 al 21 ene CURRENT_YEAR"
+      "13 al 14 ene 2027",
+      "20 al 21 ene 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -3884,7 +3884,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Centro Histórico de Piedra Pómez de Latacunga y Templos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-54-2",
@@ -3892,7 +3892,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3904,10 +3904,10 @@ export const packages: PackageItem[] = [
     "city": "Pujilí",
     "days": "2 días / 1 noche",
     "price": 165,
-    "datesText": "15 al 16 feb CURRENT_YEAR",
+    "datesText": "15 al 16 feb 2027",
     "availableDates": [
-      "15 al 16 feb CURRENT_YEAR",
-      "22 al 23 feb CURRENT_YEAR"
+      "15 al 16 feb 2027",
+      "22 al 23 feb 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -3955,7 +3955,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Romance y Cabañas de Madera al Borde del Cráter Quilotoa!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-55-2",
@@ -3963,7 +3963,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -3975,10 +3975,10 @@ export const packages: PackageItem[] = [
     "city": "Salcedo",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "17 al 18 nov CURRENT_YEAR",
+    "datesText": "17 al 18 nov 2026",
     "availableDates": [
-      "17 al 18 nov CURRENT_YEAR",
-      "24 al 25 nov CURRENT_YEAR"
+      "17 al 18 nov 2026",
+      "24 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -4026,7 +4026,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de los Helados Tradicionales de Salcedo y Granja Andina!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-56-2",
@@ -4034,7 +4034,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4046,10 +4046,10 @@ export const packages: PackageItem[] = [
     "city": "Latacunga",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "19 al 20 dic CURRENT_YEAR",
+    "datesText": "19 al 20 dic 2026",
     "availableDates": [
-      "19 al 20 dic CURRENT_YEAR",
-      "26 al 27 dic CURRENT_YEAR"
+      "19 al 20 dic 2026",
+      "26 al 27 dic 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -4097,7 +4097,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de las Chugchucaras Latacungueñas y Queso de Hoja!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-57-2",
@@ -4105,7 +4105,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4117,10 +4117,10 @@ export const packages: PackageItem[] = [
     "city": "Sigchos",
     "days": "3 días / 2 noches",
     "price": 185,
-    "datesText": "21 al 23 ene CURRENT_YEAR",
+    "datesText": "21 al 23 ene 2027",
     "availableDates": [
-      "21 al 23 ene CURRENT_YEAR",
-      "28 al 30 ene CURRENT_YEAR"
+      "21 al 23 ene 2027",
+      "28 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -4178,7 +4178,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking Quilotoa Loop: Sigchos, Isinlivi y Chugchilán!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-58-2",
@@ -4186,7 +4186,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4198,10 +4198,10 @@ export const packages: PackageItem[] = [
     "city": "Latacunga",
     "days": "2 días / 1 noche",
     "price": 140,
-    "datesText": "23 al 24 feb CURRENT_YEAR",
+    "datesText": "23 al 24 feb 2027",
     "availableDates": [
-      "23 al 24 feb CURRENT_YEAR",
-      "30 al 31 feb CURRENT_YEAR"
+      "23 al 24 feb 2027",
+      "30 al 31 feb 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -4249,7 +4249,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Spa con Piedras Calientes Volcánicas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-59-2",
@@ -4257,7 +4257,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4269,10 +4269,10 @@ export const packages: PackageItem[] = [
     "city": "Saquisilí",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "10 al 11 nov CURRENT_YEAR",
+    "datesText": "10 al 11 nov 2026",
     "availableDates": [
-      "10 al 11 nov CURRENT_YEAR",
-      "17 al 18 nov CURRENT_YEAR"
+      "10 al 11 nov 2026",
+      "17 al 18 nov 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -4320,7 +4320,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Mercado Ancestral de Saquisilí y Taller de Pintores de Tigua!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-60-2",
@@ -4328,7 +4328,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4340,10 +4340,10 @@ export const packages: PackageItem[] = [
     "city": "Zaruma",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "12 al 13 dic CURRENT_YEAR",
+    "datesText": "12 al 13 dic 2026",
     "availableDates": [
-      "12 al 13 dic CURRENT_YEAR",
-      "19 al 20 dic CURRENT_YEAR"
+      "12 al 13 dic 2026",
+      "19 al 20 dic 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -4391,7 +4391,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Espeleología y Minas Coloniales El Sexmo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-61-2",
@@ -4399,7 +4399,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4411,10 +4411,10 @@ export const packages: PackageItem[] = [
     "city": "Arenillas",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "14 al 15 ene CURRENT_YEAR",
+    "datesText": "14 al 15 ene 2027",
     "availableDates": [
-      "14 al 15 ene CURRENT_YEAR",
-      "21 al 22 ene CURRENT_YEAR"
+      "14 al 15 ene 2027",
+      "21 al 22 ene 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -4462,7 +4462,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva Ecológica Arenillas y Bosque Seco Ecuatoriano!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-62-2",
@@ -4470,7 +4470,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4482,10 +4482,10 @@ export const packages: PackageItem[] = [
     "city": "Machala",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "16 al 17 feb CURRENT_YEAR",
+    "datesText": "16 al 17 feb 2027",
     "availableDates": [
-      "16 al 17 feb CURRENT_YEAR",
-      "23 al 24 feb CURRENT_YEAR"
+      "16 al 17 feb 2027",
+      "23 al 24 feb 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -4533,7 +4533,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descanso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-63-2",
@@ -4541,7 +4541,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4553,10 +4553,10 @@ export const packages: PackageItem[] = [
     "city": "Zaruma",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "18 al 19 nov CURRENT_YEAR",
+    "datesText": "18 al 19 nov 2026",
     "availableDates": [
-      "18 al 19 nov CURRENT_YEAR",
-      "25 al 26 nov CURRENT_YEAR"
+      "18 al 19 nov 2026",
+      "25 al 26 nov 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -4604,7 +4604,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Patrimonio de Madera y Balcones Coloniales de Zaruma!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-64-2",
@@ -4612,7 +4612,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4624,10 +4624,10 @@ export const packages: PackageItem[] = [
     "city": "Piñas",
     "days": "2 días / 1 noche",
     "price": 140,
-    "datesText": "20 al 21 dic CURRENT_YEAR",
+    "datesText": "20 al 21 dic 2026",
     "availableDates": [
-      "20 al 21 dic CURRENT_YEAR",
-      "27 al 28 dic CURRENT_YEAR"
+      "20 al 21 dic 2026",
+      "27 al 28 dic 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -4675,7 +4675,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cena Romántica!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-65-2",
@@ -4683,7 +4683,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4695,10 +4695,10 @@ export const packages: PackageItem[] = [
     "city": "Machala",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "22 al 23 ene CURRENT_YEAR",
+    "datesText": "22 al 23 ene 2027",
     "availableDates": [
-      "22 al 23 ene CURRENT_YEAR",
-      "29 al 30 ene CURRENT_YEAR"
+      "22 al 23 ene 2027",
+      "29 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -4746,7 +4746,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-66-2",
@@ -4754,7 +4754,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4766,10 +4766,10 @@ export const packages: PackageItem[] = [
     "city": "Zaruma",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "24 al 25 feb CURRENT_YEAR",
+    "datesText": "24 al 25 feb 2027",
     "availableDates": [
-      "24 al 25 feb CURRENT_YEAR",
-      "31 al 32 feb CURRENT_YEAR"
+      "24 al 25 feb 2027",
+      "31 al 32 feb 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -4817,7 +4817,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Tigrillo Zarumeño, Café Arábigo y Mariscos de Puerto Bolívar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-67-2",
@@ -4825,7 +4825,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4837,10 +4837,10 @@ export const packages: PackageItem[] = [
     "city": "Arenillas",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "11 al 12 nov CURRENT_YEAR",
+    "datesText": "11 al 12 nov 2026",
     "availableDates": [
-      "11 al 12 nov CURRENT_YEAR",
-      "18 al 19 nov CURRENT_YEAR"
+      "11 al 12 nov 2026",
+      "18 al 19 nov 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -4888,7 +4888,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-68-2",
@@ -4896,7 +4896,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4908,10 +4908,10 @@ export const packages: PackageItem[] = [
     "city": "Portovelo",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "13 al 14 dic CURRENT_YEAR",
+    "datesText": "13 al 14 dic 2026",
     "availableDates": [
-      "13 al 14 dic CURRENT_YEAR",
-      "20 al 21 dic CURRENT_YEAR"
+      "13 al 14 dic 2026",
+      "20 al 21 dic 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -4959,7 +4959,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Aguas Termominerales y Lodo Curativo de Portovelo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-69-2",
@@ -4967,7 +4967,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -4979,10 +4979,10 @@ export const packages: PackageItem[] = [
     "city": "Pasaje",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "15 al 16 ene CURRENT_YEAR",
+    "datesText": "15 al 16 ene 2027",
     "availableDates": [
-      "15 al 16 ene CURRENT_YEAR",
-      "22 al 23 ene CURRENT_YEAR"
+      "15 al 16 ene 2027",
+      "22 al 23 ene 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -5030,7 +5030,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Comunidades Cacaoteras de Pasaje y Dulces de Guayaba!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-70-2",
@@ -5038,7 +5038,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5050,10 +5050,10 @@ export const packages: PackageItem[] = [
     "city": "Mompiche",
     "days": "3 días / 2 noches",
     "price": 155,
-    "datesText": "17 al 19 feb CURRENT_YEAR",
+    "datesText": "17 al 19 feb 2027",
     "availableDates": [
-      "17 al 19 feb CURRENT_YEAR",
-      "24 al 26 feb CURRENT_YEAR"
+      "17 al 19 feb 2027",
+      "24 al 26 feb 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -5111,7 +5111,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Surf de Olas de Clase Mundial y Caving!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-71-2",
@@ -5119,7 +5119,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5131,10 +5131,10 @@ export const packages: PackageItem[] = [
     "city": "San Lorenzo",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "19 al 20 nov CURRENT_YEAR",
+    "datesText": "19 al 20 nov 2026",
     "availableDates": [
-      "19 al 20 nov CURRENT_YEAR",
-      "26 al 27 nov CURRENT_YEAR"
+      "19 al 20 nov 2026",
+      "26 al 27 nov 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -5182,7 +5182,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Manglares Majagual con los Árboles Más Altos del Mundo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-72-2",
@@ -5190,7 +5190,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5202,10 +5202,10 @@ export const packages: PackageItem[] = [
     "city": "Tonsupa",
     "days": "3 días / 2 noches",
     "price": 145,
-    "datesText": "21 al 23 dic CURRENT_YEAR",
+    "datesText": "21 al 23 dic 2026",
     "availableDates": [
-      "21 al 23 dic CURRENT_YEAR",
-      "28 al 30 dic CURRENT_YEAR"
+      "21 al 23 dic 2026",
+      "28 al 30 dic 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -5263,7 +5263,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Sol, Arena Blanca y Cocteles Tropicales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-73-2",
@@ -5271,7 +5271,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5283,10 +5283,10 @@ export const packages: PackageItem[] = [
     "city": "Esmeraldas",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "23 al 24 ene CURRENT_YEAR",
+    "datesText": "23 al 24 ene 2027",
     "availableDates": [
-      "23 al 24 ene CURRENT_YEAR",
-      "30 al 31 ene CURRENT_YEAR"
+      "23 al 24 ene 2027",
+      "30 al 31 ene 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -5334,7 +5334,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Música de Marimba Tradicional declarada Patrimonio Unesco!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-74-2",
@@ -5342,7 +5342,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5354,10 +5354,10 @@ export const packages: PackageItem[] = [
     "city": "Same",
     "days": "3 días / 2 noches",
     "price": 210,
-    "datesText": "10 al 12 feb CURRENT_YEAR",
+    "datesText": "10 al 12 feb 2027",
     "availableDates": [
-      "10 al 12 feb CURRENT_YEAR",
-      "17 al 19 feb CURRENT_YEAR"
+      "10 al 12 feb 2027",
+      "17 al 19 feb 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -5415,7 +5415,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabaña Privada sobre el Océano!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-75-2",
@@ -5423,7 +5423,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5435,10 +5435,10 @@ export const packages: PackageItem[] = [
     "city": "Atacames",
     "days": "3 días / 2 noches",
     "price": 130,
-    "datesText": "12 al 14 nov CURRENT_YEAR",
+    "datesText": "12 al 14 nov 2026",
     "availableDates": [
-      "12 al 14 nov CURRENT_YEAR",
-      "19 al 21 nov CURRENT_YEAR"
+      "12 al 14 nov 2026",
+      "19 al 21 nov 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -5496,7 +5496,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Diversión Marina Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-76-2",
@@ -5504,7 +5504,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5516,10 +5516,10 @@ export const packages: PackageItem[] = [
     "city": "Rioverde",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "14 al 15 dic CURRENT_YEAR",
+    "datesText": "14 al 15 dic 2026",
     "availableDates": [
-      "14 al 15 dic CURRENT_YEAR",
-      "21 al 22 dic CURRENT_YEAR"
+      "14 al 15 dic 2026",
+      "21 al 22 dic 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -5567,7 +5567,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Encocado de Cangrejo Azul y Tapao Arrecho Esmeraldeño!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-77-2",
@@ -5575,7 +5575,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5587,10 +5587,10 @@ export const packages: PackageItem[] = [
     "city": "San Lorenzo",
     "days": "3 días / 2 noches",
     "price": 160,
-    "datesText": "16 al 18 ene CURRENT_YEAR",
+    "datesText": "16 al 18 ene 2027",
     "availableDates": [
-      "16 al 18 ene CURRENT_YEAR",
-      "23 al 25 ene CURRENT_YEAR"
+      "16 al 18 ene 2027",
+      "23 al 25 ene 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -5648,7 +5648,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Caminata por la Selva Tropical!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-78-2",
@@ -5656,7 +5656,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5668,10 +5668,10 @@ export const packages: PackageItem[] = [
     "city": "Mompiche",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "18 al 19 feb CURRENT_YEAR",
+    "datesText": "18 al 19 feb 2027",
     "availableDates": [
-      "18 al 19 feb CURRENT_YEAR",
-      "25 al 26 feb CURRENT_YEAR"
+      "18 al 19 feb 2027",
+      "25 al 26 feb 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -5719,7 +5719,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Taladoterapia Marina y Masajes con Aceite de Coco Puro!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-79-2",
@@ -5727,7 +5727,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5739,10 +5739,10 @@ export const packages: PackageItem[] = [
     "city": "Esmeraldas",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "20 al 21 nov CURRENT_YEAR",
+    "datesText": "20 al 21 nov 2026",
     "availableDates": [
-      "20 al 21 nov CURRENT_YEAR",
-      "27 al 28 nov CURRENT_YEAR"
+      "20 al 21 nov 2026",
+      "27 al 28 nov 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -5790,7 +5790,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Convivencia con Comunidades Afroecuatorianas y Taller de Marimba!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-80-2",
@@ -5798,7 +5798,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5810,10 +5810,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Villamil (Isabela)",
     "days": "4 días / 3 noches",
     "price": 580,
-    "datesText": "22 al 25 dic CURRENT_YEAR",
+    "datesText": "22 al 25 dic 2026",
     "availableDates": [
-      "22 al 25 dic CURRENT_YEAR",
-      "29 al 32 dic CURRENT_YEAR"
+      "22 al 25 dic 2026",
+      "29 al 32 dic 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -5881,7 +5881,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Snorkel Extremo con Tiburones Tintoreras y Lobos Marinos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-81-2",
@@ -5889,7 +5889,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5901,10 +5901,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Ayora (Santa Cruz)",
     "days": "4 días / 3 noches",
     "price": 620,
-    "datesText": "24 al 27 ene CURRENT_YEAR",
+    "datesText": "24 al 27 ene 2027",
     "availableDates": [
-      "24 al 27 ene CURRENT_YEAR",
-      "31 al 34 ene CURRENT_YEAR"
+      "24 al 27 ene 2027",
+      "31 al 34 ene 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -5972,7 +5972,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Santuario de Tortugas Gigantes y Estación Charles Darwin!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-82-2",
@@ -5980,7 +5980,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -5992,10 +5992,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Ayora (Santa Cruz)",
     "days": "4 días / 3 noches",
     "price": 495,
-    "datesText": "11 al 14 feb CURRENT_YEAR",
+    "datesText": "11 al 14 feb 2027",
     "availableDates": [
-      "11 al 14 feb CURRENT_YEAR",
-      "18 al 21 feb CURRENT_YEAR"
+      "11 al 14 feb 2027",
+      "18 al 21 feb 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -6063,7 +6063,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descanso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-83-2",
@@ -6071,7 +6071,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6083,10 +6083,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Baquerizo Moreno (San Cristóbal)",
     "days": "3 días / 2 noches",
     "price": 480,
-    "datesText": "13 al 15 nov CURRENT_YEAR",
+    "datesText": "13 al 15 nov 2026",
     "availableDates": [
-      "13 al 15 nov CURRENT_YEAR",
-      "20 al 22 nov CURRENT_YEAR"
+      "13 al 15 nov 2026",
+      "20 al 22 nov 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -6144,7 +6144,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Historia de la Colonia Penal y Centro de Interpretación!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-84-2",
@@ -6152,7 +6152,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6164,10 +6164,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Baquerizo Moreno (San Cristóbal)",
     "days": "4 días / 3 noches",
     "price": 690,
-    "datesText": "15 al 18 dic CURRENT_YEAR",
+    "datesText": "15 al 18 dic 2026",
     "availableDates": [
-      "15 al 18 dic CURRENT_YEAR",
-      "22 al 25 dic CURRENT_YEAR"
+      "15 al 18 dic 2026",
+      "22 al 25 dic 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -6235,7 +6235,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Atardeceres Románticos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-85-2",
@@ -6243,7 +6243,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6255,10 +6255,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Ayora (Santa Cruz)",
     "days": "4 días / 3 noches",
     "price": 540,
-    "datesText": "17 al 20 ene CURRENT_YEAR",
+    "datesText": "17 al 20 ene 2027",
     "availableDates": [
-      "17 al 20 ene CURRENT_YEAR",
-      "24 al 27 ene CURRENT_YEAR"
+      "17 al 20 ene 2027",
+      "24 al 27 ene 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -6326,7 +6326,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Safari Insular Familiar y Senderos de Cráteres Gemelos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-86-2",
@@ -6334,7 +6334,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6346,10 +6346,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Ayora (Santa Cruz)",
     "days": "3 días / 2 noches",
     "price": 470,
-    "datesText": "19 al 21 feb CURRENT_YEAR",
+    "datesText": "19 al 21 feb 2027",
     "availableDates": [
-      "19 al 21 feb CURRENT_YEAR",
-      "26 al 28 feb CURRENT_YEAR"
+      "19 al 21 feb 2027",
+      "26 al 28 feb 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -6407,7 +6407,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de la Langosta de Galápagos y Café Volcánico de Altura!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-87-2",
@@ -6415,7 +6415,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6427,10 +6427,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Villamil (Isabela)",
     "days": "4 días / 3 noches",
     "price": 560,
-    "datesText": "21 al 24 nov CURRENT_YEAR",
+    "datesText": "21 al 24 nov 2026",
     "availableDates": [
-      "21 al 24 nov CURRENT_YEAR",
-      "28 al 31 nov CURRENT_YEAR"
+      "21 al 24 nov 2026",
+      "28 al 31 nov 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -6498,7 +6498,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ascenso al Volcán Activo Sierra Negra y Fumarolas de Azufre!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-88-2",
@@ -6506,7 +6506,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6518,10 +6518,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Ayora (Santa Cruz)",
     "days": "3 días / 2 noches",
     "price": 510,
-    "datesText": "23 al 25 dic CURRENT_YEAR",
+    "datesText": "23 al 25 dic 2026",
     "availableDates": [
-      "23 al 25 dic CURRENT_YEAR",
-      "30 al 32 dic CURRENT_YEAR"
+      "23 al 25 dic 2026",
+      "30 al 32 dic 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -6579,7 +6579,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Spa con Sal Marina de Galápagos y Piedras Volcánicas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-89-2",
@@ -6587,7 +6587,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6599,10 +6599,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Ayora (Santa Cruz)",
     "days": "4 días / 3 noches",
     "price": 485,
-    "datesText": "10 al 13 ene CURRENT_YEAR",
+    "datesText": "10 al 13 ene 2027",
     "availableDates": [
-      "10 al 13 ene CURRENT_YEAR",
-      "17 al 20 ene CURRENT_YEAR"
+      "10 al 13 ene 2027",
+      "17 al 20 ene 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -6670,7 +6670,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Agroturismo y Fincas de Conservación!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-90-2",
@@ -6678,7 +6678,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6690,10 +6690,10 @@ export const packages: PackageItem[] = [
     "city": "Bucay",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "12 al 13 feb CURRENT_YEAR",
+    "datesText": "12 al 13 feb 2027",
     "availableDates": [
-      "12 al 13 feb CURRENT_YEAR",
-      "19 al 20 feb CURRENT_YEAR"
+      "12 al 13 feb 2027",
+      "19 al 20 feb 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -6741,7 +6741,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Canyoning y Ruta de las 7 Cascadas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-91-2",
@@ -6749,7 +6749,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6761,10 +6761,10 @@ export const packages: PackageItem[] = [
     "city": "Naranjal",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "14 al 15 nov CURRENT_YEAR",
+    "datesText": "14 al 15 nov 2026",
     "availableDates": [
-      "14 al 15 nov CURRENT_YEAR",
-      "21 al 22 nov CURRENT_YEAR"
+      "14 al 15 nov 2026",
+      "21 al 22 nov 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -6812,7 +6812,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva Manglares Churute y Observación de Delfines!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-92-2",
@@ -6820,7 +6820,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6832,10 +6832,10 @@ export const packages: PackageItem[] = [
     "city": "Playas",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "16 al 17 dic CURRENT_YEAR",
+    "datesText": "16 al 17 dic 2026",
     "availableDates": [
-      "16 al 17 dic CURRENT_YEAR",
-      "23 al 24 dic CURRENT_YEAR"
+      "16 al 17 dic 2026",
+      "23 al 24 dic 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -6883,7 +6883,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Sol, Surf y Brisa Marina!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-93-2",
@@ -6891,7 +6891,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6903,10 +6903,10 @@ export const packages: PackageItem[] = [
     "city": "Guayaquil",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "18 al 19 ene CURRENT_YEAR",
+    "datesText": "18 al 19 ene 2027",
     "availableDates": [
-      "18 al 19 ene CURRENT_YEAR",
-      "25 al 26 ene CURRENT_YEAR"
+      "18 al 19 ene 2027",
+      "25 al 26 ene 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -6954,7 +6954,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Barrio Las Peñas, Cerro Santa Ana y Malecón 2000!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-94-2",
@@ -6962,7 +6962,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -6974,10 +6974,10 @@ export const packages: PackageItem[] = [
     "city": "Guayaquil",
     "days": "2 días / 1 noche",
     "price": 155,
-    "datesText": "20 al 21 feb CURRENT_YEAR",
+    "datesText": "20 al 21 feb 2027",
     "availableDates": [
-      "20 al 21 feb CURRENT_YEAR",
-      "27 al 28 feb CURRENT_YEAR"
+      "20 al 21 feb 2027",
+      "27 al 28 feb 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -7025,7 +7025,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Velada Romántica a Bordo del Barco Henry Morgan por el Río Guayas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-95-2",
@@ -7033,7 +7033,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7045,10 +7045,10 @@ export const packages: PackageItem[] = [
     "city": "Samborondón",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "22 al 23 nov CURRENT_YEAR",
+    "datesText": "22 al 23 nov 2026",
     "availableDates": [
-      "22 al 23 nov CURRENT_YEAR",
-      "29 al 30 nov CURRENT_YEAR"
+      "22 al 23 nov 2026",
+      "29 al 30 nov 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -7096,7 +7096,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Histórico de Guayaquil y Museo del Cacao!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-96-2",
@@ -7104,7 +7104,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7116,10 +7116,10 @@ export const packages: PackageItem[] = [
     "city": "Naranjal",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "24 al 25 dic CURRENT_YEAR",
+    "datesText": "24 al 25 dic 2026",
     "availableDates": [
-      "24 al 25 dic CURRENT_YEAR",
-      "31 al 32 dic CURRENT_YEAR"
+      "24 al 25 dic 2026",
+      "31 al 32 dic 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -7167,7 +7167,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Cangrejo Rojo de Naranjal y Encebollado Guayaco!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-97-2",
@@ -7175,7 +7175,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7187,10 +7187,10 @@ export const packages: PackageItem[] = [
     "city": "Guayaquil",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "11 al 12 ene CURRENT_YEAR",
+    "datesText": "11 al 12 ene 2027",
     "availableDates": [
-      "11 al 12 ene CURRENT_YEAR",
-      "18 al 19 ene CURRENT_YEAR"
+      "11 al 12 ene 2027",
+      "18 al 19 ene 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -7238,7 +7238,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Senderismo Ecológico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-98-2",
@@ -7246,7 +7246,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7258,10 +7258,10 @@ export const packages: PackageItem[] = [
     "city": "Naranjal",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "13 al 14 feb CURRENT_YEAR",
+    "datesText": "13 al 14 feb 2027",
     "availableDates": [
-      "13 al 14 feb CURRENT_YEAR",
-      "20 al 21 feb CURRENT_YEAR"
+      "13 al 14 feb 2027",
+      "20 al 21 feb 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -7309,7 +7309,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Aguas Termales Sulfurosas y Lodoterapia!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-99-2",
@@ -7317,7 +7317,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7329,10 +7329,10 @@ export const packages: PackageItem[] = [
     "city": "Nobol",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "15 al 16 nov CURRENT_YEAR",
+    "datesText": "15 al 16 nov 2026",
     "availableDates": [
-      "15 al 16 nov CURRENT_YEAR",
-      "22 al 23 nov CURRENT_YEAR"
+      "15 al 16 nov 2026",
+      "22 al 23 nov 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -7380,7 +7380,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Santuario Narcisa de Jesús y Tradición Montuvia!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-100-2",
@@ -7388,7 +7388,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7400,10 +7400,10 @@ export const packages: PackageItem[] = [
     "city": "Otavalo",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "17 al 18 dic CURRENT_YEAR",
+    "datesText": "17 al 18 dic 2026",
     "availableDates": [
-      "17 al 18 dic CURRENT_YEAR",
-      "24 al 25 dic CURRENT_YEAR"
+      "17 al 18 dic 2026",
+      "24 al 25 dic 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -7451,7 +7451,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Kayak y Stand Up Paddle!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-101-2",
@@ -7459,7 +7459,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7471,10 +7471,10 @@ export const packages: PackageItem[] = [
     "city": "Otavalo",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "19 al 20 ene CURRENT_YEAR",
+    "datesText": "19 al 20 ene 2027",
     "availableDates": [
-      "19 al 20 ene CURRENT_YEAR",
-      "26 al 27 ene CURRENT_YEAR"
+      "19 al 20 ene 2027",
+      "26 al 27 ene 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -7522,7 +7522,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Sendero Sagrado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-102-2",
@@ -7530,7 +7530,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7542,10 +7542,10 @@ export const packages: PackageItem[] = [
     "city": "Cotacachi",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "21 al 22 feb CURRENT_YEAR",
+    "datesText": "21 al 22 feb 2027",
     "availableDates": [
-      "21 al 22 feb CURRENT_YEAR",
-      "28 al 29 feb CURRENT_YEAR"
+      "21 al 22 feb 2027",
+      "28 al 29 feb 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -7593,7 +7593,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Tranquilidad y Paseo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-103-2",
@@ -7601,7 +7601,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7613,10 +7613,10 @@ export const packages: PackageItem[] = [
     "city": "Ibarra",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "23 al 24 nov CURRENT_YEAR",
+    "datesText": "23 al 24 nov 2026",
     "availableDates": [
-      "23 al 24 nov CURRENT_YEAR",
-      "30 al 31 nov CURRENT_YEAR"
+      "23 al 24 nov 2026",
+      "30 al 31 nov 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -7664,7 +7664,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Centro Histórico de la Ciudad Blanca de Ibarra y Ferrocarril!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-104-2",
@@ -7672,7 +7672,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7684,10 +7684,10 @@ export const packages: PackageItem[] = [
     "city": "Ibarra",
     "days": "2 días / 1 noche",
     "price": 150,
-    "datesText": "10 al 11 dic CURRENT_YEAR",
+    "datesText": "10 al 11 dic 2026",
     "availableDates": [
-      "10 al 11 dic CURRENT_YEAR",
-      "17 al 18 dic CURRENT_YEAR"
+      "10 al 11 dic 2026",
+      "17 al 18 dic 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -7735,7 +7735,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Escapada!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-105-2",
@@ -7743,7 +7743,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7755,10 +7755,10 @@ export const packages: PackageItem[] = [
     "city": "Ibarra",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "12 al 13 ene CURRENT_YEAR",
+    "datesText": "12 al 13 ene 2027",
     "availableDates": [
-      "12 al 13 ene CURRENT_YEAR",
-      "19 al 20 ene CURRENT_YEAR"
+      "12 al 13 ene 2027",
+      "19 al 20 ene 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -7806,7 +7806,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-106-2",
@@ -7814,7 +7814,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7826,10 +7826,10 @@ export const packages: PackageItem[] = [
     "city": "Cotacachi",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "14 al 15 feb CURRENT_YEAR",
+    "datesText": "14 al 15 feb 2027",
     "availableDates": [
-      "14 al 15 feb CURRENT_YEAR",
-      "21 al 22 feb CURRENT_YEAR"
+      "14 al 15 feb 2027",
+      "21 al 22 feb 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -7877,7 +7877,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Helados de Paila Tradicionales de Ibarra, Carnes Coloradas y Cuy!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-107-2",
@@ -7885,7 +7885,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7897,10 +7897,10 @@ export const packages: PackageItem[] = [
     "city": "Otavalo",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "16 al 17 nov CURRENT_YEAR",
+    "datesText": "16 al 17 nov 2026",
     "availableDates": [
-      "16 al 17 nov CURRENT_YEAR",
-      "23 al 24 nov CURRENT_YEAR"
+      "16 al 17 nov 2026",
+      "23 al 24 nov 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -7948,7 +7948,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ascenso al Volcán Fuya Fuya y Lagunas Glaciares de Mojanda!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-108-2",
@@ -7956,7 +7956,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -7968,10 +7968,10 @@ export const packages: PackageItem[] = [
     "city": "Urcuquí",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "18 al 19 dic CURRENT_YEAR",
+    "datesText": "18 al 19 dic 2026",
     "availableDates": [
-      "18 al 19 dic CURRENT_YEAR",
-      "25 al 26 dic CURRENT_YEAR"
+      "18 al 19 dic 2026",
+      "25 al 26 dic 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -8019,7 +8019,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Circuito de Aguas Termales Medicinales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-109-2",
@@ -8027,7 +8027,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8039,10 +8039,10 @@ export const packages: PackageItem[] = [
     "city": "Otavalo",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "20 al 21 ene CURRENT_YEAR",
+    "datesText": "20 al 21 ene 2027",
     "availableDates": [
-      "20 al 21 ene CURRENT_YEAR",
-      "27 al 28 ene CURRENT_YEAR"
+      "20 al 21 ene 2027",
+      "27 al 28 ene 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -8090,7 +8090,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Gran Plaza de Ponchos de Otavalo y Tallado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-110-2",
@@ -8098,7 +8098,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8110,10 +8110,10 @@ export const packages: PackageItem[] = [
     "city": "Vilcabamba",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "22 al 23 feb CURRENT_YEAR",
+    "datesText": "22 al 23 feb 2027",
     "availableDates": [
-      "22 al 23 feb CURRENT_YEAR",
-      "29 al 30 feb CURRENT_YEAR"
+      "22 al 23 feb 2027",
+      "29 al 30 feb 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -8161,7 +8161,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Escalada!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-111-2",
@@ -8169,7 +8169,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8181,10 +8181,10 @@ export const packages: PackageItem[] = [
     "city": "Loja",
     "days": "3 días / 2 noches",
     "price": 155,
-    "datesText": "24 al 26 nov CURRENT_YEAR",
+    "datesText": "24 al 26 nov 2026",
     "availableDates": [
-      "24 al 26 nov CURRENT_YEAR",
-      "31 al 33 nov CURRENT_YEAR"
+      "24 al 26 nov 2026",
+      "31 al 33 nov 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -8242,7 +8242,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva de Biósfera Podocarpus y Páramo de Cajanuma!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-112-2",
@@ -8250,7 +8250,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8262,10 +8262,10 @@ export const packages: PackageItem[] = [
     "city": "Catamayo",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "11 al 12 dic CURRENT_YEAR",
+    "datesText": "11 al 12 dic 2026",
     "availableDates": [
-      "11 al 12 dic CURRENT_YEAR",
-      "18 al 19 dic CURRENT_YEAR"
+      "11 al 12 dic 2026",
+      "18 al 19 dic 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -8313,7 +8313,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descanso Tropical y Piscinas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-113-2",
@@ -8321,7 +8321,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8333,10 +8333,10 @@ export const packages: PackageItem[] = [
     "city": "Loja",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "13 al 14 ene CURRENT_YEAR",
+    "datesText": "13 al 14 ene 2027",
     "availableDates": [
-      "13 al 14 ene CURRENT_YEAR",
-      "20 al 21 ene CURRENT_YEAR"
+      "13 al 14 ene 2027",
+      "20 al 21 ene 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -8384,7 +8384,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Puerta de la Ciudad, Calle Lourdes y Museos de la Capital Musical!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-114-2",
@@ -8392,7 +8392,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8404,10 +8404,10 @@ export const packages: PackageItem[] = [
     "city": "Vilcabamba",
     "days": "3 días / 2 noches",
     "price": 185,
-    "datesText": "15 al 17 feb CURRENT_YEAR",
+    "datesText": "15 al 17 feb 2027",
     "availableDates": [
-      "15 al 17 feb CURRENT_YEAR",
-      "22 al 24 feb CURRENT_YEAR"
+      "15 al 17 feb 2027",
+      "22 al 24 feb 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -8465,7 +8465,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Retiro de Pareja!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-115-2",
@@ -8473,7 +8473,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8485,10 +8485,10 @@ export const packages: PackageItem[] = [
     "city": "Loja",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "17 al 18 nov CURRENT_YEAR",
+    "datesText": "17 al 18 nov 2026",
     "availableDates": [
-      "17 al 18 nov CURRENT_YEAR",
-      "24 al 25 nov CURRENT_YEAR"
+      "17 al 18 nov 2026",
+      "24 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -8536,7 +8536,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Familiar por el Santuario del Cisne y Valle del Viento!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-116-2",
@@ -8544,7 +8544,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8556,10 +8556,10 @@ export const packages: PackageItem[] = [
     "city": "Catamayo",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "19 al 20 dic CURRENT_YEAR",
+    "datesText": "19 al 20 dic 2026",
     "availableDates": [
-      "19 al 20 dic CURRENT_YEAR",
-      "26 al 27 dic CURRENT_YEAR"
+      "19 al 20 dic 2026",
+      "26 al 27 dic 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -8607,7 +8607,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cata de Café Arábigo de Especialidad Lojano y Cecina Tradicional!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-117-2",
@@ -8615,7 +8615,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8627,10 +8627,10 @@ export const packages: PackageItem[] = [
     "city": "Loja",
     "days": "3 días / 2 noches",
     "price": 175,
-    "datesText": "21 al 23 ene CURRENT_YEAR",
+    "datesText": "21 al 23 ene 2027",
     "availableDates": [
-      "21 al 23 ene CURRENT_YEAR",
-      "28 al 30 ene CURRENT_YEAR"
+      "21 al 23 ene 2027",
+      "28 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -8688,7 +8688,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking Transandino a Lagunas del Compadre!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-118-2",
@@ -8696,7 +8696,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8708,10 +8708,10 @@ export const packages: PackageItem[] = [
     "city": "Vilcabamba",
     "days": "3 días / 2 noches",
     "price": 160,
-    "datesText": "23 al 25 feb CURRENT_YEAR",
+    "datesText": "23 al 25 feb 2027",
     "availableDates": [
-      "23 al 25 feb CURRENT_YEAR",
-      "30 al 32 feb CURRENT_YEAR"
+      "23 al 25 feb 2027",
+      "30 al 32 feb 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -8769,7 +8769,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Terapias Holísticas, Yoga y Baños Desintoxicantes!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-119-2",
@@ -8777,7 +8777,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8789,10 +8789,10 @@ export const packages: PackageItem[] = [
     "city": "Saraguro",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "10 al 11 nov CURRENT_YEAR",
+    "datesText": "10 al 11 nov 2026",
     "availableDates": [
-      "10 al 11 nov CURRENT_YEAR",
-      "17 al 18 nov CURRENT_YEAR"
+      "10 al 11 nov 2026",
+      "17 al 18 nov 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -8840,7 +8840,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cultura Viva del Pueblo Saraguro, Baños de Purificación y Talleres!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-120-2",
@@ -8848,7 +8848,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8860,10 +8860,10 @@ export const packages: PackageItem[] = [
     "city": "Montalvo",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "12 al 13 dic CURRENT_YEAR",
+    "datesText": "12 al 13 dic 2026",
     "availableDates": [
-      "12 al 13 dic CURRENT_YEAR",
-      "19 al 20 dic CURRENT_YEAR"
+      "12 al 13 dic 2026",
+      "19 al 20 dic 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -8911,7 +8911,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Rafting y Tubing!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-121-2",
@@ -8919,7 +8919,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -8931,10 +8931,10 @@ export const packages: PackageItem[] = [
     "city": "Vinces",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "14 al 15 ene CURRENT_YEAR",
+    "datesText": "14 al 15 ene 2027",
     "availableDates": [
-      "14 al 15 ene CURRENT_YEAR",
-      "21 al 22 ene CURRENT_YEAR"
+      "14 al 15 ene 2027",
+      "21 al 22 ene 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -8982,7 +8982,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Humedal Abras de Mantequilla y Observación de Aves Acuáticas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-122-2",
@@ -8990,7 +8990,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9002,10 +9002,10 @@ export const packages: PackageItem[] = [
     "city": "Babahoyo",
     "days": "2 días / 1 noche",
     "price": 80,
-    "datesText": "16 al 17 feb CURRENT_YEAR",
+    "datesText": "16 al 17 feb 2027",
     "availableDates": [
-      "16 al 17 feb CURRENT_YEAR",
-      "23 al 24 feb CURRENT_YEAR"
+      "16 al 17 feb 2027",
+      "23 al 24 feb 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -9053,7 +9053,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Balneario Fluvial La Playita y Paseo Náutico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-123-2",
@@ -9061,7 +9061,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9073,10 +9073,10 @@ export const packages: PackageItem[] = [
     "city": "Babahoyo",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "18 al 19 nov CURRENT_YEAR",
+    "datesText": "18 al 19 nov 2026",
     "availableDates": [
-      "18 al 19 nov CURRENT_YEAR",
-      "25 al 26 nov CURRENT_YEAR"
+      "18 al 19 nov 2026",
+      "25 al 26 nov 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -9124,7 +9124,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Casas Flotantes Patrimoniales sobre el Río Babahoyo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-124-2",
@@ -9132,7 +9132,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9144,10 +9144,10 @@ export const packages: PackageItem[] = [
     "city": "Vinces",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "20 al 21 dic CURRENT_YEAR",
+    "datesText": "20 al 21 dic 2026",
     "availableDates": [
-      "20 al 21 dic CURRENT_YEAR",
-      "27 al 28 dic CURRENT_YEAR"
+      "20 al 21 dic 2026",
+      "27 al 28 dic 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -9195,7 +9195,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Romance!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-125-2",
@@ -9203,7 +9203,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9215,10 +9215,10 @@ export const packages: PackageItem[] = [
     "city": "Quevedo",
     "days": "2 días / 1 noche",
     "price": 80,
-    "datesText": "22 al 23 ene CURRENT_YEAR",
+    "datesText": "22 al 23 ene 2027",
     "availableDates": [
-      "22 al 23 ene CURRENT_YEAR",
-      "29 al 30 ene CURRENT_YEAR"
+      "22 al 23 ene 2027",
+      "29 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -9266,7 +9266,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Acuático La Perla y Recreación Campestre!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-126-2",
@@ -9274,7 +9274,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9286,10 +9286,10 @@ export const packages: PackageItem[] = [
     "city": "Quevedo",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "24 al 25 feb CURRENT_YEAR",
+    "datesText": "24 al 25 feb 2027",
     "availableDates": [
-      "24 al 25 feb CURRENT_YEAR",
-      "31 al 32 feb CURRENT_YEAR"
+      "24 al 25 feb 2027",
+      "31 al 32 feb 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -9337,7 +9337,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Cacao Fino de Aroma Nacional y Gastronomía Chino-Montuvia!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-127-2",
@@ -9345,7 +9345,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9357,10 +9357,10 @@ export const packages: PackageItem[] = [
     "city": "Ventanas",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "11 al 12 nov CURRENT_YEAR",
+    "datesText": "11 al 12 nov 2026",
     "availableDates": [
-      "11 al 12 nov CURRENT_YEAR",
-      "18 al 19 nov CURRENT_YEAR"
+      "11 al 12 nov 2026",
+      "18 al 19 nov 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -9408,7 +9408,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Sendero Agroecológico entre Plantaciones de Banano y Bosques!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-128-2",
@@ -9416,7 +9416,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9428,10 +9428,10 @@ export const packages: PackageItem[] = [
     "city": "Montalvo",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "13 al 14 dic CURRENT_YEAR",
+    "datesText": "13 al 14 dic 2026",
     "availableDates": [
-      "13 al 14 dic CURRENT_YEAR",
-      "20 al 21 dic CURRENT_YEAR"
+      "13 al 14 dic 2026",
+      "20 al 21 dic 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -9479,7 +9479,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Spa Campestre con Chocolaterapia y Aguas de Vertiente!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-129-2",
@@ -9487,7 +9487,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9499,10 +9499,10 @@ export const packages: PackageItem[] = [
     "city": "Babahoyo",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "15 al 16 ene CURRENT_YEAR",
+    "datesText": "15 al 16 ene 2027",
     "availableDates": [
-      "15 al 16 ene CURRENT_YEAR",
-      "22 al 23 ene CURRENT_YEAR"
+      "15 al 16 ene 2027",
+      "22 al 23 ene 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -9550,7 +9550,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Rodeo Montuvio Tradicional, Amorfino y Costumbres Campesinas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-130-2",
@@ -9558,7 +9558,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9570,10 +9570,10 @@ export const packages: PackageItem[] = [
     "city": "Portoviejo",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "17 al 18 feb CURRENT_YEAR",
+    "datesText": "17 al 18 feb 2027",
     "availableDates": [
-      "17 al 18 feb CURRENT_YEAR",
-      "24 al 25 feb CURRENT_YEAR"
+      "17 al 18 feb 2027",
+      "24 al 25 feb 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -9621,7 +9621,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parapente sobre el Acantilado de Crucita y Kitesurf!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-131-2",
@@ -9629,7 +9629,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9641,10 +9641,13 @@ export const packages: PackageItem[] = [
     "city": "Puerto López",
     "days": "3 días / 2 noches",
     "price": 185,
-    "datesText": "19 al 21 nov CURRENT_YEAR",
+    "datesText": "09 al 11 jul 2027",
     "availableDates": [
-      "19 al 21 nov CURRENT_YEAR",
-      "26 al 28 nov CURRENT_YEAR"
+      "09 al 11 jul 2027",
+      "23 al 25 jul 2027",
+      "06 al 08 ago 2027",
+      "20 al 22 ago 2027",
+      "03 al 05 sep 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -9702,7 +9705,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Avistamiento de Ballenas Jorobadas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-132-2",
@@ -9710,7 +9713,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9722,10 +9725,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto López",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "21 al 22 dic CURRENT_YEAR",
+    "datesText": "21 al 22 dic 2026",
     "availableDates": [
-      "21 al 22 dic CURRENT_YEAR",
-      "28 al 29 dic CURRENT_YEAR"
+      "21 al 22 dic 2026",
+      "28 al 29 dic 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -9773,7 +9776,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Arenas Doradas y Aguas Turquesas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-133-2",
@@ -9781,7 +9784,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9793,10 +9796,10 @@ export const packages: PackageItem[] = [
     "city": "Montecristi",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "23 al 24 ene CURRENT_YEAR",
+    "datesText": "23 al 24 ene 2027",
     "availableDates": [
-      "23 al 24 ene CURRENT_YEAR",
-      "30 al 31 ene CURRENT_YEAR"
+      "23 al 24 ene 2027",
+      "30 al 31 ene 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -9844,7 +9847,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cuna del Sombrero Fino de Paja Toquilla!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-134-2",
@@ -9852,7 +9855,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9864,10 +9867,10 @@ export const packages: PackageItem[] = [
     "city": "Canoa",
     "days": "3 días / 2 noches",
     "price": 175,
-    "datesText": "10 al 12 feb CURRENT_YEAR",
+    "datesText": "10 al 12 feb 2027",
     "availableDates": [
-      "10 al 12 feb CURRENT_YEAR",
-      "17 al 19 feb CURRENT_YEAR"
+      "10 al 12 feb 2027",
+      "17 al 19 feb 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -9925,7 +9928,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Atardeceres Románticos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-135-2",
@@ -9933,7 +9936,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -9945,10 +9948,10 @@ export const packages: PackageItem[] = [
     "city": "Manta",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "12 al 13 nov CURRENT_YEAR",
+    "datesText": "12 al 13 nov 2026",
     "availableDates": [
-      "12 al 13 nov CURRENT_YEAR",
-      "19 al 20 nov CURRENT_YEAR"
+      "12 al 13 nov 2026",
+      "19 al 20 nov 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -9996,7 +9999,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-136-2",
@@ -10004,7 +10007,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10016,10 +10019,10 @@ export const packages: PackageItem[] = [
     "city": "Portoviejo",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "14 al 15 dic CURRENT_YEAR",
+    "datesText": "14 al 15 dic 2026",
     "availableDates": [
-      "14 al 15 dic CURRENT_YEAR",
-      "21 al 22 dic CURRENT_YEAR"
+      "14 al 15 dic 2026",
+      "21 al 22 dic 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -10067,7 +10070,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta Gastronómica del Viche, Ceviche con Maní y Salprieta Manabita!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-137-2",
@@ -10075,7 +10078,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10087,10 +10090,10 @@ export const packages: PackageItem[] = [
     "city": "Manta",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "16 al 17 ene CURRENT_YEAR",
+    "datesText": "16 al 17 ene 2027",
     "availableDates": [
-      "16 al 17 ene CURRENT_YEAR",
-      "23 al 24 ene CURRENT_YEAR"
+      "16 al 17 ene 2027",
+      "23 al 24 ene 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -10138,7 +10141,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking por la Selva Húmeda de Pacoche y Monos Aulladores!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-138-2",
@@ -10146,7 +10149,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10158,10 +10161,10 @@ export const packages: PackageItem[] = [
     "city": "San Vicente",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "18 al 19 feb CURRENT_YEAR",
+    "datesText": "18 al 19 feb 2027",
     "availableDates": [
-      "18 al 19 feb CURRENT_YEAR",
-      "25 al 26 feb CURRENT_YEAR"
+      "18 al 19 feb 2027",
+      "25 al 26 feb 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -10209,7 +10212,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Baños de Lodo Curativo y Masajes Termales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-139-2",
@@ -10217,7 +10220,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10229,10 +10232,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto López",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "20 al 21 nov CURRENT_YEAR",
+    "datesText": "20 al 21 nov 2026",
     "availableDates": [
-      "20 al 21 nov CURRENT_YEAR",
-      "27 al 28 nov CURRENT_YEAR"
+      "20 al 21 nov 2026",
+      "27 al 28 nov 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -10280,7 +10283,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Comunidad Ancestral de Agua Blanca y Poza Sulfurosa Sagrada!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-140-2",
@@ -10288,7 +10291,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10300,10 +10303,10 @@ export const packages: PackageItem[] = [
     "city": "Limón Indanza",
     "days": "4 días / 3 noches",
     "price": 340,
-    "datesText": "22 al 25 dic CURRENT_YEAR",
+    "datesText": "22 al 25 dic 2026",
     "availableDates": [
-      "22 al 25 dic CURRENT_YEAR",
-      "29 al 32 dic CURRENT_YEAR"
+      "22 al 25 dic 2026",
+      "29 al 32 dic 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -10371,7 +10374,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Expedición Extrema a la Cueva de los Tayos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-141-2",
@@ -10379,7 +10382,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10391,10 +10394,10 @@ export const packages: PackageItem[] = [
     "city": "Sucúa",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "24 al 25 ene CURRENT_YEAR",
+    "datesText": "24 al 25 ene 2027",
     "availableDates": [
-      "24 al 25 ene CURRENT_YEAR",
-      "31 al 32 ene CURRENT_YEAR"
+      "24 al 25 ene 2027",
+      "31 al 32 ene 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -10442,7 +10445,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cascadas Mágicas del Kintia Panki y Bosque Amazónico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-142-2",
@@ -10450,7 +10453,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10462,10 +10465,10 @@ export const packages: PackageItem[] = [
     "city": "Macas",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "11 al 12 feb CURRENT_YEAR",
+    "datesText": "11 al 12 feb 2027",
     "availableDates": [
-      "11 al 12 feb CURRENT_YEAR",
-      "18 al 19 feb CURRENT_YEAR"
+      "11 al 12 feb 2027",
+      "18 al 19 feb 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -10513,7 +10516,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Laguna de Sardinayacu y Descanso Fluvial!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-143-2",
@@ -10521,7 +10524,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10533,10 +10536,10 @@ export const packages: PackageItem[] = [
     "city": "Macas",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "13 al 14 nov CURRENT_YEAR",
+    "datesText": "13 al 14 nov 2026",
     "availableDates": [
-      "13 al 14 nov CURRENT_YEAR",
-      "20 al 21 nov CURRENT_YEAR"
+      "13 al 14 nov 2026",
+      "20 al 21 nov 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -10584,7 +10587,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Catedral de la Purísima de Macas y Petroglifos Ancestrales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-144-2",
@@ -10592,7 +10595,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10604,10 +10607,10 @@ export const packages: PackageItem[] = [
     "city": "Macas",
     "days": "3 días / 2 noches",
     "price": 195,
-    "datesText": "15 al 17 dic CURRENT_YEAR",
+    "datesText": "15 al 17 dic 2026",
     "availableDates": [
-      "15 al 17 dic CURRENT_YEAR",
-      "22 al 24 dic CURRENT_YEAR"
+      "15 al 17 dic 2026",
+      "22 al 24 dic 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -10665,7 +10668,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabaña Selva Virgen con Vista al Volcán Sangay Activo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-145-2",
@@ -10673,7 +10676,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10685,10 +10688,10 @@ export const packages: PackageItem[] = [
     "city": "Sucúa",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "17 al 18 ene CURRENT_YEAR",
+    "datesText": "17 al 18 ene 2027",
     "availableDates": [
-      "17 al 18 ene CURRENT_YEAR",
-      "24 al 25 ene CURRENT_YEAR"
+      "17 al 18 ene 2027",
+      "24 al 25 ene 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -10736,7 +10739,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Ecológico y Balneario Natural del Río Upano!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-146-2",
@@ -10744,7 +10747,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10756,10 +10759,10 @@ export const packages: PackageItem[] = [
     "city": "Macas",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "19 al 20 feb CURRENT_YEAR",
+    "datesText": "19 al 20 feb 2027",
     "availableDates": [
-      "19 al 20 feb CURRENT_YEAR",
-      "26 al 27 feb CURRENT_YEAR"
+      "19 al 20 feb 2027",
+      "26 al 27 feb 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -10807,7 +10810,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Degustación de Ayampaco Amazónico de Tilapia y Chicha de Chonta!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-147-2",
@@ -10815,7 +10818,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10827,10 +10830,10 @@ export const packages: PackageItem[] = [
     "city": "Gualaquiza",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "21 al 22 nov CURRENT_YEAR",
+    "datesText": "21 al 22 nov 2026",
     "availableDates": [
-      "21 al 22 nov CURRENT_YEAR",
-      "28 al 29 nov CURRENT_YEAR"
+      "21 al 22 nov 2026",
+      "28 al 29 nov 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -10878,7 +10881,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking Hacia las Cascadas Sagradas del Río Namakim!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-148-2",
@@ -10886,7 +10889,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10898,10 +10901,10 @@ export const packages: PackageItem[] = [
     "city": "Sucúa",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "23 al 24 dic CURRENT_YEAR",
+    "datesText": "23 al 24 dic 2026",
     "availableDates": [
-      "23 al 24 dic CURRENT_YEAR",
-      "30 al 31 dic CURRENT_YEAR"
+      "23 al 24 dic 2026",
+      "30 al 31 dic 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -10949,7 +10952,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Baños de Vapor con Hierbas Medicinales Amazónicas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-149-2",
@@ -10957,7 +10960,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -10969,10 +10972,10 @@ export const packages: PackageItem[] = [
     "city": "Sucúa",
     "days": "3 días / 2 noches",
     "price": 160,
-    "datesText": "10 al 12 ene CURRENT_YEAR",
+    "datesText": "10 al 12 ene 2027",
     "availableDates": [
-      "10 al 12 ene CURRENT_YEAR",
-      "17 al 19 ene CURRENT_YEAR"
+      "10 al 12 ene 2027",
+      "17 al 19 ene 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -11030,7 +11033,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Convivencia con la Nacionalidad Shuar y Ritos Ancestrales de Fuerza!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-150-2",
@@ -11038,7 +11041,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11050,10 +11053,10 @@ export const packages: PackageItem[] = [
     "city": "Tena",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "12 al 13 feb CURRENT_YEAR",
+    "datesText": "12 al 13 feb 2027",
     "availableDates": [
-      "12 al 13 feb CURRENT_YEAR",
-      "19 al 20 feb CURRENT_YEAR"
+      "12 al 13 feb 2027",
+      "19 al 20 feb 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -11101,7 +11104,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Rafting Clase IV!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-151-2",
@@ -11109,7 +11112,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11121,10 +11124,10 @@ export const packages: PackageItem[] = [
     "city": "Archidona",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "14 al 15 nov CURRENT_YEAR",
+    "datesText": "14 al 15 nov 2026",
     "availableDates": [
-      "14 al 15 nov CURRENT_YEAR",
-      "21 al 22 nov CURRENT_YEAR"
+      "14 al 15 nov 2026",
+      "21 al 22 nov 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -11172,7 +11175,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cavernas de Jumandy y Laberintos Subterráneos de Archidona!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-152-2",
@@ -11180,7 +11183,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11192,10 +11195,10 @@ export const packages: PackageItem[] = [
     "city": "Misahuallí",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "16 al 17 dic CURRENT_YEAR",
+    "datesText": "16 al 17 dic 2026",
     "availableDates": [
-      "16 al 17 dic CURRENT_YEAR",
-      "23 al 24 dic CURRENT_YEAR"
+      "16 al 17 dic 2026",
+      "23 al 24 dic 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -11243,7 +11246,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Playas de Agua Dulce del Río Misahuallí y Monos Capuchinos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-153-2",
@@ -11251,7 +11254,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11263,10 +11266,10 @@ export const packages: PackageItem[] = [
     "city": "Baeza",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "18 al 19 ene CURRENT_YEAR",
+    "datesText": "18 al 19 ene 2027",
     "availableDates": [
-      "18 al 19 ene CURRENT_YEAR",
-      "25 al 26 ene CURRENT_YEAR"
+      "18 al 19 ene 2027",
+      "25 al 26 ene 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -11314,7 +11317,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Pueblo Patrimonial de Baeza Vieja y Ruta de la Canela!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-154-2",
@@ -11322,7 +11325,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11334,10 +11337,10 @@ export const packages: PackageItem[] = [
     "city": "Papallacta",
     "days": "2 días / 1 noche",
     "price": 175,
-    "datesText": "20 al 21 feb CURRENT_YEAR",
+    "datesText": "20 al 21 feb 2027",
     "availableDates": [
-      "20 al 21 feb CURRENT_YEAR",
-      "27 al 28 feb CURRENT_YEAR"
+      "20 al 21 feb 2027",
+      "27 al 28 feb 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -11385,7 +11388,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Domo Romántico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-155-2",
@@ -11393,7 +11396,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11405,10 +11408,10 @@ export const packages: PackageItem[] = [
     "city": "Misahuallí",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "22 al 23 nov CURRENT_YEAR",
+    "datesText": "22 al 23 nov 2026",
     "availableDates": [
-      "22 al 23 nov CURRENT_YEAR",
-      "29 al 30 nov CURRENT_YEAR"
+      "22 al 23 nov 2026",
+      "29 al 30 nov 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -11456,7 +11459,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Visita al Centro de Rescate de Fauna Silvestre amaZOOnico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-156-2",
@@ -11464,7 +11467,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11476,10 +11479,10 @@ export const packages: PackageItem[] = [
     "city": "Tena",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "24 al 25 dic CURRENT_YEAR",
+    "datesText": "24 al 25 dic 2026",
     "availableDates": [
-      "24 al 25 dic CURRENT_YEAR",
-      "31 al 32 dic CURRENT_YEAR"
+      "24 al 25 dic 2026",
+      "31 al 32 dic 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -11527,7 +11530,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cata de Chocolate Kallari Fino de Aroma y Maito de Carachama!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-157-2",
@@ -11535,7 +11538,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11547,10 +11550,10 @@ export const packages: PackageItem[] = [
     "city": "El Chaco",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "11 al 12 ene CURRENT_YEAR",
+    "datesText": "11 al 12 ene 2027",
     "availableDates": [
-      "11 al 12 ene CURRENT_YEAR",
-      "18 al 19 ene CURRENT_YEAR"
+      "11 al 12 ene 2027",
+      "18 al 19 ene 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -11598,7 +11601,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking a la Cascada San Rafael y Cañón del Quijos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-158-2",
@@ -11606,7 +11609,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11618,10 +11621,10 @@ export const packages: PackageItem[] = [
     "city": "Papallacta",
     "days": "2 días / 1 noche",
     "price": 155,
-    "datesText": "13 al 14 feb CURRENT_YEAR",
+    "datesText": "13 al 14 feb 2027",
     "availableDates": [
-      "13 al 14 feb CURRENT_YEAR",
-      "20 al 21 feb CURRENT_YEAR"
+      "13 al 14 feb 2027",
+      "20 al 21 feb 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -11669,7 +11672,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Circuito Termal Exclusivo y Spa Andino!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-159-2",
@@ -11677,7 +11680,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11689,10 +11692,10 @@ export const packages: PackageItem[] = [
     "city": "Misahuallí",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "15 al 16 nov CURRENT_YEAR",
+    "datesText": "15 al 16 nov 2026",
     "availableDates": [
-      "15 al 16 nov CURRENT_YEAR",
-      "22 al 23 nov CURRENT_YEAR"
+      "15 al 16 nov 2026",
+      "22 al 23 nov 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -11740,7 +11743,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Comunidad Kichwa Shiripuno: Danza, Artesanías y Plantas Medicinales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-160-2",
@@ -11748,7 +11751,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11760,10 +11763,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Francisco de Orellana (El Coca)",
     "days": "3 días / 2 noches",
     "price": 235,
-    "datesText": "17 al 19 dic CURRENT_YEAR",
+    "datesText": "17 al 19 dic 2026",
     "availableDates": [
-      "17 al 19 dic CURRENT_YEAR",
-      "24 al 26 dic CURRENT_YEAR"
+      "17 al 19 dic 2026",
+      "24 al 26 dic 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -11821,7 +11824,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Expedición!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-161-2",
@@ -11829,7 +11832,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11841,10 +11844,10 @@ export const packages: PackageItem[] = [
     "city": "Parque Nacional Yasuní",
     "days": "4 días / 3 noches",
     "price": 420,
-    "datesText": "19 al 22 ene CURRENT_YEAR",
+    "datesText": "19 al 22 ene 2027",
     "availableDates": [
-      "19 al 22 ene CURRENT_YEAR",
-      "26 al 29 ene CURRENT_YEAR"
+      "19 al 22 ene 2027",
+      "26 al 29 ene 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -11912,7 +11915,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Torre de Observación del Dosel!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-162-2",
@@ -11920,7 +11923,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -11932,10 +11935,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Francisco de Orellana (El Coca)",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "21 al 22 feb CURRENT_YEAR",
+    "datesText": "21 al 22 feb 2027",
     "availableDates": [
-      "21 al 22 feb CURRENT_YEAR",
-      "28 al 29 feb CURRENT_YEAR"
+      "21 al 22 feb 2027",
+      "28 al 29 feb 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -11983,7 +11986,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-163-2",
@@ -11991,7 +11994,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12003,10 +12006,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Francisco de Orellana (El Coca)",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "23 al 24 nov CURRENT_YEAR",
+    "datesText": "23 al 24 nov 2026",
     "availableDates": [
-      "23 al 24 nov CURRENT_YEAR",
-      "30 al 31 nov CURRENT_YEAR"
+      "23 al 24 nov 2026",
+      "30 al 31 nov 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -12054,7 +12057,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Museo Arqueológico MACCO y Culturas Ribereñas de Orellana!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-164-2",
@@ -12062,7 +12065,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12074,10 +12077,10 @@ export const packages: PackageItem[] = [
     "city": "Parque Nacional Yasuní",
     "days": "4 días / 3 noches",
     "price": 490,
-    "datesText": "10 al 13 dic CURRENT_YEAR",
+    "datesText": "10 al 13 dic 2026",
     "availableDates": [
-      "10 al 13 dic CURRENT_YEAR",
-      "17 al 20 dic CURRENT_YEAR"
+      "10 al 13 dic 2026",
+      "17 al 20 dic 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -12145,7 +12148,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ecolodge Flotante!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-165-2",
@@ -12153,7 +12156,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12165,10 +12168,10 @@ export const packages: PackageItem[] = [
     "city": "Parque Nacional Yasuní",
     "days": "3 días / 2 noches",
     "price": 310,
-    "datesText": "12 al 14 ene CURRENT_YEAR",
+    "datesText": "12 al 14 ene 2027",
     "availableDates": [
-      "12 al 14 ene CURRENT_YEAR",
-      "19 al 21 ene CURRENT_YEAR"
+      "12 al 14 ene 2027",
+      "19 al 21 ene 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -12226,7 +12229,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Safari de Monos, Guacamayos y Saladeros de Arcilla!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-166-2",
@@ -12234,7 +12237,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12246,10 +12249,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Francisco de Orellana (El Coca)",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "14 al 15 feb CURRENT_YEAR",
+    "datesText": "14 al 15 feb 2027",
     "availableDates": [
-      "14 al 15 feb CURRENT_YEAR",
-      "21 al 22 feb CURRENT_YEAR"
+      "14 al 15 feb 2027",
+      "21 al 22 feb 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -12297,7 +12300,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Degustación de Gusanos de Chonta (Chontacuro) y Pescado al Vapor!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-167-2",
@@ -12305,7 +12308,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12317,10 +12320,10 @@ export const packages: PackageItem[] = [
     "city": "Loreto",
     "days": "3 días / 2 noches",
     "price": 185,
-    "datesText": "16 al 18 nov CURRENT_YEAR",
+    "datesText": "16 al 18 nov 2026",
     "availableDates": [
-      "16 al 18 nov CURRENT_YEAR",
-      "23 al 25 nov CURRENT_YEAR"
+      "16 al 18 nov 2026",
+      "23 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -12378,7 +12381,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking Nocturno!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-168-2",
@@ -12386,7 +12389,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12398,10 +12401,10 @@ export const packages: PackageItem[] = [
     "city": "Puerto Francisco de Orellana (El Coca)",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "18 al 19 dic CURRENT_YEAR",
+    "datesText": "18 al 19 dic 2026",
     "availableDates": [
-      "18 al 19 dic CURRENT_YEAR",
-      "25 al 26 dic CURRENT_YEAR"
+      "18 al 19 dic 2026",
+      "25 al 26 dic 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -12449,7 +12452,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Tratamiento de Relajación con Lodo de Río y Esencias Selváticas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-169-2",
@@ -12457,7 +12460,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12469,10 +12472,10 @@ export const packages: PackageItem[] = [
     "city": "Parque Nacional Yasuní",
     "days": "4 días / 3 noches",
     "price": 410,
-    "datesText": "20 al 23 ene CURRENT_YEAR",
+    "datesText": "20 al 23 ene 2027",
     "availableDates": [
-      "20 al 23 ene CURRENT_YEAR",
-      "27 al 30 ene CURRENT_YEAR"
+      "20 al 23 ene 2027",
+      "27 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -12540,7 +12543,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Convivencia con la Nacionalidad Waorani!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-170-2",
@@ -12548,7 +12551,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12560,10 +12563,10 @@ export const packages: PackageItem[] = [
     "city": "Puyo",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "22 al 23 feb CURRENT_YEAR",
+    "datesText": "22 al 23 feb 2027",
     "availableDates": [
-      "22 al 23 feb CURRENT_YEAR",
-      "29 al 30 feb CURRENT_YEAR"
+      "22 al 23 feb 2027",
+      "29 al 30 feb 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -12611,7 +12614,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Salto del Río y Canyoning!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-171-2",
@@ -12619,7 +12622,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12631,10 +12634,10 @@ export const packages: PackageItem[] = [
     "city": "Puyo",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "24 al 25 nov CURRENT_YEAR",
+    "datesText": "24 al 25 nov 2026",
     "availableDates": [
-      "24 al 25 nov CURRENT_YEAR",
-      "31 al 32 nov CURRENT_YEAR"
+      "24 al 25 nov 2026",
+      "31 al 32 nov 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -12682,7 +12685,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva Biológica Yanacocha y Jardín Botánico Las Orquídeas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-172-2",
@@ -12690,7 +12693,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12702,10 +12705,10 @@ export const packages: PackageItem[] = [
     "city": "Mera",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "11 al 12 dic CURRENT_YEAR",
+    "datesText": "11 al 12 dic 2026",
     "availableDates": [
-      "11 al 12 dic CURRENT_YEAR",
-      "18 al 19 dic CURRENT_YEAR"
+      "11 al 12 dic 2026",
+      "18 al 19 dic 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -12753,7 +12756,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Fluvial y Tranquilidad!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-173-2",
@@ -12761,7 +12764,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12773,10 +12776,10 @@ export const packages: PackageItem[] = [
     "city": "Shell",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "13 al 14 ene CURRENT_YEAR",
+    "datesText": "13 al 14 ene 2027",
     "availableDates": [
-      "13 al 14 ene CURRENT_YEAR",
-      "20 al 21 ene CURRENT_YEAR"
+      "13 al 14 ene 2027",
+      "20 al 21 ene 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -12824,7 +12827,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Historia de la Aviación Misionera!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-174-2",
@@ -12832,7 +12835,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12844,10 +12847,10 @@ export const packages: PackageItem[] = [
     "city": "Puyo",
     "days": "2 días / 1 noche",
     "price": 155,
-    "datesText": "15 al 16 feb CURRENT_YEAR",
+    "datesText": "15 al 16 feb 2027",
     "availableDates": [
-      "15 al 16 feb CURRENT_YEAR",
-      "22 al 23 feb CURRENT_YEAR"
+      "15 al 16 feb 2027",
+      "22 al 23 feb 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -12895,7 +12898,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabaña Nido sobre la Selva con Mirador Indichuris al Ocaso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-175-2",
@@ -12903,7 +12906,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12915,10 +12918,10 @@ export const packages: PackageItem[] = [
     "city": "Puyo",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "17 al 18 nov CURRENT_YEAR",
+    "datesText": "17 al 18 nov 2026",
     "availableDates": [
-      "17 al 18 nov CURRENT_YEAR",
-      "24 al 25 nov CURRENT_YEAR"
+      "17 al 18 nov 2026",
+      "24 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -12966,7 +12969,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-176-2",
@@ -12974,7 +12977,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -12986,10 +12989,10 @@ export const packages: PackageItem[] = [
     "city": "Puyo",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "19 al 20 dic CURRENT_YEAR",
+    "datesText": "19 al 20 dic 2026",
     "availableDates": [
-      "19 al 20 dic CURRENT_YEAR",
-      "26 al 27 dic CURRENT_YEAR"
+      "19 al 20 dic 2026",
+      "26 al 27 dic 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -13037,7 +13040,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de la Ilex Guayusa, Ceviche Volquetero y Maito de Tilapia!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-177-2",
@@ -13045,7 +13048,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13057,10 +13060,10 @@ export const packages: PackageItem[] = [
     "city": "Canelos",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "21 al 22 ene CURRENT_YEAR",
+    "datesText": "21 al 22 ene 2027",
     "availableDates": [
-      "21 al 22 ene CURRENT_YEAR",
-      "28 al 29 ene CURRENT_YEAR"
+      "21 al 22 ene 2027",
+      "28 al 29 ene 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -13108,7 +13111,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking a la Selva Virgen de Canelos y Miradores Panorámicos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-178-2",
@@ -13116,7 +13119,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13128,10 +13131,10 @@ export const packages: PackageItem[] = [
     "city": "Mera",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "23 al 24 feb CURRENT_YEAR",
+    "datesText": "23 al 24 feb 2027",
     "availableDates": [
-      "23 al 24 feb CURRENT_YEAR",
-      "30 al 31 feb CURRENT_YEAR"
+      "23 al 24 feb 2027",
+      "30 al 31 feb 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -13179,7 +13182,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Baños de Bosque (Shinrin-Yoku) y Masajes con Arcilla Amazónica!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-179-2",
@@ -13187,7 +13190,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13199,10 +13202,10 @@ export const packages: PackageItem[] = [
     "city": "Canelos",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "10 al 11 nov CURRENT_YEAR",
+    "datesText": "10 al 11 nov 2026",
     "availableDates": [
-      "10 al 11 nov CURRENT_YEAR",
-      "17 al 18 nov CURRENT_YEAR"
+      "10 al 11 nov 2026",
+      "17 al 18 nov 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -13250,7 +13253,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Alfarería Indígena y Tradiciones Kichwa de Canelos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-180-2",
@@ -13258,7 +13261,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13270,10 +13273,10 @@ export const packages: PackageItem[] = [
     "city": "Mindo",
     "days": "2 días / 1 noche",
     "price": 125,
-    "datesText": "12 al 13 dic CURRENT_YEAR",
+    "datesText": "12 al 13 dic 2026",
     "availableDates": [
-      "12 al 13 dic CURRENT_YEAR",
-      "19 al 20 dic CURRENT_YEAR"
+      "12 al 13 dic 2026",
+      "19 al 20 dic 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -13321,7 +13324,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Canopy de 10 Cables y Tubing!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-181-2",
@@ -13329,7 +13332,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13341,10 +13344,10 @@ export const packages: PackageItem[] = [
     "city": "Mindo",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "14 al 15 ene CURRENT_YEAR",
+    "datesText": "14 al 15 ene 2027",
     "availableDates": [
-      "14 al 15 ene CURRENT_YEAR",
-      "21 al 22 ene CURRENT_YEAR"
+      "14 al 15 ene 2027",
+      "21 al 22 ene 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -13392,7 +13395,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de los Colibríes y Jardín de Mariposas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-182-2",
@@ -13400,7 +13403,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13412,10 +13415,10 @@ export const packages: PackageItem[] = [
     "city": "Pedro Vicente Maldonado",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "16 al 17 feb CURRENT_YEAR",
+    "datesText": "16 al 17 feb 2027",
     "availableDates": [
-      "16 al 17 feb CURRENT_YEAR",
-      "23 al 24 feb CURRENT_YEAR"
+      "16 al 17 feb 2027",
+      "23 al 24 feb 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -13463,7 +13466,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Piscinas Naturales y Cascadas Verdes de Pedro Vicente Maldonado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-183-2",
@@ -13471,7 +13474,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13483,10 +13486,10 @@ export const packages: PackageItem[] = [
     "city": "Quito",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "18 al 19 nov CURRENT_YEAR",
+    "datesText": "18 al 19 nov 2026",
     "availableDates": [
-      "18 al 19 nov CURRENT_YEAR",
-      "25 al 26 nov CURRENT_YEAR"
+      "18 al 19 nov 2026",
+      "25 al 26 nov 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -13534,7 +13537,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Quito Colonial, Convento de San Francisco y Mitad del Mundo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-184-2",
@@ -13542,7 +13545,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13554,10 +13557,10 @@ export const packages: PackageItem[] = [
     "city": "Quito",
     "days": "2 días / 1 noche",
     "price": 175,
-    "datesText": "20 al 21 dic CURRENT_YEAR",
+    "datesText": "20 al 21 dic 2026",
     "availableDates": [
-      "20 al 21 dic CURRENT_YEAR",
-      "27 al 28 dic CURRENT_YEAR"
+      "20 al 21 dic 2026",
+      "27 al 28 dic 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -13605,7 +13608,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Glamping Exclusivo con Vistas al Volcán Rucu Pichincha y Fogata!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-185-2",
@@ -13613,7 +13616,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13625,10 +13628,10 @@ export const packages: PackageItem[] = [
     "city": "Quito",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "22 al 23 ene CURRENT_YEAR",
+    "datesText": "22 al 23 ene 2027",
     "availableDates": [
-      "22 al 23 ene CURRENT_YEAR",
-      "29 al 30 ene CURRENT_YEAR"
+      "22 al 23 ene 2027",
+      "29 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -13676,7 +13679,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Teleférico de Quito, Parque Vulqano y Granja de Machachi!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-186-2",
@@ -13684,7 +13687,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13696,10 +13699,10 @@ export const packages: PackageItem[] = [
     "city": "Cayambe",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "24 al 25 feb CURRENT_YEAR",
+    "datesText": "24 al 25 feb 2027",
     "availableDates": [
-      "24 al 25 feb CURRENT_YEAR",
-      "31 al 32 feb CURRENT_YEAR"
+      "24 al 25 feb 2027",
+      "31 al 32 feb 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -13747,7 +13750,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de los Bizcochos de Cayambe, Queso de Hoja y Hornado de Sangolquí!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-187-2",
@@ -13755,7 +13758,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13767,10 +13770,10 @@ export const packages: PackageItem[] = [
     "city": "Quito",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "11 al 12 nov CURRENT_YEAR",
+    "datesText": "11 al 12 nov 2026",
     "availableDates": [
-      "11 al 12 nov CURRENT_YEAR",
-      "18 al 19 nov CURRENT_YEAR"
+      "11 al 12 nov 2026",
+      "18 al 19 nov 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -13818,7 +13821,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ascenso de Aclimatación a las Cumbres del Rucu Pichincha e Ilaló!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-188-2",
@@ -13826,7 +13829,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13838,10 +13841,10 @@ export const packages: PackageItem[] = [
     "city": "Quito",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "13 al 14 dic CURRENT_YEAR",
+    "datesText": "13 al 14 dic 2026",
     "availableDates": [
-      "13 al 14 dic CURRENT_YEAR",
-      "20 al 21 dic CURRENT_YEAR"
+      "13 al 14 dic 2026",
+      "20 al 21 dic 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -13889,7 +13892,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Spa de Altura con Tratamiento de Chocolate y Sauna Andino!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-189-2",
@@ -13897,7 +13900,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13909,10 +13912,10 @@ export const packages: PackageItem[] = [
     "city": "Quito",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "15 al 16 ene CURRENT_YEAR",
+    "datesText": "15 al 16 ene 2027",
     "availableDates": [
-      "15 al 16 ene CURRENT_YEAR",
-      "22 al 23 ene CURRENT_YEAR"
+      "15 al 16 ene 2027",
+      "22 al 23 ene 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -13960,7 +13963,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Comunidad Yunguilla: Turismo Sostenible, Mermeladas y Quesos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-190-2",
@@ -13968,7 +13971,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -13980,10 +13983,10 @@ export const packages: PackageItem[] = [
     "city": "Ayangue",
     "days": "2 días / 1 noche",
     "price": 145,
-    "datesText": "17 al 18 feb CURRENT_YEAR",
+    "datesText": "17 al 18 feb 2027",
     "availableDates": [
-      "17 al 18 feb CURRENT_YEAR",
-      "24 al 25 feb CURRENT_YEAR"
+      "17 al 18 feb 2027",
+      "24 al 25 feb 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -14031,7 +14034,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Bautizo de Buceo y Snorkel!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-191-2",
@@ -14039,7 +14042,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14051,10 +14054,10 @@ export const packages: PackageItem[] = [
     "city": "Salinas",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "19 al 20 nov CURRENT_YEAR",
+    "datesText": "19 al 20 nov 2026",
     "availableDates": [
-      "19 al 20 nov CURRENT_YEAR",
-      "26 al 27 nov CURRENT_YEAR"
+      "19 al 20 nov 2026",
+      "26 al 27 nov 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -14102,7 +14105,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Avistamiento de Lobos Marinos y Piqueros!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-192-2",
@@ -14110,7 +14113,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14122,10 +14125,10 @@ export const packages: PackageItem[] = [
     "city": "Olón",
     "days": "3 días / 2 noches",
     "price": 140,
-    "datesText": "21 al 23 dic CURRENT_YEAR",
+    "datesText": "21 al 23 dic 2026",
     "availableDates": [
-      "21 al 23 dic CURRENT_YEAR",
-      "28 al 30 dic CURRENT_YEAR"
+      "21 al 23 dic 2026",
+      "28 al 30 dic 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -14183,7 +14186,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Sol, Surf y Relajación Frente al Pacífico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-193-2",
@@ -14191,7 +14194,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14203,10 +14206,10 @@ export const packages: PackageItem[] = [
     "city": "Santa Elena",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "23 al 24 ene CURRENT_YEAR",
+    "datesText": "23 al 24 ene 2027",
     "availableDates": [
-      "23 al 24 ene CURRENT_YEAR",
-      "30 al 31 ene CURRENT_YEAR"
+      "23 al 24 ene 2027",
+      "30 al 31 ene 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -14254,7 +14257,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Museo Los Amantes de Sumpa y Catedral de Santa Elena!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-194-2",
@@ -14262,7 +14265,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14274,10 +14277,10 @@ export const packages: PackageItem[] = [
     "city": "Salinas",
     "days": "3 días / 2 noches",
     "price": 220,
-    "datesText": "10 al 12 feb CURRENT_YEAR",
+    "datesText": "10 al 12 feb 2027",
     "availableDates": [
-      "10 al 12 feb CURRENT_YEAR",
-      "17 al 19 feb CURRENT_YEAR"
+      "10 al 12 feb 2027",
+      "17 al 19 feb 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -14335,7 +14338,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Suite Frente al Mar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-195-2",
@@ -14343,7 +14346,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14355,10 +14358,10 @@ export const packages: PackageItem[] = [
     "city": "Salinas",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "12 al 13 nov CURRENT_YEAR",
+    "datesText": "12 al 13 nov 2026",
     "availableDates": [
-      "12 al 13 nov CURRENT_YEAR",
-      "19 al 20 nov CURRENT_YEAR"
+      "12 al 13 nov 2026",
+      "19 al 20 nov 2026"
     ],
     "dates": {
       "startDay": 12,
@@ -14406,7 +14409,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Náutico Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-196-2",
@@ -14414,7 +14417,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14426,10 +14429,10 @@ export const packages: PackageItem[] = [
     "city": "La Libertad",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "14 al 15 dic CURRENT_YEAR",
+    "datesText": "14 al 15 dic 2026",
     "availableDates": [
-      "14 al 15 dic CURRENT_YEAR",
-      "21 al 22 dic CURRENT_YEAR"
+      "14 al 15 dic 2026",
+      "21 al 22 dic 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -14477,7 +14480,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de los Ceviches Playeros, Arroz Marinero y Cazuela!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-197-2",
@@ -14485,7 +14488,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14497,10 +14500,10 @@ export const packages: PackageItem[] = [
     "city": "Santa Elena",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "16 al 17 ene CURRENT_YEAR",
+    "datesText": "16 al 17 ene 2027",
     "availableDates": [
-      "16 al 17 ene CURRENT_YEAR",
-      "23 al 24 ene CURRENT_YEAR"
+      "16 al 17 ene 2027",
+      "23 al 24 ene 2027"
     ],
     "dates": {
       "startDay": 16,
@@ -14548,7 +14551,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Caminata por el Bosque Protector Chongón Colonche!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-198-2",
@@ -14556,7 +14559,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14568,10 +14571,10 @@ export const packages: PackageItem[] = [
     "city": "Santa Elena",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "18 al 19 feb CURRENT_YEAR",
+    "datesText": "18 al 19 feb 2027",
     "availableDates": [
-      "18 al 19 feb CURRENT_YEAR",
-      "25 al 26 feb CURRENT_YEAR"
+      "18 al 19 feb 2027",
+      "25 al 26 feb 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -14619,7 +14622,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Baños de Lodo Volcánico y Aguas Sulfurosas de San Vicente!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-199-2",
@@ -14627,7 +14630,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14639,10 +14642,10 @@ export const packages: PackageItem[] = [
     "city": "Montañita",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "20 al 21 nov CURRENT_YEAR",
+    "datesText": "20 al 21 nov 2026",
     "availableDates": [
-      "20 al 21 nov CURRENT_YEAR",
-      "27 al 28 nov CURRENT_YEAR"
+      "20 al 21 nov 2026",
+      "27 al 28 nov 2026"
     ],
     "dates": {
       "startDay": 20,
@@ -14690,7 +14693,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Talleres de Paja Toquilla y Tagua con Artesanos de Dos Mangas!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-200-2",
@@ -14698,7 +14701,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14710,10 +14713,10 @@ export const packages: PackageItem[] = [
     "city": "Valle Hermoso",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "22 al 23 dic CURRENT_YEAR",
+    "datesText": "22 al 23 dic 2026",
     "availableDates": [
-      "22 al 23 dic CURRENT_YEAR",
-      "29 al 30 dic CURRENT_YEAR"
+      "22 al 23 dic 2026",
+      "29 al 30 dic 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -14761,7 +14764,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Rafting!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-201-2",
@@ -14769,7 +14772,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14781,10 +14784,10 @@ export const packages: PackageItem[] = [
     "city": "Santo Domingo",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "24 al 25 ene CURRENT_YEAR",
+    "datesText": "24 al 25 ene 2027",
     "availableDates": [
-      "24 al 25 ene CURRENT_YEAR",
-      "31 al 32 ene CURRENT_YEAR"
+      "24 al 25 ene 2027",
+      "31 al 32 ene 2027"
     ],
     "dates": {
       "startDay": 24,
@@ -14832,7 +14835,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva Botánica La Perla y Observación de Tucanes!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-202-2",
@@ -14840,7 +14843,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14852,10 +14855,10 @@ export const packages: PackageItem[] = [
     "city": "Valle Hermoso",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "11 al 12 feb CURRENT_YEAR",
+    "datesText": "11 al 12 feb 2027",
     "availableDates": [
-      "11 al 12 feb CURRENT_YEAR",
-      "18 al 19 feb CURRENT_YEAR"
+      "11 al 12 feb 2027",
+      "18 al 19 feb 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -14903,7 +14906,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Acuático Tropical y Balnearios de Valle Hermoso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-203-2",
@@ -14911,7 +14914,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14923,10 +14926,10 @@ export const packages: PackageItem[] = [
     "city": "Alluriquín",
     "days": "2 días / 1 noche",
     "price": 80,
-    "datesText": "13 al 14 nov CURRENT_YEAR",
+    "datesText": "13 al 14 nov 2026",
     "availableDates": [
-      "13 al 14 nov CURRENT_YEAR",
-      "20 al 21 nov CURRENT_YEAR"
+      "13 al 14 nov 2026",
+      "20 al 21 nov 2026"
     ],
     "dates": {
       "startDay": 13,
@@ -14974,7 +14977,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Catedral El Buen Pastor y Tradición Melcochera de Alluriquín!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-204-2",
@@ -14982,7 +14985,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -14994,10 +14997,10 @@ export const packages: PackageItem[] = [
     "city": "Santo Domingo",
     "days": "2 días / 1 noche",
     "price": 145,
-    "datesText": "15 al 16 dic CURRENT_YEAR",
+    "datesText": "15 al 16 dic 2026",
     "availableDates": [
-      "15 al 16 dic CURRENT_YEAR",
-      "22 al 23 dic CURRENT_YEAR"
+      "15 al 16 dic 2026",
+      "22 al 23 dic 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -15045,7 +15048,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabaña Romántica Rodeada de Bosque Lluvioso y Cascada Privada!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-205-2",
@@ -15053,7 +15056,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15065,10 +15068,10 @@ export const packages: PackageItem[] = [
     "city": "Santo Domingo",
     "days": "2 días / 1 noche",
     "price": 80,
-    "datesText": "17 al 18 ene CURRENT_YEAR",
+    "datesText": "17 al 18 ene 2027",
     "availableDates": [
-      "17 al 18 ene CURRENT_YEAR",
-      "24 al 25 ene CURRENT_YEAR"
+      "17 al 18 ene 2027",
+      "24 al 25 ene 2027"
     ],
     "dates": {
       "startDay": 17,
@@ -15116,7 +15119,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque de la Juventud y Complejo Recreativo Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-206-2",
@@ -15124,7 +15127,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15136,10 +15139,10 @@ export const packages: PackageItem[] = [
     "city": "Alluriquín",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "19 al 20 feb CURRENT_YEAR",
+    "datesText": "19 al 20 feb 2027",
     "availableDates": [
-      "19 al 20 feb CURRENT_YEAR",
-      "26 al 27 feb CURRENT_YEAR"
+      "19 al 20 feb 2027",
+      "26 al 27 feb 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -15187,7 +15190,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de las Parrilladas de Carne Tsáchila y Dulces de Caña!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-207-2",
@@ -15195,7 +15198,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15207,10 +15210,10 @@ export const packages: PackageItem[] = [
     "city": "Santo Domingo",
     "days": "2 días / 1 noche",
     "price": 100,
-    "datesText": "21 al 22 nov CURRENT_YEAR",
+    "datesText": "21 al 22 nov 2026",
     "availableDates": [
-      "21 al 22 nov CURRENT_YEAR",
-      "28 al 29 nov CURRENT_YEAR"
+      "21 al 22 nov 2026",
+      "28 al 29 nov 2026"
     ],
     "dates": {
       "startDay": 21,
@@ -15258,7 +15261,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking por la Selva Subtropical de la Cascada del Amor!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-208-2",
@@ -15266,7 +15269,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15278,10 +15281,10 @@ export const packages: PackageItem[] = [
     "city": "Santo Domingo",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "23 al 24 dic CURRENT_YEAR",
+    "datesText": "23 al 24 dic 2026",
     "availableDates": [
-      "23 al 24 dic CURRENT_YEAR",
-      "30 al 31 dic CURRENT_YEAR"
+      "23 al 24 dic 2026",
+      "30 al 31 dic 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -15329,7 +15332,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Baños de Purificación con Hierbas Tsáchilas y Arcilla Roja!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-209-2",
@@ -15337,7 +15340,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15349,10 +15352,10 @@ export const packages: PackageItem[] = [
     "city": "Santo Domingo",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "10 al 11 ene CURRENT_YEAR",
+    "datesText": "10 al 11 ene 2027",
     "availableDates": [
-      "10 al 11 ene CURRENT_YEAR",
-      "17 al 18 ene CURRENT_YEAR"
+      "10 al 11 ene 2027",
+      "17 al 18 ene 2027"
     ],
     "dates": {
       "startDay": 10,
@@ -15400,7 +15403,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Vivencia Ancestral!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-210-2",
@@ -15408,7 +15411,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15420,10 +15423,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "4 días / 3 noches",
     "price": 340,
-    "datesText": "12 al 15 feb CURRENT_YEAR",
+    "datesText": "12 al 15 feb 2027",
     "availableDates": [
-      "12 al 15 feb CURRENT_YEAR",
-      "19 al 22 feb CURRENT_YEAR"
+      "12 al 15 feb 2027",
+      "19 al 22 feb 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -15491,7 +15494,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Navegación Nocturna!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-211-2",
@@ -15499,7 +15502,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15511,10 +15514,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "4 días / 3 noches",
     "price": 380,
-    "datesText": "14 al 17 nov CURRENT_YEAR",
+    "datesText": "14 al 17 nov 2026",
     "availableDates": [
-      "14 al 17 nov CURRENT_YEAR",
-      "21 al 24 nov CURRENT_YEAR"
+      "14 al 17 nov 2026",
+      "21 al 24 nov 2026"
     ],
     "dates": {
       "startDay": 14,
@@ -15582,7 +15585,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Laguna Grande de Cuyabeno y Observación de Delfines Rosados!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-212-2",
@@ -15590,7 +15593,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15602,10 +15605,10 @@ export const packages: PackageItem[] = [
     "city": "Nueva Loja (Lago Agrio)",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "16 al 17 dic CURRENT_YEAR",
+    "datesText": "16 al 17 dic 2026",
     "availableDates": [
-      "16 al 17 dic CURRENT_YEAR",
-      "23 al 24 dic CURRENT_YEAR"
+      "16 al 17 dic 2026",
+      "23 al 24 dic 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -15653,7 +15656,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descanso Acuático y Atardecer Dorado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-213-2",
@@ -15661,7 +15664,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15673,10 +15676,10 @@ export const packages: PackageItem[] = [
     "city": "Nueva Loja (Lago Agrio)",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "18 al 19 ene CURRENT_YEAR",
+    "datesText": "18 al 19 ene 2027",
     "availableDates": [
-      "18 al 19 ene CURRENT_YEAR",
-      "25 al 26 ene CURRENT_YEAR"
+      "18 al 19 ene 2027",
+      "25 al 26 ene 2027"
     ],
     "dates": {
       "startDay": 18,
@@ -15724,7 +15727,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Turístico Nueva Loja y Etnografía de Pueblos Amazónicos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-214-2",
@@ -15732,7 +15735,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15744,10 +15747,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "4 días / 3 noches",
     "price": 420,
-    "datesText": "20 al 23 feb CURRENT_YEAR",
+    "datesText": "20 al 23 feb 2027",
     "availableDates": [
-      "20 al 23 feb CURRENT_YEAR",
-      "27 al 30 feb CURRENT_YEAR"
+      "20 al 23 feb 2027",
+      "27 al 30 feb 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -15815,7 +15818,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ecolodge Privado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-215-2",
@@ -15823,7 +15826,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15835,10 +15838,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "3 días / 2 noches",
     "price": 275,
-    "datesText": "22 al 24 nov CURRENT_YEAR",
+    "datesText": "22 al 24 nov 2026",
     "availableDates": [
-      "22 al 24 nov CURRENT_YEAR",
-      "29 al 31 nov CURRENT_YEAR"
+      "22 al 24 nov 2026",
+      "29 al 31 nov 2026"
     ],
     "dates": {
       "startDay": 22,
@@ -15896,7 +15899,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Paseo Familiar!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-216-2",
@@ -15904,7 +15907,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15916,10 +15919,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "3 días / 2 noches",
     "price": 195,
-    "datesText": "24 al 26 dic CURRENT_YEAR",
+    "datesText": "24 al 26 dic 2026",
     "availableDates": [
-      "24 al 26 dic CURRENT_YEAR",
-      "31 al 33 dic CURRENT_YEAR"
+      "24 al 26 dic 2026",
+      "31 al 33 dic 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -15977,7 +15980,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta del Casabe Ancestral de Yuca y Pescado!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-217-2",
@@ -15985,7 +15988,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -15997,10 +16000,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "4 días / 3 noches",
     "price": 310,
-    "datesText": "11 al 14 ene CURRENT_YEAR",
+    "datesText": "11 al 14 ene 2027",
     "availableDates": [
-      "11 al 14 ene CURRENT_YEAR",
-      "18 al 21 ene CURRENT_YEAR"
+      "11 al 14 ene 2027",
+      "18 al 21 ene 2027"
     ],
     "dates": {
       "startDay": 11,
@@ -16068,7 +16071,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking por Senderos del Bosque Inundado del Igapó!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-218-2",
@@ -16076,7 +16079,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16088,10 +16091,10 @@ export const packages: PackageItem[] = [
     "city": "Cascales",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "13 al 14 feb CURRENT_YEAR",
+    "datesText": "13 al 14 feb 2027",
     "availableDates": [
-      "13 al 14 feb CURRENT_YEAR",
-      "20 al 21 feb CURRENT_YEAR"
+      "13 al 14 feb 2027",
+      "20 al 21 feb 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -16139,7 +16142,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Tratamiento de Relajación con Aguas Minerales!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-219-2",
@@ -16147,7 +16150,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16159,10 +16162,10 @@ export const packages: PackageItem[] = [
     "city": "Cuyabeno",
     "days": "4 días / 3 noches",
     "price": 350,
-    "datesText": "15 al 18 nov CURRENT_YEAR",
+    "datesText": "15 al 18 nov 2026",
     "availableDates": [
-      "15 al 18 nov CURRENT_YEAR",
-      "22 al 25 nov CURRENT_YEAR"
+      "15 al 18 nov 2026",
+      "22 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 15,
@@ -16230,7 +16233,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Comunidad Étnica Siona: Preparación de Casabe y Sabiduría Chamánica!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-220-2",
@@ -16238,7 +16241,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16250,10 +16253,10 @@ export const packages: PackageItem[] = [
     "city": "Baños de Agua Santa",
     "days": "3 días / 2 noches",
     "price": 175,
-    "datesText": "17 al 19 dic CURRENT_YEAR",
+    "datesText": "17 al 19 dic 2026",
     "availableDates": [
-      "17 al 19 dic CURRENT_YEAR",
-      "24 al 26 dic CURRENT_YEAR"
+      "17 al 19 dic 2026",
+      "24 al 26 dic 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -16311,7 +16314,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Adrenalina Pura: Canyoning, Rafting y Salto del Puente!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-221-2",
@@ -16319,7 +16322,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16331,10 +16334,10 @@ export const packages: PackageItem[] = [
     "city": "Baños de Agua Santa",
     "days": "2 días / 1 noche",
     "price": 115,
-    "datesText": "19 al 20 ene CURRENT_YEAR",
+    "datesText": "19 al 20 ene 2027",
     "availableDates": [
-      "19 al 20 ene CURRENT_YEAR",
-      "26 al 27 ene CURRENT_YEAR"
+      "19 al 20 ene 2027",
+      "26 al 27 ene 2027"
     ],
     "dates": {
       "startDay": 19,
@@ -16382,7 +16385,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta de las Cascadas, Manto de la Novia y Pailón del Diablo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-222-2",
@@ -16390,7 +16393,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16402,10 +16405,10 @@ export const packages: PackageItem[] = [
     "city": "Patate",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "21 al 22 feb CURRENT_YEAR",
+    "datesText": "21 al 22 feb 2027",
     "availableDates": [
-      "21 al 22 feb CURRENT_YEAR",
-      "28 al 29 feb CURRENT_YEAR"
+      "21 al 22 feb 2027",
+      "28 al 29 feb 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -16453,7 +16456,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Valle de la Eterna Primavera, Huertos de Mandarina y Relax!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-223-2",
@@ -16461,7 +16464,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16473,10 +16476,10 @@ export const packages: PackageItem[] = [
     "city": "Ambato",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "23 al 24 nov CURRENT_YEAR",
+    "datesText": "23 al 24 nov 2026",
     "availableDates": [
-      "23 al 24 nov CURRENT_YEAR",
-      "30 al 31 nov CURRENT_YEAR"
+      "23 al 24 nov 2026",
+      "30 al 31 nov 2026"
     ],
     "dates": {
       "startDay": 23,
@@ -16524,7 +16527,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Quinta de Juan León Mera, Museo Martínez Holguín y Centro de Ambato!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-224-2",
@@ -16532,7 +16535,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16544,10 +16547,10 @@ export const packages: PackageItem[] = [
     "city": "Baños de Agua Santa",
     "days": "2 días / 1 noche",
     "price": 190,
-    "datesText": "10 al 11 dic CURRENT_YEAR",
+    "datesText": "10 al 11 dic 2026",
     "availableDates": [
-      "10 al 11 dic CURRENT_YEAR",
-      "17 al 18 dic CURRENT_YEAR"
+      "10 al 11 dic 2026",
+      "17 al 18 dic 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -16595,7 +16598,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Glamping de Lujo con Jacuzzi y Vista al Volcán Tungurahua!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-225-2",
@@ -16603,7 +16606,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16615,10 +16618,10 @@ export const packages: PackageItem[] = [
     "city": "Baños de Agua Santa",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "12 al 13 ene CURRENT_YEAR",
+    "datesText": "12 al 13 ene 2027",
     "availableDates": [
-      "12 al 13 ene CURRENT_YEAR",
-      "19 al 20 ene CURRENT_YEAR"
+      "12 al 13 ene 2027",
+      "19 al 20 ene 2027"
     ],
     "dates": {
       "startDay": 12,
@@ -16666,7 +16669,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Columpio del Fin del Mundo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-226-2",
@@ -16674,7 +16677,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16686,10 +16689,10 @@ export const packages: PackageItem[] = [
     "city": "Ambato",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "14 al 15 feb CURRENT_YEAR",
+    "datesText": "14 al 15 feb 2027",
     "availableDates": [
-      "14 al 15 feb CURRENT_YEAR",
-      "21 al 22 feb CURRENT_YEAR"
+      "14 al 15 feb 2027",
+      "21 al 22 feb 2027"
     ],
     "dates": {
       "startDay": 14,
@@ -16737,7 +16740,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Melcochas de Baños, Llapingachos Ambateños y Dulces de Cevallos!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-227-2",
@@ -16745,7 +16748,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16757,10 +16760,10 @@ export const packages: PackageItem[] = [
     "city": "Baños de Agua Santa",
     "days": "2 días / 1 noche",
     "price": 135,
-    "datesText": "16 al 17 nov CURRENT_YEAR",
+    "datesText": "16 al 17 nov 2026",
     "availableDates": [
-      "16 al 17 nov CURRENT_YEAR",
-      "23 al 24 nov CURRENT_YEAR"
+      "16 al 17 nov 2026",
+      "23 al 24 nov 2026"
     ],
     "dates": {
       "startDay": 16,
@@ -16808,7 +16811,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking de Alta Montaña al Refugio del Volcán Tungurahua!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-228-2",
@@ -16816,7 +16819,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16828,10 +16831,10 @@ export const packages: PackageItem[] = [
     "city": "Baños de Agua Santa",
     "days": "2 días / 1 noche",
     "price": 110,
-    "datesText": "18 al 19 dic CURRENT_YEAR",
+    "datesText": "18 al 19 dic 2026",
     "availableDates": [
-      "18 al 19 dic CURRENT_YEAR",
-      "25 al 26 dic CURRENT_YEAR"
+      "18 al 19 dic 2026",
+      "25 al 26 dic 2026"
     ],
     "dates": {
       "startDay": 18,
@@ -16879,7 +16882,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Aguas Termales de la Virgen, El Salado y Spa Volcánico!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-229-2",
@@ -16887,7 +16890,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16899,10 +16902,9 @@ export const packages: PackageItem[] = [
     "city": "Pelileo",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "20 al 21 ene CURRENT_YEAR",
+    "datesText": "02 al 03 ene 2027",
     "availableDates": [
-      "20 al 21 ene CURRENT_YEAR",
-      "27 al 28 ene CURRENT_YEAR"
+      "02 al 03 ene 2027"
     ],
     "dates": {
       "startDay": 20,
@@ -16950,7 +16952,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cultura Salasaka: Tejeduría!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-230-2",
@@ -16958,7 +16960,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -16970,10 +16972,10 @@ export const packages: PackageItem[] = [
     "city": "Nangaritza",
     "days": "3 días / 2 noches",
     "price": 210,
-    "datesText": "22 al 24 feb CURRENT_YEAR",
+    "datesText": "22 al 24 feb 2027",
     "availableDates": [
-      "22 al 24 feb CURRENT_YEAR",
-      "29 al 31 feb CURRENT_YEAR"
+      "22 al 24 feb 2027",
+      "29 al 31 feb 2027"
     ],
     "dates": {
       "startDay": 22,
@@ -17031,7 +17033,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Expedición!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-231-2",
@@ -17039,7 +17041,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17051,10 +17053,10 @@ export const packages: PackageItem[] = [
     "city": "Zamora",
     "days": "2 días / 1 noche",
     "price": 120,
-    "datesText": "24 al 25 nov CURRENT_YEAR",
+    "datesText": "24 al 25 nov 2026",
     "availableDates": [
-      "24 al 25 nov CURRENT_YEAR",
-      "31 al 32 nov CURRENT_YEAR"
+      "24 al 25 nov 2026",
+      "31 al 32 nov 2026"
     ],
     "dates": {
       "startDay": 24,
@@ -17102,7 +17104,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reserva Podocarpus Sur: Bosque de Palmeras Gigantes y Aves!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-232-2",
@@ -17110,7 +17112,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17122,10 +17124,10 @@ export const packages: PackageItem[] = [
     "city": "Yantzaza",
     "days": "2 días / 1 noche",
     "price": 95,
-    "datesText": "11 al 12 dic CURRENT_YEAR",
+    "datesText": "11 al 12 dic 2026",
     "availableDates": [
-      "11 al 12 dic CURRENT_YEAR",
-      "18 al 19 dic CURRENT_YEAR"
+      "11 al 12 dic 2026",
+      "18 al 19 dic 2026"
     ],
     "dates": {
       "startDay": 11,
@@ -17173,7 +17175,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Descanso!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-233-2",
@@ -17181,7 +17183,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17193,10 +17195,10 @@ export const packages: PackageItem[] = [
     "city": "Zamora",
     "days": "2 días / 1 noche",
     "price": 90,
-    "datesText": "13 al 14 ene CURRENT_YEAR",
+    "datesText": "13 al 14 ene 2027",
     "availableDates": [
-      "13 al 14 ene CURRENT_YEAR",
-      "20 al 21 ene CURRENT_YEAR"
+      "13 al 14 ene 2027",
+      "20 al 21 ene 2027"
     ],
     "dates": {
       "startDay": 13,
@@ -17244,7 +17246,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Reloj Floral Gigante de Zamora y Orígenes del Cacao!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-234-2",
@@ -17252,7 +17254,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17264,10 +17266,10 @@ export const packages: PackageItem[] = [
     "city": "Zamora",
     "days": "2 días / 1 noche",
     "price": 160,
-    "datesText": "15 al 16 feb CURRENT_YEAR",
+    "datesText": "15 al 16 feb 2027",
     "availableDates": [
-      "15 al 16 feb CURRENT_YEAR",
-      "22 al 23 feb CURRENT_YEAR"
+      "15 al 16 feb 2027",
+      "22 al 23 feb 2027"
     ],
     "dates": {
       "startDay": 15,
@@ -17315,7 +17317,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Cabaña Romántica Ecológica!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-235-2",
@@ -17323,7 +17325,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17335,10 +17337,10 @@ export const packages: PackageItem[] = [
     "city": "Zamora",
     "days": "2 días / 1 noche",
     "price": 85,
-    "datesText": "17 al 18 nov CURRENT_YEAR",
+    "datesText": "17 al 18 nov 2026",
     "availableDates": [
-      "17 al 18 nov CURRENT_YEAR",
-      "24 al 25 nov CURRENT_YEAR"
+      "17 al 18 nov 2026",
+      "24 al 25 nov 2026"
     ],
     "dates": {
       "startDay": 17,
@@ -17386,7 +17388,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Parque Lineal y Cascadas de Santa Cleotilde para Toda la Familia!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-236-2",
@@ -17394,7 +17396,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17406,10 +17408,10 @@ export const packages: PackageItem[] = [
     "city": "Palanda",
     "days": "3 días / 2 noches",
     "price": 145,
-    "datesText": "19 al 21 dic CURRENT_YEAR",
+    "datesText": "19 al 21 dic 2026",
     "availableDates": [
-      "19 al 21 dic CURRENT_YEAR",
-      "26 al 28 dic CURRENT_YEAR"
+      "19 al 21 dic 2026",
+      "26 al 28 dic 2026"
     ],
     "dates": {
       "startDay": 19,
@@ -17467,7 +17469,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Ruta Arqueológica del Primer Cacao del Mundo!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-237-2",
@@ -17475,7 +17477,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17487,10 +17489,10 @@ export const packages: PackageItem[] = [
     "city": "Nangaritza",
     "days": "3 días / 2 noches",
     "price": 180,
-    "datesText": "21 al 23 ene CURRENT_YEAR",
+    "datesText": "21 al 23 ene 2027",
     "availableDates": [
-      "21 al 23 ene CURRENT_YEAR",
-      "28 al 30 ene CURRENT_YEAR"
+      "21 al 23 ene 2027",
+      "28 al 30 ene 2027"
     ],
     "dates": {
       "startDay": 21,
@@ -17548,7 +17550,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Trekking al Laberinto de las Mil Ilusiones y Cueva de los Tayos Sur!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-238-2",
@@ -17556,7 +17558,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17568,10 +17570,10 @@ export const packages: PackageItem[] = [
     "city": "Zamora",
     "days": "2 días / 1 noche",
     "price": 105,
-    "datesText": "23 al 24 feb CURRENT_YEAR",
+    "datesText": "23 al 24 feb 2027",
     "availableDates": [
-      "23 al 24 feb CURRENT_YEAR",
-      "30 al 31 feb CURRENT_YEAR"
+      "23 al 24 feb 2027",
+      "30 al 31 feb 2027"
     ],
     "dates": {
       "startDay": 23,
@@ -17619,7 +17621,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Hidroterapia Natural!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-239-2",
@@ -17627,7 +17629,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   },
@@ -17639,10 +17641,10 @@ export const packages: PackageItem[] = [
     "city": "Nangaritza",
     "days": "2 días / 1 noche",
     "price": 130,
-    "datesText": "10 al 11 nov CURRENT_YEAR",
+    "datesText": "10 al 11 nov 2026",
     "availableDates": [
-      "10 al 11 nov CURRENT_YEAR",
-      "17 al 18 nov CURRENT_YEAR"
+      "10 al 11 nov 2026",
+      "17 al 18 nov 2026"
     ],
     "dates": {
       "startDay": 10,
@@ -17690,7 +17692,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "¡Una experiencia insuperable en Encuentro con las Comunidades Shuar de Nangaritza y Artesanías!",
         "comment": "La puntualidad, la calidez del guía y la calidad de la alimentación fueron de primer nivel. Recomendado al 100% para viajar con total tranquilidad.",
-        "date": "14 oct CURRENT_YEAR"
+        "date": "14 oct 2026"
       },
       {
         "id": "rev-240-2",
@@ -17698,7 +17700,7 @@ export const packages: PackageItem[] = [
         "rating": 5,
         "title": "Organización impecable y paisajes de ensueño",
         "comment": "Superó todas mis expectativas. El itinerario estuvo muy bien planificado, con los tiempos justos para disfrutar cada actividad sin prisas.",
-        "date": "22 oct CURRENT_YEAR"
+        "date": "22 oct 2026"
       }
     ]
   }

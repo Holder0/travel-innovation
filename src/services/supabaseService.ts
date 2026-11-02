@@ -112,17 +112,42 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
 
       const daysText = `${item.duracion_dias} días / ${item.duracion_noches} noches`
 
-      // Mapear fechas disponibles si existen en paquete_fechas
-      const availableDates = item.paquete_fechas && item.paquete_fechas.length > 0
-        ? item.paquete_fechas.map((f: any) => {
-            const start = new Date(f.fecha_inicio)
-            const end = new Date(f.fecha_fin)
-            const sDay = String(start.getUTCDate()).padStart(2, "0")
-            const eDay = String(end.getUTCDate()).padStart(2, "0")
-            const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
-            return `${sDay} al ${eDay} ${months[end.getUTCMonth()]} ${end.getUTCFullYear()}`
-          })
-        : [`Salidas programadas ${CURRENT_YEAR}`]
+      // Mapear fechas disponibles si existen en paquete_fechas (orden cronológico estricto)
+      const sortedFechas =
+        item.paquete_fechas && item.paquete_fechas.length > 0
+          ? [...item.paquete_fechas].sort(
+              (a: any, b: any) =>
+                new Date(a.fecha_inicio).getTime() - new Date(b.fecha_inicio).getTime()
+            )
+          : []
+
+      const availableDates =
+        sortedFechas.length > 0
+          ? sortedFechas.map((f: any) => {
+              const start = new Date(f.fecha_inicio)
+              const end = new Date(f.fecha_fin)
+              const sDay = String(start.getUTCDate()).padStart(2, "0")
+              const eDay = String(end.getUTCDate()).padStart(2, "0")
+              const months = [
+                "ene",
+                "feb",
+                "mar",
+                "abr",
+                "may",
+                "jun",
+                "jul",
+                "ago",
+                "sep",
+                "oct",
+                "nov",
+                "dic",
+              ]
+              return `${sDay} al ${eDay} ${months[end.getUTCMonth()]} ${end.getUTCFullYear()}`
+            })
+          : [
+              `12 al ${12 + Math.max(1, item.duracion_dias - 1)} dic ${CURRENT_YEAR}`,
+              `16 al ${16 + Math.max(1, item.duracion_dias - 1)} ene ${CURRENT_YEAR + 1}`,
+            ]
 
       // Mapear itinerario día a día
       const itinerary = item.itinerarios && item.itinerarios.length > 0
@@ -165,8 +190,8 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
         ? Number((reviews.reduce((acc: number, cur: any) => acc + cur.rating, 0) / reviews.length).toFixed(1))
         : 4.9
 
-      const availableSlots = item.paquete_fechas && item.paquete_fechas.length > 0
-        ? item.paquete_fechas[0].cupos_disponibles
+      const availableSlots = sortedFechas.length > 0
+        ? sortedFechas[0].cupos_disponibles
         : undefined
 
       return {

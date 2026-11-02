@@ -303,15 +303,19 @@ export function Detail({
               label="Intervalos de fechas disponibles"
               value={selectedDate}
               onChange={setSelectedDate}
-              help="Elige tus fechas."
+              help={
+                pkg.name.toLowerCase().includes("ballena")
+                  ? "Temporada oficial de avistamiento: Julio a Septiembre."
+                  : pkg.category?.toLowerCase().includes("trekking") || pkg.name.toLowerCase().includes("volcán")
+                    ? "Ventanas de expedición programadas en fines de semana."
+                    : "Salidas programadas con cupos confirmados."
+              }
             >
-              {[...pkg.availableDates]
-                .sort((a, b) => a.localeCompare(b, "es"))
-                .map((date) => (
-                  <option key={date} value={date}>
-                    {date}
-                  </option>
-                ))}
+              {pkg.availableDates.map((date) => (
+                <option key={date} value={date}>
+                  {date}
+                </option>
+              ))}
             </SelectField>
           ) : (
             <div className="field">
@@ -321,8 +325,15 @@ export function Detail({
                   <CalendarIcon size={18} color="var(--abyss)" />
                 </span>
                 <div className="date-info">
-                  <strong>{pkg.datesText}</strong>
-                  <span className="date-badge">Fecha específica confirmada</span>
+                  <strong>{pkg.datesText || (pkg.availableDates && pkg.availableDates[0])}</strong>
+                  <span className="date-badge">
+                    {pkg.name.toLowerCase().includes("diablada") ||
+                    pkg.name.toLowerCase().includes("navidad") ||
+                    pkg.name.toLowerCase().includes("inti raymi") ||
+                    pkg.name.toLowerCase().includes("solsticio")
+                      ? "Salida anual exclusiva confirmada"
+                      : "Salida única programada"}
+                  </span>
                 </div>
               </div>
             </div>
