@@ -19,6 +19,7 @@ import {
 } from "../components/common"
 
 import { packages } from "../data/packagesData"
+import { computePackageDetailedMeta } from "../utils/packageDetailsHelper"
 
 
 export function Detail({
@@ -117,6 +118,10 @@ export function Detail({
     }
     return list
   }, [pkg])
+
+  const detailsMeta = useMemo(() => {
+    return computePackageDetailedMeta(pkg, resolvedItinerary)
+  }, [pkg, resolvedItinerary])
 
   return (
     <>
@@ -372,39 +377,15 @@ export function Detail({
             <span>Itinerario detallado día a día</span>
           </div>
           <div className="accordion-body">
-            <div className="itinerary-timeline">
-              {resolvedItinerary.map((day) => (
-                <div key={day.day} className="itinerary-day-card">
+            <div className="itinerary-timeline-clean">
+              {resolvedItinerary.map((day, idx) => (
+                <div key={day.day} className="itinerary-day-seamless">
                   <div className="itinerary-day-header">
                     <span className="itinerary-day-badge">Día {day.day}</span>
                     <h3 className="itinerary-day-title">{day.title}</h3>
                   </div>
                   <p className="itinerary-day-description">{day.description}</p>
-                  <div className="meal-badges-row">
-                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#64748b" }}>
-                      Alimentación:
-                    </span>
-                    {day.meals.breakfast && (
-                      <span className="meal-badge meal-badge--included">
-                        <BreakfastIcon size={14} /> Desayuno incluido
-                      </span>
-                    )}
-                    {day.meals.lunch && (
-                      <span className="meal-badge meal-badge--included">
-                        <LunchIcon size={14} /> Almuerzo incluido
-                      </span>
-                    )}
-                    {day.meals.dinner && (
-                      <span className="meal-badge meal-badge--included">
-                        <DinnerIcon size={14} /> Cena incluida
-                      </span>
-                    )}
-                    {!day.meals.breakfast && !day.meals.lunch && !day.meals.dinner && (
-                      <span className="meal-badge meal-badge--none">
-                        Por cuenta del viajero
-                      </span>
-                    )}
-                  </div>
+                  {idx < resolvedItinerary.length - 1 && <hr className="itinerary-day-separator" />}
                 </div>
               ))}
             </div>
@@ -418,30 +399,42 @@ export function Detail({
           <div className="accordion-body two-col">
             <div>
               <h3>Incluye</h3>
-              <p style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <CheckIcon size={16} color="#059669" style={{ flexShrink: 0, marginTop: "4px" }} />
-                <span>Transporte turístico, hospedaje seleccionado, guianza profesional y entradas a sitios previstos.</span>
-              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "8px 0 0", display: "flex", flexDirection: "column", gap: "8px" }}>
+                {detailsMeta.includes.map((item, idx) => (
+                  <li key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "12px", lineHeight: "1.4" }}>
+                    <CheckIcon size={14} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div>
+            <div style={{ marginTop: "12px" }}>
               <h3>No incluye</h3>
-              <p style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                <CloseXIcon size={16} color="#dc2626" style={{ flexShrink: 0, marginTop: "4px" }} />
-                <span>Vuelos no especificados, gastos personales ni propinas voluntarias.</span>
-              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "8px 0 0", display: "flex", flexDirection: "column", gap: "8px" }}>
+                {detailsMeta.notIncludes.map((item, idx) => (
+                  <li key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "12px", lineHeight: "1.4" }}>
+                    <CloseXIcon size={14} color="#dc2626" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-
 
         <div className="detail-card">
           <div className="detail-card-header">
             <span>Punto de encuentro y hora</span>
           </div>
           <div className="accordion-body">
-            <p>
-              <strong>Terminal turística, {pkg.province} · 06:00.</strong> Hay una
-              tolerancia máxima de 15 minutos.
+            <p style={{ margin: "0 0 6px", fontSize: "12.5px", lineHeight: "1.4" }}>
+              <strong>Lugar:</strong> {detailsMeta.meetingPoint}
+            </p>
+            <p style={{ margin: "0 0 6px", fontSize: "12.5px", lineHeight: "1.4" }}>
+              <strong>Hora de salida:</strong> {detailsMeta.meetingTime}
+            </p>
+            <p style={{ margin: 0, fontSize: "12px", color: "var(--abyss)", lineHeight: "1.4" }}>
+              <em>{detailsMeta.meetingNotes}</em>
             </p>
           </div>
         </div>
@@ -451,10 +444,11 @@ export function Detail({
             <span>Documentos requeridos</span>
           </div>
           <div className="accordion-body">
-            <p>
-              Cédula de identidad física y original del titular. Para menores de edad,
-              documento de identidad y autorización de viaje cuando corresponda.
-            </p>
+            <ul style={{ paddingLeft: "16px", margin: 0, display: "flex", flexDirection: "column", gap: "6px", fontSize: "12px", lineHeight: "1.4" }}>
+              {detailsMeta.requiredDocuments.map((doc, idx) => (
+                <li key={idx}>{doc}</li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -463,7 +457,11 @@ export function Detail({
             <span>Condiciones resumidas</span>
           </div>
           <div className="accordion-body">
-            <p>La salida requiere un mínimo de 15 personas.</p>
+            <ul style={{ paddingLeft: "16px", margin: "0 0 10px", display: "flex", flexDirection: "column", gap: "6px", fontSize: "12px", lineHeight: "1.4" }}>
+              {detailsMeta.conditions.map((cond, idx) => (
+                <li key={idx}>{cond}</li>
+              ))}
+            </ul>
             <button className="text-link" onClick={() => go("politicas")}>
               Ver política completa de cancelación
             </button>
