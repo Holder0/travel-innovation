@@ -58,6 +58,9 @@ export interface PackageItem {
   rating?: number
   reviewsCount?: number
   availableSlots?: number
+  totalCapacity?: number
+  maxGroupSize?: number
+  dateSlotsMap?: Record<string, number>
   itinerary?: ItineraryDay[]
   reviews?: ReviewItem[]
 }

@@ -228,31 +228,52 @@ export function computePackageDetailedMeta(
     requiredDocuments.push("Póliza de seguro médico de accidentes personales o carné de IESS (sugerido para tranquilidad durante la excursión).")
   }
 
-  // 6. Condiciones resumidas específicas
+  // 6. Condiciones resumidas específicas y límites de capacidad
   const conditions: string[] = []
-  if (isTrekking) {
-    conditions.push("Grupo mínimo para confirmar salida: 4 personas (máximo 8 montañistas por cordada técnica con guía ASEGUIM).")
+  const isWhale = pkg.name.toLowerCase().includes("ballena")
+
+  if (isWhale) {
+    conditions.push("Capacidad máxima por salida: 25 personas (aforo de embarcación autorizada por Capitanía de Puerto y MAATE). Límite por reserva: hasta 8 personas.")
+    conditions.push("Navegación marítima guiada con chaleco salvavidas obligatorio y distancia prudencial de observación de cetáceos.")
+    conditions.push("Salidas operativas exclusivamente durante la temporada biológica de migración (Julio a Septiembre).")
+  } else if (isGalapagos) {
+    conditions.push("Capacidad máxima por salida: hasta 60 pasajeros (subdivididos en grupos de máximo 16 personas por guía naturalista de la DPNG). Límite por reserva: hasta 10 personas.")
+    conditions.push("Salida sujeta a las disposiciones marítimas de la Dirección del Parque Nacional Galápagos y emisión anticipada de boletos aéreos.")
+    conditions.push("Prohibido ingresar con plásticos de un solo uso, semillas, frutas frescas o animales domésticos a las islas. Apto para todas las edades.")
+  } else if (isTrekking) {
+    conditions.push("Capacidad máxima técnica por expedición: 14 montañistas (ratio de seguridad ASEGUIM de 2 montañistas por guía en cumbre/glaciar o máximo 6 en media montaña). Límite por reserva: hasta 4 personas.")
     conditions.push("Apto para personas a partir de 12 años con condición física activa y sin antecedentes de cardiopatías severas o asma aguda.")
     conditions.push("Itinerario de cumbre sujeto a condiciones meteorológicas y nevadas repentinas por seguridad de la expedición.")
-  } else if (isGalapagos) {
-    conditions.push("Salida con cupos regulados sujeta a las disposiciones marítimas de la Dirección del Parque Nacional Galápagos.")
-    conditions.push("Prohibido ingresar con plásticos de un solo uso, semillas, frutas frescas o animales domésticos a las islas.")
-    conditions.push("Apto para todas las edades; navegación interislas requiere chaleco obligatorio en todo momento.")
   } else if (isAventura) {
-    conditions.push("Grupo mínimo para operar la salida: 6 aventureros.")
+    conditions.push("Capacidad máxima por salida: 20 aventureros (distribuidos en balsas de 6 a 8 personas con guía certificado IRF). Límite por reserva: hasta 6 personas.")
     conditions.push("Edad mínima recomendada: 10 años para rafting / canyoning; chalecos salvavidas tipo V y cascos obligatorios.")
     conditions.push("El guía líder tiene autoridad para suspender o variar el tramo acuático en caso de crecidas intempestivas del río.")
   } else if (isAmazonia) {
-    conditions.push("Grupo mínimo para confirmación: 4 personas.")
+    conditions.push("Capacidad máxima por salida: 18 personas (regulada por la capacidad de canoas fluviales a motor y habitaciones del eco-lodge). Límite por reserva: hasta 6 personas.")
     conditions.push("Se exige respeto absoluto a los códigos culturales de las comunidades anfitrionas y no alimentar a la fauna silvestre.")
     conditions.push("Equipaje permitido: 1 maleta de hasta 15 kg por persona para traslados fluviales en canoa.")
   } else if (isRomantico) {
-    conditions.push("Experiencia exclusiva diseñada para 2 personas con ambiente privado y servicios personalizados.")
-    conditions.push("Horario de Check-in en hostería / glamping: 14:00 · Check-out: 12:00.")
+    conditions.push("Capacidad máxima exclusiva: 8 personas (máximo 4 parejas por fecha de salida en domos geodésicos / suites con hidromasaje). Límite por reserva: 2 personas (estricto parejas).")
+    conditions.push("Experiencia privada con ambientación especial, fogata y atención personalizada. Horario Check-in: 14:00 · Check-out: 12:00.")
+  } else if (isGastronomia) {
+    conditions.push("Capacidad máxima por salida: 25 personas (aforo óptimo para degustación sensorial y talleres en haciendas cacaoteras). Límite por reserva: hasta 8 personas.")
+    conditions.push("Programa gastronómico apto para todas las edades y familias amantes del cacao fino de aroma.")
+  } else if (isSpa) {
+    conditions.push("Capacidad máxima por salida: 18 personas (aforo controlado para garantizar una atmósfera de silencio y relajación en piscinas termales). Límite por reserva: hasta 6 personas.")
+    conditions.push("Ingreso a áreas termales con traje de baño; niños bajo supervisión permanente de sus padres.")
+  } else if (isComunitario) {
+    conditions.push("Capacidad máxima por salida: 16 personas (para preservar la dinámica comunitaria y la convivencia respetuosa con las familias anfitrionas). Límite por reserva: hasta 6 personas.")
+    conditions.push("Código de conducta comunitaria: solicitar autorización antes de tomar fotografías a pobladores locales.")
+  } else if (pkg.categorySlug === "familiar-todo-incluido" || pkg.category?.toLowerCase().includes("familiar")) {
+    conditions.push("Capacidad máxima por salida: 45 personas (aforo completo de autobús turístico interprovincial y resort vacacional). Límite por reserva: hasta 12 personas.")
+    conditions.push("Programa integral apto para todas las edades, niños pequeños y adultos mayores con asistencia continua de nuestro equipo.")
+  } else if (isCosta) {
+    conditions.push("Capacidad máxima por salida: 40 pasajeros en transporte turístico climatizado. Límite por reserva: hasta 10 personas.")
+    conditions.push("Recomendado llevar protector solar biodegradable, toalla de playa y calzado para caminatas costeras.")
   } else {
-    conditions.push("Salida turística confirmada con un mínimo de 10 personas.")
-    conditions.push("Programa apto para todas las edades, niños pequeños y adultos mayores.")
-    conditions.push("En caso de fuerza mayor vial o climática, se aplicará reprogramación consensuada o ruta alternativa turística.")
+    conditions.push("Capacidad máxima por salida: 35 pasajeros en transporte turístico ejecutivo. Límite por reserva: hasta 8 personas.")
+    conditions.push("Salida turística confirmada con un mínimo de 8 participantes.")
+    conditions.push("En caso de fuerza mayor vial o climática, se aplicará reprogramación consensuada o ruta turística alternativa.")
   }
 
   return {

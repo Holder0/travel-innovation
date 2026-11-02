@@ -73,8 +73,20 @@ export function Detail({
     setActiveImage(pkg.image)
   }, [pkg])
 
+  const currentSlots = pkg.dateSlotsMap?.[selectedDate] ?? pkg.availableSlots ?? 20
+  const maxGroupLimit = pkg.maxGroupSize ?? (pkg.categorySlug === "luna-de-miel" ? 2 : 10)
+  const maxAllowedPeople = Math.max(1, Math.min(currentSlots, maxGroupLimit))
+  const isSoldOut = currentSlots <= 0
+
+  useEffect(() => {
+    if (people > maxAllowedPeople) {
+      setPeople(maxAllowedPeople)
+    }
+  }, [selectedDate, maxAllowedPeople])
+
   const total = people * pkg.price
   const add = () => {
+    if (isSoldOut) return
     addToCart({
       pkg,
       date: selectedDate,
@@ -280,23 +292,22 @@ export function Detail({
             <strong>${pkg.price}</strong> por persona
           </p>
 
-          {/* Indicador de Cupos Disponibles si existen */}
-          {pkg.availableSlots !== undefined && (
-            <div
-              className={`available-slots-badge ${
-                pkg.availableSlots <= 6 ? "available-slots-badge--urgent" : ""
-              }`}
-              style={{ marginBottom: "16px" }}
-            >
-              <LightningIcon size={16} color={pkg.availableSlots <= 6 ? "#b91c1c" : "#92400e"} />
-              <span>
-                {pkg.availableSlots <= 4
-                  ? `¡Solo quedan ${pkg.availableSlots} cupos disponibles para esta salida!`
-                  : `${pkg.availableSlots} cupos disponibles para esta fecha`}
-              </span>
-            </div>
-          )}
-
+          {/* Indicador de Cupos Disponibles de la fecha seleccionada */}
+          <div
+            className={`available-slots-badge ${
+              isSoldOut || currentSlots <= 4 ? "available-slots-badge--urgent" : ""
+            }`}
+            style={{ marginBottom: "16px" }}
+          >
+            <LightningIcon size={16} color={isSoldOut || currentSlots <= 4 ? "#b91c1c" : "#92400e"} />
+            <span>
+              {isSoldOut
+                ? "¡Cupos agotados para esta fecha de salida!"
+                : currentSlots <= 4
+                  ? `¡Solo quedan ${currentSlots} cupos disponibles para esta salida!`
+                  : `${currentSlots} cupos disponibles (capacidad máx. del grupo: ${pkg.totalCapacity ?? 20} personas)`}
+            </span>
+          </div>
 
           {pkg.availableDates && pkg.availableDates.length > 1 ? (
             <SelectField
@@ -311,11 +322,22 @@ export function Detail({
                     : "Salidas programadas con cupos confirmados."
               }
             >
-              {pkg.availableDates.map((date) => (
-                <option key={date} value={date}>
-                  {date}
-                </option>
-              ))}
+              {pkg.availableDates.map((date) => {
+                const dateSlots = pkg.dateSlotsMap?.[date]
+                const suffix =
+                  dateSlots !== undefined
+                    ? dateSlots <= 0
+                      ? " · [AGOTADO]"
+                      : dateSlots <= 4
+                        ? ` · (¡Solo ${dateSlots} cupos!)`
+                        : ` · (${dateSlots} cupos)`
+                    : ""
+                return (
+                  <option key={date} value={date} disabled={dateSlots === 0}>
+                    {date}{suffix}
+                  </option>
+                )
+              })}
             </SelectField>
           ) : (
             <div className="field">
@@ -345,40 +367,56 @@ export function Detail({
               <button
                 aria-label="Quitar una persona"
                 onClick={() => setPeople(Math.max(1, people - 1))}
+                disabled={people <= 1 || isSoldOut}
               >
                 −
               </button>
-              <strong aria-live="polite">{people}</strong>
+              <strong aria-live="polite">{isSoldOut ? 0 : people}</strong>
               <button
                 aria-label="Agregar una persona"
-                onClick={() => setPeople(Math.min(20, people + 1))}
-                disabled={people >= 20}
+                onClick={() => setPeople(Math.min(maxAllowedPeople, people + 1))}
+                disabled={people >= maxAllowedPeople || isSoldOut}
               >
                 +
               </button>
             </div>
-            {people >= 20 && (
+            {people >= maxAllowedPeople && !isSoldOut && (
               <div
                 className="inline-alert"
                 style={{ marginTop: "12px", padding: "12px 14px" }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                   <AlertTriangleIcon size={18} color="#b42318" />
-                  <strong>Límite de 20 personas por paquete</strong>
+                  <strong>Límite de {maxAllowedPeople} personas alcanzado</strong>
                 </div>
                 <span style={{ fontSize: "13.5px", lineHeight: 1.45 }}>
-                  Este paquete está limitado a un máximo de 20 personas por reserva web. Si necesitas un paquete para un grupo mayor o evento corporativo, por favor contáctanos al teléfono <strong>02 2456456</strong> o al correo <strong>travelinnovation.tamc@gmail.com</strong>.
+                  {people >= currentSlots
+                    ? `Solo quedan ${currentSlots} cupos disponibles para esta salida (capacidad máxima total del grupo: ${pkg.totalCapacity ?? 20} personas).`
+                    : `Este paquete permite un máximo de ${maxGroupLimit} personas por reserva individual en línea. Para grupos mayores o eventos corporativos, por favor contáctanos al teléfono 02 2456456 o al correo travelinnovation.tamc@gmail.com.`}
                 </span>
               </div>
             )}
-
+            {isSoldOut && (
+              <div
+                className="inline-alert"
+                style={{ marginTop: "12px", padding: "12px 14px", borderColor: "#fca5a5", background: "#fef2f2" }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                  <AlertTriangleIcon size={18} color="#b42318" />
+                  <strong style={{ color: "#b91c1c" }}>Fecha sin cupos disponibles</strong>
+                </div>
+                <span style={{ fontSize: "13.5px", lineHeight: 1.45, color: "#991b1b" }}>
+                  Esta salida se encuentra completamente agotada. Por favor selecciona otro intervalo de fechas disponible en el menú superior.
+                </span>
+              </div>
+            )}
           </div>
           <div className="total-row">
             <span>Total estimado</span>
             <strong>${total}</strong>
           </div>
-          <Button kind="primary" onClick={add}>
-            Agregar al carrito
+          <Button kind="primary" onClick={add} disabled={isSoldOut}>
+            {isSoldOut ? "Fecha agotada" : "Agregar al carrito"}
           </Button>
         </section>
       </div>

@@ -194,6 +194,50 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
         ? sortedFechas[0].cupos_disponibles
         : undefined
 
+      const dateSlotsMap: Record<string, number> = {}
+      if (sortedFechas.length > 0) {
+        sortedFechas.forEach((f: any) => {
+          const start = new Date(f.fecha_inicio)
+          const end = new Date(f.fecha_fin)
+          const sDay = String(start.getUTCDate()).padStart(2, "0")
+          const eDay = String(end.getUTCDate()).padStart(2, "0")
+          const months = [
+            "ene",
+            "feb",
+            "mar",
+            "abr",
+            "may",
+            "jun",
+            "jul",
+            "ago",
+            "sep",
+            "oct",
+            "nov",
+            "dic",
+          ]
+          const key = `${sDay} al ${eDay} ${months[end.getUTCMonth()]} ${end.getUTCFullYear()}`
+          dateSlotsMap[key] = f.cupos_disponibles
+        })
+      }
+
+      const totalCapacity = sortedFechas.length > 0 ? sortedFechas[0].cupos_totales : 20
+
+      const catName = item.categorias?.nombre || ""
+      const isGalapagos =
+        regionNombre === "Galápagos" || provincia?.nombre?.toLowerCase().includes("galápagos")
+      const isTrekking =
+        catName.includes("Trekking") || item.nombre.toLowerCase().includes("volcán")
+      const isRomantico = catName.includes("Romántico")
+      const isFamiliar = catName.includes("Familiar")
+
+      let maxGroupSize = 8
+      if (isGalapagos) maxGroupSize = 10
+      else if (isFamiliar) maxGroupSize = 12
+      else if (isTrekking) maxGroupSize = 4
+      else if (isRomantico) maxGroupSize = 2
+      else if (catName.includes("Aventura")) maxGroupSize = 6
+      else if (catName.includes("Comunitario") || catName.includes("Spa")) maxGroupSize = 6
+
       return {
         id: item.slug || item.id,
         name: item.nombre,
@@ -223,6 +267,9 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
         rating: avgRating,
         reviewsCount: reviews ? reviews.length : 12,
         availableSlots: availableSlots,
+        totalCapacity: totalCapacity,
+        maxGroupSize: maxGroupSize,
+        dateSlotsMap: dateSlotsMap,
         itinerary: itinerary,
         reviews: reviews,
       }
@@ -344,6 +391,26 @@ export async function saveReservationToSupabase({
       if (errDetalle) {
         console.warn("Aviso al insertar detalle:", errDetalle.message)
         continue
+      }
+
+      // Descontar cupos_disponibles de la fecha en paquete_fechas
+      try {
+        const { data: fechaMatch } = await supabase
+          .from("paquete_fechas")
+          .select("id, cupos_disponibles")
+          .eq("paquete_id", paqueteDbId)
+          .limit(1)
+          .maybeSingle()
+
+        if (fechaMatch) {
+          const updatedSlots = Math.max(0, fechaMatch.cupos_disponibles - item.people)
+          await supabase
+            .from("paquete_fechas")
+            .update({ cupos_disponibles: updatedSlots })
+            .eq("id", fechaMatch.id)
+        }
+      } catch (errQuota) {
+        console.warn("Aviso al descontar cupos en Supabase:", errQuota)
       }
 
       // 4. Insertar pasajeros en 'viajeros'

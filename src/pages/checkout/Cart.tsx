@@ -316,142 +316,153 @@ export function Cart({
                         </div>
 
                         <div className="cart-nested-list">
-                          {group.items.map((subItem, idx) => (
-                            <div key={subItem.id} className="cart-nested-card">
-                              <div className="cart-nested-card-top">
-                                <span className="cart-nested-badge">
-                                  Paquete {idx + 1}
-                                </span>
-                                {group.items.length > 1 && (
-                                  <button
-                                    type="button"
-                                    className="cart-nested-remove-btn"
-                                    onClick={() => requestRemoveSingle(subItem, idx)}
-                                    aria-label={`Quitar Paquete ${idx + 1}`}
-                                    title={`Quitar Paquete ${idx + 1}`}
-                                  >
-                                    <svg
-                                      width="16"
-                                      height="16"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      strokeWidth="2.2"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      aria-hidden="true"
-                                    >
-                                      <path d="M3 6h18" />
-                                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
-                                      <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                                      <line x1="10" y1="11" x2="10" y2="17" />
-                                      <line x1="14" y1="11" x2="14" y2="17" />
-                                    </svg>
-                                  </button>
-                                )}
-                              </div>
+                          {group.items.map((subItem, idx) => {
+                            const itemSlots =
+                              subItem.pkg.dateSlotsMap?.[subItem.date] ??
+                              subItem.pkg.availableSlots ??
+                              20
+                            const itemMaxGroup =
+                              subItem.pkg.maxGroupSize ??
+                              (subItem.pkg.categorySlug === "luna-de-miel" ? 2 : 10)
+                            const itemMaxAllowed = Math.max(1, Math.min(itemSlots, itemMaxGroup))
 
-                              <div className="cart-nested-fields">
-                                <div className="cart-nested-field">
-                                  <span className="cart-nested-field-label">
-                                    Viajeros
+                            return (
+                              <div key={subItem.id} className="cart-nested-card">
+                                <div className="cart-nested-card-top">
+                                  <span className="cart-nested-badge">
+                                    Paquete {idx + 1}
                                   </span>
-                                  <div className="cart-people-control">
+                                  {group.items.length > 1 && (
                                     <button
                                       type="button"
-                                      className="cart-people-btn"
-                                      onClick={() =>
-                                        onUpdatePeople &&
-                                        onUpdatePeople(
-                                          subItem.id,
-                                          subItem.people - 1
-                                        )
-                                      }
-                                      disabled={subItem.people <= 1}
-                                      aria-label={`Disminuir viajeros para Paquete ${idx + 1}`}
-                                      title={
-                                        subItem.people <= 1
-                                          ? "Mínimo 1 viajero"
-                                          : "Quitar un viajero"
-                                      }
+                                      className="cart-nested-remove-btn"
+                                      onClick={() => requestRemoveSingle(subItem, idx)}
+                                      aria-label={`Quitar Paquete ${idx + 1}`}
+                                      title={`Quitar Paquete ${idx + 1}`}
                                     >
-                                      −
+                                      <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2.2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        aria-hidden="true"
+                                      >
+                                        <path d="M3 6h18" />
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                        <line x1="10" y1="11" x2="10" y2="17" />
+                                        <line x1="14" y1="11" x2="14" y2="17" />
+                                      </svg>
                                     </button>
-                                    <span
-                                      className="cart-people-count"
-                                      aria-live="polite"
-                                    >
-                                      {subItem.people}
+                                  )}
+                                </div>
+
+                                <div className="cart-nested-fields">
+                                  <div className="cart-nested-field">
+                                    <span className="cart-nested-field-label">
+                                      Viajeros
                                     </span>
-                                    <button
-                                      type="button"
-                                      className="cart-people-btn"
-                                      onClick={() =>
-                                        onUpdatePeople &&
-                                        onUpdatePeople(
-                                          subItem.id,
-                                          Math.min(20, subItem.people + 1)
-                                        )
-                                      }
-                                      disabled={subItem.people >= 20}
-                                      aria-label={`Aumentar viajeros para Paquete ${idx + 1}`}
-                                      title={
-                                        subItem.people >= 20
-                                          ? "Máximo 20 personas por paquete"
-                                          : "Aumentar un viajero"
-                                      }
-                                    >
-                                      +
-                                    </button>
-                                    <span className="cart-people-unit">
-                                      {subItem.people === 1
-                                        ? "viajero"
-                                        : "viajeros"}
+                                    <div className="cart-people-control">
+                                      <button
+                                        type="button"
+                                        className="cart-people-btn"
+                                        onClick={() =>
+                                          onUpdatePeople &&
+                                          onUpdatePeople(
+                                            subItem.id,
+                                            subItem.people - 1
+                                          )
+                                        }
+                                        disabled={subItem.people <= 1}
+                                        aria-label={`Disminuir viajeros para Paquete ${idx + 1}`}
+                                        title={
+                                          subItem.people <= 1
+                                            ? "Mínimo 1 viajero"
+                                            : "Quitar un viajero"
+                                        }
+                                      >
+                                        −
+                                      </button>
+                                      <span
+                                        className="cart-people-count"
+                                        aria-live="polite"
+                                      >
+                                        {subItem.people}
+                                      </span>
+                                      <button
+                                        type="button"
+                                        className="cart-people-btn"
+                                        onClick={() =>
+                                          onUpdatePeople &&
+                                          onUpdatePeople(
+                                            subItem.id,
+                                            Math.min(itemMaxAllowed, subItem.people + 1)
+                                          )
+                                        }
+                                        disabled={subItem.people >= itemMaxAllowed}
+                                        aria-label={`Aumentar viajeros para Paquete ${idx + 1}`}
+                                        title={
+                                          subItem.people >= itemMaxAllowed
+                                            ? `Máximo ${itemMaxAllowed} personas permitidas`
+                                            : "Aumentar un viajero"
+                                        }
+                                      >
+                                        +
+                                      </button>
+                                      <span className="cart-people-unit">
+                                        {subItem.people === 1
+                                          ? "viajero"
+                                          : "viajeros"}
+                                      </span>
+                                    </div>
+                                  </div>
+
+                                  <div className="cart-nested-field">
+                                    <span className="cart-nested-field-label">
+                                      Precio unitario
+                                    </span>
+                                    <span className="cart-nested-field-value">
+                                      ${subItem.pkg.price}
+                                    </span>
+                                  </div>
+
+                                  <div className="cart-nested-field">
+                                    <span className="cart-nested-field-label">
+                                      Subtotal
+                                    </span>
+                                    <span className="cart-nested-field-value cart-nested-field-value--highlight">
+                                      ${subItem.total}
                                     </span>
                                   </div>
                                 </div>
 
-                                <div className="cart-nested-field">
-                                  <span className="cart-nested-field-label">
-                                    Precio unitario
-                                  </span>
-                                  <span className="cart-nested-field-value">
-                                    ${subItem.pkg.price}
-                                  </span>
-                                </div>
-
-                                <div className="cart-nested-field">
-                                  <span className="cart-nested-field-label">
-                                    Subtotal
-                                  </span>
-                                  <span className="cart-nested-field-value cart-nested-field-value--highlight">
-                                    ${subItem.total}
-                                  </span>
-                                </div>
+                                {subItem.people >= itemMaxAllowed && (
+                                  <div
+                                    className="inline-alert"
+                                    style={{
+                                      marginTop: "10px",
+                                      padding: "8px 12px",
+                                      fontSize: "13px",
+                                    }}
+                                  >
+                                    <strong style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                                      <AlertTriangleIcon size={16} color="#d97706" />
+                                      <span>Límite de {itemMaxAllowed} personas alcanzado</span>
+                                    </strong>
+                                    <span>
+                                      {subItem.people >= itemSlots
+                                        ? `Solo quedan ${itemSlots} cupos disponibles para esta salida (capacidad máxima total: ${subItem.pkg.totalCapacity ?? 20} personas).`
+                                        : `Este paquete permite un máximo de ${itemMaxGroup} personas por reserva individual en línea. Para grupos corporativos, contáctanos a travelinnovation.tamc@gmail.com o al 02 2456456.`}
+                                    </span>
+                                  </div>
+                                )}
                               </div>
-
-                              {subItem.people >= 20 && (
-                                <div
-                                  className="inline-alert"
-                                  style={{
-                                    marginTop: "10px",
-                                    padding: "8px 12px",
-                                    fontSize: "13px",
-                                  }}
-                                >
-                                  <strong style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                                    <AlertTriangleIcon size={16} color="#d97706" />
-                                    <span>Límite de 20 personas por paquete</span>
-                                  </strong>
-                                  <span>
-                                    Para grupos corporativos o de mayor tamaño, contáctanos a{" "}
-                                    <strong>travelinnovation.tamc@gmail.com</strong> o al teléfono{" "}
-                                    <strong>02 2456456</strong>.
-                                  </span>
-                                </div>
-                              )}
-                            </div>
-                          ))}
+                            )
+                          })}
                         </div>
                       </div>
                     )}
