@@ -102,9 +102,41 @@ export default function App() {
       try {
         const cloudData = await fetchPackagesFromSupabase()
         if (isMounted && cloudData && cloudData.length > 0) {
-          setPackagesList(cloudData)
+          const cloudMap = new Map(cloudData.map((c) => [c.id, c]))
+          const cloudByName = new Map(cloudData.map((c) => [c.name.toLowerCase().trim(), c]))
+
+          const merged = packages.map((p) => {
+            const fromCloud = cloudMap.get(p.id) || cloudByName.get(p.name.toLowerCase().trim())
+            if (!fromCloud) return p
+            return {
+              ...p,
+              ...fromCloud,
+              itinerary:
+                fromCloud.itinerary && fromCloud.itinerary.length > 0
+                  ? fromCloud.itinerary
+                  : p.itinerary,
+              availableDates:
+                fromCloud.availableDates && fromCloud.availableDates.length > 0
+                  ? fromCloud.availableDates
+                  : p.availableDates,
+            }
+          })
+
+          // Incluir paquetes adicionales creados exclusivamente en Supabase
+          cloudData.forEach((c) => {
+            if (
+              !packages.some(
+                (p) =>
+                  p.id === c.id || p.name.toLowerCase().trim() === c.name.toLowerCase().trim()
+              )
+            ) {
+              merged.push(c)
+            }
+          })
+
+          setPackagesList(merged)
           setSelectedPackage((prev) => {
-            const match = cloudData.find(
+            const match = merged.find(
               (p) => p.id === prev.id || p.name === prev.name,
             )
             return match || prev

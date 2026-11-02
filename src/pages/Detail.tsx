@@ -83,6 +83,41 @@ export function Detail({
     setPeople(1)
     setToast(true)
   }
+  const resolvedItinerary = useMemo(() => {
+    if (pkg.itinerary && pkg.itinerary.length > 0) {
+      return pkg.itinerary
+    }
+    const matchDays = pkg.days.match(/(\d+)\s*d/i)
+    const totalDays = matchDays ? Math.max(1, parseInt(matchDays[1], 10)) : 3
+
+    const list: typeof pkg.itinerary = []
+    for (let d = 1; d <= totalDays; d++) {
+      if (d === 1) {
+        list.push({
+          day: 1,
+          title: `Llegada, recepción y recorrido inicial en ${pkg.city}`,
+          description: `Punto de encuentro y bienvenida con el guía certificado. Traslado al hospedaje seleccionado, charla de orientación sobre ${pkg.province} y primer recorrido panorámico por los atractivos principales de la zona.`,
+          meals: { breakfast: false, lunch: true, dinner: true },
+        })
+      } else if (d === totalDays) {
+        list.push({
+          day: d,
+          title: `Desayuno tradicional, tiempo libre y retorno`,
+          description: `Desayuno completo con productos típicos locales. Tiempo libre para compras de artesanías o fotografías finales, y posterior traslado asistido para el retorno al punto de origen.`,
+          meals: { breakfast: true, lunch: false, dinner: false },
+        })
+      } else {
+        list.push({
+          day: d,
+          title: `Día ${d}: Expedición principal y vivencia temática en ${pkg.city}`,
+          description: `Jornada completa dedicada al programa de ${pkg.category || "turismo"} en ${pkg.name}. Visita guiada a reservas naturales, parajes emblemáticos y actividades programadas con equipamiento y asistencia profesional.`,
+          meals: { breakfast: true, lunch: true, dinner: true },
+        })
+      }
+    }
+    return list
+  }, [pkg])
+
   return (
     <>
       <div className="section detail-back-nav">
@@ -337,55 +372,42 @@ export function Detail({
             <span>Itinerario detallado día a día</span>
           </div>
           <div className="accordion-body">
-            {pkg.itinerary && pkg.itinerary.length > 0 ? (
-              <div className="itinerary-timeline">
-                {pkg.itinerary.map((day) => (
-                  <div key={day.day} className="itinerary-day-card">
-                    <div className="itinerary-day-header">
-                      <span className="itinerary-day-badge">Día {day.day}</span>
-                      <h3 className="itinerary-day-title">{day.title}</h3>
-                    </div>
-                    <p className="itinerary-day-description">{day.description}</p>
-                    <div className="meal-badges-row">
-                      <span style={{ fontSize: "12px", fontWeight: 700, color: "#64748b" }}>
-                        Alimentación:
-                      </span>
-                      {day.meals.breakfast && (
-                        <span className="meal-badge meal-badge--included">
-                          <BreakfastIcon size={14} /> Desayuno incluido
-                        </span>
-                      )}
-                      {day.meals.lunch && (
-                        <span className="meal-badge meal-badge--included">
-                          <LunchIcon size={14} /> Almuerzo incluido
-                        </span>
-                      )}
-                      {day.meals.dinner && (
-                        <span className="meal-badge meal-badge--included">
-                          <DinnerIcon size={14} /> Cena incluida
-                        </span>
-                      )}
-                      {!day.meals.breakfast && !day.meals.lunch && !day.meals.dinner && (
-                        <span className="meal-badge meal-badge--none">
-                          Por cuenta del viajero
-                        </span>
-                      )}
-                    </div>
+            <div className="itinerary-timeline">
+              {resolvedItinerary.map((day) => (
+                <div key={day.day} className="itinerary-day-card">
+                  <div className="itinerary-day-header">
+                    <span className="itinerary-day-badge">Día {day.day}</span>
+                    <h3 className="itinerary-day-title">{day.title}</h3>
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div>
-                <h3>Día 1 · Llegada y bienvenida</h3>
-                <p>
-                  Encuentro, traslado y primer recorrido guiado en {pkg.city}.
-                </p>
-                <h3>Día 2 · Actividades destacadas</h3>
-                <p>Recorrido principal y tiempo libre para explorar.</p>
-                <h3>Día 3 · Retorno</h3>
-                <p>Desayuno y retorno al punto de origen.</p>
-              </div>
-            )}
+                  <p className="itinerary-day-description">{day.description}</p>
+                  <div className="meal-badges-row">
+                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#64748b" }}>
+                      Alimentación:
+                    </span>
+                    {day.meals.breakfast && (
+                      <span className="meal-badge meal-badge--included">
+                        <BreakfastIcon size={14} /> Desayuno incluido
+                      </span>
+                    )}
+                    {day.meals.lunch && (
+                      <span className="meal-badge meal-badge--included">
+                        <LunchIcon size={14} /> Almuerzo incluido
+                      </span>
+                    )}
+                    {day.meals.dinner && (
+                      <span className="meal-badge meal-badge--included">
+                        <DinnerIcon size={14} /> Cena incluida
+                      </span>
+                    )}
+                    {!day.meals.breakfast && !day.meals.lunch && !day.meals.dinner && (
+                      <span className="meal-badge meal-badge--none">
+                        Por cuenta del viajero
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
