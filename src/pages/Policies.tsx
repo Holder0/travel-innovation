@@ -12,33 +12,77 @@ export function Policies({ go }: { go: (page: Page) => void }) {
       />
       <div className="section policy-content">
         {policyGroups.map((group) => (
-          <section key={group.title}>
-            <h2>{group.title}</h2>
-            {group.items.map(([title, text]) => (
-              <details key={title}>
-                <summary>
-                  <span style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                    <span
-                      className={`policy-icon ${
-                        group.icon === "check" ? "success" : "error"
-                      }`}
-                      style={{ display: "grid", placeItems: "center" }}
-                    >
-                      {group.icon === "check" ? (
-                        <CheckIcon size={14} color="#ffffff" />
-                      ) : (
-                        <CloseXIcon size={14} color="#ffffff" />
-                      )}
-                    </span>
-                    {title}
+          <section key={group.title} style={{ marginBottom: "36px" }}>
+            <h2 style={{ fontSize: "1.35rem", marginBottom: "16px", color: "var(--pacific)" }}>
+              {group.title}
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              {group.items.map(([title, text]) => (
+                <div
+                  key={title}
+                  style={{
+                    background: "var(--sand)",
+                    border: `1px solid ${
+                      group.icon === "check"
+                        ? "rgba(22, 163, 74, 0.35)"
+                        : "rgba(220, 38, 38, 0.3)"
+                    }`,
+                    borderRadius: "10px",
+                    padding: "16px 20px",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "14px",
+                  }}
+                >
+                  <span
+                    className={`policy-icon ${
+                      group.icon === "check" ? "success" : "error"
+                    }`}
+                    style={{
+                      display: "grid",
+                      placeItems: "center",
+                      flexShrink: 0,
+                      marginTop: "2px",
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      background:
+                        group.icon === "check"
+                          ? "var(--success, #16a34a)"
+                          : "var(--crimson, #dc2626)",
+                    }}
+                  >
+                    {group.icon === "check" ? (
+                      <CheckIcon size={15} color="#ffffff" />
+                    ) : (
+                      <CloseXIcon size={15} color="#ffffff" />
+                    )}
                   </span>
-                  <span className="summary-caret" aria-hidden="true">▾</span>
-                </summary>
-                <div className="accordion-body">
-                  <p>{text}</p>
+                  <div style={{ flex: 1 }}>
+                    <h3
+                      style={{
+                        margin: "0 0 6px 0",
+                        fontSize: "1.05rem",
+                        color: "var(--abyss)",
+                        fontWeight: 700,
+                      }}
+                    >
+                      {title}
+                    </h3>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "0.92rem",
+                        lineHeight: 1.6,
+                        color: "#334155",
+                      }}
+                    >
+                      {text}
+                    </p>
+                  </div>
                 </div>
-              </details>
-            ))}
+              ))}
+            </div>
           </section>
         ))}
         <section style={{ marginTop: "40px" }}>

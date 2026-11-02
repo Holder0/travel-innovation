@@ -23,9 +23,15 @@ export interface SendEmailPayload {
   }>
 }
 
+export interface SendEmailResult {
+  success: boolean
+  needsActivation?: boolean
+  message: string
+}
+
 export async function sendRealBookingEmail(
   data: SendEmailPayload
-): Promise<{ success: boolean; message: string }> {
+): Promise<SendEmailResult> {
   try {
     const packagesSummary = data.packages
       .map(
@@ -77,11 +83,29 @@ export async function sendRealBookingEmail(
     )
 
     const result = await response.json()
-    return {
-      success: true,
-      message:
-        result.message ||
-        "Comprobante enviado exitosamente a tu correo electrónico.",
+    const isSuccess = result.success === "true" || result.success === true
+    const messageStr = String(result.message || "")
+    const needsActivation = messageStr.toLowerCase().includes("activation")
+
+    if (isSuccess) {
+      return {
+        success: true,
+        message: "Comprobante oficial despachado exitosamente a tu bandeja de correo.",
+      }
+    } else if (needsActivation) {
+      return {
+        success: false,
+        needsActivation: true,
+        message:
+          "El proveedor de correo envió un enlace de activación inicial a tu correo para habilitar la recepción. (En correos temporales revisa la bandeja para activar, o descarga tu comprobante PDF oficial directamente aquí).",
+      }
+    } else {
+      return {
+        success: false,
+        message:
+          result.message ||
+          "No se pudo completar el despacho por correo temporal. Puedes descargar tu comprobante en PDF directamente.",
+      }
     }
   } catch (error: any) {
     console.error("Error sending real email via FormSubmit", error)
@@ -89,7 +113,7 @@ export async function sendRealBookingEmail(
       success: false,
       message:
         error?.message ||
-        "Hubo un inconveniente al conectar con el servidor de correo.",
+        "Hubo un inconveniente al conectar con el servidor de correo. Puedes descargar tu comprobante en PDF directamente.",
     }
   }
 }

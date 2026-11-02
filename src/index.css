@@ -1160,7 +1160,7 @@ th { background: var(--pacific); color: var(--breeze); }
 .auth-alert-content strong { color: var(--abyss); font-weight: 700; }
 .confirmation { max-width: 960px; text-align: center; }
 .confirmation > p { max-width: 650px; margin-inline: auto; }
-.success-mark { border-color: var(--success); color: var(--success); }
+.success-mark { border-color: #16a34a; background: #16a34a; color: #ffffff; box-shadow: 0 6px 16px rgba(22, 163, 74, 0.25); }
 .reservation-code { max-width: 560px; margin: 30px auto; display: grid; grid-template-columns: 1fr auto; background: var(--sand); border: 1px solid var(--pacific); border-radius: var(--radius); padding: 20px; text-align: left; }
 .reservation-code span { grid-column: 1 / -1; font-size: 14px; }
 .reservation-code strong { font-size: 28px; letter-spacing: .08em; }

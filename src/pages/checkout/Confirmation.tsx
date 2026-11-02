@@ -230,8 +230,19 @@ export function Confirmation({
         <Stepper current={4} />
       </div>
       <div className="section confirmation">
-        <span className="success-mark" aria-label="Éxito" style={{ display: "grid", placeItems: "center" }}>
-          <CheckIcon size={28} color="#ffffff" />
+        <span
+          className="success-mark"
+          aria-label="Éxito"
+          style={{
+            display: "grid",
+            placeItems: "center",
+            background: "#16a34a",
+            borderColor: "#16a34a",
+            color: "#ffffff",
+            boxShadow: "0 6px 16px rgba(22, 163, 74, 0.28)",
+          }}
+        >
+          <CheckIcon size={32} color="#ffffff" strokeWidth={2.5} />
         </span>
         <span
           className={`status ${
@@ -320,6 +331,8 @@ export function Confirmation({
               >
                 {emailStatus === "sending"
                   ? "Enviando comprobante a tu correo electrónico..."
+                  : emailStatus === "error"
+                  ? "Información sobre el envío a: " + destinationEmail
                   : "Comprobante enviado al correo: " + destinationEmail}
               </strong>
               <span
@@ -330,7 +343,8 @@ export function Confirmation({
               >
                 {emailStatus === "sending"
                   ? `Conectando con el servidor de correo para despachar tu confirmación a ${destinationEmail}...`
-                  : `Hemos enviado el comprobante oficial y los detalles de la reserva #${bookingCode} a ${destinationEmail}. Por favor revisa tu bandeja de entrada o correo no deseado (Spam) en tu Hotmail, Outlook o Gmail.`}
+                  : emailMessage ||
+                    `Hemos enviado el comprobante oficial y los detalles de la reserva #${bookingCode} a ${destinationEmail}. Por favor revisa tu bandeja de entrada o correo no deseado (Spam).`}
               </span>
             </div>
           </div>
