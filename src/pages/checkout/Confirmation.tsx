@@ -19,9 +19,9 @@ import {
   PartyIcon,
   StarIcon,
 } from "../../components/common/SvgIcons"
-import { generateBookingPdf } from "../../utils/pdfGenerator"
+import { generateBookingPdf, generateBookingPdfBlob, type BookingPdfData } from "../../utils/pdfGenerator"
 import { sendRealBookingEmail } from "../../services/emailService"
-import { uploadVoucherToSupabaseStorage } from "../../services/supabaseService"
+import { uploadVoucherToSupabaseStorage, uploadOfficialPdfReceiptToStorage } from "../../services/supabaseService"
 
 export function Confirmation({
   go,
@@ -88,6 +88,82 @@ export function Confirmation({
     setEmailStatus("sending")
     setEmailToast(true)
 
+    const pkgTravelersList: TravelerData[] =
+      travelersList.length > 0
+        ? travelersList
+        : [
+            {
+              id: "t-1",
+              slotNumber: 1,
+              fullName: titularName,
+              cedula: personalInfo.cedula || "No registrada",
+              birthDate: personalInfo.birthDate || "No registrada",
+              phone: personalInfo.phone || "No registrado",
+              email: destinationEmail,
+              isTitular: true,
+              isMinor: false,
+              packageId: cartItems[0]?.pkg.id || "pkg-default",
+              packageTitle: cartItems[0]?.pkg.name || "Paquete Turístico",
+            },
+          ]
+
+    const pdfData: BookingPdfData = {
+      bookingCode,
+      createdAt: new Date().toLocaleDateString("es-EC", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+      titular: {
+        name: titularName,
+        email: destinationEmail,
+        phone: personalInfo.phone || "No registrado",
+        cedula: personalInfo.cedula || "No registrada",
+        birthDate: personalInfo.birthDate || "No registrada",
+        address: personalInfo.mainStreet
+          ? `${personalInfo.mainStreet} y ${personalInfo.secondaryStreet || ""} (${personalInfo.reference || ""})`.trim()
+          : "No registrada",
+      },
+      packages: cartItems.map((c) => ({
+        name: c.pkg.name,
+        city: c.pkg.city,
+        province: c.pkg.province,
+        date: c.date,
+        people: c.people,
+        price: c.pkg.price,
+        total: c.total,
+      })),
+      travelers: pkgTravelersList.map((t, idx) => ({
+        slotNumber: t.slotNumber || idx + 1,
+        fullName: t.fullName || "Acompañante",
+        cedula: t.cedula || "Registrado",
+        birthDate: t.birthDate,
+        isTitular: t.isTitular,
+      })),
+      total,
+      paymentMethodLabel,
+      installments: paymentData.installments,
+      status:
+        !isTransfer || paymentData.bankVoucherUploaded
+          ? "Compra realizada · Reserva activa"
+          : "En verificación · Plazo 24 horas",
+    }
+
+    // Generar archivo PDF oficial
+    let pdfUrl: string | undefined = undefined
+    let pdfBase64: string | undefined = undefined
+
+    try {
+      const { blob, base64 } = generateBookingPdfBlob(pdfData)
+      pdfBase64 = base64
+      const cloudUrl = await uploadOfficialPdfReceiptToStorage(blob, bookingCode)
+      if (cloudUrl) {
+        pdfUrl = cloudUrl
+      }
+    } catch (e) {
+      console.warn("Aviso al preparar archivo PDF adjunto:", e)
+    }
+
     const res = await sendRealBookingEmail({
       toEmail: destinationEmail,
       bookingCode,
@@ -97,11 +173,15 @@ export function Confirmation({
       total,
       paymentMethod: paymentMethodLabel,
       installments: paymentData.installments,
+      pdfDownloadUrl: pdfUrl,
+      pdfBase64: pdfBase64,
       packages: cartItems.map((c) => ({
         name: c.pkg.name,
         date: c.date,
         people: c.people,
+        price: c.pkg.price,
         total: c.total,
+        image: c.pkg.image,
       })),
       travelers: travelersList.map((t) => ({
         fullName: t.fullName,

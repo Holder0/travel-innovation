@@ -34,7 +34,7 @@ export interface BookingPdfData {
   status?: string
 }
 
-export function generateBookingPdf(data: BookingPdfData) {
+export function createBookingPdfDocument(data: BookingPdfData): jsPDF {
   const doc = new jsPDF({
     orientation: "portrait",
     unit: "mm",
@@ -311,7 +311,25 @@ export function generateBookingPdf(data: BookingPdfData) {
     y
   )
 
-  // Trigger real file download in the browser
+  return doc
+}
+
+/**
+ * Genera y descarga el archivo PDF en el navegador del usuario.
+ */
+export function generateBookingPdf(data: BookingPdfData) {
+  const doc = createBookingPdfDocument(data)
   doc.save(`Comprobante-Reserva-${data.bookingCode}.pdf`)
+}
+
+/**
+ * Genera el documento PDF como Blob y Base64 para almacenamiento en la nube o adjuntos de correo.
+ */
+export function generateBookingPdfBlob(data: BookingPdfData): { blob: Blob; base64: string } {
+  const doc = createBookingPdfDocument(data)
+  const blob = doc.output("blob")
+  const dataUri = doc.output("datauristring")
+  const base64 = dataUri.split(",")[1] || ""
+  return { blob, base64 }
 }
 

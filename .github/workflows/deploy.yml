@@ -37,6 +37,9 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://gytkzlkaagzfuptdnjkl.supabase.co' }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5dGt6bGthYWd6ZnVwdGRuamtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM1NDI0ODMsImV4cCI6MjEwOTExODQ4M30.1yzoaADGdlPsgZhyVaHWFBtnViUxvFSookMjiHlS8Zc' }}
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID || 'service_9n9ufks' }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID || 'template_s0qxlx4' }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY || '5i7yrcPk7T8OVjlM8' }}
         run: npm run build
 
       - name: Setup Pages

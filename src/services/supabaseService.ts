@@ -394,6 +394,41 @@ export async function uploadVoucherToSupabaseStorage(
   }
 }
 
+/**
+ * Sube el PDF oficial generado automáticamente al bucket 'comprobantes' de Supabase Storage.
+ * Retorna la URL pública permanente para descarga directa desde el correo electrónico.
+ */
+export async function uploadOfficialPdfReceiptToStorage(
+  pdfBlob: Blob,
+  bookingCode: string
+): Promise<string | null> {
+  if (!isSupabaseConfigured()) return null
+
+  try {
+    const filePath = `oficiales/comprobante_${bookingCode}.pdf`
+    const { error: uploadError } = await supabase.storage
+      .from("comprobantes")
+      .upload(filePath, pdfBlob, {
+        contentType: "application/pdf",
+        upsert: true,
+      })
+
+    if (uploadError) {
+      console.warn("Aviso al subir PDF oficial a Supabase Storage:", uploadError.message)
+      return null
+    }
+
+    const { data: urlData } = supabase.storage
+      .from("comprobantes")
+      .getPublicUrl(filePath)
+
+    return urlData?.publicUrl || null
+  } catch (err: any) {
+    console.warn("Excepción al subir PDF oficial a Supabase Storage:", err)
+    return null
+  }
+}
+
 // =============================================================================
 // SERVICIOS DE AUTENTICACIÓN Y ROLES (SUPABASE AUTH / GOTRUE)
 // =============================================================================
