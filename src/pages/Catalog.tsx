@@ -478,19 +478,44 @@ export function Catalog({
                   >
                     Anterior
                   </button>
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-                    <button
-                      key={pageNum}
-                      className={`pagination-button ${currentPage === pageNum ? "is-active" : ""}`}
-                      aria-current={currentPage === pageNum ? "page" : undefined}
-                      onClick={() => {
-                        update({ currentPage: pageNum })
-                        window.scrollTo({ top: 200, behavior: "smooth" })
-                      }}
-                    >
-                      {pageNum}
-                    </button>
-                  ))}
+                  {(() => {
+                    const getPaginationItems = (current: number, total: number): (number | string)[] => {
+                      if (total <= 7) {
+                        return Array.from({ length: total }, (_, i) => i + 1)
+                      }
+                      if (current <= 4) {
+                        return [1, 2, 3, 4, 5, "...", total]
+                      }
+                      if (current >= total - 3) {
+                        return [1, "...", total - 4, total - 3, total - 2, total - 1, total]
+                      }
+                      return [1, "...", current - 1, current, current + 1, "...", total]
+                    }
+
+                    return getPaginationItems(currentPage, totalPages).map((item, idx) => {
+                      if (item === "...") {
+                        return (
+                          <span key={`ellipsis-${idx}`} className="pagination-ellipsis" aria-hidden="true">
+                            …
+                          </span>
+                        )
+                      }
+                      const pageNum = Number(item)
+                      return (
+                        <button
+                          key={pageNum}
+                          className={`pagination-button ${currentPage === pageNum ? "is-active" : ""}`}
+                          aria-current={currentPage === pageNum ? "page" : undefined}
+                          onClick={() => {
+                            update({ currentPage: pageNum })
+                            window.scrollTo({ top: 200, behavior: "smooth" })
+                          }}
+                        >
+                          {pageNum}
+                        </button>
+                      )
+                    })
+                  })()}
                   <button
                     className="pagination-button"
                     disabled={currentPage >= totalPages}

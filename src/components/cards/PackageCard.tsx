@@ -93,7 +93,7 @@ export function PackageCard({
           <PinIcon size={15} color="var(--pacific)" />
           <span>{item.city} ({item.province})</span>
         </p>
-        <p style={{ fontSize: "13px", color: "var(--abyss)", background: "var(--sand)", padding: "4px 8px", borderRadius: "6px", border: "1px solid var(--pacific)", margin: "4px 0 10px", display: "inline-flex", alignItems: "center", gap: "6px", width: "fit-content" }}>
+        <p style={{ fontSize: "13px", color: "var(--abyss)", background: "var(--sand)", padding: "4px 8px", borderRadius: "6px", border: "1px solid var(--pacific)", margin: "4px 0 10px", display: "inline-flex", alignItems: "center", gap: "6px", width: "fit-content", maxWidth: "100%", boxSizing: "border-box" }}>
           <CalendarIcon size={14} color="var(--abyss)" /> <strong>{item.datesText}</strong>
         </p>
         <p style={{ margin: "0 0 6px", fontSize: "13.5px", color: "#475569" }}>{item.days}</p>

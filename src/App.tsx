@@ -68,7 +68,25 @@ export default function App() {
   const [activeCheckoutStep, setActiveCheckoutStep] = useState<Page>(
     () => initialCheckoutSession?.activeStep || "carrito"
   )
-  const [page, setPage] = useState<Page>("inicio")
+  const [page, setPage] = useState<Page>(() => {
+    const hash = window.location.hash.replace("#", "") as Page
+    const validPages: Page[] = [
+      "inicio",
+      "catalogo",
+      "detalle",
+      "carrito",
+      "identificacion",
+      "viajeros",
+      "pago",
+      "confirmacion",
+      "reservas",
+      "politicas",
+      "soporte",
+      "tickets",
+      "favoritos",
+    ]
+    return validPages.includes(hash) ? hash : "inicio"
+  })
   const [previousPage, setPreviousPage] = useState<Page>("catalogo")
   const [cartItems, setCartItems] = useState<CartItem[]>(
     () => initialCheckoutSession?.cartItems || []
@@ -613,8 +631,39 @@ export default function App() {
       setActiveCheckoutStep(next)
     }
     setPage(next)
+    try {
+      window.location.hash = next
+    } catch {
+      // ignore
+    }
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash.replace("#", "") as Page
+      const validPages: Page[] = [
+        "inicio",
+        "catalogo",
+        "detalle",
+        "carrito",
+        "identificacion",
+        "viajeros",
+        "pago",
+        "confirmacion",
+        "reservas",
+        "politicas",
+        "soporte",
+        "tickets",
+        "favoritos",
+      ]
+      if (hash && validPages.includes(hash) && hash !== page) {
+        setPage(hash)
+      }
+    }
+    window.addEventListener("hashchange", onHashChange)
+    return () => window.removeEventListener("hashchange", onHashChange)
+  }, [page])
 
   const handleGoToCart = () => {
     if (cartItems.length > 0 && CHECKOUT_STEPS.includes(activeCheckoutStep)) {
