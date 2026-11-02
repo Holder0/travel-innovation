@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react"
 import type { Page, PackageItem, CatalogFilterState } from "../types"
 import { ECUADOR_REGIONS } from "../types"
-import { Button, SelectField, DateRangePicker, PageTitle, CategorySvg } from "../components/common"
+import { Button, SelectField, DateRangePicker, PageTitle } from "../components/common"
 import { CheckIcon, CloseXIcon } from "../components/common/SvgIcons"
 import { PackageCard } from "../components/cards/PackageCard"
 import { PROVINCES_DATA } from "../data/provincesData"
@@ -77,12 +77,18 @@ export function Catalog({
       if (selectedRegion && item.region !== selectedRegion) {
         return false
       }
-      if (
-        selectedCategory &&
-        item.category !== selectedCategory &&
-        item.categorySlug !== selectedCategory
-      ) {
-        return false
+      if (selectedCategory) {
+        const selNorm = selectedCategory.toLowerCase().trim()
+        const catNorm = (item.category || "").toLowerCase().trim()
+        const slugNorm = (item.categorySlug || "").toLowerCase().trim()
+        const matches =
+          catNorm === selNorm ||
+          slugNorm === selNorm ||
+          catNorm.includes(selNorm) ||
+          selNorm.includes(catNorm)
+        if (!matches) {
+          return false
+        }
       }
       if (selectedProvince && item.province !== selectedProvince) {
         return false
@@ -179,34 +185,6 @@ export function Catalog({
         title={catalogTitle}
         subtitle="Encuentra una salida que se ajuste a tu tiempo y presupuesto."
       />
-
-      {/* Barra de Filtros Rápidos por Categoría Temática (Chips / Pills) */}
-      <div className="category-chips-bar" role="region" aria-label="Filtro por categorías de viaje">
-        <button
-          type="button"
-          className={`category-chip ${!selectedCategory ? "category-chip--active" : ""}`}
-          onClick={() => update({ category: "", currentPage: 1 })}
-        >
-          <CategorySvg icon="compass" size={16} />
-          <span>Todos los estilos</span>
-        </button>
-        {TRAVEL_CATEGORIES.map((cat) => (
-          <button
-            key={cat.id}
-            type="button"
-            className={`category-chip ${selectedCategory === cat.name ? "category-chip--active" : ""}`}
-            onClick={() =>
-              update({
-                category: selectedCategory === cat.name ? "" : cat.name,
-                currentPage: 1,
-              })
-            }
-          >
-            <CategorySvg icon={cat.icon} size={16} />
-            <span>{cat.name}</span>
-          </button>
-        ))}
-      </div>
 
       <div className="catalog-layout section">
         <aside className="filters">

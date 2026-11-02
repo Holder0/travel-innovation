@@ -67,16 +67,16 @@ SET rol_id = EXCLUDED.rol_id, nombres = EXCLUDED.nombres, apellidos = EXCLUDED.a
 -- TABLA 3: CATEGORIAS (10 Categorías Temáticas de Viaje)
 -- =============================================================================
 INSERT INTO categorias (id, nombre, slug, descripcion, icono, is_active) VALUES
-(1, 'Aventura y Deportes Extremos', 'aventura-extremo', 'Trekking, canopy, rafting, puenting y deportes de adrenalina.', 'mountain', true),
-(2, 'Ecoturismo y Naturaleza', 'ecoturismo-naturaleza', 'Avistamiento de flora y fauna, reservas biológicas y senderismo.', 'compass', true),
-(3, 'Sol, Playa y Relax', 'playa-relax', 'Descanso frente al mar, surf y navegación costera.', 'umbrella', true),
-(4, 'Cultural, Patrimonial e Histórico', 'cultural-historico', 'Centros históricos, museos coloniales y arquitectura patrimonial.', 'landmark', true),
-(5, 'Romántico y Luna de Miel', 'luna-de-miel', 'Escapadas exclusivas para parejas, glamping y atardeceres mágicos.', 'heart', true),
-(6, 'Familiar y Todo Incluido', 'familiar-todo-incluido', 'Experiencias adaptadas para niños, adultos mayores y grupos familiares.', 'users', true),
-(7, 'Gastronomía y Rutas del Cacao', 'gastronomia-cacao', 'Degustaciones de cocina tradicional andina y chocolate fino de aroma.', 'utensils', true),
-(8, 'Trekking y Alta Montaña', 'trekking-montana', 'Ascensiones a volcanes, páramos andinos y refugios de montaña.', 'flag', true),
-(9, 'Bienestar, Termas y Spa', 'bienestar-termas', 'Aguas termales curativas, spas medicinales y relajación.', 'sparkles', true),
-(10, 'Tradiciones y Turismo Comunitario', 'tradiciones-comunitario', 'Convivencia con comunidades indígenas y mercados artesanales.', 'star', true)
+(1, 'Aventura', 'aventura-extremo', 'Trekking, canopy, rafting, puenting y deportes de adrenalina.', 'mountain', true),
+(2, 'Ecoturismo', 'ecoturismo-naturaleza', 'Avistamiento de flora y fauna, reservas biológicas y senderismo.', 'compass', true),
+(3, 'Playa y Relax', 'playa-relax', 'Descanso frente al mar, surf y navegación costera.', 'umbrella', true),
+(4, 'Cultural', 'cultural-historico', 'Centros históricos, museos coloniales y arquitectura patrimonial.', 'landmark', true),
+(5, 'Romántico', 'luna-de-miel', 'Escapadas exclusivas para parejas, glamping y atardeceres mágicos.', 'heart', true),
+(6, 'Familiar', 'familiar-todo-incluido', 'Experiencias adaptadas para niños, adultos mayores y grupos familiares.', 'users', true),
+(7, 'Gastronomía', 'gastronomia-cacao', 'Degustaciones de cocina tradicional andina y chocolate fino de aroma.', 'utensils', true),
+(8, 'Trekking', 'trekking-montana', 'Ascensiones a volcanes, páramos andinos y refugios de montaña.', 'flag', true),
+(9, 'Bienestar y Spa', 'bienestar-termas', 'Aguas termales curativas, spas medicinales y relajación.', 'sparkles', true),
+(10, 'Turismo Comunitario', 'tradiciones-comunitario', 'Convivencia con comunidades indígenas y mercados artesanales.', 'star', true)
 ON CONFLICT (id) DO UPDATE 
 SET nombre = EXCLUDED.nombre, slug = EXCLUDED.slug, descripcion = EXCLUDED.descripcion, icono = EXCLUDED.icono;
 

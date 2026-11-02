@@ -2,6 +2,19 @@ import { supabase, isSupabaseConfigured } from "./supabaseClient"
 import type { PackageItem, CartItem, TravelerData, PaymentDetails, PersonalInfo, PurchaseItem } from "../types"
 import { CURRENT_YEAR } from "../utils/dateUtils"
 
+const SIMPLIFIED_CATEGORY_MAP: Record<string, string> = {
+  "Aventura y Deportes Extremos": "Aventura",
+  "Ecoturismo y Naturaleza": "Ecoturismo",
+  "Sol, Playa y Relax": "Playa y Relax",
+  "Cultural, Patrimonial e Histórico": "Cultural",
+  "Romántico y Luna de Miel": "Romántico",
+  "Familiar y Todo Incluido": "Familiar",
+  "Gastronomía y Rutas del Cacao": "Gastronomía",
+  "Trekking y Alta Montaña": "Trekking",
+  "Bienestar, Termas y Spa": "Bienestar y Spa",
+  "Tradiciones y Turismo Comunitario": "Turismo Comunitario",
+}
+
 /**
  * Consulta el catálogo de paquetes turísticos directamente desde Supabase.
  * Realiza un JOIN relacional (3FN) a través de destinos -> ciudades -> provincias -> regiones.
@@ -176,7 +189,10 @@ export async function fetchPackagesFromSupabase(): Promise<PackageItem[] | null>
         secondaryImages: (item.imagenes_secundarias && item.imagenes_secundarias.length >= 2)
           ? [item.imagenes_secundarias[0], item.imagenes_secundarias[1]]
           : [item.imagen_principal, item.imagen_principal],
-        category: item.categorias?.nombre || "Ecoturismo y Naturaleza",
+        category:
+          SIMPLIFIED_CATEGORY_MAP[item.categorias?.nombre] ||
+          item.categorias?.nombre ||
+          "Ecoturismo",
         categorySlug: item.categorias?.slug || "ecoturismo-naturaleza",
         categoryIcon: item.categorias?.icono || "compass",
         rating: avgRating,
