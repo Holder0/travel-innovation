@@ -799,6 +799,7 @@ export function Payment({
                         : "1234 5678 9012 3456"
                     }
                     value={cardNumber}
+                    inputMode="numeric"
                     maxLength={detectedBrand === "amex" ? 17 : 19}
                     onChange={(val) => {
                       const formatted = formatCardNumber(val)
@@ -842,6 +843,7 @@ export function Payment({
                     label="Fecha de expiración"
                     placeholder="MM/AA"
                     value={cardExpiry}
+                    inputMode="numeric"
                     maxLength={5}
                     onChange={(val) => {
                       let clean = val.replace(/[^\d/]/g, "")
@@ -869,6 +871,7 @@ export function Payment({
                     }
                     placeholder={detectedBrand === "amex" ? "1234" : "123"}
                     type="password"
+                    inputMode="numeric"
                     maxLength={detectedBrand === "amex" ? 4 : 3}
                     value={cardCvv}
                     onChange={(val) => {

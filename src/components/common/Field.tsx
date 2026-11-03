@@ -17,6 +17,7 @@ export interface FieldProps {
   inputClassName?: string
   disabled?: boolean
   readOnly?: boolean
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"]
 }
 
 export function Field({
@@ -35,6 +36,7 @@ export function Field({
   inputClassName = "",
   disabled,
   readOnly,
+  inputMode,
 }: FieldProps) {
   const computedInputClass = [
     hasWarning ? "field__input--warning" : "",
@@ -52,6 +54,7 @@ export function Field({
         aria-invalid={Boolean(error)}
         placeholder={placeholder}
         type={type}
+        inputMode={inputMode}
         value={value}
         required={required}
         autoFocus={autoFocus}

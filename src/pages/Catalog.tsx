@@ -40,6 +40,28 @@ export function Catalog({
     currentPage,
   } = filters
 
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false)
+
+  const activeFiltersCount = useMemo(() => {
+    let count = 0
+    if (selectedCategory) count++
+    if (selectedRegion) count++
+    if (selectedProvince) count++
+    if (selectedCity) count++
+    if (dateActive && dateRange) count++
+    if (minPrice > 100 || maxPrice < 900) count++
+    return count
+  }, [
+    selectedCategory,
+    selectedRegion,
+    selectedProvince,
+    selectedCity,
+    dateActive,
+    dateRange,
+    minPrice,
+    maxPrice,
+  ])
+
   const update = (partial: Partial<CatalogFilterState>) => {
     onUpdateFilters((prev) => ({
       ...prev,
@@ -179,6 +201,143 @@ export function Catalog({
     return "Paquetes turísticos"
   }, [selectedProvince, selectedRegion])
 
+  const renderFilterFields = () => (
+    <>
+      <div className="filter-section">
+        <span className="filter-section-title">Estilo de viaje</span>
+        <SelectField
+          label="Categoría temática"
+          value={selectedCategory}
+          onChange={(cat) => update({ category: cat, currentPage: 1 })}
+        >
+          <option value="">Todos los estilos ({TRAVEL_CATEGORIES.length})</option>
+          {TRAVEL_CATEGORIES.map((cat) => (
+            <option key={cat.id} value={cat.name}>
+              {cat.name}
+            </option>
+          ))}
+        </SelectField>
+      </div>
+
+      <div className="filter-section">
+        <span className="filter-section-title">Destino</span>
+        <SelectField
+          label="Región"
+          value={selectedRegion}
+          onChange={(reg) => {
+            update({
+              region: reg,
+              province: "",
+              city: "",
+              currentPage: 1,
+            })
+          }}
+        >
+          <option value="">Regiones ({ECUADOR_REGIONS.length})</option>
+          {ECUADOR_REGIONS.map((reg) => (
+            <option key={reg} value={reg}>
+              {reg}
+            </option>
+          ))}
+        </SelectField>
+
+        <SelectField
+          label="Provincia"
+          value={selectedProvince}
+          onChange={(prov) => {
+            const citiesInProv = prov
+              ? packagesList.filter((p) => p.province === prov).map((p) => p.city)
+              : []
+            const newCity =
+              selectedCity && !citiesInProv.includes(selectedCity)
+                ? ""
+                : selectedCity
+            update({
+              province: prov,
+              city: newCity,
+              currentPage: 1,
+            })
+          }}
+        >
+          <option value="">Provincias ({availableProvinces.length})</option>
+          {availableProvinces.map((prov) => (
+            <option key={prov} value={prov}>
+              {prov}
+            </option>
+          ))}
+        </SelectField>
+
+        <SelectField
+          label="Ciudad"
+          value={selectedCity}
+          onChange={(city) => update({ city, currentPage: 1 })}
+        >
+          <option value="">Ciudades ({availableCities.length})</option>
+          {availableCities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </SelectField>
+      </div>
+
+      <div className="filter-section date-filter">
+        <span className="filter-section-title">Fechas del viaje</span>
+        <DateRangePicker
+          label="Intervalo de fechas"
+          value={dateRange}
+          onChange={(range) => {
+            update({
+              dateRange: range,
+              dateActive: Boolean(range),
+              currentPage: 1,
+            })
+          }}
+        />
+      </div>
+
+      <div className="filter-section">
+        <span className="filter-section-title">Rango de precio</span>
+        <div className="price-values">
+          <span>Desde <strong>${minPrice}</strong></span>
+          <span>Hasta <strong>${maxPrice}</strong></span>
+        </div>
+        <div className="range-slider">
+          <div className="range-track" />
+          <input
+            aria-label="Precio mínimo"
+            max="850"
+            min="100"
+            step="25"
+            type="range"
+            value={minPrice}
+            onChange={(event) =>
+              update({
+                minPrice: Math.min(Number(event.target.value), maxPrice - 50),
+                currentPage: 1,
+              })
+            }
+          />
+          <input
+            aria-label="Precio máximo"
+            max="900"
+            min="150"
+            step="25"
+            type="range"
+            value={maxPrice}
+            onChange={(event) =>
+              update({
+                maxPrice: Math.max(Number(event.target.value), minPrice + 50),
+                currentPage: 1,
+              })
+            }
+          />
+        </div>
+        <div className="range-limits"><span>$100</span><span>$900</span></div>
+      </div>
+    </>
+  )
+
   return (
     <>
       <PageTitle
@@ -187,143 +346,12 @@ export function Catalog({
       />
 
       <div className="catalog-layout section">
-        <aside className="filters">
+        <aside className="filters desktop-filters">
           <div className="filter-heading">
             <h2>Filtros</h2>
           </div>
 
-          <div className="filter-section">
-            <span className="filter-section-title">Estilo de viaje</span>
-            <SelectField
-              label="Categoría temática"
-              value={selectedCategory}
-              onChange={(cat) => update({ category: cat, currentPage: 1 })}
-            >
-              <option value="">Todos los estilos ({TRAVEL_CATEGORIES.length})</option>
-              {TRAVEL_CATEGORIES.map((cat) => (
-                <option key={cat.id} value={cat.name}>
-                  {cat.name}
-                </option>
-              ))}
-            </SelectField>
-          </div>
-
-          <div className="filter-section">
-            <span className="filter-section-title">Destino</span>
-            <SelectField
-              label="Región"
-              value={selectedRegion}
-              onChange={(reg) => {
-                update({
-                  region: reg,
-                  province: "",
-                  city: "",
-                  currentPage: 1,
-                })
-              }}
-            >
-              <option value="">Regiones ({ECUADOR_REGIONS.length})</option>
-              {ECUADOR_REGIONS.map((reg) => (
-                <option key={reg} value={reg}>
-                  {reg}
-                </option>
-              ))}
-            </SelectField>
-
-            <SelectField
-              label="Provincia"
-              value={selectedProvince}
-              onChange={(prov) => {
-                const citiesInProv = prov
-                  ? packagesList.filter((p) => p.province === prov).map((p) => p.city)
-                  : []
-                const newCity =
-                  selectedCity && !citiesInProv.includes(selectedCity)
-                    ? ""
-                    : selectedCity
-                update({
-                  province: prov,
-                  city: newCity,
-                  currentPage: 1,
-                })
-              }}
-            >
-              <option value="">Provincias ({availableProvinces.length})</option>
-              {availableProvinces.map((prov) => (
-                <option key={prov} value={prov}>
-                  {prov}
-                </option>
-              ))}
-            </SelectField>
-
-            <SelectField
-              label="Ciudad"
-              value={selectedCity}
-              onChange={(city) => update({ city, currentPage: 1 })}
-            >
-              <option value="">Ciudades ({availableCities.length})</option>
-              {availableCities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </SelectField>
-          </div>
-
-          <div className="filter-section date-filter">
-            <span className="filter-section-title">Fechas del viaje</span>
-            <DateRangePicker
-              label="Intervalo de fechas"
-              value={dateRange}
-              onChange={(range) => {
-                update({
-                  dateRange: range,
-                  dateActive: Boolean(range),
-                  currentPage: 1,
-                })
-              }}
-            />
-          </div>
-
-          <div className="filter-section">
-            <span className="filter-section-title">Rango de precio</span>
-            <div className="price-values">
-              <span>Desde <strong>${minPrice}</strong></span>
-              <span>Hasta <strong>${maxPrice}</strong></span>
-            </div>
-            <div className="range-slider">
-              <div className="range-track" />
-              <input
-                aria-label="Precio mínimo"
-                max="850"
-                min="100"
-                step="25"
-                type="range"
-                value={minPrice}
-                onChange={(event) =>
-                  update({
-                    minPrice: Math.min(Number(event.target.value), maxPrice - 50),
-                    currentPage: 1,
-                  })
-                }
-              />
-              <input
-                aria-label="Precio máximo"
-                max="900"
-                min="150"
-                step="25"
-                type="range"
-                value={maxPrice}
-                onChange={(event) =>
-                  update({
-                    maxPrice: Math.max(Number(event.target.value), minPrice + 50),
-                    currentPage: 1,
-                  })
-                }
-              />
-            </div>
-            <div className="range-limits"><span>$100</span><span>$900</span></div>
-          </div>
+          {renderFilterFields()}
 
           <button
             type="button"
@@ -335,6 +363,78 @@ export function Catalog({
         </aside>
 
         <div className="catalog-results">
+          {/* Mobile Catalog Filter Bar */}
+          <div className="mobile-catalog-bar">
+            <div className="mobile-filter-actions">
+              <button
+                type="button"
+                className="mobile-filter-trigger-btn"
+                onClick={() => setIsFilterDrawerOpen(true)}
+                aria-label="Abrir filtros de búsqueda"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="4" y1="21" x2="4" y2="14" />
+                  <line x1="4" y1="10" x2="4" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12" y2="3" />
+                  <line x1="20" y1="21" x2="20" y2="16" />
+                  <line x1="20" y1="12" x2="20" y2="3" />
+                  <line x1="1" y1="14" x2="7" y2="14" />
+                  <line x1="9" y1="8" x2="15" y2="8" />
+                  <line x1="17" y1="16" x2="23" y2="16" />
+                </svg>
+                <span>Filtros</span>
+                {activeFiltersCount > 0 && (
+                  <span className="mobile-filter-count-badge">{activeFiltersCount}</span>
+                )}
+              </button>
+
+              <div className="mobile-sort-select">
+                <SelectField
+                  label=""
+                  value={sortBy}
+                  onChange={(sb) => update({ sortBy: sb, currentPage: 1 })}
+                >
+                  {[
+                    "Recomendados",
+                    "Precio: menor a mayor",
+                    "Precio: mayor a menor",
+                    "Duración",
+                    "Alfabético: Z a A (Descendente)",
+                    "Alfabético: A a Z (Ascendente)",
+                  ]
+                    .sort((a, b) => a.localeCompare(b, "es"))
+                    .map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                </SelectField>
+              </div>
+            </div>
+
+            {/* Quick horizontal style pills */}
+            <div className="mobile-quick-pills" role="tablist" aria-label="Estilos rápidos">
+              <button
+                type="button"
+                className={`mobile-quick-pill ${!selectedCategory ? "is-active" : ""}`}
+                onClick={() => update({ category: "", currentPage: 1 })}
+              >
+                Todos
+              </button>
+              {TRAVEL_CATEGORIES.map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  className={`mobile-quick-pill ${selectedCategory === cat.name ? "is-active" : ""}`}
+                  onClick={() => update({ category: cat.name, currentPage: 1 })}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="results-toolbar">
             <div>
               <strong>
@@ -530,6 +630,63 @@ export function Catalog({
               )}
             </>
           )}
+        </div>
+      </div>
+
+      {/* Mobile Filter Bottom Sheet Modal */}
+      <div
+        className={`mobile-filter-backdrop ${isFilterDrawerOpen ? "is-open" : ""}`}
+        onClick={() => setIsFilterDrawerOpen(false)}
+        aria-hidden="true"
+      />
+      <div
+        className={`mobile-filter-drawer ${isFilterDrawerOpen ? "is-open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Filtros de búsqueda"
+      >
+        <div className="mobile-filter-drawer__header">
+          <div className="mobile-filter-drawer__drag" aria-hidden="true" />
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+            <h3 style={{ margin: 0, fontSize: "18px", color: "var(--abyss)", fontWeight: 700 }}>
+              Filtros de búsqueda
+            </h3>
+            <button
+              type="button"
+              className="mobile-filter-drawer__close"
+              onClick={() => setIsFilterDrawerOpen(false)}
+              aria-label="Cerrar filtros"
+            >
+              <CloseXIcon size={18} />
+            </button>
+          </div>
+        </div>
+
+        <div className="mobile-filter-drawer__body">
+          {renderFilterFields()}
+        </div>
+
+        <div className="mobile-filter-drawer__footer">
+          <button
+            type="button"
+            className="mobile-filter-drawer__clear-btn"
+            onClick={() => {
+              clearFilters()
+              setIsFilterDrawerOpen(false)
+            }}
+          >
+            Limpiar todo
+          </button>
+          <button
+            type="button"
+            className="button button--primary mobile-filter-drawer__apply-btn"
+            onClick={() => {
+              setIsFilterDrawerOpen(false)
+              window.scrollTo({ top: 200, behavior: "smooth" })
+            }}
+          >
+            Ver {matchingPackages.length} paquetes
+          </button>
         </div>
       </div>
     </>

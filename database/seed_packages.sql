@@ -32,7 +32,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Canyoning y Rappel en Chorro de Girón', 'azuay-canyoning-y-rappel-en-chorro-de-giron', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'], true, true
+  135.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -73,7 +73,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Biodiversidad Andina en Parque Nacional Cajas', 'azuay-biodiversidad-andina-en-parque-nacional-cajas', 2, 1,
-  140.00, 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80'], false, true
+  140.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -114,7 +114,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Descanso y Paseo en Bote en Laguna de Busa', 'azuay-descanso-y-paseo-en-bote-en-laguna-de-busa', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'], false, true
+  125.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -155,7 +155,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Cuenca Colonial, Museos y Catedral de la Inmaculada', 'azuay-cuenca-colonial-museos-y-catedral-de-la-inmaculada', 3, 2,
-  195.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80'], false, true
+  195.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -204,7 +204,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Escapada Romántica en Mirador de Turi y Valle de Yunguilla', 'azuay-escapada-romantica-en-mirador-de-turi-y-valle-de-yunguilla', 3, 2,
-  240.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  240.00, 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -253,7 +253,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Ruta de los Ríos, Zoológico Yurak Allpa y Paute', 'azuay-ruta-de-los-rios-zoologico-yurak-allpa-y-paute', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80'], true, true
+  110.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -294,7 +294,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Mote Pillo, Chancho Hornado y Cuy Asado Cuencano', 'azuay-ruta-del-mote-pillo-chancho-hornado-y-cuy-asado-cuencano', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -335,7 +335,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking de Altura por Lagunas Toreadora y Llaviucu', 'azuay-trekking-de-altura-por-lagunas-toreadora-y-llaviucu', 3, 2,
-  170.00, 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80'], false, true
+  170.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -384,7 +384,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Circuito Termal y Baños de Lodo en Baños de Cuenca', 'azuay-circuito-termal-y-banos-de-lodo-en-banos-de-cuenca', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -425,7 +425,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Talleres de Filigrana en Plata y Tejido en Chordeleg y Sígsig', 'azuay-talleres-de-filigrana-en-plata-y-tejido-en-chordeleg-y-sigsig', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -466,7 +466,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Descenso en Bicicleta de Montaña por el Arenal del Chimborazo', 'bolivar-descenso-en-bicicleta-de-montana-por-el-arenal-del-chimborazo', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80'], true, true
+  120.00, 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -507,7 +507,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva de Producción Faunística y Bosque de Polylepis', 'bolivar-reserva-de-produccion-faunistica-y-bosque-de-polylepis', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -548,7 +548,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Relax Subtropical y Huertos Frutales en Caluma', 'bolivar-relax-subtropical-y-huertos-frutales-en-caluma', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -589,7 +589,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Santuario de la Virgen del Huayco y Centro de Guaranda', 'bolivar-santuario-de-la-virgen-del-huayco-y-centro-de-guaranda', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -630,7 +630,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Glamping en Colinas Andinas y Cumbres del Libertador', 'bolivar-glamping-en-colinas-andinas-y-cumbres-del-libertador', 2, 1,
-  145.00, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80'], false, true
+  145.00, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -671,7 +671,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Complejo Turístico Las Tres Cruces y Cascadas de Echeandía', 'bolivar-complejo-turistico-las-tres-cruces-y-cascadas-de-echeandia', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80'], true, true
+  95.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -712,7 +712,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Cata de Quesos de Salinas de Guaranda y Chocolates Finos', 'bolivar-cata-de-quesos-de-salinas-de-guaranda-y-chocolates-finos', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -753,7 +753,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking al Refugio Hermanos Carrel por la Ruta Bolívar', 'bolivar-trekking-al-refugio-hermanos-carrel-por-la-ruta-bolivar', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -794,7 +794,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Spa Andino con Vistas a la Cordillera Occidental', 'bolivar-spa-andino-con-vistas-a-la-cordillera-occidental', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -835,7 +835,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Experiencia Comunitaria Solidaria en Salinas de Tomabelas', 'bolivar-experiencia-comunitaria-solidaria-en-salinas-de-tomabelas', 3, 2,
-  155.00, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  155.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -884,7 +884,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Escalada en Roca y Caving en el Cerro Cojitambo', 'canar-escalada-en-roca-y-caving-en-el-cerro-cojitambo', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'], true, true
+  125.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -925,7 +925,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Sendero Natural en Bosque Protector Dudas Mazar', 'canar-sendero-natural-en-bosque-protector-dudas-mazar', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -966,7 +966,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Parque Acuático y Balnearios Tropicales de La Troncal', 'canar-parque-acuatico-y-balnearios-tropicales-de-la-troncal', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1007,7 +1007,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Complejo Arqueológico y Templo del Sol de Ingapirca', 'canar-complejo-arqueologico-y-templo-del-sol-de-ingapirca', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1048,7 +1048,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Romance con Vista al Santuario de la Virgen del Rocío', 'canar-romance-con-vista-al-santuario-de-la-virgen-del-rocio', 2, 1,
-  140.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80'], false, true
+  140.00, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1089,7 +1089,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo Familiar en la Laguna de Culebrillas y El Tambo', 'canar-paseo-familiar-en-la-laguna-de-culebrillas-y-el-tambo', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80'], true, true
+  100.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1130,7 +1130,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Tour Gastronómico de Cascaritas de Azogues y Chicha de Jora', 'canar-tour-gastronomico-de-cascaritas-de-azogues-y-chicha-de-jora', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1171,7 +1171,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking por el Gran Qhapaq Ñan (Camino del Inca)', 'canar-trekking-por-el-gran-qhapaq-nan-camino-del-inca', 3, 2,
-  165.00, 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'], false, true
+  165.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1220,7 +1220,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Aguas Termales Minerales en Yanayacu y Spa de Montaña', 'canar-aguas-termales-minerales-en-yanayacu-y-spa-de-montana', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1261,7 +1261,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Tradiciones Cañaris y Tejido de Ponchos en Sisid Anejo', 'canar-tradiciones-canaris-y-tejido-de-ponchos-en-sisid-anejo', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1302,7 +1302,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Cicloturismo y Cañonismo en el Valle de Mira', 'carchi-cicloturismo-y-canonismo-en-el-valle-de-mira', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'], true, true
+  115.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1343,7 +1343,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva Ecológica El Ángel y Bosque de Frailejones Gigantes', 'carchi-reserva-ecologica-el-angel-y-bosque-de-frailejones-gigantes', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80'], false, true
+  125.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1384,7 +1384,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Tranquilidad y Clima Cálido en los Huertos de Chota Carchi', 'carchi-tranquilidad-y-clima-calido-en-los-huertos-de-chota-carchi', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1425,7 +1425,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Esculturas en Verde del Cementerio Municipal de Tulcán', 'carchi-esculturas-en-verde-del-cementerio-municipal-de-tulcan', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1466,7 +1466,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cabaña Romántica y Laguna Volcánica de El Salado', 'carchi-cabana-romantica-y-laguna-volcanica-de-el-salado', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'], false, true
+  135.00, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1507,7 +1507,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Bosque de los Arrayanes de San Gabriel y Paseo Familiar', 'carchi-bosque-de-los-arrayanes-de-san-gabriel-y-paseo-familiar', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80'], true, true
+  90.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1548,7 +1548,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Queso Pastuzo, Tardón Mireño y Hornado Pastuso', 'carchi-ruta-del-queso-pastuzo-tardon-mireno-y-hornado-pastuso', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1589,7 +1589,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking al Volcán Chiles y Lagunas Verdes Azufradas', 'carchi-trekking-al-volcan-chiles-y-lagunas-verdes-azufradas', 2, 1,
-  140.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80'], false, true
+  140.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1630,7 +1630,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Santuario y Baños Termales de la Gruta de la Paz', 'carchi-santuario-y-banos-termales-de-la-gruta-de-la-paz', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1671,7 +1671,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Convivencia Pasto y Mitos en la Comuna de La Encañada', 'carchi-convivencia-pasto-y-mitos-en-la-comuna-de-la-encanada', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1712,7 +1712,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Ruta de Ciclismo Extremo Downhill desde el Taita Chimborazo', 'chimborazo-ruta-de-ciclismo-extremo-downhill-desde-el-taita-chimborazo', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'], true, true
+  135.00, 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1753,7 +1753,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Avistamiento de Vicuñas Silvestres y Cóndor Andino', 'chimborazo-avistamiento-de-vicunas-silvestres-y-condor-andino', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1794,7 +1794,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Fin de Semana de Campo y Sol en los Valles de Pallatanga', 'chimborazo-fin-de-semana-de-campo-y-sol-en-los-valles-de-pallatanga', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1835,7 +1835,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Ruta de la Nariz del Diablo y Centro Histórico de Alausí', 'chimborazo-ruta-de-la-nariz-del-diablo-y-centro-historico-de-alausi', 2, 1,
-  150.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80'], false, true
+  150.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1876,7 +1876,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Glamping Domo Frente al Nevado Chimborazo con Fogata', 'chimborazo-glamping-domo-frente-al-nevado-chimborazo-con-fogata', 2, 1,
-  180.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  180.00, 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1917,7 +1917,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo en Bote por Laguna de Colta e Iglesia de Balbanera', 'chimborazo-paseo-en-bote-por-laguna-de-colta-e-iglesia-de-balbanera', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80'], true, true
+  90.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1958,7 +1958,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Hornado Riobambeño, Chicha Huevona y Fritada de Guano', 'chimborazo-hornado-riobambeno-chicha-huevona-y-fritada-de-guano', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -1999,7 +1999,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Ascenso de Alta Montaña al Refugio Whymper (5.000 m)', 'chimborazo-ascenso-de-alta-montana-al-refugio-whymper-5-000-m', 3, 2,
-  210.00, 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80'], false, true
+  210.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2048,7 +2048,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Spa de Aguas Termales Volcánicas en Ojo de Fantasma Penipe', 'chimborazo-spa-de-aguas-termales-volcanicas-en-ojo-de-fantasma-penipe', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2089,7 +2089,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Feria Indígena Auténtica de Guamote y Tejedores de Alfombras', 'chimborazo-feria-indigena-autentica-de-guamote-y-tejedores-de-alfombras', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2130,7 +2130,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Cabalgata y Ciclismo en las Faldas del Volcán Cotopaxi', 'cotopaxi-cabalgata-y-ciclismo-en-las-faldas-del-volcan-cotopaxi', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80'], true, true
+  135.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2171,7 +2171,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Laguna de Limpiopungo y Flora del Páramo Andino', 'cotopaxi-laguna-de-limpiopungo-y-flora-del-paramo-andino', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2212,7 +2212,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Balneario Natural y Cascadas Subtropicales de La Maná', 'cotopaxi-balneario-natural-y-cascadas-subtropicales-de-la-mana', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2253,7 +2253,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Centro Histórico de Piedra Pómez de Latacunga y Templos', 'cotopaxi-centro-historico-de-piedra-pomez-de-latacunga-y-templos', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2294,7 +2294,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Romance y Cabañas de Madera al Borde del Cráter Quilotoa', 'cotopaxi-romance-y-cabanas-de-madera-al-borde-del-crater-quilotoa', 2, 1,
-  165.00, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80'], false, true
+  165.00, 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2335,7 +2335,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Ruta de los Helados Tradicionales de Salcedo y Granja Andina', 'cotopaxi-ruta-de-los-helados-tradicionales-de-salcedo-y-granja-andina', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80'], true, true
+  85.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2376,7 +2376,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta de las Chugchucaras Latacungueñas y Queso de Hoja', 'cotopaxi-ruta-de-las-chugchucaras-latacunguenas-y-queso-de-hoja', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2417,7 +2417,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking Quilotoa Loop: Sigchos, Isinlivi y Chugchilán', 'cotopaxi-trekking-quilotoa-loop-sigchos-isinlivi-y-chugchilan', 3, 2,
-  185.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'], false, true
+  185.00, 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2466,7 +2466,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Spa con Piedras Calientes Volcánicas en Hostería de Montaña', 'cotopaxi-spa-con-piedras-calientes-volcanicas-en-hosteria-de-montana', 2, 1,
-  140.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'], false, true
+  140.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2507,7 +2507,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Mercado Ancestral de Saquisilí y Taller de Pintores de Tigua', 'cotopaxi-mercado-ancestral-de-saquisili-y-taller-de-pintores-de-tigua', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2548,7 +2548,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Espeleología y Minas Coloniales El Sexmo en Zaruma', 'el-oro-espeleologia-y-minas-coloniales-el-sexmo-en-zaruma', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'], true, true
+  125.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2589,7 +2589,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva Ecológica Arenillas y Bosque Seco Ecuatoriano', 'el-oro-reserva-ecologica-arenillas-y-bosque-seco-ecuatoriano', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2630,7 +2630,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Descanso en Playa Jambelí y Manglares del Archipiélago', 'el-oro-descanso-en-playa-jambeli-y-manglares-del-archipielago', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2671,7 +2671,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Patrimonio de Madera y Balcones Coloniales de Zaruma', 'el-oro-patrimonio-de-madera-y-balcones-coloniales-de-zaruma', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2712,7 +2712,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cena Romántica en Colinas de Piñas y Café de Altura', 'el-oro-cena-romantica-en-colinas-de-pinas-y-cafe-de-altura', 2, 1,
-  140.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80'], false, true
+  140.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2753,7 +2753,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo en Lancha por Puerto Bolívar y Ruta del Camarón', 'el-oro-paseo-en-lancha-por-puerto-bolivar-y-ruta-del-camaron', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80'], true, true
+  95.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2794,7 +2794,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Tigrillo Zarumeño, Café Arábigo y Mariscos de Puerto Bolívar', 'el-oro-ruta-del-tigrillo-zarumeno-cafe-arabigo-y-mariscos-de-puerto-bolivar', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2835,7 +2835,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking en Bosque Petrificado de Puyango y Huellas Fósiles', 'el-oro-trekking-en-bosque-petrificado-de-puyango-y-huellas-fosiles', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2876,7 +2876,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Aguas Termominerales y Lodo Curativo de Portovelo', 'el-oro-aguas-termominerales-y-lodo-curativo-de-portovelo', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2917,7 +2917,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Comunidades Cacaoteras de Pasaje y Dulces de Guayaba', 'el-oro-comunidades-cacaoteras-de-pasaje-y-dulces-de-guayaba', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -2958,7 +2958,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Surf de Olas de Clase Mundial y Caving en Mompiche', 'esmeraldas-surf-de-olas-de-clase-mundial-y-caving-en-mompiche', 3, 2,
-  155.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'], true, true
+  155.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3007,7 +3007,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Manglares Majagual con los Árboles Más Altos del Mundo', 'esmeraldas-manglares-majagual-con-los-arboles-mas-altos-del-mundo', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80'], false, true
+  125.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3048,7 +3048,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Sol, Arena Blanca y Cocteles Tropicales en Tonsupa y Same', 'esmeraldas-sol-arena-blanca-y-cocteles-tropicales-en-tonsupa-y-same', 3, 2,
-  145.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80'], false, true
+  145.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3097,7 +3097,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Música de Marimba Tradicional declarada Patrimonio Unesco', 'esmeraldas-musica-de-marimba-tradicional-declarada-patrimonio-unesco', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3138,7 +3138,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cabaña Privada sobre el Océano en la Bahía de Same', 'esmeraldas-cabana-privada-sobre-el-oceano-en-la-bahia-de-same', 3, 2,
-  210.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'], false, true
+  210.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3187,7 +3187,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Diversión Marina Familiar en Banana Boat y Playa de Atacames', 'esmeraldas-diversion-marina-familiar-en-banana-boat-y-playa-de-atacames', 3, 2,
-  130.00, 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80'], true, true
+  130.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3236,7 +3236,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Encocado de Cangrejo Azul y Tapao Arrecho Esmeraldeño', 'esmeraldas-ruta-del-encocado-de-cangrejo-azul-y-tapao-arrecho-esmeraldeno', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3277,7 +3277,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Caminata por la Selva Tropical en la Reserva Cotacachi-Cayapas', 'esmeraldas-caminata-por-la-selva-tropical-en-la-reserva-cotacachi-cayapas', 3, 2,
-  160.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80'], false, true
+  160.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3326,7 +3326,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Taladoterapia Marina y Masajes con Aceite de Coco Puro', 'esmeraldas-taladoterapia-marina-y-masajes-con-aceite-de-coco-puro', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'], false, true
+  125.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3367,7 +3367,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Convivencia con Comunidades Afroecuatorianas y Taller de Marimba', 'esmeraldas-convivencia-con-comunidades-afroecuatorianas-y-taller-de-marimba', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3408,7 +3408,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Snorkel Extremo con Tiburones Tintoreras y Lobos Marinos', 'galapagos-snorkel-extremo-con-tiburones-tintoreras-y-lobos-marinos', 4, 3,
-  580.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'], true, true
+  580.00, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3465,7 +3465,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Santuario de Tortugas Gigantes y Estación Charles Darwin', 'galapagos-santuario-de-tortugas-gigantes-y-estacion-charles-darwin', 4, 3,
-  620.00, 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80'], false, true
+  620.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3522,7 +3522,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Descanso en Playa de Arena Blanca de Bahía Tortuga', 'galapagos-descanso-en-playa-de-arena-blanca-de-bahia-tortuga', 4, 3,
-  495.00, 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'], false, true
+  495.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3579,7 +3579,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Historia de la Colonia Penal y Centro de Interpretación', 'galapagos-historia-de-la-colonia-penal-y-centro-de-interpretacion', 3, 2,
-  480.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80'], false, true
+  480.00, 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3628,7 +3628,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Atardeceres Románticos en Bahía Naufragio y Crucero al Ocaso', 'galapagos-atardeceres-romanticos-en-bahia-naufragio-y-crucero-al-ocaso', 4, 3,
-  690.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  690.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3685,7 +3685,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Safari Insular Familiar y Senderos de Cráteres Gemelos', 'galapagos-safari-insular-familiar-y-senderos-de-crateres-gemelos', 4, 3,
-  540.00, 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80'], true, true
+  540.00, 'https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3742,7 +3742,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta de la Langosta de Galápagos y Café Volcánico de Altura', 'galapagos-ruta-de-la-langosta-de-galapagos-y-cafe-volcanico-de-altura', 3, 2,
-  470.00, 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'], false, true
+  470.00, 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3791,7 +3791,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Ascenso al Volcán Activo Sierra Negra y Fumarolas de Azufre', 'galapagos-ascenso-al-volcan-activo-sierra-negra-y-fumarolas-de-azufre', 4, 3,
-  560.00, 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80'], false, true
+  560.00, 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3848,7 +3848,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Spa con Sal Marina de Galápagos y Piedras Volcánicas', 'galapagos-spa-con-sal-marina-de-galapagos-y-piedras-volcanicas', 3, 2,
-  510.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80'], false, true
+  510.00, 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3897,7 +3897,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Agroturismo y Fincas de Conservación en la Parte Alta de Santa Cruz', 'galapagos-agroturismo-y-fincas-de-conservacion-en-la-parte-alta-de-santa-cruz', 4, 3,
-  485.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80'], false, true
+  485.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3954,7 +3954,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Canyoning y Ruta de las 7 Cascadas en Bucay', 'guayas-canyoning-y-ruta-de-las-7-cascadas-en-bucay', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80'], true, true
+  125.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -3995,7 +3995,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva Manglares Churute y Observación de Delfines', 'guayas-reserva-manglares-churute-y-observacion-de-delfines', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4036,7 +4036,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Sol, Surf y Brisa Marina en General Villamil Playas', 'guayas-sol-surf-y-brisa-marina-en-general-villamil-playas', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4077,7 +4077,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Barrio Las Peñas, Cerro Santa Ana y Malecón 2000', 'guayas-barrio-las-penas-cerro-santa-ana-y-malecon-2000', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4118,7 +4118,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Velada Romántica a Bordo del Barco Henry Morgan por el Río Guayas', 'guayas-velada-romantica-a-bordo-del-barco-henry-morgan-por-el-rio-guayas', 2, 1,
-  155.00, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80'], false, true
+  155.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4159,7 +4159,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Parque Histórico de Guayaquil y Museo del Cacao', 'guayas-parque-historico-de-guayaquil-y-museo-del-cacao', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80'], true, true
+  85.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4200,7 +4200,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Cangrejo Rojo de Naranjal y Encebollado Guayaco', 'guayas-ruta-del-cangrejo-rojo-de-naranjal-y-encebollado-guayaco', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4241,7 +4241,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Senderismo Ecológico en la Cordillera Chongón Colonche', 'guayas-senderismo-ecologico-en-la-cordillera-chongon-colonche', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4282,7 +4282,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Aguas Termales Sulfurosas y Lodoterapia en Virgen del Cisne Naranjal', 'guayas-aguas-termales-sulfurosas-y-lodoterapia-en-virgen-del-cisne-naranjal', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4323,7 +4323,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Santuario Narcisa de Jesús y Tradición Montuvia en Nobol y Daule', 'guayas-santuario-narcisa-de-jesus-y-tradicion-montuvia-en-nobol-y-daule', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4364,7 +4364,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Kayak y Stand Up Paddle en Laguna de San Pablo', 'imbabura-kayak-y-stand-up-paddle-en-laguna-de-san-pablo', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'], true, true
+  115.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4405,7 +4405,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Sendero Sagrado en Cascada de Peguche y Lechero Milenario', 'imbabura-sendero-sagrado-en-cascada-de-peguche-y-lechero-milenario', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4446,7 +4446,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Tranquilidad y Paseo en Barco en la Mística Laguna de Cuicocha', 'imbabura-tranquilidad-y-paseo-en-barco-en-la-mistica-laguna-de-cuicocha', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4487,7 +4487,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Centro Histórico de la Ciudad Blanca de Ibarra y Ferrocarril', 'imbabura-centro-historico-de-la-ciudad-blanca-de-ibarra-y-ferrocarril', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4528,7 +4528,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Escapada en Hostería Patrimonial con Vistas al Taita Imbabura', 'imbabura-escapada-en-hosteria-patrimonial-con-vistas-al-taita-imbabura', 2, 1,
-  150.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80'], false, true
+  150.00, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4569,7 +4569,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo Familiar en Tren de la Libertad y Valle del Chota', 'imbabura-paseo-familiar-en-tren-de-la-libertad-y-valle-del-chota', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80'], true, true
+  110.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4610,7 +4610,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Helados de Paila Tradicionales de Ibarra, Carnes Coloradas y Cuy', 'imbabura-helados-de-paila-tradicionales-de-ibarra-carnes-coloradas-y-cuy', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4651,7 +4651,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Ascenso al Volcán Fuya Fuya y Lagunas Glaciares de Mojanda', 'imbabura-ascenso-al-volcan-fuya-fuya-y-lagunas-glaciares-de-mojanda', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4692,7 +4692,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Circuito de Aguas Termales Medicinales en Chachimbiro', 'imbabura-circuito-de-aguas-termales-medicinales-en-chachimbiro', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4733,7 +4733,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Gran Plaza de Ponchos de Otavalo y Tallado en Madera de San Antonio', 'imbabura-gran-plaza-de-ponchos-de-otavalo-y-tallado-en-madera-de-san-antonio', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4774,7 +4774,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Escalada en la Cumbre del Cerro Mandango en Vilcabamba', 'loja-escalada-en-la-cumbre-del-cerro-mandango-en-vilcabamba', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'], true, true
+  120.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4815,7 +4815,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva de Biósfera Podocarpus y Páramo de Cajanuma', 'loja-reserva-de-biosfera-podocarpus-y-paramo-de-cajanuma', 3, 2,
-  155.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80'], false, true
+  155.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4864,7 +4864,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Descanso Tropical y Piscinas en el Valle de Catamayo', 'loja-descanso-tropical-y-piscinas-en-el-valle-de-catamayo', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4905,7 +4905,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Puerta de la Ciudad, Calle Lourdes y Museos de la Capital Musical', 'loja-puerta-de-la-ciudad-calle-lourdes-y-museos-de-la-capital-musical', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4946,7 +4946,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Retiro de Pareja en Cabañas Ecológicas del Valle de la Longevidad', 'loja-retiro-de-pareja-en-cabanas-ecologicas-del-valle-de-la-longevidad', 3, 2,
-  185.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'], false, true
+  185.00, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -4995,7 +4995,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo Familiar por el Santuario del Cisne y Valle del Viento', 'loja-paseo-familiar-por-el-santuario-del-cisne-y-valle-del-viento', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80'], true, true
+  95.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5036,7 +5036,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Cata de Café Arábigo de Especialidad Lojano y Cecina Tradicional', 'loja-cata-de-cafe-arabigo-de-especialidad-lojano-y-cecina-tradicional', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5077,7 +5077,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking Transandino a Lagunas del Compadre en Podocarpus', 'loja-trekking-transandino-a-lagunas-del-compadre-en-podocarpus', 3, 2,
-  175.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80'], false, true
+  175.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5126,7 +5126,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Terapias Holísticas, Yoga y Baños Desintoxicantes en Vilcabamba', 'loja-terapias-holisticas-yoga-y-banos-desintoxicantes-en-vilcabamba', 3, 2,
-  160.00, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'], false, true
+  160.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5175,7 +5175,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Cultura Viva del Pueblo Saraguro, Baños de Purificación y Talleres', 'loja-cultura-viva-del-pueblo-saraguro-banos-de-purificacion-y-talleres', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5216,7 +5216,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Rafting y Tubing en los Rápidos del Río Cristal en Montalvo', 'los-rios-rafting-y-tubing-en-los-rapidos-del-rio-cristal-en-montalvo', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'], true, true
+  110.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5257,7 +5257,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Humedal Abras de Mantequilla y Observación de Aves Acuáticas', 'los-rios-humedal-abras-de-mantequilla-y-observacion-de-aves-acuaticas', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5298,7 +5298,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Balneario Fluvial La Playita y Paseo Náutico en Babahoyo', 'los-rios-balneario-fluvial-la-playita-y-paseo-nautico-en-babahoyo', 2, 1,
-  80.00, 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'], false, true
+  80.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5339,7 +5339,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Casas Flotantes Patrimoniales sobre el Río Babahoyo', 'los-rios-casas-flotantes-patrimoniales-sobre-el-rio-babahoyo', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5380,7 +5380,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Romance en Hacienda Cacaotera Tradicional de París Chiquito', 'los-rios-romance-en-hacienda-cacaotera-tradicional-de-paris-chiquito', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  135.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5421,7 +5421,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Parque Acuático La Perla y Recreación Campestre en Quevedo', 'los-rios-parque-acuatico-la-perla-y-recreacion-campestre-en-quevedo', 2, 1,
-  80.00, 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80'], true, true
+  80.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5462,7 +5462,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Cacao Fino de Aroma Nacional y Gastronomía Chino-Montuvia', 'los-rios-ruta-del-cacao-fino-de-aroma-nacional-y-gastronomia-chino-montuvia', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5503,7 +5503,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Sendero Agroecológico entre Plantaciones de Banano y Bosques', 'los-rios-sendero-agroecologico-entre-plantaciones-de-banano-y-bosques', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5544,7 +5544,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Spa Campestre con Chocolaterapia y Aguas de Vertiente', 'los-rios-spa-campestre-con-chocolaterapia-y-aguas-de-vertiente', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5585,7 +5585,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Rodeo Montuvio Tradicional, Amorfino y Costumbres Campesinas', 'los-rios-rodeo-montuvio-tradicional-amorfino-y-costumbres-campesinas', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5626,7 +5626,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Parapente sobre el Acantilado de Crucita y Kitesurf', 'manabi-parapente-sobre-el-acantilado-de-crucita-y-kitesurf', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80'], true, true
+  125.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5667,7 +5667,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Avistamiento de Ballenas Jorobadas en Parque Nacional Machalilla', 'manabi-avistamiento-de-ballenas-jorobadas-en-parque-nacional-machalilla', 3, 2,
-  185.00, 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80'], false, true
+  185.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5716,7 +5716,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Arenas Doradas y Aguas Turquesas en Playa Los Frailes', 'manabi-arenas-doradas-y-aguas-turquesas-en-playa-los-frailes', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5757,7 +5757,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Cuna del Sombrero Fino de Paja Toquilla en Montecristi', 'manabi-cuna-del-sombrero-fino-de-paja-toquilla-en-montecristi', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5798,7 +5798,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Atardeceres Románticos en los Farallones de Canoa y Bahía', 'manabi-atardeceres-romanticos-en-los-farallones-de-canoa-y-bahia', 3, 2,
-  175.00, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80'], false, true
+  175.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5847,7 +5847,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo Familiar en el Malecón Escénico de Manta y Playa El Murciélago', 'manabi-paseo-familiar-en-el-malecon-escenico-de-manta-y-playa-el-murcielago', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80'], true, true
+  110.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5888,7 +5888,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta Gastronómica del Viche, Ceviche con Maní y Salprieta Manabita', 'manabi-ruta-gastronomica-del-viche-ceviche-con-mani-y-salprieta-manabita', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5929,7 +5929,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking por la Selva Húmeda de Pacoche y Monos Aulladores', 'manabi-trekking-por-la-selva-humeda-de-pacoche-y-monos-aulladores', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -5970,7 +5970,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Baños de Lodo Curativo y Masajes Termales en San Vicente', 'manabi-banos-de-lodo-curativo-y-masajes-termales-en-san-vicente', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6011,7 +6011,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Comunidad Ancestral de Agua Blanca y Poza Sulfurosa Sagrada', 'manabi-comunidad-ancestral-de-agua-blanca-y-poza-sulfurosa-sagrada', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6052,7 +6052,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Expedición Extrema a la Cueva de los Tayos', 'morona-santiago-expedicion-extrema-a-la-cueva-de-los-tayos', 4, 3,
-  340.00, 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'], true, true
+  340.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6109,7 +6109,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Cascadas Mágicas del Kintia Panki y Bosque Amazónico', 'morona-santiago-cascadas-magicas-del-kintia-panki-y-bosque-amazonico', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6150,7 +6150,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Laguna de Sardinayacu y Descanso Fluvial en Macas', 'morona-santiago-laguna-de-sardinayacu-y-descanso-fluvial-en-macas', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6191,7 +6191,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Catedral de la Purísima de Macas y Petroglifos Ancestrales', 'morona-santiago-catedral-de-la-purisima-de-macas-y-petroglifos-ancestrales', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6232,7 +6232,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cabaña Selva Virgen con Vista al Volcán Sangay Activo', 'morona-santiago-cabana-selva-virgen-con-vista-al-volcan-sangay-activo', 3, 2,
-  195.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80'], false, true
+  195.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6281,7 +6281,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Parque Ecológico y Balneario Natural del Río Upano', 'morona-santiago-parque-ecologico-y-balneario-natural-del-rio-upano', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80'], true, true
+  85.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6322,7 +6322,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Degustación de Ayampaco Amazónico de Tilapia y Chicha de Chonta', 'morona-santiago-degustacion-de-ayampaco-amazonico-de-tilapia-y-chicha-de-chonta', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6363,7 +6363,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking Hacia las Cascadas Sagradas del Río Namakim', 'morona-santiago-trekking-hacia-las-cascadas-sagradas-del-rio-namakim', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'], false, true
+  125.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6404,7 +6404,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Baños de Vapor con Hierbas Medicinales Amazónicas en Sucúa', 'morona-santiago-banos-de-vapor-con-hierbas-medicinales-amazonicas-en-sucua', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6445,7 +6445,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Convivencia con la Nacionalidad Shuar y Ritos Ancestrales de Fuerza', 'morona-santiago-convivencia-con-la-nacionalidad-shuar-y-ritos-ancestrales-de-fuerza', 3, 2,
-  160.00, 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80'], false, true
+  160.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6494,7 +6494,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Rafting Clase IV en Río Jatunyacu y Tubing en Tena', 'napo-rafting-clase-iv-en-rio-jatunyacu-y-tubing-en-tena', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'], true, true
+  135.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6535,7 +6535,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Cavernas de Jumandy y Laberintos Subterráneos de Archidona', 'napo-cavernas-de-jumandy-y-laberintos-subterraneos-de-archidona', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6576,7 +6576,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Playas de Agua Dulce del Río Misahuallí y Monos Capuchinos', 'napo-playas-de-agua-dulce-del-rio-misahualli-y-monos-capuchinos', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6617,7 +6617,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Pueblo Patrimonial de Baeza Vieja y Ruta de la Canela', 'napo-pueblo-patrimonial-de-baeza-vieja-y-ruta-de-la-canela', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6658,7 +6658,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Domo Romántico en la Reserva Ecológica Cayambe-Coca', 'napo-domo-romantico-en-la-reserva-ecologica-cayambe-coca', 2, 1,
-  175.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'], false, true
+  175.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6699,7 +6699,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Visita al Centro de Rescate de Fauna Silvestre amaZOOnico', 'napo-visita-al-centro-de-rescate-de-fauna-silvestre-amazoonico', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80'], true, true
+  105.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6740,7 +6740,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Cata de Chocolate Kallari Fino de Aroma y Maito de Carachama', 'napo-cata-de-chocolate-kallari-fino-de-aroma-y-maito-de-carachama', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6781,7 +6781,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking a la Cascada San Rafael y Cañón del Quijos', 'napo-trekking-a-la-cascada-san-rafael-y-canon-del-quijos', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80'], false, true
+  125.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6822,7 +6822,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Circuito Termal Exclusivo y Spa Andino en Papallacta', 'napo-circuito-termal-exclusivo-y-spa-andino-en-papallacta', 2, 1,
-  155.00, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'], false, true
+  155.00, 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6863,7 +6863,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Comunidad Kichwa Shiripuno: Danza, Artesanías y Plantas Medicinales', 'napo-comunidad-kichwa-shiripuno-danza-artesanias-y-plantas-medicinales', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6904,7 +6904,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Expedición en Kayak por Afluentes Profundos del Río Napo', 'orellana-expedicion-en-kayak-por-afluentes-profundos-del-rio-napo', 3, 2,
-  235.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'], true, true
+  235.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -6953,7 +6953,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Torre de Observación del Dosel en la Biósfera del Parque Nacional Yasuní', 'orellana-torre-de-observacion-del-dosel-en-la-biosfera-del-parque-nacional-yasuni', 4, 3,
-  420.00, 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80'], false, true
+  420.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7010,7 +7010,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Paseo en Canoa a Motor y Playas Fluviales del Río Payamino', 'orellana-paseo-en-canoa-a-motor-y-playas-fluviales-del-rio-payamino', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7051,7 +7051,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Museo Arqueológico MACCO y Culturas Ribereñas de Orellana', 'orellana-museo-arqueologico-macco-y-culturas-riberenas-de-orellana', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7092,7 +7092,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Ecolodge Flotante en Laguna Añangu para Luna de Miel', 'orellana-ecolodge-flotante-en-laguna-anangu-para-luna-de-miel', 4, 3,
-  490.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  490.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7149,7 +7149,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Safari de Monos, Guacamayos y Saladeros de Arcilla', 'orellana-safari-de-monos-guacamayos-y-saladeros-de-arcilla', 3, 2,
-  310.00, 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80'], true, true
+  310.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7198,7 +7198,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Degustación de Gusanos de Chonta (Chontacuro) y Pescado al Vapor', 'orellana-degustacion-de-gusanos-de-chonta-chontacuro-y-pescado-al-vapor', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7239,7 +7239,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking Nocturno en la Selva Primaria y Búsqueda de Ranas Cristal', 'orellana-trekking-nocturno-en-la-selva-primaria-y-busqueda-de-ranas-cristal', 3, 2,
-  185.00, 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80'], false, true
+  185.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7288,7 +7288,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Tratamiento de Relajación con Lodo de Río y Esencias Selváticas', 'orellana-tratamiento-de-relajacion-con-lodo-de-rio-y-esencias-selvaticas', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80'], false, true
+  135.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7329,7 +7329,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Convivencia con la Nacionalidad Waorani en Territorio Ancestral', 'orellana-convivencia-con-la-nacionalidad-waorani-en-territorio-ancestral', 4, 3,
-  410.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80'], false, true
+  410.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7386,7 +7386,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Salto del Río y Canyoning en la Cascada Hola Vida', 'pastaza-salto-del-rio-y-canyoning-en-la-cascada-hola-vida', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80'], true, true
+  125.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7427,7 +7427,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva Biológica Yanacocha y Jardín Botánico Las Orquídeas', 'pastaza-reserva-biologica-yanacocha-y-jardin-botanico-las-orquideas', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7468,7 +7468,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Paseo Fluvial y Tranquilidad en Laguna de Tarabita Mera', 'pastaza-paseo-fluvial-y-tranquilidad-en-laguna-de-tarabita-mera', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7509,7 +7509,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Historia de la Aviación Misionera en Shell y Museo Amazónico', 'pastaza-historia-de-la-aviacion-misionera-en-shell-y-museo-amazonico', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7550,7 +7550,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cabaña Nido sobre la Selva con Mirador Indichuris al Ocaso', 'pastaza-cabana-nido-sobre-la-selva-con-mirador-indichuris-al-ocaso', 2, 1,
-  155.00, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80'], false, true
+  155.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7591,7 +7591,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo en Canoa Familiar y Parque Temático Omaere', 'pastaza-paseo-en-canoa-familiar-y-parque-tematico-omaere', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80'], true, true
+  90.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7632,7 +7632,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta de la Ilex Guayusa, Ceviche Volquetero y Maito de Tilapia', 'pastaza-ruta-de-la-ilex-guayusa-ceviche-volquetero-y-maito-de-tilapia', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7673,7 +7673,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking a la Selva Virgen de Canelos y Miradores Panorámicos', 'pastaza-trekking-a-la-selva-virgen-de-canelos-y-miradores-panoramicos', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7714,7 +7714,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Baños de Bosque (Shinrin-Yoku) y Masajes con Arcilla Amazónica', 'pastaza-banos-de-bosque-shinrin-yoku-y-masajes-con-arcilla-amazonica', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7755,7 +7755,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Alfarería Indígena y Tradiciones Kichwa de Canelos', 'pastaza-alfareria-indigena-y-tradiciones-kichwa-de-canelos', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7796,7 +7796,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Canopy de 10 Cables y Tubing en el Bosque Protector Mindo', 'pichincha-canopy-de-10-cables-y-tubing-en-el-bosque-protector-mindo', 2, 1,
-  125.00, 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'], true, true
+  125.00, 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7837,7 +7837,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Ruta de los Colibríes y Jardín de Mariposas en Mindo Nambillo', 'pichincha-ruta-de-los-colibries-y-jardin-de-mariposas-en-mindo-nambillo', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1520808663317-647b476a81b9?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7878,7 +7878,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Piscinas Naturales y Cascadas Verdes de Pedro Vicente Maldonado', 'pichincha-piscinas-naturales-y-cascadas-verdes-de-pedro-vicente-maldonado', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7919,7 +7919,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Quito Colonial, Convento de San Francisco y Mitad del Mundo', 'pichincha-quito-colonial-convento-de-san-francisco-y-mitad-del-mundo', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -7960,7 +7960,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Glamping Exclusivo con Vistas al Volcán Rucu Pichincha y Fogata', 'pichincha-glamping-exclusivo-con-vistas-al-volcan-rucu-pichincha-y-fogata', 2, 1,
-  175.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80'], false, true
+  175.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8001,7 +8001,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Teleférico de Quito, Parque Vulqano y Granja de Machachi', 'pichincha-teleferico-de-quito-parque-vulqano-y-granja-de-machachi', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80'], true, true
+  90.00, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8042,7 +8042,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta de los Bizcochos de Cayambe, Queso de Hoja y Hornado de Sangolquí', 'pichincha-ruta-de-los-bizcochos-de-cayambe-queso-de-hoja-y-hornado-de-sangolqui', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8083,7 +8083,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Ascenso de Aclimatación a las Cumbres del Rucu Pichincha e Ilaló', 'pichincha-ascenso-de-aclimatacion-a-las-cumbres-del-rucu-pichincha-e-ilalo', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8124,7 +8124,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Spa de Altura con Tratamiento de Chocolate y Sauna Andino', 'pichincha-spa-de-altura-con-tratamiento-de-chocolate-y-sauna-andino', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8165,7 +8165,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Comunidad Yunguilla: Turismo Sostenible, Mermeladas y Quesos', 'pichincha-comunidad-yunguilla-turismo-sostenible-mermeladas-y-quesos', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8206,7 +8206,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Bautizo de Buceo y Snorkel en el Islote El Pelado de Ayangue', 'santa-elena-bautizo-de-buceo-y-snorkel-en-el-islote-el-pelado-de-ayangue', 2, 1,
-  145.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'], true, true
+  145.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8247,7 +8247,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Avistamiento de Lobos Marinos y Piqueros en La Chocolatera', 'santa-elena-avistamiento-de-lobos-marinos-y-piqueros-en-la-chocolatera', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8288,7 +8288,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Sol, Surf y Relajación Frente al Pacífico en Playa Olón', 'santa-elena-sol-surf-y-relajacion-frente-al-pacifico-en-playa-olon', 3, 2,
-  140.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80'], false, true
+  140.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8337,7 +8337,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Museo Los Amantes de Sumpa y Catedral de Santa Elena', 'santa-elena-museo-los-amantes-de-sumpa-y-catedral-de-santa-elena', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8378,7 +8378,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Suite Frente al Mar en Punta Carnero con Cena al Atardecer', 'santa-elena-suite-frente-al-mar-en-punta-carnero-con-cena-al-atardecer', 3, 2,
-  220.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'], false, true
+  220.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8427,7 +8427,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo Náutico Familiar en Bahía de Salinas y Avistamiento Costero', 'santa-elena-paseo-nautico-familiar-en-bahia-de-salinas-y-avistamiento-costero', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80'], true, true
+  105.00, 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8468,7 +8468,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta de los Ceviches Playeros, Arroz Marinero y Cazuela', 'santa-elena-ruta-de-los-ceviches-playeros-arroz-marinero-y-cazuela', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8509,7 +8509,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Caminata por el Bosque Protector Chongón Colonche en Dos Mangas', 'santa-elena-caminata-por-el-bosque-protector-chongon-colonche-en-dos-mangas', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8550,7 +8550,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Baños de Lodo Volcánico y Aguas Sulfurosas de San Vicente', 'santa-elena-banos-de-lodo-volcanico-y-aguas-sulfurosas-de-san-vicente', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8591,7 +8591,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Talleres de Paja Toquilla y Tagua con Artesanos de Dos Mangas', 'santa-elena-talleres-de-paja-toquilla-y-tagua-con-artesanos-de-dos-mangas', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8632,7 +8632,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Rafting en los Rápidos del Río Blanco y Salto en Cascada', 'santo-domingo-de-los-tsachilas-rafting-en-los-rapidos-del-rio-blanco-y-salto-en-cascada', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80'], true, true
+  120.00, 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8673,7 +8673,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva Botánica La Perla y Observación de Tucanes', 'santo-domingo-de-los-tsachilas-reserva-botanica-la-perla-y-observacion-de-tucanes', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8714,7 +8714,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Parque Acuático Tropical y Balnearios de Valle Hermoso', 'santo-domingo-de-los-tsachilas-parque-acuatico-tropical-y-balnearios-de-valle-hermoso', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8755,7 +8755,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Catedral El Buen Pastor y Tradición Melcochera de Alluriquín', 'santo-domingo-de-los-tsachilas-catedral-el-buen-pastor-y-tradicion-melcochera-de-alluriquin', 2, 1,
-  80.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80'], false, true
+  80.00, 'https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8796,7 +8796,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cabaña Romántica Rodeada de Bosque Lluvioso y Cascada Privada', 'santo-domingo-de-los-tsachilas-cabana-romantica-rodeada-de-bosque-lluvioso-y-cascada-privada', 2, 1,
-  145.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  145.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8837,7 +8837,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Parque de la Juventud y Complejo Recreativo Familiar', 'santo-domingo-de-los-tsachilas-parque-de-la-juventud-y-complejo-recreativo-familiar', 2, 1,
-  80.00, 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80'], true, true
+  80.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8878,7 +8878,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta de las Parrilladas de Carne Tsáchila y Dulces de Caña', 'santo-domingo-de-los-tsachilas-ruta-de-las-parrilladas-de-carne-tsachila-y-dulces-de-cana', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8919,7 +8919,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking por la Selva Subtropical de la Cascada del Amor', 'santo-domingo-de-los-tsachilas-trekking-por-la-selva-subtropical-de-la-cascada-del-amor', 2, 1,
-  100.00, 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80'], false, true
+  100.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -8960,7 +8960,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Baños de Purificación con Hierbas Tsáchilas y Arcilla Roja', 'santo-domingo-de-los-tsachilas-banos-de-purificacion-con-hierbas-tsachilas-y-arcilla-roja', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9001,7 +9001,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Vivencia Ancestral en la Comuna Tsáchila Chigüilpe: Achiote y Chamanismo', 'santo-domingo-de-los-tsachilas-vivencia-ancestral-en-la-comuna-tsachila-chiguilpe-achiote-y-chamanismo', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9042,7 +9042,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Navegación Nocturna en Búsqueda de Caimanes Negros en Cuyabeno', 'sucumbios-navegacion-nocturna-en-busqueda-de-caimanes-negros-en-cuyabeno', 4, 3,
-  340.00, 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80'], true, true
+  340.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9099,7 +9099,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Laguna Grande de Cuyabeno y Observación de Delfines Rosados', 'sucumbios-laguna-grande-de-cuyabeno-y-observacion-de-delfines-rosados', 4, 3,
-  380.00, 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80'], false, true
+  380.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9156,7 +9156,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Descanso Acuático y Atardecer Dorado en Laguna Encantada', 'sucumbios-descanso-acuatico-y-atardecer-dorado-en-laguna-encantada', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9197,7 +9197,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Parque Turístico Nueva Loja y Etnografía de Pueblos Amazónicos', 'sucumbios-parque-turistico-nueva-loja-y-etnografia-de-pueblos-amazonicos', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9238,7 +9238,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Ecolodge Privado en la Reserva Cuyabeno con Terraza Fluvial', 'sucumbios-ecolodge-privado-en-la-reserva-cuyabeno-con-terraza-fluvial', 4, 3,
-  420.00, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80'], false, true
+  420.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9295,7 +9295,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Paseo Familiar en Canoa con Avistamiento de Monos y Aves', 'sucumbios-paseo-familiar-en-canoa-con-avistamiento-de-monos-y-aves', 3, 2,
-  275.00, 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80'], true, true
+  275.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9344,7 +9344,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta del Casabe Ancestral de Yuca y Pescado en Hoja de Bijao', 'sucumbios-ruta-del-casabe-ancestral-de-yuca-y-pescado-en-hoja-de-bijao', 3, 2,
-  195.00, 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80'], false, true
+  195.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9393,7 +9393,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking por Senderos del Bosque Inundado del Igapó', 'sucumbios-trekking-por-senderos-del-bosque-inundado-del-igapo', 4, 3,
-  310.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'], false, true
+  310.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9450,7 +9450,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Tratamiento de Relajación con Aguas Minerales en Cascales', 'sucumbios-tratamiento-de-relajacion-con-aguas-minerales-en-cascales', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9491,7 +9491,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Comunidad Étnica Siona: Preparación de Casabe y Sabiduría Chamánica', 'sucumbios-comunidad-etnica-siona-preparacion-de-casabe-y-sabiduria-chamanica', 4, 3,
-  350.00, 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  350.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9548,7 +9548,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Adrenalina Pura: Canyoning, Rafting y Salto del Puente en Baños', 'tungurahua-adrenalina-pura-canyoning-rafting-y-salto-del-puente-en-banos', 3, 2,
-  175.00, 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'], true, true
+  175.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9597,7 +9597,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Ruta de las Cascadas, Manto de la Novia y Pailón del Diablo', 'tungurahua-ruta-de-las-cascadas-manto-de-la-novia-y-pailon-del-diablo', 2, 1,
-  115.00, 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80'], false, true
+  115.00, 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9638,7 +9638,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Valle de la Eterna Primavera, Huertos de Mandarina y Relax en Patate', 'tungurahua-valle-de-la-eterna-primavera-huertos-de-mandarina-y-relax-en-patate', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9679,7 +9679,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Quinta de Juan León Mera, Museo Martínez Holguín y Centro de Ambato', 'tungurahua-quinta-de-juan-leon-mera-museo-martinez-holguin-y-centro-de-ambato', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9720,7 +9720,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Glamping de Lujo con Jacuzzi y Vista al Volcán Tungurahua', 'tungurahua-glamping-de-lujo-con-jacuzzi-y-vista-al-volcan-tungurahua', 2, 1,
-  190.00, 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80'], false, true
+  190.00, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9761,7 +9761,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Columpio del Fin del Mundo en Casa del Árbol y Aldea Mágica', 'tungurahua-columpio-del-fin-del-mundo-en-casa-del-arbol-y-aldea-magica', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80'], true, true
+  95.00, 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9802,7 +9802,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Melcochas de Baños, Llapingachos Ambateños y Dulces de Cevallos', 'tungurahua-melcochas-de-banos-llapingachos-ambatenos-y-dulces-de-cevallos', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80'], false, true
+  85.00, 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9843,7 +9843,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking de Alta Montaña al Refugio del Volcán Tungurahua', 'tungurahua-trekking-de-alta-montana-al-refugio-del-volcan-tungurahua', 2, 1,
-  135.00, 'https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'], false, true
+  135.00, 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9884,7 +9884,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Aguas Termales de la Virgen, El Salado y Spa Volcánico', 'tungurahua-aguas-termales-de-la-virgen-el-salado-y-spa-volcanico', 2, 1,
-  110.00, 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80'], false, true
+  110.00, 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9925,7 +9925,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Cultura Salasaka: Tejeduría en Telar Ancestral y Diablada Pillareña', 'tungurahua-cultura-salasaka-tejeduria-en-telar-ancestral-y-diablada-pillarena', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -9966,7 +9966,7 @@ INSERT INTO paquetes (
     1
   ),
   1, 'Expedición en Bote Rápido por los Cañones del Río Nangaritza', 'zamora-chinchipe-expedicion-en-bote-rapido-por-los-canones-del-rio-nangaritza', 3, 2,
-  210.00, 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80'], true, true
+  210.00, 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10015,7 +10015,7 @@ INSERT INTO paquetes (
     1
   ),
   2, 'Reserva Podocarpus Sur: Bosque de Palmeras Gigantes y Aves', 'zamora-chinchipe-reserva-podocarpus-sur-bosque-de-palmeras-gigantes-y-aves', 2, 1,
-  120.00, 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80'], false, true
+  120.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10056,7 +10056,7 @@ INSERT INTO paquetes (
     1
   ),
   3, 'Descanso en las Playas de Arena Blanca del Río Chicaña', 'zamora-chinchipe-descanso-en-las-playas-de-arena-blanca-del-rio-chicana', 2, 1,
-  95.00, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80'], false, true
+  95.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10097,7 +10097,7 @@ INSERT INTO paquetes (
     1
   ),
   4, 'Reloj Floral Gigante de Zamora y Orígenes del Cacao en Palanda', 'zamora-chinchipe-reloj-floral-gigante-de-zamora-y-origenes-del-cacao-en-palanda', 2, 1,
-  90.00, 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80'], false, true
+  90.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10138,7 +10138,7 @@ INSERT INTO paquetes (
     1
   ),
   5, 'Cabaña Romántica Ecológica en el Valle de las Guayabas', 'zamora-chinchipe-cabana-romantica-ecologica-en-el-valle-de-las-guayabas', 2, 1,
-  160.00, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'], false, true
+  160.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10179,7 +10179,7 @@ INSERT INTO paquetes (
     1
   ),
   6, 'Parque Lineal y Cascadas de Santa Cleotilde para Toda la Familia', 'zamora-chinchipe-parque-lineal-y-cascadas-de-santa-cleotilde-para-toda-la-familia', 2, 1,
-  85.00, 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80'], true, true
+  85.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], true, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10220,7 +10220,7 @@ INSERT INTO paquetes (
     1
   ),
   7, 'Ruta Arqueológica del Primer Cacao del Mundo en Mayo Chinchipe', 'zamora-chinchipe-ruta-arqueologica-del-primer-cacao-del-mundo-en-mayo-chinchipe', 3, 2,
-  145.00, 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80'], false, true
+  145.00, 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10269,7 +10269,7 @@ INSERT INTO paquetes (
     1
   ),
   8, 'Trekking al Laberinto de las Mil Ilusiones y Cueva de los Tayos Sur', 'zamora-chinchipe-trekking-al-laberinto-de-las-mil-ilusiones-y-cueva-de-los-tayos-sur', 3, 2,
-  180.00, 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80'], false, true
+  180.00, 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10318,7 +10318,7 @@ INSERT INTO paquetes (
     1
   ),
   9, 'Hidroterapia Natural en Cascadas Velo de Novia y Chorrera', 'zamora-chinchipe-hidroterapia-natural-en-cascadas-velo-de-novia-y-chorrera', 2, 1,
-  105.00, 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80'], false, true
+  105.00, 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,
@@ -10359,7 +10359,7 @@ INSERT INTO paquetes (
     1
   ),
   10, 'Encuentro con las Comunidades Shuar de Nangaritza y Artesanías', 'zamora-chinchipe-encuentro-con-las-comunidades-shuar-de-nangaritza-y-artesanias', 2, 1,
-  130.00, 'https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80', ARRAY['https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80'], false, true
+  130.00, 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80', ARRAY['https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80', 'https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80'], false, true
 ) ON CONFLICT (id) DO UPDATE
 SET nombre = EXCLUDED.nombre,
     slug = EXCLUDED.slug,

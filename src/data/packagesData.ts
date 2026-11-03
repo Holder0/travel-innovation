@@ -21,10 +21,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -92,10 +92,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -163,10 +163,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -234,10 +234,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -315,10 +315,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -396,10 +396,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -467,10 +467,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -538,10 +538,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -619,10 +619,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -690,10 +690,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -761,10 +761,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -832,10 +832,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -903,10 +903,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -974,10 +974,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -1045,10 +1045,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -1116,10 +1116,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -1187,10 +1187,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -1258,10 +1258,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -1329,10 +1329,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -1400,10 +1400,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -1481,10 +1481,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -1552,10 +1552,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -1623,10 +1623,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -1694,10 +1694,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -1765,10 +1765,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -1836,10 +1836,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -1907,10 +1907,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -1978,10 +1978,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -2059,10 +2059,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -2130,10 +2130,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -2201,10 +2201,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -2272,10 +2272,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -2343,10 +2343,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -2414,10 +2414,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -2485,10 +2485,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -2556,10 +2556,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -2627,10 +2627,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -2698,10 +2698,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -2769,10 +2769,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -2840,10 +2840,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -2911,10 +2911,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -2982,10 +2982,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -3053,10 +3053,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -3124,10 +3124,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -3195,10 +3195,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -3266,10 +3266,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -3337,10 +3337,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -3408,10 +3408,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -3489,10 +3489,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -3560,10 +3560,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -3631,10 +3631,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -3702,10 +3702,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -3773,10 +3773,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -3844,10 +3844,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -3915,10 +3915,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -3986,10 +3986,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -4057,10 +4057,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -4128,10 +4128,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -4209,10 +4209,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -4280,10 +4280,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -4351,10 +4351,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -4422,10 +4422,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -4493,10 +4493,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -4564,10 +4564,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -4635,10 +4635,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -4706,10 +4706,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -4777,10 +4777,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -4848,10 +4848,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -4919,10 +4919,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -4990,10 +4990,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -5061,10 +5061,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -5142,10 +5142,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -5213,10 +5213,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -5294,10 +5294,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -5365,10 +5365,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -5446,10 +5446,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -5527,10 +5527,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -5598,10 +5598,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -5679,10 +5679,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -5750,10 +5750,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -5821,10 +5821,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -5912,10 +5912,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -6003,10 +6003,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -6094,10 +6094,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -6175,10 +6175,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -6266,10 +6266,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -6357,10 +6357,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -6438,10 +6438,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -6529,10 +6529,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1579294800821-694d95e86143?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -6610,10 +6610,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -6701,10 +6701,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -6772,10 +6772,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -6843,10 +6843,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -6914,10 +6914,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -6985,10 +6985,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -7056,10 +7056,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -7127,10 +7127,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -7198,10 +7198,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -7269,10 +7269,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -7340,10 +7340,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -7411,10 +7411,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -7482,10 +7482,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -7553,10 +7553,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -7624,10 +7624,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -7695,10 +7695,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -7766,10 +7766,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -7837,10 +7837,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -7908,10 +7908,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -7979,10 +7979,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -8050,10 +8050,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -8121,10 +8121,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -8192,10 +8192,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -8273,10 +8273,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -8344,10 +8344,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -8415,10 +8415,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -8496,10 +8496,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -8567,10 +8567,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -8638,10 +8638,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -8719,10 +8719,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -8800,10 +8800,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -8871,10 +8871,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -8942,10 +8942,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -9013,10 +9013,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -9084,10 +9084,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -9155,10 +9155,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -9226,10 +9226,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -9297,10 +9297,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -9368,10 +9368,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -9439,10 +9439,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -9510,10 +9510,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -9581,10 +9581,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -9655,10 +9655,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -9736,10 +9736,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -9807,10 +9807,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -9878,10 +9878,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -9959,10 +9959,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -10030,10 +10030,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -10101,10 +10101,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -10172,10 +10172,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -10243,10 +10243,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -10314,10 +10314,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -10405,10 +10405,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -10476,10 +10476,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -10547,10 +10547,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -10618,10 +10618,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -10699,10 +10699,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -10770,10 +10770,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -10841,10 +10841,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -10912,10 +10912,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -10983,10 +10983,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -11064,10 +11064,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -11135,10 +11135,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -11206,10 +11206,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -11277,10 +11277,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -11348,10 +11348,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -11419,10 +11419,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -11490,10 +11490,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -11561,10 +11561,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -11632,10 +11632,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -11703,10 +11703,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -11774,10 +11774,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -11855,10 +11855,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -11946,10 +11946,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -12017,10 +12017,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -12088,10 +12088,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -12179,10 +12179,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -12260,10 +12260,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -12331,10 +12331,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -12412,10 +12412,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -12483,10 +12483,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -12574,10 +12574,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -12645,10 +12645,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -12716,10 +12716,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -12787,10 +12787,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -12858,10 +12858,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -12929,10 +12929,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -13000,10 +13000,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -13071,10 +13071,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -13142,10 +13142,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -13213,10 +13213,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -13284,10 +13284,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -13355,10 +13355,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1520808663317-647b476a81b9?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -13426,10 +13426,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -13497,10 +13497,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -13568,10 +13568,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -13639,10 +13639,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -13710,10 +13710,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -13781,10 +13781,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -13852,10 +13852,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -13923,10 +13923,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -13994,10 +13994,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -14065,10 +14065,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -14136,10 +14136,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -14217,10 +14217,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -14288,10 +14288,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -14369,10 +14369,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -14440,10 +14440,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -14511,10 +14511,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -14582,10 +14582,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -14653,10 +14653,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -14724,10 +14724,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -14795,10 +14795,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -14866,10 +14866,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -14937,10 +14937,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1541971875076-8f970d573be6?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -15008,10 +15008,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -15079,10 +15079,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -15150,10 +15150,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -15221,10 +15221,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -15292,10 +15292,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -15363,10 +15363,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -15434,10 +15434,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -15525,10 +15525,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -15616,10 +15616,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -15687,10 +15687,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -15758,10 +15758,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -15849,10 +15849,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -15930,10 +15930,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -16011,10 +16011,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -16102,10 +16102,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -16173,10 +16173,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -16264,10 +16264,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -16345,10 +16345,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -16416,10 +16416,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -16487,10 +16487,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -16558,10 +16558,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -16629,10 +16629,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -16700,10 +16700,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -16771,10 +16771,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -16842,10 +16842,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -16912,10 +16912,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -16983,10 +16983,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Aventura",
     "categorySlug": "aventura-extremo",
@@ -17064,10 +17064,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Ecoturismo",
     "categorySlug": "ecoturismo-naturaleza",
@@ -17135,10 +17135,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Playa y Relax",
     "categorySlug": "playa-relax",
@@ -17206,10 +17206,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Cultural",
     "categorySlug": "cultural-historico",
@@ -17277,10 +17277,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Romántico",
     "categorySlug": "luna-de-miel",
@@ -17348,10 +17348,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Familiar",
     "categorySlug": "familiar-todo-incluido",
@@ -17419,10 +17419,10 @@ export const packages: PackageItem[] = [
       "month": "dic",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Gastronomía",
     "categorySlug": "gastronomia-cacao",
@@ -17500,10 +17500,10 @@ export const packages: PackageItem[] = [
       "month": "ene",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d1CURRENT_YEAR7933ba?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Trekking",
     "categorySlug": "trekking-montana",
@@ -17581,10 +17581,10 @@ export const packages: PackageItem[] = [
       "month": "feb",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Bienestar y Spa",
     "categorySlug": "bienestar-termas",
@@ -17652,10 +17652,10 @@ export const packages: PackageItem[] = [
       "month": "nov",
       year: CURRENT_YEAR
     },
-    "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&fm=webp&q=80",
     "secondaryImages": [
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&fm=webp&q=80",
+      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&w=1200&fm=webp&q=80"
     ],
     "category": "Turismo Comunitario",
     "categorySlug": "tradiciones-comunitario",
@@ -17704,4 +17704,4 @@ export const packages: PackageItem[] = [
       }
     ]
   }
-];
+]

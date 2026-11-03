@@ -704,6 +704,36 @@ export function Detail({
           </div>
         </div>
       )}
+
+      {/* Sticky Bottom Booking Bar (Mobile Only) */}
+      <div className="sticky-booking-bar" role="region" aria-label="Acceso rápido a reserva">
+        <div className="sticky-booking-bar__info">
+          <div className="sticky-booking-bar__price">
+            <strong>${pkg.price}</strong> <small>/ persona</small>
+          </div>
+          <div className="sticky-booking-bar__date">
+            {selectedDate ? (
+              <span>Salida: {selectedDate}</span>
+            ) : (
+              <span>Cupos disponibles: {currentSlots}</span>
+            )}
+          </div>
+        </div>
+        <button
+          type="button"
+          className="button button--primary sticky-booking-bar__btn"
+          disabled={isSoldOut}
+          onClick={() => {
+            if (isSoldOut) return
+            const panel = document.querySelector(".booking-panel")
+            if (panel) {
+              panel.scrollIntoView({ behavior: "smooth", block: "center" })
+            }
+          }}
+        >
+          {isSoldOut ? "Agotado" : "Reservar salida"}
+        </button>
+      </div>
     </>
   )
 }

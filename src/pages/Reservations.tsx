@@ -217,7 +217,17 @@ export function Reservations({
                 <button
                   key={item.id}
                   className={isSelected ? "active" : ""}
-                  onClick={() => setActivePurchaseId(item.id)}
+                  onClick={() => {
+                    setActivePurchaseId(item.id)
+                    if (typeof window !== "undefined" && window.innerWidth <= 768) {
+                      setTimeout(() => {
+                        const detailEl = document.querySelector(".reservation-detail")
+                        if (detailEl) {
+                          detailEl.scrollIntoView({ behavior: "smooth", block: "start" })
+                        }
+                      }, 50)
+                    }
+                  }}
                   type="button"
                 >
                   <span>
