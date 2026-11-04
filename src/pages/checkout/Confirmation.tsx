@@ -306,10 +306,10 @@ export function Confirmation({
 
   return (
     <>
-      <div className="section" style={{ paddingBottom: 0 }}>
+      <div className="section checkout-stepper-wrap checkout-stepper-wrap--narrow">
         <Stepper current={4} />
       </div>
-      <div className="section confirmation">
+      <div className="section confirmation" style={{ paddingTop: "20px" }}>
         <span
           className="success-mark"
           aria-label="Éxito"
@@ -383,7 +383,7 @@ export function Confirmation({
             border: `1px solid ${emailStatus === "error" ? "#fca5a5" : "#86efac"}`,
             borderRadius: "12px",
             padding: "18px 22px",
-            margin: "24px 0",
+            margin: "24px auto",
             display: "flex",
             flexDirection: "row",
             flexWrap: "wrap",
@@ -725,8 +725,9 @@ export function Confirmation({
             className="confirmation-transfer-voucher-box"
             style={{
               width: "100%",
-              maxWidth: "800px",
-              marginTop: "24px",
+              maxWidth: "100%",
+              boxSizing: "border-box",
+              margin: "24px auto",
               padding: "24px",
               borderRadius: "var(--radius)",
               background: currentVoucherUploaded ? "#eafaf1" : "#fffaf0",
@@ -890,35 +891,42 @@ export function Confirmation({
 
         <section
           aria-labelledby="next-steps-title"
-          style={{ width: "100%", maxWidth: "800px", marginTop: "32px" }}
+          className="confirmation-next-steps"
+          style={{ width: "100%", maxWidth: "100%", boxSizing: "border-box", margin: "32px auto" }}
         >
-          <h2 id="next-steps-title" style={{ marginBottom: "16px" }}>
+          <h2 id="next-steps-title" style={{ marginBottom: "20px" }}>
             Próximos pasos recomendados
           </h2>
-          <div className="next-steps">
-            <div className="step-card">
-              <span className="step-num" aria-hidden="true">
-                1
-              </span>
-              <h3>Comprobante en PDF</h3>
+          <div className="confirmation-steps-grid">
+            <div className="confirmation-step-card">
+              <div className="confirmation-step-header">
+                <span className="confirmation-step-num" aria-hidden="true">
+                  1
+                </span>
+                <h3>Comprobante en PDF</h3>
+              </div>
               <p>
                 Descarga y guarda tu comprobante de reserva en formato PDF en tu dispositivo.
               </p>
             </div>
-            <div className="step-card">
-              <span className="step-num" aria-hidden="true">
-                2
-              </span>
-              <h3>Revisa tu correo</h3>
+            <div className="confirmation-step-card">
+              <div className="confirmation-step-header">
+                <span className="confirmation-step-num" aria-hidden="true">
+                  2
+                </span>
+                <h3>Revisa tu correo</h3>
+              </div>
               <p>
                 Hemos enviado la confirmación a tu correo (revisa tu bandeja y carpeta de spam).
               </p>
             </div>
-            <div className="step-card">
-              <span className="step-num" aria-hidden="true">
-                3
-              </span>
-              <h3>Documento de identidad</h3>
+            <div className="confirmation-step-card">
+              <div className="confirmation-step-header">
+                <span className="confirmation-step-num" aria-hidden="true">
+                  3
+                </span>
+                <h3>Documento de identidad</h3>
+              </div>
               <p>
                 Todos los viajeros deben presentar su cédula o pasaporte original el día del viaje.
               </p>
@@ -926,7 +934,7 @@ export function Confirmation({
           </div>
         </section>
 
-        <div className="confirmation-actions">
+        <div className="confirmation-actions" style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", gap: "12px", flexWrap: "wrap", marginTop: "28px" }}>
           <Button kind="primary" onClick={handleDownload} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
             <DownloadIcon size={16} /> Descargar comprobante en PDF
           </Button>
@@ -935,7 +943,7 @@ export function Confirmation({
               ? "Ver mi compra"
               : "Ir a Mis compras (adjuntar comprobante)"}
           </Button>
-          <Button kind="quiet" onClick={() => go("inicio")}>
+          <Button kind="secondary" onClick={() => go("inicio")}>
             Volver al inicio
           </Button>
         </div>

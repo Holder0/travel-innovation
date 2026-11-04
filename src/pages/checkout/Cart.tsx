@@ -155,7 +155,7 @@ export function Cart({
         title="Tu carrito"
         subtitle="Revisa tus salidas seleccionadas antes de continuar."
       />
-      <div className="section">
+      <div className="section checkout-stepper-wrap">
         <Stepper current={0} />
       </div>
       {empty ? (

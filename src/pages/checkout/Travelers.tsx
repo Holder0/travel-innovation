@@ -328,7 +328,7 @@ export function Travelers({
         title="Datos de viajeros"
         subtitle="Completa los datos de los pasajeros agrupados por paquete turístico."
       />
-      <div className="section">
+      <div className="section checkout-stepper-wrap">
         <Stepper current={2} />
       </div>
       <div className="section checkout-layout">
@@ -488,62 +488,77 @@ export function Travelers({
                           />
                         </div>
 
-                        <div
-                          className="two-col"
-                          style={{ marginTop: "14px" }}
-                        >
-                          <DatePickerField
-                            id={`traveler-birthdate-${traveler.id}`}
-                            label="Fecha de nacimiento"
-                            value={traveler.birthDate || ""}
-                            onChange={(val) =>
-                              handleTravelerChange(
-                                traveler.id,
-                                "birthDate",
-                                val
-                              )
-                            }
-                            error={travelerErrors.birthDate}
-                            help="Selecciona en el calendario desplegable."
-                            required
-                          />
+                        {traveler.isTitular ? (
+                          <>
+                            <div
+                              className="two-col"
+                              style={{ marginTop: "14px" }}
+                            >
+                              <DatePickerField
+                                id={`traveler-birthdate-${traveler.id}`}
+                                label="Fecha de nacimiento"
+                                value={traveler.birthDate || ""}
+                                onChange={(val) =>
+                                  handleTravelerChange(
+                                    traveler.id,
+                                    "birthDate",
+                                    val
+                                  )
+                                }
+                                error={travelerErrors.birthDate}
+                                help="Selecciona en el calendario desplegable."
+                                required
+                              />
 
-                          {traveler.isTitular ? (
-                            <Field
-                              label="Teléfono de contacto"
-                              placeholder="Ej. 0991234567"
-                              value={traveler.phone || ""}
+                              <Field
+                                label="Teléfono de contacto"
+                                placeholder="Ej. 0991234567"
+                                value={traveler.phone || ""}
+                                onChange={(val) =>
+                                  handleTravelerChange(
+                                    traveler.id,
+                                    "phone",
+                                    val.replace(/\D/g, "")
+                                  )
+                                }
+                                error={travelerErrors.phone}
+                                help="10 dígitos (inicia con 09)."
+                              />
+                            </div>
+
+                            <div style={{ marginTop: "14px" }}>
+                              <Field
+                                label="Correo electrónico"
+                                placeholder="ejemplo@correo.com"
+                                type="email"
+                                value={traveler.email || ""}
+                                onChange={(val) =>
+                                  handleTravelerChange(
+                                    traveler.id,
+                                    "email",
+                                    val
+                                  )
+                                }
+                                help="Para vouchers y notificaciones."
+                              />
+                            </div>
+                          </>
+                        ) : (
+                          <div style={{ marginTop: "14px" }}>
+                            <DatePickerField
+                              id={`traveler-birthdate-${traveler.id}`}
+                              label="Fecha de nacimiento"
+                              value={traveler.birthDate || ""}
                               onChange={(val) =>
                                 handleTravelerChange(
                                   traveler.id,
-                                  "phone",
-                                  val.replace(/\D/g, "")
-                                )
-                              }
-                              error={travelerErrors.phone}
-                              help="10 dígitos (inicia con 09)."
-                            />
-                          ) : null}
-                        </div>
-
-                        {traveler.isTitular && (
-                          <div
-                            className="two-col"
-                            style={{ marginTop: "14px" }}
-                          >
-                            <Field
-                              label="Correo electrónico"
-                              placeholder="ejemplo@correo.com"
-                              type="email"
-                              value={traveler.email || ""}
-                              onChange={(val) =>
-                                handleTravelerChange(
-                                  traveler.id,
-                                  "email",
+                                  "birthDate",
                                   val
                                 )
                               }
-                              help="Para vouchers y notificaciones."
+                              error={travelerErrors.birthDate}
+                              help="Selecciona en el calendario desplegable."
+                              required
                             />
                           </div>
                         )}

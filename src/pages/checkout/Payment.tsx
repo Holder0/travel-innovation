@@ -228,7 +228,7 @@ export function Payment({
         title="Pago de la reserva"
         subtitle="Revisa tus datos y selecciona tu método de pago preferido."
       />
-      <div className="section">
+      <div className="section checkout-stepper-wrap">
         <Stepper current={3} />
       </div>
       <div className="section checkout-layout">

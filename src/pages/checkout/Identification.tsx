@@ -274,7 +274,7 @@ export function Identification({
             : "Completa tus datos personales y de facturación para la reserva."
         }
       />
-      <div className="section">
+      <div className="section checkout-stepper-wrap">
         <Stepper current={1} />
       </div>
       <div className="section checkout-layout">
@@ -306,94 +306,160 @@ export function Identification({
               : "Ingresa tus datos requeridos para el registro oficial de la reserva y emisión del comprobante:"}
           </p>
 
-          {!currentUser && (
-            <div className="two-col" style={{ marginBottom: "14px" }}>
-              <Field
-                label="Nombre completo"
-                placeholder="Como consta en tu cédula"
-                value={fullName}
-                onChange={(val) => {
-                  setFullName(val)
-                  syncPersonalInfo({ fullName: val })
-                  if (errors.fullName)
-                    setErrors((prev) => ({ ...prev, fullName: undefined }))
-                }}
-                error={errors.fullName}
-                help="Nombre del titular."
-                required
-              />
-              <Field
-                label="Correo electrónico"
-                type="email"
-                placeholder="nombre@correo.com"
-                value={email}
-                onChange={(val) => {
-                  setEmail(val)
-                  syncPersonalInfo({ email: val })
-                  if (errors.email)
-                    setErrors((prev) => ({ ...prev, email: undefined }))
-                }}
-                error={errors.email}
-                help="Para comprobantes."
-                required
-              />
-            </div>
+          {currentUser ? (
+            <>
+              <div className="two-col">
+                <Field
+                  label="Cédula de identidad o pasaporte"
+                  placeholder="10 dígitos de cédula o pasaporte"
+                  value={cedula}
+                  disabled={isLocked}
+                  onChange={(val) => {
+                    const clean = val.replace(/[^a-zA-Z0-9]/g, "").toUpperCase()
+                    setCedula(clean)
+                    syncPersonalInfo({ cedula: clean })
+                    if (errors.cedula)
+                      setErrors((prev) => ({ ...prev, cedula: undefined }))
+                  }}
+                  error={errors.cedula}
+                  help="10 dígitos de cédula o pasaporte."
+                  required
+                />
+
+                <DatePickerField
+                  id="titular-birth-date"
+                  label="Fecha de nacimiento del titular"
+                  value={birthDate}
+                  disabled={isLocked}
+                  onChange={(val) => {
+                    setBirthDate(val)
+                    syncPersonalInfo({ birthDate: val })
+                    if (errors.birthDate)
+                      setErrors((prev) => ({ ...prev, birthDate: undefined }))
+                  }}
+                  error={errors.birthDate}
+                  help="Selecciona en el calendario desplegable."
+                  required
+                />
+              </div>
+
+              <div className="two-col" style={{ marginTop: "14px" }}>
+                <Field
+                  label="Teléfono celular"
+                  type="tel"
+                  placeholder="Ej. 0991234567"
+                  value={phone}
+                  disabled={isLocked}
+                  onChange={(val) => {
+                    const clean = val.replace(/\D/g, "")
+                    setPhone(clean)
+                    syncPersonalInfo({ phone: clean })
+                    if (errors.phone)
+                      setErrors((prev) => ({ ...prev, phone: undefined }))
+                  }}
+                  error={errors.phone}
+                  help="10 dígitos numéricos (inicia con 09)."
+                  required
+                />
+
+                <Field
+                  label="Correo electrónico"
+                  type="email"
+                  value={email || currentUser?.email || ""}
+                  disabled={true}
+                  readOnly={true}
+                  help="Correo vinculado a tu cuenta activa."
+                  required
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="two-col" style={{ marginBottom: "14px" }}>
+                <Field
+                  label="Nombre completo"
+                  placeholder="Como consta en tu cédula"
+                  value={fullName}
+                  onChange={(val) => {
+                    setFullName(val)
+                    syncPersonalInfo({ fullName: val })
+                    if (errors.fullName)
+                      setErrors((prev) => ({ ...prev, fullName: undefined }))
+                  }}
+                  error={errors.fullName}
+                  help="Nombre del titular."
+                  required
+                />
+                <Field
+                  label="Cédula de identidad o pasaporte"
+                  placeholder="10 dígitos de cédula o pasaporte"
+                  value={cedula}
+                  onChange={(val) => {
+                    const clean = val.replace(/[^a-zA-Z0-9]/g, "").toUpperCase()
+                    setCedula(clean)
+                    syncPersonalInfo({ cedula: clean })
+                    if (errors.cedula)
+                      setErrors((prev) => ({ ...prev, cedula: undefined }))
+                  }}
+                  error={errors.cedula}
+                  help="10 dígitos de cédula o pasaporte."
+                  required
+                />
+              </div>
+
+              <div className="two-col" style={{ marginBottom: "14px" }}>
+                <DatePickerField
+                  id="titular-birth-date"
+                  label="Fecha de nacimiento del titular"
+                  value={birthDate}
+                  onChange={(val) => {
+                    setBirthDate(val)
+                    syncPersonalInfo({ birthDate: val })
+                    if (errors.birthDate)
+                      setErrors((prev) => ({ ...prev, birthDate: undefined }))
+                  }}
+                  error={errors.birthDate}
+                  help="Selecciona en el calendario desplegable."
+                  required
+                />
+
+                <Field
+                  label="Teléfono celular"
+                  type="tel"
+                  placeholder="Ej. 0991234567"
+                  value={phone}
+                  onChange={(val) => {
+                    const clean = val.replace(/\D/g, "")
+                    setPhone(clean)
+                    syncPersonalInfo({ phone: clean })
+                    if (errors.phone)
+                      setErrors((prev) => ({ ...prev, phone: undefined }))
+                  }}
+                  error={errors.phone}
+                  help="10 dígitos numéricos (inicia con 09)."
+                  required
+                />
+              </div>
+
+              <div style={{ marginBottom: "14px" }}>
+                <Field
+                  label="Correo electrónico"
+                  type="email"
+                  placeholder="nombre@correo.com"
+                  value={email}
+                  onChange={(val) => {
+                    setEmail(val)
+                    syncPersonalInfo({ email: val })
+                    if (errors.email)
+                      setErrors((prev) => ({ ...prev, email: undefined }))
+                  }}
+                  error={errors.email}
+                  help="Para envío de comprobantes y notificaciones."
+                  required
+                />
+              </div>
+            </>
           )}
-
-          <div className="two-col">
-            <Field
-              label="Teléfono celular"
-              type="tel"
-              placeholder="Ej. 0991234567"
-              value={phone}
-              disabled={isLocked}
-              onChange={(val) => {
-                const clean = val.replace(/\D/g, "")
-                setPhone(clean)
-                syncPersonalInfo({ phone: clean })
-                if (errors.phone)
-                  setErrors((prev) => ({ ...prev, phone: undefined }))
-              }}
-              error={errors.phone}
-              help="10 dígitos numéricos (inicia con 09)."
-              required
-            />
-
-            <Field
-              label="Cédula de identidad o pasaporte"
-              placeholder="10 dígitos de cédula o pasaporte"
-              value={cedula}
-              disabled={isLocked}
-              onChange={(val) => {
-                const clean = val.replace(/[^a-zA-Z0-9]/g, "").toUpperCase()
-                setCedula(clean)
-                syncPersonalInfo({ cedula: clean })
-                if (errors.cedula)
-                  setErrors((prev) => ({ ...prev, cedula: undefined }))
-              }}
-              error={errors.cedula}
-              help="Cédula (10 dígitos) o pasaporte (6 a 12 caracteres)."
-              required
-            />
-          </div>
-
-          <div className="two-col" style={{ marginTop: "14px" }}>
-            <DatePickerField
-              id="titular-birth-date"
-              label="Fecha de nacimiento del titular"
-              value={birthDate}
-              disabled={isLocked}
-              onChange={(val) => {
-                setBirthDate(val)
-                syncPersonalInfo({ birthDate: val })
-                if (errors.birthDate)
-                  setErrors((prev) => ({ ...prev, birthDate: undefined }))
-              }}
-              error={errors.birthDate}
-              help="Selecciona tu fecha en el calendario desplegable."
-              required
-            />
-          </div>
 
           <div className="two-col" style={{ marginTop: "14px" }}>
             <SelectField
