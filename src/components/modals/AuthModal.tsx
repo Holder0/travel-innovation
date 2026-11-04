@@ -6,6 +6,9 @@ import { getRegisteredUsers, saveRegisteredUsers } from "../../services/storage"
 import { signInWithSupabase, signUpWithSupabase } from "../../services/supabaseService"
 import type { RegisteredUserRecord, AppCurrentUser } from "../../types"
 
+// Expresión regular que exige la estructura estricta: [letras/caracteres]@[letras/caracteres].[letras/caracteres]
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export function AuthModal({
   isOpen,
   onClose,
@@ -104,17 +107,29 @@ export function AuthModal({
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email.trim() || !password.trim()) {
-      setErrorMsg("Por favor completa tu correo y contraseña.")
+
+    const cleanEmail = email.trim()
+
+    // 1. Validar estructura [letras]@[letras].[letras]
+    if (!cleanEmail || !EMAIL_PATTERN.test(cleanEmail)) {
+      setIsLoading(false)
+      setErrorMsg("Correo no válido")
+      return
+    }
+
+    // 2. Validar que la contraseña esté presente
+    if (!password.trim()) {
+      setIsLoading(false)
+      setErrorMsg("Credenciales no encontradas")
       return
     }
 
     setIsLoading(true)
     setErrorMsg("")
 
-    // 1. Intentar inicio de sesión real en Supabase Auth
+    // 3. Intentar inicio de sesión real en Supabase Auth
     try {
-      const sbResult = await signInWithSupabase(email, password)
+      const sbResult = await signInWithSupabase(cleanEmail, password)
       if (sbResult.success && sbResult.user) {
         setIsLoading(false)
         setPasswordWarning(false)
@@ -126,15 +141,15 @@ export function AuthModal({
       console.warn("Aviso en Supabase Auth:", err)
     }
 
-    // 2. Fallback a usuarios registrados localmente
-    const cleanEmail = email.trim().toLowerCase()
+    // 4. Fallback a usuarios registrados localmente
+    const normalizedEmail = cleanEmail.toLowerCase()
     const regUsers = getRegisteredUsers()
-    const record = regUsers[cleanEmail]
+    const record = regUsers[normalizedEmail]
 
     if (record) {
       if (record.password !== password) {
         setIsLoading(false)
-        setErrorMsg("Contraseña incorrecta.")
+        setErrorMsg("Credenciales no encontradas")
         setPasswordWarning(true)
         return
       }
@@ -145,24 +160,24 @@ export function AuthModal({
       return
     }
 
-    // 3. Fallback a los 10 usuarios de prueba institucionales
-    const seedUser = SEED_TEST_USERS[cleanEmail]
+    // 5. Fallback a los 10 usuarios de prueba institucionales
+    const seedUser = SEED_TEST_USERS[normalizedEmail]
     if (seedUser) {
       if (password !== seedUser.pass) {
         setIsLoading(false)
-        setErrorMsg("Contraseña incorrecta. (Clave de prueba: Temporal2026!)")
+        setErrorMsg("Credenciales no encontradas")
         setPasswordWarning(true)
         return
       }
       setIsLoading(false)
       setPasswordWarning(false)
-      onLoginSuccess({ name: seedUser.name, email: cleanEmail, role: seedUser.role })
+      onLoginSuccess({ name: seedUser.name, email: normalizedEmail, role: seedUser.role })
       handleClose()
       return
     }
 
     setIsLoading(false)
-    setErrorMsg("Cuenta no encontrada o credenciales inválidas. Verifica tu correo y contraseña.")
+    setErrorMsg("Credenciales no encontradas")
     setPasswordWarning(false)
   }
 
@@ -176,8 +191,8 @@ export function AuthModal({
       setErrorMsg("Por favor ingresa tu primer apellido.")
       return
     }
-    if (!regEmail.trim()) {
-      setErrorMsg("Por favor ingresa tu correo electrónico.")
+    if (!regEmail.trim() || !EMAIL_PATTERN.test(regEmail.trim())) {
+      setErrorMsg("Correo no válido")
       return
     }
     if (!regPassword) {
@@ -238,8 +253,9 @@ export function AuthModal({
 
   const handleRecoverySubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email.trim()) {
-      setErrorMsg("Por favor ingresa tu correo electrónico.")
+    const cleanEmail = email.trim()
+    if (!cleanEmail || !EMAIL_PATTERN.test(cleanEmail)) {
+      setErrorMsg("Correo no válido")
       return
     }
     setRecoverySubmitted(true)
@@ -299,7 +315,7 @@ export function AuthModal({
 
         {mode === "login" && (
           <>
-            <form className="auth-form" onSubmit={handleLoginSubmit}>
+            <form className="auth-form" onSubmit={handleLoginSubmit} noValidate>
               <Field
                 id="login-email"
                 label="Correo electrónico"
@@ -379,7 +395,7 @@ export function AuthModal({
                 </span>
               </div>
             </div>
-            <form className="auth-form" onSubmit={handleRegisterSubmit}>
+            <form className="auth-form" onSubmit={handleRegisterSubmit} noValidate>
               <div className="auth-form-row">
                 <Field
                   id="reg-first-name"
@@ -480,7 +496,7 @@ export function AuthModal({
                 </div>
               </div>
             ) : (
-              <form className="auth-form" onSubmit={handleRecoverySubmit}>
+              <form className="auth-form" onSubmit={handleRecoverySubmit} noValidate>
                 <Field
                   id="rec-email"
                   label="Correo electrónico registrado"

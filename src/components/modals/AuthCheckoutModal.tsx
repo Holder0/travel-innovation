@@ -6,6 +6,9 @@ import { getRegisteredUsers, saveRegisteredUsers } from "../../services/storage"
 import { signInWithSupabase, signUpWithSupabase } from "../../services/supabaseService"
 import type { CartItem, RegisteredUserRecord, AppCurrentUser } from "../../types"
 
+// Expresión regular que exige la estructura estricta: [letras/caracteres]@[letras/caracteres].[letras/caracteres]
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export function AuthCheckoutModal({
   isOpen,
   items,
@@ -89,17 +92,29 @@ export function AuthCheckoutModal({
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email.trim() || !password.trim()) {
-      setErrorMsg("Por favor completa tu correo y contraseña.")
+
+    const cleanEmail = email.trim()
+
+    // 1. Validar estructura [letras]@[letras].[letras]
+    if (!cleanEmail || !EMAIL_PATTERN.test(cleanEmail)) {
+      setIsLoading(false)
+      setErrorMsg("Correo no válido")
+      return
+    }
+
+    // 2. Validar que la contraseña esté presente
+    if (!password.trim()) {
+      setIsLoading(false)
+      setErrorMsg("Credenciales no encontradas")
       return
     }
 
     setIsLoading(true)
     setErrorMsg("")
 
-    // 1. Intentar inicio de sesión real en Supabase Auth
+    // 3. Intentar inicio de sesión real en Supabase Auth
     try {
-      const sbResult = await signInWithSupabase(email, password)
+      const sbResult = await signInWithSupabase(cleanEmail, password)
       if (sbResult.success && sbResult.user) {
         setIsLoading(false)
         setPasswordWarning(false)
@@ -110,8 +125,8 @@ export function AuthCheckoutModal({
       console.warn("Aviso en Supabase Auth:", err)
     }
 
-    // 2. Diccionario de usuarios institucionales de prueba
-    const cleanEmail = email.trim().toLowerCase()
+    // 4. Diccionario de usuarios institucionales de prueba
+    const normalizedEmail = cleanEmail.toLowerCase()
     const SEED_TEST_USERS: Record<string, { name: string; role: string; pass: string }> = {
       "carlos.mendoza@travelinnovation.ec": { name: "Carlos Andrés Mendoza", role: "CLIENTE", pass: "Temporal2026!" },
       "maria.salazar@travelinnovation.ec": { name: "María Belén Salazar", role: "AGENTE_VENTAS", pass: "Temporal2026!" },
@@ -125,33 +140,33 @@ export function AuthCheckoutModal({
       "rodrigo.paredes@email.com": { name: "Rodrigo Andrés Paredes", role: "CLIENTE", pass: "Temporal2026!" },
     }
 
-    const testSeed = SEED_TEST_USERS[cleanEmail]
+    const testSeed = SEED_TEST_USERS[normalizedEmail]
     if (testSeed) {
       if (password !== testSeed.pass) {
         setIsLoading(false)
-        setErrorMsg("Contraseña incorrecta.")
+        setErrorMsg("Credenciales no encontradas")
         setPasswordWarning(true)
         return
       }
       setIsLoading(false)
       setPasswordWarning(false)
       onLoginSuccess({
-        id: "usr-" + cleanEmail.replace(/[^a-z0-9]/g, "-"),
+        id: "usr-" + normalizedEmail.replace(/[^a-z0-9]/g, "-"),
         name: testSeed.name,
-        email: cleanEmail,
+        email: normalizedEmail,
         role: testSeed.role,
       })
       return
     }
 
-    // 3. Fallback a almacenamiento local
+    // 5. Fallback a almacenamiento local
     const regUsers = getRegisteredUsers()
-    const record = regUsers[cleanEmail]
+    const record = regUsers[normalizedEmail]
 
     if (record) {
       if (record.password !== password) {
         setIsLoading(false)
-        setErrorMsg("Contraseña incorrecta.")
+        setErrorMsg("Credenciales no encontradas")
         setPasswordWarning(true)
         return
       }
@@ -162,7 +177,7 @@ export function AuthCheckoutModal({
     }
 
     setIsLoading(false)
-    setErrorMsg("Cuenta no encontrada o credenciales inválidas. Verifica tu correo y contraseña.")
+    setErrorMsg("Credenciales no encontradas")
     setPasswordWarning(false)
   }
 
@@ -176,8 +191,8 @@ export function AuthCheckoutModal({
       setErrorMsg("Por favor ingresa tu primer apellido.")
       return
     }
-    if (!regEmail.trim()) {
-      setErrorMsg("Por favor ingresa tu correo electrónico.")
+    if (!regEmail.trim() || !EMAIL_PATTERN.test(regEmail.trim())) {
+      setErrorMsg("Correo no válido")
       return
     }
     if (!regPassword) {
@@ -235,8 +250,9 @@ export function AuthCheckoutModal({
 
   const handleRecoverySubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email.trim()) {
-      setErrorMsg("Por favor ingresa tu correo electrónico.")
+    const cleanEmail = email.trim()
+    if (!cleanEmail || !EMAIL_PATTERN.test(cleanEmail)) {
+      setErrorMsg("Correo no válido")
       return
     }
     setRecoverySubmitted(true)
@@ -420,7 +436,7 @@ export function AuthCheckoutModal({
 
             {mode === "login" && (
               <>
-                <form className="auth-form" onSubmit={handleLoginSubmit}>
+                <form className="auth-form" onSubmit={handleLoginSubmit} noValidate>
                   <Field
                     id="checkout-login-email"
                     label="Correo electrónico"
@@ -490,7 +506,7 @@ export function AuthCheckoutModal({
 
             {mode === "register" && (
               <>
-                <form className="auth-form" onSubmit={handleRegisterSubmit}>
+                <form className="auth-form" onSubmit={handleRegisterSubmit} noValidate>
                   <div className="auth-form-row">
                     <Field
                       id="checkout-reg-firstname"
@@ -601,7 +617,7 @@ export function AuthCheckoutModal({
                     </Button>
                   </div>
                 ) : (
-                  <form className="auth-form" onSubmit={handleRecoverySubmit}>
+                  <form className="auth-form" onSubmit={handleRecoverySubmit} noValidate>
                     <Field
                       id="checkout-recovery-email"
                       label="Correo electrónico"
